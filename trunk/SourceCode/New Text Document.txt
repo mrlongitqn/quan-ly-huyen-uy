@@ -1,0 +1,17 @@
+
+                if (m_SqlTran != null)
+                    m_SqlTran.Rollback();
+                throw;
+
+
+
+
+
+
+
+
+
+
+
+maät khaåu: baoadmin
+use: admin
