@@ -19,5 +19,12 @@ namespace QuanLyHoSoCongChuc.Controller
             cmb.DisplayMember = "TenGioiTinh";
             cmb.ValueMember = "MaGioiTinh";
         }
+
+        public void HienThiDanhSachGioiTinh(ComboBox cmb)
+        {
+            cmb.DataSource = m_GioiTinhData.LayDanhSachGioiTinh();
+            cmb.DisplayMember = "TenGioiTinh";
+            cmb.ValueMember = "MaGioiTinh";
+        }
     }
 }

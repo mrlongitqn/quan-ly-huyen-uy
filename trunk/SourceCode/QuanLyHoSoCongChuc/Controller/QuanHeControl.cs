@@ -64,6 +64,20 @@ namespace QuanLyHoSoCongChuc.Controller
         {
             return m_QuanHeData.LuuQuanHe();
         }
+
+        public DataTable LayDanhSachQuanHe()
+        {
+            DataTable dt = m_QuanHeData.LayDanhSachQuanHe();
+            return dt;
+        }
+
+        public void HienThiDanhSachQuanHe(ComboBox cmb)
+        {
+            DataTable dt = LayDanhSachQuanHe();
+            cmb.DataSource = dt;
+            cmb.DisplayMember = "TenQuanHe";
+            cmb.ValueMember = "MaQuanHe";
+        }
     }
 
 

@@ -546,5 +546,13 @@ namespace QuanLyHoSoCongChuc.BusinessObject
             get { return m_NgayBatDauDonhBHXH; }
             set { m_NgayBatDauDonhBHXH = value; }
         }
+
+        private string m_MaDangVien;
+
+        public string MaDangVien
+        {
+            get { return m_MaDangVien; }
+            set { m_MaDangVien = value; }
+        }
     }
 }

@@ -11,7 +11,7 @@ Thong so co ban:
 -->
 <config>
   <costatus>true</costatus>
-  <servname>letuan</servname>
+  <servname>COMPAQ-D01C172E\SQLEXPRESS</servname>
   <username />
   <password />
   <database>QLHSCC</database>

@@ -74,6 +74,8 @@
     <Reference Include="XPExplorerBar, Version=3.3.0.0, Culture=neutral, PublicKeyToken=26272737b5f33015" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessObject\HoanCanhKinhTeInfo.cs" />
+    <Compile Include="BusinessObject\QuaTrinhCongTacMoiInfo.cs" />
     <Compile Include="BusinessObject\ChucVuInfo.cs" />
     <Compile Include="BusinessObject\CongViecInfo.cs" />
     <Compile Include="BusinessObject\DanTocInfo.cs" />
@@ -85,6 +87,7 @@
     <Compile Include="BusinessObject\HinhThucTuyenDungInfo.cs" />
     <Compile Include="BusinessObject\Huong85Info.cs" />
     <Compile Include="BusinessObject\KhenThuongInfo.cs" />
+    <Compile Include="BusinessObject\KhoiXomInfo.cs" />
     <Compile Include="BusinessObject\KyLuatInfo.cs" />
     <Compile Include="BusinessObject\LoaiCanBoInfo.cs" />
     <Compile Include="BusinessObject\LoaiDonViInfo.cs" />
@@ -94,12 +97,16 @@
     <Compile Include="BusinessObject\NguoiDungInfo.cs" />
     <Compile Include="BusinessObject\NhanVienInfo.cs" />
     <Compile Include="BusinessObject\DonViInfo.cs" />
+    <Compile Include="BusinessObject\PhuongXaInfo.cs" />
     <Compile Include="BusinessObject\QuanHeInfo.cs" />
+    <Compile Include="BusinessObject\QuanHuyenInfo.cs" />
     <Compile Include="BusinessObject\QuaTrinhBoiDuongInfo.cs" />
     <Compile Include="BusinessObject\QuaTrinhCongTacInfo.cs" />
     <Compile Include="BusinessObject\QuaTrinhDaoTaoInfo.cs" />
     <Compile Include="BusinessObject\ThanhPhanXuatThanInfo.cs" />
     <Compile Include="BusinessObject\ThanNhanInfo.cs" />
+    <Compile Include="BusinessObject\ThanNhanMoiInfo.cs" />
+    <Compile Include="BusinessObject\TinhThanhInfo.cs" />
     <Compile Include="BusinessObject\TinhTrangHonNhanInfo.cs" />
     <Compile Include="BusinessObject\TonGiaoInfo.cs" />
     <Compile Include="BusinessObject\TrinhDoChinhTriInfo.cs" />
@@ -114,15 +121,23 @@
     <Compile Include="ChucNangQTDT.Designer.cs">
       <DependentUpon>ChucNangQTDT.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\CapUyControl.cs" />
+    <Compile Include="Controller\CapUyKiemControl.cs" />
+    <Compile Include="Controller\ChucNangQTCTMoiControl.cs" />
+    <Compile Include="Controller\ChucVuChinhQuyenControl.cs" />
     <Compile Include="Controller\ChucVuControl.cs" />
     <Compile Include="Controller\CongViecControl.cs" />
+    <Compile Include="Controller\DanhMucHanhChinhControl.cs" />
     <Compile Include="Controller\DanTocControl.cs" />
     <Compile Include="Controller\DienUuTienBanThanControl.cs" />
     <Compile Include="Controller\DienUuTienGiaDinhControl.cs" />
     <Compile Include="Controller\DoanVienControl.cs" />
     <Compile Include="Controller\DTBDControl.cs" />
+    <Compile Include="Controller\GiaDinhControl.cs" />
     <Compile Include="Controller\GioiTinhControl.cs" />
     <Compile Include="Controller\HinhThucTuyenDungControl.cs" />
+    <Compile Include="Controller\HoanCanhKinhTeControl.cs" />
+    <Compile Include="Controller\HoatDongKinhTeControl.cs" />
     <Compile Include="Controller\Huong85Control.cs" />
     <Compile Include="Controller\KhenThuongControl.cs" />
     <Compile Include="Controller\KyLuatControl.cs" />
@@ -136,12 +151,16 @@
     <Compile Include="Controller\NhanVienControl.cs" />
     <Compile Include="Controller\DonViControl.cs" />
     <Compile Include="Controller\QuanHeControl.cs" />
+    <Compile Include="Controller\QuanHeGiaDinhControl.cs" />
     <Compile Include="Controller\QuaTrinhBoiDuongControl.cs" />
     <Compile Include="Controller\QuaTrinhCongTacControl.cs" />
     <Compile Include="Controller\QuaTrinhDaoTaoControl.cs" />
+    <Compile Include="Controller\QuocGiaControl.cs" />
     <Compile Include="Controller\ThamSoControl.cs" />
     <Compile Include="Controller\ThanhPhanXuatThanControl.cs" />
     <Compile Include="Controller\ThanNhanControl.cs" />
+    <Compile Include="Controller\ThanNhanMoiControl.cs" />
+    <Compile Include="Controller\ThemDanhMucHanhChinhControl.cs" />
     <Compile Include="Controller\TinhTrangHonNhanControl.cs" />
     <Compile Include="Controller\TonGiaoControl.cs" />
     <Compile Include="Controller\TrinhDoChinhTriControl.cs" />
@@ -150,6 +169,10 @@
     <Compile Include="Controller\TrinhDoNgoaiNguControl.cs" />
     <Compile Include="Controller\TrinhDoQuanLyNhaNuocControl.cs" />
     <Compile Include="Controller\TrinhDoTinHocControl.cs" />
+    <Compile Include="DataLayer\CapUyData.cs" />
+    <Compile Include="DataLayer\CapUyKiemData.cs" />
+    <Compile Include="DataLayer\ChucNangQTCTMoiData.cs" />
+    <Compile Include="DataLayer\ChucVuChinhQuyenData.cs" />
     <Compile Include="DataLayer\ChucVuData.cs" />
     <Compile Include="DataLayer\CongViecData.cs" />
     <Compile Include="DataLayer\DangNhapData.cs" />
@@ -160,8 +183,11 @@
     <Compile Include="DataLayer\DTBDData.cs" />
     <Compile Include="DataLayer\GioiTinhData.cs" />
     <Compile Include="DataLayer\HinhThucTuyenDungData.cs" />
+    <Compile Include="DataLayer\HoanCanhKinhTeData.cs" />
+    <Compile Include="DataLayer\HoatDongKinhTeData.cs" />
     <Compile Include="DataLayer\Huong85Data.cs" />
     <Compile Include="DataLayer\KhenThuongData.cs" />
+    <Compile Include="DataLayer\KhoiXomData.cs" />
     <Compile Include="DataLayer\KyLuatData.cs" />
     <Compile Include="DataLayer\LoaiCanBoData.cs" />
     <Compile Include="DataLayer\LoaiDonViData.cs" />
@@ -173,13 +199,18 @@
     <Compile Include="DataLayer\NguoiDungData.cs" />
     <Compile Include="DataLayer\NhanVienData.cs" />
     <Compile Include="DataLayer\DonViData.cs" />
+    <Compile Include="DataLayer\PhuongXaData.cs" />
     <Compile Include="DataLayer\QuanHeData.cs" />
+    <Compile Include="DataLayer\QuanHuyenData.cs" />
     <Compile Include="DataLayer\QuaTrinhBoiDuongData.cs" />
     <Compile Include="DataLayer\QuaTrinhCongTacData.cs" />
     <Compile Include="DataLayer\QuaTrinhDaoTaoData.cs" />
+    <Compile Include="DataLayer\QuocGiaData.cs" />
     <Compile Include="DataLayer\ThamSoData.cs" />
     <Compile Include="DataLayer\ThanhPhanXuatThanData.cs" />
     <Compile Include="DataLayer\ThanNhanData.cs" />
+    <Compile Include="DataLayer\ThanNhanMoiData.cs" />
+    <Compile Include="DataLayer\TinhThanhData.cs" />
     <Compile Include="DataLayer\TinhtrangHonNhanData.cs" />
     <Compile Include="DataLayer\TonGiaoData.cs" />
     <Compile Include="DataLayer\TrinhDoChinhTriData.cs" />
@@ -215,6 +246,12 @@
     <Compile Include="FrmChucNangQTCT.Designer.cs">
       <DependentUpon>FrmChucNangQTCT.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmChucNangQTCTMoi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmChucNangQTCTMoi.Designer.cs">
+      <DependentUpon>FrmChucNangQTCTMoi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmChucNangThanNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,6 +275,12 @@
     </Compile>
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDanhMucHanhChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDanhMucHanhChinh.Designer.cs">
+      <DependentUpon>FrmDanhMucHanhChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDanhSachNangLuong.cs">
       <SubType>Form</SubType>
@@ -274,6 +317,12 @@
     </Compile>
     <Compile Include="FrmDonVi.Designer.cs">
       <DependentUpon>FrmDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGiaDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGiaDinh.Designer.cs">
+      <DependentUpon>FrmGiaDinh.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmHinhThucTuyenDung.cs">
       <SubType>Form</SubType>
@@ -335,6 +384,12 @@
     <Compile Include="FrmNhanVien.Designer.cs">
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmNhapQuanHeGiaDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNhapQuanHeGiaDinh.Designer.cs">
+      <DependentUpon>FrmNhapQuanHeGiaDinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmQuanLyDonVi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -377,6 +432,12 @@
     <Compile Include="FrmThanNhan.Designer.cs">
       <DependentUpon>FrmThanNhan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThemDanhMucHanhChinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemDanhMucHanhChinh.Designer.cs">
+      <DependentUpon>FrmThemDanhMucHanhChinh.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmThongTinLienHe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -388,6 +449,12 @@
     </Compile>
     <Compile Include="FrmThongTinPhongNoiVu.Designer.cs">
       <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTimKiem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTimKiem.Designer.cs">
+      <DependentUpon>FrmTimKiem.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTinhTrangHonNhan.cs">
       <SubType>Form</SubType>
@@ -465,6 +532,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmChucNangQTCT.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmChucNangQTCTMoi.resx">
+      <DependentUpon>FrmChucNangQTCTMoi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmChucNangThanNhan.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmChucNangThanNhan.cs</DependentUpon>
@@ -480,6 +550,9 @@
     <EmbeddedResource Include="FrmDangNhap.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDanhMucHanhChinh.resx">
+      <DependentUpon>FrmDanhMucHanhChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDanhSachNangLuong.resx">
       <SubType>Designer</SubType>
@@ -504,6 +577,9 @@
     <EmbeddedResource Include="FrmDonVi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGiaDinh.resx">
+      <DependentUpon>FrmGiaDinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmHinhThucTuyenDung.resx">
       <SubType>Designer</SubType>
@@ -545,6 +621,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmNhapQuanHeGiaDinh.resx">
+      <DependentUpon>FrmNhapQuanHeGiaDinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmQuanLyDonVi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmQuanLyDonVi.cs</DependentUpon>
@@ -573,6 +652,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmThanNhan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemDanhMucHanhChinh.resx">
+      <DependentUpon>FrmThemDanhMucHanhChinh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmThongTinLienHe.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmThongTinLienHe.cs</DependentUpon>
@@ -580,6 +662,9 @@
     <EmbeddedResource Include="FrmThongTinPhongNoiVu.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTimKiem.resx">
+      <DependentUpon>FrmTimKiem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTinhTrangHonNhan.resx">
       <SubType>Designer</SubType>
@@ -650,6 +735,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="QLHSCCDataSet.cs">
+      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="QLHSCCDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

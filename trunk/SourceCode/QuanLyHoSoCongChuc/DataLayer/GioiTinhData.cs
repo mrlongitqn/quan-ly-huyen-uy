@@ -18,5 +18,23 @@ namespace QuanLyHoSoCongChuc.DataLayer
             return m_GioiTinhData;
         }
 
+        public DataTable LayDanhSachGioiTinh()
+        {
+            if (DataService.m_ConnectString == "")
+                DataService.ConnectionString();
+            string ConnectionString = DataService.m_ConnectString;
+            DataTable dt = new DataTable();
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "SELECT * FROM GioiTinh";
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                con.Close();
+            }
+
+            return dt;
+        }
     }
 }

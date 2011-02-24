@@ -50,7 +50,10 @@ namespace QuanLyHoSoCongChuc
 
         private void ChucNang_Click(object sender, EventArgs e)
         {
-            FrmChucNangQTCT frm = new FrmChucNangQTCT();
+            //FrmChucNangQTCT frm = new FrmChucNangQTCT();            
+            //frm.Show(DockPanel);
+
+            FrmChucNangQTCTMoi frm = new FrmChucNangQTCTMoi();
             frm.Show(DockPanel);
         }
 
