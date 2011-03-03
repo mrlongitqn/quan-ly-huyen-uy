@@ -44,82 +44,27 @@ namespace QuanLyHoSoCongChuc
                 CrystalReport1 rpt = new CrystalReport1();
 
                 // Parameter 1
-                //ParameterFieldDefinitions crParameterFieldDefinitions1;
-                //ParameterFieldDefinition crParameterFieldDefinition1;
-                //ParameterValues crParameterValues1 = new ParameterValues();
-                //ParameterDiscreteValue crParameterDiscreteValue1 = new ParameterDiscreteValue();
-                //crParameterDiscreteValue1.Value = "1) Họ và tên:" + NhanVienDt.Rows[0]["HoTenNhanVien"].ToString() + ". Giới tính: " + getGioiTinh(NhanVienDt.Rows[0]["HoTenNhanVien"].ToString());
-                //crParameterFieldDefinitions1 = rpt.DataDefinition.ParameterFields;
-                //crParameterFieldDefinition1 = crParameterFieldDefinitions1["HoTen"];
-                //crParameterValues1 = crParameterFieldDefinition1.CurrentValues;
-                //crParameterValues1.Clear();
-                //crParameterValues1.Add(crParameterDiscreteValue1);
-                //crParameterFieldDefinition1.ApplyCurrentValues(crParameterValues1);
-
                 rpt.DataDefinition.FormulaFields["HoTen"].Text = "'1) Họ và tên: " + NhanVienDt.Rows[0]["HoTenNhanVien"].ToString() + ". Giới tính: " + getGioiTinh(NhanVienDt.Rows[0]["HoTenNhanVien"].ToString())+"'";
 
+                // Parameter 3b
+                rpt.DataDefinition.FormulaFields["ChucVu"].Text = "'- Chức vụ: " + NhanVienDt.Rows[0]["ChucVuLanhDaoKiemNhiem"].ToString() + "'";
+                rpt.DataDefinition.FormulaFields["HeSoPhuCap"].Text = "'- Hệ số phụ cấp: " + NhanVienDt.Rows[0]["HeSoPhuCapChucVu"].ToString() + "'";
+
                 // Parameter 4
-                //ParameterFieldDefinitions crParameterFieldDefinitions4;
-                //ParameterFieldDefinition crParameterFieldDefinition4;
-                //ParameterValues crParameterValues4 = new ParameterValues();
-                //ParameterDiscreteValue crParameterDiscreteValue4 = new ParameterDiscreteValue();
                 DateTime MyDateTime = new DateTime();
                 String MyString = NhanVienDt.Rows[0]["NgaySinh"].ToString();
                 MyDateTime = Convert.ToDateTime(MyString);
 
-                //crParameterDiscreteValue4.Value = "4) Sinh ngày: " + MyDateTime.Day + " tháng " + MyDateTime.Month + " năm " + MyDateTime.Year;//03 tháng 01 năm 1987";
-                //crParameterFieldDefinitions4 = rpt.DataDefinition.ParameterFields;
-                //crParameterFieldDefinition4 = crParameterFieldDefinitions4["NgaySinh"];
-                //crParameterValues4 = crParameterFieldDefinition4.CurrentValues;
-                //crParameterValues4.Clear();
-                //crParameterValues4.Add(crParameterDiscreteValue4);
-                //crParameterFieldDefinition4.ApplyCurrentValues(crParameterValues4);
 
                 rpt.DataDefinition.FormulaFields["NgaySinh"].Text = "'4) Sinh ngày: " + MyDateTime.Day + " tháng " + MyDateTime.Month + " năm " + MyDateTime.Year + "'";
 
                 // Parameter 5
-                //ParameterFieldDefinitions crParameterFieldDefinitions5;
-                //ParameterFieldDefinition crParameterFieldDefinition5;
-                //ParameterValues crParameterValues5 = new ParameterValues();
-                //ParameterDiscreteValue crParameterDiscreteValue5 = new ParameterDiscreteValue();
-                //crParameterDiscreteValue5.Value = "5) Nơi sinh: " + NhanVienDt.Rows[0]["NoiSinh"].ToString(); ;
-                //crParameterFieldDefinitions5 = rpt.DataDefinition.ParameterFields;
-                //crParameterFieldDefinition5 = crParameterFieldDefinitions5["NoiSinh"];
-                //crParameterValues5 = crParameterFieldDefinition5.CurrentValues;
-                //crParameterValues5.Clear();
-                //crParameterValues5.Add(crParameterDiscreteValue5);
-                //crParameterFieldDefinition5.ApplyCurrentValues(crParameterValues5);
-
                 rpt.DataDefinition.FormulaFields["NoiSinh"].Text = "'5) Nơi sinh: " + NhanVienDt.Rows[0]["NoiSinh"].ToString() + "'";
 
                 // Parameter 6
-                //ParameterFieldDefinitions crParameterFieldDefinitions6;
-                //ParameterFieldDefinition crParameterFieldDefinition6;
-                //ParameterValues crParameterValues6 = new ParameterValues();
-                //ParameterDiscreteValue crParameterDiscreteValue6 = new ParameterDiscreteValue();
-                //crParameterDiscreteValue6.Value = "6) Quê quán: " + NhanVienDt.Rows[0]["QueQuan"].ToString(); 
-                //crParameterFieldDefinitions6 = rpt.DataDefinition.ParameterFields;
-                //crParameterFieldDefinition6 = crParameterFieldDefinitions6["QueQuan"];
-                //crParameterValues6 = crParameterFieldDefinition6.CurrentValues;
-                //crParameterValues6.Clear();
-                //crParameterValues6.Add(crParameterDiscreteValue6);
-                //crParameterFieldDefinition6.ApplyCurrentValues(crParameterValues6);
-
                 rpt.DataDefinition.FormulaFields["QueQuan"].Text = "'6) Quê quán: " + NhanVienDt.Rows[0]["QueQuan"].ToString() + "'";
 
                 // Parameter 7
-                //ParameterFieldDefinitions crParameterFieldDefinitions7;
-                //ParameterFieldDefinition crParameterFieldDefinition7;
-                //ParameterValues crParameterValues7 = new ParameterValues();
-                //ParameterDiscreteValue crParameterDiscreteValue7 = new ParameterDiscreteValue();
-                //crParameterDiscreteValue7.Value = "7) Nơi ở hiện nay: "+ NhanVienDt.Rows[0]["NoiOHienTai"].ToString(); 
-                //crParameterFieldDefinitions7 = rpt.DataDefinition.ParameterFields;
-                //crParameterFieldDefinition7 = crParameterFieldDefinitions7["NoiOHienNay"];
-                //crParameterValues7 = crParameterFieldDefinition7.CurrentValues;
-                //crParameterValues7.Clear();
-                //crParameterValues7.Add(crParameterDiscreteValue7);
-                //crParameterFieldDefinition7.ApplyCurrentValues(crParameterValues7);
-
                 rpt.DataDefinition.FormulaFields["NoiOHienNay"].Text = "'7) Nơi ở hiện nay: " + NhanVienDt.Rows[0]["NoiOHienTai"].ToString() + "'";
 
                 // Parameter 7b
@@ -169,11 +114,6 @@ namespace QuanLyHoSoCongChuc
                 rpt.DataDefinition.FormulaFields["NgayVaoDang"].Text = "'14) Ngày vào Đảng Cộng Sản Việt Nam: " + MyDateTime.Day + "/" + MyDateTime.Month + "/" + MyDateTime.Year + ", Ngày chính thức: " + MyDateTime2.Day + "/" + MyDateTime2.Month + "/" + MyDateTime2.Year + "'";
 
                 // Parameter 15
-                //ParameterFieldDefinitions crParameterFieldDefinitions15;
-                //ParameterFieldDefinition crParameterFieldDefinition15;
-                //ParameterValues crParameterValues15 = new ParameterValues();
-                //ParameterDiscreteValue crParameterDiscreteValue15 = new ParameterDiscreteValue();
-
                 MyString = NhanVienDt.Rows[0]["NgayThamGiaTCCTXH"].ToString();
                 MyDateTime = Convert.ToDateTime(MyString);
                 rpt.DataDefinition.FormulaFields["NgayThamGiaCacToChucChinhTri"].Text = "'15) Ngày tham gia các tổ chức chính trị (Đoàn TNCSHCM, Công đoàn, Hội): " + MyDateTime.Day + "/" + MyDateTime.Month + "/" + MyDateTime.Year + "'";
@@ -191,63 +131,40 @@ namespace QuanLyHoSoCongChuc
                 rpt.DataDefinition.FormulaFields["HocVi"].Text = "'- Học hàm, học vị cao nhất: Cử nhân, năm 2010, chuyên ngành Công nghệ thông tin'";
 
                 // Parameter 17b
-                rpt.DataDefinition.FormulaFields["LyLuanChinhTri"].Text = "'- Lý luận chính trị: Sơ cấp.   -Ngoại ngữ: Anh'";
+                sql = "select * from TrinhDoChinhTri where MaTrinhDoChinhTri='" + NhanVienDt.Rows[0]["MaTrinhDoChinhTri"].ToString() + "'";
+                ds.Clear();
+                ds = service.ExecuteQuery(sql);
+                String TenTrinhDoChinhTri = ds.Tables[0].Rows[0]["TenTrinhDoChinhTri"].ToString() ;
+
+                sql = "select * from TrinhDoNgoaiNgu where MaTrinhDoNgoaiNgu='" + NhanVienDt.Rows[0]["MaTrinhDoNgoaiNgu"].ToString() + "'";
+                ds.Clear();
+                ds = service.ExecuteQuery(sql);
+                rpt.DataDefinition.FormulaFields["LyLuanChinhTri"].Text = "'- Lý luận chính trị: " + TenTrinhDoChinhTri + ".   - Ngoại ngữ: " + ds.Tables[0].Rows[0]["TenTrinhDoNgoaiNgu"] + "'";
 
                 // Parameter 18
-                //ParameterFieldDefinitions crParameterFieldDefinitions18;
-                //ParameterFieldDefinition crParameterFieldDefinition18;
-                //ParameterValues crParameterValues18 = new ParameterValues();
-                //ParameterDiscreteValue crParameterDiscreteValue18 = new ParameterDiscreteValue();
-                //crParameterDiscreteValue18.Value = "18) Công tác chính đang làm: học thêm";
-                //crParameterFieldDefinitions18 = rpt.DataDefinition.ParameterFields;
-                //crParameterFieldDefinition18 = crParameterFieldDefinitions18["CongTacChinh"];
-                //crParameterValues18 = crParameterFieldDefinition18.CurrentValues;
-                //crParameterValues18.Clear();
-                //crParameterValues18.Add(crParameterDiscreteValue18);
-                //crParameterFieldDefinition18.ApplyCurrentValues(crParameterValues18);
+
                 rpt.DataDefinition.FormulaFields["CongTacChinh"].Text = "'18) Công tác chính đang làm: học thêm'";
 
                 // Parameter 19
-                //ParameterFieldDefinitions crParameterFieldDefinitions19;
-                //ParameterFieldDefinition crParameterFieldDefinition19;
-                //ParameterValues crParameterValues19 = new ParameterValues();
-                //ParameterDiscreteValue crParameterDiscreteValue19 = new ParameterDiscreteValue();
-                //crParameterDiscreteValue19.Value = "19) Ngạch công chức: ko biết (Mã số: .................). Bậc lương: ......, hệ số: 8, từ tháng 8/1999";
-                //crParameterFieldDefinitions19 = rpt.DataDefinition.ParameterFields;
-                //crParameterFieldDefinition19 = crParameterFieldDefinitions19["NgachCongChuc"];
-                //crParameterValues19 = crParameterFieldDefinition19.CurrentValues;
-                //crParameterValues19.Clear();
-                //crParameterValues19.Add(crParameterDiscreteValue19);
-                //crParameterFieldDefinition19.ApplyCurrentValues(crParameterValues19);
-                rpt.DataDefinition.FormulaFields["NgachCongChuc"].Text = "'19) Ngạch công chức: ko biết (Mã số: .................). Bậc lương: ......, hệ số: 8, từ tháng 8/1999'";
+
+                rpt.DataDefinition.FormulaFields["NgachCongChuc"].Text = "'19) Ngạch công chức: ............. (Mã số: ...........). Bậc lương: ......, hệ số: ..., từ tháng ...........'";
 
                 // Parameter 20
-                //ParameterFieldDefinitions crParameterFieldDefinitions20;
-                //ParameterFieldDefinition crParameterFieldDefinition20;
-                //ParameterValues crParameterValues20 = new ParameterValues();
-                //ParameterDiscreteValue crParameterDiscreteValue20 = new ParameterDiscreteValue();
-                //crParameterDiscreteValue20.Value = "20) Danh hiệu được phong: Anh hùng lao động, năm 2000";
-                //crParameterFieldDefinitions20 = rpt.DataDefinition.ParameterFields;
-                //crParameterFieldDefinition20 = crParameterFieldDefinitions20["DanhHieu"];
-                //crParameterValues20 = crParameterFieldDefinition20.CurrentValues;
-                //crParameterValues20.Clear();
-                //crParameterValues20.Add(crParameterDiscreteValue20);
-                //crParameterFieldDefinition20.ApplyCurrentValues(crParameterValues20);
-
-                rpt.DataDefinition.FormulaFields["DanhHieu"].Text = "'20) Danh hiệu được phong: Anh hùng lao động, năm 2000'";
+         
+                rpt.DataDefinition.FormulaFields["DanhHieu"].Text = "'20) Danh hiệu được phong: .......................................'";
 
                 // Parameter 21
-                rpt.DataDefinition.FormulaFields["SoTruong"].Text = "'21) Sở trường công tác: Chơi game. Công việc đã làm lâu nhất: Chơi fifa'";
+                rpt.DataDefinition.FormulaFields["SoTruong"].Text = "'21) Sở trường công tác: ......................... Công việc đã làm lâu nhất: .....................'";
 
                 // Parameter 22
 
-                rpt.DataDefinition.FormulaFields["KhenThuong"].Text = "'22) Khen thưởng: .............'";
+                rpt.DataDefinition.FormulaFields["KhenThuong"].Text = "'22) Khen thưởng: ................................................'";
 
                 // Parameter 23
-                rpt.DataDefinition.FormulaFields["KyLuat"].Text = "'23) Kỷ luật: .............'";
+                rpt.DataDefinition.FormulaFields["KyLuat"].Text = "'23) Kỷ luật: ...................................................'";
 
                 // Parameter 24
-                rpt.DataDefinition.FormulaFields["TinhTrangSucKhoe"].Text = "'24) Tình trạng sức khỏe: bình thường. Cao 1m70. Cân nặng 72kg. Nhóm máu A'";
+                rpt.DataDefinition.FormulaFields["TinhTrangSucKhoe"].Text = "'24) Tình trạng sức khỏe: ............. Cao ........ Cân nặng ...... Nhóm máu ....'";
 
                 rpt.DataDefinition.FormulaFields["CMND"].Text = "'25) Số chứng minh nhân dân: " + NhanVienDt.Rows[0]["SoChungMinhNhanDan"].ToString() + ". Thương binh loại: ..............Gia đình liệt sỹ: .............'";
 
