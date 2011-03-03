@@ -43,5 +43,27 @@ namespace QuanLyHoSoCongChuc.Properties {
                 return ((string)(this["QLHSCCConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TUANDOM-PC;Initial Catalog=QLHSCC;Persist Security Info=True;User ID=" +
+            "sa;Password=1")]
+        public string QLHSCCConnectionString1 {
+            get {
+                return ((string)(this["QLHSCCConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TUANDOM-PC\\;Initial Catalog=QLHSCC;Persist Security Info=True;User ID" +
+            "=sa;Password=1")]
+        public string QLHSCCConnectionStringOK {
+            get {
+                return ((string)(this["QLHSCCConnectionStringOK"]));
+            }
+        }
     }
 }

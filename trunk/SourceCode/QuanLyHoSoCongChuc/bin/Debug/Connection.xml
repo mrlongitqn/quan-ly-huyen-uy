@@ -10,9 +10,9 @@ Thong so co ban:
 	database: ten co so du lieu
 -->
 <config>
-  <costatus>true</costatus>
-  <servname>COMPAQ-D01C172E\SQLEXPRESS</servname>
-  <username />
-  <password />
+  <costatus>false</costatus>
+  <servname />
+  <username>sa</username>
+  <password>1</password>
   <database>QLHSCC</database>
 </config>
