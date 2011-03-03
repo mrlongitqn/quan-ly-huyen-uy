@@ -48,7 +48,7 @@ namespace QuanLyHoSoCongChuc
 
                 // Parameter 3b
                 rpt.DataDefinition.FormulaFields["ChucVu"].Text = "'- Chức vụ: " + NhanVienDt.Rows[0]["ChucVuLanhDaoKiemNhiem"].ToString() + "'";
-                rpt.DataDefinition.FormulaFields["HeSoPhuCap"].Text = "'- Hệ số phụ cấp: " + NhanVienDt.Rows[0]["HeSoPhuCapChucVu"].ToString() + "'";
+                rpt.DataDefinition.FormulaFields["HeSoPhuCap"].Text = "'- Hệ số phụ cấp: " + NhanVienDt.Rows[0]["HeSoPhuCapKiemNhiem"].ToString() + "'";
 
                 // Parameter 4
                 DateTime MyDateTime = new DateTime();
