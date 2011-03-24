@@ -489,6 +489,12 @@
     <Compile Include="FrmTimKiem.Designer.cs">
       <DependentUpon>FrmTimKiem.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTimKiem2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTimKiem2.Designer.cs">
+      <DependentUpon>FrmTimKiem2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmTinhTrangHonNhan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -709,6 +715,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTimKiem.resx">
       <DependentUpon>FrmTimKiem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTimKiem2.resx">
+      <DependentUpon>FrmTimKiem2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTinhTrangHonNhan.resx">
       <SubType>Designer</SubType>

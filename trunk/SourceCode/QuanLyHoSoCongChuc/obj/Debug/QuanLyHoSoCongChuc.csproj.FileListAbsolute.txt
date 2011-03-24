@@ -191,3 +191,4 @@ C:\Users\tuandom\Desktop\QuanLyHuyenUy\SourceCode\QuanLyHoSoCongChuc\obj\Debug\R
 C:\Users\tuandom\Desktop\QuanLyHuyenUy\SourceCode\QuanLyHoSoCongChuc\obj\Debug\QuanLyHoSoCongChuc.Report2.resources
 C:\Users\tuandom\Desktop\QuanLyHuyenUy\SourceCode\QuanLyHoSoCongChuc\obj\Debug\QuanLyHoSoCongChuc.Report1.resources
 C:\Users\tuandom\Desktop\QuanLyHuyenUy\SourceCode\QuanLyHoSoCongChuc\obj\Debug\QuanLyHoSoCongChuc.FrmDanhSachNhanVien.resources
+C:\Users\tuandom\Desktop\QuanLyHuyenUy\SourceCode\QuanLyHoSoCongChuc\obj\Debug\QuanLyHoSoCongChuc.FrmTimKiem2.resources
