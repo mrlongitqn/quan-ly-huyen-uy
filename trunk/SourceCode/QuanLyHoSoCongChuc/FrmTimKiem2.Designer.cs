@@ -1,4 +1,4 @@
-namespace QuanLyHoSoCongChuc
+Ôªønamespace QuanLyHoSoCongChuc
 {
     partial class FrmTimKiem2
     {
@@ -54,7 +54,7 @@ namespace QuanLyHoSoCongChuc
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
-            this.button1.Text = "TÏm";
+            this.button1.Text = "T√¨m";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -79,8 +79,8 @@ namespace QuanLyHoSoCongChuc
             this.cbo1.FormattingEnabled = true;
             this.cbo1.Items.AddRange(new object[] {
             "---",
-            "S? nam cÙng t·c",
-            "–? tu?i"});
+            "S? nam cÔøΩng tÔøΩc",
+            "ÔøΩ? tu?i"});
             this.cbo1.Location = new System.Drawing.Point(149, 26);
             this.cbo1.Name = "cbo1";
             this.cbo1.Size = new System.Drawing.Size(121, 21);
@@ -94,7 +94,7 @@ namespace QuanLyHoSoCongChuc
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 4;
-            this.label1.Text = "TÏm ki?m theo";
+            this.label1.Text = "T√¨m ki·∫øm theo";
             // 
             // label2
             // 
@@ -103,7 +103,7 @@ namespace QuanLyHoSoCongChuc
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(20, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "T?";
+            this.label2.Text = "T·ª´";
             // 
             // label3
             // 
@@ -145,49 +145,49 @@ namespace QuanLyHoSoCongChuc
             // MaNhanVien
             // 
             this.MaNhanVien.DataPropertyName = "MaNhanVien";
-            this.MaNhanVien.HeaderText = "M„ NV";
+            this.MaNhanVien.HeaderText = "M√£ NV";
             this.MaNhanVien.Name = "MaNhanVien";
             // 
             // HoTenNhanVien
             // 
             this.HoTenNhanVien.DataPropertyName = "HoTenNhanVien";
-            this.HoTenNhanVien.HeaderText = "H? TÍn Nh‚n ViÍn";
+            this.HoTenNhanVien.HeaderText = "H·ªç t√™n nh√¢n vi√™n";
             this.HoTenNhanVien.Name = "HoTenNhanVien";
             // 
             // NgaySinh
             // 
             this.NgaySinh.DataPropertyName = "NgaySinh";
-            this.NgaySinh.HeaderText = "Ng‡y sinh";
+            this.NgaySinh.HeaderText = "Ng√†y sinh";
             this.NgaySinh.Name = "NgaySinh";
             // 
             // NgayHopDong
             // 
             this.NgayHopDong.DataPropertyName = "NgayHopDong";
-            this.NgayHopDong.HeaderText = "Ng‡y h?p d?ng";
+            this.NgayHopDong.HeaderText = "Ng√†y h·ª£p ƒë·ªìng";
             this.NgayHopDong.Name = "NgayHopDong";
             // 
             // MaGioiTinh
             // 
             this.MaGioiTinh.DataPropertyName = "MaGioiTinh";
-            this.MaGioiTinh.HeaderText = "Gi?i TÌnh";
+            this.MaGioiTinh.HeaderText = "Gi·ªõi t√≠nh";
             this.MaGioiTinh.Name = "MaGioiTinh";
             // 
             // MaChucVu
             // 
             this.MaChucVu.DataPropertyName = "MaChucVu";
-            this.MaChucVu.HeaderText = "Ch?c V?";
+            this.MaChucVu.HeaderText = "Ch·ª©c v·ª•";
             this.MaChucVu.Name = "MaChucVu";
             // 
             // MaDonVi
             // 
             this.MaDonVi.DataPropertyName = "MaDonVi";
-            this.MaDonVi.HeaderText = "–on V?";
+            this.MaDonVi.HeaderText = "ƒê∆°n v·ªã";
             this.MaDonVi.Name = "MaDonVi";
             // 
             // MaLuongNhanVien
             // 
             this.MaLuongNhanVien.DataPropertyName = "MaLuongNhanVien";
-            this.MaLuongNhanVien.HeaderText = "M„ Luong Nh‚n ViÍn";
+            this.MaLuongNhanVien.HeaderText = "M√£ l∆∞∆°ng nh√¢n vi√™n";
             this.MaLuongNhanVien.Name = "MaLuongNhanVien";
             // 
             // FrmTimKiem2
