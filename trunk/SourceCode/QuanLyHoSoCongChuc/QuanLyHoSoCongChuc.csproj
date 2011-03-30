@@ -249,6 +249,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds4RP1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EncryptText.cs" />
     <Compile Include="FrmChucNangKhenThuong.cs">
       <SubType>Form</SubType>
     </Compile>
