@@ -12,7 +12,7 @@ Thong so co ban:
 <config>
 	<costatus>false</costatus>
 	<servname>PC2011042720BGO\SQLEXPRESS</servname>
-	<username></username>
-	<password></password>
+	<username>sa</username>
+	<password>123456789</password>
 	<database>QLHSCC</database>
 </config>
