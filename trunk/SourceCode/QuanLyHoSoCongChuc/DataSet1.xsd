@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLHSCCConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLHSCCConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.QuanLyHoSoCongChuc.Properties.Settings.GlobalReference.Default.QLHSCCConnectionString1" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ChucVuChinhQuyen" msprop:Generator_TableClassName="ChucVuChinhQuyenDataTable" msprop:Generator_TableVarName="tableChucVuChinhQuyen" msprop:Generator_TablePropName="ChucVuChinhQuyen" msprop:Generator_RowDeletingName="ChucVuChinhQuyenRowDeleting" msprop:Generator_UserTableName="ChucVuChinhQuyen" msprop:Generator_RowChangingName="ChucVuChinhQuyenRowChanging" msprop:Generator_RowEvHandlerName="ChucVuChinhQuyenRowChangeEventHandler" msprop:Generator_RowDeletedName="ChucVuChinhQuyenRowDeleted" msprop:Generator_RowEvArgName="ChucVuChinhQuyenRowChangeEvent" msprop:Generator_RowChangedName="ChucVuChinhQuyenRowChanged" msprop:Generator_RowClassName="ChucVuChinhQuyenRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaChucVuChinhQuyen" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMaChucVuChinhQuyen" msprop:Generator_ColumnPropNameInRow="MaChucVuChinhQuyen" msprop:Generator_ColumnPropNameInTable="MaChucVuChinhQuyenColumn" msprop:Generator_UserColumnName="MaChucVuChinhQuyen" type="xs:int" />
+              <xs:element name="TenChucVuChinhQuyen" msprop:Generator_ColumnVarNameInTable="columnTenChucVuChinhQuyen" msprop:Generator_ColumnPropNameInRow="TenChucVuChinhQuyen" msprop:Generator_ColumnPropNameInTable="TenChucVuChinhQuyenColumn" msprop:Generator_UserColumnName="TenChucVuChinhQuyen" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ChucVuChinhQuyen" />
+      <xs:field xpath="mstns:MaChucVuChinhQuyen" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
