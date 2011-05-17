@@ -31,10 +31,10 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btnNangLuong_Click(object sender, EventArgs e)
         {
-            this.bindingSourceLuong.DataSource = NhanVienControl.LayDsLuongNhanVien(dtngaynangluong.Value.ToShortDateString());
-            this.reportViewerLuong.RefreshReport();
-            m_NhanVienCtrl.CapNhatCanSu(dtngaynangluong.Value.ToShortDateString());
-            m_NhanVienCtrl.CapNhatChuyenVien(dtngaynangluong.Value.ToShortDateString());
+            //this.bindingSourceLuong.DataSource = NhanVienControl.LayDsLuongNhanVien(dtngaynangluong.Value.ToShortDateString());
+            //this.reportViewerLuong.RefreshReport();
+            //m_NhanVienCtrl.CapNhatCanSu(dtngaynangluong.Value.ToShortDateString());
+            //m_NhanVienCtrl.CapNhatChuyenVien(dtngaynangluong.Value.ToShortDateString());
         }
 
         private void btnthoat_Click(object sender, EventArgs e)

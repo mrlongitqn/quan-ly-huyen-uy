@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc
                 DataService.OpenConnection();
                 conn = new SqlConnection(DataService.m_ConnectString );
                 conn.Open();
-                String sql = "select * from DaoTao where MaNhanVien='" + MaNV+"' ";
+                String sql = "select * from QuaTrinhDaoTao where MaNhanVien='" + MaNV+"' ";
                 adapter = new SqlDataAdapter(sql, conn);
                 //dataset = new DataSet();
                 adapter.Fill(ds4RP1, "DaoTao");
