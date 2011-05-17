@@ -7084,294 +7084,294 @@
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="LllsMFM7oECzm2jmurjMNgAA">
-<XPD:ATTR name="Name" type="string">HinhAnh:string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="jHWPVHd/CEW8TZDNrGi5bQAA">
-<XPD:ATTR name="Name" type="string">HoTenNhanVien</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="kH1mELKwGkCJbySFzZ9lnQAA">
-<XPD:ATTR name="Name" type="string">TenGoiKhac</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[6]" type="UMLAttribute" guid="h0tkIxryLEONhEoObRI80gAA">
-<XPD:ATTR name="Name" type="string">MaGioiTinh:string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[7]" type="UMLAttribute" guid="3604NLigOk2fZMlm9KEfKQAA">
-<XPD:ATTR name="Name" type="string">NgaySinh</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[8]" type="UMLAttribute" guid="M/JqyLU1WUiYpW0i1XqxUQAA">
-<XPD:ATTR name="Name" type="string">NoiSinh</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[9]" type="UMLAttribute" guid="rJM0EiEHOU6qjs34aVdaSgAA">
-<XPD:ATTR name="Name" type="string">SoChungMinhNhanDan</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[10]" type="UMLAttribute" guid="2MeKKAHLSUKAyeBEZl04rQAA">
-<XPD:ATTR name="Name" type="string">NoiCap:string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[11]" type="UMLAttribute" guid="FkT9xExyBEO154xZuDsqvgAA">
-<XPD:ATTR name="Name" type="string">NgayCap</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[12]" type="UMLAttribute" guid="Z/yBp1qhjEmuMmTSE+qqawAA">
+<XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="Z/yBp1qhjEmuMmTSE+qqawAA">
 <XPD:ATTR name="Name" type="string">MaDanToc</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[13]" type="UMLAttribute" guid="jn0fx/3XBEq/MfmMqgQP0wAA">
-<XPD:ATTR name="Name" type="string">MaTonGiao</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[14]" type="UMLAttribute" guid="JFBXkvo9p0G6/qvQZ4x37AAA">
-<XPD:ATTR name="Name" type="string">QueQuan:string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[15]" type="UMLAttribute" guid="0z7Ufcmv+EuZNv/MZ3ykLAAA">
-<XPD:ATTR name="Name" type="string">HoKhauThuongTru</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[16]" type="UMLAttribute" guid="nogBKbAZYEmeMTqBie9MBAAA">
-<XPD:ATTR name="Name" type="string">NoiOHienTai:string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[17]" type="UMLAttribute" guid="icJBEbLHAEyDwQfL0tDx3gAA">
-<XPD:ATTR name="Name" type="string">DienThoaiNhaRieng</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[18]" type="UMLAttribute" guid="z/mSPpiJD0mt3kNTPgdIHgAA">
-<XPD:ATTR name="Name" type="string">DienThoaiDiDong</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[19]" type="UMLAttribute" guid="PkWFjcOOGEWLKYRkVgEpCAAA">
+<XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="PkWFjcOOGEWLKYRkVgEpCAAA">
 <XPD:ATTR name="Name" type="string">MaTinhTrangHonNhan</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[20]" type="UMLAttribute" guid="+8Lna356QkSfR6NTEPiBLgAA">
+<XPD:OBJ name="Attributes[5]" type="UMLAttribute" guid="h0tkIxryLEONhEoObRI80gAA">
+<XPD:ATTR name="Name" type="string">MaGioiTinh:string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[6]" type="UMLAttribute" guid="+8Lna356QkSfR6NTEPiBLgAA">
 <XPD:ATTR name="Name" type="string">MaThanhPhanXuatThan</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[21]" type="UMLAttribute" guid="Du2BwcGg6k6EuAQREX/EHwAA">
-<XPD:ATTR name="Name" type="string">MaDienUuTienCuaGiaDinh</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[22]" type="UMLAttribute" guid="KMizqhDKQ0qEonvQbBy9ZgAA">
+<XPD:OBJ name="Attributes[7]" type="UMLAttribute" guid="KMizqhDKQ0qEonvQbBy9ZgAA">
 <XPD:ATTR name="Name" type="string">MaDienUuTienCuaBanThan</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[23]" type="UMLAttribute" guid="699c+tp5Pku7osSZN27DlgAA">
-<XPD:ATTR name="Name" type="string">NangKhieu</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[24]" type="UMLAttribute" guid="amR3ImEObE68wOvsgujAbQAA">
-<XPD:ATTR name="Name" type="string">NgayHopDong</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[25]" type="UMLAttribute" guid="4NSMVZO8vEu6WV9euNjc2wAA">
-<XPD:ATTR name="Name" type="string">NgayTuyenDung</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[26]" type="UMLAttribute" guid="lEBDoPsBJ0i/3rlGAvY1mgAA">
-<XPD:ATTR name="Name" type="string">MaDonVi</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[27]" type="UMLAttribute" guid="rmKn3g4gD0u3AJ0YulFlgwAA">
+<XPD:OBJ name="Attributes[8]" type="UMLAttribute" guid="rmKn3g4gD0u3AJ0YulFlgwAA">
 <XPD:ATTR name="Name" type="string">MaCongViec</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[28]" type="UMLAttribute" guid="n4uAuPADk0Wkj0r8bp+CfQAA">
-<XPD:ATTR name="Name" type="string">NgayBoNhiemVaoNgach</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:OBJ name="Attributes[9]" type="UMLAttribute" guid="Du2BwcGg6k6EuAQREX/EHwAA">
+<XPD:ATTR name="Name" type="string">MaDienUuTienCuaGiaDinh</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[29]" type="UMLAttribute" guid="O7Ggo8MtQE6/nDNFbY3+fQAA">
-<XPD:ATTR name="Name" type="string">NgayVeCoQuanHienTai</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[30]" type="UMLAttribute" guid="KPRqOZQrTESQBY3FecNk7wAA">
+<XPD:OBJ name="Attributes[10]" type="UMLAttribute" guid="KPRqOZQrTESQBY3FecNk7wAA">
 <XPD:ATTR name="Name" type="string">MaLoaiCanBo</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[31]" type="UMLAttribute" guid="MPQhiF+T6EeLC3OsMambtAAA">
-<XPD:ATTR name="Name" type="string">CongViecHienNay</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[32]" type="UMLAttribute" guid="OrkWwS6spUiYK5PGo4WKKwAA">
+<XPD:OBJ name="Attributes[11]" type="UMLAttribute" guid="OrkWwS6spUiYK5PGo4WKKwAA">
 <XPD:ATTR name="Name" type="string">MaLoaiNghiBaoHiemXaHoi</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[33]" type="UMLAttribute" guid="xFATFvs+W0Gc/ps7PDNHGgAA">
+<XPD:OBJ name="Attributes[12]" type="UMLAttribute" guid="xFATFvs+W0Gc/ps7PDNHGgAA">
 <XPD:ATTR name="Name" type="string">MaChucVu</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[34]" type="UMLAttribute" guid="L9FDCQvNO0a444hCNe2WQQAA">
-<XPD:ATTR name="Name" type="string">NgayBoNhiemChucVuHienTai</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[35]" type="UMLAttribute" guid="EdNdyC0gBkqQEUQdXGQlXAAA">
-<XPD:ATTR name="Name" type="string">LanBoNhiemCVCQHienTai</XPD:ATTR>
+<XPD:OBJ name="Attributes[13]" type="UMLAttribute" guid="lEBDoPsBJ0i/3rlGAvY1mgAA">
+<XPD:ATTR name="Name" type="string">MaDonVi</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[36]" type="UMLAttribute" guid="s5y7WEfW50a7sn07oia+EAAA">
-<XPD:ATTR name="Name" type="string">ChucVuLanhDaoKiemNhiem</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[37]" type="UMLAttribute" guid="WF74nPxN00urCeICHXcNPAAA">
-<XPD:ATTR name="Name" type="string">ChucVuChinhQuyenCaoNhat</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[38]" type="UMLAttribute" guid="nm5/gt+H+02BtrDjwQ9nYgAA">
-<XPD:ATTR name="Name" type="string">NgayVaoDang</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[39]" type="UMLAttribute" guid="i2/GlKwwvEaoO+/au9tf8QAA">
-<XPD:ATTR name="Name" type="string">NgayChinhThuc</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[40]" type="UMLAttribute" guid="hNnVCP4WPUOhZe9IsUtMvgAA">
-<XPD:ATTR name="Name" type="string">ChucVuDangHienTai</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[41]" type="UMLAttribute" guid="SMC3cpwQzEymaZkafoc1fgAA">
-<XPD:ATTR name="Name" type="string">DoanVien</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[42]" type="UMLAttribute" guid="0FZWA2XuskKDv1egWYeAewAA">
-<XPD:ATTR name="Name" type="string">NgayThamGiaTCCTXH</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[43]" type="UMLAttribute" guid="tr2usxnMY0W0eXs4/mVd/QAA">
-<XPD:ATTR name="Name" type="string">TenTCCTXH</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[44]" type="UMLAttribute" guid="132wP7Qp/0ivqbg3JxMAswAA">
-<XPD:ATTR name="Name" type="string">ChucVuDoan</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[45]" type="UMLAttribute" guid="ltucUx4IxUSfyo8DCqpmKwAA">
-<XPD:ATTR name="Name" type="string">DangDTBD</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[46]" type="UMLAttribute" guid="OV1as8UKUUGtlOJNJvCsQwAA">
+<XPD:OBJ name="Attributes[14]" type="UMLAttribute" guid="OV1as8UKUUGtlOJNJvCsQwAA">
 <XPD:ATTR name="Name" type="string">MaTrinhDoHocVan</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[47]" type="UMLAttribute" guid="4N1wvnAO6EaBdXJeyxjPWgAA">
-<XPD:ATTR name="Name" type="string">MaTrinhDoChuyenMon</XPD:ATTR>
+<XPD:OBJ name="Attributes[15]" type="UMLAttribute" guid="jn0fx/3XBEq/MfmMqgQP0wAA">
+<XPD:ATTR name="Name" type="string">MaTonGiao</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[48]" type="UMLAttribute" guid="H/o9hvGPEkSn/K8OnfuBcAAA">
+<XPD:OBJ name="Attributes[16]" type="UMLAttribute" guid="H/o9hvGPEkSn/K8OnfuBcAAA">
 <XPD:ATTR name="Name" type="string">MaTrinhDoChinhTri</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[49]" type="UMLAttribute" guid="l4CdYHea1kCsoS/SSx6dvQAA">
+<XPD:OBJ name="Attributes[17]" type="UMLAttribute" guid="4N1wvnAO6EaBdXJeyxjPWgAA">
+<XPD:ATTR name="Name" type="string">MaTrinhDoChuyenMon</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[18]" type="UMLAttribute" guid="l4CdYHea1kCsoS/SSx6dvQAA">
 <XPD:ATTR name="Name" type="string">MaTrinhDoQuanLyNhaNuoc</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[50]" type="UMLAttribute" guid="mxN2F1dRY0uzhOSU++AZNQAA">
+<XPD:OBJ name="Attributes[19]" type="UMLAttribute" guid="mxN2F1dRY0uzhOSU++AZNQAA">
 <XPD:ATTR name="Name" type="string">MaTrinhDoTinHoc</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[51]" type="UMLAttribute" guid="yrNY4RTlj02n9e8wLhVkkQAA">
+<XPD:OBJ name="Attributes[20]" type="UMLAttribute" guid="yrNY4RTlj02n9e8wLhVkkQAA">
 <XPD:ATTR name="Name" type="string">MaNgach</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[52]" type="UMLAttribute" guid="+2ZdxaHglUCjsuKfEQRw2QAA">
-<XPD:ATTR name="Name" type="string">BacLuong</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[53]" type="UMLAttribute" guid="h2Mg93F97keKUFQ6J1f8OwAA">
-<XPD:ATTR name="Name" type="string">LuongCongChucDuBi</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[54]" type="UMLAttribute" guid="HACRm9KfPUWJwf8/+MujbAAA">
-<XPD:ATTR name="Name" type="string">ChenhLechBaoLuuHeSoLuong</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[55]" type="UMLAttribute" guid="NGd0eRaSgUSSnqn2jo/5AQAA">
-<XPD:ATTR name="Name" type="string">HuongLuongTuNgay</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[56]" type="UMLAttribute" guid="khuCgz0n8EyUT9FdZ4ePggAA">
-<XPD:ATTR name="Name" type="string">MocTinhNangLuongLanSau</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[57]" type="UMLAttribute" guid="RRJSsFP7ZUm7cuj+robajQAA">
-<XPD:ATTR name="Name" type="string">SoSoBHXH</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[58]" type="UMLAttribute" guid="tdA7m20tnEaZ5RF4l0LQVwAA">
-<XPD:ATTR name="Name" type="string">NgayDongBHXH</XPD:ATTR>
-<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
-<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
-</XPD:OBJ>
-<XPD:OBJ name="Attributes[59]" type="UMLAttribute" guid="CmReIgcX1kyx4g85qDKsMQAA">
+<XPD:OBJ name="Attributes[21]" type="UMLAttribute" guid="CmReIgcX1kyx4g85qDKsMQAA">
 <XPD:ATTR name="Name" type="string">MaLuongNhanVien</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[60]" type="UMLAttribute" guid="dKjm2LYdS0KRX0c8eEle8QAA">
-<XPD:ATTR name="Name" type="string">NgayNangLuong</XPD:ATTR>
+<XPD:OBJ name="Attributes[22]" type="UMLAttribute" guid="NZPcKqlVRkW6hpFPi7aoDAAA">
+<XPD:ATTR name="Name" type="string">MaDangVien</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[23]" type="UMLAttribute" guid="LllsMFM7oECzm2jmurjMNgAA">
+<XPD:ATTR name="Name" type="string">HinhAnh:string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[24]" type="UMLAttribute" guid="jHWPVHd/CEW8TZDNrGi5bQAA">
+<XPD:ATTR name="Name" type="string">HoTenNhanVien</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[25]" type="UMLAttribute" guid="kH1mELKwGkCJbySFzZ9lnQAA">
+<XPD:ATTR name="Name" type="string">TenGoiKhac</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[26]" type="UMLAttribute" guid="3604NLigOk2fZMlm9KEfKQAA">
+<XPD:ATTR name="Name" type="string">NgaySinh</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
-<XPD:OBJ name="Attributes[61]" type="UMLAttribute" guid="NZPcKqlVRkW6hpFPi7aoDAAA">
-<XPD:ATTR name="Name" type="string">MaDangVien</XPD:ATTR>
+<XPD:OBJ name="Attributes[27]" type="UMLAttribute" guid="M/JqyLU1WUiYpW0i1XqxUQAA">
+<XPD:ATTR name="Name" type="string">NoiSinh</XPD:ATTR>
 <XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[28]" type="UMLAttribute" guid="rJM0EiEHOU6qjs34aVdaSgAA">
+<XPD:ATTR name="Name" type="string">SoChungMinhNhanDan</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[29]" type="UMLAttribute" guid="2MeKKAHLSUKAyeBEZl04rQAA">
+<XPD:ATTR name="Name" type="string">NoiCap:string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[30]" type="UMLAttribute" guid="FkT9xExyBEO154xZuDsqvgAA">
+<XPD:ATTR name="Name" type="string">NgayCap</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[31]" type="UMLAttribute" guid="JFBXkvo9p0G6/qvQZ4x37AAA">
+<XPD:ATTR name="Name" type="string">QueQuan:string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[32]" type="UMLAttribute" guid="0z7Ufcmv+EuZNv/MZ3ykLAAA">
+<XPD:ATTR name="Name" type="string">HoKhauThuongTru</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[33]" type="UMLAttribute" guid="nogBKbAZYEmeMTqBie9MBAAA">
+<XPD:ATTR name="Name" type="string">NoiOHienTai:string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[34]" type="UMLAttribute" guid="icJBEbLHAEyDwQfL0tDx3gAA">
+<XPD:ATTR name="Name" type="string">DienThoaiNhaRieng</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[35]" type="UMLAttribute" guid="z/mSPpiJD0mt3kNTPgdIHgAA">
+<XPD:ATTR name="Name" type="string">DienThoaiDiDong</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[36]" type="UMLAttribute" guid="699c+tp5Pku7osSZN27DlgAA">
+<XPD:ATTR name="Name" type="string">NangKhieu</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[37]" type="UMLAttribute" guid="amR3ImEObE68wOvsgujAbQAA">
+<XPD:ATTR name="Name" type="string">NgayHopDong</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[38]" type="UMLAttribute" guid="4NSMVZO8vEu6WV9euNjc2wAA">
+<XPD:ATTR name="Name" type="string">NgayTuyenDung</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[39]" type="UMLAttribute" guid="n4uAuPADk0Wkj0r8bp+CfQAA">
+<XPD:ATTR name="Name" type="string">NgayBoNhiemVaoNgach</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[40]" type="UMLAttribute" guid="O7Ggo8MtQE6/nDNFbY3+fQAA">
+<XPD:ATTR name="Name" type="string">NgayVeCoQuanHienTai</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[41]" type="UMLAttribute" guid="MPQhiF+T6EeLC3OsMambtAAA">
+<XPD:ATTR name="Name" type="string">CongViecHienNay</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[42]" type="UMLAttribute" guid="L9FDCQvNO0a444hCNe2WQQAA">
+<XPD:ATTR name="Name" type="string">NgayBoNhiemChucVuHienTai</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[43]" type="UMLAttribute" guid="EdNdyC0gBkqQEUQdXGQlXAAA">
+<XPD:ATTR name="Name" type="string">LanBoNhiemCVCQHienTai</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[44]" type="UMLAttribute" guid="s5y7WEfW50a7sn07oia+EAAA">
+<XPD:ATTR name="Name" type="string">ChucVuLanhDaoKiemNhiem</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[45]" type="UMLAttribute" guid="WF74nPxN00urCeICHXcNPAAA">
+<XPD:ATTR name="Name" type="string">ChucVuChinhQuyenCaoNhat</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[46]" type="UMLAttribute" guid="nm5/gt+H+02BtrDjwQ9nYgAA">
+<XPD:ATTR name="Name" type="string">NgayVaoDang</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[47]" type="UMLAttribute" guid="i2/GlKwwvEaoO+/au9tf8QAA">
+<XPD:ATTR name="Name" type="string">NgayChinhThuc</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[48]" type="UMLAttribute" guid="hNnVCP4WPUOhZe9IsUtMvgAA">
+<XPD:ATTR name="Name" type="string">ChucVuDangHienTai</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[49]" type="UMLAttribute" guid="SMC3cpwQzEymaZkafoc1fgAA">
+<XPD:ATTR name="Name" type="string">DoanVien</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[50]" type="UMLAttribute" guid="0FZWA2XuskKDv1egWYeAewAA">
+<XPD:ATTR name="Name" type="string">NgayThamGiaTCCTXH</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[51]" type="UMLAttribute" guid="tr2usxnMY0W0eXs4/mVd/QAA">
+<XPD:ATTR name="Name" type="string">TenTCCTXH</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[52]" type="UMLAttribute" guid="132wP7Qp/0ivqbg3JxMAswAA">
+<XPD:ATTR name="Name" type="string">ChucVuDoan</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[53]" type="UMLAttribute" guid="ltucUx4IxUSfyo8DCqpmKwAA">
+<XPD:ATTR name="Name" type="string">DangDTBD</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[54]" type="UMLAttribute" guid="+2ZdxaHglUCjsuKfEQRw2QAA">
+<XPD:ATTR name="Name" type="string">BacLuong</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[55]" type="UMLAttribute" guid="h2Mg93F97keKUFQ6J1f8OwAA">
+<XPD:ATTR name="Name" type="string">LuongCongChucDuBi</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[56]" type="UMLAttribute" guid="HACRm9KfPUWJwf8/+MujbAAA">
+<XPD:ATTR name="Name" type="string">ChenhLechBaoLuuHeSoLuong</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[57]" type="UMLAttribute" guid="NGd0eRaSgUSSnqn2jo/5AQAA">
+<XPD:ATTR name="Name" type="string">HuongLuongTuNgay</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[58]" type="UMLAttribute" guid="khuCgz0n8EyUT9FdZ4ePggAA">
+<XPD:ATTR name="Name" type="string">MocTinhNangLuongLanSau</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[59]" type="UMLAttribute" guid="RRJSsFP7ZUm7cuj+robajQAA">
+<XPD:ATTR name="Name" type="string">SoSoBHXH</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">string</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[60]" type="UMLAttribute" guid="tdA7m20tnEaZ5RF4l0LQVwAA">
+<XPD:ATTR name="Name" type="string">NgayDongBHXH</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
+<XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
+</XPD:OBJ>
+<XPD:OBJ name="Attributes[61]" type="UMLAttribute" guid="dKjm2LYdS0KRX0c8eEle8QAA">
+<XPD:ATTR name="Name" type="string">NgayNangLuong</XPD:ATTR>
+<XPD:ATTR name="TypeExpression" type="string">datetime</XPD:ATTR>
 <XPD:REF name="Owner">jynfgt9W/kC9aQZ5nmxrkwAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[62]" type="UMLAttribute" guid="zI2gdseyC0WJ7V+v0wzY9gAA">
