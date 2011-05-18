@@ -80,10 +80,13 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
@@ -260,6 +263,11 @@
     <Compile Include="DataLayer\TrinhDoNgoaiNguData.cs" />
     <Compile Include="DataLayer\TrinhDoQuanLyNhaNuocData.cs" />
     <Compile Include="DataLayer\TrinhDoTinHocData.cs" />
+    <Compile Include="DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DataService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -798,9 +806,10 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <None Include="QLHSCC_DataContext.dbml.layout">
-      <DependentUpon>QLHSCC_DataContext.dbml</DependentUpon>
-    </None>
+    <EntityDeploy Include="DataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <EmbeddedResource Include="Report1.resx">
       <DependentUpon>Report1.cs</DependentUpon>
     </EmbeddedResource>
@@ -862,14 +871,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="QLHSCC_DataContext.cs">
-      <DependentUpon>QLHSCC_DataContext.dbml</DependentUpon>
-    </Compile>
-    <Compile Include="QLHSCC_DataContext.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLHSCC_DataContext.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Report1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -908,11 +909,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="QLHSCC_DataContext.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>QLHSCC_DataContext.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Resources\graphics-tablet.ico" />
   </ItemGroup>
   <ItemGroup>
