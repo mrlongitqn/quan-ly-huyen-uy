@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<danhsachnguoidung>
+  <nguoidung tendangnhap="A">
+    <nhatky>
+      <thoidiemvao></thoidiemvao>
+      <thoidiemra></thoidiemra>
+      <tenmaytram></tenmaytram>
+      <danhsachchucnangsudung>
+        <chucnangsudung>
+          <tenchucnang></tenchucnang>
+          <solan></solan>
+        </chucnangsudung>
+      </danhsachchucnangsudung>
+    </nhatky>
+  </nguoidung>
+  <nguoidung tendangnhap="B">
+    <nhatky>
+      <thoidiemvao></thoidiemvao>
+      <thoidiemra></thoidiemra>
+      <tenmaytram></tenmaytram>
+      <danhsachchucnangsudung>
+        <chucnangsudung>
+          <tenchucnang></tenchucnang>
+          <solan></solan>
+        </chucnangsudung>
+      </danhsachchucnangsudung>
+    </nhatky>
+  </nguoidung>
+</danhsachnguoidung>
