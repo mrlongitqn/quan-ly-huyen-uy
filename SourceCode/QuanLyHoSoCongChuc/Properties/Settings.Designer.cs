@@ -58,11 +58,22 @@ namespace QuanLyHoSoCongChuc.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=TUANDOM-PC\\;Initial Catalog=QLHSCC;Persist Security Info=True;User ID" +
-            "=sa;Password=1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=Data Source=PC2011042720BGO\\SQLEXPRESS;Initial Catalog=ThucTapThucTe;" +
+            "Integrated Security=True")]
         public string QLHSCCConnectionStringOK {
             get {
                 return ((string)(this["QLHSCCConnectionStringOK"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.;Initial Catalog=QLHSCC;Persist Security Info=True;User ID=sa;Passwo" +
+            "rd=1")]
+        public string QLHSCCConnectionString2 {
+            get {
+                return ((string)(this["QLHSCCConnectionString2"]));
             }
         }
     }
