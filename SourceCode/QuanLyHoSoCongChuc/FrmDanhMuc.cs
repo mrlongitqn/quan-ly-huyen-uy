@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Linq;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
 using Microsoft.ReportingServices.Rendering.ImageRenderer;
@@ -16,10 +17,10 @@ using QuanLyHoSoCongChuc.DataLayer;
 
 namespace QuanLyHoSoCongChuc.Report
 {
-    public partial class FrmReportLuong :  DockContent
+    public partial class FrmReportLuong2 :  DockContent
     {
         NhanVienControl m_NhanVienCtrl = new NhanVienControl();
-        public FrmReportLuong()
+        public FrmReportLuong2()
         {
             DataService.OpenConnection();
             InitializeComponent();
@@ -33,6 +34,29 @@ namespace QuanLyHoSoCongChuc.Report
             //reportViewerLuong.Refresh();
         }
 
+        void loadTreeView()
+        {
+            treeView1.Nodes.Clear();
+            QLHSCC_DataContextDataContext data = new QLHSCC_DataContextDataContext();
+            var quanhuyen = from q in data.QuanHuyens
+                            select q;
+            foreach (QuanHuyen qh in quanhuyen)
+            {
+                TreeNode tnParent = new TreeNode();
+                tnParent.Text = qh.TenQuanHuyen;
+                tnParent.Value = qh.MaQuanHuyen;
+                tnParent.PopulateOnDemand = true;
+                tnParent.ToolTip = "Click to get Child";
+                tnParent.SelectAction = TreeNodeSelectAction.SelectExpand;
+                tnParent.Expand();
+                tnParent.Selected = true;
+                treeView1.Nodes.Add(tnParent);
+                FillChild(tnParent, tnParent.Value);
+
+
+            }
+
+        }
         private void btnNangLuong_Click(object sender, EventArgs e)
         {
             //this.bindingSourceLuong.DataSource = NhanVienControl.LayDsLuongNhanVien(dtngaynangluong.Value.ToShortDateString());

@@ -808,11 +808,8 @@
       <DependentUpon>Report2.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\FrmDanhSachNangLuong.resx">
-      <DependentUpon>FrmDanhSachNangLuong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\FrmDanhSachPhuCapThamNienVuotKhung.resx">
-      <DependentUpon>FrmDanhSachPhuCapThamNienVuotKhung.cs</DependentUpon>
+    <EmbeddedResource Include="Report\FrmBaoCaoLuong.resx">
+      <DependentUpon>FrmBaoCaoLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmDSDonVi.resx">
       <SubType>Designer</SubType>
@@ -885,17 +882,11 @@
     <Compile Include="Report2.Designer.cs">
       <DependentUpon>Report2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report\FrmDanhSachNangLuong.cs">
+    <Compile Include="Report\FrmBaoCaoLuong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report\FrmDanhSachNangLuong.Designer.cs">
-      <DependentUpon>FrmDanhSachNangLuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Report\FrmDanhSachPhuCapThamNienVuotKhung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Report\FrmDanhSachPhuCapThamNienVuotKhung.Designer.cs">
-      <DependentUpon>FrmDanhSachPhuCapThamNienVuotKhung.cs</DependentUpon>
+    <Compile Include="Report\FrmBaoCaoLuong.Designer.cs">
+      <DependentUpon>FrmBaoCaoLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\FrmDSDonVi.cs">
       <SubType>Form</SubType>
