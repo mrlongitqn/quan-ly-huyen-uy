@@ -37,24 +37,8 @@ namespace QuanLyHoSoCongChuc.Report
         void loadTreeView()
         {
             treeView1.Nodes.Clear();
-            QLHSCC_DataContextDataContext data = new QLHSCC_DataContextDataContext();
-            var quanhuyen = from q in data.QuanHuyens
-                            select q;
-            foreach (QuanHuyen qh in quanhuyen)
-            {
-                TreeNode tnParent = new TreeNode();
-                tnParent.Text = qh.TenQuanHuyen;
-                tnParent.Value = qh.MaQuanHuyen;
-                tnParent.PopulateOnDemand = true;
-                tnParent.ToolTip = "Click to get Child";
-                tnParent.SelectAction = TreeNodeSelectAction.SelectExpand;
-                tnParent.Expand();
-                tnParent.Selected = true;
-                treeView1.Nodes.Add(tnParent);
-                FillChild(tnParent, tnParent.Value);
-
-
-            }
+            
+            
 
         }
         private void btnNangLuong_Click(object sender, EventArgs e)
