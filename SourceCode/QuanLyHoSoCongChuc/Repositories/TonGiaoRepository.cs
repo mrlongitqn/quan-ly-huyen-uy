@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class TonGiaoRepository
 	{
-		public List<TonGiao> SelectAll()
+		public static List<TonGiao> SelectAll()
 		{
 			return DataContext.Instance.TonGiaos.ToList();
 		}
 
-		public TonGiao SelectByID(string matongiao)
+		public static TonGiao SelectByID(string matongiao)
 		{
 			return DataContext.Instance.TonGiaos.FirstOrDefault(item => item.MaTonGiao == matongiao );
 		}
 
-		public bool Insert(TonGiao obj)
+		public static bool Insert(TonGiao obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string matongiao)
+		public static bool Delete(string matongiao)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<TonGiao> RetrieveByID(string matongiao)
+		public static List<TonGiao> RetrieveByID(string matongiao)
 		{
 			return (from item in DataContext.Instance.TonGiaos where  item.MaTonGiao == matongiao  select item).ToList();
 		}

@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class KhoiXomRepository
 	{
-		public List<KhoiXom> SelectAll()
+		public static List<KhoiXom> SelectAll()
 		{
 			return DataContext.Instance.KhoiXoms.ToList();
 		}
 
-		public KhoiXom SelectByID(string makhoixom)
+		public static KhoiXom SelectByID(string makhoixom)
 		{
 			return DataContext.Instance.KhoiXoms.FirstOrDefault(item => item.MaKhoiXom == makhoixom );
 		}
 
-		public bool Insert(KhoiXom obj)
+		public static bool Insert(KhoiXom obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string makhoixom)
+		public static bool Delete(string makhoixom)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,12 +62,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<KhoiXom> RetrieveByID(string makhoixom)
+		public static List<KhoiXom> RetrieveByID(string makhoixom)
 		{
 			return (from item in DataContext.Instance.KhoiXoms where  item.MaKhoiXom == makhoixom  select item).ToList();
 		}
 
-		public List<KhoiXom> SelectByPhuongXa(string maphuongxa, int page, int pageSize)
+		public static List<KhoiXom> SelectByPhuongXa(string maphuongxa, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.KhoiXoms where item.MaPhuongXa == maphuongxa select item).ToList();
 			return lstItem;

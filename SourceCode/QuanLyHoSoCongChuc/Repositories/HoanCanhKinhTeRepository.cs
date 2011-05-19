@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class HoanCanhKinhTeRepository
 	{
-		public List<HoanCanhKinhTe> SelectAll()
+		public static List<HoanCanhKinhTe> SelectAll()
 		{
 			return DataContext.Instance.HoanCanhKinhTes.ToList();
 		}
 
-		public HoanCanhKinhTe SelectByID(int mahoancanhkinhte)
+		public static HoanCanhKinhTe SelectByID(int mahoancanhkinhte)
 		{
 			return DataContext.Instance.HoanCanhKinhTes.FirstOrDefault(item => item.MaHoanCanhKinhTe == mahoancanhkinhte );
 		}
 
-		public bool Insert(HoanCanhKinhTe obj)
+		public static bool Insert(HoanCanhKinhTe obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(int mahoancanhkinhte)
+		public static bool Delete(int mahoancanhkinhte)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,18 +62,18 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<HoanCanhKinhTe> RetrieveByID(int mahoancanhkinhte)
+		public static List<HoanCanhKinhTe> RetrieveByID(int mahoancanhkinhte)
 		{
 			return (from item in DataContext.Instance.HoanCanhKinhTes where  item.MaHoanCanhKinhTe == mahoancanhkinhte  select item).ToList();
 		}
 
-		public List<HoanCanhKinhTe> SelectByNhanVien(string manhanvien, int page, int pageSize)
+		public static List<HoanCanhKinhTe> SelectByNhanVien(string manhanvien, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.HoanCanhKinhTes where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;
 		}
 
-		public List<HoanCanhKinhTe> SelectByHoatDongKinhTe(string mahoatdongkinhte, int page, int pageSize)
+		public static List<HoanCanhKinhTe> SelectByHoatDongKinhTe(string mahoatdongkinhte, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.HoanCanhKinhTes where item.MaHoatDongKinhTe == mahoatdongkinhte select item).ToList();
 			return lstItem;

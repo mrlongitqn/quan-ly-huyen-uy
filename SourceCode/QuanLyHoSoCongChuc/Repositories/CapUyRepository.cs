@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class CapUyRepository
 	{
-		public List<CapUy> SelectAll()
+		public static List<CapUy> SelectAll()
 		{
 			return DataContext.Instance.CapUys.ToList();
 		}
 
-		public CapUy SelectByID(int macapuy)
+		public static CapUy SelectByID(int macapuy)
 		{
 			return DataContext.Instance.CapUys.FirstOrDefault(item => item.MaCapUy == macapuy );
 		}
 
-		public bool Insert(CapUy obj)
+		public static bool Insert(CapUy obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(int macapuy)
+		public static bool Delete(int macapuy)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<CapUy> RetrieveByID(int macapuy)
+		public static List<CapUy> RetrieveByID(int macapuy)
 		{
 			return (from item in DataContext.Instance.CapUys where  item.MaCapUy == macapuy  select item).ToList();
 		}

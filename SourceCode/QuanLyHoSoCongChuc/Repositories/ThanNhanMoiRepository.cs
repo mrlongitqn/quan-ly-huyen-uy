@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class ThanNhanMoiRepository
 	{
-		public List<ThanNhanMoi> SelectAll()
+		public static List<ThanNhanMoi> SelectAll()
 		{
 			return DataContext.Instance.ThanNhanMois.ToList();
 		}
 
-		public ThanNhanMoi SelectByID(int mathannhan)
+		public static ThanNhanMoi SelectByID(int mathannhan)
 		{
 			return DataContext.Instance.ThanNhanMois.FirstOrDefault(item => item.MaThanNhan == mathannhan );
 		}
 
-		public bool Insert(ThanNhanMoi obj)
+		public static bool Insert(ThanNhanMoi obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(int mathannhan)
+		public static bool Delete(int mathannhan)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,18 +62,18 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<ThanNhanMoi> RetrieveByID(int mathannhan)
+		public static List<ThanNhanMoi> RetrieveByID(int mathannhan)
 		{
 			return (from item in DataContext.Instance.ThanNhanMois where  item.MaThanNhan == mathannhan  select item).ToList();
 		}
 
-		public List<ThanNhanMoi> SelectByQuanHe(string maquanhe, int page, int pageSize)
+		public static List<ThanNhanMoi> SelectByQuanHe(string maquanhe, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.ThanNhanMois where item.MaQuanHe == maquanhe select item).ToList();
 			return lstItem;
 		}
 
-		public List<ThanNhanMoi> SelectByNhanVien(string manhanvien, int page, int pageSize)
+		public static List<ThanNhanMoi> SelectByNhanVien(string manhanvien, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.ThanNhanMois where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;

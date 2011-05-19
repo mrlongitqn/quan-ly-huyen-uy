@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class GioiTinhRepository
 	{
-		public List<GioiTinh> SelectAll()
+		public static List<GioiTinh> SelectAll()
 		{
 			return DataContext.Instance.GioiTinhs.ToList();
 		}
 
-		public GioiTinh SelectByID(string magioitinh)
+		public static GioiTinh SelectByID(string magioitinh)
 		{
 			return DataContext.Instance.GioiTinhs.FirstOrDefault(item => item.MaGioiTinh == magioitinh );
 		}
 
-		public bool Insert(GioiTinh obj)
+		public static bool Insert(GioiTinh obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string magioitinh)
+		public static bool Delete(string magioitinh)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<GioiTinh> RetrieveByID(string magioitinh)
+		public static List<GioiTinh> RetrieveByID(string magioitinh)
 		{
 			return (from item in DataContext.Instance.GioiTinhs where  item.MaGioiTinh == magioitinh  select item).ToList();
 		}

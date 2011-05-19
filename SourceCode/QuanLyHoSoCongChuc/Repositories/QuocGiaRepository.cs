@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class QuocGiaRepository
 	{
-		public List<QuocGia> SelectAll()
+		public static List<QuocGia> SelectAll()
 		{
 			return DataContext.Instance.QuocGias.ToList();
 		}
 
-		public QuocGia SelectByID(int maquocgia)
+		public static QuocGia SelectByID(int maquocgia)
 		{
 			return DataContext.Instance.QuocGias.FirstOrDefault(item => item.MaQuocGia == maquocgia );
 		}
 
-		public bool Insert(QuocGia obj)
+		public static bool Insert(QuocGia obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(int maquocgia)
+		public static bool Delete(int maquocgia)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<QuocGia> RetrieveByID(int maquocgia)
+		public static List<QuocGia> RetrieveByID(int maquocgia)
 		{
 			return (from item in DataContext.Instance.QuocGias where  item.MaQuocGia == maquocgia  select item).ToList();
 		}

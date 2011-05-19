@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class LoaiNghiBaoHiemXaHoiRepository
 	{
-		public List<LoaiNghiBaoHiemXaHoi> SelectAll()
+		public static List<LoaiNghiBaoHiemXaHoi> SelectAll()
 		{
 			return DataContext.Instance.LoaiNghiBaoHiemXaHois.ToList();
 		}
 
-		public LoaiNghiBaoHiemXaHoi SelectByID(string maloainghibaohiemxahoi)
+		public static LoaiNghiBaoHiemXaHoi SelectByID(string maloainghibaohiemxahoi)
 		{
 			return DataContext.Instance.LoaiNghiBaoHiemXaHois.FirstOrDefault(item => item.MaLoaiNghiBaoHiemXaHoi == maloainghibaohiemxahoi );
 		}
 
-		public bool Insert(LoaiNghiBaoHiemXaHoi obj)
+		public static bool Insert(LoaiNghiBaoHiemXaHoi obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string maloainghibaohiemxahoi)
+		public static bool Delete(string maloainghibaohiemxahoi)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<LoaiNghiBaoHiemXaHoi> RetrieveByID(string maloainghibaohiemxahoi)
+		public static List<LoaiNghiBaoHiemXaHoi> RetrieveByID(string maloainghibaohiemxahoi)
 		{
 			return (from item in DataContext.Instance.LoaiNghiBaoHiemXaHois where  item.MaLoaiNghiBaoHiemXaHoi == maloainghibaohiemxahoi  select item).ToList();
 		}

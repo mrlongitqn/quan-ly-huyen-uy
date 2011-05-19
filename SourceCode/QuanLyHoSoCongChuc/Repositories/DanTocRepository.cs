@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class DanTocRepository
 	{
-		public List<DanToc> SelectAll()
+		public static List<DanToc> SelectAll()
 		{
 			return DataContext.Instance.DanTocs.ToList();
 		}
 
-		public DanToc SelectByID(string madantoc)
+		public static DanToc SelectByID(string madantoc)
 		{
 			return DataContext.Instance.DanTocs.FirstOrDefault(item => item.MaDanToc == madantoc );
 		}
 
-		public bool Insert(DanToc obj)
+		public static bool Insert(DanToc obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string madantoc)
+		public static bool Delete(string madantoc)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<DanToc> RetrieveByID(string madantoc)
+		public static List<DanToc> RetrieveByID(string madantoc)
 		{
 			return (from item in DataContext.Instance.DanTocs where  item.MaDanToc == madantoc  select item).ToList();
 		}

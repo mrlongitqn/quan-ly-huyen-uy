@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class KhenThuongRepository
 	{
-		public List<KhenThuong> SelectAll()
+		public static List<KhenThuong> SelectAll()
 		{
 			return DataContext.Instance.KhenThuongs.ToList();
 		}
 
-		public KhenThuong SelectByID(string makhenthuong)
+		public static KhenThuong SelectByID(string makhenthuong)
 		{
 			return DataContext.Instance.KhenThuongs.FirstOrDefault(item => item.MaKhenThuong == makhenthuong );
 		}
 
-		public bool Insert(KhenThuong obj)
+		public static bool Insert(KhenThuong obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string makhenthuong)
+		public static bool Delete(string makhenthuong)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,12 +62,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<KhenThuong> RetrieveByID(string makhenthuong)
+		public static List<KhenThuong> RetrieveByID(string makhenthuong)
 		{
 			return (from item in DataContext.Instance.KhenThuongs where  item.MaKhenThuong == makhenthuong  select item).ToList();
 		}
 
-		public List<KhenThuong> SelectByNhanVien(string manhanvien, int page, int pageSize)
+		public static List<KhenThuong> SelectByNhanVien(string manhanvien, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.KhenThuongs where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;

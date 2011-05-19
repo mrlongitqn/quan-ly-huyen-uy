@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class ThanhPhanXuatThanRepository
 	{
-		public List<ThanhPhanXuatThan> SelectAll()
+		public static List<ThanhPhanXuatThan> SelectAll()
 		{
 			return DataContext.Instance.ThanhPhanXuatThans.ToList();
 		}
 
-		public ThanhPhanXuatThan SelectByID(string mathanhphanxuatthan)
+		public static ThanhPhanXuatThan SelectByID(string mathanhphanxuatthan)
 		{
 			return DataContext.Instance.ThanhPhanXuatThans.FirstOrDefault(item => item.MaThanhPhanXuatThan == mathanhphanxuatthan );
 		}
 
-		public bool Insert(ThanhPhanXuatThan obj)
+		public static bool Insert(ThanhPhanXuatThan obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string mathanhphanxuatthan)
+		public static bool Delete(string mathanhphanxuatthan)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<ThanhPhanXuatThan> RetrieveByID(string mathanhphanxuatthan)
+		public static List<ThanhPhanXuatThan> RetrieveByID(string mathanhphanxuatthan)
 		{
 			return (from item in DataContext.Instance.ThanhPhanXuatThans where  item.MaThanhPhanXuatThan == mathanhphanxuatthan  select item).ToList();
 		}

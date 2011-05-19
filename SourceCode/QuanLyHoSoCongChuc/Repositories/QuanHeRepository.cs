@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class QuanHeRepository
 	{
-		public List<QuanHe> SelectAll()
+		public static List<QuanHe> SelectAll()
 		{
 			return DataContext.Instance.QuanHes.ToList();
 		}
 
-		public QuanHe SelectByID(string maquanhe)
+		public static QuanHe SelectByID(string maquanhe)
 		{
 			return DataContext.Instance.QuanHes.FirstOrDefault(item => item.MaQuanHe == maquanhe );
 		}
 
-		public bool Insert(QuanHe obj)
+		public static bool Insert(QuanHe obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string maquanhe)
+		public static bool Delete(string maquanhe)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<QuanHe> RetrieveByID(string maquanhe)
+		public static List<QuanHe> RetrieveByID(string maquanhe)
 		{
 			return (from item in DataContext.Instance.QuanHes where  item.MaQuanHe == maquanhe  select item).ToList();
 		}

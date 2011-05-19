@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class HinhThucTuyenDungRepository
 	{
-		public List<HinhThucTuyenDung> SelectAll()
+		public static List<HinhThucTuyenDung> SelectAll()
 		{
 			return DataContext.Instance.HinhThucTuyenDungs.ToList();
 		}
 
-		public HinhThucTuyenDung SelectByID(string mahinhthuctuyendung)
+		public static HinhThucTuyenDung SelectByID(string mahinhthuctuyendung)
 		{
 			return DataContext.Instance.HinhThucTuyenDungs.FirstOrDefault(item => item.MaHinhThucTuyenDung == mahinhthuctuyendung );
 		}
 
-		public bool Insert(HinhThucTuyenDung obj)
+		public static bool Insert(HinhThucTuyenDung obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string mahinhthuctuyendung)
+		public static bool Delete(string mahinhthuctuyendung)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<HinhThucTuyenDung> RetrieveByID(string mahinhthuctuyendung)
+		public static List<HinhThucTuyenDung> RetrieveByID(string mahinhthuctuyendung)
 		{
 			return (from item in DataContext.Instance.HinhThucTuyenDungs where  item.MaHinhThucTuyenDung == mahinhthuctuyendung  select item).ToList();
 		}

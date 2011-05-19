@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class CongViecRepository
 	{
-		public List<CongViec> SelectAll()
+		public static List<CongViec> SelectAll()
 		{
 			return DataContext.Instance.CongViecs.ToList();
 		}
 
-		public CongViec SelectByID(string macongviec)
+		public static CongViec SelectByID(string macongviec)
 		{
 			return DataContext.Instance.CongViecs.FirstOrDefault(item => item.MaCongViec == macongviec );
 		}
 
-		public bool Insert(CongViec obj)
+		public static bool Insert(CongViec obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string macongviec)
+		public static bool Delete(string macongviec)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<CongViec> RetrieveByID(string macongviec)
+		public static List<CongViec> RetrieveByID(string macongviec)
 		{
 			return (from item in DataContext.Instance.CongViecs where  item.MaCongViec == macongviec  select item).ToList();
 		}

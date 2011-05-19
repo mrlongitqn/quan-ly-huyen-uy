@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class LoaiNguoiDung_ChucNangRepository
 	{
-		public List<LoaiNguoiDung_ChucNang> SelectAll()
+		public static List<LoaiNguoiDung_ChucNang> SelectAll()
 		{
 			return DataContext.Instance.LoaiNguoiDung_ChucNang.ToList();
 		}
 
-		public LoaiNguoiDung_ChucNang SelectByID(int machucnangnguoidung)
+		public static LoaiNguoiDung_ChucNang SelectByID(int machucnangnguoidung)
 		{
 			return DataContext.Instance.LoaiNguoiDung_ChucNang.FirstOrDefault(item => item.MaChucNangNguoiDung == machucnangnguoidung );
 		}
 
-		public bool Insert(LoaiNguoiDung_ChucNang obj)
+		public static bool Insert(LoaiNguoiDung_ChucNang obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(int machucnangnguoidung)
+		public static bool Delete(int machucnangnguoidung)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,18 +62,18 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<LoaiNguoiDung_ChucNang> RetrieveByID(int machucnangnguoidung)
+		public static List<LoaiNguoiDung_ChucNang> RetrieveByID(int machucnangnguoidung)
 		{
 			return (from item in DataContext.Instance.LoaiNguoiDung_ChucNang where  item.MaChucNangNguoiDung == machucnangnguoidung  select item).ToList();
 		}
 
-		public List<LoaiNguoiDung_ChucNang> SelectByQuyen(int maquyen, int page, int pageSize)
+		public static List<LoaiNguoiDung_ChucNang> SelectByQuyen(int maquyen, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.LoaiNguoiDung_ChucNang where item.MaQuyen == maquyen select item).ToList();
 			return lstItem;
 		}
 
-		public List<LoaiNguoiDung_ChucNang> SelectByChucNang(int machucnang, int page, int pageSize)
+		public static List<LoaiNguoiDung_ChucNang> SelectByChucNang(int machucnang, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.LoaiNguoiDung_ChucNang where item.MaChucNang == machucnang select item).ToList();
 			return lstItem;

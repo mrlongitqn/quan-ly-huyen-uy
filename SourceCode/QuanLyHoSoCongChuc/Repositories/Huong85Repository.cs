@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class Huong85Repository
 	{
-		public List<Huong85> SelectAll()
+		public static List<Huong85> SelectAll()
 		{
 			return DataContext.Instance.Huong85.ToList();
 		}
 
-		public Huong85 SelectByID(string mahuong)
+		public static Huong85 SelectByID(string mahuong)
 		{
 			return DataContext.Instance.Huong85.FirstOrDefault(item => item.MaHuong == mahuong );
 		}
 
-		public bool Insert(Huong85 obj)
+		public static bool Insert(Huong85 obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string mahuong)
+		public static bool Delete(string mahuong)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<Huong85> RetrieveByID(string mahuong)
+		public static List<Huong85> RetrieveByID(string mahuong)
 		{
 			return (from item in DataContext.Instance.Huong85 where  item.MaHuong == mahuong  select item).ToList();
 		}

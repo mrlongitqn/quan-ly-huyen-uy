@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class QuaTrinhCongTacMoiRepository
 	{
-		public List<QuaTrinhCongTacMoi> SelectAll()
+		public static List<QuaTrinhCongTacMoi> SelectAll()
 		{
 			return DataContext.Instance.QuaTrinhCongTacMois.ToList();
 		}
 
-		public QuaTrinhCongTacMoi SelectByID(int maquatrinhcongtac)
+		public static QuaTrinhCongTacMoi SelectByID(int maquatrinhcongtac)
 		{
 			return DataContext.Instance.QuaTrinhCongTacMois.FirstOrDefault(item => item.MaQuaTrinhCongTac == maquatrinhcongtac );
 		}
 
-		public bool Insert(QuaTrinhCongTacMoi obj)
+		public static bool Insert(QuaTrinhCongTacMoi obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(int maquatrinhcongtac)
+		public static bool Delete(int maquatrinhcongtac)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,36 +62,36 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<QuaTrinhCongTacMoi> RetrieveByID(int maquatrinhcongtac)
+		public static List<QuaTrinhCongTacMoi> RetrieveByID(int maquatrinhcongtac)
 		{
 			return (from item in DataContext.Instance.QuaTrinhCongTacMois where  item.MaQuaTrinhCongTac == maquatrinhcongtac  select item).ToList();
 		}
 
-		public List<QuaTrinhCongTacMoi> SelectByNhanVien(string manhanvien, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByNhanVien(string manhanvien, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;
 		}
 
-		public List<QuaTrinhCongTacMoi> SelectByNuocCongTac(int manuoccongtac, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByNuocCongTac(int manuoccongtac, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaNuocCongTac == manuoccongtac select item).ToList();
 			return lstItem;
 		}
 
-		public List<QuaTrinhCongTacMoi> SelectByCapUy(int macapuy, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByCapUy(int macapuy, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaCapUy == macapuy select item).ToList();
 			return lstItem;
 		}
 
-		public List<QuaTrinhCongTacMoi> SelectByCapUyKiem(int macapuykiem, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByCapUyKiem(int macapuykiem, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaCapUyKiem == macapuykiem select item).ToList();
 			return lstItem;
 		}
 
-		public List<QuaTrinhCongTacMoi> SelectByChucVuChinhQuyen(int machucvuchinhquyen, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByChucVuChinhQuyen(int machucvuchinhquyen, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaChucVuChinhQuyen == machucvuchinhquyen select item).ToList();
 			return lstItem;
