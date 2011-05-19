@@ -263,11 +263,6 @@
     <Compile Include="DataLayer\TrinhDoNgoaiNguData.cs" />
     <Compile Include="DataLayer\TrinhDoQuanLyNhaNuocData.cs" />
     <Compile Include="DataLayer\TrinhDoTinHocData.cs" />
-    <Compile Include="DataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="DataService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -594,6 +589,11 @@
     <Compile Include="FrmTKNhanVien.Designer.cs">
       <DependentUpon>FrmTKNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ChucNangQTDT.resx">
@@ -815,10 +815,6 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EntityDeploy Include="DataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
     <EmbeddedResource Include="Report1.resx">
       <DependentUpon>Report1.cs</DependentUpon>
     </EmbeddedResource>
@@ -863,6 +859,10 @@
     <None Include="Ds4RP1.xss">
       <DependentUpon>Ds4RP1.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="Models\DataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -871,14 +871,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <Compile Include="QLHSCCDataSet.cs">
-      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="QLHSCCDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Report1.cs">
       <SubType>Form</SubType>
@@ -904,18 +896,59 @@
     <Compile Include="Report\FrmDSDonVi.Designer.cs">
       <DependentUpon>FrmDSDonVi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\CapUyKiemRepository.cs" />
+    <Compile Include="Repositories\CapUyRepository.cs" />
+    <Compile Include="Repositories\ChucNangRepository.cs" />
+    <Compile Include="Repositories\ChucVuChinhQuyenRepository.cs" />
+    <Compile Include="Repositories\ChucVuRepository.cs" />
+    <Compile Include="Repositories\CongViecRepository.cs" />
+    <Compile Include="Repositories\DangHocBoiDuongDaoTaoRepository.cs" />
+    <Compile Include="Repositories\DanTocRepository.cs" />
+    <Compile Include="DataContext.cs" />
+    <Compile Include="Repositories\DienUuTienBanThanRepository.cs" />
+    <Compile Include="Repositories\DienUuTienGiaDinhRepository.cs" />
+    <Compile Include="Repositories\DoanVienRepository.cs" />
+    <Compile Include="Repositories\DonViRepository.cs" />
+    <Compile Include="Repositories\GioiTinhRepository.cs" />
+    <Compile Include="Repositories\HinhThucTuyenDungRepository.cs" />
+    <Compile Include="Repositories\HoanCanhKinhTeRepository.cs" />
+    <Compile Include="Repositories\HoatDongKinhTeRepository.cs" />
+    <Compile Include="Repositories\Huong85Repository.cs" />
+    <Compile Include="Repositories\KhenThuongRepository.cs" />
+    <Compile Include="Repositories\KhoiXomRepository.cs" />
+    <Compile Include="Repositories\KyLuatRepository.cs" />
+    <Compile Include="Repositories\LoaiCanBoRepository.cs" />
+    <Compile Include="Repositories\LoaiDonViRepository.cs" />
+    <Compile Include="Repositories\LoaiNghiBaoHiemXaHoiRepository.cs" />
+    <Compile Include="Repositories\LoaiNGuoiDungRepository.cs" />
+    <Compile Include="Repositories\LoaiNguoiDung_ChucNangRepository.cs" />
+    <Compile Include="Repositories\LucLuongVuTrangRepository.cs" />
+    <Compile Include="Repositories\NgachCongChucRepository.cs" />
+    <Compile Include="Repositories\NhanVienRepository.cs" />
+    <Compile Include="Repositories\PhuongXaRepository.cs" />
+    <Compile Include="Repositories\QuanHeRepository.cs" />
+    <Compile Include="Repositories\QuanHuyenRepository.cs" />
+    <Compile Include="Repositories\QuaTrinhBoiDuongRepository.cs" />
+    <Compile Include="Repositories\QuaTrinhCongTacMoiRepository.cs" />
+    <Compile Include="Repositories\QuaTrinhCongTacRepository.cs" />
+    <Compile Include="Repositories\QuaTrinhDaoTaoRepository.cs" />
+    <Compile Include="Repositories\QuocGiaRepository.cs" />
+    <Compile Include="Repositories\ThanhPhanXuatThanRepository.cs" />
+    <Compile Include="Repositories\ThanNhanMoiRepository.cs" />
+    <Compile Include="Repositories\ThanNhanRepository.cs" />
+    <Compile Include="Repositories\TinhThanhRepository.cs" />
+    <Compile Include="Repositories\TinhTrangHonNhanRepository.cs" />
+    <Compile Include="Repositories\TonGiaoRepository.cs" />
+    <Compile Include="Repositories\TrinhDoChinhTriRepository.cs" />
+    <Compile Include="Repositories\TrinhDoChuyenMonRepository.cs" />
+    <Compile Include="Repositories\TrinhDoHocVanRepository.cs" />
+    <Compile Include="Repositories\TrinhDoNgoaiNguRepository.cs" />
+    <Compile Include="Repositories\TrinhDoQuanLyNhaNuocRepository.cs" />
+    <Compile Include="Repositories\TrinhDoTinHocRepository.cs" />
     <Compile Include="staticClass.cs" />
+    <Compile Include="UsersDiary\NhatKyNguoiDung.cs" />
     <Compile Include="Utilities.cs" />
     <Compile Include="Utils\NhomChucNang.cs" />
-    <Compile Include="_QLHSCC_new_DataSet.cs">
-      <DependentUpon>_QLHSCC_new_DataSet.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="_QLHSCC_new_DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>_QLHSCC_new_DataSet.xsd</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\graphics-tablet.ico" />
@@ -1005,7 +1038,9 @@
     <None Include="Resources\001_39.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\45.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1016,28 +1051,15 @@
     <Content Include="Configs\NhomChucNang.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="QLHSCC.mdf">
+    <Content Include="Models\QLHSCC.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="QLHSCC_log.ldf">
+    <Content Include="Models\QLHSCC_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>QLHSCC.mdf</DependentUpon>
     </Content>
-    <Content Include="QLHSCC_new..mdb">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="UsersDiary\UsersDiary.xml" />
     <None Include="ClassDiagram2.cd" />
-    <None Include="QLHSCCDataSet.xsc">
-      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLHSCCDataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLHSCCDataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="QLHSCCDataSet.xss">
-      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Resources\%24this.Icon.ico" />
     <None Include="Properties\DataSources\QuanLyHoSoCongChuc.BusinessObject.DonViInfo.datasource" />
     <None Include="Properties\DataSources\QuanLyHoSoCongChuc.BusinessObject.NhanVienInfo.datasource" />
@@ -1064,17 +1086,6 @@
     <None Include="Resources\briefcase_document.ico" />
     <None Include="Resources\book_open2.ico" />
     <None Include="Resources\book_open.ico" />
-    <None Include="_QLHSCC_new_DataSet.xsc">
-      <DependentUpon>_QLHSCC_new_DataSet.xsd</DependentUpon>
-    </None>
-    <None Include="_QLHSCC_new_DataSet.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>_QLHSCC_new_DataSet.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="_QLHSCC_new_DataSet.xss">
-      <DependentUpon>_QLHSCC_new_DataSet.xsd</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
@@ -1097,9 +1108,19 @@
       <ProductName>SQL Server 2005 Express Edition</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
       <Visible>False</Visible>
       <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
@@ -1108,8 +1129,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositories\" />
-    <Folder Include="System\" />
+    <Folder Include="SystemManager\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
