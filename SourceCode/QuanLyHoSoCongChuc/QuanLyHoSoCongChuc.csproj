@@ -426,6 +426,12 @@
     <Compile Include="FrmLoaiCanBo.Designer.cs">
       <DependentUpon>FrmLoaiCanBo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmLoaiCoSo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLoaiCoSo.Designer.cs">
+      <DependentUpon>FrmLoaiCoSo.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLoaiNghiBaoHiemXaHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -696,6 +702,9 @@
     <EmbeddedResource Include="FrmLoaiCanBo.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmLoaiCanBo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLoaiCoSo.resx">
+      <DependentUpon>FrmLoaiCoSo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoaiNghiBaoHiemXaHoi.resx">
       <SubType>Designer</SubType>
