@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.bindingSourceLuong = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -56,6 +56,7 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLuong)).BeginInit();
             this.panelEx2.SuspendLayout();
             this.panelEx1.SuspendLayout();
@@ -136,9 +137,9 @@
             // reportViewerLuong
             // 
             this.reportViewerLuong.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource3.Name = "QuanLyHoSoCongChuc_BusinessObject_NhanVienInfo";
-            reportDataSource3.Value = this.bindingSourceLuong;
-            this.reportViewerLuong.LocalReport.DataSources.Add(reportDataSource3);
+            reportDataSource4.Name = "QuanLyHoSoCongChuc_BusinessObject_NhanVienInfo";
+            reportDataSource4.Value = this.bindingSourceLuong;
+            this.reportViewerLuong.LocalReport.DataSources.Add(reportDataSource4);
             this.reportViewerLuong.LocalReport.ReportEmbeddedResource = "QuanLyHoSoCongChuc.Report.ReportLuong.rdlc";
             this.reportViewerLuong.Location = new System.Drawing.Point(0, 0);
             this.reportViewerLuong.Name = "reportViewerLuong";
@@ -177,6 +178,7 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.radioButton1);
             this.groupPanel1.Controls.Add(this.textBox5);
             this.groupPanel1.Controls.Add(this.textBox6);
             this.groupPanel1.Controls.Add(this.textBox7);
@@ -352,6 +354,17 @@
             this.labelX4.TabIndex = 94;
             this.labelX4.Text = "Ngày lập biểu";
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(484, 60);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 98;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // FrmBaoCaoLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -399,5 +412,6 @@
         public System.Windows.Forms.TextBox textBox6;
         public System.Windows.Forms.TextBox textBox7;
         private DevComponents.DotNetBar.LabelX labelX4;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
