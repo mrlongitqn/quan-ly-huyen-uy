@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class DangHocBoiDuongDaoTaoRepository
 	{
-		public List<DangHocBoiDuongDaoTao> SelectAll()
+		public static List<DangHocBoiDuongDaoTao> SelectAll()
 		{
 			return DataContext.Instance.DangHocBoiDuongDaoTaos.ToList();
 		}
 
-		public DangHocBoiDuongDaoTao SelectByID(string madtbd)
+		public static DangHocBoiDuongDaoTao SelectByID(string madtbd)
 		{
 			return DataContext.Instance.DangHocBoiDuongDaoTaos.FirstOrDefault(item => item.MaDTBD == madtbd );
 		}
 
-		public bool Insert(DangHocBoiDuongDaoTao obj)
+		public static bool Insert(DangHocBoiDuongDaoTao obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string madtbd)
+		public static bool Delete(string madtbd)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<DangHocBoiDuongDaoTao> RetrieveByID(string madtbd)
+		public static List<DangHocBoiDuongDaoTao> RetrieveByID(string madtbd)
 		{
 			return (from item in DataContext.Instance.DangHocBoiDuongDaoTaos where  item.MaDTBD == madtbd  select item).ToList();
 		}

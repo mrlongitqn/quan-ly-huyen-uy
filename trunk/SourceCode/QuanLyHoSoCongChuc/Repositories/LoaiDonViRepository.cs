@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class LoaiDonViRepository
 	{
-		public List<LoaiDonVi> SelectAll()
+		public static List<LoaiDonVi> SelectAll()
 		{
 			return DataContext.Instance.LoaiDonVis.ToList();
 		}
 
-		public LoaiDonVi SelectByID(string maloaidonvi)
+		public static LoaiDonVi SelectByID(string maloaidonvi)
 		{
 			return DataContext.Instance.LoaiDonVis.FirstOrDefault(item => item.MaLoaiDonVi == maloaidonvi );
 		}
 
-		public bool Insert(LoaiDonVi obj)
+		public static bool Insert(LoaiDonVi obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string maloaidonvi)
+		public static bool Delete(string maloaidonvi)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<LoaiDonVi> RetrieveByID(string maloaidonvi)
+		public static List<LoaiDonVi> RetrieveByID(string maloaidonvi)
 		{
 			return (from item in DataContext.Instance.LoaiDonVis where  item.MaLoaiDonVi == maloaidonvi  select item).ToList();
 		}

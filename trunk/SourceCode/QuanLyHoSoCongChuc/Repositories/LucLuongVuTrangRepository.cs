@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class LucLuongVuTrangRepository
 	{
-		public List<LucLuongVuTrang> SelectAll()
+		public static List<LucLuongVuTrang> SelectAll()
 		{
 			return DataContext.Instance.LucLuongVuTrangs.ToList();
 		}
 
-		public LucLuongVuTrang SelectByID(string malucluongvutrang, string manhanvien)
+		public static LucLuongVuTrang SelectByID(string malucluongvutrang, string manhanvien)
 		{
 			return DataContext.Instance.LucLuongVuTrangs.FirstOrDefault(item => item.MaLucLuongVuTrang == malucluongvutrang &&  item.MaNhanVien == manhanvien );
 		}
 
-		public bool Insert(LucLuongVuTrang obj)
+		public static bool Insert(LucLuongVuTrang obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string malucluongvutrang, string manhanvien)
+		public static bool Delete(string malucluongvutrang, string manhanvien)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,12 +62,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<LucLuongVuTrang> RetrieveByID(string malucluongvutrang, string manhanvien)
+		public static List<LucLuongVuTrang> RetrieveByID(string malucluongvutrang, string manhanvien)
 		{
 			return (from item in DataContext.Instance.LucLuongVuTrangs where  item.MaLucLuongVuTrang == malucluongvutrang &&  item.MaNhanVien == manhanvien  select item).ToList();
 		}
 
-		public List<LucLuongVuTrang> SelectByNhanVien(string manhanvien, int page, int pageSize)
+		public static List<LucLuongVuTrang> SelectByNhanVien(string manhanvien, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.LucLuongVuTrangs where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;

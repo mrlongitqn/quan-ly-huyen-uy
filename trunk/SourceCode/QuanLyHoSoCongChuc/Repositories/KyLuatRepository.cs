@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class KyLuatRepository
 	{
-		public List<KyLuat> SelectAll()
+		public static List<KyLuat> SelectAll()
 		{
 			return DataContext.Instance.KyLuats.ToList();
 		}
 
-		public KyLuat SelectByID(string makyluat, string manhanvien)
+		public static KyLuat SelectByID(string makyluat, string manhanvien)
 		{
 			return DataContext.Instance.KyLuats.FirstOrDefault(item => item.MaKyLuat == makyluat &&  item.MaNhanVien == manhanvien );
 		}
 
-		public bool Insert(KyLuat obj)
+		public static bool Insert(KyLuat obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string makyluat, string manhanvien)
+		public static bool Delete(string makyluat, string manhanvien)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,12 +62,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<KyLuat> RetrieveByID(string makyluat, string manhanvien)
+		public static List<KyLuat> RetrieveByID(string makyluat, string manhanvien)
 		{
 			return (from item in DataContext.Instance.KyLuats where  item.MaKyLuat == makyluat &&  item.MaNhanVien == manhanvien  select item).ToList();
 		}
 
-		public List<KyLuat> SelectByNhanVien(string manhanvien, int page, int pageSize)
+		public static List<KyLuat> SelectByNhanVien(string manhanvien, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.KyLuats where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;

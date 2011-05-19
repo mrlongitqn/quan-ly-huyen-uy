@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class QuaTrinhBoiDuongRepository
 	{
-		public List<QuaTrinhBoiDuong> SelectAll()
+		public static List<QuaTrinhBoiDuong> SelectAll()
 		{
 			return DataContext.Instance.QuaTrinhBoiDuongs.ToList();
 		}
 
-		public QuaTrinhBoiDuong SelectByID(string maquatrinhboiduong)
+		public static QuaTrinhBoiDuong SelectByID(string maquatrinhboiduong)
 		{
 			return DataContext.Instance.QuaTrinhBoiDuongs.FirstOrDefault(item => item.MaQuaTrinhBoiDuong == maquatrinhboiduong );
 		}
 
-		public bool Insert(QuaTrinhBoiDuong obj)
+		public static bool Insert(QuaTrinhBoiDuong obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string maquatrinhboiduong)
+		public static bool Delete(string maquatrinhboiduong)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,12 +62,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<QuaTrinhBoiDuong> RetrieveByID(string maquatrinhboiduong)
+		public static List<QuaTrinhBoiDuong> RetrieveByID(string maquatrinhboiduong)
 		{
 			return (from item in DataContext.Instance.QuaTrinhBoiDuongs where  item.MaQuaTrinhBoiDuong == maquatrinhboiduong  select item).ToList();
 		}
 
-		public List<QuaTrinhBoiDuong> SelectByNhanVien(string manhanvien, int page, int pageSize)
+		public static List<QuaTrinhBoiDuong> SelectByNhanVien(string manhanvien, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhBoiDuongs where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;

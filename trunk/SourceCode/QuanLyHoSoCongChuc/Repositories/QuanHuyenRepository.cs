@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class QuanHuyenRepository
 	{
-		public List<QuanHuyen> SelectAll()
+		public static List<QuanHuyen> SelectAll()
 		{
 			return DataContext.Instance.QuanHuyens.ToList();
 		}
 
-		public QuanHuyen SelectByID(string maquanhuyen)
+		public static QuanHuyen SelectByID(string maquanhuyen)
 		{
 			return DataContext.Instance.QuanHuyens.FirstOrDefault(item => item.MaQuanHuyen == maquanhuyen );
 		}
 
-		public bool Insert(QuanHuyen obj)
+		public static bool Insert(QuanHuyen obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string maquanhuyen)
+		public static bool Delete(string maquanhuyen)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,12 +62,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<QuanHuyen> RetrieveByID(string maquanhuyen)
+		public static List<QuanHuyen> RetrieveByID(string maquanhuyen)
 		{
 			return (from item in DataContext.Instance.QuanHuyens where  item.MaQuanHuyen == maquanhuyen  select item).ToList();
 		}
 
-		public List<QuanHuyen> SelectByTinh(string matinh, int page, int pageSize)
+		public static List<QuanHuyen> SelectByTinh(string matinh, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.QuanHuyens where item.MaTinh == matinh select item).ToList();
 			return lstItem;

@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class LoaiNGuoiDungRepository
 	{
-		public List<LoaiNGuoiDung> SelectAll()
+		public static List<LoaiNGuoiDung> SelectAll()
 		{
 			return DataContext.Instance.LoaiNGuoiDungs.ToList();
 		}
 
-		public LoaiNGuoiDung SelectByID(int maquyen)
+		public static LoaiNGuoiDung SelectByID(int maquyen)
 		{
 			return DataContext.Instance.LoaiNGuoiDungs.FirstOrDefault(item => item.MaQuyen == maquyen );
 		}
 
-		public bool Insert(LoaiNGuoiDung obj)
+		public static bool Insert(LoaiNGuoiDung obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(int maquyen)
+		public static bool Delete(int maquyen)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<LoaiNGuoiDung> RetrieveByID(int maquyen)
+		public static List<LoaiNGuoiDung> RetrieveByID(int maquyen)
 		{
 			return (from item in DataContext.Instance.LoaiNGuoiDungs where  item.MaQuyen == maquyen  select item).ToList();
 		}

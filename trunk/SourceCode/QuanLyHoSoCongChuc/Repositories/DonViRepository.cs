@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class DonViRepository
 	{
-		public List<DonVi> SelectAll()
+		public static List<DonVi> SelectAll()
 		{
 			return DataContext.Instance.DonVis.ToList();
 		}
 
-		public DonVi SelectByID(string madonvi)
+		public static DonVi SelectByID(string madonvi)
 		{
 			return DataContext.Instance.DonVis.FirstOrDefault(item => item.MaDonVi == madonvi );
 		}
 
-		public bool Insert(DonVi obj)
+		public static bool Insert(DonVi obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string madonvi)
+		public static bool Delete(string madonvi)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,18 +62,18 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<DonVi> RetrieveByID(string madonvi)
+		public static List<DonVi> RetrieveByID(string madonvi)
 		{
 			return (from item in DataContext.Instance.DonVis where  item.MaDonVi == madonvi  select item).ToList();
 		}
 
-		public List<DonVi> SelectByLoaiDonVi(string maloaidonvi, int page, int pageSize)
+		public static List<DonVi> SelectByLoaiDonVi(string maloaidonvi, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.DonVis where item.MaLoaiDonVi == maloaidonvi select item).ToList();
 			return lstItem;
 		}
 
-		public List<DonVi> SelectByQuanHuyen(string maquanhuyen, int page, int pageSize)
+		public static List<DonVi> SelectByQuanHuyen(string maquanhuyen, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.DonVis where item.MaQuanHuyen == maquanhuyen select item).ToList();
 			return lstItem;

@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class TrinhDoChinhTriRepository
 	{
-		public List<TrinhDoChinhTri> SelectAll()
+		public static List<TrinhDoChinhTri> SelectAll()
 		{
 			return DataContext.Instance.TrinhDoChinhTris.ToList();
 		}
 
-		public TrinhDoChinhTri SelectByID(string matrinhdochinhtri)
+		public static TrinhDoChinhTri SelectByID(string matrinhdochinhtri)
 		{
 			return DataContext.Instance.TrinhDoChinhTris.FirstOrDefault(item => item.MaTrinhDoChinhTri == matrinhdochinhtri );
 		}
 
-		public bool Insert(TrinhDoChinhTri obj)
+		public static bool Insert(TrinhDoChinhTri obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string matrinhdochinhtri)
+		public static bool Delete(string matrinhdochinhtri)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<TrinhDoChinhTri> RetrieveByID(string matrinhdochinhtri)
+		public static List<TrinhDoChinhTri> RetrieveByID(string matrinhdochinhtri)
 		{
 			return (from item in DataContext.Instance.TrinhDoChinhTris where  item.MaTrinhDoChinhTri == matrinhdochinhtri  select item).ToList();
 		}

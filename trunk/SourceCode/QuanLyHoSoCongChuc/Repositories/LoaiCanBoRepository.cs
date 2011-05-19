@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class LoaiCanBoRepository
 	{
-		public List<LoaiCanBo> SelectAll()
+		public static List<LoaiCanBo> SelectAll()
 		{
 			return DataContext.Instance.LoaiCanBoes.ToList();
 		}
 
-		public LoaiCanBo SelectByID(string maloaicanbo)
+		public static LoaiCanBo SelectByID(string maloaicanbo)
 		{
 			return DataContext.Instance.LoaiCanBoes.FirstOrDefault(item => item.MaLoaiCanBo == maloaicanbo );
 		}
 
-		public bool Insert(LoaiCanBo obj)
+		public static bool Insert(LoaiCanBo obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string maloaicanbo)
+		public static bool Delete(string maloaicanbo)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<LoaiCanBo> RetrieveByID(string maloaicanbo)
+		public static List<LoaiCanBo> RetrieveByID(string maloaicanbo)
 		{
 			return (from item in DataContext.Instance.LoaiCanBoes where  item.MaLoaiCanBo == maloaicanbo  select item).ToList();
 		}

@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class PhuongXaRepository
 	{
-		public List<PhuongXa> SelectAll()
+		public static List<PhuongXa> SelectAll()
 		{
 			return DataContext.Instance.PhuongXas.ToList();
 		}
 
-		public PhuongXa SelectByID(string maphuongxa)
+		public static PhuongXa SelectByID(string maphuongxa)
 		{
 			return DataContext.Instance.PhuongXas.FirstOrDefault(item => item.MaPhuongXa == maphuongxa );
 		}
 
-		public bool Insert(PhuongXa obj)
+		public static bool Insert(PhuongXa obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string maphuongxa)
+		public static bool Delete(string maphuongxa)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,12 +62,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<PhuongXa> RetrieveByID(string maphuongxa)
+		public static List<PhuongXa> RetrieveByID(string maphuongxa)
 		{
 			return (from item in DataContext.Instance.PhuongXas where  item.MaPhuongXa == maphuongxa  select item).ToList();
 		}
 
-		public List<PhuongXa> SelectByQuanHuyen(string maquanhuyen, int page, int pageSize)
+		public static List<PhuongXa> SelectByQuanHuyen(string maquanhuyen, int page, int pageSize)
 		{
 			var lstItem = (from item in DataContext.Instance.PhuongXas where item.MaQuanHuyen == maquanhuyen select item).ToList();
 			return lstItem;

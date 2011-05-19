@@ -10,17 +10,17 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#endregion
 	public class HoatDongKinhTeRepository
 	{
-		public List<HoatDongKinhTe> SelectAll()
+		public static List<HoatDongKinhTe> SelectAll()
 		{
 			return DataContext.Instance.HoatDongKinhTes.ToList();
 		}
 
-		public HoatDongKinhTe SelectByID(string mahoatdongkinhte)
+		public static HoatDongKinhTe SelectByID(string mahoatdongkinhte)
 		{
 			return DataContext.Instance.HoatDongKinhTes.FirstOrDefault(item => item.MaHoatDongKinhTe == mahoatdongkinhte );
 		}
 
-		public bool Insert(HoatDongKinhTe obj)
+		public static bool Insert(HoatDongKinhTe obj)
 		{
 			try
 			{
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Delete(string mahoatdongkinhte)
+		public static bool Delete(string mahoatdongkinhte)
 		{
 			try
 			{
@@ -49,7 +49,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public bool Save()
+		public static bool Save()
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public List<HoatDongKinhTe> RetrieveByID(string mahoatdongkinhte)
+		public static List<HoatDongKinhTe> RetrieveByID(string mahoatdongkinhte)
 		{
 			return (from item in DataContext.Instance.HoatDongKinhTes where  item.MaHoatDongKinhTe == mahoatdongkinhte  select item).ToList();
 		}
