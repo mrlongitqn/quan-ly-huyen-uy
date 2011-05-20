@@ -17,10 +17,10 @@ using QuanLyHoSoCongChuc.DataLayer;
 
 namespace QuanLyHoSoCongChuc.Report
 {
-    public partial class FrmReportLuong2 :  DockContent
+    public partial class FrmDanhMuc :  DockContent
     {
         NhanVienControl m_NhanVienCtrl = new NhanVienControl();
-        public FrmReportLuong2()
+        public FrmDanhMuc()
         {
             DataService.OpenConnection();
             InitializeComponent();
