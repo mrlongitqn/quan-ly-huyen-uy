@@ -60,7 +60,7 @@ namespace QuanLyHoSoCongChuc.Controller
             if (nd.Rows.Count == 0)
                 return 0;
 
-            String matkhau_hethong = nd.Rows[0][3].ToString();
+            String matkhau_hethong = nd.Rows[0][4].ToString();
 
             if (matkhau_hethong != password)
             {
@@ -68,7 +68,7 @@ namespace QuanLyHoSoCongChuc.Controller
             }
             else
             {
-                NguoiDungInfo ndinfo = new NguoiDungInfo(nd.Rows[0][0].ToString(), nd.Rows[0][1].ToString(), nd.Rows[0][2].ToString(), nd.Rows[0][3].ToString(), Convert.ToInt32(nd.Rows[0][4]));
+                NguoiDungInfo ndinfo = new NguoiDungInfo(nd.Rows[0][0].ToString(), nd.Rows[0][2].ToString(), nd.Rows[0][3].ToString(), nd.Rows[0][4].ToString(), Convert.ToInt32(nd.Rows[0][1]));
 
                 staticClass.nguoidungStatic = ndinfo;
                 return 2;

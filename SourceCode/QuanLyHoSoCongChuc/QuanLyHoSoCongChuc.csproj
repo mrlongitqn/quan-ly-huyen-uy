@@ -1060,8 +1060,11 @@
     <Content Include="Configs\NhomChucNang.xml">
       <SubType>Designer</SubType>
     </Content>
+<<<<<<< .mine
+=======
     <None Include="Resources\erase.jpg" />
     <None Include="Resources\Eraser-icon.png" />
+>>>>>>> .r72
     <Content Include="UsersDiary\UsersDiary.xml" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Resources\%24this.Icon.ico" />
