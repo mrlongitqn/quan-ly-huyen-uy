@@ -23,10 +23,10 @@ namespace QuanLyHoSoCongChuc.DataLayer
             m_NguoiDungData.Load(cmd);
             return m_NguoiDungData;
         }
-        public DataTable LayPassWord(String username)
+        public DataTable LayPassWord(String MatKhau)
         {
-            SqlCommand cmd = new SqlCommand("SELECT * FROM NguoiDung WHERE MatKhau = @ten");
-            cmd.Parameters.Add("ten", SqlDbType.VarChar).Value = username;
+            SqlCommand cmd = new SqlCommand("SELECT * FROM NguoiDung WHERE MatKhau = @MatKhau");
+            cmd.Parameters.Add("MatKhau", SqlDbType.VarChar).Value = MatKhau;
             m_NguoiDungData.Load(cmd);
             return m_NguoiDungData;
         }
