@@ -15,7 +15,7 @@ namespace QuanLyHoSoCongChuc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmQuanLyChucNang());
+            Application.Run(new FrmQuanLyLoaiNguoiDung());
         }
     }
 }

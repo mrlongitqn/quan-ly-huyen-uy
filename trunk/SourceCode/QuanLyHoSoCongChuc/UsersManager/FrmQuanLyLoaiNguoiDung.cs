@@ -15,24 +15,39 @@ namespace QuanLyHoSoCongChuc.UsersManager
     #endregion
 
     /// <summary>
-    /// Implement by le tuan: to manage chuc nang corresponding with menus in app
+    /// Implement by le tuan: to manage LoaiNguoiDung in app
     /// </summary>
-    public partial class FrmQuanLyChucNang : DevComponents.DotNetBar.Office2007Form
+    public partial class FrmQuanLyLoaiNguoiDung : DevComponents.DotNetBar.Office2007Form
     {
-        public FrmQuanLyChucNang()
+        public FrmQuanLyLoaiNguoiDung()
         {
             InitializeComponent();
         }
 
-        private void FrmQuanLyChucNang_Load(object sender, EventArgs e)
+        private void FrmQuanLyLoaiNguoiDung_Load(object sender, EventArgs e)
         {
             InitGridView();
             LoadData();
             // No choose any item
-            dtgvChucNang.ClearSelection();
+            dtgvLoaiNguoiDung.ClearSelection();
         }
 
-        private void btnThemMoi_Click(object sender, EventArgs e)
+        private void dtgvChucNang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dtgvLoaiNguoiDung.SelectedRows == null || dtgvLoaiNguoiDung.SelectedRows.Count == 0)
+                return;
+            var selectedItem = dtgvLoaiNguoiDung.SelectedRows[0];
+            txtMaLoaiNguoiDung.Text = ((LoaiNGuoiDung)selectedItem.DataBoundItem).MaQuyen.ToString();
+            txtTenLoaiNguoiDung.Text = ((LoaiNGuoiDung)selectedItem.DataBoundItem).TenQuyen.ToString();
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtMaLoaiNguoiDung.Text = "";
+            txtTenLoaiNguoiDung.Text = "";
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
         {
             var errorText = "";
             // true: update
@@ -103,22 +118,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void btnReset_Click(object sender, EventArgs e)
-        {
-            txtMaChucNang.Text = "";
-            txtTenChucNang.Text = "";
-        }
-
-        private void dtgvChucNang_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dtgvChucNang.SelectedRows == null || dtgvChucNang.SelectedRows.Count == 0)
-                return;
-            var selectedItem = dtgvChucNang.SelectedRows[0];
-            txtMaChucNang.Text = ((ChucNang)selectedItem.DataBoundItem).MaChucNang.ToString();
-            txtTenChucNang.Text = ((ChucNang)selectedItem.DataBoundItem).TenChucNang.ToString();
+            Close();
         }
 
         /// <summary>
@@ -126,24 +126,23 @@ namespace QuanLyHoSoCongChuc.UsersManager
         /// </summary>
         private void InitGridView()
         {
-            dtgvChucNang.AutoGenerateColumns = false;
-            dtgvChucNang.Columns.Clear();
+            dtgvLoaiNguoiDung.AutoGenerateColumns = false;
 
             DataGridViewTextBoxColumn objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Mã chức năng",
-                DataPropertyName = "MaChucNang",
-                Width = (int)((dtgvChucNang.Width - dtgvChucNang.RowHeadersWidth)*0.3)
+                HeaderText = "Mã loại người dùng",
+                DataPropertyName = "MaQuyen",
+                Width = (int)((dtgvLoaiNguoiDung.Width - dtgvLoaiNguoiDung.RowHeadersWidth) * 0.3)
             };
-            dtgvChucNang.Columns.Add(objColumn);
+            dtgvLoaiNguoiDung.Columns.Add(objColumn);
 
             objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Tên chức năng",
-                DataPropertyName = "TenChucNang",
-                Width = (int)((dtgvChucNang.Width - dtgvChucNang.RowHeadersWidth)*0.7 - 1)
+                HeaderText = "Tên loại người dùng",
+                DataPropertyName = "TenQuyen",
+                Width = (int)((dtgvLoaiNguoiDung.Width - dtgvLoaiNguoiDung.RowHeadersWidth) * 0.7 - 1)
             };
-            dtgvChucNang.Columns.Add(objColumn);
+            dtgvLoaiNguoiDung.Columns.Add(objColumn);
         }
 
         /// <summary>
@@ -151,10 +150,10 @@ namespace QuanLyHoSoCongChuc.UsersManager
         /// </summary>
         private void LoadData()
         {
-            var lstItem = ChucNangRepository.SelectAll();
+            var lstItem = LoaiNGuoiDungRepository.SelectAll();
             if (lstItem.Count > 0)
             {
-                dtgvChucNang.DataSource = lstItem;
+                dtgvLoaiNguoiDung.DataSource = lstItem;
             }
         }
 
@@ -168,15 +167,15 @@ namespace QuanLyHoSoCongChuc.UsersManager
             // Mode update -> checking MaChucNang is exists on textbox
             if (isUpdate)
             {
-                if (txtMaChucNang.Text == "")
+                if (txtMaLoaiNguoiDung.Text == "")
                 {
-                    errorText = "Vui lòng chọn chức năng";
+                    errorText = "Vui lòng chọn loại người dùng";
                     return false;
                 }
             }
-            if (txtTenChucNang.Text == "")
+            if (txtTenLoaiNguoiDung.Text == "")
             {
-                errorText = "Vui lòng nhập tên chức năng";
+                errorText = "Vui lòng nhập tên loại người dùng";
                 return false;
             }
 
@@ -191,11 +190,11 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                var item = new ChucNang
+                var item = new LoaiNGuoiDung
                 {
-                    TenChucNang = txtTenChucNang.Text
+                    TenQuyen = txtTenLoaiNguoiDung.Text
                 };
-                if (!ChucNangRepository.Insert(item))
+                if (!LoaiNGuoiDungRepository.Insert(item))
                 {
                     return false;
                 }
@@ -215,9 +214,9 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                var item = ChucNangRepository.SelectByID(int.Parse(txtMaChucNang.Text));
-                item.TenChucNang = txtTenChucNang.Text;
-                return ChucNangRepository.Save();
+                var item = LoaiNGuoiDungRepository.SelectByID(int.Parse(txtMaLoaiNguoiDung.Text));
+                item.TenQuyen = txtTenLoaiNguoiDung.Text;
+                return LoaiNGuoiDungRepository.Save();
             }
             catch
             {
@@ -233,7 +232,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                return ChucNangRepository.Delete(int.Parse(txtMaChucNang.Text));
+                return LoaiNGuoiDungRepository.Delete(int.Parse(txtMaLoaiNguoiDung.Text));
             }
             catch
             {

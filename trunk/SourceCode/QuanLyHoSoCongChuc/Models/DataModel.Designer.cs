@@ -42,7 +42,6 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_KyLuat_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "KyLuat", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.KyLuat), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_LoaiCanBo", "LoaiCanBo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiCanBo), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_LoaiNghiBaoHiemXaHoi", "LoaiNghiBaoHiemXaHoi", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNghiBaoHiemXaHoi), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
-[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "LoaiNguoiDung_ChucNang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung_ChucNang), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LucLuongVuTrang_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "LucLuongVuTrang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LucLuongVuTrang), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_NgachCongChuc", "NgachCongChuc", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NgachCongChuc), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ThanhPhanXuatThan", "ThanhPhanXuatThan", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.ThanhPhanXuatThan), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
@@ -66,6 +65,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_ThanNhanMoi_QuanHe", "QuanHe", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.QuanHe), "ThanNhanMoi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.ThanNhanMoi), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuanHuyen_TinhThanh", "TinhThanh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TinhThanh), "QuanHuyen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuanHuyen), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhCongTacMoi_QuocGia", "QuocGia", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.QuocGia), "QuaTrinhCongTacMoi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhCongTacMoi), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "LoaiNguoiDung_ChucNang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung_ChucNang), true)]
 
 #endregion
 
@@ -488,22 +488,6 @@ namespace QuanLyHoSoCongChuc.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<LoaiNGuoiDung> LoaiNGuoiDungs
-        {
-            get
-            {
-                if ((_LoaiNGuoiDungs == null))
-                {
-                    _LoaiNGuoiDungs = base.CreateObjectSet<LoaiNGuoiDung>("LoaiNGuoiDungs");
-                }
-                return _LoaiNGuoiDungs;
-            }
-        }
-        private ObjectSet<LoaiNGuoiDung> _LoaiNGuoiDungs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<LoaiNguoiDung_ChucNang> LoaiNguoiDung_ChucNang
         {
             get
@@ -900,6 +884,22 @@ namespace QuanLyHoSoCongChuc.Models
             }
         }
         private ObjectSet<TrinhDoTinHoc> _TrinhDoTinHocs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<LoaiNGuoiDung> LoaiNGuoiDungs
+        {
+            get
+            {
+                if ((_LoaiNGuoiDungs == null))
+                {
+                    _LoaiNGuoiDungs = base.CreateObjectSet<LoaiNGuoiDung>("LoaiNGuoiDungs");
+                }
+                return _LoaiNGuoiDungs;
+            }
+        }
+        private ObjectSet<LoaiNGuoiDung> _LoaiNGuoiDungs;
 
         #endregion
         #region AddTo Methods
@@ -1086,14 +1086,6 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToLoaiNghiBaoHiemXaHois(LoaiNghiBaoHiemXaHoi loaiNghiBaoHiemXaHoi)
         {
             base.AddObject("LoaiNghiBaoHiemXaHois", loaiNghiBaoHiemXaHoi);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the LoaiNGuoiDungs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToLoaiNGuoiDungs(LoaiNGuoiDung loaiNGuoiDung)
-        {
-            base.AddObject("LoaiNGuoiDungs", loaiNGuoiDung);
         }
     
         /// <summary>
@@ -1294,6 +1286,14 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToTrinhDoTinHocs(TrinhDoTinHoc trinhDoTinHoc)
         {
             base.AddObject("TrinhDoTinHocs", trinhDoTinHoc);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the LoaiNGuoiDungs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLoaiNGuoiDungs(LoaiNGuoiDung loaiNGuoiDung)
+        {
+            base.AddObject("LoaiNGuoiDungs", loaiNGuoiDung);
         }
 
         #endregion
