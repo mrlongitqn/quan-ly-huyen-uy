@@ -56,8 +56,8 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btnThemLoaiDonVi_Click(object sender, EventArgs e)
         {
-            FrmLoaiCoSo frm = new FrmLoaiCoSo();
-            frm.ShowDialog();
+            //FrmLoaiCoSo frm = new FrmLoaiCoSo();
+            //frm.ShowDialog();
         }
     }
 }

@@ -421,12 +421,6 @@
     <Compile Include="FrmLoaiCanBo.Designer.cs">
       <DependentUpon>FrmLoaiCanBo.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLoaiCoSo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLoaiCoSo.Designer.cs">
-      <DependentUpon>FrmLoaiCoSo.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmLoaiNghiBaoHiemXaHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -703,9 +697,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmLoaiCanBo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLoaiCoSo.resx">
-      <DependentUpon>FrmLoaiCoSo.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmLoaiNghiBaoHiemXaHoi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmLoaiNghiBaoHiemXaHoi.cs</DependentUpon>
@@ -837,6 +828,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UsersManager\FrmQuanLyChucNang.resx">
+      <DependentUpon>FrmQuanLyChucNang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersManager\FrmQuanLyChucNangNguoiDung.resx">
+      <DependentUpon>FrmQuanLyChucNangNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -947,6 +944,18 @@
     <Compile Include="Repositories\TrinhDoTinHocRepository.cs" />
     <Compile Include="staticClass.cs" />
     <Compile Include="UsersDiary\NhatKyNguoiDung.cs" />
+    <Compile Include="UsersManager\FrmQuanLyChucNang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersManager\FrmQuanLyChucNang.Designer.cs">
+      <DependentUpon>FrmQuanLyChucNang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersManager\FrmQuanLyChucNangNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersManager\FrmQuanLyChucNangNguoiDung.Designer.cs">
+      <DependentUpon>FrmQuanLyChucNangNguoiDung.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities.cs" />
     <Compile Include="Utils\NhomChucNang.cs" />
   </ItemGroup>
@@ -1051,13 +1060,8 @@
     <Content Include="Configs\NhomChucNang.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Models\QLHSCC.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Models\QLHSCC_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>QLHSCC.mdf</DependentUpon>
-    </Content>
+    <None Include="Resources\erase.jpg" />
+    <None Include="Resources\Eraser-icon.png" />
     <Content Include="UsersDiary\UsersDiary.xml" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Resources\%24this.Icon.ico" />
