@@ -15,3 +15,5 @@
 
 maät khaåu: baoadmin
 use: admin
+
+D:\LamAn\Web1Chai\Projects\Softs\QLHuyenUy\SourceCode\QuanLyHoSoCongChuc\QLHSCC.mdf

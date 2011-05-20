@@ -249,6 +249,13 @@ namespace QuanLyHoSoCongChuc.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Eraser_icon {
+            get {
+                object obj = ResourceManager.GetObject("Eraser_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);

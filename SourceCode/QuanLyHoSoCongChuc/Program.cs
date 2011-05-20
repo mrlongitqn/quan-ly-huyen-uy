@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 using QuanLyHoSoCongChuc.Report;
+using QuanLyHoSoCongChuc.UsersManager;
 namespace QuanLyHoSoCongChuc
 {
     static class Program
@@ -14,7 +15,7 @@ namespace QuanLyHoSoCongChuc
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            Application.Run(new FrmQuanLyChucNang());
         }
     }
 }
