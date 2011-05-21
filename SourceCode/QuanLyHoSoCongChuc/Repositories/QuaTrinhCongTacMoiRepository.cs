@@ -67,31 +67,31 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return (from item in DataContext.Instance.QuaTrinhCongTacMois where  item.MaQuaTrinhCongTac == maquatrinhcongtac  select item).ToList();
 		}
 
-		public static List<QuaTrinhCongTacMoi> SelectByNhanVien(string manhanvien, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByMaNhanVien(string manhanvien)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;
 		}
 
-		public static List<QuaTrinhCongTacMoi> SelectByNuocCongTac(int manuoccongtac, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByMaNuocCongTac(int manuoccongtac)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaNuocCongTac == manuoccongtac select item).ToList();
 			return lstItem;
 		}
 
-		public static List<QuaTrinhCongTacMoi> SelectByCapUy(int macapuy, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByMaCapUy(int macapuy)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaCapUy == macapuy select item).ToList();
 			return lstItem;
 		}
 
-		public static List<QuaTrinhCongTacMoi> SelectByCapUyKiem(int macapuykiem, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByMaCapUyKiem(int macapuykiem)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaCapUyKiem == macapuykiem select item).ToList();
 			return lstItem;
 		}
 
-		public static List<QuaTrinhCongTacMoi> SelectByChucVuChinhQuyen(int machucvuchinhquyen, int page, int pageSize)
+		public static List<QuaTrinhCongTacMoi> SelectByMaChucVuChinhQuyen(int machucvuchinhquyen)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacMois where item.MaChucVuChinhQuyen == machucvuchinhquyen select item).ToList();
 			return lstItem;

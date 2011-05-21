@@ -67,13 +67,13 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return (from item in DataContext.Instance.DonVis where  item.MaDonVi == madonvi  select item).ToList();
 		}
 
-		public static List<DonVi> SelectByLoaiDonVi(string maloaidonvi, int page, int pageSize)
+		public static List<DonVi> SelectByMaLoaiDonVi(string maloaidonvi)
 		{
 			var lstItem = (from item in DataContext.Instance.DonVis where item.MaLoaiDonVi == maloaidonvi select item).ToList();
 			return lstItem;
 		}
 
-		public static List<DonVi> SelectByQuanHuyen(string maquanhuyen, int page, int pageSize)
+		public static List<DonVi> SelectByMaQuanHuyen(string maquanhuyen)
 		{
 			var lstItem = (from item in DataContext.Instance.DonVis where item.MaQuanHuyen == maquanhuyen select item).ToList();
 			return lstItem;
