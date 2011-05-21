@@ -12,7 +12,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<ChucNang> SelectAll()
 		{
-			return DataContext.Instance.ChucNangs.OrderBy(item => item.TenChucNang).ToList();
+			return DataContext.Instance.ChucNangs.ToList();
 		}
 
 		public static ChucNang SelectByID(int machucnang)

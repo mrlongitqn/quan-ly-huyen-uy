@@ -67,7 +67,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return (from item in DataContext.Instance.PhuongXas where  item.MaPhuongXa == maphuongxa  select item).ToList();
 		}
 
-		public static List<PhuongXa> SelectByQuanHuyen(string maquanhuyen, int page, int pageSize)
+		public static List<PhuongXa> SelectByMaQuanHuyen(string maquanhuyen)
 		{
 			var lstItem = (from item in DataContext.Instance.PhuongXas where item.MaQuanHuyen == maquanhuyen select item).ToList();
 			return lstItem;

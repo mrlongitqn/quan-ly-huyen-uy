@@ -67,13 +67,13 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return (from item in DataContext.Instance.LoaiNguoiDung_ChucNang where  item.MaChucNangNguoiDung == machucnangnguoidung  select item).ToList();
 		}
 
-		public static List<LoaiNguoiDung_ChucNang> SelectByQuyen(int maquyen, int page, int pageSize)
+		public static List<LoaiNguoiDung_ChucNang> SelectByMaQuyen(int maquyen)
 		{
 			var lstItem = (from item in DataContext.Instance.LoaiNguoiDung_ChucNang where item.MaQuyen == maquyen select item).ToList();
 			return lstItem;
 		}
 
-		public static List<LoaiNguoiDung_ChucNang> SelectByChucNang(int machucnang, int page, int pageSize)
+		public static List<LoaiNguoiDung_ChucNang> SelectByMaChucNang(int machucnang)
 		{
 			var lstItem = (from item in DataContext.Instance.LoaiNguoiDung_ChucNang where item.MaChucNang == machucnang select item).ToList();
 			return lstItem;
