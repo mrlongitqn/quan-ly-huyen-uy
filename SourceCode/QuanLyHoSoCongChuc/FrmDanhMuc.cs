@@ -24,10 +24,18 @@ namespace QuanLyHoSoCongChuc.Report
     public partial class FrmDanhMuc :  DockContent
     {
         NhanVienControl m_NhanVienCtrl = new NhanVienControl();
+        List<LoaiDonVi> lstLoaiDonVi;
         public FrmDanhMuc()
         {
             DataService.OpenConnection();
             InitializeComponent();
+        }
+
+        private string m_tagNode = string.Empty;
+        public string TagNode
+        {
+            get { return m_tagNode; }
+            set { m_tagNode = value; }
         }
 
         private void FrmReportLuong_Load(object sender, EventArgs e)
@@ -47,21 +55,25 @@ namespace QuanLyHoSoCongChuc.Report
             //var lstItem = PhanLoaiDonViRepository.SelectAll();
             //for (int i = 0; i < lstItem.Count; i++)
             //{
-            //    cbLoaiDonVi.Items.Add(new ListItem(lstItem[i]., lstItem[i].TenDonVi));
+            //    cbPhanLoai.Items.Add(new ListItem(lstItem[i]., lstItem[i].TenDonVi));
             //}
+            //if (lstItem.Count>0)
+            //    cbPhanLoai.SelectedIndex = 1;
         }
         void loadLoaiDonVi()
         {
-            var lstItem = DonViRepository.SelectAll();
-            for (int i = 0; i < lstItem.Count; i++)
+            lstLoaiDonVi = LoaiDonViRepository.SelectAll();
+            for (int i = 0; i < lstLoaiDonVi.Count; i++)
             {
-                cbLoaiDonVi.Items.Add(new ListItem(lstItem[i].MaDonVi, lstItem[i].TenDonVi));
+                cbLoaiDonVi.Items.Add(new ListItem(lstLoaiDonVi[i].MaLoaiDonVi, lstLoaiDonVi[i].TenLoaiDonVi));
             }
+            if (lstLoaiDonVi.Count > 0)
+                cbLoaiDonVi.SelectedIndex = 1;
         }
         void loadTreeView()
         {
             treeView1.Nodes.Clear();
-            TreeNode root = new TreeNode("Đảng bộ Tỉnh Hà Tĩnh");
+            TreeNode root = new TreeNode("039 - Đảng bộ Tỉnh Hà Tĩnh");
 
             treeView1.Nodes.Add(root); // TreeView chi add 1 lan la node goc
 
@@ -70,7 +82,7 @@ namespace QuanLyHoSoCongChuc.Report
                 var lstItem = QuanHuyenRepository.SelectByMaTinh("039"); //039--> Hà Tĩnh
                 for (int i = 0; i < lstItem.Count; i++)
                 {
-                    TreeNode huyen = new TreeNode("Đảnh bộ Huyện " + lstItem[i].TenQuanHuyen);
+                    TreeNode huyen = new TreeNode(lstItem[i].MaQuanHuyen + " - Đảnh bộ Huyện " + lstItem[i].TenQuanHuyen);
                     root.Nodes.Add(huyen);
 
                     var lstItem2 = DonViRepository.SelectByMaQuanHuyen(lstItem[i].MaQuanHuyen);
@@ -78,7 +90,7 @@ namespace QuanLyHoSoCongChuc.Report
                     {
                         try
                         {
-                            TreeNode donvi = new TreeNode(lstItem2[i].MaDonVi + " - " + lstItem2[i].TenDonVi);
+                            TreeNode donvi = new TreeNode(lstItem2[j].MaDonVi.Trim() + " - " + lstItem2[j].TenDonVi);
                             huyen.Nodes.Add(donvi);
                         }
                         catch (Exception ex)
@@ -131,8 +143,51 @@ namespace QuanLyHoSoCongChuc.Report
             dv.MaDonVi = txtMaDonVi.Text;
             dv.TenDonVi = txtTenDonVi.Text;
 
-            //dv.MaLoaiDonVi
+            string maQuanHuyen = treeView1.SelectedNode.Text.Split('-')[0].Trim();
+            dv.MaQuanHuyen = maQuanHuyen;
+            try
+            {
+                ListItem LoaiDV = (ListItem)cbLoaiDonVi.SelectedItem;
+                dv.MaLoaiDonVi = LoaiDV.ID;
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            ListItem PhanLoaiDV = (ListItem)cbPhanLoai.SelectedItem;
+            //dv.MaPhanLoaiDonVi = PhanLoaiDV.ID;
             //bool Kq = DonViRepository.Insert(
         }
-    }
+
+        private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            if (e.Node.Tag != null && e.Node.Tag.ToString() != "")
+            {
+                m_tagNode = e.Node.Tag.ToString();
+            }
+            
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            string maDonVi = treeView1.SelectedNode.Text.Split('-')[0].Trim();
+            var DonVi = DonViRepository.SelectByID(maDonVi);
+
+            txtMaDonVi.Text = DonVi.MaDonVi;
+            txtTenDonVi.Text = DonVi.TenDonVi;
+            cbLoaiDonVi.SelectedValue = DonVi.MaLoaiDonVi;
+            for (int i = 0; i < lstLoaiDonVi.Count; i++)
+            {
+                if (lstLoaiDonVi[i].MaLoaiDonVi == DonVi.MaLoaiDonVi)
+                    cbLoaiDonVi.SelectedIndex = i;
+            }
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+
+        }
+
+    } 
 }
