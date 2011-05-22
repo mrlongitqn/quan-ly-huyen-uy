@@ -5227,7 +5227,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// <param name="tenNguoiDung">Initial value of the TenNguoiDung property.</param>
         /// <param name="tenDangNhap">Initial value of the TenDangNhap property.</param>
         /// <param name="matKhau">Initial value of the MatKhau property.</param>
-        public static NguoiDung CreateNguoiDung(global::System.String maNguoiDung, global::System.Int32 maQuyen, global::System.String tenNguoiDung, global::System.String tenDangNhap, global::System.String matKhau)
+        public static NguoiDung CreateNguoiDung(global::System.Int32 maNguoiDung, global::System.Int32 maQuyen, global::System.String tenNguoiDung, global::System.String tenDangNhap, global::System.String matKhau)
         {
             NguoiDung nguoiDung = new NguoiDung();
             nguoiDung.MaNguoiDung = maNguoiDung;
@@ -5246,7 +5246,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String MaNguoiDung
+        public global::System.Int32 MaNguoiDung
         {
             get
             {
@@ -5258,14 +5258,14 @@ namespace QuanLyHoSoCongChuc.Models
                 {
                     OnMaNguoiDungChanging(value);
                     ReportPropertyChanging("MaNguoiDung");
-                    _MaNguoiDung = StructuralObject.SetValidValue(value, false);
+                    _MaNguoiDung = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("MaNguoiDung");
                     OnMaNguoiDungChanged();
                 }
             }
         }
-        private global::System.String _MaNguoiDung;
-        partial void OnMaNguoiDungChanging(global::System.String value);
+        private global::System.Int32 _MaNguoiDung;
+        partial void OnMaNguoiDungChanging(global::System.Int32 value);
         partial void OnMaNguoiDungChanged();
     
         /// <summary>
