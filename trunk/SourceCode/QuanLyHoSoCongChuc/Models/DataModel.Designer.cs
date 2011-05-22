@@ -5326,6 +5326,11 @@ namespace QuanLyHoSoCongChuc.Models
         partial void OnNgayDangKiChanged();
 
         #endregion
+
+        public override string ToString()
+        {
+            return TenDangNhap;
+        }
     
     }
     

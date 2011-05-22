@@ -50,6 +50,7 @@
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
+            this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -286,8 +287,8 @@
             this.btnReset.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Eraser_icon;
             this.btnReset.Name = "btnReset";
             this.btnReset.RightToLeftAutoMirrorImage = true;
-            this.btnReset.Size = new System.Drawing.Size(39, 33);
-            this.btnReset.Text = "Reset";
+            this.btnReset.Size = new System.Drawing.Size(55, 33);
+            this.btnReset.Text = "Nhập mới";
             this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
@@ -387,6 +388,7 @@
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnThoat;
+        private CachedCrystalReport2 cachedCrystalReport21;
 
     }
 }

@@ -834,8 +834,11 @@
     <EmbeddedResource Include="UsersManager\FrmQuanLyChucNang.resx">
       <DependentUpon>FrmQuanLyChucNang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UsersManager\FrmQuanLyChucNangNguoiDung.resx">
-      <DependentUpon>FrmQuanLyChucNangNguoiDung.cs</DependentUpon>
+    <EmbeddedResource Include="UsersManager\frmQuanLyChucNangNguoiDung.resx">
+      <DependentUpon>frmQuanLyChucNangNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersManager\FrmQuanLyNguoiDung.resx">
+      <DependentUpon>FrmQuanLyNguoiDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersManager\FrmQuanLyLoaiNguoiDung.resx">
       <DependentUpon>FrmQuanLyLoaiNguoiDung.cs</DependentUpon>
@@ -928,6 +931,7 @@
     <Compile Include="Repositories\LoaiNguoiDung_ChucNangRepository.cs" />
     <Compile Include="Repositories\LucLuongVuTrangRepository.cs" />
     <Compile Include="Repositories\NgachCongChucRepository.cs" />
+    <Compile Include="Repositories\NguoiDungRepository.cs" />
     <Compile Include="Repositories\NhanVienRepository.cs" />
     <Compile Include="Repositories\PhuongXaRepository.cs" />
     <Compile Include="Repositories\QuanHeRepository.cs" />
@@ -957,11 +961,17 @@
     <Compile Include="UsersManager\FrmQuanLyChucNang.Designer.cs">
       <DependentUpon>FrmQuanLyChucNang.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsersManager\FrmQuanLyChucNangNguoiDung.cs">
+    <Compile Include="UsersManager\frmQuanLyChucNangNguoiDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsersManager\FrmQuanLyChucNangNguoiDung.Designer.cs">
-      <DependentUpon>FrmQuanLyChucNangNguoiDung.cs</DependentUpon>
+    <Compile Include="UsersManager\frmQuanLyChucNangNguoiDung.Designer.cs">
+      <DependentUpon>frmQuanLyChucNangNguoiDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersManager\FrmQuanLyNguoiDung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersManager\FrmQuanLyNguoiDung.Designer.cs">
+      <DependentUpon>FrmQuanLyNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="UsersManager\FrmQuanLyLoaiNguoiDung.cs">
       <SubType>Form</SubType>
