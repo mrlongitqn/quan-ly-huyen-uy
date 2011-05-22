@@ -47,6 +47,7 @@ namespace QuanLyHoSoCongChuc.Utils
     {
         public static string g_strTenDangNhap = "qlhscc_admin";
         public static string g_strTenMayTram = "";
+        public static string g_strPathNhatKi = "D:\\";
         public static NhatKyNguoiDung g_NhatKySuDung { get; set; }
     }
 }
