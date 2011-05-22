@@ -66,6 +66,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuanHuyen_TinhThanh", "TinhThanh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TinhThanh), "QuanHuyen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuanHuyen), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhCongTacMoi_QuocGia", "QuocGia", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.QuocGia), "QuaTrinhCongTacMoi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhCongTacMoi), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "LoaiNguoiDung_ChucNang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung_ChucNang), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "NguoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NguoiDung), true)]
 
 #endregion
 
@@ -536,22 +537,6 @@ namespace QuanLyHoSoCongChuc.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<NguoiDung> NguoiDungs
-        {
-            get
-            {
-                if ((_NguoiDungs == null))
-                {
-                    _NguoiDungs = base.CreateObjectSet<NguoiDung>("NguoiDungs");
-                }
-                return _NguoiDungs;
-            }
-        }
-        private ObjectSet<NguoiDung> _NguoiDungs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<NhanVien> NhanViens
         {
             get
@@ -900,6 +885,22 @@ namespace QuanLyHoSoCongChuc.Models
             }
         }
         private ObjectSet<LoaiNGuoiDung> _LoaiNGuoiDungs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<NguoiDung> NguoiDungs
+        {
+            get
+            {
+                if ((_NguoiDungs == null))
+                {
+                    _NguoiDungs = base.CreateObjectSet<NguoiDung>("NguoiDungs");
+                }
+                return _NguoiDungs;
+            }
+        }
+        private ObjectSet<NguoiDung> _NguoiDungs;
 
         #endregion
         #region AddTo Methods
@@ -1113,14 +1114,6 @@ namespace QuanLyHoSoCongChuc.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the NguoiDungs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToNguoiDungs(NguoiDung nguoiDung)
-        {
-            base.AddObject("NguoiDungs", nguoiDung);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the NhanViens EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToNhanViens(NhanVien nhanVien)
@@ -1294,6 +1287,14 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToLoaiNGuoiDungs(LoaiNGuoiDung loaiNGuoiDung)
         {
             base.AddObject("LoaiNGuoiDungs", loaiNGuoiDung);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the NguoiDungs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToNguoiDungs(NguoiDung nguoiDung)
+        {
+            base.AddObject("NguoiDungs", nguoiDung);
         }
 
         #endregion
@@ -4607,6 +4608,28 @@ namespace QuanLyHoSoCongChuc.Models
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NguoiDung_LoaiNGuoiDung", "NguoiDung")]
+        public EntityCollection<NguoiDung> NguoiDungs
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<NguoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "NguoiDung");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<NguoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "NguoiDung", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -5130,6 +5153,10 @@ namespace QuanLyHoSoCongChuc.Models
     [DataContractAttribute(IsReference=true)]
     public partial class NguoiDung : EntityObject
     {
+        public override string ToString()
+        {
+            return TenDangNhap;
+        }
         #region Factory Method
     
         /// <summary>
@@ -5140,7 +5167,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// <param name="tenNguoiDung">Initial value of the TenNguoiDung property.</param>
         /// <param name="tenDangNhap">Initial value of the TenDangNhap property.</param>
         /// <param name="matKhau">Initial value of the MatKhau property.</param>
-        public static NguoiDung CreateNguoiDung(global::System.String maNguoiDung, global::System.Int32 maQuyen, global::System.String tenNguoiDung, global::System.String tenDangNhap, global::System.String matKhau)
+        public static NguoiDung CreateNguoiDung(global::System.Int32 maNguoiDung, global::System.Int32 maQuyen, global::System.String tenNguoiDung, global::System.String tenDangNhap, global::System.String matKhau)
         {
             NguoiDung nguoiDung = new NguoiDung();
             nguoiDung.MaNguoiDung = maNguoiDung;
@@ -5159,7 +5186,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.String MaNguoiDung
+        public global::System.Int32 MaNguoiDung
         {
             get
             {
@@ -5171,14 +5198,14 @@ namespace QuanLyHoSoCongChuc.Models
                 {
                     OnMaNguoiDungChanging(value);
                     ReportPropertyChanging("MaNguoiDung");
-                    _MaNguoiDung = StructuralObject.SetValidValue(value, false);
+                    _MaNguoiDung = StructuralObject.SetValidValue(value);
                     ReportPropertyChanged("MaNguoiDung");
                     OnMaNguoiDungChanged();
                 }
             }
         }
-        private global::System.String _MaNguoiDung;
-        partial void OnMaNguoiDungChanging(global::System.String value);
+        private global::System.Int32 _MaNguoiDung;
+        partial void OnMaNguoiDungChanging(global::System.Int32 value);
         partial void OnMaNguoiDungChanged();
     
         /// <summary>
@@ -5326,12 +5353,48 @@ namespace QuanLyHoSoCongChuc.Models
         partial void OnNgayDangKiChanged();
 
         #endregion
-
-        public override string ToString()
-        {
-            return TenDangNhap;
-        }
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung")]
+        public LoaiNGuoiDung LoaiNGuoiDung
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiNGuoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiNGuoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<LoaiNGuoiDung> LoaiNGuoiDungReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiNGuoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiNGuoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung", value);
+                }
+            }
+        }
+
+        #endregion
     }
     
     /// <summary>
