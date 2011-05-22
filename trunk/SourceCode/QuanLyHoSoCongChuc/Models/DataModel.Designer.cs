@@ -5153,10 +5153,6 @@ namespace QuanLyHoSoCongChuc.Models
     [DataContractAttribute(IsReference=true)]
     public partial class NguoiDung : EntityObject
     {
-        public override string ToString()
-        {
-            return TenDangNhap;
-        }
         #region Factory Method
     
         /// <summary>

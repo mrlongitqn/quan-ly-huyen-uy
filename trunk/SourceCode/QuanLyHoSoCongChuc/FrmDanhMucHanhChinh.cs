@@ -36,7 +36,7 @@ namespace QuanLyHoSoCongChuc
         private void FrmDanhMucHanhChinh_Load(object sender, EventArgs e)
         {
             DataService.OpenConnection();
-            m_DanhMucHanhChinhControl.HienThiTreeView(trvDanhMucHanhChinh);
+            m_DanhMucHanhChinhControl.HienThiTreeView(treeviewDMHC);
         }
 
         private void trvDanhMucHanhChinh_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)

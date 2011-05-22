@@ -79,5 +79,11 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return lstItem;
 		}
 
+        //public static List<DonVi> SelectByMaPhanLoaiDonVi(string maphanloaidonvi)
+        //{
+        //    var lstItem = (from item in DataContext.Instance.DonVis where item.MaPhanLoaiDonVi == maphanloaidonvi select item).ToList();
+        //    return lstItem;
+        //}
+
 	}
 }

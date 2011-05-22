@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.trvDanhMucHanhChinh = new System.Windows.Forms.TreeView();
+            this.treeviewDMHC = new System.Windows.Forms.TreeView();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnChon = new DevComponents.DotNetBar.ButtonX();
             this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
             this.SuspendLayout();
             // 
-            // trvDanhMucHanhChinh
+            // treeviewDMHC
             // 
-            this.trvDanhMucHanhChinh.Location = new System.Drawing.Point(12, 43);
-            this.trvDanhMucHanhChinh.Name = "trvDanhMucHanhChinh";
-            this.trvDanhMucHanhChinh.Size = new System.Drawing.Size(374, 223);
-            this.trvDanhMucHanhChinh.TabIndex = 0;
-            this.trvDanhMucHanhChinh.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvDanhMucHanhChinh_NodeMouseClick);
+            this.treeviewDMHC.Location = new System.Drawing.Point(12, 43);
+            this.treeviewDMHC.Name = "treeviewDMHC";
+            this.treeviewDMHC.Size = new System.Drawing.Size(374, 223);
+            this.treeviewDMHC.TabIndex = 0;
+            this.treeviewDMHC.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvDanhMucHanhChinh_NodeMouseClick);
             // 
             // btnThem
             // 
@@ -83,7 +83,8 @@
             this.Controls.Add(this.buttonX3);
             this.Controls.Add(this.btnChon);
             this.Controls.Add(this.btnThem);
-            this.Controls.Add(this.trvDanhMucHanhChinh);
+            this.Controls.Add(this.treeviewDMHC);
+            this.DoubleBuffered = true;
             this.Name = "FrmDanhMucHanhChinh";
             this.Text = "Danh Mục Hành Chính";
             this.Load += new System.EventHandler(this.FrmDanhMucHanhChinh_Load);
@@ -93,7 +94,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView trvDanhMucHanhChinh;
+        private System.Windows.Forms.TreeView treeviewDMHC;
         private DevComponents.DotNetBar.ButtonX btnThem;
         private DevComponents.DotNetBar.ButtonX btnChon;
         private DevComponents.DotNetBar.ButtonX buttonX3;

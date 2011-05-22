@@ -15,7 +15,8 @@ namespace QuanLyHoSoCongChuc
 
         static DataContext()
         {
-            _dataContext = new QLHSCCEntities();
+           _dataContext = new QLHSCCEntities();
+            //_dataContext = new ABCDEntities();
         }
 
         public static QLHSCCEntities Instance
