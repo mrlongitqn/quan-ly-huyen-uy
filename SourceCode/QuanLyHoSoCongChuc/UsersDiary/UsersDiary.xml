@@ -10,19 +10,10 @@
           <tenchucnang></tenchucnang>
           <solan></solan>
         </chucnangsudung>
-      </danhsachchucnangsudung>
-    </nhatky>
-  </nguoidung>
-  <nguoidung tentruycap="B">
-    <nhatky>
-      <thoidiemvao></thoidiemvao>
-      <thoidiemra></thoidiemra>
-      <tenmaytram></tenmaytram>
-      <danhsachchucnangsudung>
-        <chucnangsudung>
-          <tenchucnang></tenchucnang>
-          <solan></solan>
-        </chucnangsudung>
+		<chucnangsudung>
+		  <tenchucnang></tenchucnang>
+		  <solan></solan>
+		</chucnangsudung>
       </danhsachchucnangsudung>
     </nhatky>
   </nguoidung>
