@@ -12,10 +12,10 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<NguoiDung> SelectAll()
 		{
-			return DataContext.Instance.NguoiDungs.ToList();
+			return DataContext.Instance.NguoiDungs.OrderBy(item => item.TenDangNhap).ToList();
 		}
 
-		public static NguoiDung SelectByID(string manguoidung)
+		public static NguoiDung SelectByID(int manguoidung)
 		{
 			return DataContext.Instance.NguoiDungs.FirstOrDefault(item => item.MaNguoiDung == manguoidung );
 		}
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(string manguoidung)
+		public static bool Delete(int manguoidung)
 		{
 			try
 			{
@@ -62,9 +62,15 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<NguoiDung> RetrieveByID(string manguoidung)
+		public static List<NguoiDung> RetrieveByID(int manguoidung)
 		{
 			return (from item in DataContext.Instance.NguoiDungs where  item.MaNguoiDung == manguoidung  select item).ToList();
+		}
+
+		public static List<NguoiDung> SelectByMaQuyen(int maquyen)
+		{
+			var lstItem = (from item in DataContext.Instance.NguoiDungs where item.MaQuyen == maquyen select item).ToList();
+			return lstItem;
 		}
 
 	}
