@@ -12,6 +12,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
     #region Using
     using QuanLyHoSoCongChuc.Models;
     using QuanLyHoSoCongChuc.Repositories;
+    using QuanLyHoSoCongChuc.Utils;
     #endregion
 
     /// <summary>
@@ -35,9 +36,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
             var errorText = "";
-            // true: update
-            // false: add/delete
-            if (!ValidateInput(false, ref errorText))
+            if (!ValidateInput(EnumUpdateMode.INSERT, ref errorText))
             {
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -57,9 +56,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         private void btnXoa_Click(object sender, EventArgs e)
         {
             var errorText = "";
-            // true: update
-            // false: add/delete
-            if (!ValidateInput(false, ref errorText))
+            if (!ValidateInput(EnumUpdateMode.DELETE, ref errorText))
             {
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -82,9 +79,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         private void btnLuu_Click(object sender, EventArgs e)
         {
             var errorText = "";
-            // true: update
-            // false: add/delete
-            if (!ValidateInput(true, ref errorText))
+            if (!ValidateInput(EnumUpdateMode.UPDATE, ref errorText))
             {
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -163,10 +158,10 @@ namespace QuanLyHoSoCongChuc.UsersManager
         /// </summary>
         /// <param name="isUpdate"></param>
         /// <returns></returns>
-        private bool ValidateInput(bool isUpdate, ref string errorText)
+        private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
         {
             // Mode update -> checking MaChucNang is exists on textbox
-            if (isUpdate)
+            if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE)
             {
                 if (txtMaChucNang.Text == "")
                 {
@@ -174,10 +169,13 @@ namespace QuanLyHoSoCongChuc.UsersManager
                     return false;
                 }
             }
-            if (txtTenChucNang.Text == "")
+            if (mode != EnumUpdateMode.DELETE)
             {
-                errorText = "Vui lòng nhập tên chức năng";
-                return false;
+                if (txtTenChucNang.Text == "")
+                {
+                    errorText = "Vui lòng nhập tên chức năng";
+                    return false;
+                }
             }
 
             return true;

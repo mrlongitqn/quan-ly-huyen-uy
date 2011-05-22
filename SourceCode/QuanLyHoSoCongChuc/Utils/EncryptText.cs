@@ -18,7 +18,7 @@ namespace QuanLyHoSoCongChuc
             0x12, 0x34, 0x56, 0x78, 0x90, 0xAB, 0xCD, 0xEF
         };
 
-        public string Encrypt(string data)
+        public static string Encrypt(string data)
         {
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
 
@@ -37,7 +37,7 @@ namespace QuanLyHoSoCongChuc
             return Convert.ToBase64String(ms.ToArray());
         }
 
-        public string Decrypt(string data)
+        public static string Decrypt(string data)
         {
             byte[] input = Convert.FromBase64String(data);
             DESCryptoServiceProvider des = new DESCryptoServiceProvider();
