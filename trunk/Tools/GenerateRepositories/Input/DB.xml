@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<configs>
+  <datasource>PC2011042720BGO\SQLEXPRESS</datasource>
+  <databasename>QLHSCC</databasename>
+  <namespace>QuanLyHoSoCongChuc</namespace>
+  <usertablename>NguoiDung</usertablename>
+  <superadmin>SuperAdmin</superadmin>
+  <admin>Admin</admin>
+  <defaultguid>11112222-1111-1111-1111-111122223333</defaultguid>
+  <noimages>noimages.jpg</noimages>
+  <usingfck>
+  </usingfck>
+  <tablehaveimage>
+  </tablehaveimage>
+  <paging>
+  </paging>
+  <!-- using ajax when excute adding, removing, editing -->
+  <usingajax>
+  </usingajax>
+</configs>
