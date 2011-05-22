@@ -123,8 +123,8 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btnThemLoaiDonVi_Click(object sender, EventArgs e)
         {
-            //FrmLoaiCoSo frm = new FrmLoaiCoSo();
-            //frm.ShowDialog();
+            FrmThemLoaiDonVi frm = new FrmThemLoaiDonVi();//FrmLoaiCoSo();
+            frm.ShowDialog();
         }
 
         private void btXoa_Click(object sender, EventArgs e)
