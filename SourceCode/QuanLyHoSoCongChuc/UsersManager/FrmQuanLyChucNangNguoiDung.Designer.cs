@@ -42,11 +42,11 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.btnLuu = new DevComponents.DotNetBar.ButtonX();
-            this.btnDong = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
+            this.btnLuu = new DevComponents.DotNetBar.ButtonX();
+            this.btnDong = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -245,31 +245,6 @@
             this.groupPanel1.TabIndex = 2;
             this.groupPanel1.Text = "Quản lý các chức năng thuộc về loại người dùng";
             // 
-            // btnLuu
-            // 
-            this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnLuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLuu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
-            this.btnLuu.Location = new System.Drawing.Point(401, 441);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(73, 23);
-            this.btnLuu.TabIndex = 17;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnDong
-            // 
-            this.btnDong.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnDong.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
-            this.btnDong.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btnDong.Location = new System.Drawing.Point(502, 441);
-            this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 23);
-            this.btnDong.TabIndex = 16;
-            this.btnDong.Text = "Đóng";
-            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
-            // 
             // panelEx1
             // 
             this.panelEx1.CanvasColor = System.Drawing.SystemColors.Control;
@@ -298,6 +273,31 @@
             this.labelX3.TabIndex = 1;
             this.labelX3.Text = "CHỨC NĂNG NGƯỜI DÙNG";
             this.labelX3.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnLuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnLuu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
+            this.btnLuu.Location = new System.Drawing.Point(401, 441);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(73, 23);
+            this.btnLuu.TabIndex = 17;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btnDong
+            // 
+            this.btnDong.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnDong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnDong.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
+            this.btnDong.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.btnDong.Location = new System.Drawing.Point(502, 441);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(75, 23);
+            this.btnDong.TabIndex = 16;
+            this.btnDong.Text = "Đóng";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // frmQuanLyChucNangNguoiDung
             // 

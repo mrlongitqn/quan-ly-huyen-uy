@@ -510,8 +510,8 @@
             this.btnLuu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(29, 33);
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Size = new System.Drawing.Size(55, 33);
+            this.btnLuu.Text = "Cập nhật";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
