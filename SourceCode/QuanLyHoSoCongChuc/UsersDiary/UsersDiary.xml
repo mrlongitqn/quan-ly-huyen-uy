@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <danhsachnguoidung>
-  <nguoidung tendangnhap="A">
+  <nguoidung tentruycap="A">
     <nhatky>
       <thoidiemvao></thoidiemvao>
       <thoidiemra></thoidiemra>
@@ -13,7 +13,7 @@
       </danhsachchucnangsudung>
     </nhatky>
   </nguoidung>
-  <nguoidung tendangnhap="B">
+  <nguoidung tentruycap="B">
     <nhatky>
       <thoidiemvao></thoidiemvao>
       <thoidiemra></thoidiemra>
