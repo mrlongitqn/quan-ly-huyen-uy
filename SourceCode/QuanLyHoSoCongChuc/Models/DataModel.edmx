@@ -3130,7 +3130,7 @@
         <EntityTypeShape EntityType="QLHSCCModel.GioiTinh" Width="1.5" PointX="8.25" PointY="38.5" Height="1.4279589843750102" IsExpanded="true" />
         <EntityTypeShape EntityType="QLHSCCModel.HinhThucTuyenDung" Width="1.5" PointX="8.25" PointY="40.75" Height="1.4279589843750102" IsExpanded="true" />
         <EntityTypeShape EntityType="QLHSCCModel.HoanCanhKinhTe" Width="1.5" PointX="15.75" PointY="18.25" Height="3.7288216145833388" IsExpanded="true" />
-        <EntityTypeShape EntityType="QLHSCCModel.HoatDongKinhTe" Width="1.5" PointX="13.5" PointY="1.375" Height="1.4279589843750031" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLHSCCModel.HoatDongKinhTe" Width="3.125" PointX="13.5" PointY="1.375" Height="0.4" IsExpanded="false" />
         <EntityTypeShape EntityType="QLHSCCModel.Huong85" Width="1.5" PointX="8.25" PointY="42.875" Height="1.4279589843750102" IsExpanded="true" />
         <EntityTypeShape EntityType="QLHSCCModel.KhenThuong" Width="1.5" PointX="12.75" PointY="16" Height="2.0853483072916674" IsExpanded="true" />
         <EntityTypeShape EntityType="QLHSCCModel.KhoiXom" Width="1.5" PointX="7.5" PointY="22.25" Height="1.5923063151041674" IsExpanded="true" />
@@ -3163,20 +3163,22 @@
         <EntityTypeShape EntityType="QLHSCCModel.TrinhDoQuanLyNhaNuoc" Width="1.5" PointX="8.25" PointY="66.875" Height="1.4279589843749818" IsExpanded="true" />
         <EntityTypeShape EntityType="QLHSCCModel.TrinhDoTinHoc" Width="1.5" PointX="8.25" PointY="69" Height="1.4279589843749818" IsExpanded="true" />
         <AssociationConnector Association="QLHSCCModel.FK_QuaTrinhCongTacMoi_CapUy" ManuallyRouted="false">
-          <ConnectorPoint PointX="14.65625" PointY="11.552958984375" />
-          <ConnectorPoint PointX="14.65625" PointY="15.624847819010419" />
-          <ConnectorPoint PointX="15.291666666666666" PointY="15.624847819010418" />
-          <ConnectorPoint PointX="15.583333333333334" PointY="15.624847819010419" />
-          <ConnectorPoint PointX="15.75" PointY="15.624847819010419" />
+          <ConnectorPoint PointX="14.65625" PointY="11.72068359375" />
+          <ConnectorPoint PointX="14.65625" PointY="15.739366064204694" />
+          <ConnectorPoint PointX="15.197916666666666" PointY="15.739366064204694" />
+          <ConnectorPoint PointX="15.364583333333334" PointY="15.739366064204694" />
+          <ConnectorPoint PointX="15.416666666666666" PointY="15.739366064204694" />
+          <ConnectorPoint PointX="15.583333333333334" PointY="15.739366064204694" />
+          <ConnectorPoint PointX="15.75" PointY="15.739366064204694" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_QuaTrinhCongTacMoi_CapUyKiem" ManuallyRouted="false">
-          <ConnectorPoint PointX="15" PointY="7.9639794921875" />
-          <ConnectorPoint PointX="15.291666666666666" PointY="7.9639794921874989" />
-          <ConnectorPoint PointX="15.458333333333334" PointY="7.9639794921875" />
-          <ConnectorPoint PointX="16.010414166666667" PointY="7.9639794921874989" />
-          <ConnectorPoint PointX="16.177080833333331" PointY="7.9639794921875" />
-          <ConnectorPoint PointX="16.5" PointY="7.9639794921875" />
-          <ConnectorPoint PointX="16.5" PointY="13.375" />
+          <ConnectorPoint PointX="15" PointY="8.047841796875" />
+          <ConnectorPoint PointX="15.197916666666666" PointY="8.047841796875" />
+          <ConnectorPoint PointX="15.364583333333334" PointY="8.047841796875" />
+          <ConnectorPoint PointX="16.111977291666665" PointY="8.047841796875" />
+          <ConnectorPoint PointX="16.27864395833333" PointY="8.047841796875" />
+          <ConnectorPoint PointX="16.70312625" PointY="8.047841796875" />
+          <ConnectorPoint PointX="16.70312625" PointY="13.375" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_LoaiNguoiDung_ChucNang_ChucNang" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="1.8389794921874998" />
@@ -3187,11 +3189,11 @@
           <ConnectorPoint PointX="10.5" PointY="19.963979492187498" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_QuaTrinhCongTacMoi_ChucVuChinhQuyen" ManuallyRouted="false">
-          <ConnectorPoint PointX="15" PointY="5.2139794921875" />
-          <ConnectorPoint PointX="15.291666666666666" PointY="5.2139794921874989" />
-          <ConnectorPoint PointX="15.458333333333334" PointY="5.2139794921875" />
-          <ConnectorPoint PointX="16.0937475" PointY="5.2139794921875" />
-          <ConnectorPoint PointX="16.0937475" PointY="13.375" />
+          <ConnectorPoint PointX="15" PointY="5.297841796875" />
+          <ConnectorPoint PointX="15.197916666666666" PointY="5.2978417968749989" />
+          <ConnectorPoint PointX="15.364583333333334" PointY="5.297841796875" />
+          <ConnectorPoint PointX="16.195310624999998" PointY="5.297841796875" />
+          <ConnectorPoint PointX="16.195310624999998" PointY="13.375" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_NhanVien_CongViec" ManuallyRouted="false">
           <ConnectorPoint PointX="9.75" PointY="26.213979492187498" />
@@ -3269,20 +3271,21 @@
           <ConnectorPoint PointX="11.45312625" PointY="28.908997395833325" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_HoanCanhKinhTe_HoatDongKinhTe" ManuallyRouted="false">
-          <ConnectorPoint PointX="15" PointY="2.8029589843750031" />
-          <ConnectorPoint PointX="15.375" PointY="3.1779589843750031" />
-          <ConnectorPoint PointX="15.375" PointY="20.114410807291669" />
-          <ConnectorPoint PointX="15.416666666666666" PointY="20.114410807291669" />
-          <ConnectorPoint PointX="15.583333333333334" PointY="20.114410807291669" />
-          <ConnectorPoint PointX="15.75" PointY="20.114410807291669" />
+          <ConnectorPoint PointX="15.28125" PointY="1.775" />
+          <ConnectorPoint PointX="15.28125" PointY="21.653595377604169" />
+          <ConnectorPoint PointX="15.416666666666666" PointY="21.653595377604169" />
+          <ConnectorPoint PointX="15.583333333333334" PointY="21.653595377604169" />
+          <ConnectorPoint PointX="15.75" PointY="21.653595377604169" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_HoanCanhKinhTe_NhanVien" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="21.499847819010419" />
-          <ConnectorPoint PointX="14.744791666666666" PointY="21.499847819010419" />
-          <ConnectorPoint PointX="14.911458333333334" PointY="21.499847819010419" />
-          <ConnectorPoint PointX="15.416666666666666" PointY="21.499847819010419" />
-          <ConnectorPoint PointX="15.583333333333334" PointY="21.499847819010419" />
-          <ConnectorPoint PointX="15.75" PointY="21.499847819010419" />
+          <ConnectorPoint PointX="12" PointY="18.619944661458334" />
+          <ConnectorPoint PointX="14.744791666666666" PointY="18.619944661458334" />
+          <ConnectorPoint PointX="14.911458333333334" PointY="18.619944661458334" />
+          <ConnectorPoint PointX="15.197916666666666" PointY="18.619944661458334" />
+          <ConnectorPoint PointX="15.364583333333334" PointY="18.619944661458334" />
+          <ConnectorPoint PointX="15.416666666666666" PointY="18.619944661458334" />
+          <ConnectorPoint PointX="15.583333333333334" PointY="18.619944661458334" />
+          <ConnectorPoint PointX="15.75" PointY="18.619944661458334" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_NhanVien_Huong85" ManuallyRouted="false">
           <ConnectorPoint PointX="9.75" PointY="43.588979492187505" />
@@ -3400,12 +3403,12 @@
           <ConnectorPoint PointX="12.75" PointY="28.329498697916662" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_QuaTrinhCongTacMoi_NhanVien" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="15.406021728515629" />
-          <ConnectorPoint PointX="14.572916666666666" PointY="15.406021728515629" />
-          <ConnectorPoint PointX="14.739583333333334" PointY="15.406021728515629" />
-          <ConnectorPoint PointX="15.291666666666666" PointY="15.406021728515627" />
-          <ConnectorPoint PointX="15.583333333333334" PointY="15.406021728515629" />
-          <ConnectorPoint PointX="15.75" PointY="15.406021728515629" />
+          <ConnectorPoint PointX="12" PointY="15.900933032102348" />
+          <ConnectorPoint PointX="15.197916666666666" PointY="15.900933032102348" />
+          <ConnectorPoint PointX="15.364583333333334" PointY="15.900933032102348" />
+          <ConnectorPoint PointX="15.416666666666666" PointY="15.900933032102348" />
+          <ConnectorPoint PointX="15.583333333333334" PointY="15.900933032102348" />
+          <ConnectorPoint PointX="15.75" PointY="15.900933032102348" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_QuaTrinhDaoTao_NhanVien" ManuallyRouted="false">
           <ConnectorPoint PointX="10.620112734374999" PointY="28.908997395833325" />
@@ -3442,10 +3445,10 @@
           <ConnectorPoint PointX="5.25" PointY="23.128326822916669" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_ThanNhan_QuanHe" ManuallyRouted="false">
-          <ConnectorPoint PointX="12" PointY="9.291382149739583" />
-          <ConnectorPoint PointX="15.291666666666666" PointY="9.291382149739583" />
-          <ConnectorPoint PointX="15.458333333333334" PointY="9.291382149739583" />
-          <ConnectorPoint PointX="15.5" PointY="9.291382149739583" />
+          <ConnectorPoint PointX="12" PointY="9.2558018686054" />
+          <ConnectorPoint PointX="15.197916666666666" PointY="9.2558018686054" />
+          <ConnectorPoint PointX="15.364583333333334" PointY="9.2558018686054" />
+          <ConnectorPoint PointX="15.5" PointY="9.2558018686054" />
           <ConnectorPoint PointX="15.5" PointY="23.125" />
           <ConnectorPoint PointX="16.5" PointY="23.125" />
           <ConnectorPoint PointX="16.5" PointY="23.5" />
@@ -3461,10 +3464,12 @@
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_QuaTrinhCongTacMoi_QuocGia" ManuallyRouted="false">
           <ConnectorPoint PointX="14.828125" PointY="30.625" />
-          <ConnectorPoint PointX="14.828125" PointY="15.812426409505203" />
-          <ConnectorPoint PointX="15.291666666666666" PointY="15.812426409505202" />
-          <ConnectorPoint PointX="15.583333333333334" PointY="15.812426409505203" />
-          <ConnectorPoint PointX="15.75" PointY="15.812426409505203" />
+          <ConnectorPoint PointX="14.828125" PointY="15.869680532102354" />
+          <ConnectorPoint PointX="15.197916666666666" PointY="15.869680532102354" />
+          <ConnectorPoint PointX="15.364583333333334" PointY="15.869680532102354" />
+          <ConnectorPoint PointX="15.416666666666666" PointY="15.869680532102354" />
+          <ConnectorPoint PointX="15.583333333333334" PointY="15.869680532102354" />
+          <ConnectorPoint PointX="15.75" PointY="15.869680532102354" />
         </AssociationConnector>
         <EntityTypeShape EntityType="QLHSCCModel.LoaiNGuoiDung" Width="1.5" PointX="5.375" PointY="0.875" Height="1.4279589843749818" />
         <AssociationConnector Association="QLHSCCModel.FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung" >

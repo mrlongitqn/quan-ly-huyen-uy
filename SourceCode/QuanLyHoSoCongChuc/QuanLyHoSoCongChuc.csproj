@@ -279,6 +279,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds4RP1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
     <Compile Include="UsersDiary\NhatKySuDungHeThong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -592,6 +593,7 @@
     <Compile Include="FrmTKNhanVien.Designer.cs">
       <DependentUpon>FrmTKNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\ListItem.cs" />
     <Compile Include="Models\DataModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
