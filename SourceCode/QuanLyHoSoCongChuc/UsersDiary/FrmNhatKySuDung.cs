@@ -9,9 +9,9 @@ using DevComponents.DotNetBar;
 
 namespace QuanLyHoSoCongChuc.UsersDiary
 {
-    public partial class NhatKySuDungHeThong : DevComponents.DotNetBar.Office2007Form
+    public partial class FrmNhatKySuDung : DevComponents.DotNetBar.Office2007Form
     {
-        public NhatKySuDungHeThong()
+        public FrmNhatKySuDung()
         {
             InitializeComponent();
         }
