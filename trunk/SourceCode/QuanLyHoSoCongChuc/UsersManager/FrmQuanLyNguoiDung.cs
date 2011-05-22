@@ -12,6 +12,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
     #region Using
     using QuanLyHoSoCongChuc.Models;
     using QuanLyHoSoCongChuc.Repositories;
+    using QuanLyHoSoCongChuc.Utils;
     #endregion
 
     public partial class FrmQuanLyNguoiDung : DevComponents.DotNetBar.Office2007Form
@@ -30,11 +31,142 @@ namespace QuanLyHoSoCongChuc.UsersManager
             LoadLoaiNguoiDung();
             LoadChucNang();
             LoadNguoiDung();
+            txtNgayDangKi.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Now);
         }
 
         private void btnDongNSD_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void lstvNhomNguoiDung_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+            {
+                for (int i = 0; i < lstvNhomNguoiDung.Items.Count; i++)
+                {
+                    if (i != e.Index)
+                    {
+                        lstvNhomNguoiDung.Items[i].Checked = false;
+                    }
+                    else
+                    {
+                        SpecifiedMaLoaiNguoiDung = (int)lstvNhomNguoiDung.Items[e.Index].Tag;
+                        ResetStateOfChucNang();
+                        LoadChucNangBelongToNguoiDung(SpecifiedMaLoaiNguoiDung);
+                    }
+                }
+            }
+        }
+
+        private void lstbxNguoiDung_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstbxNguoiDung.SelectedIndex != -1)
+            {
+                try
+                {
+                    var nguoidung = (NguoiDung)lstbxNguoiDung.SelectedItem;
+                    txtTenDangNhap.Text = nguoidung.TenDangNhap;
+                    txtMatKhau.Text = Encryption.Decrypt(nguoidung.MatKhau);
+                    txtHoTen.Text = nguoidung.TenNguoiDung;
+                    txtNgayDangKi.Text = nguoidung.NgayDangKi == null ? DateTime.Now.ToShortDateString() : String.Format("{0:dd/MM/yyyy}", nguoidung.NgayDangKi.Value);
+                    txtMoTa.Text = nguoidung.MoTa;
+                    SpecifiedMaNguoiDung = nguoidung.MaNguoiDung;
+                    for (int i = 0; i < lstvNhomNguoiDung.Items.Count; i++)
+                    {
+                        if (nguoidung.MaQuyen == (int)lstvNhomNguoiDung.Items[i].Tag)
+                        {
+                            lstvNhomNguoiDung.Items[i].Checked = true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message, ex.InnerException);
+                }
+            }
+        }
+
+        private void btnNhapMoi_Click(object sender, EventArgs e)
+        {
+            txtTenDangNhap.Text = "";
+            txtMatKhau.Text = "";
+            txtHoTen.Text = "";
+            txtMoTa.Text = "";
+            txtNgayDangKi.Text = String.Format("{0:dd/MM/yyyy}", DateTime.Now);
+            ResetStateOfLoaiNguoiDung();
+            ResetStateOfChucNang();
+        }
+
+        private void btnThemNSD_Click(object sender, EventArgs e)
+        {
+            var errorText = "";
+            // true: update
+            // false: add/delete
+            if (!ValidateInput(false, ref errorText))
+            {
+                MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (ActionAdd())
+            {
+                MessageBox.Show("Lưu dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadNguoiDung();
+            }
+            else
+            {
+                MessageBox.Show("Lưu dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnXoaNSD_Click(object sender, EventArgs e)
+        {
+            var errorText = "";
+            // true: update
+            // false: add/delete
+            if (!ValidateInput(false, ref errorText))
+            {
+                MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (MessageBox.Show("Bạn có chắc chắn xóa dòng này không?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                if (ActionDelete())
+                {
+                    MessageBox.Show("Xóa dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadNguoiDung();
+                    btnNhapMoi_Click(sender, e);
+                }
+                else
+                {
+                    MessageBox.Show("Xóa dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnGhiNSD_Click(object sender, EventArgs e)
+        {
+            var errorText = "";
+            // true: update
+            // false: add/delete
+            if (!ValidateInput(true, ref errorText))
+            {
+                MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (ActionUpdate())
+            {
+                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadNguoiDung();
+                ReChoosingNguoiDung(SpecifiedMaNguoiDung);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
@@ -45,9 +177,14 @@ namespace QuanLyHoSoCongChuc.UsersManager
             try
             {
                 var lstItem = NguoiDungRepository.SelectAll();
+                lstbxNguoiDung.Items.Clear();
                 for (int i = 0; i < lstItem.Count; i++)
                 {
-                    lstItem.Add(lstItem[i]);
+                    // Only add another nguoi dung, not me ()
+                    if (lstItem[i].TenDangNhap != GlobalVars.g_strTenDangNhap)
+                    {
+                        lstbxNguoiDung.Items.Add(lstItem[i]);
+                    }
                 }
             }
             catch (Exception ex)
@@ -161,39 +298,6 @@ namespace QuanLyHoSoCongChuc.UsersManager
             }
         }
 
-        private void lstvNhomNguoiDung_ItemCheck(object sender, ItemCheckEventArgs e)
-        {
-            if (e.NewValue == CheckState.Checked)
-            {
-                for (int i = 0; i < lstvNhomNguoiDung.Items.Count; i++)
-                {
-                    if (i != e.Index)
-                    {
-                        lstvNhomNguoiDung.Items[i].Checked = false;
-                    }
-                    else
-                    {
-                        SpecifiedMaLoaiNguoiDung = (int)lstvNhomNguoiDung.Items[e.Index].Tag;
-                        ResetStateOfChucNang();
-                        LoadChucNangBelongToNguoiDung(SpecifiedMaLoaiNguoiDung);
-                    }
-                }
-            }
-        }
-
-        private void btnNhapMoi_Click(object sender, EventArgs e)
-        {
-            txtHoTen.Text = "";
-            txtMatKhau.Text = "";
-            txtMoTa.Text = "";
-            ResetStateOfLoaiNguoiDung();
-        }
-
-        private void btnThemNSD_Click(object sender, EventArgs e)
-        {
-
-        }
-
         /// <summary>
         /// Validate user input
         /// </summary>
@@ -210,9 +314,28 @@ namespace QuanLyHoSoCongChuc.UsersManager
                     return false;
                 }
             }
+
+            if (txtTenDangNhap.Text == "")
+            {
+                errorText = "Vui lòng nhập tên đăng nhập ";
+                return false;
+            }
+
+            if (txtMatKhau.Text == "")
+            {
+                errorText = "Vui lòng nhập mật khẩu ";
+                return false;
+            }
+
             if (txtHoTen.Text == "")
             {
-                errorText = "Vui lòng nhập tên ";
+                errorText = "Vui lòng nhập tên người dùng ";
+                return false;
+            }
+
+            if (SpecifiedMaLoaiNguoiDung == -1)
+            {
+                errorText = "Vui lòng chọn loại người dùng";
                 return false;
             }
 
@@ -227,11 +350,15 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                var item = new ChucNang
+                var item = new NguoiDung
                 {
-                    TenChucNang = txtTenChucNang.Text
+                    MaQuyen = SpecifiedMaLoaiNguoiDung,
+                    TenDangNhap = txtTenDangNhap.Text.Trim(),
+                    MatKhau = Encryption.Encrypt(txtMatKhau.Text.Trim()),
+                    TenNguoiDung = txtHoTen.Text.Trim(),
+                    NgayDangKi = DateTime.Now
                 };
-                if (!ChucNangRepository.Insert(item))
+                if (!NguoiDungRepository.Insert(item))
                 {
                     return false;
                 }
@@ -251,8 +378,12 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                var item = ChucNangRepository.SelectByID(int.Parse(txtMaChucNang.Text));
-                item.TenChucNang = txtTenChucNang.Text;
+                var item = NguoiDungRepository.SelectByID(SpecifiedMaNguoiDung);
+                item.MaQuyen = SpecifiedMaLoaiNguoiDung;
+                item.TenDangNhap = txtTenDangNhap.Text.Trim();
+                item.MatKhau = Encryption.Encrypt(txtMatKhau.Text.Trim());
+                item.TenNguoiDung = txtHoTen.Text.Trim();
+                item.MoTa = txtMoTa.Text.Trim();
                 return ChucNangRepository.Save();
             }
             catch
@@ -269,11 +400,26 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                return ChucNangRepository.Delete(int.Parse(txtMaChucNang.Text));
+                return NguoiDungRepository.Delete(SpecifiedMaNguoiDung);
             }
             catch
             {
                 return false;
+            }
+        }
+
+        /// <summary>
+        /// After user was updated, re-choosing that user in listbox nguoi dung
+        /// </summary>
+        /// <param name="manguoidung"></param>
+        public void ReChoosingNguoiDung(int manguoidung)
+        {
+            for (int i = 0; i < lstbxNguoiDung.Items.Count; i++)
+            {
+                if (((NguoiDung)lstbxNguoiDung.Items[i]).MaNguoiDung == manguoidung)
+                {
+                    lstbxNguoiDung.SetSelected(i, true);
+                }
             }
         }
     }
