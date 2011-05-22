@@ -286,11 +286,11 @@
       <DependentUpon>FrmThemLoaiDonVi.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
-    <Compile Include="UsersDiary\NhatKySuDungHeThong.cs">
+    <Compile Include="UsersDiary\FrmNhatKySuDung.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UsersDiary\NhatKySuDungHeThong.Designer.cs">
-      <DependentUpon>NhatKySuDungHeThong.cs</DependentUpon>
+    <Compile Include="UsersDiary\FrmNhatKySuDung.Designer.cs">
+      <DependentUpon>FrmNhatKySuDung.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\EncryptText.cs" />
     <Compile Include="FrmChucNangKhenThuong.cs">
@@ -848,8 +848,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UsersDiary\NhatKySuDungHeThong.resx">
-      <DependentUpon>NhatKySuDungHeThong.cs</DependentUpon>
+    <EmbeddedResource Include="UsersDiary\FrmNhatKySuDung.resx">
+      <DependentUpon>FrmNhatKySuDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UsersManager\FrmQuanLyChucNang.resx">
       <DependentUpon>FrmQuanLyChucNang.cs</DependentUpon>
