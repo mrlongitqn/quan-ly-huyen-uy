@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHoSoCongChuc.UsersDiary
 {
-    partial class NhatKySuDungHeThong
+    partial class FrmNhatKySuDung
     {
         /// <summary>
         /// Required designer variable.
