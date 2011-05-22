@@ -10,6 +10,7 @@ using QuanLyHoSoCongChuc.BusinessObject;
 using QuanLyHoSoCongChuc.Controller;
 using System.Data.SqlClient;
 using DevComponents.DotNetBar;
+using QuanLyHoSoCongChuc.Utils;
 
 namespace QuanLyHoSoCongChuc
 {

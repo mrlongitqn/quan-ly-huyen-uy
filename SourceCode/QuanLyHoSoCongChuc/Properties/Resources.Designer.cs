@@ -123,6 +123,13 @@ namespace QuanLyHoSoCongChuc.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap action_print {
+            get {
+                object obj = ResourceManager.GetObject("action_print", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap address_book2 {
             get {
                 object obj = ResourceManager.GetObject("address_book2", resourceCulture);
@@ -350,6 +357,13 @@ namespace QuanLyHoSoCongChuc.Properties {
         internal static System.Drawing.Bitmap money_envelope {
             get {
                 object obj = ResourceManager.GetObject("money_envelope", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap printer {
+            get {
+                object obj = ResourceManager.GetObject("printer", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
