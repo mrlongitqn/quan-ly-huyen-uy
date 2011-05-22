@@ -14,89 +14,45 @@ namespace QuanLyHoSoCongChuc.UsersManager
     using QuanLyHoSoCongChuc.Repositories;
     #endregion
 
-    public partial class frmQuanLyChucNangNguoiDung : DevComponents.DotNetBar.Office2007Form
+    public partial class FrmQuanLyNguoiDung : DevComponents.DotNetBar.Office2007Form
     {
         // Using this variable to get which ma loai nguoi dung is specified
         private int SpecifiedMaLoaiNguoiDung = -1;
+        private int SpecifiedMaNguoiDung = -1;
 
-        public frmQuanLyChucNangNguoiDung()
+        public FrmQuanLyNguoiDung()
         {
             InitializeComponent();
         }
 
-        private void frmQuanLyChucNangNguoiDung_Load(object sender, EventArgs e)
+        private void FrmQuanLyNguoiDung_Load(object sender, EventArgs e)
         {
             LoadLoaiNguoiDung();
             LoadChucNang();
+            LoadNguoiDung();
         }
 
-        private void btnDong_Click(object sender, EventArgs e)
+        private void btnDongNSD_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
         /// <summary>
-        /// Event is raised when user check on an item
+        /// Load list of nguoi dung exist in DB
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void lstvNhomNguoiDung_ItemCheck(object sender, ItemCheckEventArgs e)
+        public void LoadNguoiDung()
         {
-            if (e.NewValue == CheckState.Checked)
+            try
             {
-                for (int i = 0; i < lstvNhomNguoiDung.Items.Count; i++)
+                var lstItem = NguoiDungRepository.SelectAll();
+                for (int i = 0; i < lstItem.Count; i++)
                 {
-                    if (i != e.Index)
-                    {
-                        lstvNhomNguoiDung.Items[i].Checked = false;
-                    }
-                    else
-                    {
-                        SpecifiedMaLoaiNguoiDung = (int)lstvNhomNguoiDung.Items[e.Index].Tag;
-                        ResetStateOfChucNang();
-                        LoadChucNangBelongToNguoiDung(SpecifiedMaLoaiNguoiDung);
-                    }
+                    lstItem.Add(lstItem[i]);
                 }
             }
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            // Only executed when there's at least 1 loai nguoi dung is chosen  
-            if (SpecifiedMaLoaiNguoiDung != -1)
+            catch (Exception ex)
             {
-                // Get list of chose chuc nang
-                var lstChoseChucNang = new List<int>();
-                for (int i = 0; i < lstvChucNangDuocSuDung.Items.Count; i++)
-                {
-                    if (lstvChucNangDuocSuDung.Items[i].Checked)
-                    {
-                        lstChoseChucNang.Add((int)lstvChucNangDuocSuDung.Items[i].Tag);
-                    }
-                }
-                if (lstChoseChucNang.Count > 0)
-                {
-                    // Before insert new list of chuc nang for loai nguoi dung, we remove list of chuc nang belong to loai nguoi dung that have been associated before
-                    if (DeleteChucNangBelongToNguoiDung(SpecifiedMaLoaiNguoiDung))
-                    {
-                        var successful = false;
-                        for (int i = 0; i < lstChoseChucNang.Count; i++)
-                        {
-                            var item = new LoaiNguoiDung_ChucNang
-                            {
-                                MaQuyen = SpecifiedMaLoaiNguoiDung,
-                                MaChucNang = lstChoseChucNang[i]
-                            };
-                            successful = LoaiNguoiDung_ChucNangRepository.Insert(item);
-                        }
-                        if (successful)
-                            MessageBox.Show("Lưu dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        else
-                            MessageBox.Show("Có lỗi trong quá trình thực thi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                    else
-                        MessageBox.Show("Có lỗi trong quá trình thực thi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                throw new Exception(ex.Message, ex.InnerException);
             }
         }
 
@@ -108,6 +64,17 @@ namespace QuanLyHoSoCongChuc.UsersManager
             for (int i = 0; i < lstvChucNangDuocSuDung.Items.Count; i++)
             {
                 lstvChucNangDuocSuDung.Items[i].Checked = false;
+            }
+        }
+
+        /// <summary>
+        /// Reset check state of list all of loai nguoi dung loaded in list view
+        /// </summary>
+        public void ResetStateOfLoaiNguoiDung()
+        {
+            for (int i = 0; i < lstvNhomNguoiDung.Items.Count; i++)
+            {
+                lstvNhomNguoiDung.Items[i].Checked = false;
             }
         }
 
@@ -194,21 +161,115 @@ namespace QuanLyHoSoCongChuc.UsersManager
             }
         }
 
+        private void lstvNhomNguoiDung_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            if (e.NewValue == CheckState.Checked)
+            {
+                for (int i = 0; i < lstvNhomNguoiDung.Items.Count; i++)
+                {
+                    if (i != e.Index)
+                    {
+                        lstvNhomNguoiDung.Items[i].Checked = false;
+                    }
+                    else
+                    {
+                        SpecifiedMaLoaiNguoiDung = (int)lstvNhomNguoiDung.Items[e.Index].Tag;
+                        ResetStateOfChucNang();
+                        LoadChucNangBelongToNguoiDung(SpecifiedMaLoaiNguoiDung);
+                    }
+                }
+            }
+        }
+
+        private void btnNhapMoi_Click(object sender, EventArgs e)
+        {
+            txtHoTen.Text = "";
+            txtMatKhau.Text = "";
+            txtMoTa.Text = "";
+            ResetStateOfLoaiNguoiDung();
+        }
+
+        private void btnThemNSD_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /// <summary>
-        /// Remove list of chuc nang belong to loai nguoi dung
+        /// Validate user input
         /// </summary>
-        /// <param name="maloainguoidung"></param>
+        /// <param name="isUpdate"></param>
         /// <returns></returns>
-        private bool DeleteChucNangBelongToNguoiDung(int maloainguoidung)
+        private bool ValidateInput(bool isUpdate, ref string errorText)
+        {
+            // Mode update -> checking MaChucNang is exists on textbox
+            if (isUpdate)
+            {
+                if (SpecifiedMaNguoiDung == -1)
+                {
+                    errorText = "Vui lòng chọn người dùng";
+                    return false;
+                }
+            }
+            if (txtHoTen.Text == "")
+            {
+                errorText = "Vui lòng nhập tên ";
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Add a new item to DB
+        /// </summary>
+        /// <returns></returns>
+        private bool ActionAdd()
         {
             try
             {
-                var lstItem = LoaiNguoiDung_ChucNangRepository.SelectByMaQuyen(maloainguoidung);
-                for (int i = 0; i < lstItem.Count; i++)
+                var item = new ChucNang
                 {
-                    LoaiNguoiDung_ChucNangRepository.Delete(lstItem[i].MaChucNangNguoiDung);
+                    TenChucNang = txtTenChucNang.Text
+                };
+                if (!ChucNangRepository.Insert(item))
+                {
+                    return false;
                 }
                 return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Update item with specificed ID
+        /// </summary>
+        /// <returns></returns>
+        private bool ActionUpdate()
+        {
+            try
+            {
+                var item = ChucNangRepository.SelectByID(int.Parse(txtMaChucNang.Text));
+                item.TenChucNang = txtTenChucNang.Text;
+                return ChucNangRepository.Save();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Delete item with specified ID
+        /// </summary>
+        /// <returns></returns>
+        private bool ActionDelete()
+        {
+            try
+            {
+                return ChucNangRepository.Delete(int.Parse(txtMaChucNang.Text));
             }
             catch
             {
