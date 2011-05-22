@@ -279,7 +279,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds4RP1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="EncryptText.cs" />
+    <Compile Include="UsersDiary\NhatKySuDungHeThong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersDiary\NhatKySuDungHeThong.Designer.cs">
+      <DependentUpon>NhatKySuDungHeThong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\EncryptText.cs" />
     <Compile Include="FrmChucNangKhenThuong.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -831,6 +837,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UsersDiary\NhatKySuDungHeThong.resx">
+      <DependentUpon>NhatKySuDungHeThong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsersManager\FrmQuanLyChucNang.resx">
       <DependentUpon>FrmQuanLyChucNang.cs</DependentUpon>
     </EmbeddedResource>
@@ -954,7 +963,7 @@
     <Compile Include="Repositories\TrinhDoQuanLyNhaNuocRepository.cs" />
     <Compile Include="Repositories\TrinhDoTinHocRepository.cs" />
     <Compile Include="staticClass.cs" />
-    <Compile Include="UsersDiary\NhatKyNguoiDung.cs" />
+    <Compile Include="UsersDiary\NhatKySuDungHelper.cs" />
     <Compile Include="UsersManager\FrmQuanLyChucNang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -980,7 +989,7 @@
       <DependentUpon>FrmQuanLyLoaiNguoiDung.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities.cs" />
-    <Compile Include="Utils\NhomChucNang.cs" />
+    <Compile Include="Utils\GlobalVars.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\graphics-tablet.ico" />
@@ -1085,6 +1094,8 @@
     </Content>
     <None Include="Resources\erase.jpg" />
     <None Include="Resources\Eraser-icon.png" />
+    <None Include="Resources\printer.jpg" />
+    <None Include="Resources\action_print.gif" />
     <Content Include="UsersDiary\UsersDiary.xml" />
     <None Include="ClassDiagram2.cd" />
     <None Include="Resources\%24this.Icon.ico" />
