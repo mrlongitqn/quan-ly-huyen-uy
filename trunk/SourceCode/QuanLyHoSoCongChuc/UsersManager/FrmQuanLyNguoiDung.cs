@@ -101,9 +101,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         private void btnThemNSD_Click(object sender, EventArgs e)
         {
             var errorText = "";
-            // true: update
-            // false: add/delete
-            if (!ValidateInput(false, ref errorText))
+            if (!ValidateInput(EnumUpdateMode.INSERT, ref errorText))
             {
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -123,9 +121,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         private void btnXoaNSD_Click(object sender, EventArgs e)
         {
             var errorText = "";
-            // true: update
-            // false: add/delete
-            if (!ValidateInput(false, ref errorText))
+            if (!ValidateInput(EnumUpdateMode.DELETE, ref errorText))
             {
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -149,9 +145,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         private void btnGhiNSD_Click(object sender, EventArgs e)
         {
             var errorText = "";
-            // true: update
-            // false: add/delete
-            if (!ValidateInput(true, ref errorText))
+            if (!ValidateInput(EnumUpdateMode.UPDATE, ref errorText))
             {
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -303,10 +297,10 @@ namespace QuanLyHoSoCongChuc.UsersManager
         /// </summary>
         /// <param name="isUpdate"></param>
         /// <returns></returns>
-        private bool ValidateInput(bool isUpdate, ref string errorText)
+        private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
         {
             // Mode update -> checking MaChucNang is exists on textbox
-            if (isUpdate)
+            if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE)
             {
                 if (SpecifiedMaNguoiDung == -1)
                 {
@@ -314,31 +308,32 @@ namespace QuanLyHoSoCongChuc.UsersManager
                     return false;
                 }
             }
-
-            if (txtTenDangNhap.Text == "")
+            if (mode != EnumUpdateMode.DELETE)
             {
-                errorText = "Vui lòng nhập tên đăng nhập ";
-                return false;
-            }
+                if (txtTenDangNhap.Text == "")
+                {
+                    errorText = "Vui lòng nhập tên đăng nhập ";
+                    return false;
+                }
 
-            if (txtMatKhau.Text == "")
-            {
-                errorText = "Vui lòng nhập mật khẩu ";
-                return false;
-            }
+                if (txtMatKhau.Text == "")
+                {
+                    errorText = "Vui lòng nhập mật khẩu ";
+                    return false;
+                }
 
-            if (txtHoTen.Text == "")
-            {
-                errorText = "Vui lòng nhập tên người dùng ";
-                return false;
-            }
+                if (txtHoTen.Text == "")
+                {
+                    errorText = "Vui lòng nhập tên người dùng ";
+                    return false;
+                }
 
-            if (SpecifiedMaLoaiNguoiDung == -1)
-            {
-                errorText = "Vui lòng chọn loại người dùng";
-                return false;
+                if (SpecifiedMaLoaiNguoiDung == -1)
+                {
+                    errorText = "Vui lòng chọn loại người dùng";
+                    return false;
+                }
             }
-
             return true;
         }
 
