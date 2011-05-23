@@ -27,6 +27,7 @@ namespace QuanLyHoSoCongChuc
         NhanVienControl m_NhanVienCtrl = new NhanVienControl();
         List<LoaiDonVi> lstLoaiDonVi;
         List<PhanLoaiDonVi> lstPhanLoai;
+        // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
 
         public FrmDanhMuc()
@@ -302,14 +303,24 @@ namespace QuanLyHoSoCongChuc
             Show();
         }
 
+        /// <summary>
+        /// tuansl added: raise event when user choose danhmuc
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btChon_Click(object sender, EventArgs e)
         {
             var madonvi = txtMaDonVi.Text;
             var donvi = DonViRepository.SelectByID(madonvi);
-            var tendonvidaydu = donvi.TenDonVi + ", huyện " + AppParams.Huyen + ", tỉnh " + AppParams.Tinh;
+            var tendonvidaydu = donvi.TenDonVi + ", huyện " + donvi.QuanHuyen.TenQuanHuyen + ", tỉnh " + donvi.QuanHuyen.TinhThanh.TenTinh;
             TransferDonViInfo(this, new MyEvent(madonvi + "#" + tendonvidaydu));
         }
 
+        /// <summary>
+        /// tuansl added: function is used to transfer data when event would be raised
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void TransferDonViInfo(object sender, MyEvent e)
         {
             this.Close();
