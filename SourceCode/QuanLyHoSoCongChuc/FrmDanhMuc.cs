@@ -16,7 +16,7 @@ using QuanLyHoSoCongChuc.Controller;
 using QuanLyHoSoCongChuc.DataLayer;
 using QuanLyHoSoCongChuc.Utils;
 
-namespace QuanLyHoSoCongChuc.Report
+namespace QuanLyHoSoCongChuc
 {
     #region Using
     using QuanLyHoSoCongChuc.Models;
@@ -27,6 +27,8 @@ namespace QuanLyHoSoCongChuc.Report
         NhanVienControl m_NhanVienCtrl = new NhanVienControl();
         List<LoaiDonVi> lstLoaiDonVi;
         List<PhanLoaiDonVi> lstPhanLoai;
+        public EventHandler Handler { get; set; }
+
         public FrmDanhMuc()
         {
             DataService.OpenConnection();
@@ -288,16 +290,30 @@ namespace QuanLyHoSoCongChuc.Report
             string ErrorText = "";
             switch (eventType.Data)
             {
-                case MyEnum.ADD_CONTACT:
-                case MyEnum.EDIT_CONTACT:
-                case MyEnum.DELETE_CONTACT:
-                    //LoadData(ref ErrorText);
-                    break;
+                //case MyEnum.ADD_CONTACT:
+                //case MyEnum.EDIT_CONTACT:
+                //case MyEnum.DELETE_CONTACT:
+                //    //LoadData(ref ErrorText);
+                //    break;
 
-                case MyEnum.DEFAULT:
-                    break;
+                //case MyEnum.DEFAULT:
+                //    break;
             }
             Show();
+        }
+
+        private void btChon_Click(object sender, EventArgs e)
+        {
+            var madonvi = txtMaDonVi.Text;
+            var donvi = DonViRepository.SelectByID(madonvi);
+            var tendonvidaydu = donvi.TenDonVi + ", huyện " + AppParams.Huyen + ", tỉnh " + AppParams.Tinh;
+            TransferDonViInfo(this, new MyEvent(madonvi + "#" + tendonvidaydu));
+        }
+
+        public void TransferDonViInfo(object sender, MyEvent e)
+        {
+            this.Close();
+            this.Handler(this, e);
         }
     } 
 }

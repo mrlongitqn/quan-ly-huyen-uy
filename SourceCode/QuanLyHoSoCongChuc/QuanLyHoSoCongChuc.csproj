@@ -312,6 +312,7 @@
     <Compile Include="UsersDiary\FrmNhatKySuDung.Designer.cs">
       <DependentUpon>FrmNhatKySuDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\AppParams.cs" />
     <Compile Include="Utils\EncryptText.cs" />
     <Compile Include="FrmChucNangKhenThuong.cs">
       <SubType>Form</SubType>
@@ -553,16 +554,16 @@
     <Compile Include="FrmThongTinPhongNoiVu.Designer.cs">
       <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTimKiem.cs">
+    <Compile Include="Search\FrmTimKiem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTimKiem.Designer.cs">
+    <Compile Include="Search\FrmTimKiem.Designer.cs">
       <DependentUpon>FrmTimKiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTimKiem2.cs">
+    <Compile Include="Search\FrmTimKiem2.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTimKiem2.Designer.cs">
+    <Compile Include="Search\FrmTimKiem2.Designer.cs">
       <DependentUpon>FrmTimKiem2.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTinhTrangHonNhan.cs">
@@ -802,10 +803,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTimKiem.resx">
+    <EmbeddedResource Include="Search\FrmTimKiem.resx">
       <DependentUpon>FrmTimKiem.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTimKiem2.resx">
+    <EmbeddedResource Include="Search\FrmTimKiem2.resx">
       <DependentUpon>FrmTimKiem2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmTinhTrangHonNhan.resx">

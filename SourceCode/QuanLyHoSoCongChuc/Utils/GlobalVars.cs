@@ -133,20 +133,13 @@ namespace QuanLyHoSoCongChuc.Utils
         }
     }
 
-
-    public enum MyEnum
-    {
-        DEFAULT,
-        ADD_CONTACT,
-        EDIT_CONTACT,
-        DELETE_CONTACT,
-        EDIT_GROUP
-    }
-
+    /// <summary>
+    /// Class is used to transfer data
+    /// </summary>
     public class MyEvent : EventArgs
     {
-        public MyEnum Data { get; set; }
-        public MyEvent(MyEnum _data)
+        public string Data { get; set; }
+        public MyEvent(string _data)
         {
             Data = _data;
         }
