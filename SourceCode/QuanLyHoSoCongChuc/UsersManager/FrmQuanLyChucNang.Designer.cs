@@ -537,6 +537,7 @@
             this.Controls.Add(this.panelEx2);
             this.Controls.Add(this.panelEx1);
             this.Name = "FrmQuanLyChucNang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý chức năng";
             this.Load += new System.EventHandler(this.FrmQuanLyChucNang_Load);
             this.panelEx1.ResumeLayout(false);

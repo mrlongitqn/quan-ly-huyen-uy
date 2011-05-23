@@ -33,6 +33,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtTenDangNhap = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.btnNhapMoi = new DevComponents.DotNetBar.ButtonX();
@@ -55,7 +56,6 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.lstbxNguoiDung = new System.Windows.Forms.ListBox();
-            this.txtTenDangNhap = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -138,6 +138,17 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 1;
             this.groupPanel1.Text = "Quản lý chức năng người dùng";
+            // 
+            // txtTenDangNhap
+            // 
+            // 
+            // 
+            // 
+            this.txtTenDangNhap.Border.Class = "TextBoxBorder";
+            this.txtTenDangNhap.Location = new System.Drawing.Point(109, 18);
+            this.txtTenDangNhap.Name = "txtTenDangNhap";
+            this.txtTenDangNhap.Size = new System.Drawing.Size(200, 20);
+            this.txtTenDangNhap.TabIndex = 1;
             // 
             // txtHoTen
             // 
@@ -421,22 +432,12 @@
             this.lstbxNguoiDung.TabIndex = 0;
             this.lstbxNguoiDung.SelectedIndexChanged += new System.EventHandler(this.lstbxNguoiDung_SelectedIndexChanged);
             // 
-            // txtTenDangNhap
-            // 
-            // 
-            // 
-            // 
-            this.txtTenDangNhap.Border.Class = "TextBoxBorder";
-            this.txtTenDangNhap.Location = new System.Drawing.Point(109, 18);
-            this.txtTenDangNhap.Name = "txtTenDangNhap";
-            this.txtTenDangNhap.Size = new System.Drawing.Size(200, 20);
-            this.txtTenDangNhap.TabIndex = 1;
-            // 
             // FrmQuanLyNguoiDung
             // 
             this.ClientSize = new System.Drawing.Size(809, 528);
             this.Controls.Add(this.panel1);
             this.Name = "FrmQuanLyNguoiDung";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý chức năng hệ thống";
             this.Load += new System.EventHandler(this.FrmQuanLyNguoiDung_Load);
             this.panel1.ResumeLayout(false);

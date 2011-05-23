@@ -349,6 +349,7 @@
             this.Controls.Add(this.panelEx2);
             this.Controls.Add(this.panelEx1);
             this.Name = "FrmQuanLyLoaiNguoiDung";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý loại người dùng";
             this.Load += new System.EventHandler(this.FrmQuanLyLoaiNguoiDung_Load);
             this.panelEx1.ResumeLayout(false);

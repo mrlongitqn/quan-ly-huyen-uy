@@ -11,7 +11,7 @@ using WeifenLuo.WinFormsUI;
 using QuanLyHoSoCongChuc.Controller;
 using QuanLyHoSoCongChuc.BusinessObject;
 
-namespace QuanLyHoSoCongChuc
+namespace QuanLyHoSoCongChuc.Search
 {
     public partial class FrmTimKiem : Office2007Form
     {
@@ -21,11 +21,6 @@ namespace QuanLyHoSoCongChuc
         }
 
         private void FrmTimKiem_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void buttonX7_Click(object sender, EventArgs e)
         {
 
         }

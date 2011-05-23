@@ -219,6 +219,7 @@
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmNhatKySuDung";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhật ký sử dụng";
             this.Load += new System.EventHandler(this.FrmNhatKySuDung_Load);
             this.panel1.ResumeLayout(false);
