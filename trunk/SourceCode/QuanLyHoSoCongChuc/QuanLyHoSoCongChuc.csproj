@@ -303,6 +303,7 @@
     <Compile Include="FrmThemPhanLoaiDonVi.Designer.cs">
       <DependentUpon>FrmThemPhanLoaiDonVi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\NhanVienModel.cs" />
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
     <Compile Include="UsersDiary\DanhSachNhatKySuDung.cs" />
     <Compile Include="UsersDiary\FrmNhatKySuDung.cs">
@@ -1125,6 +1126,7 @@
     <Content Include="Configs\NhomChucNang.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="UsersDiary\UsersDiary.xml" />
     <None Include="Resources\erase.jpg" />
     <None Include="Resources\Eraser-icon.png" />
     <None Include="Resources\printer.jpg" />

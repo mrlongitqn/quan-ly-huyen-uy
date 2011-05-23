@@ -11,7 +11,7 @@ using QuanLyHoSoCongChuc.Controller;
 using QuanLyHoSoCongChuc.DataLayer;
 
 
-namespace QuanLyHoSoCongChuc
+namespace QuanLyHoSoCongChuc.Search
 {
     public partial class FrmTimKiem2 : Form
     {

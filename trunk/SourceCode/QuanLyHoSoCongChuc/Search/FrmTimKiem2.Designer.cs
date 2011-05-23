@@ -1,4 +1,4 @@
-﻿namespace QuanLyHoSoCongChuc
+﻿namespace QuanLyHoSoCongChuc.Search
 {
     partial class FrmTimKiem2
     {
