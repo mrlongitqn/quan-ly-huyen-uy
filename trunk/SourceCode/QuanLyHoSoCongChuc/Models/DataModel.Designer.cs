@@ -43,7 +43,6 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_KyLuat_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "KyLuat", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.KyLuat), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_LoaiCanBo", "LoaiCanBo", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiCanBo), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_LoaiNghiBaoHiemXaHoi", "LoaiNghiBaoHiemXaHoi", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNghiBaoHiemXaHoi), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
-[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "LoaiNguoiDung_ChucNang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung_ChucNang), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LucLuongVuTrang_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "LucLuongVuTrang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LucLuongVuTrang), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_NgachCongChuc", "NgachCongChuc", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NgachCongChuc), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ThanhPhanXuatThan", "ThanhPhanXuatThan", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.ThanhPhanXuatThan), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
@@ -67,6 +66,8 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_ThanNhanMoi_QuanHe", "QuanHe", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.QuanHe), "ThanNhanMoi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.ThanNhanMoi), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuanHuyen_TinhThanh", "TinhThanh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TinhThanh), "QuanHuyen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuanHuyen), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhCongTacMoi_QuocGia", "QuocGia", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.QuocGia), "QuaTrinhCongTacMoi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhCongTacMoi), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "LoaiNguoiDung_ChucNang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung_ChucNang), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "NguoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NguoiDung), true)]
 
 #endregion
 
@@ -489,22 +490,6 @@ namespace QuanLyHoSoCongChuc.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<LoaiNGuoiDung> LoaiNGuoiDungs
-        {
-            get
-            {
-                if ((_LoaiNGuoiDungs == null))
-                {
-                    _LoaiNGuoiDungs = base.CreateObjectSet<LoaiNGuoiDung>("LoaiNGuoiDungs");
-                }
-                return _LoaiNGuoiDungs;
-            }
-        }
-        private ObjectSet<LoaiNGuoiDung> _LoaiNGuoiDungs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
         public ObjectSet<LoaiNguoiDung_ChucNang> LoaiNguoiDung_ChucNang
         {
             get
@@ -549,22 +534,6 @@ namespace QuanLyHoSoCongChuc.Models
             }
         }
         private ObjectSet<NgachCongChuc> _NgachCongChucs;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<NguoiDung> NguoiDungs
-        {
-            get
-            {
-                if ((_NguoiDungs == null))
-                {
-                    _NguoiDungs = base.CreateObjectSet<NguoiDung>("NguoiDungs");
-                }
-                return _NguoiDungs;
-            }
-        }
-        private ObjectSet<NguoiDung> _NguoiDungs;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -917,6 +886,38 @@ namespace QuanLyHoSoCongChuc.Models
             }
         }
         private ObjectSet<TrinhDoTinHoc> _TrinhDoTinHocs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<LoaiNGuoiDung> LoaiNGuoiDungs
+        {
+            get
+            {
+                if ((_LoaiNGuoiDungs == null))
+                {
+                    _LoaiNGuoiDungs = base.CreateObjectSet<LoaiNGuoiDung>("LoaiNGuoiDungs");
+                }
+                return _LoaiNGuoiDungs;
+            }
+        }
+        private ObjectSet<LoaiNGuoiDung> _LoaiNGuoiDungs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<NguoiDung> NguoiDungs
+        {
+            get
+            {
+                if ((_NguoiDungs == null))
+                {
+                    _NguoiDungs = base.CreateObjectSet<NguoiDung>("NguoiDungs");
+                }
+                return _NguoiDungs;
+            }
+        }
+        private ObjectSet<NguoiDung> _NguoiDungs;
 
         #endregion
         #region AddTo Methods
@@ -1106,14 +1107,6 @@ namespace QuanLyHoSoCongChuc.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the LoaiNGuoiDungs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToLoaiNGuoiDungs(LoaiNGuoiDung loaiNGuoiDung)
-        {
-            base.AddObject("LoaiNGuoiDungs", loaiNGuoiDung);
-        }
-    
-        /// <summary>
         /// Deprecated Method for adding a new object to the LoaiNguoiDung_ChucNang EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToLoaiNguoiDung_ChucNang(LoaiNguoiDung_ChucNang loaiNguoiDung_ChucNang)
@@ -1135,14 +1128,6 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToNgachCongChucs(NgachCongChuc ngachCongChuc)
         {
             base.AddObject("NgachCongChucs", ngachCongChuc);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the NguoiDungs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToNguoiDungs(NguoiDung nguoiDung)
-        {
-            base.AddObject("NguoiDungs", nguoiDung);
         }
     
         /// <summary>
@@ -1319,6 +1304,22 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToTrinhDoTinHocs(TrinhDoTinHoc trinhDoTinHoc)
         {
             base.AddObject("TrinhDoTinHocs", trinhDoTinHoc);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the LoaiNGuoiDungs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLoaiNGuoiDungs(LoaiNGuoiDung loaiNGuoiDung)
+        {
+            base.AddObject("LoaiNGuoiDungs", loaiNGuoiDung);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the NguoiDungs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToNguoiDungs(NguoiDung nguoiDung)
+        {
+            base.AddObject("NguoiDungs", nguoiDung);
         }
 
         #endregion
@@ -4694,6 +4695,28 @@ namespace QuanLyHoSoCongChuc.Models
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NguoiDung_LoaiNGuoiDung", "NguoiDung")]
+        public EntityCollection<NguoiDung> NguoiDungs
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<NguoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "NguoiDung");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<NguoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "NguoiDung", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -5414,6 +5437,47 @@ namespace QuanLyHoSoCongChuc.Models
 
         #endregion
     
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung")]
+        public LoaiNGuoiDung LoaiNGuoiDung
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiNGuoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiNGuoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<LoaiNGuoiDung> LoaiNGuoiDungReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiNGuoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiNGuoiDung>("QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung", value);
+                }
+            }
+        }
+
+        #endregion
     }
     
     /// <summary>

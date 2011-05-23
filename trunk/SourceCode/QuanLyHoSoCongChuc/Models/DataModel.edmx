@@ -100,6 +100,10 @@
             <End Role="NhanVien" EntitySet="NhanVien" />
             <End Role="LucLuongVuTrang" EntitySet="LucLuongVuTrang" />
           </AssociationSet>
+          <AssociationSet Name="FK_NguoiDung_LoaiNGuoiDung" Association="QLHSCCModel.Store.FK_NguoiDung_LoaiNGuoiDung">
+            <End Role="LoaiNGuoiDung" EntitySet="LoaiNGuoiDung" />
+            <End Role="NguoiDung" EntitySet="NguoiDung" />
+          </AssociationSet>
           <AssociationSet Name="FK_NhanVien_ChucVu" Association="QLHSCCModel.Store.FK_NhanVien_ChucVu">
             <End Role="ChucVu" EntitySet="ChucVu" />
             <End Role="NhanVien" EntitySet="NhanVien" />
@@ -446,7 +450,7 @@
           <Key>
             <PropertyRef Name="MaQuyen" />
           </Key>
-          <Property Name="MaQuyen" Type="int" Nullable="false" />
+          <Property Name="MaQuyen" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="TenQuyen" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="LoaiNguoiDung_ChucNang">
@@ -874,6 +878,18 @@
             </Principal>
             <Dependent Role="LucLuongVuTrang">
               <PropertyRef Name="MaNhanVien" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NguoiDung_LoaiNGuoiDung">
+          <End Role="LoaiNGuoiDung" Type="QLHSCCModel.Store.LoaiNGuoiDung" Multiplicity="1" />
+          <End Role="NguoiDung" Type="QLHSCCModel.Store.NguoiDung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiNGuoiDung">
+              <PropertyRef Name="MaQuyen" />
+            </Principal>
+            <Dependent Role="NguoiDung">
+              <PropertyRef Name="MaQuyen" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1361,11 +1377,9 @@
           <EntitySet Name="LoaiCanBoes" EntityType="QLHSCCModel.LoaiCanBo" />
           <EntitySet Name="LoaiDonVis" EntityType="QLHSCCModel.LoaiDonVi" />
           <EntitySet Name="LoaiNghiBaoHiemXaHois" EntityType="QLHSCCModel.LoaiNghiBaoHiemXaHoi" />
-          <EntitySet Name="LoaiNGuoiDungs" EntityType="QLHSCCModel.LoaiNGuoiDung" />
           <EntitySet Name="LoaiNguoiDung_ChucNang" EntityType="QLHSCCModel.LoaiNguoiDung_ChucNang" />
           <EntitySet Name="LucLuongVuTrangs" EntityType="QLHSCCModel.LucLuongVuTrang" />
           <EntitySet Name="NgachCongChucs" EntityType="QLHSCCModel.NgachCongChuc" />
-          <EntitySet Name="NguoiDungs" EntityType="QLHSCCModel.NguoiDung" />
           <EntitySet Name="NhanViens" EntityType="QLHSCCModel.NhanVien" />
           <EntitySet Name="PhanLoaiDonVis" EntityType="QLHSCCModel.PhanLoaiDonVi" />
           <EntitySet Name="PhuongXas" EntityType="QLHSCCModel.PhuongXa" />
@@ -1488,10 +1502,6 @@
             <End Role="LoaiNghiBaoHiemXaHoi" EntitySet="LoaiNghiBaoHiemXaHois" />
             <End Role="NhanVien" EntitySet="NhanViens" />
           </AssociationSet>
-          <AssociationSet Name="FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung" Association="QLHSCCModel.FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung">
-            <End Role="LoaiNGuoiDung" EntitySet="LoaiNGuoiDungs" />
-            <End Role="LoaiNguoiDung_ChucNang" EntitySet="LoaiNguoiDung_ChucNang" />
-          </AssociationSet>
           <AssociationSet Name="FK_LucLuongVuTrang_NhanVien" Association="QLHSCCModel.FK_LucLuongVuTrang_NhanVien">
             <End Role="NhanVien" EntitySet="NhanViens" />
             <End Role="LucLuongVuTrang" EntitySet="LucLuongVuTrangs" />
@@ -1583,6 +1593,16 @@
           <AssociationSet Name="FK_QuaTrinhCongTacMoi_QuocGia" Association="QLHSCCModel.FK_QuaTrinhCongTacMoi_QuocGia">
             <End Role="QuocGia" EntitySet="QuocGias" />
             <End Role="QuaTrinhCongTacMoi" EntitySet="QuaTrinhCongTacMois" />
+          </AssociationSet>
+          <EntitySet Name="LoaiNGuoiDungs" EntityType="QLHSCCModel.LoaiNGuoiDung" />
+          <EntitySet Name="NguoiDungs" EntityType="QLHSCCModel.NguoiDung" />
+          <AssociationSet Name="FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung" Association="QLHSCCModel.FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung">
+            <End Role="LoaiNGuoiDung" EntitySet="LoaiNGuoiDungs" />
+            <End Role="LoaiNguoiDung_ChucNang" EntitySet="LoaiNguoiDung_ChucNang" />
+          </AssociationSet>
+          <AssociationSet Name="FK_NguoiDung_LoaiNGuoiDung" Association="QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung">
+            <End Role="LoaiNGuoiDung" EntitySet="LoaiNGuoiDungs" />
+            <End Role="NguoiDung" EntitySet="NguoiDungs" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="CapUy">
@@ -1801,14 +1821,6 @@
           <Property Type="String" Name="TenLoaiNghiBaoHiemXaHoi" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NhanViens" Relationship="QLHSCCModel.FK_NhanVien_LoaiNghiBaoHiemXaHoi" FromRole="LoaiNghiBaoHiemXaHoi" ToRole="NhanVien" />
         </EntityType>
-        <EntityType Name="LoaiNGuoiDung">
-          <Key>
-            <PropertyRef Name="MaQuyen" />
-          </Key>
-          <Property Type="Int32" Name="MaQuyen" Nullable="false" />
-          <Property Type="String" Name="TenQuyen" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="LoaiNguoiDung_ChucNang" Relationship="QLHSCCModel.FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung" FromRole="LoaiNGuoiDung" ToRole="LoaiNguoiDung_ChucNang" />
-        </EntityType>
         <EntityType Name="LoaiNguoiDung_ChucNang">
           <Key>
             <PropertyRef Name="MaChucNangNguoiDung" />
@@ -1839,18 +1851,6 @@
           <Property Type="String" Name="MaNgachCongChuc" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Type="String" Name="TenNgachCongChuc" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="NhanViens" Relationship="QLHSCCModel.FK_NhanVien_NgachCongChuc" FromRole="NgachCongChuc" ToRole="NhanVien" />
-        </EntityType>
-        <EntityType Name="NguoiDung">
-          <Key>
-            <PropertyRef Name="MaNguoiDung" />
-          </Key>
-          <Property Type="Int32" Name="MaNguoiDung" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="MaQuyen" Nullable="false" />
-          <Property Type="String" Name="TenNguoiDung" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="TenDangNhap" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="MatKhau" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="MoTa" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="NgayDangKi" />
         </EntityType>
         <EntityType Name="NhanVien">
           <Key>
@@ -2475,18 +2475,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung">
-          <End Type="QLHSCCModel.LoaiNGuoiDung" Role="LoaiNGuoiDung" Multiplicity="1" />
-          <End Type="QLHSCCModel.LoaiNguoiDung_ChucNang" Role="LoaiNguoiDung_ChucNang" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="LoaiNGuoiDung">
-              <PropertyRef Name="MaQuyen" />
-            </Principal>
-            <Dependent Role="LoaiNguoiDung_ChucNang">
-              <PropertyRef Name="MaQuyen" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_LucLuongVuTrang_NhanVien">
           <End Type="QLHSCCModel.NhanVien" Role="NhanVien" Multiplicity="1" />
           <End Type="QLHSCCModel.LucLuongVuTrang" Role="LucLuongVuTrang" Multiplicity="*" />
@@ -2763,6 +2751,52 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="LoaiNGuoiDung">
+          <Key>
+            <PropertyRef Name="MaQuyen" />
+          </Key>
+          <Property Type="Int32" Name="MaQuyen" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="TenQuyen" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="LoaiNguoiDung_ChucNang" Relationship="QLHSCCModel.FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung" FromRole="LoaiNGuoiDung" ToRole="LoaiNguoiDung_ChucNang" />
+          <NavigationProperty Name="NguoiDungs" Relationship="QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung" FromRole="LoaiNGuoiDung" ToRole="NguoiDung" />
+        </EntityType>
+        <EntityType Name="NguoiDung">
+          <Key>
+            <PropertyRef Name="MaNguoiDung" />
+          </Key>
+          <Property Type="Int32" Name="MaNguoiDung" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="MaQuyen" Nullable="false" />
+          <Property Type="String" Name="TenNguoiDung" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TenDangNhap" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MatKhau" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MoTa" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="NgayDangKi" />
+          <NavigationProperty Name="LoaiNGuoiDung" Relationship="QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung" FromRole="NguoiDung" ToRole="LoaiNGuoiDung" />
+        </EntityType>
+        <Association Name="FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung">
+          <End Type="QLHSCCModel.LoaiNGuoiDung" Role="LoaiNGuoiDung" Multiplicity="1" />
+          <End Type="QLHSCCModel.LoaiNguoiDung_ChucNang" Role="LoaiNguoiDung_ChucNang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiNGuoiDung">
+              <PropertyRef Name="MaQuyen" />
+            </Principal>
+            <Dependent Role="LoaiNguoiDung_ChucNang">
+              <PropertyRef Name="MaQuyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_NguoiDung_LoaiNGuoiDung">
+          <End Type="QLHSCCModel.LoaiNGuoiDung" Role="LoaiNGuoiDung" Multiplicity="1" />
+          <End Type="QLHSCCModel.NguoiDung" Role="NguoiDung" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="LoaiNGuoiDung">
+              <PropertyRef Name="MaQuyen" />
+            </Principal>
+            <Dependent Role="NguoiDung">
+              <PropertyRef Name="MaQuyen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2980,14 +3014,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="LoaiNGuoiDungs">
-            <EntityTypeMapping TypeName="QLHSCCModel.LoaiNGuoiDung">
-              <MappingFragment StoreEntitySet="LoaiNGuoiDung">
-                <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
-                <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="LoaiNguoiDung_ChucNang">
             <EntityTypeMapping TypeName="QLHSCCModel.LoaiNguoiDung_ChucNang">
               <MappingFragment StoreEntitySet="LoaiNguoiDung_ChucNang">
@@ -3014,19 +3040,6 @@
               <MappingFragment StoreEntitySet="NgachCongChuc">
                 <ScalarProperty Name="TenNgachCongChuc" ColumnName="TenNgachCongChuc" />
                 <ScalarProperty Name="MaNgachCongChuc" ColumnName="MaNgachCongChuc" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="NguoiDungs">
-            <EntityTypeMapping TypeName="QLHSCCModel.NguoiDung">
-              <MappingFragment StoreEntitySet="NguoiDung">
-                <ScalarProperty Name="NgayDangKi" ColumnName="NgayDangKi" />
-                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
-                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
-                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
-                <ScalarProperty Name="TenNguoiDung" ColumnName="TenNguoiDung" />
-                <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
-                <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3309,6 +3322,27 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="LoaiNGuoiDungs">
+            <EntityTypeMapping TypeName="QLHSCCModel.LoaiNGuoiDung">
+              <MappingFragment StoreEntitySet="LoaiNGuoiDung">
+                <ScalarProperty Name="TenQuyen" ColumnName="TenQuyen" />
+                <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NguoiDungs">
+            <EntityTypeMapping TypeName="QLHSCCModel.NguoiDung">
+              <MappingFragment StoreEntitySet="NguoiDung">
+                <ScalarProperty Name="NgayDangKi" ColumnName="NgayDangKi" />
+                <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+                <ScalarProperty Name="MatKhau" ColumnName="MatKhau" />
+                <ScalarProperty Name="TenDangNhap" ColumnName="TenDangNhap" />
+                <ScalarProperty Name="TenNguoiDung" ColumnName="TenNguoiDung" />
+                <ScalarProperty Name="MaQuyen" ColumnName="MaQuyen" />
+                <ScalarProperty Name="MaNguoiDung" ColumnName="MaNguoiDung" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3353,11 +3387,9 @@
         <EntityTypeShape EntityType="QLHSCCModel.LoaiCanBo" Width="1.5" PointX="8.25" PointY="49" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="QLHSCCModel.LoaiDonVi" Width="1.5" PointX="3" PointY="18.25" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="QLHSCCModel.LoaiNghiBaoHiemXaHoi" Width="1.5" PointX="8.25" PointY="51.375" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="QLHSCCModel.LoaiNGuoiDung" Width="1.5" PointX="0.75" PointY="4.125" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="QLHSCCModel.LoaiNguoiDung_ChucNang" Width="1.5" PointX="3" PointY="0.875" Height="1.980286458333353" />
         <EntityTypeShape EntityType="QLHSCCModel.LucLuongVuTrang" Width="1.5" PointX="12.75" PointY="24.25" Height="2.3648893229166106" />
         <EntityTypeShape EntityType="QLHSCCModel.NgachCongChuc" Width="1.5" PointX="8.25" PointY="53.75" Height="1.5956835937499818" />
-        <EntityTypeShape EntityType="QLHSCCModel.NguoiDung" Width="1.5" PointX="2.75" PointY="3.75" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="QLHSCCModel.NhanVien" Width="1.5" PointX="10.5" PointY="12" Height="20.441223958333349" />
         <EntityTypeShape EntityType="QLHSCCModel.PhanLoaiDonVi" Width="1.5" PointX="3" PointY="24.625" Height="1.5956835937499818" />
         <EntityTypeShape EntityType="QLHSCCModel.PhuongXa" Width="1.5" PointX="5.25" PointY="24.875" Height="1.980286458333353" />
@@ -3392,8 +3424,10 @@
           <ConnectorPoint PointX="15.75" PointY="16.047841796874991" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_LoaiNguoiDung_ChucNang_ChucNang" >
-          <ConnectorPoint PointX="2.25" PointY="1.9228417968749909" />
-          <ConnectorPoint PointX="3" PointY="1.9228417968749909" />
+          <ConnectorPoint PointX="2.25" PointY="1.8389794921875" />
+          <ConnectorPoint PointX="2.5416641666666666" PointY="1.8389794921874993" />
+          <ConnectorPoint PointX="2.7083308333333336" PointY="1.8389794921875" />
+          <ConnectorPoint PointX="3" PointY="1.8389794921875" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_NhanVien_ChucVu" >
           <ConnectorPoint PointX="9.75" PointY="23.422841796874991" />
@@ -3535,13 +3569,6 @@
           <ConnectorPoint PointX="10.742184374999999" PointY="52.172841796874991" />
           <ConnectorPoint PointX="10.742184374999999" PointY="32.441223958333353" />
         </AssociationConnector>
-        <AssociationConnector Association="QLHSCCModel.FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung" >
-          <ConnectorPoint PointX="2.25" PointY="4.9228417968749909" />
-          <ConnectorPoint PointX="2.5" PointY="4.9228417968749909" />
-          <ConnectorPoint PointX="2.5" PointY="3.5" />
-          <ConnectorPoint PointX="3.75" PointY="3.5" />
-          <ConnectorPoint PointX="3.75" PointY="2.855286458333353" />
-        </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_LucLuongVuTrang_NhanVien" >
           <ConnectorPoint PointX="12" PointY="25.432444661458305" />
           <ConnectorPoint PointX="12.75" PointY="25.432444661458305" />
@@ -3678,6 +3705,18 @@
           <ConnectorPoint PointX="15" PointY="7.7978417968749909" />
           <ConnectorPoint PointX="16.2968775" PointY="7.7978417968749909" />
           <ConnectorPoint PointX="16.2968775" PointY="15.25" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="QLHSCCModel.LoaiNGuoiDung" Width="1.5" PointX="1.625" PointY="3.5" Height="1.5923063151041674" />
+        <EntityTypeShape EntityType="QLHSCCModel.NguoiDung" Width="1.5" PointX="3" PointY="7.125" Height="2.249695638020853" />
+        <AssociationConnector Association="QLHSCCModel.FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung" >
+          <ConnectorPoint PointX="2.6249975" PointY="3.5" />
+          <ConnectorPoint PointX="2.6249975" PointY="0.96875" />
+          <ConnectorPoint PointX="3" PointY="0.96875" />
+        </AssociationConnector>
+        <AssociationConnector Association="QLHSCCModel.FK_NguoiDung_LoaiNGuoiDung" >
+          <ConnectorPoint PointX="2.3124995" PointY="5.0923063151041674" />
+          <ConnectorPoint PointX="2.3124995" PointY="8.2498478190104265" />
+          <ConnectorPoint PointX="3" PointY="8.2498478190104265" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

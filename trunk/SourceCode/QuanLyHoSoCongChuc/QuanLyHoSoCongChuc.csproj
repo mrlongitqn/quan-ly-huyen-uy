@@ -298,6 +298,7 @@
       <DependentUpon>FrmThemLoaiDonVi.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
+    <Compile Include="UsersDiary\DanhSachNhatKySuDung.cs" />
     <Compile Include="UsersDiary\FrmNhatKySuDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -986,7 +987,7 @@
     <Compile Include="Repositories\TrinhDoQuanLyNhaNuocRepository.cs" />
     <Compile Include="Repositories\TrinhDoTinHocRepository.cs" />
     <Compile Include="staticClass.cs" />
-    <Compile Include="UsersDiary\NhatKySuDungHelper.cs" />
+    <Compile Include="UsersDiary\NhatKyNguoiDung.cs" />
     <Compile Include="UsersManager\FrmQuanLyChucNang.cs">
       <SubType>Form</SubType>
     </Compile>

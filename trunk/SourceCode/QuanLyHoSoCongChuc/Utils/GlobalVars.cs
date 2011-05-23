@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using QuanLyHoSoCongChuc.UserDiary;
+using QuanLyHoSoCongChuc.UsersDiary;
 
 namespace QuanLyHoSoCongChuc.Utils
 {
@@ -21,12 +21,6 @@ namespace QuanLyHoSoCongChuc.Utils
     /// </summary>
     public enum EnumChucNangHeThong
     {
-        QUANLY_CHUCNANG_CHUCNANGKHENTHUONG,
-        QUANLY_CHUCNANG_KYLUAT,
-        QUANLY_CHUCNANG_QTBD,
-        QUANLY_CHUCNANG_QTCT,
-        QUANLY_CHUCNANG_QTCTMOI,
-        QUANLY_CHUCNANG_THANNHAN,
         QUANLY_CHUCNANG_CHUCVU,
         QUANLY_CHUCNANG_CONGVIEC,
         QUANLY_CHUCNANG_DANHMUC,
@@ -40,7 +34,17 @@ namespace QuanLyHoSoCongChuc.Utils
         QUANLY_CHUCNANG_DONVI,
         QUANLY_CHUCNANG_GIADINH,
         QUANLY_CHUCNANG_HINHTHUCTUYENDUNG,
-        QUANLY_CHUCNANG_KHENTHUONG
+        QUANLY_CHUCNANG_KETNOICSDL,
+        QUANLY_CHUCNANG_KHENTHUONG,
+        QUANLY_CHUCNANG_KYLUAT,
+        QUANLY_CHUCNANG_LOAICANBO,
+        QUANLY_CHUCNANG_LOAINGHIBHXH,
+        QUANLY_CHUCNANG_LUONG,
+        QUANLY_CHUCNANG_HETHONG,
+        QUANLY_CHUCNANG_NGACHCONGCHUC,
+        QUANLY_CHUCNANG_NHANVIEN,
+        QUANLY_CHUCNANG_NHAPQUANHEGIADINH,
+        QUANLY_CHUCNANG_QUANHE
     }
 
     public class GlobalVars
@@ -48,6 +52,67 @@ namespace QuanLyHoSoCongChuc.Utils
         public static string g_strTenDangNhap = "qlhscc_admin";
         public static string g_strTenMayTram = "";
         public static string g_strPathNhatKi = "D:\\";
-        public static NhatKyNguoiDung g_NhatKySuDung { get; set; }
+        public static EnumChucNangHeThong g_ChucNangSuDung;
+        public static NhatKyNguoiDung g_NhatKyNguoiDung { get; set; }
+
+        /// <summary>
+        /// Retrieve name from enum
+        /// </summary>
+        /// <param name="chucnang"></param>
+        /// <returns></returns>
+        public static string RetrieveTenChucNang(EnumChucNangHeThong chucnang)
+        {
+            var tenchucnang = "";
+            switch (chucnang)
+            {
+                case EnumChucNangHeThong.QUANLY_CHUCNANG_CHUCVU:
+                    tenchucnang = "Quản lý chức vụ";
+                    break;
+                case EnumChucNangHeThong.QUANLY_CHUCNANG_CONGVIEC:
+                    tenchucnang = "Quản lý công việc";
+                    break;
+                case EnumChucNangHeThong.QUANLY_CHUCNANG_DANHMUC:
+                    tenchucnang = "Danh mục";
+                    break;
+                case EnumChucNangHeThong.QUANLY_CHUCNANG_DANHMUCHANHCHINH:
+                    tenchucnang = "Danh mục hành chính";
+                    break;
+                case EnumChucNangHeThong.QUANLY_CHUCNANG_DANHSACHNANGLUONG:
+                    tenchucnang = "Danh sách nâng lương";
+                    break;
+                case EnumChucNangHeThong.QUANLY_CHUCNANG_DANHSACHNHANVIEN:
+                    tenchucnang = "Danh sách nhân viên";
+                    break;
+                case EnumChucNangHeThong.QUANLY_CHUCNANG_HETHONG:
+                    tenchucnang = "Hệ thống";
+                    break;
+            }
+            return tenchucnang;
+        }
+
+        /// <summary>
+        /// Update chuc nang su dung
+        /// </summary>
+        /// <param name="chucnang"></param>
+        public static void UpdateChucNangSuDung(EnumChucNangHeThong chucnang)
+        {
+            var tenchucnang = GlobalVars.RetrieveTenChucNang(chucnang);
+            for (int i = 0; i < g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung.Count; i++)
+            {
+                if (g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung[i].TenChucNang == tenchucnang)
+                {
+                    g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung[i].SoLan++;
+                }
+                else
+                {
+                    var item = new ChucNangSuDung
+                    {
+                        TenChucNang = tenchucnang,
+                        SoLan = 1
+                    };
+                    g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung.Add(item);
+                }
+            }
+        }
     }
 }

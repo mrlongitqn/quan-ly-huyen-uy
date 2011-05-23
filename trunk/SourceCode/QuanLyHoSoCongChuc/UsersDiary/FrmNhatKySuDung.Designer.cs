@@ -29,21 +29,21 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnDong = new DevComponents.DotNetBar.ButtonX();
+            this.btnTim = new DevComponents.DotNetBar.ButtonX();
+            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
+            this.btnIn = new DevComponents.DotNetBar.ButtonX();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lstvNhatKySuDung = new DevComponents.DotNetBar.Controls.ListViewEx();
-            this.lstvChucNangSuDung = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lstvChucNangSuDung = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnDong = new DevComponents.DotNetBar.ButtonX();
-            this.btnTim = new DevComponents.DotNetBar.ButtonX();
-            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
-            this.btnIn = new DevComponents.DotNetBar.ButtonX();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -62,100 +62,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(860, 51);
             this.panel1.TabIndex = 0;
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.lstvNhatKySuDung);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.lstvChucNangSuDung);
-            this.splitContainer1.Size = new System.Drawing.Size(860, 542);
-            this.splitContainer1.SplitterDistance = 574;
-            this.splitContainer1.TabIndex = 1;
-            // 
-            // lstvNhatKySuDung
-            // 
-            // 
-            // 
-            // 
-            this.lstvNhatKySuDung.Border.Class = "ListViewBorder";
-            this.lstvNhatKySuDung.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4,
-            this.columnHeader5});
-            this.lstvNhatKySuDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstvNhatKySuDung.Location = new System.Drawing.Point(0, 0);
-            this.lstvNhatKySuDung.Name = "lstvNhatKySuDung";
-            this.lstvNhatKySuDung.Size = new System.Drawing.Size(574, 542);
-            this.lstvNhatKySuDung.TabIndex = 0;
-            this.lstvNhatKySuDung.UseCompatibleStateImageBehavior = false;
-            this.lstvNhatKySuDung.View = System.Windows.Forms.View.Details;
-            // 
-            // lstvChucNangSuDung
-            // 
-            // 
-            // 
-            // 
-            this.lstvChucNangSuDung.Border.Class = "ListViewBorder";
-            this.lstvChucNangSuDung.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader7,
-            this.columnHeader8});
-            this.lstvChucNangSuDung.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstvChucNangSuDung.Location = new System.Drawing.Point(0, 0);
-            this.lstvChucNangSuDung.Name = "lstvChucNangSuDung";
-            this.lstvChucNangSuDung.Size = new System.Drawing.Size(282, 542);
-            this.lstvChucNangSuDung.TabIndex = 0;
-            this.lstvChucNangSuDung.UseCompatibleStateImageBehavior = false;
-            this.lstvChucNangSuDung.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "STT";
-            this.columnHeader1.Width = 40;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên truy cập";
-            this.columnHeader2.Width = 120;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Ngày giờ vào";
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Ngày giờ ra";
-            this.columnHeader4.Width = 120;
-            // 
-            // columnHeader5
-            // 
-            this.columnHeader5.Text = "Tên máy trạm";
-            this.columnHeader5.Width = 165;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "STT";
-            this.columnHeader6.Width = 40;
-            // 
-            // columnHeader7
-            // 
-            this.columnHeader7.Text = "Các chức năng sử dụng";
-            this.columnHeader7.Width = 160;
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "Số lần";
             // 
             // btnDong
             // 
@@ -208,13 +114,108 @@
             this.btnIn.TabIndex = 15;
             this.btnIn.Text = "In";
             // 
-            // NhatKySuDung
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.lstvNhatKySuDung);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.lstvChucNangSuDung);
+            this.splitContainer1.Size = new System.Drawing.Size(860, 542);
+            this.splitContainer1.SplitterDistance = 574;
+            this.splitContainer1.TabIndex = 1;
+            // 
+            // lstvNhatKySuDung
+            // 
+            // 
+            // 
+            // 
+            this.lstvNhatKySuDung.Border.Class = "ListViewBorder";
+            this.lstvNhatKySuDung.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5});
+            this.lstvNhatKySuDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstvNhatKySuDung.Location = new System.Drawing.Point(0, 0);
+            this.lstvNhatKySuDung.Name = "lstvNhatKySuDung";
+            this.lstvNhatKySuDung.Size = new System.Drawing.Size(574, 542);
+            this.lstvNhatKySuDung.TabIndex = 0;
+            this.lstvNhatKySuDung.UseCompatibleStateImageBehavior = false;
+            this.lstvNhatKySuDung.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "STT";
+            this.columnHeader1.Width = 40;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Tên truy cập";
+            this.columnHeader2.Width = 120;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Ngày giờ vào";
+            this.columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Ngày giờ ra";
+            this.columnHeader4.Width = 120;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "Tên máy trạm";
+            this.columnHeader5.Width = 165;
+            // 
+            // lstvChucNangSuDung
+            // 
+            // 
+            // 
+            // 
+            this.lstvChucNangSuDung.Border.Class = "ListViewBorder";
+            this.lstvChucNangSuDung.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.lstvChucNangSuDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstvChucNangSuDung.Location = new System.Drawing.Point(0, 0);
+            this.lstvChucNangSuDung.Name = "lstvChucNangSuDung";
+            this.lstvChucNangSuDung.Size = new System.Drawing.Size(282, 542);
+            this.lstvChucNangSuDung.TabIndex = 0;
+            this.lstvChucNangSuDung.UseCompatibleStateImageBehavior = false;
+            this.lstvChucNangSuDung.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "STT";
+            this.columnHeader6.Width = 40;
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "Các chức năng sử dụng";
+            this.columnHeader7.Width = 160;
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "Số lần";
+            // 
+            // FrmNhatKySuDung
             // 
             this.ClientSize = new System.Drawing.Size(860, 593);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
-            this.Name = "NhatKySuDung";
+            this.Name = "FrmNhatKySuDung";
             this.Text = "Nhật ký sử dụng";
+            this.Load += new System.EventHandler(this.FrmNhatKySuDung_Load);
             this.panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

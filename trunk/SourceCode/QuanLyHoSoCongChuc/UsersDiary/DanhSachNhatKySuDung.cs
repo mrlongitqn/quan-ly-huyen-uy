@@ -7,7 +7,7 @@ using System.Xml;
 namespace QuanLyHoSoCongChuc.UsersDiary
 {
     /// <summary>
-    /// Class contain using diary for all of user
+    /// tuansl added: Class contain using diary for all of user
     /// </summary>
     public class DanhSachNhatKySuDung
     {
@@ -84,7 +84,7 @@ namespace QuanLyHoSoCongChuc.UsersDiary
                 var chucnang = new ChucNangSuDung
                 {
                     TenChucNang = lstDanhSachChucNang[i].ChildNodes[0].InnerText,
-                    SoLan = lstDanhSachChucNang[i].ChildNodes[1].InnerText
+                    SoLan = int.Parse(lstDanhSachChucNang[i].ChildNodes[1].InnerText)
                 };
                 nhatkysudung.LstChucNangSuDung.Add(chucnang);
             }

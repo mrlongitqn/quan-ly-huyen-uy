@@ -14,6 +14,9 @@ namespace QuanLyHoSoCongChuc.UsersManager
     using QuanLyHoSoCongChuc.Repositories;
     #endregion
 
+    /// <summary>
+    /// tuansl added: manage functionalities corresponding with specified loai nguoi dung
+    /// </summary>
     public partial class frmQuanLyChucNangNguoiDung : DevComponents.DotNetBar.Office2007Form
     {
         // Using this variable to get which ma loai nguoi dung is specified
