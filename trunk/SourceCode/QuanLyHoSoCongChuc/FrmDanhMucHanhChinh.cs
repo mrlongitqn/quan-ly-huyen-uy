@@ -11,6 +11,7 @@ using WeifenLuo.WinFormsUI.Docking;
 using QuanLyHoSoCongChuc.BusinessObject;
 using QuanLyHoSoCongChuc.DataLayer;
 using QuanLyHoSoCongChuc.Controller;
+using QuanLyHoSoCongChuc.Utils;
 
 namespace QuanLyHoSoCongChuc
 {
@@ -18,6 +19,8 @@ namespace QuanLyHoSoCongChuc
     {
         DanhMucHanhChinhControl m_DanhMucHanhChinhControl = new DanhMucHanhChinhControl();
         public FrmNhanVien frmNhanVien;
+        // tuansl added: event handler to transfer data to other forms
+        public EventHandler Handler { get; set; }
 
         public FrmDanhMucHanhChinh()
         {
@@ -47,16 +50,29 @@ namespace QuanLyHoSoCongChuc
             }
         }
 
-        private void btnChon_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            frmNhanVien.m_txtQueQuan.Text = m_tagNode;
-        }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
             FrmThemDanhMucHanhChinh frmThemDanhMucHanhChinh = new FrmThemDanhMucHanhChinh();
             frmThemDanhMucHanhChinh.Show();
-        }        
+        }
+
+        private void btnChon_Click(object sender, EventArgs e)
+        {
+            //var xa = txtMaDonVi.Text;
+            //var donvi = DonViRepository.SelectByID(madonvi);
+            //var tendonvidaydu = donvi.TenDonVi + ", huyện " + donvi.QuanHuyen.TenQuanHuyen + ", tỉnh " + donvi.QuanHuyen.TinhThanh.TenTinh;
+            //TransferDataInfo(this, new MyEvent(madonvi + "#" + tendonvidaydu));
+        }
+
+        /// <summary>
+        /// tuansl added: function is used to transfer data when event would be raised
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void TransferDataInfo(object sender, MyEvent e)
+        {
+            this.Close();
+            this.Handler(this, e);
+        }
     }
 }

@@ -313,7 +313,7 @@ namespace QuanLyHoSoCongChuc
             var madonvi = txtMaDonVi.Text;
             var donvi = DonViRepository.SelectByID(madonvi);
             var tendonvidaydu = donvi.TenDonVi + ", huyện " + donvi.QuanHuyen.TenQuanHuyen + ", tỉnh " + donvi.QuanHuyen.TinhThanh.TenTinh;
-            TransferDonViInfo(this, new MyEvent(madonvi + "#" + tendonvidaydu));
+            TransferDataInfo(this, new MyEvent(madonvi + "#" + tendonvidaydu));
         }
 
         /// <summary>
@@ -321,7 +321,7 @@ namespace QuanLyHoSoCongChuc
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void TransferDonViInfo(object sender, MyEvent e)
+        public void TransferDataInfo(object sender, MyEvent e)
         {
             this.Close();
             this.Handler(this, e);
