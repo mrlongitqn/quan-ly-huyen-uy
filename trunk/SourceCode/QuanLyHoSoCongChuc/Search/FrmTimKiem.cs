@@ -15,7 +15,17 @@ using QuanLyHoSoCongChuc.Report;
 
 namespace QuanLyHoSoCongChuc.Search
 {
-    public partial class FrmTimKiem : Office2007Form
+    #region Using
+    using QuanLyHoSoCongChuc.Models;
+    using QuanLyHoSoCongChuc.Repositories;
+    using QuanLyHoSoCongChuc.Utils;
+    using WeifenLuo.WinFormsUI.Docking;
+    #endregion
+
+    /// <summary>
+    /// tuansl added: tim kiem nhan vien
+    /// </summary>
+    public partial class FrmTimKiem : DockContent
     {
         public FrmTimKiem()
         {
@@ -24,7 +34,27 @@ namespace QuanLyHoSoCongChuc.Search
 
         private void FrmTimKiem_Load(object sender, EventArgs e)
         {
+            LoadTieuChiChung();
+        }
 
+        /// <summary>
+        /// Load tieu chi chung
+        /// </summary>
+        public void LoadTieuChiChung()
+        {
+            LoadGioiTinh();
+        }
+
+        /// <summary>
+        /// Load list of gioi tinh
+        /// </summary>
+        public void LoadGioiTinh()
+        {
+            var lstItem = GioiTinhRepository.SelectAll();
+            if (lstItem.Count > 0)
+            {
+                cbxGioiTinh.DataSource = lstItem;
+            }
         }
 
         private void btnChonDonVi_Click(object sender, EventArgs e)
@@ -51,6 +81,11 @@ namespace QuanLyHoSoCongChuc.Search
             string[] comp = eventType.Data.Split(new char[]{ '#' });
             txtMaDonVi.Text = comp[0];
             txtTenDonViDayDu.Text = comp[1];
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

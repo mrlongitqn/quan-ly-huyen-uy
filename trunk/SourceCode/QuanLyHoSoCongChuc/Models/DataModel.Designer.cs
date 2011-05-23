@@ -2798,6 +2798,10 @@ namespace QuanLyHoSoCongChuc.Models
     [DataContractAttribute(IsReference=true)]
     public partial class GioiTinh : EntityObject
     {
+        public override string ToString()
+        {
+            return TenGioiTinh;
+        }
         #region Factory Method
     
         /// <summary>
