@@ -24,5 +24,10 @@ namespace QuanLyHoSoCongChuc
         {
 
         }
+
+        private void buttonX7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

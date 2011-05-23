@@ -56,15 +56,6 @@ namespace QuanLyHoSoCongChuc.UsersDiary
             }
         }
 
-        public bool LoadUserDiary(string pathFile)
-        {
-            if (lstUserDaries.LoadDiary(pathFile))
-            {
-                return true;
-            }
-            return false;
-        }
-
         private void lstvNhatKySuDung_Click(object sender, EventArgs e)
         {
             try
@@ -92,6 +83,20 @@ namespace QuanLyHoSoCongChuc.UsersDiary
             {
                 throw new Exception(ex.Message, ex.InnerException);
             }
+        }
+
+        /// <summary>
+        /// Load user diary has been saved in xml file
+        /// </summary>
+        /// <param name="pathFile"></param>
+        /// <returns></returns>
+        public bool LoadUserDiary(string pathFile)
+        {
+            if (lstUserDaries.LoadDiary(pathFile))
+            {
+                return true;
+            }
+            return false;
         }
 
         /// <summary>
