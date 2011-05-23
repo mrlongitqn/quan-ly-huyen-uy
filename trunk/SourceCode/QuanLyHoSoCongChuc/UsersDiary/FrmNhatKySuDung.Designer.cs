@@ -60,17 +60,17 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 542);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 51);
+            this.panel1.Size = new System.Drawing.Size(906, 51);
             this.panel1.TabIndex = 0;
             // 
             // btnDong
             // 
             this.btnDong.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnDong.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDong.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
             this.btnDong.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btnDong.Location = new System.Drawing.Point(567, 14);
+            this.btnDong.Location = new System.Drawing.Point(613, 14);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 23);
             this.btnDong.TabIndex = 19;
@@ -79,10 +79,10 @@
             // btnTim
             // 
             this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTim.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnTim.Image = global::QuanLyHoSoCongChuc.Properties.Resources.find;
-            this.btnTim.Location = new System.Drawing.Point(236, 14);
+            this.btnTim.Location = new System.Drawing.Point(282, 14);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(81, 23);
             this.btnTim.TabIndex = 18;
@@ -91,11 +91,11 @@
             // btnXoa
             // 
             this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnXoa.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_29;
             this.btnXoa.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnXoa.Location = new System.Drawing.Point(458, 14);
+            this.btnXoa.Location = new System.Drawing.Point(504, 14);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(72, 23);
             this.btnXoa.TabIndex = 17;
@@ -104,11 +104,11 @@
             // btnIn
             // 
             this.btnIn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnIn.Image = global::QuanLyHoSoCongChuc.Properties.Resources.action_print;
             this.btnIn.ImageFixedSize = new System.Drawing.Size(16, 20);
-            this.btnIn.Location = new System.Drawing.Point(356, 14);
+            this.btnIn.Location = new System.Drawing.Point(402, 14);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(79, 23);
             this.btnIn.TabIndex = 15;
@@ -127,8 +127,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.lstvChucNangSuDung);
-            this.splitContainer1.Size = new System.Drawing.Size(860, 542);
-            this.splitContainer1.SplitterDistance = 574;
+            this.splitContainer1.Size = new System.Drawing.Size(906, 542);
+            this.splitContainer1.SplitterDistance = 613;
             this.splitContainer1.TabIndex = 1;
             // 
             // lstvNhatKySuDung
@@ -144,12 +144,15 @@
             this.columnHeader4,
             this.columnHeader5});
             this.lstvNhatKySuDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstvNhatKySuDung.FullRowSelect = true;
             this.lstvNhatKySuDung.Location = new System.Drawing.Point(0, 0);
+            this.lstvNhatKySuDung.MultiSelect = false;
             this.lstvNhatKySuDung.Name = "lstvNhatKySuDung";
-            this.lstvNhatKySuDung.Size = new System.Drawing.Size(574, 542);
+            this.lstvNhatKySuDung.Size = new System.Drawing.Size(613, 542);
             this.lstvNhatKySuDung.TabIndex = 0;
             this.lstvNhatKySuDung.UseCompatibleStateImageBehavior = false;
             this.lstvNhatKySuDung.View = System.Windows.Forms.View.Details;
+            this.lstvNhatKySuDung.Click += new System.EventHandler(this.lstvNhatKySuDung_Click);
             // 
             // columnHeader1
             // 
@@ -174,7 +177,7 @@
             // columnHeader5
             // 
             this.columnHeader5.Text = "Tên máy trạm";
-            this.columnHeader5.Width = 165;
+            this.columnHeader5.Width = 190;
             // 
             // lstvChucNangSuDung
             // 
@@ -187,9 +190,11 @@
             this.columnHeader7,
             this.columnHeader8});
             this.lstvChucNangSuDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstvChucNangSuDung.FullRowSelect = true;
             this.lstvChucNangSuDung.Location = new System.Drawing.Point(0, 0);
+            this.lstvChucNangSuDung.MultiSelect = false;
             this.lstvChucNangSuDung.Name = "lstvChucNangSuDung";
-            this.lstvChucNangSuDung.Size = new System.Drawing.Size(282, 542);
+            this.lstvChucNangSuDung.Size = new System.Drawing.Size(289, 542);
             this.lstvChucNangSuDung.TabIndex = 0;
             this.lstvChucNangSuDung.UseCompatibleStateImageBehavior = false;
             this.lstvChucNangSuDung.View = System.Windows.Forms.View.Details;
@@ -210,7 +215,7 @@
             // 
             // FrmNhatKySuDung
             // 
-            this.ClientSize = new System.Drawing.Size(860, 593);
+            this.ClientSize = new System.Drawing.Size(906, 593);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.panel1);
             this.Name = "FrmNhatKySuDung";
