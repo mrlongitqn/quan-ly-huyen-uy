@@ -46,7 +46,7 @@ namespace QuanLyHoSoCongChuc
         private void FrmReportLuong_Load(object sender, EventArgs e)
         {
             init();
-            CrBaoCaoLuong rpt = new CrBaoCaoLuong();
+            //CrBaoCaoLuong rpt = new CrBaoCaoLuong();
 
             //reportViewerLuong.d = rpt;
             //crystalReportViewer1.Show();
