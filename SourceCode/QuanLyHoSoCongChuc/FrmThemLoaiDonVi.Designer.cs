@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThemLoaiDonVi));
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.btnXoaDonVi = new System.Windows.Forms.Button();
-            this.btnLuuDonVi = new System.Windows.Forms.Button();
-            this.btnThemDonVi = new System.Windows.Forms.Button();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.txtMaDoVi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.cbLoaiDonVi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.btnXoaDonVi = new System.Windows.Forms.Button();
+            this.btnLuuDonVi = new System.Windows.Forms.Button();
+            this.btnThemDonVi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelX5
@@ -48,6 +48,48 @@
             this.labelX5.TabIndex = 51;
             this.labelX5.Text = "THÊM LOẠI ĐƠN VỊ";
             this.labelX5.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThoat.Location = new System.Drawing.Point(185, 134);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(86, 30);
+            this.btnThoat.TabIndex = 38;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // txtMaDoVi
+            // 
+            // 
+            // 
+            // 
+            this.txtMaDoVi.Border.Class = "TextBoxBorder";
+            this.txtMaDoVi.Location = new System.Drawing.Point(89, 86);
+            this.txtMaDoVi.Name = "txtMaDoVi";
+            this.txtMaDoVi.Size = new System.Drawing.Size(65, 20);
+            this.txtMaDoVi.TabIndex = 34;
+            // 
+            // cbLoaiDonVi
+            // 
+            this.cbLoaiDonVi.DisplayMember = "Text";
+            this.cbLoaiDonVi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbLoaiDonVi.FormattingEnabled = true;
+            this.cbLoaiDonVi.ItemHeight = 14;
+            this.cbLoaiDonVi.Location = new System.Drawing.Point(160, 86);
+            this.cbLoaiDonVi.Name = "cbLoaiDonVi";
+            this.cbLoaiDonVi.Size = new System.Drawing.Size(177, 20);
+            this.cbLoaiDonVi.TabIndex = 30;
+            this.cbLoaiDonVi.SelectedIndexChanged += new System.EventHandler(this.cbLoaiDonVi_SelectedIndexChanged);
+            // 
+            // labelX1
+            // 
+            this.labelX1.Location = new System.Drawing.Point(21, 83);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(75, 23);
+            this.labelX1.TabIndex = 26;
+            this.labelX1.Text = "Loại đơn vị";
             // 
             // btnXoaDonVi
             // 
@@ -79,48 +121,6 @@
             this.btnThemDonVi.TabIndex = 39;
             this.btnThemDonVi.UseVisualStyleBackColor = true;
             this.btnThemDonVi.Click += new System.EventHandler(this.btnThemDonVi_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThoat.Location = new System.Drawing.Point(185, 134);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(86, 30);
-            this.btnThoat.TabIndex = 38;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // txtMaDoVi
-            // 
-            // 
-            // 
-            // 
-            this.txtMaDoVi.Border.Class = "TextBoxBorder";
-            this.txtMaDoVi.Location = new System.Drawing.Point(110, 86);
-            this.txtMaDoVi.Name = "txtMaDoVi";
-            this.txtMaDoVi.Size = new System.Drawing.Size(44, 20);
-            this.txtMaDoVi.TabIndex = 34;
-            // 
-            // cbLoaiDonVi
-            // 
-            this.cbLoaiDonVi.DisplayMember = "Text";
-            this.cbLoaiDonVi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbLoaiDonVi.FormattingEnabled = true;
-            this.cbLoaiDonVi.ItemHeight = 14;
-            this.cbLoaiDonVi.Location = new System.Drawing.Point(160, 86);
-            this.cbLoaiDonVi.Name = "cbLoaiDonVi";
-            this.cbLoaiDonVi.Size = new System.Drawing.Size(177, 20);
-            this.cbLoaiDonVi.TabIndex = 30;
-            this.cbLoaiDonVi.SelectedIndexChanged += new System.EventHandler(this.cbLoaiDonVi_SelectedIndexChanged);
-            // 
-            // labelX1
-            // 
-            this.labelX1.Location = new System.Drawing.Point(21, 83);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 23);
-            this.labelX1.TabIndex = 26;
-            this.labelX1.Text = "Loại đơn vị";
             // 
             // FrmThemLoaiDonVi
             // 

@@ -297,6 +297,12 @@
     <Compile Include="FrmThemLoaiDonVi.Designer.cs">
       <DependentUpon>FrmThemLoaiDonVi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmThemPhanLoaiDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmThemPhanLoaiDonVi.Designer.cs">
+      <DependentUpon>FrmThemPhanLoaiDonVi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
     <Compile Include="UsersDiary\DanhSachNhatKySuDung.cs" />
     <Compile Include="UsersDiary\FrmNhatKySuDung.cs">
@@ -783,6 +789,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmThemLoaiDonVi.resx">
       <DependentUpon>FrmThemLoaiDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmThemPhanLoaiDonVi.resx">
+      <DependentUpon>FrmThemPhanLoaiDonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmThongTinLienHe.resx">
       <SubType>Designer</SubType>

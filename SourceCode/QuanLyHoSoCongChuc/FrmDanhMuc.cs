@@ -238,5 +238,11 @@ namespace QuanLyHoSoCongChuc.Report
 
         }
 
+        private void btThemPhanLoai_Click(object sender, EventArgs e)
+        {
+            FrmThemPhanLoaiDonVi frm = new FrmThemPhanLoaiDonVi();
+            frm.ShowDialog();
+        }
+
     } 
 }

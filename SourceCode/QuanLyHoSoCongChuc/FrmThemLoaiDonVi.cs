@@ -58,7 +58,7 @@ namespace QuanLyHoSoCongChuc
 
                 if (LoaiDonViRepository.SelectByID(MaDV)!=null)
                 {
-                    MessageBox.Show("Tỉnh có mã " + MaDV + " đã tồn tại!");
+                    MessageBox.Show("Loại đơn vị có mã " + MaDV + " đã tồn tại!");
                 }
                 else
                 {
@@ -87,7 +87,7 @@ namespace QuanLyHoSoCongChuc
             bool result = LoaiDonViRepository.Save();
             if (result)
             {
-                MessageBox.Show("Cập nhật đơn vị thành công.");
+                MessageBox.Show("Cập nhật loại đơn vị thành công.");
                 loadLoaiDonVi();
             }
         }
@@ -97,7 +97,7 @@ namespace QuanLyHoSoCongChuc
             bool result = LoaiDonViRepository.Delete(txtMaDoVi.Text);
             if (result)
             {
-                MessageBox.Show("Xóa đơn vị thành công.");
+                MessageBox.Show("Xóa loại đơn vị thành công.");
                 loadLoaiDonVi();
             }
         }
