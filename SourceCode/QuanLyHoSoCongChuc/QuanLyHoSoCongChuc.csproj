@@ -312,7 +312,6 @@
     <Compile Include="UsersDiary\FrmNhatKySuDung.Designer.cs">
       <DependentUpon>FrmNhatKySuDung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\AppParams.cs" />
     <Compile Include="Utils\EncryptText.cs" />
     <Compile Include="FrmChucNangKhenThuong.cs">
       <SubType>Form</SubType>
