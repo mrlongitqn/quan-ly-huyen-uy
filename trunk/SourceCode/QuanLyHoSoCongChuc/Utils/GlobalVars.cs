@@ -132,4 +132,23 @@ namespace QuanLyHoSoCongChuc.Utils
             return false;
         }
     }
+
+
+    public enum MyEnum
+    {
+        DEFAULT,
+        ADD_CONTACT,
+        EDIT_CONTACT,
+        DELETE_CONTACT,
+        EDIT_GROUP
+    }
+
+    public class MyEvent : EventArgs
+    {
+        public MyEnum Data { get; set; }
+        public MyEvent(MyEnum _data)
+        {
+            Data = _data;
+        }
+    }
 }
