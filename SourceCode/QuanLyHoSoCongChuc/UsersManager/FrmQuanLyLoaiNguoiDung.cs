@@ -16,7 +16,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
     #endregion
 
     /// <summary>
-    /// Implement by le tuan: to manage LoaiNguoiDung in app
+    /// tuansl added: manage LoaiNguoiDung in app
     /// </summary>
     public partial class FrmQuanLyLoaiNguoiDung : DevComponents.DotNetBar.Office2007Form
     {

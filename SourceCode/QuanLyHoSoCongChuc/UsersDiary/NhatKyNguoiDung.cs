@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using QuanLyHoSoCongChuc.Utils;
 
 namespace QuanLyHoSoCongChuc.UsersDiary
 {
     /// <summary>
-    /// Class contain the number of using functionalities in app
+    /// tuansl added: class contain the number of using functionalities in app
     /// </summary>
     public class ChucNangSuDung
     {
         public string TenChucNang { get; set; }
-        public string SoLan { get; set; }
+        public int SoLan { get; set; }
+
+        public ChucNangSuDung()
+        {
+            SoLan = 0;
+        }
     }
 
     /// <summary>
-    /// Class contain using infos of user
+    /// tuansl added: class contain using infos of user
     /// </summary>
     public class NhatKySuDung
     {
@@ -27,7 +33,7 @@ namespace QuanLyHoSoCongChuc.UsersDiary
     }
 
     /// <summary>
-    /// Class contain info of using app
+    /// tuansl added: class contain info of using app
     /// </summary>
     public class NhatKyNguoiDung
     {
@@ -159,7 +165,7 @@ namespace QuanLyHoSoCongChuc.UsersDiary
                     XmlElement solan = doc.CreateElement("solan");
 
                     tenchucnang.InnerText = LstNhatkySuDung[0].LstChucNangSuDung[i].TenChucNang;
-                    solan.InnerText = LstNhatkySuDung[0].LstChucNangSuDung[i].SoLan;
+                    solan.InnerText = LstNhatkySuDung[0].LstChucNangSuDung[i].SoLan.ToString();
 
                     chucnangsudung.AppendChild(tenchucnang);
                     chucnangsudung.AppendChild(solan);
@@ -213,7 +219,7 @@ namespace QuanLyHoSoCongChuc.UsersDiary
                     XmlElement solan = doc.CreateElement("solan");
 
                     tenchucnang.InnerText = LstNhatkySuDung[0].LstChucNangSuDung[i].TenChucNang;
-                    solan.InnerText = LstNhatkySuDung[0].LstChucNangSuDung[i].SoLan;
+                    solan.InnerText = LstNhatkySuDung[0].LstChucNangSuDung[i].SoLan.ToString();
 
                     chucnangsudung.AppendChild(tenchucnang);
                     chucnangsudung.AppendChild(solan);

@@ -15,6 +15,9 @@ namespace QuanLyHoSoCongChuc.UsersManager
     using QuanLyHoSoCongChuc.Utils;
     #endregion
 
+    /// <summary>
+    /// tuansl added: manage users in DB
+    /// </summary>
     public partial class FrmQuanLyNguoiDung : DevComponents.DotNetBar.Office2007Form
     {
         // Using this variable to get which ma loai nguoi dung is specified

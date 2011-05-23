@@ -16,7 +16,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
     #endregion
 
     /// <summary>
-    /// Implement by le tuan: to manage chuc nang corresponding with menus in app
+    /// tuansl added: manage chuc nang corresponding with menus in app
     /// </summary>
     public partial class FrmQuanLyChucNang : DevComponents.DotNetBar.Office2007Form
     {
