@@ -7,13 +7,14 @@ using System.Text;
 using System.Linq;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
+using System.Reflection;
 using Microsoft.ReportingServices.Rendering.ImageRenderer;
 using Microsoft.Reporting.WinForms;
 using DevComponents.DotNetBar;
 using QuanLyHoSoCongChuc.BusinessObject;
 using QuanLyHoSoCongChuc.Controller;
 using QuanLyHoSoCongChuc.DataLayer;
-
+using QuanLyHoSoCongChuc.Utils;
 
 namespace QuanLyHoSoCongChuc.Report
 {
@@ -184,6 +185,26 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            int level = getLevelTreeView(treeView1.SelectedNode);
+            if (level == 1 || level == 3)
+            {
+                btThem.Enabled = false;
+                btXoa.Enabled = false;
+                btSave.Enabled = false;
+            }
+            else
+            {
+                btThem.Enabled = true;
+                btXoa.Enabled = true;
+                btSave.Enabled = true;
+            }
+            if (level == 3)
+            {
+                btChon.Enabled = true;
+            }
+            else {
+                btChon.Enabled = false;
+            }
             string maDonVi = treeView1.SelectedNode.Text.Split('-')[0].Trim();
             var DonVi = DonViRepository.SelectByID(maDonVi);
             if (DonVi != null) 
@@ -205,6 +226,21 @@ namespace QuanLyHoSoCongChuc.Report
             
         }
 
+        private int getLevelTreeView(TreeNode node)
+        {
+            if (node.Parent == null)
+                return 1; // Node cha
+            else
+            {
+                if (node.Parent.Parent == null)
+                    return 2;
+                else { 
+                    if (node.Parent.Parent.Parent == null)
+                        return 3;
+                }
+            }
+            return -1;
+        }
         private void btSave_Click(object sender, EventArgs e)
         {
             var dv = DonViRepository.SelectByID( txtMaDonVi.Text);
@@ -241,8 +277,27 @@ namespace QuanLyHoSoCongChuc.Report
         private void btThemPhanLoai_Click(object sender, EventArgs e)
         {
             FrmThemPhanLoaiDonVi frm = new FrmThemPhanLoaiDonVi();
+            frm.HandleExitForm += ShowMe;
             frm.ShowDialog();
         }
 
+        //Process change forms screen
+        public void ShowMe(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string ErrorText = "";
+            switch (eventType.Data)
+            {
+                case MyEnum.ADD_CONTACT:
+                case MyEnum.EDIT_CONTACT:
+                case MyEnum.DELETE_CONTACT:
+                    //LoadData(ref ErrorText);
+                    break;
+
+                case MyEnum.DEFAULT:
+                    break;
+            }
+            Show();
+        }
     } 
 }

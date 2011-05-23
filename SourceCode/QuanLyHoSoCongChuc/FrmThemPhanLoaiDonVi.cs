@@ -15,6 +15,7 @@ namespace QuanLyHoSoCongChuc
     #endregion
     public partial class FrmThemPhanLoaiDonVi : Form
     {
+        public EventHandler HandleExitForm { get; set; }
         public FrmThemPhanLoaiDonVi()
         {
             InitializeComponent();
