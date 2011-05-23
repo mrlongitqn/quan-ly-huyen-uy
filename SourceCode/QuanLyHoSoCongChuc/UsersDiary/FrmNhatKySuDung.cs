@@ -41,24 +41,10 @@ namespace QuanLyHoSoCongChuc.UsersDiary
                             objListViewItem.Tag = nguoidung.TenTruyCap + "-" + nhatkysudung.ThoiDiemVao;
                             objListViewItem.Text = count.ToString();
                             objListViewItem.SubItems.Add(nguoidung.TenTruyCap);
-                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", nhatkysudung.ThoiDiemVao));
-                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", nhatkysudung.ThoiDiemRa));
+                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy HH:mm:ss}", nhatkysudung.ThoiDiemVao));
+                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy HH:mm:ss}", nhatkysudung.ThoiDiemRa));
                             objListViewItem.SubItems.Add(nhatkysudung.TenMayTram);
                             lstvNhatKySuDung.Items.Add(objListViewItem);
-
-                            // Loop for list of used functionalities
-                            var count2 = 1;
-                            lstvChucNangSuDung.Items.Clear();
-                            for (int k = 0; k < nhatkysudung.LstChucNangSuDung.Count; k++)
-                            {
-                                var chucnangsudung = nhatkysudung.LstChucNangSuDung[k];
-                                objListViewItem = new ListViewItem();
-                                objListViewItem.Text = count2.ToString();
-                                objListViewItem.SubItems.Add(chucnangsudung.TenChucNang.ToString());
-                                objListViewItem.SubItems.Add(chucnangsudung.SoLan.ToString());
-                                lstvChucNangSuDung.Items.Add(objListViewItem);
-                                count2++;
-                            }
                             count++;
                         }
                     }
@@ -77,6 +63,66 @@ namespace QuanLyHoSoCongChuc.UsersDiary
                 return true;
             }
             return false;
+        }
+
+        private void lstvNhatKySuDung_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ListView.SelectedListViewItemCollection lstview = this.lstvNhatKySuDung.SelectedItems;
+                if (lstview.Count > 0)
+                {
+                    // loop for list of used functionalities
+                    var count2 = 1;
+                    lstvChucNangSuDung.Items.Clear();
+                    var nhatkysudung = GetNhatKySuDung(lstview[0].Tag.ToString());
+                    for (int k = 0; k < nhatkysudung.LstChucNangSuDung.Count; k++)
+                    {
+                        var chucnangsudung = nhatkysudung.LstChucNangSuDung[k];
+                        var objlistviewitem = new ListViewItem();
+                        objlistviewitem.Text = count2.ToString();
+                        objlistviewitem.SubItems.Add(chucnangsudung.TenChucNang.ToString());
+                        objlistviewitem.SubItems.Add(chucnangsudung.SoLan.ToString());
+                        lstvChucNangSuDung.Items.Add(objlistviewitem);
+                        count2++;
+                    }
+                }
+            }
+            catch (System.Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
+        }
+
+        /// <summary>
+        /// Get nhatkysudung base on tentruycap and thoidiemvao
+        /// </summary>
+        /// <param name="tag"></param>
+        /// <returns></returns>
+        public NhatKySuDung GetNhatKySuDung(string tag)
+        {
+            NhatKySuDung nhatkysudung = null;
+            string[] comp = tag.Split(new char[] { '-' });
+            var tentruycap = comp[0];
+            var thoidiemvao = comp[1];
+            for (int i = 0; i < lstUserDaries.LstNhatKyNguoiDung.Count; i++)
+            {
+                if (lstUserDaries.LstNhatKyNguoiDung[i].TenTruyCap == tentruycap)
+                {
+                    var nguoidung = lstUserDaries.LstNhatKyNguoiDung[i];
+                    for (int j = 0; j < nguoidung.LstNhatkySuDung.Count; j++)
+                    {
+                        if (nguoidung.LstNhatkySuDung[j].ThoiDiemVao == DateTime.Parse(thoidiemvao))
+                        {
+                            nhatkysudung = nguoidung.LstNhatkySuDung[j];
+                            break;
+                        }
+                    }
+                    if (nhatkysudung != null)
+                        break;
+                }
+            }
+            return nhatkysudung;
         }
     }
 }

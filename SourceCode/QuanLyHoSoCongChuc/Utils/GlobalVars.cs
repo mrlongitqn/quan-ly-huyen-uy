@@ -51,7 +51,7 @@ namespace QuanLyHoSoCongChuc.Utils
     {
         public static string g_strTenDangNhap = "qlhscc_admin";
         public static string g_strTenMayTram = "";
-        public static string g_strPathNhatKi = "D:\\";
+        public static string g_strPathNhatKi = "D:\\user_diary.xml";
         public static EnumChucNangHeThong g_ChucNangSuDung;
         public static NhatKyNguoiDung g_NhatKyNguoiDung { get; set; }
 
@@ -97,22 +97,39 @@ namespace QuanLyHoSoCongChuc.Utils
         public static void UpdateChucNangSuDung(EnumChucNangHeThong chucnang)
         {
             var tenchucnang = GlobalVars.RetrieveTenChucNang(chucnang);
+            ChucNangSuDung refChucNang = null;
+            if (CheckingItemIsExist(tenchucnang, ref refChucNang))
+            {
+                refChucNang.SoLan++;
+            }
+            else
+            {
+                var item = new ChucNangSuDung
+                {
+                    TenChucNang = tenchucnang,
+                    SoLan = 1
+                };
+                g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung.Add(item);
+            }
+        }
+
+        /// <summary>
+        /// Checking item is exist in list
+        /// </summary>
+        /// <param name="tenchucnang"></param>
+        /// <param name="refChucNang"></param>
+        /// <returns></returns>
+        public static bool CheckingItemIsExist(string tenchucnang, ref ChucNangSuDung refChucNang)
+        {
             for (int i = 0; i < g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung.Count; i++)
             {
                 if (g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung[i].TenChucNang == tenchucnang)
                 {
-                    g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung[i].SoLan++;
-                }
-                else
-                {
-                    var item = new ChucNangSuDung
-                    {
-                        TenChucNang = tenchucnang,
-                        SoLan = 1
-                    };
-                    g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung.Add(item);
+                    refChucNang = g_NhatKyNguoiDung.LstNhatkySuDung[0].LstChucNangSuDung[i];
+                    return true;
                 }
             }
+            return false;
         }
     }
 }
