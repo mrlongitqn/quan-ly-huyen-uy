@@ -26,6 +26,7 @@ namespace QuanLyHoSoCongChuc
         }
         void loadLoaiDonVi()
         {
+            cbLoaiDonVi.Items.Clear();
             var lstLoaiDonVi = LoaiDonViRepository.SelectAll();
             for (int i = 0; i < lstLoaiDonVi.Count; i++)
             {
@@ -67,7 +68,7 @@ namespace QuanLyHoSoCongChuc
                     bool result = LoaiDonViRepository.Insert(dv);
                     if (result)
                     {
-                        MessageBox.Show("Thêm đơn vị mới thành công.");
+                        MessageBox.Show("Thêm 1 loại đơn vị mới thành công.");
                     }
                 }
             }
@@ -81,9 +82,8 @@ namespace QuanLyHoSoCongChuc
 
         private void btnLuuDonVi_Click(object sender, EventArgs e)
         {
-            LoaiDonVi dv = new LoaiDonVi();
-            dv.MaLoaiDonVi = txtMaDoVi.Text;
-            dv.TenLoaiDonVi = cbLoaiDonVi.SelectedText;
+            var item = LoaiDonViRepository.SelectByID(txtMaDoVi.Text);
+            item.TenLoaiDonVi = cbLoaiDonVi.Text;
             bool result = LoaiDonViRepository.Save();
             if (result)
             {

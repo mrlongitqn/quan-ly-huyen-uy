@@ -25,6 +25,7 @@ namespace QuanLyHoSoCongChuc.Report
     {
         NhanVienControl m_NhanVienCtrl = new NhanVienControl();
         List<LoaiDonVi> lstLoaiDonVi;
+        List<PhanLoaiDonVi> lstPhanLoai;
         public FrmDanhMuc()
         {
             DataService.OpenConnection();
@@ -40,25 +41,28 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void FrmReportLuong_Load(object sender, EventArgs e)
         {
-            loadLoaiDonVi();
-            loadPhanLoai();    
-            loadTreeView();
+            init();
             CrBaoCaoLuong rpt = new CrBaoCaoLuong();
 
             //reportViewerLuong.d = rpt;
             //crystalReportViewer1.Show();
             //reportViewerLuong.Refresh();
         }
-
+        void init()
+        {
+            loadLoaiDonVi();
+            loadPhanLoai();
+            loadTreeView();
+        }
         void loadPhanLoai()
         {
-            //var lstItem = PhanLoaiDonViRepository.SelectAll();
-            //for (int i = 0; i < lstItem.Count; i++)
-            //{
-            //    cbPhanLoai.Items.Add(new ListItem(lstItem[i]., lstItem[i].TenDonVi));
-            //}
-            //if (lstItem.Count>0)
-            //    cbPhanLoai.SelectedIndex = 1;
+            lstPhanLoai = PhanLoaiDonViRepository.SelectAll();
+            for (int i = 0; i < lstPhanLoai.Count; i++)
+            {
+                cbPhanLoai.Items.Add(new ListItem(lstPhanLoai[i].MaPhanLoai, lstPhanLoai[i].TenPhanLoai));
+            }
+            if (lstPhanLoai.Count > 0)
+                cbPhanLoai.SelectedIndex = 0;
         }
         void loadLoaiDonVi()
         {
@@ -68,7 +72,7 @@ namespace QuanLyHoSoCongChuc.Report
                 cbLoaiDonVi.Items.Add(new ListItem(lstLoaiDonVi[i].MaLoaiDonVi, lstLoaiDonVi[i].TenLoaiDonVi));
             }
             if (lstLoaiDonVi.Count > 0)
-                cbLoaiDonVi.SelectedIndex = 1;
+                cbLoaiDonVi.SelectedIndex = 0;
         }
         void loadTreeView()
         {
@@ -133,8 +137,12 @@ namespace QuanLyHoSoCongChuc.Report
             string[] items = item.Split('-');
             string DonViID = items[0].Trim();
 
-            DonViRepository.Delete(DonViID);
-            loadTreeView();
+            bool Kq = DonViRepository.Delete(DonViID);
+            if (Kq)
+            {
+                MessageBox.Show("Xóa đơn vị thành công.");
+                loadTreeView();
+            }
         }
 
         private void btThem_Click(object sender, EventArgs e)
@@ -156,8 +164,13 @@ namespace QuanLyHoSoCongChuc.Report
             }
 
             ListItem PhanLoaiDV = (ListItem)cbPhanLoai.SelectedItem;
-            //dv.MaPhanLoaiDonVi = PhanLoaiDV.ID;
-            //bool Kq = DonViRepository.Insert(
+            dv.MaPhanLoaiDonVi = PhanLoaiDV.ID;
+            bool Kq = DonViRepository.Insert(dv);
+            if (Kq)
+            {
+                MessageBox.Show("Thêm 1 đơn vị mới thành công.");
+                loadTreeView();
+            }
         }
 
         private void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -173,18 +186,54 @@ namespace QuanLyHoSoCongChuc.Report
         {
             string maDonVi = treeView1.SelectedNode.Text.Split('-')[0].Trim();
             var DonVi = DonViRepository.SelectByID(maDonVi);
-
-            txtMaDonVi.Text = DonVi.MaDonVi;
-            txtTenDonVi.Text = DonVi.TenDonVi;
-            cbLoaiDonVi.SelectedValue = DonVi.MaLoaiDonVi;
-            for (int i = 0; i < lstLoaiDonVi.Count; i++)
+            if (DonVi != null) 
             {
-                if (lstLoaiDonVi[i].MaLoaiDonVi == DonVi.MaLoaiDonVi)
-                    cbLoaiDonVi.SelectedIndex = i;
+                txtMaDonVi.Text = DonVi.MaDonVi;
+                txtTenDonVi.Text = DonVi.TenDonVi;
+
+                for (int i = 0; i < lstLoaiDonVi.Count; i++)
+                {
+                    if (lstLoaiDonVi[i].MaLoaiDonVi == DonVi.MaLoaiDonVi)
+                        cbLoaiDonVi.SelectedIndex = i;
+                }
+                for (int i = 0; i < lstPhanLoai.Count; i++)
+                {
+                    if (lstPhanLoai[i].MaPhanLoai == DonVi.MaPhanLoaiDonVi)
+                        cbPhanLoai.SelectedIndex = i;
+                }
             }
+            
         }
 
         private void btSave_Click(object sender, EventArgs e)
+        {
+            var dv = DonViRepository.SelectByID( txtMaDonVi.Text);
+            
+            dv.TenDonVi = txtTenDonVi.Text;
+
+            string maQuanHuyen = treeView1.SelectedNode.Text.Split('-')[0].Trim();
+            dv.MaQuanHuyen = maQuanHuyen;
+            try
+            {
+                ListItem LoaiDV = (ListItem)cbLoaiDonVi.SelectedItem;
+                dv.MaLoaiDonVi = LoaiDV.ID;
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            ListItem PhanLoaiDV = (ListItem)cbPhanLoai.SelectedItem;
+            dv.MaPhanLoaiDonVi = PhanLoaiDV.ID;
+            bool Kq = DonViRepository.Save();
+            if (Kq)
+            {
+                MessageBox.Show("Lưu thành công.");
+                loadTreeView();
+            }
+        }
+
+        private void cbPhanLoai_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
