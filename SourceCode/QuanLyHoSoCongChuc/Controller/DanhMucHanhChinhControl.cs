@@ -10,14 +10,12 @@ namespace QuanLyHoSoCongChuc.Controller
 {
     public class DanhMucHanhChinhControl
     {
-        TinhThanhData m_TinhThanhData = new TinhThanhData();
         QuanHuyenData m_QuanHuyenData = new QuanHuyenData();
         PhuongXaData m_PhuongXaData = new PhuongXaData();
         KhoiXomData m_KhoiXomData = new KhoiXomData();
 
         public void HienThiTreeView(TreeView tv)
         {
-            //DataTable dtDSTinhThanh = m_TinhThanhData.LayDSTinhThanh();
             DataTable dtDSQuanHuyen = m_QuanHuyenData.LayDSQuanHuyen();
             DataTable dtDSPhuongXa = m_PhuongXaData.LayDSPhuongXa();
             DataTable dtDSKhoiXom = m_KhoiXomData.LayDSKhoiXom();
