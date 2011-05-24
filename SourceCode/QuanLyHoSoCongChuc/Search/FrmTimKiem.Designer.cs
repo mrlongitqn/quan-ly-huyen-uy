@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
             this.buttonX11 = new DevComponents.DotNetBar.ButtonX();
@@ -112,6 +112,9 @@
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.tbTieuChiKhac = new DevComponents.DotNetBar.TabItem(this.components);
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.ckbxEnableNgaySinh = new System.Windows.Forms.CheckBox();
+            this.ckbxEnableNgayVaoDang = new System.Windows.Forms.CheckBox();
+            this.ckbxEnableNgayChinhThuc = new System.Windows.Forms.CheckBox();
             this.groupPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -294,6 +297,9 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.ckbxEnableNgayChinhThuc);
+            this.groupPanel1.Controls.Add(this.ckbxEnableNgayVaoDang);
+            this.groupPanel1.Controls.Add(this.ckbxEnableNgaySinh);
             this.groupPanel1.Controls.Add(this.dmTuoiDang);
             this.groupPanel1.Controls.Add(this.dmTuoiDoi);
             this.groupPanel1.Controls.Add(this.btnTim);
@@ -359,7 +365,6 @@
             this.dmTuoiDang.Name = "dmTuoiDang";
             this.dmTuoiDang.Size = new System.Drawing.Size(121, 20);
             this.dmTuoiDang.TabIndex = 164;
-            this.dmTuoiDang.Text = "domainUpDown2";
             // 
             // dmTuoiDoi
             // 
@@ -367,7 +372,6 @@
             this.dmTuoiDoi.Name = "dmTuoiDoi";
             this.dmTuoiDoi.Size = new System.Drawing.Size(121, 20);
             this.dmTuoiDoi.TabIndex = 163;
-            this.dmTuoiDoi.Text = "domainUpDown1";
             // 
             // btnTim
             // 
@@ -697,14 +701,14 @@
             this.TieuChi,
             this.SoLuong,
             this.TiLe});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewX1.Name = "dataGridViewX1";
@@ -1113,6 +1117,33 @@
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 2;
             // 
+            // ckbxEnableNgaySinh
+            // 
+            this.ckbxEnableNgaySinh.AutoSize = true;
+            this.ckbxEnableNgaySinh.Location = new System.Drawing.Point(299, 162);
+            this.ckbxEnableNgaySinh.Name = "ckbxEnableNgaySinh";
+            this.ckbxEnableNgaySinh.Size = new System.Drawing.Size(15, 14);
+            this.ckbxEnableNgaySinh.TabIndex = 165;
+            this.ckbxEnableNgaySinh.UseVisualStyleBackColor = true;
+            // 
+            // ckbxEnableNgayVaoDang
+            // 
+            this.ckbxEnableNgayVaoDang.AutoSize = true;
+            this.ckbxEnableNgayVaoDang.Location = new System.Drawing.Point(299, 383);
+            this.ckbxEnableNgayVaoDang.Name = "ckbxEnableNgayVaoDang";
+            this.ckbxEnableNgayVaoDang.Size = new System.Drawing.Size(15, 14);
+            this.ckbxEnableNgayVaoDang.TabIndex = 166;
+            this.ckbxEnableNgayVaoDang.UseVisualStyleBackColor = true;
+            // 
+            // ckbxEnableNgayChinhThuc
+            // 
+            this.ckbxEnableNgayChinhThuc.AutoSize = true;
+            this.ckbxEnableNgayChinhThuc.Location = new System.Drawing.Point(299, 406);
+            this.ckbxEnableNgayChinhThuc.Name = "ckbxEnableNgayChinhThuc";
+            this.ckbxEnableNgayChinhThuc.Size = new System.Drawing.Size(15, 14);
+            this.ckbxEnableNgayChinhThuc.TabIndex = 167;
+            this.ckbxEnableNgayChinhThuc.UseVisualStyleBackColor = true;
+            // 
             // FrmTimKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1134,6 +1165,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabControlPanel1.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
+            this.groupPanel1.PerformLayout();
             this.tabControlPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewX1)).EndInit();
             this.tabControlPanel2.ResumeLayout(false);
@@ -1229,5 +1261,8 @@
         private DevComponents.DotNetBar.LabelX labelX15;
         private System.Windows.Forms.DomainUpDown dmTuoiDang;
         private System.Windows.Forms.DomainUpDown dmTuoiDoi;
+        private System.Windows.Forms.CheckBox ckbxEnableNgayChinhThuc;
+        private System.Windows.Forms.CheckBox ckbxEnableNgayVaoDang;
+        private System.Windows.Forms.CheckBox ckbxEnableNgaySinh;
     }
 }

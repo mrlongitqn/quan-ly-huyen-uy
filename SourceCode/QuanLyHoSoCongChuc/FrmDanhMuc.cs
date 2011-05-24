@@ -117,8 +117,6 @@ namespace QuanLyHoSoCongChuc
             {
                 throw new Exception(ex.Message, ex.InnerException);
             }
-            
-
         }
         private void btnNangLuong_Click(object sender, EventArgs e)
         {
