@@ -5,6 +5,9 @@ using System.IO;
 using System.Text;
 namespace QuanLyHoSoCongChuc
 {
+    /// <summary>
+    /// tuanmd added: encrypt and decrypt text
+    /// </summary>
     public class Encryption
     {
         // use an 8 byte key for DES encryption

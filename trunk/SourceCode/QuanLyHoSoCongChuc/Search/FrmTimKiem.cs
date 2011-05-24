@@ -220,5 +220,124 @@ namespace QuanLyHoSoCongChuc.Search
         {
             Close();
         }
+
+        ///////////////////////////////////////////////////////////////////////////////
+        // Process search by different criticals
+
+        private void btnChonDonVi_TieuChiKhac_Click(object sender, EventArgs e)
+        {
+            FrmDanhMuc frm = new FrmDanhMuc();
+            frm.Handler += GetDonVi4TieuChiKhac;
+            frm.ShowDialog();
+        }
+
+        /// <summary>
+        /// Get thong tin don vi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetDonVi4TieuChiKhac(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaDonVi_TieuChiKhac.Text = comp[0];
+        }
+
+        private void rdbtnThongTinChung_Click(object sender, EventArgs e)
+        {
+            var criteria = new Criteria()
+            {
+                DBName = "NhanVien",
+                DBProvider = new DBProvider()
+            };
+            LoadCriterias(criteria);
+        }
+
+        private void rdbtnQuaTrinhCongTac_Click(object sender, EventArgs e)
+        {
+            var criteria = new Criteria()
+            {
+                DBName = "QuaTrinhCongTac",
+                DBProvider = new DBProvider()
+            };
+            LoadCriterias(criteria);
+        }
+
+        private void rdbtnQuaTrinhDaoTao_Click(object sender, EventArgs e)
+        {
+            var criteria = new Criteria()
+            {
+                DBName = "QuaTrinhDaoTao",
+                DBProvider = new DBProvider()
+            };
+            LoadCriterias(criteria);
+        }
+
+        private void rdbtnNgoaiNgu_Click(object sender, EventArgs e)
+        {
+            var criteria = new Criteria()
+            {
+                DBName = "TrinhDoNgoaiNgu",
+                DBProvider = new DBProvider()
+            };
+            LoadCriterias(criteria);
+        }
+
+        private void rdbtnQuaTrinhKhenThuong_Click(object sender, EventArgs e)
+        {
+            var criteria = new Criteria()
+            {
+                DBName = "KhenThuong",
+                DBProvider = new DBProvider()
+            };
+            LoadCriterias(criteria);
+        }
+
+        private void rdbtnQuaTrinhKyLuat_Click(object sender, EventArgs e)
+        {
+            var criteria = new Criteria()
+            {
+                DBName = "KyLuat",
+                DBProvider = new DBProvider()
+            };
+            LoadCriterias(criteria);
+        }
+
+        /// <summary>
+        /// Load criterial corresponding with specified table
+        /// </summary>
+        public void LoadCriterias(Criteria criteria)
+        {
+            try
+            {
+                // Init criteria
+                Table tbl = criteria.InitCriterias();
+                lstvTenTruongDuLieu.Items.Clear();
+                for (int i = 0; i < tbl.Attributes.Count; i++)
+                {
+                    if (tbl.Attributes[i].IsPrimaryKey)
+                        continue;
+                    var objListViewItem = new ListViewItem();
+                    objListViewItem.Tag = tbl.Attributes[i];
+
+                    if (tbl.Attributes[i].IsForeignKey)
+                    {
+                        if (tbl.Attributes[i].Name.Substring(0, 2).ToUpper() == "MA")
+                            objListViewItem.Text = tbl.Attributes[i].Name.Substring(2);
+                        else
+                            objListViewItem.Text = tbl.Attributes[i].Name;
+                    }
+                    else
+                        objListViewItem.Text = tbl.Attributes[i].Name;
+
+                    lstvTenTruongDuLieu.Items.Add(objListViewItem);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
+        }
+        //--------------------- E --------------------------
     }
 }
