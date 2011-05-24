@@ -86,6 +86,7 @@ namespace QuanLyHoSoCongChuc
         {
             treeView1.Nodes.Clear();
             TreeNode root = new TreeNode("039 - Đảng bộ Tỉnh Hà Tĩnh");
+            root.ImageIndex = 0;
 
             treeView1.Nodes.Add(root); // TreeView chi add 1 lan la node goc
 
@@ -95,6 +96,7 @@ namespace QuanLyHoSoCongChuc
                 for (int i = 0; i < lstItem.Count; i++)
                 {
                     TreeNode huyen = new TreeNode(lstItem[i].MaQuanHuyen + " - Đảnh bộ Huyện " + lstItem[i].TenQuanHuyen);
+                    huyen.ImageIndex = 1;
                     root.Nodes.Add(huyen);
 
                     var lstItem2 = DonViRepository.SelectByMaQuanHuyen(lstItem[i].MaQuanHuyen);
@@ -103,6 +105,7 @@ namespace QuanLyHoSoCongChuc
                         try
                         {
                             TreeNode donvi = new TreeNode(lstItem2[j].MaDonVi.Trim() + " - " + lstItem2[j].TenDonVi);
+                            donvi.ImageIndex = 2;
                             huyen.Nodes.Add(donvi);
                         }
                         catch (Exception ex)
