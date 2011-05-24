@@ -52,58 +52,14 @@ namespace QuanLyHoSoCongChuc
 
         private void FrmThemDanhMucHanhChinh_Load(object sender, EventArgs e)
         {
-            DataTable dtDanhMucTinhThanh = m_ThemDanhMucHanhChinhControl.TinhThanhData.LayDSTinhThanh();
-            m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbTinhThanh, dtDanhMucTinhThanh, ThemDanhMucHanhChinhControl.KieuHanhChinh.TinhThanh);
-            
-            if (cmbTinhThanh.SelectedValue != null)
-            {
-                txtMaTinhThanh.Text = cmbTinhThanh.SelectedValue.ToString();
-                DataTable dtDanhSachQuanHuyen = m_ThemDanhMucHanhChinhControl.QuanHuyenData.LayDanhSachQuanHuyenThemMaTinh(cmbTinhThanh.SelectedValue.ToString());
-                if (dtDanhSachQuanHuyen != null)
-                {
-                    m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbQuanHuyen, dtDanhSachQuanHuyen, ThemDanhMucHanhChinhControl.KieuHanhChinh.QuanHuyen);
-                    if (cmbQuanHuyen.SelectedValue != null)
-                    {
-                        txtMaQuanHuyen.Text = cmbQuanHuyen.SelectedValue.ToString();
-
-                        DataTable dtDanhSachPhuongXa = m_ThemDanhMucHanhChinhControl.PhuongXaData.LayDSPhuongXaTheoMaQuanHuyen(cmbQuanHuyen.SelectedValue.ToString());
-                        if (dtDanhSachPhuongXa != null)
-                        {
-                            m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbPhuongXa, dtDanhSachPhuongXa, ThemDanhMucHanhChinhControl.KieuHanhChinh.PhuongXa);
-                            if (cmbPhuongXa.SelectedValue != null)
-                            {
-                                txtMaPhuongXa.Text = cmbPhuongXa.SelectedValue.ToString();
-
-                                DataTable dtDanhSachKhoiXom = m_ThemDanhMucHanhChinhControl.KhoiXomData.LayDSKhoiXomTheoMaPhuongXa(cmbPhuongXa.SelectedValue.ToString());
-                                if (dtDanhSachKhoiXom != null)
-                                {
-                                    m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbKhoiXom, dtDanhSachKhoiXom, ThemDanhMucHanhChinhControl.KieuHanhChinh.KhoiXom);
-                                    if (cmbKhoiXom.SelectedValue != null)
-                                    {
-                                        txtMaKhoiXom.Text = cmbKhoiXom.SelectedValue.ToString();
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
+            initData();   
         }
-
-
-        private void cmbTinhThanh_SelectedIndexChanged(object sender, EventArgs e)
-        {            
-            if (cmbTinhThanh.SelectedValue != null)
+        private void initData()
+        {
+            DataTable dtDanhSachQuanHuyen = m_ThemDanhMucHanhChinhControl.QuanHuyenData.LayDanhSachQuanHuyenThemMaTinh("039");
+            if (dtDanhSachQuanHuyen != null)
             {
-                txtMaTinhThanh.Text = cmbTinhThanh.SelectedValue.ToString();
-                DataTable dtQuanHuyen = m_ThemDanhMucHanhChinhControl.QuanHuyenData.LayDanhSachQuanHuyenThemMaTinh(cmbTinhThanh.SelectedValue.ToString());
-                
-                if (dtQuanHuyen.Rows.Count == 0)
-                {
-                    txtMaQuanHuyen.Text = "";
-                }
-
-                m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbQuanHuyen, dtQuanHuyen, ThemDanhMucHanhChinhControl.KieuHanhChinh.QuanHuyen);
+                m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbQuanHuyen, dtDanhSachQuanHuyen, ThemDanhMucHanhChinhControl.KieuHanhChinh.QuanHuyen);
                 if (cmbQuanHuyen.SelectedValue != null)
                 {
                     txtMaQuanHuyen.Text = cmbQuanHuyen.SelectedValue.ToString();
@@ -126,23 +82,13 @@ namespace QuanLyHoSoCongChuc
                                 }
                             }
                         }
-                        else
-                        {
-                            m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbKhoiXom, null, ThemDanhMucHanhChinhControl.KieuHanhChinh.KhoiXom);
-                            txtMaKhoiXom.Text = "";
-                        }
                     }
                 }
-                else
-                {
-                    m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbPhuongXa, null, ThemDanhMucHanhChinhControl.KieuHanhChinh.PhuongXa);
-                    txtMaPhuongXa.Text = "";
-                    m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbKhoiXom, null, ThemDanhMucHanhChinhControl.KieuHanhChinh.KhoiXom);
-                    txtMaKhoiXom.Text = "";
-                }                
             }
         }
 
+
+     
         private void cmbQuanHuyen_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cmbQuanHuyen.SelectedValue != null)
@@ -226,41 +172,12 @@ namespace QuanLyHoSoCongChuc
 
         }
 
-        private void btnThemTinhThanh_Click(object sender, EventArgs e)
-        {
-            string MaTinh = txtMaTinhThanh.Text;
-            if (string.IsNullOrWhiteSpace(MaTinh) == true)
-            {
-                MessageBox.Show("Mã tỉnh không được bỏ trống.");
-            }
-            else
-            {
-                string TenTinhThanh = cmbTinhThanh.Text;
-
-                if (m_ThemDanhMucHanhChinhControl.KiemTraTonTaiTinhThanhTheoMa(txtMaTinhThanh.Text))
-                {
-                    MessageBox.Show("Tỉnh có mã " + txtMaTinhThanh.Text + " đã tồn tại!");
-                }
-                else
-                {
-                    TinhThanhInfo TinhThanhObj = new TinhThanhInfo();
-                    TinhThanhObj.MaTinh = txtMaTinhThanh.Text;
-                    TinhThanhObj.TenTinh = TenTinhThanh;
-                    int result = m_ThemDanhMucHanhChinhControl.ThemTinhThanhMoi(TinhThanhObj);
-                    if (result != 0)
-                    {
-                        MessageBox.Show("Thêm tỉnh thành mới thành công.");
-                    }
-                }
-            }
-            this.cmbTinhThanh_SelectedIndexChanged(sender, e);
-        }
+       
 
         private void btnThemQuanHuyen_Click(object sender, EventArgs e)
         {
-
             string TenQuanHuyen = cmbQuanHuyen.Text;
-            string MaTinh = txtMaTinhThanh.Text;
+            string MaTinh = "039";
             string MaQuanHuyen = txtMaQuanHuyen.Text;
 
             if (string.IsNullOrWhiteSpace(MaTinh) == true ||
@@ -295,7 +212,7 @@ namespace QuanLyHoSoCongChuc
                     }
                 }
             }
-            this.cmbTinhThanh_SelectedIndexChanged(sender, e);           
+            initData();
         }
 
         private void btnThemPhuongXa_Click(object sender, EventArgs e)
@@ -335,7 +252,7 @@ namespace QuanLyHoSoCongChuc
                     }
                 }
             }
-            this.cmbTinhThanh_SelectedIndexChanged(sender, e);
+            initData();
         }
 
         private void btnThemKhoiXom_Click(object sender, EventArgs e)
@@ -375,31 +292,10 @@ namespace QuanLyHoSoCongChuc
                     }
                 }
             }
-
-            this.cmbTinhThanh_SelectedIndexChanged(sender, e);
+            initData();
         }
 
-        private void btnLuuTinhThanh_Click(object sender, EventArgs e)
-        {
-            string MaTinh = txtMaTinhThanh.Text;
-            string TenTinh = cmbTinhThanh.Text;
 
-            if (m_ThemDanhMucHanhChinhControl.KiemTraTonTaiTinhThanhTheoMa(MaTinh) == false)
-            {
-                MessageBox.Show("Tỉnh có mã " + MaTinh + " không tồn tại.");
-            }
-            else
-            {
-                TinhThanhInfo TinhThanhObj = new TinhThanhInfo();
-                TinhThanhObj.MaTinh = MaTinh;
-                TinhThanhObj.TenTinh = TenTinh;
-                m_ThemDanhMucHanhChinhControl.CapNhatTinhThanh(TinhThanhObj);                
-                MessageBox.Show("Cập nhật thông tinh tỉnh/thành thành công.");
-                
-            }
-
-            FrmThemDanhMucHanhChinh_Load(sender, e);
-        }
 
         private void btnLuuQuanHuyen_Click(object sender, EventArgs e)
         {
@@ -419,8 +315,7 @@ namespace QuanLyHoSoCongChuc
                 MessageBox.Show("Cập nhật thông tinh quận/huyện thành công.");
 
             }
-
-            FrmThemDanhMucHanhChinh_Load(sender, e);
+            initData();
         }
 
         private void btnLuuPhuongXa_Click(object sender, EventArgs e)
@@ -441,8 +336,7 @@ namespace QuanLyHoSoCongChuc
                 MessageBox.Show("Cập nhật thông tinh phường/xã thành công.");
 
             }
-
-            FrmThemDanhMucHanhChinh_Load(sender, e);
+            initData();
         }
 
         private void btnLuuKhoiXom_Click(object sender, EventArgs e)
@@ -463,8 +357,7 @@ namespace QuanLyHoSoCongChuc
                 MessageBox.Show("Cập nhật thông tinh khối/xóm thành công.");
 
             }
-
-            FrmThemDanhMucHanhChinh_Load(sender, e);
+            initData();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -487,7 +380,7 @@ namespace QuanLyHoSoCongChuc
 
             }
 
-            FrmThemDanhMucHanhChinh_Load(sender, e);
+            initData();
         }
 
         private void btnXoaPhuongXa_Click(object sender, EventArgs e)
@@ -505,7 +398,7 @@ namespace QuanLyHoSoCongChuc
 
             }
 
-            FrmThemDanhMucHanhChinh_Load(sender, e);
+            initData();
         }
 
         private void btnXoaQuanHuyen_Click(object sender, EventArgs e)
@@ -521,8 +414,7 @@ namespace QuanLyHoSoCongChuc
                 m_ThemDanhMucHanhChinhControl.XoaQuanHuyen(MaQuanHuyen);
                 MessageBox.Show("Xóa thông tinh Quận/Huyện thành công.");
             }
-
-            FrmThemDanhMucHanhChinh_Load(sender, e);
+            initData();
         }                                          
 
     }

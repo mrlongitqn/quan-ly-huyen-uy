@@ -34,6 +34,10 @@ namespace QuanLyHoSoCongChuc
         {
             DataService.OpenConnection();
             InitializeComponent();
+            btThem.Enabled = false;
+            btXoa.Enabled = false;
+            btSave.Enabled = false;
+            btChon.Enabled = false;
         }
 
         private string m_tagNode = string.Empty;
@@ -192,21 +196,25 @@ namespace QuanLyHoSoCongChuc
             if (level == 1 || level == 3)
             {
                 btThem.Enabled = false;
-                btXoa.Enabled = false;
-                btSave.Enabled = false;
+                //btXoa.Enabled = false;
+                //btSave.Enabled = false;
             }
             else
             {
                 btThem.Enabled = true;
-                btXoa.Enabled = true;
-                btSave.Enabled = true;
+                //btXoa.Enabled = true;
+                //btSave.Enabled = true;
             }
             if (level == 3)
             {
                 btChon.Enabled = true;
+                btXoa.Enabled = true;
+                btSave.Enabled = true;
             }
             else {
                 btChon.Enabled = false;
+                btXoa.Enabled = false;
+                btSave.Enabled = false;
             }
             string maDonVi = treeView1.SelectedNode.Text.Split('-')[0].Trim();
             var DonVi = DonViRepository.SelectByID(maDonVi);
@@ -250,8 +258,8 @@ namespace QuanLyHoSoCongChuc
             
             dv.TenDonVi = txtTenDonVi.Text;
 
-            string maQuanHuyen = treeView1.SelectedNode.Text.Split('-')[0].Trim();
-            dv.MaQuanHuyen = maQuanHuyen;
+            //string maQuanHuyen = treeView1.SelectedNode.Text.Split('-')[0].Trim();
+            //dv.MaQuanHuyen = maQuanHuyen;
             try
             {
                 ListItem LoaiDV = (ListItem)cbLoaiDonVi.SelectedItem;
