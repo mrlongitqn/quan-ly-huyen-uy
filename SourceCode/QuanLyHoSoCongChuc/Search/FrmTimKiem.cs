@@ -46,6 +46,7 @@ namespace QuanLyHoSoCongChuc.Search
             LoadDanToc();
             LoadTonGiao();
             LoadTrinhDoChinhTri();
+            LoadHocVan();
             LoadHocHam();
         }
 
@@ -102,11 +103,24 @@ namespace QuanLyHoSoCongChuc.Search
         }
 
         /// <summary>
+        /// Load list of LoadHocVan
+        /// </summary>
+        public void LoadHocVan()
+        {
+            var lstItem = TrinhDoHocVanRepository.SelectAll();
+            if (lstItem.Count > 0)
+            {
+                cbxHocVan.DataSource = lstItem;
+                cbxHocVan.SelectedIndex = -1;
+            }
+        }
+
+        /// <summary>
         /// Load list of TrinhDoChinhTri
         /// </summary>
         public void LoadHocHam()
         {
-            var lstItem = TrinhDoHocVanRepository.SelectAll();
+            var lstItem = TrinhDoChuyenMonRepository.SelectAll();
             if (lstItem.Count > 0)
             {
                 cbxHocHam.DataSource = lstItem;
@@ -138,7 +152,8 @@ namespace QuanLyHoSoCongChuc.Search
         {
             var eventType = (MyEvent)e;
             string[] comp = eventType.Data.Split(new char[] { '#' });
-            txtQueQuan.Text = comp[0];
+            var item = PhuongXaRepository.SelectByID(comp[0]);
+            txtQueQuan.Text = item.MaPhuongXa + "." + item.QuanHuyen.MaQuanHuyen + "." + item.QuanHuyen.TinhThanh.MaTinh;
             txtTenQueQuanDayDu.Text = comp[1];
         }
 
@@ -157,7 +172,47 @@ namespace QuanLyHoSoCongChuc.Search
 
         private void btnTim_Click(object sender, EventArgs e)
         {
+            var nhanvien = new NhanVienModel
+            {
+                MaDonVi = txtMaDonVi.Text,
+                HoTenNhanVien = txtHoTen.Text.Trim(),
+                MaGioiTinh = cbxGioiTinh.SelectedIndex > -1 ? ((GioiTinh)cbxGioiTinh.SelectedItem).MaGioiTinh : null,
+                QueQuan = txtQueQuan.Text.Trim(),
+                MaDanToc = cbxDanToc.SelectedIndex > -1 ? ((DanToc)cbxDanToc.SelectedItem).MaDanToc : null,
+                MaTonGiao = cbxTonGiao.SelectedIndex > -1 ? ((TonGiao)cbxTonGiao.SelectedItem).MaTonGiao : null,
+                MaTrinhDoChinhTri = cbxLyLuanChinhTri.SelectedIndex > -1 ? ((TrinhDoChinhTri)cbxLyLuanChinhTri.SelectedItem).MaTrinhDoChinhTri : null,
+                MaTrinhDoHocVan = cbxHocVan.SelectedIndex > -1 ? ((TrinhDoHocVan)cbxHocVan.SelectedItem).MaTrinhDoHocVan : null,
+                MaTrinhDoChuyenMon = cbxHocHam.SelectedIndex > -1 ? ((TrinhDoChuyenMon)cbxHocHam.SelectedItem).MaTrinhDoChuyenMon : null,
+                CongViecHienNay = txtCongVienChinh.Text.Trim()
+            };
+            if (ckbxEnableNgaySinh.Checked)
+                nhanvien.NgaySinh = dtpSinhNgay.Value;
+            if (ckbxEnableNgayVaoDang.Checked)
+                nhanvien.NgayVaoDang = dtpNgayVaoDang.Value;
+            if (ckbxEnableNgayChinhThuc.Checked)
+                nhanvien.NgayChinhThuc = dtpNgayChinhThuc.Value;
+            if (dmTuoiDoi.Text != "")
+                nhanvien.TuoiDoi = int.Parse(dmTuoiDoi.Text);
+            if (dmTuoiDang.Text != "")
+                nhanvien.TuoiDang = int.Parse(dmTuoiDang.Text);
 
+            var lstItem = NhanVienRepository.SearchByTieuChiChung(nhanvien);
+            if (lstItem.Count > 0)
+            {
+                ListViewItem objListViewItem;
+                lstvNhanVien.Items.Clear();
+                for (int i = 0; i < lstItem.Count; i++)
+                {
+                    objListViewItem = new ListViewItem();
+                    objListViewItem.Tag = lstItem[i];
+                    objListViewItem.Text = lstItem[i].MaNhanVien;
+                    objListViewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
+                    objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
+                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
+                    objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
+                    lstvNhanVien.Items.Add(objListViewItem);
+                }
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
