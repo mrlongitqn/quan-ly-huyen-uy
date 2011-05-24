@@ -83,14 +83,17 @@
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\ProjectsInternal\GenerateRepository\SourceCode\GenerateAdminPage\GenerateAdminPage\bin\Release\Microsoft.SqlServer.ConnectionInfo.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Management.Sdk.Sfc, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\ProjectsInternal\GenerateRepository\SourceCode\GenerateAdminPage\GenerateAdminPage\bin\Release\Microsoft.SqlServer.Management.Sdk.Sfc.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Smo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\ProjectsInternal\GenerateRepository\SourceCode\GenerateAdminPage\GenerateAdminPage\bin\Release\Microsoft.SqlServer.Smo.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -313,6 +316,8 @@
     <Compile Include="UsersDiary\FrmNhatKySuDung.Designer.cs">
       <DependentUpon>FrmNhatKySuDung.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Attribute.cs" />
+    <Compile Include="Utils\DBProvider.cs" />
     <Compile Include="Utils\EncryptText.cs" />
     <Compile Include="FrmChucNangKhenThuong.cs">
       <SubType>Form</SubType>
@@ -620,6 +625,8 @@
     <Compile Include="FrmTKNhanVien.Designer.cs">
       <DependentUpon>FrmTKNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utils\Criteria.cs" />
+    <Compile Include="Utils\Keys.cs" />
     <Compile Include="Utils\ListItem.cs" />
     <Compile Include="Models\DataModel.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -628,6 +635,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\Table.cs" />
     <EmbeddedResource Include="ChucNangQTDT.resx">
       <SubType>Designer</SubType>
       <DependentUpon>ChucNangQTDT.cs</DependentUpon>

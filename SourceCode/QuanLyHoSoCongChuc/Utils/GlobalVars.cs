@@ -47,6 +47,9 @@ namespace QuanLyHoSoCongChuc.Utils
         QUANLY_CHUCNANG_QUANHE
     }
 
+    /// <summary>
+    /// tuansl added: global variables
+    /// </summary>
     public class GlobalVars
     {
         public static string g_strTenDangNhap = "qlhscc_admin";
@@ -54,6 +57,7 @@ namespace QuanLyHoSoCongChuc.Utils
         public static string g_strPathNhatKi = "D:\\user_diary.xml";
         public static EnumChucNangHeThong g_ChucNangSuDung;
         public static NhatKyNguoiDung g_NhatKyNguoiDung { get; set; }
+        public static string g_strDataBaseName = "";
 
         /// <summary>
         /// Retrieve name from enum
