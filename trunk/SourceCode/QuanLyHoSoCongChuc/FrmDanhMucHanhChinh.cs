@@ -12,60 +12,182 @@ using QuanLyHoSoCongChuc.BusinessObject;
 using QuanLyHoSoCongChuc.DataLayer;
 using QuanLyHoSoCongChuc.Controller;
 using QuanLyHoSoCongChuc.Utils;
+using QuanLyHoSoCongChuc.Repositories;
 
 namespace QuanLyHoSoCongChuc
 {
-    #region Using
-    using QuanLyHoSoCongChuc.Models;
-    using QuanLyHoSoCongChuc.Repositories;
-    #endregion
+    public enum EnumDiaDanh
+    {
+        TINHTHANH,
+        QUANHUYEN,
+        PHUONGXA
+    }
+
     public partial class FrmDanhMucHanhChinh : Office2007Form
     {
-        DanhMucHanhChinhControl m_DanhMucHanhChinhControl = new DanhMucHanhChinhControl();
-        public FrmNhanVien frmNhanVien;
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
+        private EnumDiaDanh ModeDiaDanh;
 
         public FrmDanhMucHanhChinh()
         {
             InitializeComponent();
         }
 
-        
-        private string m_tagNode = string.Empty;
-
-        public string TagNode
-        {
-            get { return m_tagNode; }
-            set { m_tagNode = value; }
-        }
-        
         private void FrmDanhMucHanhChinh_Load(object sender, EventArgs e)
         {
-            DataService.OpenConnection();
-            m_DanhMucHanhChinhControl.HienThiTreeView(treeviewDMHC);
+            LoadDanhMucHanhChinh();
         }
 
-        private void trvDanhMucHanhChinh_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
-            if (e.Node.Tag != null && e.Node.Tag.ToString() != "")
-            {
-                m_tagNode = e.Node.Tag.ToString();
-            }
+            Close();
         }
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            FrmThemDanhMucHanhChinh frmThemDanhMucHanhChinh = new FrmThemDanhMucHanhChinh();
-            frmThemDanhMucHanhChinh.Show();
+            FrmThemDanhMucHanhChinh frm = new FrmThemDanhMucHanhChinh();
+            frm.Handler += GetUpdateState; 
+            frm.ShowDialog();
+        }
+
+        /// <summary>
+        /// Re-load danh muc hanh chinh after execute updating
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetUpdateState(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            var data = eventType.Data;
+            if (data == "true")
+            {
+                LoadDanhMucHanhChinh();
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            bool updated = false;
+            switch (ModeDiaDanh)
+            {
+                case EnumDiaDanh.TINHTHANH:
+                    updated = TinhThanhRepository.Delete(txtMaDiaDanh.Text.Trim());
+                    break;
+                    
+                case EnumDiaDanh.QUANHUYEN:
+                    updated = QuanHuyenRepository.Delete(txtMaDiaDanh.Text.Trim());
+                    break;
+
+                case EnumDiaDanh.PHUONGXA:
+                    updated = PhuongXaRepository.Delete(txtMaDiaDanh.Text.Trim());
+                    break;
+            }
+            if (updated)
+            {
+                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDanhMucHanhChinh();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Validate user input
+        /// </summary>
+        /// <param name="isUpdate"></param>
+        /// <returns></returns>
+        private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
+        {
+            // Mode update -> checking MaChucNang is exists on textbox
+            if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE)
+            {
+                if (txtMaDiaDanh.Text == "")
+                {
+                    errorText = "Vui lòng chọn địa danh";
+                    return false;
+                }
+            }
+            if (mode != EnumUpdateMode.DELETE)
+            {
+                if (txtTenDiaDanh.Text == "")
+                {
+                    errorText = "Vui lòng nhập tên địa danh";
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+
+        private void btnCapNhat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void treeviewDMHC_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            int level = GetLevelTreeView(treeviewDMHC.SelectedNode);
+            if (level == 1)
+            {
+                btnChon.Enabled = false;
+                return;
+            }
+            var comp = treeviewDMHC.SelectedNode.Text.Split(new char[] { '-' });
+            var madiadanh = comp[0].Trim();
+            var tendiadanh = comp[1].Trim();
+
+            txtMaDiaDanh.Text = madiadanh;
+            txtTenDiaDanh.Text = tendiadanh;
+
+            if (level == 2)
+            {
+                txtTenDayDu.Text = tendiadanh;
+                btnChon.Enabled = false;
+                ModeDiaDanh = EnumDiaDanh.TINHTHANH;
+            }
+            else if (level == 3)
+            {
+                var quanhuyen = QuanHuyenRepository.SelectByID(madiadanh);
+                txtTenDayDu.Text = quanhuyen.TenQuanHuyen + ", " + quanhuyen.TinhThanh.TenTinh;
+                btnChon.Enabled = false;
+                ModeDiaDanh = EnumDiaDanh.QUANHUYEN;
+            }
+            else if (level == 4)
+            {
+                var phuongxa = PhuongXaRepository.SelectByID(madiadanh);
+                txtTenDayDu.Text = phuongxa.TenPhuongXa + ", " + phuongxa.QuanHuyen.TenQuanHuyen + ", " + phuongxa.QuanHuyen.TinhThanh.TenTinh;
+                btnChon.Enabled = true;
+                ModeDiaDanh = EnumDiaDanh.PHUONGXA;
+            } 
         }
 
         private void btnChon_Click(object sender, EventArgs e)
         {
-            //var xa = txtMaDonVi.Text;
-            //var donvi = DonViRepository.SelectByID(madonvi);
-            //var tendonvidaydu = donvi.TenDonVi + ", huyện " + donvi.QuanHuyen.TenQuanHuyen + ", tỉnh " + donvi.QuanHuyen.TinhThanh.TenTinh;
-            //TransferDataInfo(this, new MyEvent(madonvi + "#" + tendonvidaydu));
+            var madiadanh = txtMaDiaDanh.Text;
+            var tendonvidaydu = txtTenDayDu.Text;
+            TransferDataInfo(this, new MyEvent(madiadanh + "#" + tendonvidaydu));
+        }
+
+        /// <summary>
+        /// Get level corresponding with node, it is used to realize chose node is the quanhuyen or tinh thanh or phuongxa, etc.
+        /// </summary>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        private int GetLevelTreeView(TreeNode node)
+        {
+            if (node.Parent == null)
+                return 1;
+            else if (node.Parent.Parent == null)
+                return 2;
+            else if (node.Parent.Parent.Parent == null)
+                return 3;
+            else if (node.Parent.Parent.Parent.Parent == null)
+                return 4;
+            return -1;
         }
 
         /// <summary>
@@ -79,57 +201,53 @@ namespace QuanLyHoSoCongChuc
             this.Handler(this, e);
         }
 
-        private void treeviewDMHC_AfterSelect(object sender, TreeViewEventArgs e)
+        /// <summary>
+        /// Load danh muc hanh chinh from DB
+        /// </summary>
+        private void LoadDanhMucHanhChinh()
         {
-            int level = getLevelTreeView(treeviewDMHC.SelectedNode);
-            if (level == 1) // root
+            treeviewDMHC.Nodes.Clear();
+            TreeNode root = new TreeNode("Danh mục hành chính");
+            root.ImageIndex = 0;
+            treeviewDMHC.Nodes.Add(root);
+
+            try
             {
-            }
-            else if (level == 2) //Huyen
-            {
-                String MaHuyen = (String)treeviewDMHC.SelectedNode.Tag;
-                var quanhuyen = QuanHuyenRepository.SelectByID(MaHuyen);
-                txtMaDiaDanh.Text = quanhuyen.MaQuanHuyen;
-                txtTenDiaDanh.Text = quanhuyen.TenQuanHuyen;
-                txtTenDayDu.Text = "Huyện " + quanhuyen.TenQuanHuyen + " - Tỉnh Hà Tĩnh";
-            }
-            else if (level == 3) //Xã
-            {
-                String MaXa = (String)treeviewDMHC.SelectedNode.Tag;
-                var xa = PhuongXaRepository.SelectByID(MaXa);
-                txtMaDiaDanh.Text = xa.MaPhuongXa;
-                txtTenDiaDanh.Text = xa.TenPhuongXa;
-                txtTenDayDu.Text = "Xã " + xa.TenPhuongXa + " - Huyện " + QuanHuyenRepository.SelectByID(xa.MaQuanHuyen).TenQuanHuyen + " - Tỉnh Hà Tĩnh";
-            }
-            else if (level == 4) //Thôn
-            {
-                String MaThon = (String)treeviewDMHC.SelectedNode.Tag;
-                var thon = KhoiXomRepository.SelectByID(MaThon);
-                txtMaDiaDanh.Text = thon.MaKhoiXom;
-                txtTenDiaDanh.Text = thon.TenKhoiXom;
-                txtTenDayDu.Text = "Thôn " + thon.TenKhoiXom + " - Xã " + PhuongXaRepository.SelectByID(thon.MaPhuongXa).TenPhuongXa + " - Huyện " + QuanHuyenRepository.SelectByID(PhuongXaRepository.SelectByID(thon.MaPhuongXa).MaQuanHuyen).TenQuanHuyen + " - Tỉnh Hà Tĩnh";
-            }
-        }
-        private int getLevelTreeView(TreeNode node)
-        {
-            if (node.Parent == null)
-                return 1; // Node cha
-            else
-            {
-                if (node.Parent.Parent == null)
-                    return 2;
-                else
+                // Load list all of tinh thanh
+                var lstTinhThanh = TinhThanhRepository.SelectAll();
+                for (int i = 0; i < lstTinhThanh.Count; i++)
                 {
-                    if (node.Parent.Parent.Parent == null)
-                        return 3;
-                    else
+                    var tinhthanh = lstTinhThanh[i];
+                    TreeNode tinhthanhnode = new TreeNode(tinhthanh.MaTinh + " - " + tinhthanh.TenTinh);
+                    tinhthanhnode.ImageIndex = 1;
+                    root.Nodes.Add(tinhthanhnode);
+
+                    // Load quan huyen corresponding with specified tinh thanh
+                    var lstQuanHuyen = QuanHuyenRepository.SelectByMaTinh(tinhthanh.MaTinh);
+                    for (int j = 0; j < lstQuanHuyen.Count; j++)
                     {
-                        if (node.Parent.Parent.Parent.Parent == null)
-                            return 4;
+                        var huyen = lstQuanHuyen[j];
+                        TreeNode huyennode = new TreeNode(huyen.MaQuanHuyen + " - " + huyen.TenQuanHuyen);
+                        huyennode.ImageIndex = 2;
+                        tinhthanhnode.Nodes.Add(huyennode);
+
+                        // Load phuong xa corresponding with specified quan huyen
+                        var lstPhuongXa = PhuongXaRepository.SelectByMaQuanHuyen(huyen.MaQuanHuyen);
+                        for (int k = 0; k < lstPhuongXa.Count; k++)
+                        {
+                            var phuongxa = lstPhuongXa[k];
+                            TreeNode phuongxanode = new TreeNode(phuongxa.MaPhuongXa + " - " + phuongxa.TenPhuongXa);
+                            phuongxanode.ImageIndex = 3;
+                            huyennode.Nodes.Add(phuongxanode);
+                        }
                     }
                 }
+
             }
-            return -1;
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
         }
     }
 }

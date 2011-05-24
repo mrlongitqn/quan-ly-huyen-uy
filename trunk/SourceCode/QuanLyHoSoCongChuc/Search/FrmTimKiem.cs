@@ -43,6 +43,10 @@ namespace QuanLyHoSoCongChuc.Search
         public void LoadTieuChiChung()
         {
             LoadGioiTinh();
+            LoadDanToc();
+            LoadTonGiao();
+            LoadTrinhDoChinhTri();
+            LoadHocHam();
         }
 
         /// <summary>
@@ -54,6 +58,59 @@ namespace QuanLyHoSoCongChuc.Search
             if (lstItem.Count > 0)
             {
                 cbxGioiTinh.DataSource = lstItem;
+                cbxGioiTinh.SelectedIndex = -1;
+            }
+        }
+
+        /// <summary>
+        /// Load list of dan toc
+        /// </summary>
+        public void LoadDanToc()
+        {
+            var lstItem = DanTocRepository.SelectAll();
+            if (lstItem.Count > 0)
+            {
+                cbxDanToc.DataSource = lstItem;
+                cbxDanToc.SelectedIndex = -1;
+            }
+        }
+
+        /// <summary>
+        /// Load list of ton giao
+        /// </summary>
+        public void LoadTonGiao()
+        {
+            var lstItem = TonGiaoRepository.SelectAll();
+            if (lstItem.Count > 0)
+            {
+                cbxTonGiao.DataSource = lstItem;
+                cbxTonGiao.SelectedIndex = -1;
+            }
+        }
+
+        /// <summary>
+        /// Load list of TrinhDoChinhTri
+        /// </summary>
+        public void LoadTrinhDoChinhTri()
+        {
+            var lstItem = TrinhDoChinhTriRepository.SelectAll();
+            if (lstItem.Count > 0)
+            {
+                cbxLyLuanChinhTri.DataSource = lstItem;
+                cbxLyLuanChinhTri.SelectedIndex = -1;
+            }
+        }
+
+        /// <summary>
+        /// Load list of TrinhDoChinhTri
+        /// </summary>
+        public void LoadHocHam()
+        {
+            var lstItem = TrinhDoHocVanRepository.SelectAll();
+            if (lstItem.Count > 0)
+            {
+                cbxHocHam.DataSource = lstItem;
+                cbxHocHam.SelectedIndex = -1;
             }
         }
 
@@ -67,7 +124,21 @@ namespace QuanLyHoSoCongChuc.Search
         private void btnChonQueQuan_Click(object sender, EventArgs e)
         {
             FrmDanhMucHanhChinh frm = new FrmDanhMucHanhChinh();
+            frm.Handler += GetNguyenQuan;
             frm.ShowDialog();
+        }
+
+        /// <summary>
+        /// Get thong tin don vi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetNguyenQuan(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtQueQuan.Text = comp[0];
+            txtTenQueQuanDayDu.Text = comp[1];
         }
 
         /// <summary>
@@ -86,6 +157,11 @@ namespace QuanLyHoSoCongChuc.Search
         private void btnTim_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

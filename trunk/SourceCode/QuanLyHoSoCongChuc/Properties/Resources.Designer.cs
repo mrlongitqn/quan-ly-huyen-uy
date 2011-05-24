@@ -368,6 +368,13 @@ namespace QuanLyHoSoCongChuc.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap quanhuyen {
+            get {
+                object obj = ResourceManager.GetObject("quanhuyen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap text_rich_marked {
             get {
                 object obj = ResourceManager.GetObject("text_rich_marked", resourceCulture);
@@ -378,6 +385,13 @@ namespace QuanLyHoSoCongChuc.Properties {
         internal static System.Drawing.Bitmap text_tree {
             get {
                 object obj = ResourceManager.GetObject("text_tree", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tinhthanh {
+            get {
+                object obj = ResourceManager.GetObject("tinhthanh", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
