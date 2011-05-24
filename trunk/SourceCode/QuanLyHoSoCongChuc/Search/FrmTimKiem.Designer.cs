@@ -29,15 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
-            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX10 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX9 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX8 = new DevComponents.DotNetBar.ButtonX();
             this.buttonX7 = new DevComponents.DotNetBar.ButtonX();
-            this.textBoxX3 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTongSo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
@@ -49,13 +45,10 @@
             this.ckbxEnableNgaySinh = new System.Windows.Forms.CheckBox();
             this.dmTuoiDang = new System.Windows.Forms.DomainUpDown();
             this.dmTuoiDoi = new System.Windows.Forms.DomainUpDown();
-            this.btnTim = new DevComponents.DotNetBar.ButtonX();
             this.txtTenQueQuanDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnChonQueQuan = new System.Windows.Forms.Button();
             this.txtQueQuan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtCongVienChinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnChonDonVi = new System.Windows.Forms.Button();
             this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtpNgayChinhThuc = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayVaoDang = new System.Windows.Forms.DateTimePicker();
@@ -123,6 +116,10 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnTim = new DevComponents.DotNetBar.ButtonX();
+            this.btnChonQueQuan = new System.Windows.Forms.Button();
+            this.btnChonDonVi = new System.Windows.Forms.Button();
+            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -146,11 +143,8 @@
             this.groupPanel4.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel4.Controls.Add(this.labelX21);
             this.groupPanel4.Controls.Add(this.btnThoat);
-            this.groupPanel4.Controls.Add(this.buttonX10);
-            this.groupPanel4.Controls.Add(this.buttonX9);
-            this.groupPanel4.Controls.Add(this.buttonX8);
             this.groupPanel4.Controls.Add(this.buttonX7);
-            this.groupPanel4.Controls.Add(this.textBoxX3);
+            this.groupPanel4.Controls.Add(this.txtTongSo);
             this.groupPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupPanel4.Location = new System.Drawing.Point(0, 507);
             this.groupPanel4.Name = "groupPanel4";
@@ -180,73 +174,34 @@
             // labelX21
             // 
             this.labelX21.BackColor = System.Drawing.Color.Transparent;
-            this.labelX21.Location = new System.Drawing.Point(150, 11);
+            this.labelX21.Location = new System.Drawing.Point(362, 16);
             this.labelX21.Name = "labelX21";
-            this.labelX21.Size = new System.Drawing.Size(55, 20);
+            this.labelX21.Size = new System.Drawing.Size(55, 10);
             this.labelX21.TabIndex = 22;
             this.labelX21.Text = "Tổng số";
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThoat.Location = new System.Drawing.Point(791, 3);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 34);
-            this.btnThoat.TabIndex = 6;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // buttonX10
-            // 
-            this.buttonX10.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX10.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX10.Location = new System.Drawing.Point(683, 3);
-            this.buttonX10.Name = "buttonX10";
-            this.buttonX10.Size = new System.Drawing.Size(75, 34);
-            this.buttonX10.TabIndex = 5;
-            this.buttonX10.Text = "Tùy chọn";
-            // 
-            // buttonX9
-            // 
-            this.buttonX9.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX9.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX9.Location = new System.Drawing.Point(602, 3);
-            this.buttonX9.Name = "buttonX9";
-            this.buttonX9.Size = new System.Drawing.Size(75, 34);
-            this.buttonX9.TabIndex = 4;
-            this.buttonX9.Text = "In";
-            // 
-            // buttonX8
-            // 
-            this.buttonX8.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX8.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX8.Location = new System.Drawing.Point(521, 3);
-            this.buttonX8.Name = "buttonX8";
-            this.buttonX8.Size = new System.Drawing.Size(75, 34);
-            this.buttonX8.TabIndex = 3;
-            this.buttonX8.Text = "Chọn trường";
             // 
             // buttonX7
             // 
             this.buttonX7.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX7.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX7.Location = new System.Drawing.Point(440, 3);
+            this.buttonX7.Image = global::QuanLyHoSoCongChuc.Properties.Resources.excel;
+            this.buttonX7.ImageFixedSize = new System.Drawing.Size(32, 32);
+            this.buttonX7.Location = new System.Drawing.Point(668, 3);
             this.buttonX7.Name = "buttonX7";
-            this.buttonX7.Size = new System.Drawing.Size(75, 34);
+            this.buttonX7.Size = new System.Drawing.Size(101, 34);
             this.buttonX7.TabIndex = 2;
             this.buttonX7.Text = "==> Excell";
             // 
-            // textBoxX3
+            // txtTongSo
             // 
             // 
             // 
             // 
-            this.textBoxX3.Border.Class = "TextBoxBorder";
-            this.textBoxX3.Location = new System.Drawing.Point(215, 11);
-            this.textBoxX3.Name = "textBoxX3";
-            this.textBoxX3.Size = new System.Drawing.Size(219, 20);
-            this.textBoxX3.TabIndex = 1;
+            this.txtTongSo.Border.Class = "TextBoxBorder";
+            this.txtTongSo.Location = new System.Drawing.Point(433, 12);
+            this.txtTongSo.Name = "txtTongSo";
+            this.txtTongSo.Size = new System.Drawing.Size(219, 20);
+            this.txtTongSo.TabIndex = 1;
             // 
             // splitContainer1
             // 
@@ -432,19 +387,6 @@
             this.dmTuoiDoi.Size = new System.Drawing.Size(121, 20);
             this.dmTuoiDoi.TabIndex = 163;
             // 
-            // btnTim
-            // 
-            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTim.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTim.Image = global::QuanLyHoSoCongChuc.Properties.Resources.book_blue_view;
-            this.btnTim.ImageFixedSize = new System.Drawing.Size(24, 24);
-            this.btnTim.Location = new System.Drawing.Point(239, 430);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 25);
-            this.btnTim.TabIndex = 162;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
             // txtTenQueQuanDayDu
             // 
             this.txtTenQueQuanDayDu.Location = new System.Drawing.Point(3, 184);
@@ -453,17 +395,6 @@
             this.txtTenQueQuanDayDu.ReadOnly = true;
             this.txtTenQueQuanDayDu.Size = new System.Drawing.Size(320, 39);
             this.txtTenQueQuanDayDu.TabIndex = 159;
-            // 
-            // btnChonQueQuan
-            // 
-            this.btnChonQueQuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonQueQuan.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonQueQuan.Location = new System.Drawing.Point(223, 153);
-            this.btnChonQueQuan.Name = "btnChonQueQuan";
-            this.btnChonQueQuan.Size = new System.Drawing.Size(28, 27);
-            this.btnChonQueQuan.TabIndex = 158;
-            this.btnChonQueQuan.UseVisualStyleBackColor = true;
-            this.btnChonQueQuan.Click += new System.EventHandler(this.btnChonQueQuan_Click);
             // 
             // txtQueQuan
             // 
@@ -498,17 +429,6 @@
             this.txtHoTen.Name = "txtHoTen";
             this.txtHoTen.Size = new System.Drawing.Size(221, 20);
             this.txtHoTen.TabIndex = 155;
-            // 
-            // btnChonDonVi
-            // 
-            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonDonVi.Location = new System.Drawing.Point(287, 1);
-            this.btnChonDonVi.Name = "btnChonDonVi";
-            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDonVi.TabIndex = 154;
-            this.btnChonDonVi.UseVisualStyleBackColor = true;
-            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
             // 
             // txtMaDonVi
             // 
@@ -764,14 +684,14 @@
             this.TieuChi,
             this.SoLuong,
             this.TiLe});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewX1.Name = "dataGridViewX1";
@@ -1225,6 +1145,53 @@
             this.columnHeader5.Text = "Địa chỉ";
             this.columnHeader5.Width = 300;
             // 
+            // btnTim
+            // 
+            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnTim.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnTim.Image = global::QuanLyHoSoCongChuc.Properties.Resources.book_blue_view;
+            this.btnTim.ImageFixedSize = new System.Drawing.Size(24, 24);
+            this.btnTim.Location = new System.Drawing.Point(239, 430);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 25);
+            this.btnTim.TabIndex = 162;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // btnChonQueQuan
+            // 
+            this.btnChonQueQuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonQueQuan.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonQueQuan.Location = new System.Drawing.Point(223, 153);
+            this.btnChonQueQuan.Name = "btnChonQueQuan";
+            this.btnChonQueQuan.Size = new System.Drawing.Size(28, 27);
+            this.btnChonQueQuan.TabIndex = 158;
+            this.btnChonQueQuan.UseVisualStyleBackColor = true;
+            this.btnChonQueQuan.Click += new System.EventHandler(this.btnChonQueQuan_Click);
+            // 
+            // btnChonDonVi
+            // 
+            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonVi.Location = new System.Drawing.Point(287, 1);
+            this.btnChonDonVi.Name = "btnChonDonVi";
+            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonVi.TabIndex = 154;
+            this.btnChonDonVi.UseVisualStyleBackColor = true;
+            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
+            this.btnThoat.Location = new System.Drawing.Point(791, 3);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(84, 34);
+            this.btnThoat.TabIndex = 6;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
             // FrmTimKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1263,11 +1230,8 @@
 
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel4;
         private DevComponents.DotNetBar.ButtonX btnThoat;
-        private DevComponents.DotNetBar.ButtonX buttonX10;
-        private DevComponents.DotNetBar.ButtonX buttonX9;
-        private DevComponents.DotNetBar.ButtonX buttonX8;
         private DevComponents.DotNetBar.ButtonX buttonX7;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX3;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTongSo;
         private DevComponents.DotNetBar.LabelX labelX21;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private DevComponents.DotNetBar.TabControl tabControl1;
