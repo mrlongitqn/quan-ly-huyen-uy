@@ -125,6 +125,7 @@ namespace QuanLyHoSoCongChuc.Search
         {
             FrmDanhMucHanhChinh frm = new FrmDanhMucHanhChinh();
             frm.Handler += GetNguyenQuan;
+            frm.EnableButtonChon = true;
             frm.ShowDialog();
         }
 

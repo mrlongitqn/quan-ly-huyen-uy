@@ -13,6 +13,7 @@ using QuanLyHoSoCongChuc.DataLayer;
 using QuanLyHoSoCongChuc.Controller;
 using QuanLyHoSoCongChuc.Utils;
 using QuanLyHoSoCongChuc.Repositories;
+using QuanLyHoSoCongChuc.Models;
 
 namespace QuanLyHoSoCongChuc
 {
@@ -28,6 +29,7 @@ namespace QuanLyHoSoCongChuc
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
         private EnumDiaDanh ModeDiaDanh;
+        public bool EnableButtonChon = false;
 
         public FrmDanhMucHanhChinh()
         {
@@ -36,6 +38,11 @@ namespace QuanLyHoSoCongChuc
 
         private void FrmDanhMucHanhChinh_Load(object sender, EventArgs e)
         {
+            if (EnableButtonChon)
+                btnChon.Visible = true;
+            else
+                btnChon.Visible = false;
+            
             LoadDanhMucHanhChinh();
         }
 
@@ -68,6 +75,13 @@ namespace QuanLyHoSoCongChuc
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            var errorText = "";
+            if (!ValidateInput(EnumUpdateMode.DELETE, ref errorText))
+            {
+                MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             bool updated = false;
             switch (ModeDiaDanh)
             {
@@ -94,38 +108,45 @@ namespace QuanLyHoSoCongChuc
             }
         }
 
-        /// <summary>
-        /// Validate user input
-        /// </summary>
-        /// <param name="isUpdate"></param>
-        /// <returns></returns>
-        private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
-        {
-            // Mode update -> checking MaChucNang is exists on textbox
-            if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE)
-            {
-                if (txtMaDiaDanh.Text == "")
-                {
-                    errorText = "Vui lòng chọn địa danh";
-                    return false;
-                }
-            }
-            if (mode != EnumUpdateMode.DELETE)
-            {
-                if (txtTenDiaDanh.Text == "")
-                {
-                    errorText = "Vui lòng nhập tên địa danh";
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            var errorText = "";
+            if (!ValidateInput(EnumUpdateMode.DELETE, ref errorText))
+            {
+                MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            bool updated = false;
+            switch (ModeDiaDanh)
+            {
+                case EnumDiaDanh.TINHTHANH:
+                    var tinhthanh = TinhThanhRepository.SelectByID(txtMaDiaDanh.Text.Trim());
+                    tinhthanh.TenTinh = txtTenDiaDanh.Text.Trim();
+                    updated = TinhThanhRepository.Save();
+                    break;
+
+                case EnumDiaDanh.QUANHUYEN:
+                    var quanhuyen = QuanHuyenRepository.SelectByID(txtMaDiaDanh.Text.Trim());
+                    quanhuyen.TenQuanHuyen = txtTenDiaDanh.Text.Trim();
+                    updated = TinhThanhRepository.Save();
+                    break;
+
+                case EnumDiaDanh.PHUONGXA:
+                    var phuongxa = PhuongXaRepository.SelectByID(txtMaDiaDanh.Text.Trim());
+                    phuongxa.TenPhuongXa = txtTenDiaDanh.Text.Trim();
+                    updated = TinhThanhRepository.Save();
+                    break;
+            }
+            if (updated)
+            {
+                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadDanhMucHanhChinh();
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void treeviewDMHC_AfterSelect(object sender, TreeViewEventArgs e)
@@ -170,6 +191,34 @@ namespace QuanLyHoSoCongChuc
             var madiadanh = txtMaDiaDanh.Text;
             var tendonvidaydu = txtTenDayDu.Text;
             TransferDataInfo(this, new MyEvent(madiadanh + "#" + tendonvidaydu));
+        }
+
+        /// <summary>
+        /// Validate user input
+        /// </summary>
+        /// <param name="isUpdate"></param>
+        /// <returns></returns>
+        private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
+        {
+            // Mode update -> checking MaChucNang is exists on textbox
+            if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE)
+            {
+                if (txtMaDiaDanh.Text == "")
+                {
+                    errorText = "Vui lòng chọn địa danh";
+                    return false;
+                }
+            }
+            if (mode != EnumUpdateMode.DELETE)
+            {
+                if (txtTenDiaDanh.Text == "")
+                {
+                    errorText = "Vui lòng nhập tên địa danh";
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         /// <summary>
