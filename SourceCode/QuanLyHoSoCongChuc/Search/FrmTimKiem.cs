@@ -197,10 +197,10 @@ namespace QuanLyHoSoCongChuc.Search
                 nhanvien.TuoiDang = int.Parse(dmTuoiDang.Text);
 
             var lstItem = NhanVienRepository.SearchByTieuChiChung(nhanvien);
+            lstvNhanVien.Items.Clear();
             if (lstItem.Count > 0)
             {
                 ListViewItem objListViewItem;
-                lstvNhanVien.Items.Clear();
                 for (int i = 0; i < lstItem.Count; i++)
                 {
                     objListViewItem = new ListViewItem();
@@ -212,6 +212,7 @@ namespace QuanLyHoSoCongChuc.Search
                     objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
                     lstvNhanVien.Items.Add(objListViewItem);
                 }
+                txtTongSo.Text = "Tìm thấy " + lstItem.Count + " nhân viên";
             }
         }
 

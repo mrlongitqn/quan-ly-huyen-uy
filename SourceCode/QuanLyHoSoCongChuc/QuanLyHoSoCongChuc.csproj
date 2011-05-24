@@ -1130,6 +1130,7 @@
     </Content>
     <None Include="Resources\quanhuyen.jpg" />
     <None Include="Resources\tinhthanh.gif" />
+    <None Include="Resources\excel.png" />
     <Content Include="UsersDiary\UsersDiary.xml" />
     <None Include="Resources\erase.jpg" />
     <None Include="Resources\Eraser-icon.png" />
