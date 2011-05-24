@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel4 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
             this.buttonX11 = new DevComponents.DotNetBar.ButtonX();
@@ -42,6 +42,9 @@
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
             this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.ckbxEnableNgayChinhThuc = new System.Windows.Forms.CheckBox();
+            this.ckbxEnableNgayVaoDang = new System.Windows.Forms.CheckBox();
+            this.ckbxEnableNgaySinh = new System.Windows.Forms.CheckBox();
             this.dmTuoiDang = new System.Windows.Forms.DomainUpDown();
             this.dmTuoiDoi = new System.Windows.Forms.DomainUpDown();
             this.btnTim = new DevComponents.DotNetBar.ButtonX();
@@ -112,9 +115,6 @@
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.tbTieuChiKhac = new DevComponents.DotNetBar.TabItem(this.components);
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.ckbxEnableNgaySinh = new System.Windows.Forms.CheckBox();
-            this.ckbxEnableNgayVaoDang = new System.Windows.Forms.CheckBox();
-            this.ckbxEnableNgayChinhThuc = new System.Windows.Forms.CheckBox();
             this.groupPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -145,7 +145,7 @@
             this.groupPanel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupPanel4.Location = new System.Drawing.Point(0, 509);
             this.groupPanel4.Name = "groupPanel4";
-            this.groupPanel4.Size = new System.Drawing.Size(1081, 48);
+            this.groupPanel4.Size = new System.Drawing.Size(1177, 48);
             // 
             // 
             // 
@@ -251,8 +251,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.groupPanel2);
-            this.splitContainer1.Size = new System.Drawing.Size(1081, 509);
-            this.splitContainer1.SplitterDistance = 334;
+            this.splitContainer1.Size = new System.Drawing.Size(1177, 509);
+            this.splitContainer1.SplitterDistance = 333;
             this.splitContainer1.TabIndex = 3;
             // 
             // tabControl1
@@ -267,7 +267,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tabControl1.SelectedTabIndex = 2;
-            this.tabControl1.Size = new System.Drawing.Size(334, 509);
+            this.tabControl1.Size = new System.Drawing.Size(333, 509);
             this.tabControl1.TabIndex = 1;
             this.tabControl1.TabLayoutType = DevComponents.DotNetBar.eTabLayoutType.FixedWithNavigationBox;
             this.tabControl1.Tabs.Add(this.tbTieuChiChung);
@@ -282,7 +282,7 @@
             this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel1.Name = "tabControlPanel1";
             this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(334, 483);
+            this.tabControlPanel1.Size = new System.Drawing.Size(333, 483);
             this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -336,7 +336,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(1, 1);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(332, 481);
+            this.groupPanel1.Size = new System.Drawing.Size(331, 481);
             // 
             // 
             // 
@@ -358,6 +358,33 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
+            // 
+            // ckbxEnableNgayChinhThuc
+            // 
+            this.ckbxEnableNgayChinhThuc.AutoSize = true;
+            this.ckbxEnableNgayChinhThuc.Location = new System.Drawing.Point(299, 406);
+            this.ckbxEnableNgayChinhThuc.Name = "ckbxEnableNgayChinhThuc";
+            this.ckbxEnableNgayChinhThuc.Size = new System.Drawing.Size(15, 14);
+            this.ckbxEnableNgayChinhThuc.TabIndex = 167;
+            this.ckbxEnableNgayChinhThuc.UseVisualStyleBackColor = true;
+            // 
+            // ckbxEnableNgayVaoDang
+            // 
+            this.ckbxEnableNgayVaoDang.AutoSize = true;
+            this.ckbxEnableNgayVaoDang.Location = new System.Drawing.Point(299, 383);
+            this.ckbxEnableNgayVaoDang.Name = "ckbxEnableNgayVaoDang";
+            this.ckbxEnableNgayVaoDang.Size = new System.Drawing.Size(15, 14);
+            this.ckbxEnableNgayVaoDang.TabIndex = 166;
+            this.ckbxEnableNgayVaoDang.UseVisualStyleBackColor = true;
+            // 
+            // ckbxEnableNgaySinh
+            // 
+            this.ckbxEnableNgaySinh.AutoSize = true;
+            this.ckbxEnableNgaySinh.Location = new System.Drawing.Point(299, 162);
+            this.ckbxEnableNgaySinh.Name = "ckbxEnableNgaySinh";
+            this.ckbxEnableNgaySinh.Size = new System.Drawing.Size(15, 14);
+            this.ckbxEnableNgaySinh.TabIndex = 165;
+            this.ckbxEnableNgaySinh.UseVisualStyleBackColor = true;
             // 
             // dmTuoiDang
             // 
@@ -683,7 +710,7 @@
             this.tabControlPanel3.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel3.Name = "tabControlPanel3";
             this.tabControlPanel3.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel3.Size = new System.Drawing.Size(334, 483);
+            this.tabControlPanel3.Size = new System.Drawing.Size(333, 483);
             this.tabControlPanel3.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel3.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel3.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -701,14 +728,14 @@
             this.TieuChi,
             this.SoLuong,
             this.TiLe});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewX1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewX1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dataGridViewX1.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewX1.Name = "dataGridViewX1";
@@ -758,7 +785,7 @@
             this.tabControlPanel2.Location = new System.Drawing.Point(0, 26);
             this.tabControlPanel2.Name = "tabControlPanel2";
             this.tabControlPanel2.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel2.Size = new System.Drawing.Size(334, 483);
+            this.tabControlPanel2.Size = new System.Drawing.Size(333, 483);
             this.tabControlPanel2.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
             this.tabControlPanel2.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
             this.tabControlPanel2.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
@@ -1094,7 +1121,7 @@
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel2.Location = new System.Drawing.Point(0, 0);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(743, 509);
+            this.groupPanel2.Size = new System.Drawing.Size(840, 509);
             // 
             // 
             // 
@@ -1117,38 +1144,11 @@
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 2;
             // 
-            // ckbxEnableNgaySinh
-            // 
-            this.ckbxEnableNgaySinh.AutoSize = true;
-            this.ckbxEnableNgaySinh.Location = new System.Drawing.Point(299, 162);
-            this.ckbxEnableNgaySinh.Name = "ckbxEnableNgaySinh";
-            this.ckbxEnableNgaySinh.Size = new System.Drawing.Size(15, 14);
-            this.ckbxEnableNgaySinh.TabIndex = 165;
-            this.ckbxEnableNgaySinh.UseVisualStyleBackColor = true;
-            // 
-            // ckbxEnableNgayVaoDang
-            // 
-            this.ckbxEnableNgayVaoDang.AutoSize = true;
-            this.ckbxEnableNgayVaoDang.Location = new System.Drawing.Point(299, 383);
-            this.ckbxEnableNgayVaoDang.Name = "ckbxEnableNgayVaoDang";
-            this.ckbxEnableNgayVaoDang.Size = new System.Drawing.Size(15, 14);
-            this.ckbxEnableNgayVaoDang.TabIndex = 166;
-            this.ckbxEnableNgayVaoDang.UseVisualStyleBackColor = true;
-            // 
-            // ckbxEnableNgayChinhThuc
-            // 
-            this.ckbxEnableNgayChinhThuc.AutoSize = true;
-            this.ckbxEnableNgayChinhThuc.Location = new System.Drawing.Point(299, 406);
-            this.ckbxEnableNgayChinhThuc.Name = "ckbxEnableNgayChinhThuc";
-            this.ckbxEnableNgayChinhThuc.Size = new System.Drawing.Size(15, 14);
-            this.ckbxEnableNgayChinhThuc.TabIndex = 167;
-            this.ckbxEnableNgayChinhThuc.UseVisualStyleBackColor = true;
-            // 
             // FrmTimKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1081, 557);
+            this.ClientSize = new System.Drawing.Size(1177, 557);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.groupPanel4);
             this.Name = "FrmTimKiem";

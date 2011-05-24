@@ -16,7 +16,7 @@ namespace QuanLyHoSoCongChuc
             InitializeComponent();
         }
  
-            private void btnDongY_Click(object sender, EventArgs e)
+        private void btnDongY_Click(object sender, EventArgs e)
         {
             txtNewPassword.Focus();
             this.DialogResult = DialogResult.OK;
