@@ -44,4 +44,12 @@ namespace QuanLyHoSoCongChuc.Models
             return TenTrinhDoHocVan;
         }
     }
+
+    public partial class TrinhDoChuyenMon
+    {
+        public override string ToString()
+        {
+            return TenTrinhDoChuyenMon;
+        }
+    }
 }

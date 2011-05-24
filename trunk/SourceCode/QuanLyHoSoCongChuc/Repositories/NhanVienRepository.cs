@@ -205,21 +205,30 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return lstItem;
 		}
 
+        /// <summary>
+        /// Search by tieu chi chung
+        /// </summary>
+        /// <param name="nhanvien"></param>
+        /// <returns></returns>
         public static List<NhanVien> SearchByTieuChiChung(NhanVienModel nhanvien)
         {
             var lst = (from item in DataContext.Instance.NhanViens
                        where
-                        item.MaDonVi == (nhanvien.MaDonVi == null ? item.MaDonVi : nhanvien.MaDonVi) &&
-                        item.HoTenNhanVien == (nhanvien.HoTenNhanVien == null ? item.HoTenNhanVien : nhanvien.HoTenNhanVien) &&
+                        item.MaDonVi == (nhanvien.MaDonVi == "" ? item.MaDonVi : nhanvien.MaDonVi) &&
+                        item.HoTenNhanVien.ToUpper() == (nhanvien.HoTenNhanVien.ToUpper() == "" ? item.HoTenNhanVien.ToUpper() : nhanvien.HoTenNhanVien.ToUpper()) &&
                         item.MaGioiTinh == (nhanvien.MaGioiTinh == null ? item.MaGioiTinh : nhanvien.MaGioiTinh) &&
+                        item.NgaySinh.Value == (nhanvien.NgaySinh.Kind == DateTimeKind.Unspecified  ? item.NgaySinh.Value : nhanvien.NgaySinh) &&
+                        item.QueQuan.ToUpper() == (nhanvien.QueQuan.ToUpper() == "" ? item.QueQuan.ToUpper() : nhanvien.QueQuan.ToUpper()) && 
                         item.MaDanToc == (nhanvien.MaDanToc == null ? item.MaDanToc : nhanvien.MaDanToc) && 
                         item.MaTonGiao == (nhanvien.MaTonGiao == null ? item.MaTonGiao : nhanvien.MaTonGiao) && 
                         item.MaTrinhDoChinhTri == (nhanvien.MaTrinhDoChinhTri == null ? item.MaTrinhDoChinhTri : nhanvien.MaTrinhDoChinhTri) &&
-                        item.MaTrinhDoHocVan == (nhanvien.MaTrinhDoHocVan == null ? item.MaTrinhDoHocVan : nhanvien.MaTrinhDoHocVan) && 
-                        item.NgayVaoDang == (nhanvien.NgayVaoDang == null ? item.NgayVaoDang : nhanvien.NgayVaoDang) && 
-                        item.NgayChinhThuc == (nhanvien.NgayChinhThuc == null ? item.NgayChinhThuc : nhanvien.NgayChinhThuc) && 
-                        item.NgaySinh.Value.Year == (nhanvien.NgayVaoDang == null ? item.NgayVaoDang.Value.Year : nhanvien.NgayVaoDang.Year) && 
-                        item.NgayVaoDang.Value.Year == (nhanvien.NgayVaoDang == null ? item.NgayVaoDang.Value.Year : nhanvien.NgayVaoDang.Year)
+                        item.MaTrinhDoHocVan == (nhanvien.MaTrinhDoHocVan == null ? item.MaTrinhDoHocVan : nhanvien.MaTrinhDoHocVan) &&
+                        item.MaTrinhDoChuyenMon == (nhanvien.MaTrinhDoChuyenMon == null ? item.MaTrinhDoChuyenMon : nhanvien.MaTrinhDoChuyenMon) &&
+                        item.CongViecHienNay.ToUpper().Contains(nhanvien.CongViecHienNay.ToUpper() == "" ? item.CongViecHienNay.ToUpper() : nhanvien.CongViecHienNay.ToUpper()) &&
+                        item.NgayVaoDang.Value == (nhanvien.NgayVaoDang.Kind == DateTimeKind.Unspecified ? item.NgayVaoDang.Value : nhanvien.NgayVaoDang) &&
+                        item.NgayChinhThuc.Value == (nhanvien.NgayChinhThuc.Kind == DateTimeKind.Unspecified ? item.NgayChinhThuc.Value : nhanvien.NgayChinhThuc) &&
+                        (DateTime.Now.Year - item.NgaySinh.Value.Year) == (nhanvien.TuoiDoi == 0 ? (DateTime.Now.Year - item.NgaySinh.Value.Year) : nhanvien.TuoiDoi) &&
+                        (DateTime.Now.Year - item.NgayVaoDang.Value.Year) == (nhanvien.TuoiDang == 0 ? (DateTime.Now.Year - item.NgayVaoDang.Value.Year) : nhanvien.TuoiDang)
                        select item).ToList();
             return lst;
         }

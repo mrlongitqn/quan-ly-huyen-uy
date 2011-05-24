@@ -74,5 +74,10 @@ namespace QuanLyHoSoCongChuc.Models
         public DateTime NgayNangLuong { get; set; }
         public string MaDangVien { get; set; }
         public bool Added { get; set; }
+
+        // tuansl: add manually
+        public int TuoiDoi { get; set; }
+        public int TuoiDang { get; set; }
+        // ---------------- E ------------------
     }
 }
