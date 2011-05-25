@@ -308,6 +308,17 @@
       <DependentUpon>CrBaoCaoLuong.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Report\DSBaoCao1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DSBaoCao1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FrmPrintReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrmPrintReport.Designer.cs">
+      <DependentUpon>FrmPrintReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
     <Compile Include="UsersDiary\DanhSachNhatKySuDung.cs" />
     <Compile Include="UsersDiary\FrmNhatKySuDung.cs">
@@ -812,6 +823,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrBaoCaoLuong.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\FrmPrintReport.resx">
+      <DependentUpon>FrmPrintReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Search\FrmTimKiem.resx">
       <DependentUpon>FrmTimKiem.cs</DependentUpon>
     </EmbeddedResource>
@@ -1036,6 +1050,17 @@
     <Compile Include="Utils\GlobalVars.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Report\DSBaoCao1.xsc">
+      <DependentUpon>DSBaoCao1.xsd</DependentUpon>
+    </None>
+    <None Include="Report\DSBaoCao1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBaoCao1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Report\DSBaoCao1.xss">
+      <DependentUpon>DSBaoCao1.xsd</DependentUpon>
+    </None>
     <None Include="Resources\graphics-tablet.ico" />
   </ItemGroup>
   <ItemGroup>
