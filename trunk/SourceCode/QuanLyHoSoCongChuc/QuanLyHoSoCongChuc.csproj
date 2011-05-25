@@ -213,12 +213,6 @@
     <Compile Include="Controller\TrinhDoNgoaiNguControl.cs" />
     <Compile Include="Controller\TrinhDoQuanLyNhaNuocControl.cs" />
     <Compile Include="Controller\TrinhDoTinHocControl.cs" />
-    <Compile Include="CrBaoCaoLuong.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CrBaoCaoLuong.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CrystalReport2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -308,6 +302,12 @@
     </Compile>
     <Compile Include="Models\NhanVienModel.cs" />
     <Compile Include="Models\OverrideData.cs" />
+    <Compile Include="Report\CrBaoCaoLuong.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrBaoCaoLuong.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
     <Compile Include="UsersDiary\DanhSachNhatKySuDung.cs" />
     <Compile Include="UsersDiary\FrmNhatKySuDung.cs">
@@ -640,10 +640,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>ChucNangQTDT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrBaoCaoLuong.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrBaoCaoLuong.cs</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
@@ -811,6 +807,10 @@
     <EmbeddedResource Include="FrmThongTinPhongNoiVu.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrBaoCaoLuong.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrBaoCaoLuong.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Search\FrmTimKiem.resx">
       <DependentUpon>FrmTimKiem.cs</DependentUpon>
