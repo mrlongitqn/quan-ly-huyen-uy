@@ -15,5 +15,11 @@ namespace QuanLyHoSoCongChuc.Report
         {
             InitializeComponent();
         }
+
+        private void FrmBaoCaoLuong_Load(object sender, EventArgs e)
+        {
+            CrBaoCaoLuong rpt = new CrBaoCaoLuong();
+            this.crystalReportViewer1.ReportSource = rpt;
+        }
     }
 }

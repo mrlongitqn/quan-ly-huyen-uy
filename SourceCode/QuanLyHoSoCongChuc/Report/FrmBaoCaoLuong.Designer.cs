@@ -28,45 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource4 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.bindingSourceLuong = new System.Windows.Forms.BindingSource(this.components);
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.button1 = new System.Windows.Forms.Button();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this.reportViewerLuong = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.btnThemDanToc = new System.Windows.Forms.Button();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.dtNgayCap = new System.Windows.Forms.DateTimePicker();
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.NhanVienInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dtNgayCap = new System.Windows.Forms.DateTimePicker();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLuong)).BeginInit();
             this.panelEx2.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NhanVienInfoBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bindingSourceLuong
-            // 
-            this.bindingSourceLuong.DataSource = typeof(QuanLyHoSoCongChuc.BusinessObject.NhanVienInfo);
             // 
             // button2
             // 
@@ -120,7 +110,7 @@
             // panelEx2
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx2.Controls.Add(this.reportViewerLuong);
+            this.panelEx2.Controls.Add(this.crystalReportViewer1);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Location = new System.Drawing.Point(0, 248);
             this.panelEx2.Name = "panelEx2";
@@ -134,18 +124,16 @@
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 3;
             // 
-            // reportViewerLuong
+            // crystalReportViewer1
             // 
-            this.reportViewerLuong.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource4.Name = "QuanLyHoSoCongChuc_BusinessObject_NhanVienInfo";
-            reportDataSource4.Value = this.bindingSourceLuong;
-            this.reportViewerLuong.LocalReport.DataSources.Add(reportDataSource4);
-            this.reportViewerLuong.LocalReport.ReportEmbeddedResource = "QuanLyHoSoCongChuc.Report.ReportLuong.rdlc";
-            this.reportViewerLuong.Location = new System.Drawing.Point(0, 0);
-            this.reportViewerLuong.Name = "reportViewerLuong";
-            this.reportViewerLuong.Size = new System.Drawing.Size(758, 242);
-            this.reportViewerLuong.TabIndex = 0;
-            this.reportViewerLuong.ZoomMode = Microsoft.Reporting.WinForms.ZoomMode.PageWidth;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(758, 242);
+            this.crystalReportViewer1.TabIndex = 1;
             // 
             // btnThemDanToc
             // 
@@ -225,6 +213,95 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(484, 60);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 98;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(482, 189);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(156, 22);
+            this.textBox5.TabIndex = 97;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(482, 161);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(156, 22);
+            this.textBox6.TabIndex = 96;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox7.Location = new System.Drawing.Point(482, 133);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(156, 22);
+            this.textBox7.TabIndex = 95;
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.Location = new System.Drawing.Point(376, 130);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(110, 25);
+            this.labelX4.TabIndex = 94;
+            this.labelX4.Text = "Ngày lập biểu";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(150, 189);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(156, 22);
+            this.textBox4.TabIndex = 93;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(150, 161);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(156, 22);
+            this.textBox3.TabIndex = 92;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(150, 133);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(156, 22);
+            this.textBox2.TabIndex = 91;
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.Location = new System.Drawing.Point(44, 130);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(110, 25);
+            this.labelX3.TabIndex = 90;
+            this.labelX3.Text = "Ngày lập biểu";
+            // 
+            // dtNgayCap
+            // 
+            this.dtNgayCap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtNgayCap.Checked = false;
+            this.dtNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayCap.Location = new System.Drawing.Point(150, 101);
+            this.dtNgayCap.Name = "dtNgayCap";
+            this.dtNgayCap.Size = new System.Drawing.Size(85, 20);
+            this.dtNgayCap.TabIndex = 89;
+            // 
             // lblPassword
             // 
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
@@ -272,99 +349,6 @@
             this.labelX1.Text = "BÁO CÁO LƯƠNG - QUỸ LƯƠNG";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // NhanVienInfoBindingSource
-            // 
-            this.NhanVienInfoBindingSource.DataSource = typeof(QuanLyHoSoCongChuc.BusinessObject.NhanVienInfo);
-            // 
-            // dtNgayCap
-            // 
-            this.dtNgayCap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtNgayCap.Checked = false;
-            this.dtNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayCap.Location = new System.Drawing.Point(150, 101);
-            this.dtNgayCap.Name = "dtNgayCap";
-            this.dtNgayCap.Size = new System.Drawing.Size(85, 20);
-            this.dtNgayCap.TabIndex = 89;
-            // 
-            // labelX3
-            // 
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.Location = new System.Drawing.Point(44, 130);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(110, 25);
-            this.labelX3.TabIndex = 90;
-            this.labelX3.Text = "Ngày lập biểu";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(150, 133);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(156, 22);
-            this.textBox2.TabIndex = 91;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(150, 161);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(156, 22);
-            this.textBox3.TabIndex = 92;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(150, 189);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(156, 22);
-            this.textBox4.TabIndex = 93;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(482, 189);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(156, 22);
-            this.textBox5.TabIndex = 97;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(482, 161);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(156, 22);
-            this.textBox6.TabIndex = 96;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(482, 133);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(156, 22);
-            this.textBox7.TabIndex = 95;
-            // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX4.Location = new System.Drawing.Point(376, 130);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(110, 25);
-            this.labelX4.TabIndex = 94;
-            this.labelX4.Text = "Ngày lập biểu";
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(484, 60);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 98;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
             // FrmBaoCaoLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -374,12 +358,11 @@
             this.Controls.Add(this.panelEx1);
             this.Name = "FrmBaoCaoLuong";
             this.Text = "FrmBaoCaoLuong";
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSourceLuong)).EndInit();
+            this.Load += new System.EventHandler(this.FrmBaoCaoLuong_Load);
             this.panelEx2.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NhanVienInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -389,7 +372,6 @@
         private System.Windows.Forms.Button button2;
         public System.Windows.Forms.TextBox textBox1;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private System.Windows.Forms.BindingSource bindingSourceLuong;
         private DevComponents.DotNetBar.LabelX labelX10;
         private System.Windows.Forms.Button button1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
@@ -402,7 +384,6 @@
         public System.Windows.Forms.TextBox txtUsername;
         public System.Windows.Forms.TextBox txtPassword;
         private DevComponents.DotNetBar.LabelX labelX1;
-        private System.Windows.Forms.BindingSource NhanVienInfoBindingSource;
         public System.Windows.Forms.TextBox textBox4;
         public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.TextBox textBox2;
@@ -413,5 +394,6 @@
         public System.Windows.Forms.TextBox textBox7;
         private DevComponents.DotNetBar.LabelX labelX4;
         private System.Windows.Forms.RadioButton radioButton1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
