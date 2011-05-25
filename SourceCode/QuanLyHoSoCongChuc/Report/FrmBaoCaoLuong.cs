@@ -23,6 +23,8 @@ namespace QuanLyHoSoCongChuc.Report
         private void FrmBaoCaoLuong_Load(object sender, EventArgs e)
         {
             loadDonVi();
+            cbDoiTuong.SelectedIndex = 0;
+            cbKy.SelectedIndex = 0;
         }
         void loadDonVi()
         {
@@ -33,6 +35,12 @@ namespace QuanLyHoSoCongChuc.Report
             }
             if (lstDonVi.Count > 0)
                 cbDonVi.SelectedIndex = 0;
+        }
+
+        private void btInBieu_Click(object sender, EventArgs e)
+        {
+            FrmPrintReport frm = new FrmPrintReport(1);
+            frm.Show();
         }
     }
 }

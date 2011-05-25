@@ -33,6 +33,24 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cbKy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem4 = new DevComponents.Editors.ComboItem();
+            this.comboItem5 = new DevComponents.Editors.ComboItem();
+            this.comboItem6 = new DevComponents.Editors.ComboItem();
+            this.cbDoiTuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
+            this.comboItem3 = new DevComponents.Editors.ComboItem();
+            this.cbDonVi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btLuuBieu = new DevComponents.DotNetBar.ButtonX();
+            this.btInBieu = new DevComponents.DotNetBar.ButtonX();
+            this.btBaoBieu = new DevComponents.DotNetBar.ButtonX();
+            this.cbxNhomMau = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.rdSaved = new System.Windows.Forms.RadioButton();
             this.rdFromDB = new System.Windows.Forms.RadioButton();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -43,28 +61,8 @@
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.rdSaved = new System.Windows.Forms.RadioButton();
-            this.cbxNhomMau = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.btBaoBieu = new DevComponents.DotNetBar.ButtonX();
-            this.btInBieu = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
-            this.btLuuBieu = new DevComponents.DotNetBar.ButtonX();
-            this.cbDonVi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbDoiTuong = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
-            this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.comboBoxEx3 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.comboItem4 = new DevComponents.Editors.ComboItem();
-            this.comboItem5 = new DevComponents.Editors.ComboItem();
-            this.comboItem6 = new DevComponents.Editors.ComboItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.dsBaoCao1 = new QuanLyHoSoCongChuc.Report.DSBaoCao1();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsBaoCao1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelX2
@@ -127,7 +125,7 @@
             this.groupPanel1.Controls.Add(this.textBox1);
             this.groupPanel1.Controls.Add(this.textBox5);
             this.groupPanel1.Controls.Add(this.textBox6);
-            this.groupPanel1.Controls.Add(this.comboBoxEx3);
+            this.groupPanel1.Controls.Add(this.cbKy);
             this.groupPanel1.Controls.Add(this.cbDoiTuong);
             this.groupPanel1.Controls.Add(this.cbDonVi);
             this.groupPanel1.Controls.Add(this.buttonX1);
@@ -174,9 +172,163 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
             // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(506, 170);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(192, 22);
+            this.textBox1.TabIndex = 151;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox5.Location = new System.Drawing.Point(506, 145);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(192, 22);
+            this.textBox5.TabIndex = 150;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox6.Location = new System.Drawing.Point(506, 120);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(192, 22);
+            this.textBox6.TabIndex = 149;
+            // 
+            // cbKy
+            // 
+            this.cbKy.DisplayMember = "Text";
+            this.cbKy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbKy.FormattingEnabled = true;
+            this.cbKy.ItemHeight = 14;
+            this.cbKy.Items.AddRange(new object[] {
+            this.comboItem4,
+            this.comboItem5,
+            this.comboItem6});
+            this.cbKy.Location = new System.Drawing.Point(287, 95);
+            this.cbKy.Name = "cbKy";
+            this.cbKy.Size = new System.Drawing.Size(103, 20);
+            this.cbKy.TabIndex = 148;
+            // 
+            // comboItem4
+            // 
+            this.comboItem4.Text = "6 tháng đầu năm";
+            // 
+            // comboItem5
+            // 
+            this.comboItem5.Text = "6 tháng cuối năm";
+            // 
+            // comboItem6
+            // 
+            this.comboItem6.Text = "Cả năm";
+            // 
+            // cbDoiTuong
+            // 
+            this.cbDoiTuong.DisplayMember = "Text";
+            this.cbDoiTuong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbDoiTuong.FormattingEnabled = true;
+            this.cbDoiTuong.ItemHeight = 14;
+            this.cbDoiTuong.Items.AddRange(new object[] {
+            this.comboItem1,
+            this.comboItem2,
+            this.comboItem3});
+            this.cbDoiTuong.Location = new System.Drawing.Point(150, 70);
+            this.cbDoiTuong.Name = "cbDoiTuong";
+            this.cbDoiTuong.Size = new System.Drawing.Size(192, 20);
+            this.cbDoiTuong.TabIndex = 147;
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.Text = "Quỹ lương tổng hợp CB, CC, VC";
+            // 
+            // comboItem2
+            // 
+            this.comboItem2.Text = "Quỹ lương cán bộ, công chức";
+            // 
+            // comboItem3
+            // 
+            this.comboItem3.Text = "Quỹ lương viện chức hợp đồng";
+            // 
+            // cbDonVi
+            // 
+            this.cbDonVi.DisplayMember = "Text";
+            this.cbDonVi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbDonVi.FormattingEnabled = true;
+            this.cbDonVi.ItemHeight = 14;
+            this.cbDonVi.Location = new System.Drawing.Point(150, 45);
+            this.cbDonVi.Name = "cbDonVi";
+            this.cbDonVi.Size = new System.Drawing.Size(192, 20);
+            this.cbDonVi.TabIndex = 146;
+            // 
+            // buttonX1
+            // 
+            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.buttonX1.Location = new System.Drawing.Point(745, 78);
+            this.buttonX1.Name = "buttonX1";
+            this.buttonX1.Size = new System.Drawing.Size(80, 20);
+            this.buttonX1.TabIndex = 145;
+            this.buttonX1.Text = "Thoát";
+            // 
+            // btLuuBieu
+            // 
+            this.btLuuBieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btLuuBieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btLuuBieu.Location = new System.Drawing.Point(745, 48);
+            this.btLuuBieu.Name = "btLuuBieu";
+            this.btLuuBieu.Size = new System.Drawing.Size(80, 20);
+            this.btLuuBieu.TabIndex = 144;
+            this.btLuuBieu.Text = "Lưu biểu";
+            // 
+            // btInBieu
+            // 
+            this.btInBieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btInBieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btInBieu.Location = new System.Drawing.Point(653, 78);
+            this.btInBieu.Name = "btInBieu";
+            this.btInBieu.Size = new System.Drawing.Size(80, 20);
+            this.btInBieu.TabIndex = 143;
+            this.btInBieu.Text = "In biểu";
+            this.btInBieu.Click += new System.EventHandler(this.btInBieu_Click);
+            // 
+            // btBaoBieu
+            // 
+            this.btBaoBieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btBaoBieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btBaoBieu.Location = new System.Drawing.Point(653, 48);
+            this.btBaoBieu.Name = "btBaoBieu";
+            this.btBaoBieu.Size = new System.Drawing.Size(80, 20);
+            this.btBaoBieu.TabIndex = 142;
+            this.btBaoBieu.Text = "Báo biểu";
+            // 
+            // cbxNhomMau
+            // 
+            this.cbxNhomMau.DisplayMember = "Text";
+            this.cbxNhomMau.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxNhomMau.FormattingEnabled = true;
+            this.cbxNhomMau.ItemHeight = 14;
+            this.cbxNhomMau.Location = new System.Drawing.Point(460, 95);
+            this.cbxNhomMau.Name = "cbxNhomMau";
+            this.cbxNhomMau.Size = new System.Drawing.Size(176, 20);
+            this.cbxNhomMau.TabIndex = 141;
+            // 
+            // rdSaved
+            // 
+            this.rdSaved.AutoSize = true;
+            this.rdSaved.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.rdSaved.ForeColor = System.Drawing.Color.Navy;
+            this.rdSaved.Location = new System.Drawing.Point(442, 71);
+            this.rdSaved.Name = "rdSaved";
+            this.rdSaved.Size = new System.Drawing.Size(195, 20);
+            this.rdSaved.TabIndex = 99;
+            this.rdSaved.Text = "Mở báo cáo đã lưu trước đây";
+            this.rdSaved.UseVisualStyleBackColor = true;
+            // 
             // rdFromDB
             // 
             this.rdFromDB.AutoSize = true;
+            this.rdFromDB.Checked = true;
             this.rdFromDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.rdFromDB.ForeColor = System.Drawing.Color.Navy;
             this.rdFromDB.Location = new System.Drawing.Point(442, 51);
@@ -271,164 +423,6 @@
             this.labelX1.Text = "BÁO CÁO LƯƠNG - QUỸ LƯƠNG";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // rdSaved
-            // 
-            this.rdSaved.AutoSize = true;
-            this.rdSaved.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.rdSaved.ForeColor = System.Drawing.Color.Navy;
-            this.rdSaved.Location = new System.Drawing.Point(442, 71);
-            this.rdSaved.Name = "rdSaved";
-            this.rdSaved.Size = new System.Drawing.Size(195, 20);
-            this.rdSaved.TabIndex = 99;
-            this.rdSaved.TabStop = true;
-            this.rdSaved.Text = "Mở báo cáo đã lưu trước đây";
-            this.rdSaved.UseVisualStyleBackColor = true;
-            // 
-            // cbxNhomMau
-            // 
-            this.cbxNhomMau.DisplayMember = "Text";
-            this.cbxNhomMau.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxNhomMau.FormattingEnabled = true;
-            this.cbxNhomMau.ItemHeight = 14;
-            this.cbxNhomMau.Location = new System.Drawing.Point(460, 95);
-            this.cbxNhomMau.Name = "cbxNhomMau";
-            this.cbxNhomMau.Size = new System.Drawing.Size(176, 20);
-            this.cbxNhomMau.TabIndex = 141;
-            // 
-            // btBaoBieu
-            // 
-            this.btBaoBieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btBaoBieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btBaoBieu.Location = new System.Drawing.Point(653, 48);
-            this.btBaoBieu.Name = "btBaoBieu";
-            this.btBaoBieu.Size = new System.Drawing.Size(80, 20);
-            this.btBaoBieu.TabIndex = 142;
-            this.btBaoBieu.Text = "Báo biểu";
-            // 
-            // btInBieu
-            // 
-            this.btInBieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btInBieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btInBieu.Location = new System.Drawing.Point(653, 78);
-            this.btInBieu.Name = "btInBieu";
-            this.btInBieu.Size = new System.Drawing.Size(80, 20);
-            this.btInBieu.TabIndex = 143;
-            this.btInBieu.Text = "In biểu";
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(745, 78);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(80, 20);
-            this.buttonX1.TabIndex = 145;
-            this.buttonX1.Text = "Thoát";
-            // 
-            // btLuuBieu
-            // 
-            this.btLuuBieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btLuuBieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btLuuBieu.Location = new System.Drawing.Point(745, 48);
-            this.btLuuBieu.Name = "btLuuBieu";
-            this.btLuuBieu.Size = new System.Drawing.Size(80, 20);
-            this.btLuuBieu.TabIndex = 144;
-            this.btLuuBieu.Text = "Lưu biểu";
-            // 
-            // cbDonVi
-            // 
-            this.cbDonVi.DisplayMember = "Text";
-            this.cbDonVi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDonVi.FormattingEnabled = true;
-            this.cbDonVi.ItemHeight = 14;
-            this.cbDonVi.Location = new System.Drawing.Point(150, 45);
-            this.cbDonVi.Name = "cbDonVi";
-            this.cbDonVi.Size = new System.Drawing.Size(192, 20);
-            this.cbDonVi.TabIndex = 146;
-            // 
-            // cbDoiTuong
-            // 
-            this.cbDoiTuong.DisplayMember = "Text";
-            this.cbDoiTuong.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDoiTuong.FormattingEnabled = true;
-            this.cbDoiTuong.ItemHeight = 14;
-            this.cbDoiTuong.Items.AddRange(new object[] {
-            this.comboItem1,
-            this.comboItem2,
-            this.comboItem3});
-            this.cbDoiTuong.Location = new System.Drawing.Point(150, 70);
-            this.cbDoiTuong.Name = "cbDoiTuong";
-            this.cbDoiTuong.Size = new System.Drawing.Size(192, 20);
-            this.cbDoiTuong.TabIndex = 147;
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "Quỹ lương tổng hợp CB, CC, VC";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Quỹ lương cán bộ, công chức";
-            // 
-            // comboItem3
-            // 
-            this.comboItem3.Text = "Quỹ lương viện chức hợp đồng";
-            // 
-            // comboBoxEx3
-            // 
-            this.comboBoxEx3.DisplayMember = "Text";
-            this.comboBoxEx3.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.comboBoxEx3.FormattingEnabled = true;
-            this.comboBoxEx3.ItemHeight = 14;
-            this.comboBoxEx3.Items.AddRange(new object[] {
-            this.comboItem4,
-            this.comboItem5,
-            this.comboItem6});
-            this.comboBoxEx3.Location = new System.Drawing.Point(287, 95);
-            this.comboBoxEx3.Name = "comboBoxEx3";
-            this.comboBoxEx3.Size = new System.Drawing.Size(103, 20);
-            this.comboBoxEx3.TabIndex = 148;
-            // 
-            // comboItem4
-            // 
-            this.comboItem4.Text = "6 tháng đầu năm";
-            // 
-            // comboItem5
-            // 
-            this.comboItem5.Text = "6 tháng cuối năm";
-            // 
-            // comboItem6
-            // 
-            this.comboItem6.Text = "Cả năm";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(506, 170);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 22);
-            this.textBox1.TabIndex = 151;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(506, 145);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(192, 22);
-            this.textBox5.TabIndex = 150;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(506, 120);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(192, 22);
-            this.textBox6.TabIndex = 149;
-            // 
-            // dsBaoCao1
-            // 
-            this.dsBaoCao1.DataSetName = "DSBaoCao1";
-            this.dsBaoCao1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // FrmBaoCaoLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,7 +436,6 @@
             this.panelEx1.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dsBaoCao1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -472,7 +465,7 @@
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX btLuuBieu;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbDonVi;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx3;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbKy;
         private DevComponents.Editors.ComboItem comboItem4;
         private DevComponents.Editors.ComboItem comboItem5;
         private DevComponents.Editors.ComboItem comboItem6;
@@ -483,6 +476,5 @@
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox5;
         public System.Windows.Forms.TextBox textBox6;
-        private DSBaoCao1 dsBaoCao1;
     }
 }
