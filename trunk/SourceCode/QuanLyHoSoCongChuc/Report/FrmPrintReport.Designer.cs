@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.dsBaoCao1 = new QuanLyHoSoCongChuc.Report.DSBaoCao1();
+            ((System.ComponentModel.ISupportInitialize)(this.dsBaoCao1)).BeginInit();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -43,6 +45,11 @@
             this.crystalReportViewer1.TabIndex = 2;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
+            // dsBaoCao1
+            // 
+            this.dsBaoCao1.DataSetName = "DSBaoCao1";
+            this.dsBaoCao1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FrmPrintReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -52,6 +59,7 @@
             this.Name = "FrmPrintReport";
             this.Text = "FrmPrintReport";
             this.Load += new System.EventHandler(this.FrmPrintReport_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dsBaoCao1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -59,5 +67,6 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private DSBaoCao1 dsBaoCao1;
     }
 }
