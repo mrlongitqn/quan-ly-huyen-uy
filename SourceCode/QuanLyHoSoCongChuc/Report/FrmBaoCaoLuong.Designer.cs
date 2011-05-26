@@ -51,7 +51,7 @@
             this.btLuuBieu = new DevComponents.DotNetBar.ButtonX();
             this.btInBieu = new DevComponents.DotNetBar.ButtonX();
             this.btBaoBieu = new DevComponents.DotNetBar.ButtonX();
-            this.cbxNhomMau = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbSaved = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.rdSaved = new System.Windows.Forms.RadioButton();
             this.rdFromDB = new System.Windows.Forms.RadioButton();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
@@ -191,7 +191,7 @@
             this.groupPanel1.Controls.Add(this.btLuuBieu);
             this.groupPanel1.Controls.Add(this.btInBieu);
             this.groupPanel1.Controls.Add(this.btBaoBieu);
-            this.groupPanel1.Controls.Add(this.cbxNhomMau);
+            this.groupPanel1.Controls.Add(this.cbSaved);
             this.groupPanel1.Controls.Add(this.rdSaved);
             this.groupPanel1.Controls.Add(this.rdFromDB);
             this.groupPanel1.Controls.Add(this.labelX4);
@@ -361,16 +361,16 @@
             this.btBaoBieu.TabIndex = 142;
             this.btBaoBieu.Text = "Báo biểu";
             // 
-            // cbxNhomMau
+            // cbSaved
             // 
-            this.cbxNhomMau.DisplayMember = "Text";
-            this.cbxNhomMau.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxNhomMau.FormattingEnabled = true;
-            this.cbxNhomMau.ItemHeight = 14;
-            this.cbxNhomMau.Location = new System.Drawing.Point(460, 95);
-            this.cbxNhomMau.Name = "cbxNhomMau";
-            this.cbxNhomMau.Size = new System.Drawing.Size(176, 20);
-            this.cbxNhomMau.TabIndex = 141;
+            this.cbSaved.DisplayMember = "Text";
+            this.cbSaved.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbSaved.FormattingEnabled = true;
+            this.cbSaved.ItemHeight = 14;
+            this.cbSaved.Location = new System.Drawing.Point(460, 95);
+            this.cbSaved.Name = "cbSaved";
+            this.cbSaved.Size = new System.Drawing.Size(176, 20);
+            this.cbSaved.TabIndex = 141;
             // 
             // rdSaved
             // 
@@ -622,7 +622,7 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         private System.Windows.Forms.RadioButton rdFromDB;
         private System.Windows.Forms.RadioButton rdSaved;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbxNhomMau;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cbSaved;
         private DevComponents.DotNetBar.ButtonX btBaoBieu;
         private DevComponents.DotNetBar.ButtonX btInBieu;
         private DevComponents.DotNetBar.ButtonX buttonX1;

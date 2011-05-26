@@ -42,7 +42,9 @@ namespace QuanLyHoSoCongChuc.Report
             DateTime dt = dtNgay.Value;
             String strDt = dt.ToString("dd/MM/yyyy");
             ListItem DV = (ListItem)cbDonVi.SelectedItem;
-            FrmPrintReport frm = new FrmPrintReport(1, DV.ID, strDt);
+            int type = cbDoiTuong.SelectedIndex;
+
+            FrmPrintReport frm = new FrmPrintReport(type, DV.ID, strDt);
             frm.Show();
         }
     }
