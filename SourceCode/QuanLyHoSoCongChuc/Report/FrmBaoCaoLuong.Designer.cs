@@ -57,7 +57,7 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.dtNgayCap = new System.Windows.Forms.DateTimePicker();
+            this.dtNgay = new System.Windows.Forms.DateTimePicker();
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -140,7 +140,7 @@
             this.groupPanel1.Controls.Add(this.textBox3);
             this.groupPanel1.Controls.Add(this.textBox2);
             this.groupPanel1.Controls.Add(this.labelX3);
-            this.groupPanel1.Controls.Add(this.dtNgayCap);
+            this.groupPanel1.Controls.Add(this.dtNgay);
             this.groupPanel1.Controls.Add(this.labelX2);
             this.groupPanel1.Controls.Add(this.labelX10);
             this.groupPanel1.Controls.Add(this.lblPassword);
@@ -383,15 +383,15 @@
             this.labelX3.TabIndex = 90;
             this.labelX3.Text = "Người lập biểu";
             // 
-            // dtNgayCap
+            // dtNgay
             // 
-            this.dtNgayCap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtNgayCap.Checked = false;
-            this.dtNgayCap.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayCap.Location = new System.Drawing.Point(150, 95);
-            this.dtNgayCap.Name = "dtNgayCap";
-            this.dtNgayCap.Size = new System.Drawing.Size(85, 20);
-            this.dtNgayCap.TabIndex = 89;
+            this.dtNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtNgay.Checked = false;
+            this.dtNgay.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgay.Location = new System.Drawing.Point(150, 95);
+            this.dtNgay.Name = "dtNgay";
+            this.dtNgay.Size = new System.Drawing.Size(85, 20);
+            this.dtNgay.TabIndex = 89;
             // 
             // lblPassword
             // 
@@ -455,7 +455,7 @@
         public System.Windows.Forms.TextBox textBox3;
         public System.Windows.Forms.TextBox textBox2;
         private DevComponents.DotNetBar.LabelX labelX3;
-        private System.Windows.Forms.DateTimePicker dtNgayCap;
+        private System.Windows.Forms.DateTimePicker dtNgay;
         private DevComponents.DotNetBar.LabelX labelX4;
         private System.Windows.Forms.RadioButton rdFromDB;
         private System.Windows.Forms.RadioButton rdSaved;

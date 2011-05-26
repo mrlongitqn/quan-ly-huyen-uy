@@ -39,7 +39,10 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btInBieu_Click(object sender, EventArgs e)
         {
-            FrmPrintReport frm = new FrmPrintReport(1);
+            DateTime dt = dtNgay.Value;
+            String strDt = dt.ToString("dd/MM/yyyy");
+            ListItem DV = (ListItem)cbDonVi.SelectedItem;
+            FrmPrintReport frm = new FrmPrintReport(1, DV.ID, strDt);
             frm.Show();
         }
     }
