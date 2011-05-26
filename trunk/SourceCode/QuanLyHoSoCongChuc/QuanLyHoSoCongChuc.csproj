@@ -302,6 +302,18 @@
     </Compile>
     <Compile Include="Models\NhanVienModel.cs" />
     <Compile Include="Models\OverrideData.cs" />
+    <Compile Include="Report\CrBaoCaoLuong3.cs">
+      <DependentUpon>CrBaoCaoLuong3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\CrBaoCaoLuong2.cs">
+      <DependentUpon>CrBaoCaoLuong2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Report\CrBaoCaoLuong.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -316,6 +328,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSBaoCao1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FrmDanhSachNangLuong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrmDanhSachNangLuong.Designer.cs">
+      <DependentUpon>FrmDanhSachNangLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\FrmPrintReport.cs">
       <SubType>Form</SubType>
@@ -823,9 +841,20 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrBaoCaoLuong3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrBaoCaoLuong3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrBaoCaoLuong2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrBaoCaoLuong2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\CrBaoCaoLuong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrBaoCaoLuong.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FrmDanhSachNangLuong.resx">
+      <DependentUpon>FrmDanhSachNangLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmPrintReport.resx">
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
