@@ -205,7 +205,6 @@
             this.groupPanel1.Controls.Add(this.lblPassword);
             this.groupPanel1.Controls.Add(this.lblUsername);
             this.groupPanel1.Controls.Add(this.labelX1);
-            this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(844, 248);
