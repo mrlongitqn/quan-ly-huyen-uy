@@ -50,7 +50,7 @@ namespace QuanLyHoSoCongChuc.Report
             String strDt = cboKy.Text + " năm " + dupNam.Text;
             ListItem DV = (ListItem)cbDonVi.SelectedItem;
 
-            FrmPrintReport frm = new FrmPrintReport(3, DV.ID, strDt);
+            FrmPrintReport frm = new FrmPrintReport("2", DV.ID, strDt);
             frm.Show();
         }
     }

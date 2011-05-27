@@ -302,8 +302,20 @@
     </Compile>
     <Compile Include="Models\NhanVienModel.cs" />
     <Compile Include="Models\OverrideData.cs" />
-    <Compile Include="Report\CrBaoCaoDanhSachCBCCVC.cs">
-      <DependentUpon>CrBaoCaoDanhSachCBCCVC.rpt</DependentUpon>
+    <Compile Include="Report\CrBaoCaoDanhSachCBCCVC3.cs">
+      <DependentUpon>CrBaoCaoDanhSachCBCCVC3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\CrBaoCaoDanhSachCBCCVC2.cs">
+      <DependentUpon>CrBaoCaoDanhSachCBCCVC2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Report\CrBaoCaoDanhSachCBCCVC1.cs">
+      <DependentUpon>CrBaoCaoDanhSachCBCCVC1.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -326,10 +338,10 @@
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Report\CrBaoCaoLuong.cs">
+    <Compile Include="Report\CrBaoCaoLuong1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrBaoCaoLuong.rpt</DependentUpon>
+      <DependentUpon>CrBaoCaoLuong1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Report\DSBaoCao1.cs">
@@ -849,9 +861,17 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\CrBaoCaoDanhSachCBCCVC.rpt">
+    <EmbeddedResource Include="Report\CrBaoCaoDanhSachCBCCVC3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrBaoCaoDanhSachCBCCVC.cs</LastGenOutput>
+      <LastGenOutput>CrBaoCaoDanhSachCBCCVC3.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrBaoCaoDanhSachCBCCVC2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrBaoCaoDanhSachCBCCVC2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrBaoCaoDanhSachCBCCVC1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrBaoCaoDanhSachCBCCVC1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\CrDanhSachNangLuong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -865,9 +885,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrBaoCaoLuong2.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\CrBaoCaoLuong.rpt">
+    <EmbeddedResource Include="Report\CrBaoCaoLuong1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrBaoCaoLuong.cs</LastGenOutput>
+      <LastGenOutput>CrBaoCaoLuong1.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmDanhSachCBCCVC.resx">
       <DependentUpon>FrmDanhSachCBCCVC.cs</DependentUpon>

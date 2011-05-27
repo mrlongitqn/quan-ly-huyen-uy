@@ -12,11 +12,11 @@ namespace QuanLyHoSoCongChuc.Report
 {
     public partial class FrmPrintReport : Form
     {
-        int BaoCao = -1;
+        String BaoCao = "";
         String MaDV;
         String strDt;
         DataService dataService = new DataService();
-        public FrmPrintReport(int _BC, String _MaDV, String _dt)
+        public FrmPrintReport(String _BC, String _MaDV, String _dt)
         {
             InitializeComponent();
             BaoCao = _BC;
@@ -27,19 +27,19 @@ namespace QuanLyHoSoCongChuc.Report
         private void FrmPrintReport_Load(object sender, EventArgs e)
         {
             DataService.OpenConnection();
-            if (BaoCao == 0)
+            if (BaoCao == "1-0") // Bao cáo lương - 0
             {
                 SqlCommand cmd = new SqlCommand("SELECT * FROM DonVi where MaDonVi='" + MaDV + "'");
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
-                CrBaoCaoLuong rpt = new CrBaoCaoLuong();
+                CrBaoCaoLuong1 rpt = new CrBaoCaoLuong1();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
 
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
 
             }
-            else if (BaoCao == 1)
+            else if (BaoCao == "1-1")// Bao cáo lương - 1
             {
                 String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
@@ -57,7 +57,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
-            else if (BaoCao == 2)
+            else if (BaoCao == "1-2") // Bao cáo lương - 2
             {
                 String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
@@ -75,7 +75,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
-            else if (BaoCao == 3) // dnah sách nâng lương
+            else if (BaoCao == "2") // danh sách nâng lương
             {
                 
                 String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
@@ -94,7 +94,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
-            else if (BaoCao == 4) // Danh sách CB, CC, VC và hợp đồng       
+            else if (BaoCao == "3-0") // Danh sách CB, CC, VC và hợp đồng 1    
             {
 
                 String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
@@ -103,17 +103,51 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
                 sql += " where MaDonVi='" + MaDV + "'";
 
-
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
-                CrBaoCaoDanhSachCBCCVC rpt = new CrBaoCaoDanhSachCBCCVC();
+                CrBaoCaoDanhSachCBCCVC1 rpt = new CrBaoCaoDanhSachCBCCVC1();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
 
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
-            
+            else if (BaoCao == "3-1") // Danh sách CB, CC, VC và hợp đồng 2    
+            {
+
+                String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
+                sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
+                sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+                sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
+                sql += " where MaDonVi='" + MaDV + "'";
+
+                SqlCommand cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                DataTable myDt = dataService;
+                CrBaoCaoDanhSachCBCCVC2 rpt = new CrBaoCaoDanhSachCBCCVC2();
+                rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
+
+                rpt.SetDataSource(myDt);
+                this.crystalReportViewer1.ReportSource = rpt;
+            }
+            else if (BaoCao == "3-2") // Danh sách CB, CC, VC và hợp đồng 3  
+            {
+
+                String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
+                sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
+                sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+                sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
+                sql += " where MaDonVi='" + MaDV + "'";
+
+                SqlCommand cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                DataTable myDt = dataService;
+                CrBaoCaoDanhSachCBCCVC3 rpt = new CrBaoCaoDanhSachCBCCVC3();
+                rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
+
+                rpt.SetDataSource(myDt);
+                this.crystalReportViewer1.ReportSource = rpt;
+            }
         }
     }
 }

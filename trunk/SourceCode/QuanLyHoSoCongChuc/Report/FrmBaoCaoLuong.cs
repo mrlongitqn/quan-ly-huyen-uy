@@ -44,7 +44,7 @@ namespace QuanLyHoSoCongChuc.Report
             ListItem DV = (ListItem)cbDonVi.SelectedItem;
             int type = cbDoiTuong.SelectedIndex;
 
-            FrmPrintReport frm = new FrmPrintReport(type, DV.ID, strDt);
+            FrmPrintReport frm = new FrmPrintReport("1-"+type.ToString(), DV.ID, strDt);
             frm.Show();
         }
     }
