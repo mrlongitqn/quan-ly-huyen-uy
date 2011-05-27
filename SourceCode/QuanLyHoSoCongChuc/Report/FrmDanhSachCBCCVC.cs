@@ -40,8 +40,9 @@ namespace QuanLyHoSoCongChuc.Report
         private void btInBieu_Click(object sender, EventArgs e)
         {
             ListItem DV = (ListItem)cbDonVi.SelectedItem;
+            int type = cbDoiTuong.SelectedIndex;
 
-            FrmPrintReport frm = new FrmPrintReport(4, DV.ID, "");
+            FrmPrintReport frm = new FrmPrintReport("3-"+type.ToString(), DV.ID, "");
             frm.Show();
         }
     }
