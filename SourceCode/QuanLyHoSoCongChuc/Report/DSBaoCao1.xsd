@@ -447,6 +447,8 @@
               <xs:element name="NgaySinhNam" msprop:Generator_ColumnVarNameInTable="columnNgaySinhNam" msprop:Generator_ColumnPropNameInRow="NgaySinhNam" msprop:Generator_ColumnPropNameInTable="NgaySinhNamColumn" msprop:Generator_UserColumnName="NgaySinhNam" type="xs:dateTime" minOccurs="0" />
               <xs:element name="NgaySinhNu" msprop:Generator_ColumnVarNameInTable="columnNgaySinhNu" msprop:Generator_ColumnPropNameInRow="NgaySinhNu" msprop:Generator_ColumnPropNameInTable="NgaySinhNuColumn" msprop:Generator_UserColumnName="NgaySinhNu" type="xs:dateTime" minOccurs="0" />
               <xs:element name="TenTrinhDoChuyenMon" msprop:Generator_ColumnVarNameInTable="columnTenTrinhDoChuyenMon" msprop:Generator_ColumnPropNameInRow="TenTrinhDoChuyenMon" msprop:Generator_ColumnPropNameInTable="TenTrinhDoChuyenMonColumn" msprop:Generator_UserColumnName="TenTrinhDoChuyenMon" type="xs:string" minOccurs="0" />
+              <xs:element name="TenChucVu" msprop:Generator_ColumnVarNameInTable="columnTenChucVu" msprop:Generator_ColumnPropNameInRow="TenChucVu" msprop:Generator_ColumnPropNameInTable="TenChucVuColumn" msprop:Generator_UserColumnName="TenChucVu" type="xs:string" minOccurs="0" />
+              <xs:element name="TenTrinhDoChinhTri" msprop:Generator_ColumnVarNameInTable="columnTenTrinhDoChinhTri" msprop:Generator_ColumnPropNameInRow="TenTrinhDoChinhTri" msprop:Generator_ColumnPropNameInTable="TenTrinhDoChinhTriColumn" msprop:Generator_UserColumnName="TenTrinhDoChinhTri" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
