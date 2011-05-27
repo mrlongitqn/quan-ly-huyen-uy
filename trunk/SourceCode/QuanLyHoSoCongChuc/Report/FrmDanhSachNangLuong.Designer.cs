@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -39,10 +39,10 @@
             this.comboItem8 = new DevComponents.Editors.ComboItem();
             this.comboItem9 = new DevComponents.Editors.ComboItem();
             this.cbDonVi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
+            this.btThoat = new DevComponents.DotNetBar.ButtonX();
+            this.btLuuBieu = new DevComponents.DotNetBar.ButtonX();
+            this.btInBieu = new DevComponents.DotNetBar.ButtonX();
+            this.btBaoBieu = new DevComponents.DotNetBar.ButtonX();
             this.comboBoxEx4 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
@@ -100,10 +100,10 @@
             this.groupPanel2.Controls.Add(this.textBox9);
             this.groupPanel2.Controls.Add(this.cboKy);
             this.groupPanel2.Controls.Add(this.cbDonVi);
-            this.groupPanel2.Controls.Add(this.buttonX2);
-            this.groupPanel2.Controls.Add(this.buttonX3);
-            this.groupPanel2.Controls.Add(this.buttonX4);
-            this.groupPanel2.Controls.Add(this.buttonX5);
+            this.groupPanel2.Controls.Add(this.btThoat);
+            this.groupPanel2.Controls.Add(this.btLuuBieu);
+            this.groupPanel2.Controls.Add(this.btInBieu);
+            this.groupPanel2.Controls.Add(this.btBaoBieu);
             this.groupPanel2.Controls.Add(this.comboBoxEx4);
             this.groupPanel2.Controls.Add(this.radioButton1);
             this.groupPanel2.Controls.Add(this.radioButton2);
@@ -183,15 +183,15 @@
             // 
             // comboItem7
             // 
-            this.comboItem7.Text = "6 tháng đầu năm";
+            this.comboItem7.Text = "Quý I";
             // 
             // comboItem8
             // 
-            this.comboItem8.Text = "6 tháng cuối năm";
+            this.comboItem8.Text = "Quý II";
             // 
             // comboItem9
             // 
-            this.comboItem9.Text = "Cả năm";
+            this.comboItem9.Text = "Quý III";
             // 
             // cbDonVi
             // 
@@ -204,45 +204,46 @@
             this.cbDonVi.Size = new System.Drawing.Size(192, 20);
             this.cbDonVi.TabIndex = 146;
             // 
-            // buttonX2
+            // btThoat
             // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.Location = new System.Drawing.Point(745, 78);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(80, 20);
-            this.buttonX2.TabIndex = 145;
-            this.buttonX2.Text = "Thoát";
+            this.btThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btThoat.Location = new System.Drawing.Point(745, 78);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(80, 20);
+            this.btThoat.TabIndex = 145;
+            this.btThoat.Text = "Thoát";
             // 
-            // buttonX3
+            // btLuuBieu
             // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.Location = new System.Drawing.Point(745, 48);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(80, 20);
-            this.buttonX3.TabIndex = 144;
-            this.buttonX3.Text = "Lưu biểu";
+            this.btLuuBieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btLuuBieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btLuuBieu.Location = new System.Drawing.Point(745, 48);
+            this.btLuuBieu.Name = "btLuuBieu";
+            this.btLuuBieu.Size = new System.Drawing.Size(80, 20);
+            this.btLuuBieu.TabIndex = 144;
+            this.btLuuBieu.Text = "Lưu biểu";
             // 
-            // buttonX4
+            // btInBieu
             // 
-            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.Location = new System.Drawing.Point(653, 78);
-            this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(80, 20);
-            this.buttonX4.TabIndex = 143;
-            this.buttonX4.Text = "In biểu";
+            this.btInBieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btInBieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btInBieu.Location = new System.Drawing.Point(653, 78);
+            this.btInBieu.Name = "btInBieu";
+            this.btInBieu.Size = new System.Drawing.Size(80, 20);
+            this.btInBieu.TabIndex = 143;
+            this.btInBieu.Text = "In biểu";
+            this.btInBieu.Click += new System.EventHandler(this.btInBieu_Click);
             // 
-            // buttonX5
+            // btBaoBieu
             // 
-            this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.Location = new System.Drawing.Point(653, 48);
-            this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(80, 20);
-            this.buttonX5.TabIndex = 142;
-            this.buttonX5.Text = "Báo biểu";
+            this.btBaoBieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btBaoBieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btBaoBieu.Location = new System.Drawing.Point(653, 48);
+            this.btBaoBieu.Name = "btBaoBieu";
+            this.btBaoBieu.Size = new System.Drawing.Size(80, 20);
+            this.btBaoBieu.TabIndex = 142;
+            this.btBaoBieu.Text = "Báo biểu";
             // 
             // comboBoxEx4
             // 
@@ -396,14 +397,14 @@
             this.MaNgachCC,
             this.BacLuong,
             this.HeSoLuong});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVLuong.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVLuong.DefaultCellStyle = dataGridViewCellStyle5;
             this.DGVLuong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVLuong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DGVLuong.Location = new System.Drawing.Point(0, 0);
@@ -417,7 +418,6 @@
             this.dupNam.Name = "dupNam";
             this.dupNam.Size = new System.Drawing.Size(77, 20);
             this.dupNam.TabIndex = 152;
-            this.dupNam.Text = "domainUpDown1";
             // 
             // HoTenNhanVien
             // 
@@ -504,10 +504,10 @@
         private DevComponents.Editors.ComboItem comboItem8;
         private DevComponents.Editors.ComboItem comboItem9;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbDonVi;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
-        private DevComponents.DotNetBar.ButtonX buttonX5;
+        private DevComponents.DotNetBar.ButtonX btThoat;
+        private DevComponents.DotNetBar.ButtonX btLuuBieu;
+        private DevComponents.DotNetBar.ButtonX btInBieu;
+        private DevComponents.DotNetBar.ButtonX btBaoBieu;
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx4;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;

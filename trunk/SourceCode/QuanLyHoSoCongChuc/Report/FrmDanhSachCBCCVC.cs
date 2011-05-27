@@ -13,18 +13,18 @@ namespace QuanLyHoSoCongChuc.Report
     using QuanLyHoSoCongChuc.Models;
     using QuanLyHoSoCongChuc.Repositories;
     #endregion
-    public partial class FrmDanhSachNangLuong : Form
+    public partial class FrmDanhSachCBCCVC : Form
     {
-        public FrmDanhSachNangLuong()
+        public FrmDanhSachCBCCVC()
         {
             InitializeComponent();
         }
 
-        private void FrmDanhSachNangLuong_Load(object sender, EventArgs e)
+        private void FrmDanhSachCBCCVC_Load(object sender, EventArgs e)
         {
             loadDonVi();
-            loadNam();
-            cboKy.SelectedIndex = 0;
+            cbDoiTuong.SelectedIndex = 0;
+            cbKy.SelectedIndex = 0;
         }
         void loadDonVi()
         {
@@ -36,21 +36,12 @@ namespace QuanLyHoSoCongChuc.Report
             if (lstDonVi.Count > 0)
                 cbDonVi.SelectedIndex = 0;
         }
-        void loadNam()
-        {
-            for (int i = 0; i < 100; i++)
-            {
-                dupNam.Items.Add(1950+i);
-            }
-            cbDonVi.SelectedIndex = 50;
-        }
 
         private void btInBieu_Click(object sender, EventArgs e)
         {
-            String strDt = cboKy.Text + " năm " + dupNam.Text;
             ListItem DV = (ListItem)cbDonVi.SelectedItem;
 
-            FrmPrintReport frm = new FrmPrintReport(3, DV.ID, strDt);
+            FrmPrintReport frm = new FrmPrintReport(4, DV.ID, "");
             frm.Show();
         }
     }
