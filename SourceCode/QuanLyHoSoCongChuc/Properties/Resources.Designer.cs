@@ -382,6 +382,20 @@ namespace QuanLyHoSoCongChuc.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Sign_Select_icon {
+            get {
+                object obj = ResourceManager.GetObject("Sign-Select-icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap Sign_Select_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("Sign-Select-icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap text_rich_marked {
             get {
                 object obj = ResourceManager.GetObject("text_rich_marked", resourceCulture);

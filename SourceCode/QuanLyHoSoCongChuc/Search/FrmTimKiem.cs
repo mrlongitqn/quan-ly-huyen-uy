@@ -253,6 +253,7 @@ namespace QuanLyHoSoCongChuc.Search
         {
             FrmDanhMuc frm = new FrmDanhMuc();
             frm.Handler += GetDonVi4TieuChiKhac;
+            frm.EnableButtonChon = true;
             frm.ShowDialog();
         }
 

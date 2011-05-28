@@ -190,6 +190,8 @@
             // 
             this.btnChon.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnChon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnChon.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Sign_Select_icon1;
+            this.btnChon.ImageFixedSize = new System.Drawing.Size(20, 20);
             this.btnChon.Location = new System.Drawing.Point(12, 8);
             this.btnChon.Name = "btnChon";
             this.btnChon.Size = new System.Drawing.Size(75, 23);
@@ -257,6 +259,7 @@
             this.ClientSize = new System.Drawing.Size(447, 562);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.DoubleBuffered = true;
             this.Name = "FrmDanhMucHanhChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Mục Hành Chính";
