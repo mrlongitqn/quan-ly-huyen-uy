@@ -27,6 +27,7 @@ namespace QuanLyHoSoCongChuc
         NhanVienControl m_NhanVienCtrl = new NhanVienControl();
         List<LoaiDonVi> lstLoaiDonVi;
         List<PhanLoaiDonVi> lstPhanLoai;
+        public bool EnableButtonChon = false;
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
 
@@ -50,11 +51,10 @@ namespace QuanLyHoSoCongChuc
         private void FrmReportLuong_Load(object sender, EventArgs e)
         {
             init();
-            //CrBaoCaoLuong rpt = new CrBaoCaoLuong();
-
-            //reportViewerLuong.d = rpt;
-            //crystalReportViewer1.Show();
-            //reportViewerLuong.Refresh();
+            if (EnableButtonChon)
+                btChon.Visible = true;
+            else
+                btChon.Visible = false;
         }
         void init()
         {
@@ -344,6 +344,11 @@ namespace QuanLyHoSoCongChuc
         {
             this.Close();
             this.Handler(this, e);
+        }
+
+        private void btnThoat_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     } 
 }
