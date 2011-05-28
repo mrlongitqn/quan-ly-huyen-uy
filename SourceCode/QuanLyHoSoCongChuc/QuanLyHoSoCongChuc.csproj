@@ -288,16 +288,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds4RP1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FrmThemLoaiDonVi.cs">
+    <Compile Include="Danh muc\FrmThemLoaiDonVi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmThemLoaiDonVi.Designer.cs">
+    <Compile Include="Danh muc\FrmThemLoaiDonVi.Designer.cs">
       <DependentUpon>FrmThemLoaiDonVi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmThemPhanLoaiDonVi.cs">
+    <Compile Include="Danh muc\FrmThemPhanLoaiDonVi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmThemPhanLoaiDonVi.Designer.cs">
+    <Compile Include="Danh muc\FrmThemPhanLoaiDonVi.Designer.cs">
       <DependentUpon>FrmThemPhanLoaiDonVi.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\NhanVienModel.cs" />
@@ -474,16 +474,16 @@
     <Compile Include="FrmDangNhap.Designer.cs">
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDanhMuc.cs">
+    <Compile Include="Danh muc\FrmDanhMuc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDanhMuc.Designer.cs">
+    <Compile Include="Danh muc\FrmDanhMuc.Designer.cs">
       <DependentUpon>FrmDanhMuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDanhMucHanhChinh.cs">
+    <Compile Include="Danh muc\FrmDanhMucHanhChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDanhMucHanhChinh.Designer.cs">
+    <Compile Include="Danh muc\FrmDanhMucHanhChinh.Designer.cs">
       <DependentUpon>FrmDanhMucHanhChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDanhSachNhanVien.cs">
@@ -636,10 +636,10 @@
     <Compile Include="FrmThanNhan.Designer.cs">
       <DependentUpon>FrmThanNhan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmThemDanhMucHanhChinh.cs">
+    <Compile Include="Danh muc\FrmThemDanhMucHanhChinh.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmThemDanhMucHanhChinh.Designer.cs">
+    <Compile Include="Danh muc\FrmThemDanhMucHanhChinh.Designer.cs">
       <DependentUpon>FrmThemDanhMucHanhChinh.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmThongTinLienHe.cs">
@@ -778,10 +778,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDanhMuc.resx">
+    <EmbeddedResource Include="Danh muc\FrmDanhMuc.resx">
       <DependentUpon>FrmDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDanhMucHanhChinh.resx">
+    <EmbeddedResource Include="Danh muc\FrmDanhMucHanhChinh.resx">
       <DependentUpon>FrmDanhMucHanhChinh.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDanhSachNhanVien.resx">
@@ -881,14 +881,14 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmThanNhan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmThemDanhMucHanhChinh.resx">
+    <EmbeddedResource Include="Danh muc\FrmThemDanhMucHanhChinh.resx">
       <DependentUpon>FrmThemDanhMucHanhChinh.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmThemLoaiDonVi.resx">
+    <EmbeddedResource Include="Danh muc\FrmThemLoaiDonVi.resx">
       <DependentUpon>FrmThemLoaiDonVi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmThemPhanLoaiDonVi.resx">
+    <EmbeddedResource Include="Danh muc\FrmThemPhanLoaiDonVi.resx">
       <DependentUpon>FrmThemPhanLoaiDonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmThongTinLienHe.resx">
