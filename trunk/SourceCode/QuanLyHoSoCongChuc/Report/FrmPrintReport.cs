@@ -29,6 +29,7 @@ namespace QuanLyHoSoCongChuc.Report
             DataService.OpenConnection();
             if (BaoCao == "1-0") // Bao cáo lương - 0
             {
+                this.Text = "Báo cáo lương";
                 SqlCommand cmd = new SqlCommand("SELECT * FROM DonVi where MaDonVi='" + MaDV + "'");
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
@@ -41,6 +42,7 @@ namespace QuanLyHoSoCongChuc.Report
             }
             else if (BaoCao == "1-1")// Bao cáo lương - 1
             {
+                this.Text = "Báo cáo lương";
                 String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
@@ -59,6 +61,7 @@ namespace QuanLyHoSoCongChuc.Report
             }
             else if (BaoCao == "1-2") // Bao cáo lương - 2
             {
+                this.Text = "Báo cáo lương";
                 String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
@@ -77,7 +80,7 @@ namespace QuanLyHoSoCongChuc.Report
             }
             else if (BaoCao == "2") // danh sách nâng lương
             {
-
+                this.Text = "Danh sách nâng lương";
                 String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
@@ -96,7 +99,7 @@ namespace QuanLyHoSoCongChuc.Report
             }
             else if (BaoCao == "4-0") // Danh sách CB, CC, VC và hợp đồng 1    
             {
-
+                this.Text = "Danh sách CB, CC, VC và hợp đồng";
                 String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
@@ -114,7 +117,7 @@ namespace QuanLyHoSoCongChuc.Report
             }
             else if (BaoCao == "4-1") // Danh sách CB, CC, VC và hợp đồng 2    
             {
-
+                this.Text = "Danh sách CB, CC, VC và hợp đồng";
                 String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
@@ -132,7 +135,7 @@ namespace QuanLyHoSoCongChuc.Report
             }
             else if (BaoCao == "4-2") // Danh sách CB, CC, VC và hợp đồng 3  
             {
-
+                this.Text = "Danh sách CB, CC, VC và hợp đồng";
                 String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
@@ -150,7 +153,7 @@ namespace QuanLyHoSoCongChuc.Report
             }
             else if (BaoCao == "5") // Danh sách đủ tuổi về hưu, đủ năm công tác về hưu
             {
-
+                this.Text = "Danh sách đủ tuổi về hưu, đủ năm công tác về hưu";
                 String sql = " select * from NhanVien";
                 //sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 //sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
