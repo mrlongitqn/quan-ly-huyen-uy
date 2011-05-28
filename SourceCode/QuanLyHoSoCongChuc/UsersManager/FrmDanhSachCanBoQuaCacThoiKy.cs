@@ -101,7 +101,6 @@ namespace QuanLyHoSoCongChuc.UsersManager
                     objListViewItem.Tag = lstItem[i];
                     objListViewItem.Text = (i + 1).ToString();
                     objListViewItem.SubItems.Add(lstItem[i].HoTen);
-                    objListViewItem.SubItems.Add(lstItem[i].DonVi.TenDonVi);
                     objListViewItem.SubItems.Add(lstItem[i].TinhTrang.Value ? "Còn sống" : "Đã mất");
                     objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh.Value));
                     objListViewItem.SubItems.Add(lstItem[i].NoiOHienNay);
