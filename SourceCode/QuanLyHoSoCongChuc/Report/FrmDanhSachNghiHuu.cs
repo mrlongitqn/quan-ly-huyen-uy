@@ -82,8 +82,14 @@ namespace QuanLyHoSoCongChuc.Report
                 DGV.Rows[i].Cells["TuoiDoi"].Value = DateTime.Now.Year - dt.Year;
                 dt = (DateTime)myDt.Rows[i]["NgayHopDong"];
                 DGV.Rows[i].Cells["NamCongTac"].Value = dt.ToString("dd/MM/yyyy");
+                DGV.Rows[i].Cells["HeSoLuong"].Value = myDt.Rows[i]["HeSoLuong"].ToString();
+                DGV.Rows[i].Cells["TenChucVu"].Value = myDt.Rows[i]["TenChucVu"].ToString();
                 DGV.Rows[i].Cells["TenTrinhDoChuyenMon"].Value = myDt.Rows[i]["TenTrinhDoChuyenMon"].ToString();
                 DGV.Rows[i].Cells["TenTrinhDoChinhTri"].Value = myDt.Rows[i]["TenTrinhDoChinhTri"].ToString();
+            }
+            if (myDt.Rows.Count == 0)
+            {
+                MessageBox.Show("No data");
             }
         }
     }

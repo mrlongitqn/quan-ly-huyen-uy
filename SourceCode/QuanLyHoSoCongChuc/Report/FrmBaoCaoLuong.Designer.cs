@@ -33,6 +33,23 @@
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.DGVLuong = new DevComponents.DotNetBar.Controls.DataGridViewX();
+            this.HoTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaLuongNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNgach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNgachCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BacLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Huong85 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChenhLechBaoLuuHeSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HuongLuongTuNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MocTinhNangLuongLanSau = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeSoPhuCapChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeSoPhuCapThamNienVuotKhung = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeSoPhuCapKiemNhiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeSoPhuCapKhac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -63,23 +80,6 @@
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.HoTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLuongNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNgach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNgachCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BacLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Huong85 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ChenhLechBaoLuuHeSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HuongLuongTuNgay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MocTinhNangLuongLanSau = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeSoPhuCapChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeSoPhuCapThamNienVuotKhung = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeSoPhuCapKiemNhiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeSoPhuCapKhac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVLuong)).BeginInit();
             this.panelEx1.SuspendLayout();
@@ -159,6 +159,108 @@
             this.DGVLuong.Name = "DGVLuong";
             this.DGVLuong.Size = new System.Drawing.Size(844, 242);
             this.DGVLuong.TabIndex = 2;
+            // 
+            // HoTenNhanVien
+            // 
+            this.HoTenNhanVien.DataPropertyName = "STT";
+            this.HoTenNhanVien.HeaderText = "STT";
+            this.HoTenNhanVien.Name = "HoTenNhanVien";
+            // 
+            // MaGioiTinh
+            // 
+            this.MaGioiTinh.DataPropertyName = "TenDonVi";
+            this.MaGioiTinh.HeaderText = "Tên đơn vị";
+            this.MaGioiTinh.Name = "MaGioiTinh";
+            // 
+            // MaChucVu
+            // 
+            this.MaChucVu.DataPropertyName = "MaChucVu";
+            this.MaChucVu.HeaderText = "Chức Vụ";
+            this.MaChucVu.Name = "MaChucVu";
+            // 
+            // MaDonVi
+            // 
+            this.MaDonVi.DataPropertyName = "MaDonVi";
+            this.MaDonVi.HeaderText = "Đơn Vị";
+            this.MaDonVi.Name = "MaDonVi";
+            // 
+            // MaLuongNhanVien
+            // 
+            this.MaLuongNhanVien.DataPropertyName = "MaLuongNhanVien";
+            this.MaLuongNhanVien.HeaderText = "Mã Lương Nhân Viên";
+            this.MaLuongNhanVien.Name = "MaLuongNhanVien";
+            // 
+            // MaNgach
+            // 
+            this.MaNgach.DataPropertyName = "MaNgach";
+            this.MaNgach.HeaderText = "Ngạch Công Chức";
+            this.MaNgach.Name = "MaNgach";
+            // 
+            // MaNgachCC
+            // 
+            this.MaNgachCC.DataPropertyName = "MaNgach";
+            this.MaNgachCC.HeaderText = "Mã Ngạch";
+            this.MaNgachCC.Name = "MaNgachCC";
+            // 
+            // BacLuong
+            // 
+            this.BacLuong.DataPropertyName = "BacLuong";
+            this.BacLuong.HeaderText = "Bậc Lương";
+            this.BacLuong.Name = "BacLuong";
+            // 
+            // HeSoLuong
+            // 
+            this.HeSoLuong.DataPropertyName = "HeSoLuong";
+            this.HeSoLuong.HeaderText = "Hệ Số Lương";
+            this.HeSoLuong.Name = "HeSoLuong";
+            // 
+            // Huong85
+            // 
+            this.Huong85.DataPropertyName = "LuongCongChucDuBi";
+            this.Huong85.HeaderText = "Công Chức Dự Bị";
+            this.Huong85.Name = "Huong85";
+            // 
+            // ChenhLechBaoLuuHeSoLuong
+            // 
+            this.ChenhLechBaoLuuHeSoLuong.DataPropertyName = "ChenhLechBaoLuuHeSoLuong";
+            this.ChenhLechBaoLuuHeSoLuong.HeaderText = "Chênh Lệch Bảo Lưu Hệ Số Lương";
+            this.ChenhLechBaoLuuHeSoLuong.Name = "ChenhLechBaoLuuHeSoLuong";
+            // 
+            // HuongLuongTuNgay
+            // 
+            this.HuongLuongTuNgay.DataPropertyName = "HuongLuongTuNgay";
+            this.HuongLuongTuNgay.HeaderText = "Hưởng Lương Từ Ngày";
+            this.HuongLuongTuNgay.Name = "HuongLuongTuNgay";
+            // 
+            // MocTinhNangLuongLanSau
+            // 
+            this.MocTinhNangLuongLanSau.DataPropertyName = "MocTinhNangLuongLanSau";
+            this.MocTinhNangLuongLanSau.HeaderText = "Móc Tính Nâng Lương Lần Sau";
+            this.MocTinhNangLuongLanSau.Name = "MocTinhNangLuongLanSau";
+            // 
+            // HeSoPhuCapChucVu
+            // 
+            this.HeSoPhuCapChucVu.DataPropertyName = "HeSoPhuCapChucVu";
+            this.HeSoPhuCapChucVu.HeaderText = "Hệ Số Phụ Cấp Chức Vụ";
+            this.HeSoPhuCapChucVu.Name = "HeSoPhuCapChucVu";
+            // 
+            // HeSoPhuCapThamNienVuotKhung
+            // 
+            this.HeSoPhuCapThamNienVuotKhung.DataPropertyName = "HeSoPhuCapThamNienVuotKhung";
+            this.HeSoPhuCapThamNienVuotKhung.HeaderText = "Phụ Cấp Thâm Niên Vượt Khung";
+            this.HeSoPhuCapThamNienVuotKhung.Name = "HeSoPhuCapThamNienVuotKhung";
+            // 
+            // HeSoPhuCapKiemNhiem
+            // 
+            this.HeSoPhuCapKiemNhiem.DataPropertyName = "HeSoPhuCapKiemNhiem";
+            this.HeSoPhuCapKiemNhiem.HeaderText = "Hệ Số Phụ Cấp Kiêm nhiệm";
+            this.HeSoPhuCapKiemNhiem.Name = "HeSoPhuCapKiemNhiem";
+            // 
+            // HeSoPhuCapKhac
+            // 
+            this.HeSoPhuCapKhac.DataPropertyName = "HeSoPhuCapKhac";
+            this.HeSoPhuCapKhac.HeaderText = "Hệ Số Phụ Cấp Khác";
+            this.HeSoPhuCapKhac.Name = "HeSoPhuCapKhac";
             // 
             // panelEx1
             // 
@@ -359,6 +461,7 @@
             this.btBaoBieu.Size = new System.Drawing.Size(80, 20);
             this.btBaoBieu.TabIndex = 142;
             this.btBaoBieu.Text = "Báo biểu";
+            this.btBaoBieu.Click += new System.EventHandler(this.btBaoBieu_Click);
             // 
             // cbSaved
             // 
@@ -480,108 +583,6 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "BÁO CÁO LƯƠNG - QUỸ LƯƠNG";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // HoTenNhanVien
-            // 
-            this.HoTenNhanVien.DataPropertyName = "STT";
-            this.HoTenNhanVien.HeaderText = "STT";
-            this.HoTenNhanVien.Name = "HoTenNhanVien";
-            // 
-            // MaGioiTinh
-            // 
-            this.MaGioiTinh.DataPropertyName = "TenDonVi";
-            this.MaGioiTinh.HeaderText = "Tên đơn vị";
-            this.MaGioiTinh.Name = "MaGioiTinh";
-            // 
-            // MaChucVu
-            // 
-            this.MaChucVu.DataPropertyName = "MaChucVu";
-            this.MaChucVu.HeaderText = "Chức Vụ";
-            this.MaChucVu.Name = "MaChucVu";
-            // 
-            // MaDonVi
-            // 
-            this.MaDonVi.DataPropertyName = "MaDonVi";
-            this.MaDonVi.HeaderText = "Đơn Vị";
-            this.MaDonVi.Name = "MaDonVi";
-            // 
-            // MaLuongNhanVien
-            // 
-            this.MaLuongNhanVien.DataPropertyName = "MaLuongNhanVien";
-            this.MaLuongNhanVien.HeaderText = "Mã Lương Nhân Viên";
-            this.MaLuongNhanVien.Name = "MaLuongNhanVien";
-            // 
-            // MaNgach
-            // 
-            this.MaNgach.DataPropertyName = "MaNgach";
-            this.MaNgach.HeaderText = "Ngạch Công Chức";
-            this.MaNgach.Name = "MaNgach";
-            // 
-            // MaNgachCC
-            // 
-            this.MaNgachCC.DataPropertyName = "MaNgach";
-            this.MaNgachCC.HeaderText = "Mã Ngạch";
-            this.MaNgachCC.Name = "MaNgachCC";
-            // 
-            // BacLuong
-            // 
-            this.BacLuong.DataPropertyName = "BacLuong";
-            this.BacLuong.HeaderText = "Bậc Lương";
-            this.BacLuong.Name = "BacLuong";
-            // 
-            // HeSoLuong
-            // 
-            this.HeSoLuong.DataPropertyName = "HeSoLuong";
-            this.HeSoLuong.HeaderText = "Hệ Số Lương";
-            this.HeSoLuong.Name = "HeSoLuong";
-            // 
-            // Huong85
-            // 
-            this.Huong85.DataPropertyName = "LuongCongChucDuBi";
-            this.Huong85.HeaderText = "Công Chức Dự Bị";
-            this.Huong85.Name = "Huong85";
-            // 
-            // ChenhLechBaoLuuHeSoLuong
-            // 
-            this.ChenhLechBaoLuuHeSoLuong.DataPropertyName = "ChenhLechBaoLuuHeSoLuong";
-            this.ChenhLechBaoLuuHeSoLuong.HeaderText = "Chênh Lệch Bảo Lưu Hệ Số Lương";
-            this.ChenhLechBaoLuuHeSoLuong.Name = "ChenhLechBaoLuuHeSoLuong";
-            // 
-            // HuongLuongTuNgay
-            // 
-            this.HuongLuongTuNgay.DataPropertyName = "HuongLuongTuNgay";
-            this.HuongLuongTuNgay.HeaderText = "Hưởng Lương Từ Ngày";
-            this.HuongLuongTuNgay.Name = "HuongLuongTuNgay";
-            // 
-            // MocTinhNangLuongLanSau
-            // 
-            this.MocTinhNangLuongLanSau.DataPropertyName = "MocTinhNangLuongLanSau";
-            this.MocTinhNangLuongLanSau.HeaderText = "Móc Tính Nâng Lương Lần Sau";
-            this.MocTinhNangLuongLanSau.Name = "MocTinhNangLuongLanSau";
-            // 
-            // HeSoPhuCapChucVu
-            // 
-            this.HeSoPhuCapChucVu.DataPropertyName = "HeSoPhuCapChucVu";
-            this.HeSoPhuCapChucVu.HeaderText = "Hệ Số Phụ Cấp Chức Vụ";
-            this.HeSoPhuCapChucVu.Name = "HeSoPhuCapChucVu";
-            // 
-            // HeSoPhuCapThamNienVuotKhung
-            // 
-            this.HeSoPhuCapThamNienVuotKhung.DataPropertyName = "HeSoPhuCapThamNienVuotKhung";
-            this.HeSoPhuCapThamNienVuotKhung.HeaderText = "Phụ Cấp Thâm Niên Vượt Khung";
-            this.HeSoPhuCapThamNienVuotKhung.Name = "HeSoPhuCapThamNienVuotKhung";
-            // 
-            // HeSoPhuCapKiemNhiem
-            // 
-            this.HeSoPhuCapKiemNhiem.DataPropertyName = "HeSoPhuCapKiemNhiem";
-            this.HeSoPhuCapKiemNhiem.HeaderText = "Hệ Số Phụ Cấp Kiêm nhiệm";
-            this.HeSoPhuCapKiemNhiem.Name = "HeSoPhuCapKiemNhiem";
-            // 
-            // HeSoPhuCapKhac
-            // 
-            this.HeSoPhuCapKhac.DataPropertyName = "HeSoPhuCapKhac";
-            this.HeSoPhuCapKhac.HeaderText = "Hệ Số Phụ Cấp Khác";
-            this.HeSoPhuCapKhac.Name = "HeSoPhuCapKhac";
             // 
             // FrmBaoCaoLuong
             // 
