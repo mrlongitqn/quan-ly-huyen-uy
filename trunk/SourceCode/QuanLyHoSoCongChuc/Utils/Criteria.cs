@@ -231,7 +231,7 @@ namespace QuanLyHoSoCongChuc.Utils
         /// </summary>
         /// <param name="dataSource"></param>
         /// <param name="dataBase"></param>
-        private void CreateConnection(string dataSource, string dataBase)
+        public void CreateConnection(string dataSource, string dataBase)
         {
             DBProvider.InitDBProvider(dataSource, dataBase);
         }

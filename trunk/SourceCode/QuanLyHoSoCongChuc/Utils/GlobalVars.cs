@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using QuanLyHoSoCongChuc.UsersDiary;
+using QuanLyHoSoCongChuc.Search;
 
 namespace QuanLyHoSoCongChuc.Utils
 {
@@ -55,8 +56,10 @@ namespace QuanLyHoSoCongChuc.Utils
         public static string g_strTenDangNhap = "qlhscc_admin";
         public static string g_strTenMayTram = "";
         public static string g_strPathNhatKi = "D:\\user_diary.xml";
+        public static string g_strPathCauhoiTimKiem = "D:\\user_queries.xml";
         public static EnumChucNangHeThong g_ChucNangSuDung;
         public static NhatKyNguoiDung g_NhatKyNguoiDung { get; set; }
+        public static CauHoiNguoiDung g_CauHoiNguoiDung { get; set; }
         public static string g_strDataBaseName = "";
 
         /// <summary>
@@ -144,6 +147,18 @@ namespace QuanLyHoSoCongChuc.Utils
     {
         public string Data { get; set; }
         public MyEvent(string _data)
+        {
+            Data = _data;
+        }
+    }
+
+    /// <summary>
+    /// Class is used to transfer data loaded from file
+    /// </summary>
+    public class MyQueryEvent : EventArgs
+    {
+        public object Data { get; set; }
+        public MyQueryEvent(object _data)
         {
             Data = _data;
         }
