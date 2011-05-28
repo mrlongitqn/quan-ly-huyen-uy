@@ -275,6 +275,12 @@
     <Compile Include="DataLayer\TrinhDoNgoaiNguData.cs" />
     <Compile Include="DataLayer\TrinhDoQuanLyNhaNuocData.cs" />
     <Compile Include="DataLayer\TrinhDoTinHocData.cs" />
+    <Compile Include="DataManager\PhieuBaoChuyenNgach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManager\PhieuBaoChuyenNgach.Designer.cs">
+      <DependentUpon>PhieuBaoChuyenNgach.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -762,6 +768,9 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManager\PhieuBaoChuyenNgach.resx">
+      <DependentUpon>PhieuBaoChuyenNgach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmChucNangKhenThuong.resx">
       <SubType>Designer</SubType>
@@ -1310,7 +1319,6 @@
     <None Include="Resources\quanhuyen.jpg" />
     <None Include="Resources\tinhthanh.gif" />
     <None Include="Resources\excel.png" />
-    <Content Include="UsersDiary\UsersDiary.xml" />
     <None Include="Resources\erase.jpg" />
     <None Include="Resources\Eraser-icon.png" />
     <None Include="Resources\printer.jpg" />
@@ -1385,7 +1393,6 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DataManager\" />
     <Folder Include="SystemManager\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
