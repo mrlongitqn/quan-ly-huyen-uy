@@ -53,5 +53,10 @@ namespace QuanLyHoSoCongChuc.Report
             FrmPrintReport frm = new FrmPrintReport("2", DV.ID, strDt);
             frm.Show();
         }
+
+        private void btBaoBieu_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chua lam xong");
+        }
     }
 }
