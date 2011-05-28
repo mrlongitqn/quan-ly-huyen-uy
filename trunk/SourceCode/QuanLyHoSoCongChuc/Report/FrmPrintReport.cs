@@ -77,7 +77,7 @@ namespace QuanLyHoSoCongChuc.Report
             }
             else if (BaoCao == "2") // danh sách nâng lương
             {
-                
+
                 String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
@@ -94,7 +94,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
-            else if (BaoCao == "3-0") // Danh sách CB, CC, VC và hợp đồng 1    
+            else if (BaoCao == "4-0") // Danh sách CB, CC, VC và hợp đồng 1    
             {
 
                 String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
@@ -112,7 +112,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
-            else if (BaoCao == "3-1") // Danh sách CB, CC, VC và hợp đồng 2    
+            else if (BaoCao == "4-1") // Danh sách CB, CC, VC và hợp đồng 2    
             {
 
                 String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
@@ -130,7 +130,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
-            else if (BaoCao == "3-2") // Danh sách CB, CC, VC và hợp đồng 3  
+            else if (BaoCao == "4-2") // Danh sách CB, CC, VC và hợp đồng 3  
             {
 
                 String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
@@ -147,6 +147,27 @@ namespace QuanLyHoSoCongChuc.Report
 
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
+            }
+            else if (BaoCao == "5") // Danh sách đủ tuổi về hưu, đủ năm công tác về hưu
+            {
+
+                String sql = " select * from NhanVien";
+                //sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
+                //sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+                //sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
+                //sql += " where MaDonVi='" + MaDV + "'";
+
+                SqlCommand cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                DataTable myDt = dataService;
+                CrDanhSachNghiHuu rpt = new CrDanhSachNghiHuu();
+
+                rpt.SetDataSource(myDt);
+                this.crystalReportViewer1.ReportSource = rpt;
+            }
+            else
+            {
+                MessageBox.Show("Chua tao report");
             }
         }
     }
