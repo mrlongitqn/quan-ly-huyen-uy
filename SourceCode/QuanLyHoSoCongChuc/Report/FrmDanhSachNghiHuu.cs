@@ -14,19 +14,18 @@ namespace QuanLyHoSoCongChuc.Report
     using QuanLyHoSoCongChuc.Models;
     using QuanLyHoSoCongChuc.Repositories;
     #endregion
-    public partial class FrmDanhSachCBCCVC : Form
+    public partial class FrmDanhSachNghiHuu : Form
     {
-        public FrmDanhSachCBCCVC()
+        DataService dataService = new DataService();
+        public FrmDanhSachNghiHuu()
         {
             InitializeComponent();
         }
 
-        DataService dataService = new DataService();
-        private void FrmDanhSachCBCCVC_Load(object sender, EventArgs e)
+        private void FrmDanhSachNghiHuu_Load(object sender, EventArgs e)
         {
             loadDonVi();
-            cbDoiTuong.SelectedIndex = 0;
-            cbKy.SelectedIndex = 0;
+            loadNam();
         }
         void loadDonVi()
         {
@@ -38,13 +37,21 @@ namespace QuanLyHoSoCongChuc.Report
             if (lstDonVi.Count > 0)
                 cbDonVi.SelectedIndex = 0;
         }
+        void loadNam()
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                dupNam.Items.Add(1950 + i);
+            }
+            dupNam.SelectedIndex = 50;
+        }
 
         private void btInBieu_Click(object sender, EventArgs e)
         {
+            String strDt = cboKy.Text + " năm " + dupNam.Text;
             ListItem DV = (ListItem)cbDonVi.SelectedItem;
-            int type = cbDoiTuong.SelectedIndex;
 
-            FrmPrintReport frm = new FrmPrintReport("4-"+type.ToString(), DV.ID, "");
+            FrmPrintReport frm = new FrmPrintReport("5", DV.ID, "");
             frm.Show();
         }
 
@@ -52,11 +59,12 @@ namespace QuanLyHoSoCongChuc.Report
         {
             DGV.Rows.Clear();
             ListItem DV = (ListItem)cbDonVi.SelectedItem;
-            String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
+            String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri, dv.TenDonVi";
             sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
             sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
             sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
-            sql += " where MaDonVi='" + DV.ID + "'";
+            sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+            sql += " where nv.MaDonVi='" + DV.ID + "'";
 
             SqlCommand cmd = new SqlCommand(sql);
             dataService.Load(cmd);
@@ -67,11 +75,13 @@ namespace QuanLyHoSoCongChuc.Report
                 DGV.Rows.Add();
                 DGV.Rows[i].Cells["STT"].Value = i + 1;
                 DGV.Rows[i].Cells["HoTenNhanVien"].Value = myDt.Rows[i]["HoTenNhanVien"].ToString();
+                DGV.Rows[i].Cells["TenDonVi"].Value = myDt.Rows[i]["TenDonVi"].ToString();
                 DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
                 DGV.Rows[i].Cells["NgaySinh"].Value = dt.ToString("dd/MM/yyyy");
                 DGV.Rows[i].Cells["QueQuan"].Value = myDt.Rows[i]["QueQuan"].ToString();
-                DGV.Rows[i].Cells["NoiOHienTai"].Value = myDt.Rows[i]["NoiOHienTai"].ToString();
-                DGV.Rows[i].Cells["TenChucVu"].Value = myDt.Rows[i]["TenChucVu"].ToString();
+                DGV.Rows[i].Cells["TuoiDoi"].Value = DateTime.Now.Year - dt.Year;
+                dt = (DateTime)myDt.Rows[i]["NgayHopDong"];
+                DGV.Rows[i].Cells["NamCongTac"].Value = dt.ToString("dd/MM/yyyy");
                 DGV.Rows[i].Cells["TenTrinhDoChuyenMon"].Value = myDt.Rows[i]["TenTrinhDoChuyenMon"].ToString();
                 DGV.Rows[i].Cells["TenTrinhDoChinhTri"].Value = myDt.Rows[i]["TenTrinhDoChinhTri"].ToString();
             }
