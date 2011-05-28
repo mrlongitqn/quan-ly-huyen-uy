@@ -302,6 +302,12 @@
     </Compile>
     <Compile Include="Models\NhanVienModel.cs" />
     <Compile Include="Models\OverrideData.cs" />
+    <Compile Include="Report\CrBaoCaoDanhSachVuotKhung.cs">
+      <DependentUpon>CrBaoCaoDanhSachVuotKhung.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Report\CrDanhSachNangLuong.cs">
       <DependentUpon>CrDanhSachNangLuong.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -376,6 +382,12 @@
     </Compile>
     <Compile Include="Report\FrmDanhSachNghiHuu.Designer.cs">
       <DependentUpon>FrmDanhSachNghiHuu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\FrmDanhSachPhuCapVuotKhung.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrmDanhSachPhuCapVuotKhung.Designer.cs">
+      <DependentUpon>FrmDanhSachPhuCapVuotKhung.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\FrmPrintReport.cs">
       <SubType>Form</SubType>
@@ -887,6 +899,10 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrBaoCaoDanhSachVuotKhung.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrBaoCaoDanhSachVuotKhung.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\CrDanhSachNangLuong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrDanhSachNangLuong.cs</LastGenOutput>
@@ -927,6 +943,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmDanhSachNghiHuu.resx">
       <DependentUpon>FrmDanhSachNghiHuu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FrmDanhSachPhuCapVuotKhung.resx">
+      <DependentUpon>FrmDanhSachPhuCapVuotKhung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmPrintReport.resx">
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
