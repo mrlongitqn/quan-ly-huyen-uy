@@ -75,6 +75,10 @@ namespace QuanLyHoSoCongChuc.Report
                 DGV.Rows[i].Cells["TenTrinhDoChuyenMon"].Value = myDt.Rows[i]["TenTrinhDoChuyenMon"].ToString();
                 DGV.Rows[i].Cells["TenTrinhDoChinhTri"].Value = myDt.Rows[i]["TenTrinhDoChinhTri"].ToString();
             }
+            if (myDt.Rows.Count == 0)
+            {
+                MessageBox.Show("No data");
+            }
         }
     }
 }
