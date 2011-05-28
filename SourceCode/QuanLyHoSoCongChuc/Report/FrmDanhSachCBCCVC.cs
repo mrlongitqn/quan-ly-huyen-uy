@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyHoSoCongChuc.Report
 {
@@ -20,6 +21,7 @@ namespace QuanLyHoSoCongChuc.Report
             InitializeComponent();
         }
 
+        DataService dataService = new DataService();
         private void FrmDanhSachCBCCVC_Load(object sender, EventArgs e)
         {
             loadDonVi();
@@ -44,6 +46,21 @@ namespace QuanLyHoSoCongChuc.Report
 
             FrmPrintReport frm = new FrmPrintReport("3-"+type.ToString(), DV.ID, "");
             frm.Show();
+        }
+
+        private void btBaoBieu_Click(object sender, EventArgs e)
+        {
+            ListItem DV = (ListItem)cbDonVi.SelectedItem;
+            String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
+            sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
+            sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+            sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
+            sql += " where MaDonVi='" + DV.ID + "'";
+
+            SqlCommand cmd = new SqlCommand(sql);
+            dataService.Load(cmd);
+            DataTable myDt = dataService;
+
         }
     }
 }
