@@ -250,6 +250,7 @@
             this.btBaoBieu.Size = new System.Drawing.Size(80, 20);
             this.btBaoBieu.TabIndex = 142;
             this.btBaoBieu.Text = "Báo biểu";
+            this.btBaoBieu.Click += new System.EventHandler(this.btBaoBieu_Click);
             // 
             // comboBoxEx4
             // 
