@@ -88,7 +88,7 @@ namespace QuanLyHoSoCongChuc.Report
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
-                CrBaoCaoLuong3 rpt = new CrBaoCaoLuong3();
+                CrDanhSachNangLuong rpt = new CrDanhSachNangLuong();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
 
                 rpt.SetDataSource(myDt);

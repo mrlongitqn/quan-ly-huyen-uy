@@ -42,7 +42,7 @@ namespace QuanLyHoSoCongChuc.Report
             {
                 dupNam.Items.Add(1950+i);
             }
-            cbDonVi.SelectedIndex = 50;
+            dupNam.SelectedIndex = 50;
         }
 
         private void btInBieu_Click(object sender, EventArgs e)

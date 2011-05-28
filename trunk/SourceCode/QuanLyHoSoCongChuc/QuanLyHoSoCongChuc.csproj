@@ -955,13 +955,6 @@
     <EmbeddedResource Include="Report\FrmBaoCaoLuong.resx">
       <DependentUpon>FrmBaoCaoLuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\FrmDSDonVi.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmDSDonVi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\ReportDonVi.rdlc" />
-    <EmbeddedResource Include="Report\ReportLuong.rdlc" />
-    <EmbeddedResource Include="Report\ReportNhanVien.rdlc" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
@@ -1035,12 +1028,6 @@
     </Compile>
     <Compile Include="Report\FrmBaoCaoLuong.Designer.cs">
       <DependentUpon>FrmBaoCaoLuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Report\FrmDSDonVi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Report\FrmDSDonVi.Designer.cs">
-      <DependentUpon>FrmDSDonVi.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\CapUyKiemRepository.cs" />
     <Compile Include="Repositories\CapUyRepository.cs" />
