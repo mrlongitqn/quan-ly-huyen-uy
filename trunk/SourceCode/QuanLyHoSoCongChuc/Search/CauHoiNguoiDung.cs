@@ -33,6 +33,7 @@ namespace QuanLyHoSoCongChuc.Search
     public class CauHoiNguoiDung
     {
         public string Bang { get; set; }
+        public string MaDonVi { get; set; }
         public string TenCauHoi { get; set; }
         public List<DieuKienThanhPhan> LstDieuKien { get; set; }
         public DBProvider DBProvider { get; set; }
@@ -104,10 +105,13 @@ namespace QuanLyHoSoCongChuc.Search
                 XmlElement cauhoi = doc.CreateElement("cauhoi");
                 XmlAttribute tencauhoi = doc.CreateAttribute("tencauhoi");
                 XmlAttribute bang = doc.CreateAttribute("bang");
+                XmlAttribute madonvi = doc.CreateAttribute("madonvi");
                 tencauhoi.Value = TenCauHoi;
                 bang.Value = Bang;
+                madonvi.Value = MaDonVi;
                 cauhoi.SetAttributeNode(tencauhoi);
                 cauhoi.SetAttributeNode(bang);
+                cauhoi.SetAttributeNode(madonvi);
 
                 for (int i = 0; i < LstDieuKien.Count; i++)
                 {
@@ -152,6 +156,8 @@ namespace QuanLyHoSoCongChuc.Search
         /// <returns></returns>
         public bool CheckingNameQueyExist(string pathFile)
         {
+            if (!System.IO.File.Exists(pathFile))
+                return false;
             //Create an xml document
             XmlDocument doc = new XmlDocument();
             doc.Load(pathFile);

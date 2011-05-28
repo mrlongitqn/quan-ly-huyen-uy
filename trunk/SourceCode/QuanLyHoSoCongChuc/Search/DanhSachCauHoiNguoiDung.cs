@@ -32,6 +32,7 @@ namespace QuanLyHoSoCongChuc.Search
                         {
                             TenCauHoi = lstquery[i].Attributes["tencauhoi"].Value,
                             Bang = lstquery[i].Attributes["bang"].Value,
+                            MaDonVi = lstquery[i].Attributes["madonvi"].Value,
                             LstDieuKien = LoadDieuKienThanhPhan(lstquery[i])
                         };
                         LstCauHoiNguoiDung.Add(query);

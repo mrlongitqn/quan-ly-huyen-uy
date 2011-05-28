@@ -14,6 +14,7 @@ namespace QuanLyHoSoCongChuc.Search
     {
         public List<DieuKienTimKiem> LstDieuKienTimKiem { get; set; }
         public string Bang { get; set; }
+        public string MaDonVi { get; set; }
         
         public FrmLuuCauHoi()
         {
@@ -59,6 +60,7 @@ namespace QuanLyHoSoCongChuc.Search
                 GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
                 {
                     Bang = this.Bang,
+                    MaDonVi = this.MaDonVi,
                     TenCauHoi = txtTenCauHoi.Text.Trim(),
                     LstDieuKien = lst
                 };
