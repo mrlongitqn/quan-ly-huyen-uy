@@ -36,6 +36,12 @@ namespace QuanLyHoSoCongChuc
             InitializeComponent();
         }
 
+        public FrmDanhMucHanhChinh(bool enableChon)
+        {
+            InitializeComponent();
+            EnableButtonChon = enableChon;
+        }
+
         private void FrmDanhMucHanhChinh_Load(object sender, EventArgs e)
         {
             if (EnableButtonChon)

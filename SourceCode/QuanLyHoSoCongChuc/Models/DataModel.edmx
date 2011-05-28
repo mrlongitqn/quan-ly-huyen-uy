@@ -6,6 +6,7 @@
     <edmx:StorageModels>
     <Schema Namespace="QLHSCCModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="QLHSCCModelStoreContainer">
+          <EntitySet Name="CanBoQuaCacThoiKi" EntityType="QLHSCCModel.Store.CanBoQuaCacThoiKi" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CapUy" EntityType="QLHSCCModel.Store.CapUy" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="CapUyKiem" EntityType="QLHSCCModel.Store.CapUyKiem" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="ChucNang" EntityType="QLHSCCModel.Store.ChucNang" store:Type="Tables" Schema="dbo" />
@@ -56,6 +57,10 @@
           <EntitySet Name="TrinhDoNgoaiNgu" EntityType="QLHSCCModel.Store.TrinhDoNgoaiNgu" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TrinhDoQuanLyNhaNuoc" EntityType="QLHSCCModel.Store.TrinhDoQuanLyNhaNuoc" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="TrinhDoTinHoc" EntityType="QLHSCCModel.Store.TrinhDoTinHoc" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_CanBoQuaCacThoiKi_DonVi" Association="QLHSCCModel.Store.FK_CanBoQuaCacThoiKi_DonVi">
+            <End Role="DonVi" EntitySet="DonVi" />
+            <End Role="CanBoQuaCacThoiKi" EntitySet="CanBoQuaCacThoiKi" />
+          </AssociationSet>
           <AssociationSet Name="FK_DonVi_LoaiDonVi" Association="QLHSCCModel.Store.FK_DonVi_LoaiDonVi">
             <End Role="LoaiDonVi" EntitySet="LoaiDonVi" />
             <End Role="DonVi" EntitySet="DonVi" />
@@ -257,6 +262,27 @@
             <End Role="ThanNhan" EntitySet="ThanNhan" />
           </AssociationSet>
         </EntityContainer>
+        <EntityType Name="CanBoQuaCacThoiKi">
+          <Key>
+            <PropertyRef Name="MaCanBo" />
+          </Key>
+          <Property Name="MaCanBo" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MaDonVi" Type="nchar" MaxLength="10" />
+          <Property Name="HoTen" Type="nvarchar" MaxLength="50" />
+          <Property Name="NgaySinh" Type="date" />
+          <Property Name="TinhTrang" Type="bit" />
+          <Property Name="QueQuan" Type="nvarchar(max)" />
+          <Property Name="NoiOHienNay" Type="nvarchar(max)" />
+          <Property Name="ChucVuDaGiu" Type="nvarchar(max)" />
+          <Property Name="CoQuanDaLamViec" Type="nvarchar(max)" />
+          <Property Name="NgayVaoDang" Type="date" />
+          <Property Name="NgayChinhThuc" Type="date" />
+          <Property Name="DiDong" Type="nvarchar" MaxLength="50" />
+          <Property Name="MayBan" Type="nvarchar" MaxLength="50" />
+          <Property Name="DanhHieuDaDuocPhong" Type="nvarchar(max)" />
+          <Property Name="QuaTrinhCongTac" Type="nvarchar(max)" />
+          <Property Name="ThamGiaChinhTriXaHoi" Type="nvarchar(max)" />
+        </EntityType>
         <EntityType Name="CapUy">
           <Key>
             <PropertyRef Name="MaCapUy" />
@@ -749,6 +775,18 @@
           <Property Name="MaTrinhDoTinHoc" Type="nchar" Nullable="false" MaxLength="10" />
           <Property Name="TenTrinhDoTinHoc" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <Association Name="FK_CanBoQuaCacThoiKi_DonVi">
+          <End Role="DonVi" Type="QLHSCCModel.Store.DonVi" Multiplicity="0..1" />
+          <End Role="CanBoQuaCacThoiKi" Type="QLHSCCModel.Store.CanBoQuaCacThoiKi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonVi">
+              <PropertyRef Name="MaDonVi" />
+            </Principal>
+            <Dependent Role="CanBoQuaCacThoiKi">
+              <PropertyRef Name="MaDonVi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_DonVi_LoaiDonVi">
           <End Role="LoaiDonVi" Type="QLHSCCModel.Store.LoaiDonVi" Multiplicity="0..1" />
           <End Role="DonVi" Type="QLHSCCModel.Store.DonVi" Multiplicity="*" />
@@ -1604,6 +1642,11 @@
             <End Role="LoaiNGuoiDung" EntitySet="LoaiNGuoiDungs" />
             <End Role="NguoiDung" EntitySet="NguoiDungs" />
           </AssociationSet>
+          <EntitySet Name="CanBoQuaCacThoiKis" EntityType="QLHSCCModel.CanBoQuaCacThoiKi" />
+          <AssociationSet Name="FK_CanBoQuaCacThoiKi_DonVi" Association="QLHSCCModel.FK_CanBoQuaCacThoiKi_DonVi">
+            <End Role="DonVi" EntitySet="DonVis" />
+            <End Role="CanBoQuaCacThoiKi" EntitySet="CanBoQuaCacThoiKis" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="CapUy">
           <Key>
@@ -1707,6 +1750,7 @@
           <NavigationProperty Name="PhanLoaiDonVi" Relationship="QLHSCCModel.FK_DonVi_PhanLoaiDonVi" FromRole="DonVi" ToRole="PhanLoaiDonVi" />
           <NavigationProperty Name="QuanHuyen" Relationship="QLHSCCModel.FK_DonVi_QuanHuyen" FromRole="DonVi" ToRole="QuanHuyen" />
           <NavigationProperty Name="NhanViens" Relationship="QLHSCCModel.FK_NhanVien_DonVi" FromRole="DonVi" ToRole="NhanVien" />
+          <NavigationProperty Name="CanBoQuaCacThoiKis" Relationship="QLHSCCModel.FK_CanBoQuaCacThoiKi_DonVi" FromRole="DonVi" ToRole="CanBoQuaCacThoiKi" />
         </EntityType>
         <EntityType Name="GioiTinh">
           <Key>
@@ -2797,6 +2841,40 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="CanBoQuaCacThoiKi">
+          <Key>
+            <PropertyRef Name="MaCanBo" />
+          </Key>
+          <Property Type="Int32" Name="MaCanBo" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="MaDonVi" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="HoTen" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="NgaySinh" />
+          <Property Type="Boolean" Name="TinhTrang" />
+          <Property Type="String" Name="QueQuan" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="NoiOHienNay" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ChucVuDaGiu" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CoQuanDaLamViec" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="NgayVaoDang" />
+          <Property Type="DateTime" Name="NgayChinhThuc" />
+          <Property Type="String" Name="DiDong" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MayBan" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DanhHieuDaDuocPhong" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="QuaTrinhCongTac" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ThamGiaChinhTriXaHoi" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="DonVi" Relationship="QLHSCCModel.FK_CanBoQuaCacThoiKi_DonVi" FromRole="CanBoQuaCacThoiKi" ToRole="DonVi" />
+        </EntityType>
+        <Association Name="FK_CanBoQuaCacThoiKi_DonVi">
+          <End Type="QLHSCCModel.DonVi" Role="DonVi" Multiplicity="0..1" />
+          <End Type="QLHSCCModel.CanBoQuaCacThoiKi" Role="CanBoQuaCacThoiKi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="DonVi">
+              <PropertyRef Name="MaDonVi" />
+            </Principal>
+            <Dependent Role="CanBoQuaCacThoiKi">
+              <PropertyRef Name="MaDonVi" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3343,6 +3421,28 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="CanBoQuaCacThoiKis">
+            <EntityTypeMapping TypeName="QLHSCCModel.CanBoQuaCacThoiKi">
+              <MappingFragment StoreEntitySet="CanBoQuaCacThoiKi">
+                <ScalarProperty Name="ThamGiaChinhTriXaHoi" ColumnName="ThamGiaChinhTriXaHoi" />
+                <ScalarProperty Name="QuaTrinhCongTac" ColumnName="QuaTrinhCongTac" />
+                <ScalarProperty Name="DanhHieuDaDuocPhong" ColumnName="DanhHieuDaDuocPhong" />
+                <ScalarProperty Name="MayBan" ColumnName="MayBan" />
+                <ScalarProperty Name="DiDong" ColumnName="DiDong" />
+                <ScalarProperty Name="NgayChinhThuc" ColumnName="NgayChinhThuc" />
+                <ScalarProperty Name="NgayVaoDang" ColumnName="NgayVaoDang" />
+                <ScalarProperty Name="CoQuanDaLamViec" ColumnName="CoQuanDaLamViec" />
+                <ScalarProperty Name="ChucVuDaGiu" ColumnName="ChucVuDaGiu" />
+                <ScalarProperty Name="NoiOHienNay" ColumnName="NoiOHienNay" />
+                <ScalarProperty Name="QueQuan" ColumnName="QueQuan" />
+                <ScalarProperty Name="TinhTrang" ColumnName="TinhTrang" />
+                <ScalarProperty Name="NgaySinh" ColumnName="NgaySinh" />
+                <ScalarProperty Name="HoTen" ColumnName="HoTen" />
+                <ScalarProperty Name="MaDonVi" ColumnName="MaDonVi" />
+                <ScalarProperty Name="MaCanBo" ColumnName="MaCanBo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3479,23 +3579,23 @@
           <ConnectorPoint PointX="10.640621249999999" PointY="32.441223958333353" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_DonVi_LoaiDonVi" >
-          <ConnectorPoint PointX="4.5" PointY="19.047841796874991" />
-          <ConnectorPoint PointX="6" PointY="19.047841796874991" />
+          <ConnectorPoint PointX="4.5" PointY="18.9639794921875" />
+          <ConnectorPoint PointX="6" PointY="18.9639794921875" />
           <ConnectorPoint PointX="6" PointY="20.75" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_DonVi_PhanLoaiDonVi" >
-          <ConnectorPoint PointX="4.5" PointY="24.626152846153843" />
-          <ConnectorPoint PointX="4.875" PointY="24.251152846153843" />
-          <ConnectorPoint PointX="4.875" PointY="22.220896809895805" />
-          <ConnectorPoint PointX="5.25" PointY="22.220896809895805" />
+          <ConnectorPoint PointX="4.5" PointY="24.626097429987979" />
+          <ConnectorPoint PointX="4.875" PointY="24.251097429987979" />
+          <ConnectorPoint PointX="4.875" PointY="22.630962331788211" />
+          <ConnectorPoint PointX="5.25" PointY="22.630962331788211" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_DonVi_QuanHuyen" >
-          <ConnectorPoint PointX="4.5" PointY="21.610448404947903" />
-          <ConnectorPoint PointX="5.25" PointY="21.610448404947903" />
+          <ConnectorPoint PointX="4.5" PointY="21.815481165894106" />
+          <ConnectorPoint PointX="5.25" PointY="21.815481165894106" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_NhanVien_DonVi" >
-          <ConnectorPoint PointX="6.75" PointY="21.65625" />
-          <ConnectorPoint PointX="10.5" PointY="21.65625" />
+          <ConnectorPoint PointX="6.75" PointY="21.801910807291677" />
+          <ConnectorPoint PointX="10.5" PointY="21.801910807291677" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_NhanVien_GioiTinh" >
           <ConnectorPoint PointX="9.75" PointY="42.797841796874991" />
@@ -3680,12 +3780,12 @@
           <ConnectorPoint PointX="15.75" PointY="27.216222330729153" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_PhuongXa_QuanHuyen" >
-          <ConnectorPoint PointX="4.5" PointY="23.23527919831729" />
-          <ConnectorPoint PointX="4.8160744349011217" PointY="23.551353633218412" />
-          <ConnectorPoint PointX="4.9339255650988791" PointY="23.669204763416168" />
-          <ConnectorPoint PointX="5.0625" PointY="23.79777919831729" />
-          <ConnectorPoint PointX="5.0625" PointY="25.865143229166677" />
-          <ConnectorPoint PointX="5.25" PointY="25.865143229166677" />
+          <ConnectorPoint PointX="4.5" PointY="22.983692284254811" />
+          <ConnectorPoint PointX="4.8160744349011217" PointY="23.299766719155933" />
+          <ConnectorPoint PointX="4.9339255650988791" PointY="23.41761784935369" />
+          <ConnectorPoint PointX="4.9375" PointY="23.421192284254811" />
+          <ConnectorPoint PointX="4.9375" PointY="25.753326822916669" />
+          <ConnectorPoint PointX="5.25" PointY="25.753326822916669" />
         </AssociationConnector>
         <AssociationConnector Association="QLHSCCModel.FK_ThanNhan_QuanHe" >
           <ConnectorPoint PointX="17.6250005" PointY="14.162985026041667" />
@@ -3717,6 +3817,12 @@
           <ConnectorPoint PointX="2.3124995" PointY="5.0923063151041674" />
           <ConnectorPoint PointX="2.3124995" PointY="8.2498478190104265" />
           <ConnectorPoint PointX="3" PointY="8.2498478190104265" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="QLHSCCModel.CanBoQuaCacThoiKi" Width="1.5" PointX="7.5" PointY="17.25" Height="3.728821614583353" />
+        <AssociationConnector Association="QLHSCCModel.FK_CanBoQuaCacThoiKi_DonVi" >
+          <ConnectorPoint PointX="6.75" PointY="21.359114210937513" />
+          <ConnectorPoint PointX="7.84375" PointY="21.359114210937513" />
+          <ConnectorPoint PointX="7.84375" PointY="20.978821614583353" />
         </AssociationConnector>
       </Diagram>
     </Diagrams>

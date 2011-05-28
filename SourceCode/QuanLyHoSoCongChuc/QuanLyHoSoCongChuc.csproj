@@ -300,6 +300,7 @@
     <Compile Include="Danh muc\FrmThemPhanLoaiDonVi.Designer.cs">
       <DependentUpon>FrmThemPhanLoaiDonVi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CanBoQuaCacThoiKiModel.cs" />
     <Compile Include="Models\NhanVienModel.cs" />
     <Compile Include="Models\OverrideData.cs" />
     <Compile Include="Report\CrBaoCaoDanhSachVuotKhung.cs">
@@ -395,6 +396,7 @@
     <Compile Include="Report\FrmPrintReport.Designer.cs">
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\CanBoQuaCacThoiKiRepository.cs" />
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
     <Compile Include="Search\CauHoiNguoiDung.cs" />
     <Compile Include="Search\DanhSachCauHoiNguoiDung.cs" />
@@ -416,6 +418,24 @@
     </Compile>
     <Compile Include="UsersDiary\FrmNhatKySuDung.Designer.cs">
       <DependentUpon>FrmNhatKySuDung.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersManager\FrmChiTietCanBoQuaCacThoiKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersManager\FrmChiTietCanBoQuaCacThoiKi.Designer.cs">
+      <DependentUpon>FrmChiTietCanBoQuaCacThoiKi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersManager\FrmDanhSachCanBoQuaCacThoiKy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersManager\FrmDanhSachCanBoQuaCacThoiKy.Designer.cs">
+      <DependentUpon>FrmDanhSachCanBoQuaCacThoiKy.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UsersManager\FrmTimCanBoQuaCacThoiKi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsersManager\FrmTimCanBoQuaCacThoiKi.Designer.cs">
+      <DependentUpon>FrmTimCanBoQuaCacThoiKi.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Attribute.cs" />
     <Compile Include="Utils\DBProvider.cs" />
@@ -1021,6 +1041,12 @@
     <EmbeddedResource Include="UsersDiary\FrmNhatKySuDung.resx">
       <DependentUpon>FrmNhatKySuDung.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UsersManager\FrmChiTietCanBoQuaCacThoiKi.resx">
+      <DependentUpon>FrmChiTietCanBoQuaCacThoiKi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersManager\FrmDanhSachCanBoQuaCacThoiKy.resx">
+      <DependentUpon>FrmDanhSachCanBoQuaCacThoiKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsersManager\FrmQuanLyChucNang.resx">
       <DependentUpon>FrmQuanLyChucNang.cs</DependentUpon>
     </EmbeddedResource>
@@ -1032,6 +1058,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UsersManager\FrmQuanLyLoaiNguoiDung.resx">
       <DependentUpon>FrmQuanLyLoaiNguoiDung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersManager\FrmTimCanBoQuaCacThoiKi.resx">
+      <DependentUpon>FrmTimCanBoQuaCacThoiKi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -1281,7 +1310,6 @@
     <None Include="Resources\quanhuyen.jpg" />
     <None Include="Resources\tinhthanh.gif" />
     <None Include="Resources\excel.png" />
-    <None Include="Resources\Sign-Select-icon.png" />
     <Content Include="UsersDiary\UsersDiary.xml" />
     <None Include="Resources\erase.jpg" />
     <None Include="Resources\Eraser-icon.png" />
@@ -1357,6 +1385,7 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DataManager\" />
     <Folder Include="SystemManager\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
