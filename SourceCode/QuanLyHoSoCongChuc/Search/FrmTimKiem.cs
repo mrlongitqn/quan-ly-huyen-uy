@@ -42,9 +42,114 @@ namespace QuanLyHoSoCongChuc.Search
             txtMaDonVi_TieuChiKhac.Text = _madonvi;
         }
 
+        public FrmTimKiem(CauHoiNguoiDung cauhoi)
+        {
+            InitializeComponent();
+            InitControlGiaTriTimKiem();
+            FillQueryDataToListView(cauhoi);
+            tabControl1.SelectedTabIndex = 1;
+        }
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+        // tuansl added: SEARCH BY TIEU CHI CHUNG
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+
         private void FrmTimKiem_Load(object sender, EventArgs e)
         {
             LoadTieuChiChung();
+        }
+
+        private void btnChonDonVi_Click(object sender, EventArgs e)
+        {
+            FrmDanhMuc frm = new FrmDanhMuc();
+            frm.Handler += GetDonVi;
+            frm.ShowDialog();
+        }
+
+        private void btnChonQueQuan_Click(object sender, EventArgs e)
+        {
+            FrmDanhMucHanhChinh frm = new FrmDanhMucHanhChinh();
+            frm.Handler += GetNguyenQuan;
+            frm.EnableButtonChon = true;
+            frm.ShowDialog();
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            var nhanvien = new NhanVienModel
+            {
+                MaDonVi = txtMaDonVi.Text,
+                HoTenNhanVien = txtHoTen.Text.Trim(),
+                MaGioiTinh = cbxGioiTinh.SelectedIndex > -1 ? ((GioiTinh)cbxGioiTinh.SelectedItem).MaGioiTinh : null,
+                QueQuan = txtQueQuan.Text.Trim(),
+                MaDanToc = cbxDanToc.SelectedIndex > -1 ? ((DanToc)cbxDanToc.SelectedItem).MaDanToc : null,
+                MaTonGiao = cbxTonGiao.SelectedIndex > -1 ? ((TonGiao)cbxTonGiao.SelectedItem).MaTonGiao : null,
+                MaTrinhDoChinhTri = cbxLyLuanChinhTri.SelectedIndex > -1 ? ((TrinhDoChinhTri)cbxLyLuanChinhTri.SelectedItem).MaTrinhDoChinhTri : null,
+                MaTrinhDoHocVan = cbxHocVan.SelectedIndex > -1 ? ((TrinhDoHocVan)cbxHocVan.SelectedItem).MaTrinhDoHocVan : null,
+                MaTrinhDoChuyenMon = cbxHocHam.SelectedIndex > -1 ? ((TrinhDoChuyenMon)cbxHocHam.SelectedItem).MaTrinhDoChuyenMon : null,
+                CongViecHienNay = txtCongVienChinh.Text.Trim()
+            };
+            if (ckbxEnableNgaySinh.Checked)
+                nhanvien.NgaySinh = dtpSinhNgay.Value;
+            if (ckbxEnableNgayVaoDang.Checked)
+                nhanvien.NgayVaoDang = dtpNgayVaoDang.Value;
+            if (ckbxEnableNgayChinhThuc.Checked)
+                nhanvien.NgayChinhThuc = dtpNgayChinhThuc.Value;
+            if (dmTuoiDoi.Text != "")
+                nhanvien.TuoiDoi = int.Parse(dmTuoiDoi.Text);
+            if (dmTuoiDang.Text != "")
+                nhanvien.TuoiDang = int.Parse(dmTuoiDang.Text);
+
+            var lstItem = NhanVienRepository.SearchByTieuChiChung(nhanvien);
+            lstvNhanVien.Items.Clear();
+            if (lstItem.Count > 0)
+            {
+                ListViewItem objListViewItem;
+                for (int i = 0; i < lstItem.Count; i++)
+                {
+                    objListViewItem = new ListViewItem();
+                    objListViewItem.Tag = lstItem[i];
+                    objListViewItem.Text = lstItem[i].MaNhanVien;
+                    objListViewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
+                    objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
+                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
+                    objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
+                    lstvNhanVien.Items.Add(objListViewItem);
+                }
+                txtTongSo.Text = "Tìm thấy " + lstItem.Count + " nhân viên";
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        /// <summary>
+        /// Get thong tin don vi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetNguyenQuan(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            var item = PhuongXaRepository.SelectByID(comp[0]);
+            txtQueQuan.Text = item.MaPhuongXa + "." + item.QuanHuyen.MaQuanHuyen + "." + item.QuanHuyen.TinhThanh.MaTinh;
+            txtTenQueQuanDayDu.Text = comp[1];
+        }
+
+        /// <summary>
+        /// Get thong tin don vi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetDonVi(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaDonVi.Text = comp[0];
+            txtTenDonViDayDu.Text = comp[1];
         }
 
         /// <summary>
@@ -138,100 +243,9 @@ namespace QuanLyHoSoCongChuc.Search
             }
         }
 
-        private void btnChonDonVi_Click(object sender, EventArgs e)
-        {
-            FrmDanhMuc frm = new FrmDanhMuc();
-            frm.Handler += GetDonVi;
-            frm.ShowDialog();
-        }
-
-        private void btnChonQueQuan_Click(object sender, EventArgs e)
-        {
-            FrmDanhMucHanhChinh frm = new FrmDanhMucHanhChinh();
-            frm.Handler += GetNguyenQuan;
-            frm.EnableButtonChon = true;
-            frm.ShowDialog();
-        }
-
-        /// <summary>
-        /// Get thong tin don vi
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void GetNguyenQuan(object sender, EventArgs e)
-        {
-            var eventType = (MyEvent)e;
-            string[] comp = eventType.Data.Split(new char[] { '#' });
-            var item = PhuongXaRepository.SelectByID(comp[0]);
-            txtQueQuan.Text = item.MaPhuongXa + "." + item.QuanHuyen.MaQuanHuyen + "." + item.QuanHuyen.TinhThanh.MaTinh;
-            txtTenQueQuanDayDu.Text = comp[1];
-        }
-
-        /// <summary>
-        /// Get thong tin don vi
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void GetDonVi(object sender, EventArgs e)
-        {
-            var eventType = (MyEvent)e;
-            string[] comp = eventType.Data.Split(new char[]{ '#' });
-            txtMaDonVi.Text = comp[0];
-            txtTenDonViDayDu.Text = comp[1];
-        }
-
-        private void btnTim_Click(object sender, EventArgs e)
-        {
-            var nhanvien = new NhanVienModel
-            {
-                MaDonVi = txtMaDonVi.Text,
-                HoTenNhanVien = txtHoTen.Text.Trim(),
-                MaGioiTinh = cbxGioiTinh.SelectedIndex > -1 ? ((GioiTinh)cbxGioiTinh.SelectedItem).MaGioiTinh : null,
-                QueQuan = txtQueQuan.Text.Trim(),
-                MaDanToc = cbxDanToc.SelectedIndex > -1 ? ((DanToc)cbxDanToc.SelectedItem).MaDanToc : null,
-                MaTonGiao = cbxTonGiao.SelectedIndex > -1 ? ((TonGiao)cbxTonGiao.SelectedItem).MaTonGiao : null,
-                MaTrinhDoChinhTri = cbxLyLuanChinhTri.SelectedIndex > -1 ? ((TrinhDoChinhTri)cbxLyLuanChinhTri.SelectedItem).MaTrinhDoChinhTri : null,
-                MaTrinhDoHocVan = cbxHocVan.SelectedIndex > -1 ? ((TrinhDoHocVan)cbxHocVan.SelectedItem).MaTrinhDoHocVan : null,
-                MaTrinhDoChuyenMon = cbxHocHam.SelectedIndex > -1 ? ((TrinhDoChuyenMon)cbxHocHam.SelectedItem).MaTrinhDoChuyenMon : null,
-                CongViecHienNay = txtCongVienChinh.Text.Trim()
-            };
-            if (ckbxEnableNgaySinh.Checked)
-                nhanvien.NgaySinh = dtpSinhNgay.Value;
-            if (ckbxEnableNgayVaoDang.Checked)
-                nhanvien.NgayVaoDang = dtpNgayVaoDang.Value;
-            if (ckbxEnableNgayChinhThuc.Checked)
-                nhanvien.NgayChinhThuc = dtpNgayChinhThuc.Value;
-            if (dmTuoiDoi.Text != "")
-                nhanvien.TuoiDoi = int.Parse(dmTuoiDoi.Text);
-            if (dmTuoiDang.Text != "")
-                nhanvien.TuoiDang = int.Parse(dmTuoiDang.Text);
-
-            var lstItem = NhanVienRepository.SearchByTieuChiChung(nhanvien);
-            lstvNhanVien.Items.Clear();
-            if (lstItem.Count > 0)
-            {
-                ListViewItem objListViewItem;
-                for (int i = 0; i < lstItem.Count; i++)
-                {
-                    objListViewItem = new ListViewItem();
-                    objListViewItem.Tag = lstItem[i];
-                    objListViewItem.Text = lstItem[i].MaNhanVien;
-                    objListViewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
-                    objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
-                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
-                    objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
-                    lstvNhanVien.Items.Add(objListViewItem);
-                }
-                txtTongSo.Text = "Tìm thấy " + lstItem.Count + " nhân viên";
-            }
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        ///////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+        // tuansl added: SEARCH BY TIEU CHI KHAC
+        ///////////////////////////////////////////////////////////////////////////////////////////////
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbxGiaTriTimKiem;
         private DevComponents.DotNetBar.Controls.TextBoxX txtGiaTriTimKiem;
 
@@ -240,18 +254,6 @@ namespace QuanLyHoSoCongChuc.Search
             FrmDanhMuc frm = new FrmDanhMuc();
             frm.Handler += GetDonVi4TieuChiKhac;
             frm.ShowDialog();
-        }
-
-        /// <summary>
-        /// Get thong tin don vi
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void GetDonVi4TieuChiKhac(object sender, EventArgs e)
-        {
-            var eventType = (MyEvent)e;
-            string[] comp = eventType.Data.Split(new char[] { '#' });
-            txtMaDonVi_TieuChiKhac.Text = comp[0];
         }
 
         private void rdbtnThongTinChung_Click(object sender, EventArgs e)
@@ -312,6 +314,308 @@ namespace QuanLyHoSoCongChuc.Search
                 DBProvider = new DBProvider()
             };
             LoadCriterias(criteria);
+        }
+
+        private void lstvTenTruongDuLieu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstvTenTruongDuLieu.SelectedItems.Count > 0)
+            {
+                try
+                {
+                    var item = (Attribute)lstvTenTruongDuLieu.SelectedItems[0].Tag;
+                    LoadControlGiaTriTimKiem(item);
+                    cbxDieuKien.SelectedIndex = -1;
+                    cbxDieuKien.Text = "";
+                    cbxGiaTriTimKiem.SelectedIndex = -1;
+                    txtGiaTriTimKiem.Text = "";
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(ex.Message, ex.InnerException);
+                }
+            }
+        }
+
+        private void btnThemDieuKien_Click(object sender, EventArgs e)
+        {
+            if (lstvTenTruongDuLieu.SelectedItems.Count > 0)
+            {
+                var errorText = "";
+                if (!ValidateThemDieuKien(ref errorText))
+                {
+                    MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                var dieukientimkiem = new DieuKienTimKiem
+                {
+                    Attr = (Attribute)lstvTenTruongDuLieu.SelectedItems[0].Tag,
+                    Condition = cbxDieuKien.Text,
+                    Value = cbxGiaTriTimKiem.Visible ? GetGiaTriTimKiem(cbxGiaTriTimKiem.SelectedItem).Trim() : txtGiaTriTimKiem.Text.Trim(),
+                    AndOr = lstvDieuKienTimKiem.Items.Count > 0 ? (rdbtnVa.Checked ? "And" : "Or") : ""
+                };
+                // Add item to lstview
+                var objListViewItem = new ListViewItem
+                {
+                    Tag = dieukientimkiem,
+                    Text = dieukientimkiem.AndOr + " " + dieukientimkiem.Attr.Name + dieukientimkiem.Condition + dieukientimkiem.Value
+                };
+                lstvDieuKienTimKiem.Items.Add(objListViewItem);
+                cbxDieuKien.SelectedIndex = -1;
+                cbxGiaTriTimKiem.SelectedIndex = -1;
+                txtGiaTriTimKiem.Text = "";
+            }
+        }
+
+        private void btnXoaDieuKien_Click(object sender, EventArgs e)
+        {
+            if (lstvDieuKienTimKiem.Items.Count > 0)
+            {
+                lstvDieuKienTimKiem.Items.RemoveAt(lstvDieuKienTimKiem.Items.Count - 1);
+            }
+        }
+
+        private void btnMo_Click(object sender, EventArgs e)
+        {
+            FrmMoCauHoi frm = new FrmMoCauHoi();
+            frm.Handler += GetCauHoi;
+            frm.ShowDialog();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            // Init list of searching condition to transfer data 
+            List<DieuKienTimKiem> lstDieuKienTimKiem = new List<DieuKienTimKiem>();
+            for (int i = 0; i < lstvDieuKienTimKiem.Items.Count; i++)
+            {
+                lstDieuKienTimKiem.Add((DieuKienTimKiem)lstvDieuKienTimKiem.Items[i].Tag);
+            }
+            // Show form luucauhoi
+            if (lstDieuKienTimKiem.Count > 0)
+            {
+                FrmLuuCauHoi frm = new FrmLuuCauHoi
+                {
+                    Bang = GetBang(),
+                    LstDieuKienTimKiem = lstDieuKienTimKiem,
+                    MaDonVi = txtMaDonVi.Text.Trim()
+                };
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Không có giá trị tìm kiếm để lưu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
+        }
+
+        private void btnDKMoi_Click(object sender, EventArgs e)
+        {
+            lstvDieuKienTimKiem.Items.Clear();
+        }
+
+        private void btnTim_TieuChiKhac_Click(object sender, EventArgs e)
+        {
+            // Init list of searching condition to transfer data 
+            List<DieuKienTimKiem> lstDieuKienTimKiem = new List<DieuKienTimKiem>();
+            for (int i = 0; i < lstvDieuKienTimKiem.Items.Count; i++)
+            {
+                lstDieuKienTimKiem.Add((DieuKienTimKiem)lstvDieuKienTimKiem.Items[i].Tag);
+            }
+            // Show form luucauhoi
+            if (lstDieuKienTimKiem.Count > 0)
+            {
+                var bang = GetBang();
+                var sqlQuery = "";
+                switch (bang)
+                {
+                    case "NhanVien":
+                        sqlQuery = BuildSearchByTieuChiChungQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
+                        break;
+                    case "QuaTrinhCongTac":
+                        break;
+                    case "QuaTrinhDaoTao":
+                        break;
+                    case "TrinhDoNgoaiNgu":
+                        break;
+                    case "KhenThuong":
+                        break;
+                    case "KyLuat":
+                        break;
+                }
+                var ds = GlobalVars.g_CauHoiNguoiDung.SearchByCriterias(sqlQuery);
+                lstvNhanVien.Items.Clear();
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+                    {
+                        var objListViewItem = new ListViewItem();
+                        objListViewItem.Tag = ds.Tables[0].Rows[i]["MaNhanVien"].ToString();
+                        objListViewItem.Text = ds.Tables[0].Rows[i]["MaNhanVien"].ToString();
+                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["HoTenNhanVien"].ToString());
+                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["TenGioiTinh"].ToString());
+                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["NgaySinh"].ToString());
+                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["NoiOHienTai"].ToString());
+                        lstvNhanVien.Items.Add(objListViewItem);
+                    }
+                }
+                txtTongSo.Text = "Tìm thấy " + ds.Tables[0].Rows.Count + " nhân viên";
+            }
+            else
+            {
+                MessageBox.Show("Không có giá trị tìm kiếm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        /// <summary>
+        /// Fill queries to listview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetCauHoi(object sender, EventArgs e)
+        {
+            var dataType = (MyQueryEvent)e;
+            var cauhoi = (CauHoiNguoiDung)dataType.Data;
+            if (cauhoi != null)
+            {
+                FillQueryDataToListView(cauhoi);
+            }
+        }
+
+        /// <summary>
+        /// Get bang need to search
+        /// </summary>
+        /// <returns></returns>
+        private string GetBang()
+        {
+            var result = "";
+            if (rdbtnThongTinChung.Checked)
+                result = "NhanVien";
+            else if (rdbtnQuaTrinhCongTac.Checked)
+                result = "QuaTrinhCongTac";
+            else if (rdbtnQuaTrinhDaoTao.Checked)
+                result = "QuaTrinhDaoTao";
+            else if (rdbtnNgoaiNgu.Checked)
+                result = "TrinhDoNgoaiNgu";
+            else if (rdbtnQuaTrinhKhenThuong.Checked)
+                result = "KhenThuong";
+            else if (rdbtnQuaTrinhKyLuat.Checked)
+                result = "KyLuat";
+            return result;
+        }
+
+        /// <summary>
+        /// From table name, set criteria
+        /// </summary>
+        /// <param name="tenbang"></param>
+        private void SelectBang(string tenbang)
+        {
+            switch (tenbang)
+            {
+                case "NhanVien":
+                    rdbtnThongTinChung.Checked = true;
+                    rdbtnThongTinChung_Click(null, null);
+                    break;
+                case "QuaTrinhCongTac":
+                    rdbtnQuaTrinhCongTac.Checked = true;
+                    rdbtnQuaTrinhCongTac_Click(null, null);
+                    break;
+                case "QuaTrinhDaoTao":
+                    rdbtnQuaTrinhDaoTao.Checked = true;
+                    rdbtnQuaTrinhDaoTao_Click(null, null);
+                    break;
+                case "TrinhDoNgoaiNgu":
+                    rdbtnNgoaiNgu.Checked = true;
+                    rdbtnNgoaiNgu_Click(null, null);
+                    break;
+                case "KhenThuong":
+                    rdbtnQuaTrinhKhenThuong.Checked = true;
+                    rdbtnQuaTrinhKhenThuong_Click(null, null);
+                    break;
+                case "KyLuat":
+                    rdbtnQuaTrinhKyLuat.Checked = true;
+                    rdbtnQuaTrinhKyLuat_Click(null, null);
+                    break;
+            }
+        }
+
+        /// <summary>
+        /// Build query base on specified criterial
+        /// </summary>
+        /// <returns></returns>
+        public string BuildSearchByTieuChiChungQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
+        {
+            var result = "";
+            result += "Select NhanVien.*, TenGioiTinh From NhanVien, GioiTinh Where ";
+            GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
+            {
+                Bang = "NhanVien",
+                DBProvider = new DBProvider()
+            };
+            result += CreateQueryString(lstDieuKienTimKiem);
+            result += "And NhanVien.MaGioiTinh = GioiTinh.MaGioiTinh And MaDonVi = N'" + madonvi + "'";
+            return result;
+        }
+
+        /// <summary>
+        /// Create query string base on list of item in listview
+        /// </summary>
+        /// <returns></returns>
+        public string CreateQueryString(List<DieuKienTimKiem> lstDieuKienTimKiem)
+        {
+            var result = "";
+            for (int i = 0; i < lstDieuKienTimKiem.Count; i++)
+            {
+                var item = (DieuKienTimKiem)lstDieuKienTimKiem[i];
+                if (item.Attr.Type == DataType.DATETIME)
+                    result += (item.AndOr.Trim() + " " + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " '" + item.Value.Trim() + "' ");
+                else if (item.Attr.Type == DataType.STRING)
+                    result += (item.AndOr.Trim() + " " + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " N'" + item.Value.Trim() + "' ");
+                else
+                    result += (item.AndOr.Trim() + " " + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " " + item.Value.Trim() + " ");
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// Fill data query to listview
+        /// </summary>
+        /// <param name="cauhoi"></param>
+        public void FillQueryDataToListView(CauHoiNguoiDung cauhoi)
+        {
+            txtMaDonVi_TieuChiKhac.Text = cauhoi.MaDonVi;
+            // Select table to query
+            SelectBang(cauhoi.Bang);
+
+            // Fill data to listview
+            lstvDieuKienTimKiem.Items.Clear();
+            for (int i = 0; i < cauhoi.LstDieuKien.Count; i++)
+            {
+                var dieukientimkiem = new DieuKienTimKiem
+                {
+                    Attr = new Attribute { Name = cauhoi.LstDieuKien[i].Bien },
+                    Condition = cauhoi.LstDieuKien[i].DieuKien,
+                    Value = cauhoi.LstDieuKien[i].GiaTri,
+                    AndOr = cauhoi.LstDieuKien[i].ThuocTinhDieuKien
+                };
+                // Add item to lstview
+                var objListViewItem = new ListViewItem
+                {
+                    Tag = dieukientimkiem,
+                    Text = dieukientimkiem.AndOr + " " + dieukientimkiem.Attr.Name + dieukientimkiem.Condition + dieukientimkiem.Value
+                };
+                lstvDieuKienTimKiem.Items.Add(objListViewItem);
+            }
+        }
+
+        /// <summary>
+        /// Get thong tin don vi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetDonVi4TieuChiKhac(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaDonVi_TieuChiKhac.Text = comp[0];
         }
 
         /// <summary>
@@ -483,7 +787,7 @@ namespace QuanLyHoSoCongChuc.Search
                     case "DonVi":
                         var lstDonVi = DonViRepository.SelectAll();
                         cbxGiaTriTimKiem.DataSource = lstDonVi;
-                        break;    
+                        break;
                 }
                 cbxGiaTriTimKiem.SelectedIndex = -1;
                 cbxDieuKien.Items.Add("=");
@@ -514,56 +818,6 @@ namespace QuanLyHoSoCongChuc.Search
             }
         }
 
-        private void lstvTenTruongDuLieu_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (lstvTenTruongDuLieu.SelectedItems.Count > 0)
-            {
-                try
-                {
-                    var item = (Attribute)lstvTenTruongDuLieu.SelectedItems[0].Tag;
-                    LoadControlGiaTriTimKiem(item);
-                    cbxDieuKien.SelectedIndex = -1;
-                    cbxDieuKien.Text = "";
-                    cbxGiaTriTimKiem.SelectedIndex = -1;
-                    txtGiaTriTimKiem.Text = "";
-                }
-                catch (Exception ex)
-                {
-                    throw new Exception(ex.Message, ex.InnerException);
-                }
-            }
-        }
-
-        private void btnThemDieuKien_Click(object sender, EventArgs e)
-        {
-            if (lstvTenTruongDuLieu.SelectedItems.Count > 0)
-            {
-                var errorText = "";
-                if (!ValidateThemDieuKien(ref errorText))
-                {
-                    MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-                var dieukientimkiem = new DieuKienTimKiem
-                {
-                    Attr = (Attribute)lstvTenTruongDuLieu.SelectedItems[0].Tag,
-                    Condition = cbxDieuKien.Text,
-                    Value = cbxGiaTriTimKiem.Visible ? GetGiaTriTimKiem(cbxGiaTriTimKiem.SelectedItem).Trim() : txtGiaTriTimKiem.Text.Trim(),
-                    AndOr = lstvDieuKienTimKiem.Items.Count > 0 ? (rdbtnVa.Checked ? "And" : "Or") : ""
-                };
-                // Add item to lstview
-                var objListViewItem = new ListViewItem
-                {
-                    Tag = dieukientimkiem,
-                    Text = dieukientimkiem.AndOr + " " + dieukientimkiem.Attr.Name + dieukientimkiem.Condition + dieukientimkiem.Value
-                };
-                lstvDieuKienTimKiem.Items.Add(objListViewItem);
-                cbxDieuKien.SelectedIndex = -1;
-                cbxGiaTriTimKiem.SelectedIndex = -1;
-                txtGiaTriTimKiem.Text = "";
-            }
-        }
-
         /// <summary>
         /// Validate user input
         /// </summary>
@@ -578,7 +832,7 @@ namespace QuanLyHoSoCongChuc.Search
             }
 
             if (cbxGiaTriTimKiem.Visible)
-            {    
+            {
                 if (cbxGiaTriTimKiem.SelectedIndex == -1)
                 {
                     errorText = "Vui lòng chọn giá trị cho điều kiện!";
@@ -651,226 +905,6 @@ namespace QuanLyHoSoCongChuc.Search
             else if (item.GetType() == typeof(DonVi))
                 value = ((DonVi)item).MaDonVi;
             return value;
-        }
-
-        private void btnXoaDieuKien_Click(object sender, EventArgs e)
-        {
-            if (lstvDieuKienTimKiem.Items.Count > 0)
-            {
-                lstvDieuKienTimKiem.Items.RemoveAt(lstvDieuKienTimKiem.Items.Count - 1);
-            }
-        }
-
-        private void btnMo_Click(object sender, EventArgs e)
-        {
-            FrmMoCauHoi frm = new FrmMoCauHoi();
-            frm.Handler += GetCauHoi;
-            frm.ShowDialog();
-        }
-
-        public void GetCauHoi(object sender, EventArgs e)
-        {
-            var dataType = (MyQueryEvent)e;
-            var cauhoi = (CauHoiNguoiDung)dataType.Data;
-            if (cauhoi != null)
-            {
-                // Select table to query
-                SelectBang(cauhoi.Bang, sender, e);
-
-                // Fill data to listview
-                lstvDieuKienTimKiem.Items.Clear();
-                for (int i = 0; i < cauhoi.LstDieuKien.Count; i++)
-                {
-                    var dieukientimkiem = new DieuKienTimKiem
-                    {
-                        Attr = new Attribute { Name = cauhoi.LstDieuKien[i].Bien },
-                        Condition = cauhoi.LstDieuKien[i].DieuKien,
-                        Value = cauhoi.LstDieuKien[i].GiaTri,
-                        AndOr = cauhoi.LstDieuKien[i].ThuocTinhDieuKien
-                    };
-                    // Add item to lstview
-                    var objListViewItem = new ListViewItem
-                    {
-                        Tag = dieukientimkiem,
-                        Text = dieukientimkiem.AndOr + " " + dieukientimkiem.Attr.Name + dieukientimkiem.Condition + dieukientimkiem.Value
-                    };
-                    lstvDieuKienTimKiem.Items.Add(objListViewItem);
-                }
-            }
-        }
-
-        private void btnLuu_Click(object sender, EventArgs e)
-        {
-            // Init list of searching condition to transfer data 
-            List<DieuKienTimKiem> lstDieuKienTimKiem = new List<DieuKienTimKiem>();
-            for (int i = 0; i < lstvDieuKienTimKiem.Items.Count; i++)
-            {
-                lstDieuKienTimKiem.Add((DieuKienTimKiem)lstvDieuKienTimKiem.Items[i].Tag);
-            }
-            // Show form luucauhoi
-            if (lstDieuKienTimKiem.Count > 0)
-            {
-                FrmLuuCauHoi frm = new FrmLuuCauHoi
-                {
-                    Bang = GetBang(),
-                    LstDieuKienTimKiem = lstDieuKienTimKiem
-                };
-                frm.ShowDialog();
-            }
-            else
-            {
-                MessageBox.Show("Không có giá trị tìm kiếm để lưu", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            
-        }
-
-        /// <summary>
-        /// Get bang need to search
-        /// </summary>
-        /// <returns></returns>
-        private string GetBang()
-        {
-            var result = "";
-            if (rdbtnThongTinChung.Checked)
-                result = "NhanVien";
-            else if (rdbtnQuaTrinhCongTac.Checked)
-                result = "QuaTrinhCongTac";
-            else if (rdbtnQuaTrinhDaoTao.Checked)
-                result = "QuaTrinhDaoTao";
-            else if (rdbtnNgoaiNgu.Checked)
-                result = "TrinhDoNgoaiNgu";
-            else if (rdbtnQuaTrinhKhenThuong.Checked)
-                result = "KhenThuong";
-            else if (rdbtnQuaTrinhKyLuat.Checked)
-                result = "KyLuat";
-            return result;
-        }
-
-        private void SelectBang(string tenbang, object sender, EventArgs e)
-        {
-            switch (tenbang)
-            {
-                case "NhanVien":
-                    rdbtnThongTinChung.Checked = true;
-                    rdbtnThongTinChung_Click(sender, e);
-                    break;
-                case "QuaTrinhCongTac":
-                    rdbtnQuaTrinhCongTac.Checked = true;
-                    rdbtnQuaTrinhCongTac_Click(sender, e);
-                    break;
-                case "QuaTrinhDaoTao":
-                    rdbtnQuaTrinhDaoTao.Checked = true;
-                    rdbtnQuaTrinhDaoTao_Click(sender, e);
-                    break;
-                case "TrinhDoNgoaiNgu":
-                    rdbtnNgoaiNgu.Checked = true;
-                    rdbtnNgoaiNgu_Click(sender, e);
-                    break;
-                case "KhenThuong":
-                    rdbtnQuaTrinhKhenThuong.Checked = true;
-                    rdbtnQuaTrinhKhenThuong_Click(sender, e);
-                    break;
-                case "KyLuat":
-                    rdbtnQuaTrinhKyLuat.Checked = true;
-                    rdbtnQuaTrinhKyLuat_Click(sender, e);
-                    break;
-            }
-        }
-
-        private void btnDKMoi_Click(object sender, EventArgs e)
-        {
-            lstvDieuKienTimKiem.Items.Clear();
-        }
-
-        private void btnTim_TieuChiKhac_Click(object sender, EventArgs e)
-        {
-            // Init list of searching condition to transfer data 
-            List<DieuKienTimKiem> lstDieuKienTimKiem = new List<DieuKienTimKiem>();
-            for (int i = 0; i < lstvDieuKienTimKiem.Items.Count; i++)
-            {
-                lstDieuKienTimKiem.Add((DieuKienTimKiem)lstvDieuKienTimKiem.Items[i].Tag);
-            }
-            // Show form luucauhoi
-            if (lstDieuKienTimKiem.Count > 0)
-            {
-                var bang = GetBang();
-                var sqlQuery = "";
-                switch (bang)
-                {
-                    case "NhanVien":
-                        sqlQuery = BuildSearchByTieuChiChungQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
-                        break;
-                    case "QuaTrinhCongTac":
-                        break;
-                    case "QuaTrinhDaoTao":
-                        break;
-                    case "TrinhDoNgoaiNgu":
-                        break;
-                    case "KhenThuong":
-                        break;
-                    case "KyLuat":
-                        break;
-                }
-                var ds = GlobalVars.g_CauHoiNguoiDung.SearchByCriterias(sqlQuery);
-                lstvNhanVien.Items.Clear();
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                    {
-                        var objListViewItem = new ListViewItem();
-                        objListViewItem.Tag = ds.Tables[0].Rows[i]["MaNhanVien"].ToString();
-                        objListViewItem.Text = ds.Tables[0].Rows[i]["MaNhanVien"].ToString();
-                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["HoTenNhanVien"].ToString());
-                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["TenGioiTinh"].ToString());
-                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["NgaySinh"].ToString());
-                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["NoiOHienTai"].ToString());
-                        lstvNhanVien.Items.Add(objListViewItem);
-                    }
-                }
-                txtTongSo.Text = "Tìm thấy " + ds.Tables[0].Rows.Count + " nhân viên";
-            }
-            else
-            {
-                MessageBox.Show("Không có giá trị tìm kiếm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        /// <summary>
-        /// Build query base on specified criterial
-        /// </summary>
-        /// <returns></returns>
-        public string BuildSearchByTieuChiChungQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
-        {
-            var result = "";
-            result += "Select NhanVien.*, TenGioiTinh From NhanVien, GioiTinh Where ";
-            GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
-            {
-                Bang = "NhanVien",
-                DBProvider = new DBProvider()
-            };
-            result += CreateQueryString(lstDieuKienTimKiem);
-            result += "And NhanVien.MaGioiTinh = GioiTinh.MaGioiTinh And MaDonVi = N'" + madonvi + "'";
-            return result;
-        }
-
-        /// <summary>
-        /// Create query string base on list of item in listview
-        /// </summary>
-        /// <returns></returns>
-        public string CreateQueryString(List<DieuKienTimKiem> lstDieuKienTimKiem)
-        {
-            var result = "";
-            for (int i = 0; i < lstDieuKienTimKiem.Count; i++)
-            {
-                var item = (DieuKienTimKiem)lstDieuKienTimKiem[i];
-                if (item.Attr.Type == DataType.DATETIME)
-                    result += (item.AndOr.Trim() + " " + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " '" + item.Value.Trim() + "' ");
-                else if (item.Attr.Type == DataType.STRING)
-                    result += (item.AndOr.Trim() + " " + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " N'" + item.Value.Trim() + "' ");
-                else
-                    result += (item.AndOr.Trim() + " " + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " " + item.Value.Trim() + " ");
-            }
-            return result;
         }
         //--------------------- E --------------------------
     }
