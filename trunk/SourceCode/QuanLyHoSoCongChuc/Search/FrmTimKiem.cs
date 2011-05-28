@@ -907,6 +907,13 @@ namespace QuanLyHoSoCongChuc.Search
                 value = ((DonVi)item).MaDonVi;
             return value;
         }
-        //--------------------- E --------------------------
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+        // tuansl added: STATISTIC SEARCHING RESULT 
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+        private void tbTongHop_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

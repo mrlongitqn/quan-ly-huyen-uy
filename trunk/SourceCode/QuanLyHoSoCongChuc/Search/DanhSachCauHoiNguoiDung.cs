@@ -6,6 +6,9 @@ using System.Xml;
 
 namespace QuanLyHoSoCongChuc.Search
 {
+    /// <summary>
+    /// tuansl added: manage load list of user queries from file
+    /// </summary>
     public class DanhSachCauHoiNguoiDung
     {
         public List<CauHoiNguoiDung> LstCauHoiNguoiDung { get; set; }

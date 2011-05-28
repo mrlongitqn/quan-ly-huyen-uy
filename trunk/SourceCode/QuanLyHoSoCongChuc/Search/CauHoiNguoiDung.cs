@@ -8,7 +8,9 @@ using System.Data;
 
 namespace QuanLyHoSoCongChuc.Search
 {
-    // Process search by different criticals
+    /// <summary>
+    /// tuansl added: Process search by different criticals
+    /// </summary>
     public class DieuKienTimKiem
     {
         public QuanLyHoSoCongChuc.Utils.Attribute Attr { get; set; }
@@ -18,7 +20,7 @@ namespace QuanLyHoSoCongChuc.Search
     }
 
     /// <summary>
-    /// Components of a condition
+    /// tuansl added: Components of a condition
     /// </summary>
     public class DieuKienThanhPhan
     {
@@ -28,7 +30,7 @@ namespace QuanLyHoSoCongChuc.Search
         public string DieuKien { get; set; }
     }
     /// <summary>
-    /// Load and save user queries
+    /// tuansl added: Load and save user queries
     /// </summary>
     public class CauHoiNguoiDung
     {

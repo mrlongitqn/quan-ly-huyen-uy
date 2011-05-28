@@ -10,6 +10,9 @@ using QuanLyHoSoCongChuc.Utils;
 
 namespace QuanLyHoSoCongChuc.Search
 {
+    /// <summary>
+    /// tuansl added: open list of user queries stored in file
+    /// </summary>
     public partial class FrmMoCauHoi : DevComponents.DotNetBar.Office2007Form
     {
         public DanhSachCauHoiNguoiDung danhsachcauhoi = new DanhSachCauHoiNguoiDung();
