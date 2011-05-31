@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnChonDonVi = new System.Windows.Forms.Button();
+            this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.btnChonQueQuan = new System.Windows.Forms.Button();
             this.txtQueQuan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.txtCoQuanDaTungLamViec = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -42,6 +46,8 @@
             this.txtQuaTrinhCongTac = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDanhHieu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.chkbxConSong = new DevComponents.DotNetBar.Controls.CheckBoxX();
+            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
+            this.btnLuu = new DevComponents.DotNetBar.ButtonX();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX13 = new DevComponents.DotNetBar.LabelX();
@@ -60,12 +66,6 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.btnChonQueQuan = new System.Windows.Forms.Button();
-            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
-            this.btnLuu = new DevComponents.DotNetBar.ButtonX();
-            this.btnChonDonVi = new System.Windows.Forms.Button();
-            this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.SuspendLayout();
@@ -134,6 +134,49 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 29;
+            // 
+            // btnChonDonVi
+            // 
+            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonVi.Location = new System.Drawing.Point(568, 10);
+            this.btnChonDonVi.Name = "btnChonDonVi";
+            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonVi.TabIndex = 189;
+            this.btnChonDonVi.UseVisualStyleBackColor = true;
+            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
+            // 
+            // txtMaDonVi
+            // 
+            // 
+            // 
+            // 
+            this.txtMaDonVi.Border.Class = "TextBoxBorder";
+            this.txtMaDonVi.Location = new System.Drawing.Point(399, 15);
+            this.txtMaDonVi.Name = "txtMaDonVi";
+            this.txtMaDonVi.Size = new System.Drawing.Size(163, 20);
+            this.txtMaDonVi.TabIndex = 0;
+            // 
+            // labelX16
+            // 
+            this.labelX16.BackColor = System.Drawing.Color.Transparent;
+            this.labelX16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX16.Location = new System.Drawing.Point(348, 15);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(87, 17);
+            this.labelX16.TabIndex = 187;
+            this.labelX16.Text = "Đơn vị";
+            // 
+            // btnChonQueQuan
+            // 
+            this.btnChonQueQuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonQueQuan.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonQueQuan.Location = new System.Drawing.Point(568, 89);
+            this.btnChonQueQuan.Name = "btnChonQueQuan";
+            this.btnChonQueQuan.Size = new System.Drawing.Size(28, 27);
+            this.btnChonQueQuan.TabIndex = 186;
+            this.btnChonQueQuan.UseVisualStyleBackColor = true;
+            this.btnChonQueQuan.Click += new System.EventHandler(this.btnChonQueQuan_Click);
             // 
             // txtQueQuan
             // 
@@ -282,6 +325,31 @@
             this.chkbxConSong.Size = new System.Drawing.Size(75, 23);
             this.chkbxConSong.TabIndex = 3;
             this.chkbxConSong.Text = "Còn sống";
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
+            this.btnThoat.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.btnThoat.Location = new System.Drawing.Point(521, 458);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 167;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnLuu
+            // 
+            this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnLuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnLuu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
+            this.btnLuu.Location = new System.Drawing.Point(440, 458);
+            this.btnLuu.Name = "btnLuu";
+            this.btnLuu.Size = new System.Drawing.Size(75, 23);
+            this.btnLuu.TabIndex = 166;
+            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // labelX15
             // 
@@ -466,74 +534,6 @@
             this.labelX3.TabIndex = 1;
             this.labelX3.Text = "CHI TIẾT CÁN BỘ";
             this.labelX3.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // btnChonQueQuan
-            // 
-            this.btnChonQueQuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonQueQuan.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonQueQuan.Location = new System.Drawing.Point(568, 89);
-            this.btnChonQueQuan.Name = "btnChonQueQuan";
-            this.btnChonQueQuan.Size = new System.Drawing.Size(28, 27);
-            this.btnChonQueQuan.TabIndex = 186;
-            this.btnChonQueQuan.UseVisualStyleBackColor = true;
-            this.btnChonQueQuan.Click += new System.EventHandler(this.btnChonQueQuan_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
-            this.btnThoat.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btnThoat.Location = new System.Drawing.Point(521, 458);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 167;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnLuu
-            // 
-            this.btnLuu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnLuu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnLuu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
-            this.btnLuu.Location = new System.Drawing.Point(440, 458);
-            this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(75, 23);
-            this.btnLuu.TabIndex = 166;
-            this.btnLuu.Text = "Lưu";
-            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // btnChonDonVi
-            // 
-            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonDonVi.Location = new System.Drawing.Point(568, 10);
-            this.btnChonDonVi.Name = "btnChonDonVi";
-            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDonVi.TabIndex = 189;
-            this.btnChonDonVi.UseVisualStyleBackColor = true;
-            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
-            // 
-            // txtMaDonVi
-            // 
-            // 
-            // 
-            // 
-            this.txtMaDonVi.Border.Class = "TextBoxBorder";
-            this.txtMaDonVi.Location = new System.Drawing.Point(399, 15);
-            this.txtMaDonVi.Name = "txtMaDonVi";
-            this.txtMaDonVi.Size = new System.Drawing.Size(163, 20);
-            this.txtMaDonVi.TabIndex = 0;
-            // 
-            // labelX16
-            // 
-            this.labelX16.BackColor = System.Drawing.Color.Transparent;
-            this.labelX16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX16.Location = new System.Drawing.Point(348, 15);
-            this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(87, 17);
-            this.labelX16.TabIndex = 187;
-            this.labelX16.Text = "Đơn vị";
             // 
             // FrmChiTietCanBoQuaCacThoiKi
             // 

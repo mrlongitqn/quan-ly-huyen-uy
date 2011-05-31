@@ -278,11 +278,17 @@
     <Compile Include="DataLayer\TrinhDoNgoaiNguData.cs" />
     <Compile Include="DataLayer\TrinhDoQuanLyNhaNuocData.cs" />
     <Compile Include="DataLayer\TrinhDoTinHocData.cs" />
-    <Compile Include="DataManager\PhieuBaoChuyenNgach.cs">
+    <Compile Include="DataManager\FrmTimNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataManager\PhieuBaoChuyenNgach.Designer.cs">
-      <DependentUpon>PhieuBaoChuyenNgach.cs</DependentUpon>
+    <Compile Include="DataManager\FrmTimNhanVien.Designer.cs">
+      <DependentUpon>FrmTimNhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoChuyenNgach.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoChuyenNgach.Designer.cs">
+      <DependentUpon>FrmPhieuBaoChuyenNgach.cs</DependentUpon>
     </Compile>
     <Compile Include="DataService.cs">
       <SubType>Component</SubType>
@@ -772,8 +778,11 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="DataManager\PhieuBaoChuyenNgach.resx">
-      <DependentUpon>PhieuBaoChuyenNgach.cs</DependentUpon>
+    <EmbeddedResource Include="DataManager\FrmTimNhanVien.resx">
+      <DependentUpon>FrmTimNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManager\FrmPhieuBaoChuyenNgach.resx">
+      <DependentUpon>FrmPhieuBaoChuyenNgach.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmChucNangKhenThuong.resx">
       <SubType>Designer</SubType>
