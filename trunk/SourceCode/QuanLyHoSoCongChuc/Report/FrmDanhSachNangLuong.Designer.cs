@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.dupNam = new System.Windows.Forms.DomainUpDown();
@@ -59,14 +59,25 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.DGVLuong = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.HoTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaLuongNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNgach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaNgachCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BacLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HeSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NamSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TrinhDoDaoTao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNgach1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNgach1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bac1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeSoLuongCoBan1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeSoCLechBaoLuu1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayThangNamNangLuongLanSau1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenNgach2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MaNgach2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Bac2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeSoLuongCoBan2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HeSoCLechBaoLuu2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayThangNamNangLuongLanSau2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ChenhLechVeHeSoLuongDoNangBac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SoThangDuocHuongBacLuongMoi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TongTienLuongTangThemDoTangBac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -396,82 +407,170 @@
             this.DGVLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVLuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.HoTenNhanVien,
-            this.MaGioiTinh,
+            this.TenDonVi,
             this.MaChucVu,
-            this.MaDonVi,
-            this.MaLuongNhanVien,
-            this.MaNgach,
-            this.MaNgachCC,
-            this.BacLuong,
-            this.HeSoLuong});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGVLuong.DefaultCellStyle = dataGridViewCellStyle1;
+            this.NamSinh,
+            this.TrinhDoDaoTao,
+            this.TenNgach1,
+            this.MaNgach1,
+            this.Bac1,
+            this.HeSoLuongCoBan1,
+            this.HeSoCLechBaoLuu1,
+            this.NgayThangNamNangLuongLanSau1,
+            this.TenNgach2,
+            this.MaNgach2,
+            this.Bac2,
+            this.HeSoLuongCoBan2,
+            this.HeSoCLechBaoLuu2,
+            this.NgayThangNamNangLuongLanSau2,
+            this.ChenhLechVeHeSoLuongDoNangBac,
+            this.SoThangDuocHuongBacLuongMoi,
+            this.TongTienLuongTangThemDoTangBac});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGVLuong.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGVLuong.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVLuong.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DGVLuong.Location = new System.Drawing.Point(0, 0);
             this.DGVLuong.Name = "DGVLuong";
             this.DGVLuong.Size = new System.Drawing.Size(877, 240);
             this.DGVLuong.TabIndex = 2;
+            this.DGVLuong.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.DGVLuong_CellPainting);
+            this.DGVLuong.ColumnWidthChanged += new System.Windows.Forms.DataGridViewColumnEventHandler(this.DGVLuong_ColumnWidthChanged);
+            this.DGVLuong.Scroll += new System.Windows.Forms.ScrollEventHandler(this.DGVLuong_Scroll);
+            this.DGVLuong.Paint += new System.Windows.Forms.PaintEventHandler(this.DGVLuong_Paint);
             // 
             // HoTenNhanVien
             // 
             this.HoTenNhanVien.DataPropertyName = "STT";
             this.HoTenNhanVien.HeaderText = "STT";
             this.HoTenNhanVien.Name = "HoTenNhanVien";
+            this.HoTenNhanVien.Width = 50;
             // 
-            // MaGioiTinh
+            // TenDonVi
             // 
-            this.MaGioiTinh.DataPropertyName = "TenDonVi";
-            this.MaGioiTinh.HeaderText = "Tên đơn vị";
-            this.MaGioiTinh.Name = "MaGioiTinh";
+            this.TenDonVi.DataPropertyName = "TenDonVi";
+            this.TenDonVi.HeaderText = "Tên đơn vị";
+            this.TenDonVi.Name = "TenDonVi";
             // 
             // MaChucVu
             // 
             this.MaChucVu.DataPropertyName = "MaChucVu";
-            this.MaChucVu.HeaderText = "Chức Vụ";
+            this.MaChucVu.HeaderText = "Họ và Tên";
             this.MaChucVu.Name = "MaChucVu";
             // 
-            // MaDonVi
+            // NamSinh
             // 
-            this.MaDonVi.DataPropertyName = "MaDonVi";
-            this.MaDonVi.HeaderText = "Đơn Vị";
-            this.MaDonVi.Name = "MaDonVi";
+            this.NamSinh.DataPropertyName = "NamSinh";
+            this.NamSinh.HeaderText = "Năm sinh";
+            this.NamSinh.Name = "NamSinh";
+            this.NamSinh.Width = 50;
             // 
-            // MaLuongNhanVien
+            // TrinhDoDaoTao
             // 
-            this.MaLuongNhanVien.DataPropertyName = "MaLuongNhanVien";
-            this.MaLuongNhanVien.HeaderText = "Mã Lương Nhân Viên";
-            this.MaLuongNhanVien.Name = "MaLuongNhanVien";
+            this.TrinhDoDaoTao.DataPropertyName = "TrinhDoDaoTao";
+            this.TrinhDoDaoTao.HeaderText = "Trình độ đào tạo";
+            this.TrinhDoDaoTao.Name = "TrinhDoDaoTao";
+            this.TrinhDoDaoTao.Width = 50;
             // 
-            // MaNgach
+            // TenNgach1
             // 
-            this.MaNgach.DataPropertyName = "MaNgach";
-            this.MaNgach.HeaderText = "Ngạch Công Chức";
-            this.MaNgach.Name = "MaNgach";
+            this.TenNgach1.DataPropertyName = "TenNgach1";
+            this.TenNgach1.HeaderText = "Tên ngạch";
+            this.TenNgach1.Name = "TenNgach1";
             // 
-            // MaNgachCC
+            // MaNgach1
             // 
-            this.MaNgachCC.DataPropertyName = "MaNgach";
-            this.MaNgachCC.HeaderText = "Mã Ngạch";
-            this.MaNgachCC.Name = "MaNgachCC";
+            this.MaNgach1.DataPropertyName = "MaNgach1";
+            this.MaNgach1.HeaderText = "Mã Ngạch";
+            this.MaNgach1.Name = "MaNgach1";
+            this.MaNgach1.Width = 60;
             // 
-            // BacLuong
+            // Bac1
             // 
-            this.BacLuong.DataPropertyName = "BacLuong";
-            this.BacLuong.HeaderText = "Bậc Lương";
-            this.BacLuong.Name = "BacLuong";
+            this.Bac1.DataPropertyName = "Bac1";
+            this.Bac1.HeaderText = "Bậc";
+            this.Bac1.Name = "Bac1";
+            this.Bac1.Width = 50;
             // 
-            // HeSoLuong
+            // HeSoLuongCoBan1
             // 
-            this.HeSoLuong.DataPropertyName = "HeSoLuong";
-            this.HeSoLuong.HeaderText = "Hệ Số Lương";
-            this.HeSoLuong.Name = "HeSoLuong";
+            this.HeSoLuongCoBan1.DataPropertyName = "HeSoLuongCoBan1";
+            this.HeSoLuongCoBan1.HeaderText = "Hệ Số Lương cơ bản";
+            this.HeSoLuongCoBan1.Name = "HeSoLuongCoBan1";
+            // 
+            // HeSoCLechBaoLuu1
+            // 
+            this.HeSoCLechBaoLuu1.DataPropertyName = "HeSoCLechBaoLuu1";
+            this.HeSoCLechBaoLuu1.HeaderText = "Hệ số c. lệch bảo lưu (nếu có)";
+            this.HeSoCLechBaoLuu1.Name = "HeSoCLechBaoLuu1";
+            // 
+            // NgayThangNamNangLuongLanSau1
+            // 
+            this.NgayThangNamNangLuongLanSau1.DataPropertyName = "NgayThangNamNangLuongLanSau1";
+            this.NgayThangNamNangLuongLanSau1.HeaderText = "Ngày tháng năm nâng lương lần sau";
+            this.NgayThangNamNangLuongLanSau1.Name = "NgayThangNamNangLuongLanSau1";
+            // 
+            // TenNgach2
+            // 
+            this.TenNgach2.DataPropertyName = "TenNgach2";
+            this.TenNgach2.HeaderText = "Tên ngạch";
+            this.TenNgach2.Name = "TenNgach2";
+            // 
+            // MaNgach2
+            // 
+            this.MaNgach2.DataPropertyName = "MaNgach2";
+            this.MaNgach2.HeaderText = "Mã ngạch";
+            this.MaNgach2.Name = "MaNgach2";
+            this.MaNgach2.Width = 60;
+            // 
+            // Bac2
+            // 
+            this.Bac2.DataPropertyName = "Bac2";
+            this.Bac2.HeaderText = "Bậc";
+            this.Bac2.Name = "Bac2";
+            this.Bac2.Width = 50;
+            // 
+            // HeSoLuongCoBan2
+            // 
+            this.HeSoLuongCoBan2.DataPropertyName = "HeSoLuongCoBan2";
+            this.HeSoLuongCoBan2.HeaderText = "Hệ Số Lương cơ bản";
+            this.HeSoLuongCoBan2.Name = "HeSoLuongCoBan2";
+            // 
+            // HeSoCLechBaoLuu2
+            // 
+            this.HeSoCLechBaoLuu2.DataPropertyName = "HeSoCLechBaoLuu2";
+            this.HeSoCLechBaoLuu2.HeaderText = "Hệ số c. lệch bảo lưu (nếu có)";
+            this.HeSoCLechBaoLuu2.Name = "HeSoCLechBaoLuu2";
+            // 
+            // NgayThangNamNangLuongLanSau2
+            // 
+            this.NgayThangNamNangLuongLanSau2.DataPropertyName = "NgayThangNamNangLuongLanSau2";
+            this.NgayThangNamNangLuongLanSau2.HeaderText = "Ngày tháng năm hưởng và nâng lương lần sau";
+            this.NgayThangNamNangLuongLanSau2.Name = "NgayThangNamNangLuongLanSau2";
+            // 
+            // ChenhLechVeHeSoLuongDoNangBac
+            // 
+            this.ChenhLechVeHeSoLuongDoNangBac.DataPropertyName = "ChenhLechVeHeSoLuongDoNangBac";
+            this.ChenhLechVeHeSoLuongDoNangBac.HeaderText = "Chênh lệch về hệ số lương do nâng bậc";
+            this.ChenhLechVeHeSoLuongDoNangBac.Name = "ChenhLechVeHeSoLuongDoNangBac";
+            // 
+            // SoThangDuocHuongBacLuongMoi
+            // 
+            this.SoThangDuocHuongBacLuongMoi.DataPropertyName = "SoThangDuocHuongBacLuongMoi";
+            this.SoThangDuocHuongBacLuongMoi.HeaderText = "Số tháng được hưởng bậc lương mới";
+            this.SoThangDuocHuongBacLuongMoi.Name = "SoThangDuocHuongBacLuongMoi";
+            // 
+            // TongTienLuongTangThemDoTangBac
+            // 
+            this.TongTienLuongTangThemDoTangBac.DataPropertyName = "TongTienLuongTangThemDoTangBac";
+            this.TongTienLuongTangThemDoTangBac.HeaderText = "Tổng tiền lương tăng thêm do tăng bậc";
+            this.TongTienLuongTangThemDoTangBac.Name = "TongTienLuongTangThemDoTangBac";
             // 
             // FrmDanhSachNangLuong
             // 
@@ -524,14 +623,25 @@
         private DevComponents.DotNetBar.Controls.DataGridViewX DGVLuong;
         private System.Windows.Forms.DomainUpDown dupNam;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTenNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaGioiTinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenDonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaChucVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaDonVi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaLuongNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNgach;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNgachCC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn BacLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HeSoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NamSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TrinhDoDaoTao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNgach1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNgach1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bac1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeSoLuongCoBan1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeSoCLechBaoLuu1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThangNamNangLuongLanSau1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenNgach2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaNgach2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Bac2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeSoLuongCoBan2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HeSoCLechBaoLuu2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThangNamNangLuongLanSau2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChenhLechVeHeSoLuongDoNangBac;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoThangDuocHuongBacLuongMoi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TongTienLuongTangThemDoTangBac;
 
 
     }

@@ -62,6 +62,9 @@
     <Reference Include="CrystalDecisions.Windows.Forms">
       <HintPath>..\..\libs\CrystalDecisions.Windows.Forms.dll</HintPath>
     </Reference>
+    <Reference Include="DataGridViewExtender">
+      <HintPath>C:\Users\tuandom\Desktop\DataGridViewExtender.dll</HintPath>
+    </Reference>
     <Reference Include="DevComponents.DotNetBar2">
       <HintPath>..\..\libs\DevComponents.DotNetBar2.dll</HintPath>
     </Reference>
