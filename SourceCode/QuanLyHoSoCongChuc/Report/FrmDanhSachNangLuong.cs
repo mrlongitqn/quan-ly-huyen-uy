@@ -71,11 +71,10 @@ namespace QuanLyHoSoCongChuc.Report
         {
             DGVLuong.Rows.Clear();
             ListItem DV = (ListItem)cbDonVi.SelectedItem;
-            String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
-            sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
-            sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
+            String sql = " select nv.*, t.TenTrinhDoChuyenMon, dv.TenDonVi";
             sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
-            sql += " where MaDonVi='" + DV.ID + "'";
+            sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+            sql += " where nv.MaDonVi='" + DV.ID + "'";
 
 
             SqlCommand cmd = new SqlCommand(sql);
@@ -91,14 +90,8 @@ namespace QuanLyHoSoCongChuc.Report
                 DGVLuong.Rows[i].Cells["HoTenNhanVien"].Value = myDt.Rows[i]["HoTenNhanVien"].ToString();
                 DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
                 DGVLuong.Rows[i].Cells["NamSinh"].Value = dt.ToString("yyyy");
-                DGVLuong.Rows[i].Cells["QueQuan"].Value = myDt.Rows[i]["QueQuan"].ToString();
-                DGVLuong.Rows[i].Cells["TuoiDoi"].Value = DateTime.Now.Year - dt.Year;
-                dt = (DateTime)myDt.Rows[i]["NgayHopDong"];
-                DGVLuong.Rows[i].Cells["NamCongTac"].Value = dt.ToString("dd/MM/yyyy");
-                DGVLuong.Rows[i].Cells["HeSoLuong"].Value = myDt.Rows[i]["HeSoLuong"].ToString();
-                DGVLuong.Rows[i].Cells["TenChucVu"].Value = myDt.Rows[i]["TenChucVu"].ToString();
+                
                 DGVLuong.Rows[i].Cells["TrinhDoDaoTao"].Value = myDt.Rows[i]["TenTrinhDoChuyenMon"].ToString();
-                DGVLuong.Rows[i].Cells["TenTrinhDoChinhTri"].Value = myDt.Rows[i]["TenTrinhDoChinhTri"].ToString();
             }
             if (myDt.Rows.Count == 0)
             {
@@ -120,8 +113,7 @@ namespace QuanLyHoSoCongChuc.Report
             format.Alignment = StringAlignment.Center;
             format.LineAlignment = StringAlignment.Center;
 
-            string str = "Mức lương đang hưởng " + cboKy.Text + " năm " + dupNam.Text;
-            e.Graphics.DrawString(str,
+            e.Graphics.DrawString("Mức lương đang hưởng",
                 this.DGVLuong.ColumnHeadersDefaultCellStyle.Font,
                 new SolidBrush(this.DGVLuong.ColumnHeadersDefaultCellStyle.ForeColor),
                 r1,
@@ -138,8 +130,8 @@ namespace QuanLyHoSoCongChuc.Report
             r1.Height = 30;// r1.Height / 2 - 2;
             e.Graphics.FillRectangle(new SolidBrush(this.DGVLuong.ColumnHeadersDefaultCellStyle.BackColor), r1);
 
-
-            e.Graphics.DrawString("Kết quả nâng lương",
+            string str = "Kết quả nâng lương " + cboKy.Text + " năm " + dupNam.Text;
+            e.Graphics.DrawString(str,
                 this.DGVLuong.ColumnHeadersDefaultCellStyle.Font,
                 new SolidBrush(this.DGVLuong.ColumnHeadersDefaultCellStyle.ForeColor),
                 r1,
