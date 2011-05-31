@@ -98,7 +98,9 @@
       <HintPath>..\..\..\..\..\ProjectsInternal\GenerateRepository\SourceCode\GenerateAdminPage\GenerateAdminPage\bin\Release\Microsoft.SqlServer.Smo.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SourceGrid, Version=4.30.4168.28943, Culture=neutral, PublicKeyToken=df6f5e538749e85d, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
