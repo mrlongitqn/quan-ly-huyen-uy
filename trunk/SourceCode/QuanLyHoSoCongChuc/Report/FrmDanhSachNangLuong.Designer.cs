@@ -127,6 +127,7 @@
             this.groupPanel2.Controls.Add(this.labelX9);
             this.groupPanel2.Controls.Add(this.labelX11);
             this.groupPanel2.Controls.Add(this.labelX12);
+            this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupPanel2.Location = new System.Drawing.Point(0, 0);
             this.groupPanel2.Name = "groupPanel2";
             this.groupPanel2.Size = new System.Drawing.Size(877, 248);
