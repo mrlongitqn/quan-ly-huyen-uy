@@ -25,7 +25,7 @@ namespace QuanLyHoSoCongChuc.Report
             loadDonVi();
             cbDoiTuong.SelectedIndex = 0;
             cbKy.SelectedIndex = 0;
-            initGird2();
+            initGird3();
         }
         void loadDonVi()
         {
