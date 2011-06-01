@@ -181,6 +181,104 @@ namespace QuanLyHoSoCongChuc.Report
 
             grid1.AutoSizeCells();
         }
+        void initGird3()
+        {
+            SourceGrid.Cells.Views.Cell yellowView = new SourceGrid.Cells.Views.Cell();
+            yellowView.BackColor = Color.Lavender;
+            yellowView.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+
+            grid1.BorderStyle = BorderStyle.FixedSingle;
+            grid1.ColumnsCount = 21;
+            grid1.FixedRows = 3;
+            grid1.Rows.Insert(0);
+            grid1.Rows.Insert(1);
+            grid1.Rows.Insert(2);
+            grid1.Rows.Insert(3);
+            grid1.Rows[1].Height = 500;
+
+            grid1[0, 0] = new SourceGrid.Cells.ColumnHeader("TT");
+            grid1[0, 0].RowSpan = 3;
+            grid1[0, 1] = new SourceGrid.Cells.ColumnHeader("Họ và tên");
+            grid1[0, 1].RowSpan = 3;
+
+            grid1[0, 2] = new SourceGrid.Cells.ColumnHeader("Ngày tháng năm sinh");
+            grid1[0, 2].ColumnSpan = 2;
+            grid1[0, 2].View = yellowView;
+            grid1[1, 2] = new SourceGrid.Cells.ColumnHeader("Nam");
+            grid1[1, 2].RowSpan = 2;
+            grid1[1, 3] = new SourceGrid.Cells.ColumnHeader("Nữ");
+            grid1[1, 3].RowSpan = 2;
+
+            grid1[0, 4] = new SourceGrid.Cells.ColumnHeader("Trình độ chuyên môn được đào tạo");
+            grid1[0, 4].RowSpan = 3;
+
+            grid1[0, 5] = new SourceGrid.Cells.ColumnHeader("Chức danh, công việc đang đảm nhân");
+            grid1[0, 5].RowSpan = 3;
+
+            grid1[0, 6] = new SourceGrid.Cells.ColumnHeader("Ngạch & Bậc lương");
+            grid1[0, 6].ColumnSpan = 2;
+            grid1[0, 6].View = yellowView;
+            grid1[1, 6] = new SourceGrid.Cells.ColumnHeader("Mã ngạch"); grid1[1, 6].RowSpan = 2;
+            grid1[1, 7] = new SourceGrid.Cells.ColumnHeader("Bậc");grid1[1, 7].RowSpan = 2;
+            
+            grid1[0, 8] = new SourceGrid.Cells.ColumnHeader("Hệ số lương theo ngạch bậc");
+            grid1[0, 8].ColumnSpan = 5;
+            grid1[0, 8].View = yellowView;
+
+            grid1[1, 8] = new SourceGrid.Cells.ColumnHeader("Hệ số lương của bậc trong ngạch"); grid1[1, 8].RowSpan = 2;
+
+            grid1[1, 9] = new SourceGrid.Cells.ColumnHeader("Phụ cấp TN");
+            grid1[1, 9].ColumnSpan = 2;
+            grid1[2, 9] = new SourceGrid.Cells.ColumnHeader("%");
+            grid1[2, 10] = new SourceGrid.Cells.ColumnHeader("Hệ số");
+
+            grid1[1, 11] = new SourceGrid.Cells.ColumnHeader("Chênh lệch bảo lưu (nếu có)"); grid1[1, 11].RowSpan = 2;
+
+            grid1[1, 12] = new SourceGrid.Cells.ColumnHeader("Thời gian tính nâng lương lần sau"); grid1[1, 12].RowSpan = 2;
+            
+            grid1[0, 13] = new SourceGrid.Cells.ColumnHeader("Hệ số phụ cấp");
+            grid1[0, 13].ColumnSpan = 5;
+            grid1[0, 13].View = yellowView;
+
+            grid1[1, 13] = new SourceGrid.Cells.ColumnHeader("Chức vụ"); grid1[1, 13].RowSpan = 2;
+            grid1[1, 14] = new SourceGrid.Cells.ColumnHeader("Trách nhiệm"); grid1[1, 14].RowSpan = 2;
+            grid1[1, 15] = new SourceGrid.Cells.ColumnHeader("Độc hại"); grid1[1, 14].RowSpan = 2;
+            grid1[1, 16] = new SourceGrid.Cells.ColumnHeader("Ưu đãi nghề"); grid1[1, 14].RowSpan = 2;
+            grid1[1, 17] = new SourceGrid.Cells.ColumnHeader("Phụ cấp khác"); grid1[1, 14].RowSpan = 2;
+
+            grid1[0, 18] = new SourceGrid.Cells.ColumnHeader("Tổng hệ số lương và phụ cấp");
+            grid1[0, 18].RowSpan = 3;
+
+            grid1[0, 19] = new SourceGrid.Cells.ColumnHeader("Tổng tiền lương và phụ cấp một tháng");
+            grid1[0, 19].RowSpan = 3;
+
+            grid1[0, 20] = new SourceGrid.Cells.ColumnHeader("Ghi chú");
+            grid1[0, 20].RowSpan = 3;
+
+            grid1[3, 0] = new SourceGrid.Cells.ColumnHeader("A");
+            grid1[3, 1] = new SourceGrid.Cells.ColumnHeader("B");
+            grid1[3, 2] = new SourceGrid.Cells.ColumnHeader("1");
+            grid1[3, 3] = new SourceGrid.Cells.ColumnHeader("2");
+            grid1[3, 4] = new SourceGrid.Cells.ColumnHeader("3");
+            grid1[3, 5] = new SourceGrid.Cells.ColumnHeader("4");
+            grid1[3, 6] = new SourceGrid.Cells.ColumnHeader("5");
+            grid1[3, 7] = new SourceGrid.Cells.ColumnHeader("6");
+            grid1[3, 8] = new SourceGrid.Cells.ColumnHeader("7");
+            grid1[3, 9] = new SourceGrid.Cells.ColumnHeader("8");
+            grid1[3, 10] = new SourceGrid.Cells.ColumnHeader("9");
+            grid1[3, 11] = new SourceGrid.Cells.ColumnHeader("10");
+            grid1[3, 13] = new SourceGrid.Cells.ColumnHeader("11");
+            grid1[3, 12] = new SourceGrid.Cells.ColumnHeader("12");
+            grid1[3, 14] = new SourceGrid.Cells.ColumnHeader("13");
+            grid1[3, 15] = new SourceGrid.Cells.ColumnHeader("14");
+            grid1[3, 16] = new SourceGrid.Cells.ColumnHeader("15");
+            grid1[3, 17] = new SourceGrid.Cells.ColumnHeader("16");
+            grid1[3, 18] = new SourceGrid.Cells.ColumnHeader("17");
+            grid1[3, 19] = new SourceGrid.Cells.ColumnHeader("18");
+            grid1[3, 20] = new SourceGrid.Cells.ColumnHeader("19");
+
+            grid1.AutoSizeCells();
+        }
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Chua lam xong");
