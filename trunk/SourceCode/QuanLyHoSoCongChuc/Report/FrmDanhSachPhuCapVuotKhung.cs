@@ -25,6 +25,8 @@ namespace QuanLyHoSoCongChuc.Report
         {
             loadDonVi();
             loadNam();
+            initGird();
+            cboKy.SelectedIndex = 0;
         }
         void loadDonVi()
         {
@@ -54,7 +56,7 @@ namespace QuanLyHoSoCongChuc.Report
         {
             MessageBox.Show("Chua lam xong");
         }
-        void initGird2()
+        void initGird()
         {
             SourceGrid.Cells.Views.Cell yellowView = new SourceGrid.Cells.Views.Cell();
             yellowView.BackColor = Color.Lavender;

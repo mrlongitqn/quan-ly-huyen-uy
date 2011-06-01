@@ -31,6 +31,7 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
+            this.grid1 = new SourceGrid.Grid();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -61,7 +62,6 @@
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.grid1 = new SourceGrid.Grid();
             this.panelEx2.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -103,6 +103,18 @@
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 3;
+            // 
+            // grid1
+            // 
+            this.grid1.EnableSort = true;
+            this.grid1.Location = new System.Drawing.Point(12, 18);
+            this.grid1.Name = "grid1";
+            this.grid1.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid1.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid1.Size = new System.Drawing.Size(793, 212);
+            this.grid1.TabIndex = 0;
+            this.grid1.TabStop = true;
+            this.grid1.ToolTipText = "";
             // 
             // panelEx1
             // 
@@ -239,6 +251,7 @@
             this.cbDoiTuong.Name = "cbDoiTuong";
             this.cbDoiTuong.Size = new System.Drawing.Size(192, 20);
             this.cbDoiTuong.TabIndex = 147;
+            this.cbDoiTuong.SelectedIndexChanged += new System.EventHandler(this.cbDoiTuong_SelectedIndexChanged);
             // 
             // comboItem1
             // 
@@ -425,18 +438,6 @@
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "BÁO CÁO LƯƠNG - QUỸ LƯƠNG";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // grid1
-            // 
-            this.grid1.EnableSort = true;
-            this.grid1.Location = new System.Drawing.Point(12, 18);
-            this.grid1.Name = "grid1";
-            this.grid1.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
-            this.grid1.SelectionMode = SourceGrid.GridSelectionMode.Cell;
-            this.grid1.Size = new System.Drawing.Size(793, 212);
-            this.grid1.TabIndex = 0;
-            this.grid1.TabStop = true;
-            this.grid1.ToolTipText = "";
             // 
             // FrmBaoCaoLuong
             // 

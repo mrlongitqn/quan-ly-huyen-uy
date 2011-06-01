@@ -26,6 +26,7 @@ namespace QuanLyHoSoCongChuc.Report
         {
             loadDonVi();
             loadNam();
+            cboKy.SelectedIndex = 0;
         }
         void loadDonVi()
         {

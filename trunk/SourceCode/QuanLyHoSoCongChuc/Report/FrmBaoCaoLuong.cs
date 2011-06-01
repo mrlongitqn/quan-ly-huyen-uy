@@ -25,7 +25,6 @@ namespace QuanLyHoSoCongChuc.Report
             loadDonVi();
             cbDoiTuong.SelectedIndex = 0;
             cbKy.SelectedIndex = 0;
-            initGird3();
         }
         void loadDonVi()
         {
@@ -50,6 +49,7 @@ namespace QuanLyHoSoCongChuc.Report
         }
         void initGird1()
         {
+            grid1.Rows.Clear();
             SourceGrid.Cells.Views.Cell yellowView = new SourceGrid.Cells.Views.Cell();
             yellowView.BackColor = Color.Lavender;
             yellowView.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
@@ -96,6 +96,7 @@ namespace QuanLyHoSoCongChuc.Report
         }
         void initGird2()
         {
+            grid1.Rows.Clear();
             SourceGrid.Cells.Views.Cell yellowView = new SourceGrid.Cells.Views.Cell();
             yellowView.BackColor = Color.Lavender;
             yellowView.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
@@ -183,6 +184,7 @@ namespace QuanLyHoSoCongChuc.Report
         }
         void initGird3()
         {
+            grid1.Rows.Clear();
             SourceGrid.Cells.Views.Cell yellowView = new SourceGrid.Cells.Views.Cell();
             yellowView.BackColor = Color.Lavender;
             yellowView.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
@@ -282,6 +284,17 @@ namespace QuanLyHoSoCongChuc.Report
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Chua lam xong");
+        }
+
+        private void cbDoiTuong_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbDoiTuong.SelectedIndex == 0)
+                initGird1();
+            else if(cbDoiTuong.SelectedIndex == 1)
+                 initGird2();
+            else if (cbDoiTuong.SelectedIndex == 2)
+                initGird3();
+
         }
     }
 }
