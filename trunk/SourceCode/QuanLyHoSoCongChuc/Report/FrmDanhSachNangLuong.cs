@@ -107,6 +107,8 @@ namespace QuanLyHoSoCongChuc.Report
             grid1[1, 17] = new SourceGrid.Cells.ColumnHeader("Chênh lệch về hệ số lương do nâng bậc");
             grid1[1, 18] = new SourceGrid.Cells.ColumnHeader("Số tháng được hưởng bậc lương mới");
             grid1[1, 19] = new SourceGrid.Cells.ColumnHeader("Tổng tiền lương tăng thêm do nâng bậc");
+
+            grid1.AutoSizeCells();
         }
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
