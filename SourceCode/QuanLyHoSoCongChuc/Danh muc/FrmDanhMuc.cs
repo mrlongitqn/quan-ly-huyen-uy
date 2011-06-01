@@ -16,7 +16,7 @@ using QuanLyHoSoCongChuc.Controller;
 using QuanLyHoSoCongChuc.DataLayer;
 using QuanLyHoSoCongChuc.Utils;
 
-namespace QuanLyHoSoCongChuc
+namespace QuanLyHoSoCongChuc.Danh_muc
 {
     #region Using
     using QuanLyHoSoCongChuc.Models;
@@ -203,7 +203,7 @@ namespace QuanLyHoSoCongChuc
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            int level = getLevelTreeView(treeView1.SelectedNode);
+            int level = GlobalDanhMucs.GetLevelTreeView(treeView1.SelectedNode);
             if (level == 1 || level == 3)
             {
                 btThem.Enabled = false;
@@ -246,22 +246,6 @@ namespace QuanLyHoSoCongChuc
                 }
             }
             
-        }
-
-        private int getLevelTreeView(TreeNode node)
-        {
-            if (node.Parent == null)
-                return 1; // Node cha
-            else
-            {
-                if (node.Parent.Parent == null)
-                    return 2;
-                else { 
-                    if (node.Parent.Parent.Parent == null)
-                        return 3;
-                }
-            }
-            return -1;
         }
 
         private void btSave_Click(object sender, EventArgs e)
