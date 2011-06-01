@@ -113,7 +113,7 @@ namespace QuanLyHoSoCongChuc.Report
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
             grid1.Rows.Clear();
-            
+            initGird();
             ListItem DV = (ListItem)cbDonVi.SelectedItem;
             String sql = " select nv.*, t.TenTrinhDoChuyenMon, dv.TenDonVi";
             sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";

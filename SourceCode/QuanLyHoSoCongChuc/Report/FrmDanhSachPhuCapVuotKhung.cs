@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QuanLyHoSoCongChuc.Report
 {
@@ -49,12 +50,57 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chua lam xong");
+            grid1.Rows.Clear();
+            initGird();
+            ListItem DV = (ListItem)cbDonVi.SelectedItem;
+            String sql = " select nv.*, t.TenTrinhDoChuyenMon, dv.TenDonVi";
+            sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+            sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+            sql += " where nv.MaDonVi='" + DV.ID + "'";
+
+            SqlCommand cmd = new SqlCommand(sql);
+            dataService.Load(cmd);
+            DataTable myDt = dataService;
+
+            for (int r = 0; r < myDt.Rows.Count; r++)
+            {
+                grid1.Rows.Insert(r + 3);
+                grid1[3 + r, 0] = new SourceGrid.Cells.Cell(r + 1, typeof(int));
+                grid1[3 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
+                grid1[3 + r, 2] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HoTenNhanVien"], typeof(String));
+
+                DateTime dt = (DateTime)myDt.Rows[r]["NgaySinh"];
+                grid1[3 + r, 3] = new SourceGrid.Cells.Cell(dt.Year, typeof(int));
+                grid1[3 + r, 4] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenTrinhDoChuyenMon"], typeof(String));
+                grid1[3 + r, 5] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 6] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 7] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 8] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 9] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 10] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 11] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 12] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 13] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 14] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 15] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 16] = new SourceGrid.Cells.Cell("", typeof(String));
+                grid1[3 + r, 17] = new SourceGrid.Cells.Cell("", typeof(String));
+            }
+
+            grid1.AutoSizeCells();
+            if (myDt.Rows.Count == 0)
+            {
+                MessageBox.Show("No data");
+            }
         }
 
         private void btInBieu_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chua lam xong");
+            String strDt = cboKy.Text + " năm " + dupNam.Text;
+            ListItem DV = (ListItem)cbDonVi.SelectedItem;
+
+            FrmPrintReport frm = new FrmPrintReport("3", DV.ID, strDt);
+            frm.Show();
         }
         void initGird()
         {
@@ -68,7 +114,6 @@ namespace QuanLyHoSoCongChuc.Report
             grid1.Rows.Insert(0);
             grid1.Rows.Insert(1);
             grid1.Rows.Insert(2);
-            grid1.Rows[1].Height = 500;
 
             grid1[0, 0] = new SourceGrid.Cells.ColumnHeader("TT"); grid1[0, 0].RowSpan = 2;
             grid1[0, 1] = new SourceGrid.Cells.ColumnHeader("Đơn vị"); grid1[0, 1].RowSpan = 2;

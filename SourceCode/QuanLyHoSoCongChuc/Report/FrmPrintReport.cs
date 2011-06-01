@@ -97,6 +97,25 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
+            else if (BaoCao == "3") // Danh sách phụ cấp thâm niên vượt khung
+            {
+                this.Text = "Danh sách phụ cấp thâm niên vượt khung";
+                String sql = " select nv.*, t.TenTrinhDoChuyenMon, dv.TenDonVi";
+                sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+                sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+                sql += " where nv.MaDonVi='" + MaDV + "'";
+
+
+                SqlCommand cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                DataTable myDt = dataService;
+                CrBaoCaoDanhSachVuotKhung rpt = new CrBaoCaoDanhSachVuotKhung();
+                rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
+                rpt.DataDefinition.FormulaFields["Title"].Text = "'DANH SÁCH KẾT QUẢ NÂNG PCTNVK CB, CC UBND HUYỆN "+strDt.ToUpper()+"'";
+
+                rpt.SetDataSource(myDt);
+                this.crystalReportViewer1.ReportSource = rpt;
+            }
             else if (BaoCao == "4-0") // Danh sách CB, CC, VC và hợp đồng 1    
             {
                 this.Text = "Danh sách CB, CC, VC và hợp đồng";
