@@ -1,4 +1,4 @@
-﻿namespace QuanLyHoSoCongChuc
+﻿namespace QuanLyHoSoCongChuc.Danh_muc
 {
     partial class FrmDanhMucHanhChinh
     {

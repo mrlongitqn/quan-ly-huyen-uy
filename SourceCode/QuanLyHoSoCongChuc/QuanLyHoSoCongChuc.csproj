@@ -230,6 +230,13 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Danh muc\FrmChonDanhMucAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Danh muc\FrmChonDanhMucAll.Designer.cs">
+      <DependentUpon>FrmChonDanhMucAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Danh muc\GlobalDanhMucs.cs" />
     <Compile Include="DataLayer\CapUyData.cs" />
     <Compile Include="DataLayer\CapUyKiemData.cs" />
     <Compile Include="DataLayer\ChucNangQTCTMoiData.cs" />
@@ -280,6 +287,18 @@
     <Compile Include="DataLayer\TrinhDoNgoaiNguData.cs" />
     <Compile Include="DataLayer\TrinhDoQuanLyNhaNuocData.cs" />
     <Compile Include="DataLayer\TrinhDoTinHocData.cs" />
+    <Compile Include="DataManager\FrmPhieuBaoChuyenDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoChuyenDonVi.Designer.cs">
+      <DependentUpon>FrmPhieuBaoChuyenDonVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoPhuCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoPhuCap.Designer.cs">
+      <DependentUpon>FrmPhieuBaoPhuCap.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataManager\FrmTimNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +311,7 @@
     <Compile Include="DataManager\FrmPhieuBaoChuyenNgach.Designer.cs">
       <DependentUpon>FrmPhieuBaoChuyenNgach.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataManager\GlobalPhieuBaos.cs" />
     <Compile Include="DataService.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -779,6 +799,15 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Danh muc\FrmChonDanhMucAll.resx">
+      <DependentUpon>FrmChonDanhMucAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManager\FrmPhieuBaoChuyenDonVi.resx">
+      <DependentUpon>FrmPhieuBaoChuyenDonVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManager\FrmPhieuBaoPhuCap.resx">
+      <DependentUpon>FrmPhieuBaoPhuCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataManager\FrmTimNhanVien.resx">
       <DependentUpon>FrmTimNhanVien.cs</DependentUpon>

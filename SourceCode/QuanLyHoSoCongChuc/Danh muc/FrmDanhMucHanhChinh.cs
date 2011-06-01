@@ -15,7 +15,7 @@ using QuanLyHoSoCongChuc.Utils;
 using QuanLyHoSoCongChuc.Repositories;
 using QuanLyHoSoCongChuc.Models;
 
-namespace QuanLyHoSoCongChuc
+namespace QuanLyHoSoCongChuc.Danh_muc
 {
     public enum EnumDiaDanh
     {
@@ -157,7 +157,7 @@ namespace QuanLyHoSoCongChuc
 
         private void treeviewDMHC_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            int level = GetLevelTreeView(treeviewDMHC.SelectedNode);
+            int level = GlobalDanhMucs.GetLevelTreeView(treeviewDMHC.SelectedNode);
             if (level == 1)
             {
                 btnChon.Enabled = false;
@@ -225,24 +225,6 @@ namespace QuanLyHoSoCongChuc
             }
 
             return true;
-        }
-
-        /// <summary>
-        /// Get level corresponding with node, it is used to realize chose node is the quanhuyen or tinh thanh or phuongxa, etc.
-        /// </summary>
-        /// <param name="node"></param>
-        /// <returns></returns>
-        private int GetLevelTreeView(TreeNode node)
-        {
-            if (node.Parent == null)
-                return 1;
-            else if (node.Parent.Parent == null)
-                return 2;
-            else if (node.Parent.Parent.Parent == null)
-                return 3;
-            else if (node.Parent.Parent.Parent.Parent == null)
-                return 4;
-            return -1;
         }
 
         /// <summary>

@@ -20,6 +20,7 @@ namespace QuanLyHoSoCongChuc.Search
     using QuanLyHoSoCongChuc.Repositories;
     using QuanLyHoSoCongChuc.Utils;
     using WeifenLuo.WinFormsUI.Docking;
+    using QuanLyHoSoCongChuc.Danh_muc;
     #endregion
 
     /// <summary>

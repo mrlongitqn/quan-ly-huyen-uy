@@ -263,6 +263,7 @@ namespace QuanLyHoSoCongChuc
             }
             return -1;
         }
+
         private void btSave_Click(object sender, EventArgs e)
         {
             var dv = DonViRepository.SelectByID( txtMaDonVi.Text);
