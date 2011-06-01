@@ -9,6 +9,7 @@ using DevComponents.DotNetBar;
 using QuanLyHoSoCongChuc.Utils;
 using QuanLyHoSoCongChuc.Repositories;
 using QuanLyHoSoCongChuc.Models;
+using QuanLyHoSoCongChuc.Danh_muc;
 
 namespace QuanLyHoSoCongChuc.DataManager
 {
