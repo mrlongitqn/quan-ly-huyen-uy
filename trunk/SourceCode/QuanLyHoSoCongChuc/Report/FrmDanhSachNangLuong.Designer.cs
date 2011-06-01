@@ -57,6 +57,7 @@
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.grid1 = new SourceGrid.Grid();
+            this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -442,6 +443,7 @@
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private System.Windows.Forms.DomainUpDown dupNam;
         private SourceGrid.Grid grid1;
+        private CachedCrystalReport2 cachedCrystalReport21;
 
 
     }
