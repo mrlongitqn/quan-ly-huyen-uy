@@ -84,6 +84,8 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             int level = GlobalDanhMucs.GetLevelTreeView(treeView1.SelectedNode);
             if (level == 3)
                 btChon.Enabled = true;
+            else
+                btChon.Enabled = false;
 
             string maDonVi = treeView1.SelectedNode.Text.Split('-')[0].Trim();
             var DonVi = DonViRepository.SelectByID(maDonVi);
@@ -100,6 +102,11 @@ namespace QuanLyHoSoCongChuc.Danh_muc
         {
             this.Close();
             this.Handler(this, e);
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

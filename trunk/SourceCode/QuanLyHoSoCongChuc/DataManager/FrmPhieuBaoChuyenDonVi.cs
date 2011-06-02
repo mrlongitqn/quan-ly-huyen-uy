@@ -30,21 +30,31 @@ namespace QuanLyHoSoCongChuc.DataManager
 
         private void lstvNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (lstvNhanVien.SelectedItems.Count > 0)
+            {
+                var nhanvienchuyendi = (ChuyenDonVi)lstvNhanVien.SelectedItems[0].Tag;
+                txtMaNhanVien.Text = nhanvienchuyendi.MaNhanVien;
+                txtHoTen.Text = nhanvienchuyendi.NhanVien.HoTenNhanVien;
+                txtGioiTinh.Text = nhanvienchuyendi.NhanVien.GioiTinh.TenGioiTinh;
+                txtTaiCoQuan.Text = nhanvienchuyendi.NhanVien.DonVi.TenDonVi;
+                txtNamSinh.Text = String.Format("{0:dd/MM/yyyy}", nhanvienchuyendi.NhanVien.NgaySinh.Value);
+                txtVaoDonVi.Text = String.Format("{0:dd/MM/yyyy}", nhanvienchuyendi.NhanVien.NgayVeCoQuanHienTai.Value);
+                txtDonViChuyenDen.Text = nhanvienchuyendi.MaDonViDen;
+                txtTenDonViChuyenDenDayDu.Text = DonViRepository.SelectByID(nhanvienchuyendi.MaDonViDen).TenDonVi;
+            }
         }
 
         private void btnChonNhanVien_Click(object sender, EventArgs e)
         {
-            FrmTimNhanVien frm = new FrmTimNhanVien(txtMaDonVi.Text.Trim(), GlobalPhieuBaos.GetListNhanVienLoaded(lstvNhanVien));
+            FrmTimNhanVien frm = new FrmTimNhanVien(txtMaDonVi.Text.Trim(), GlobalPhieuBaos.GetListNhanVienChuyenDiLoaded(lstvNhanVien));
             frm.Handler += GetNhanVien;
             frm.ShowDialog();
         }
 
         private void btnChonDonViChuyenDen_Click(object sender, EventArgs e)
         {
-            FrmDanhMuc frm = new FrmDanhMuc();
+            FrmChonDanhMucAll frm = new FrmChonDanhMucAll();
             frm.Handler += GetDonViChuyenDen;
-            frm.EnableButtonChon = true;
             frm.ShowDialog();
         }
 
@@ -58,15 +68,6 @@ namespace QuanLyHoSoCongChuc.DataManager
             EnableUpdateMode(EnumUpdateMode.INSERT);
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
-        {
-            if (txtMaDonVi.Text == "")
-                return;
-            if (txtMaNhanVien.Text == "")
-                return;
-            EnableUpdateMode(EnumUpdateMode.UPDATE);
-        }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
 
@@ -74,7 +75,37 @@ namespace QuanLyHoSoCongChuc.DataManager
 
         private void btnGhi_Click(object sender, EventArgs e)
         {
-
+            var errorText = "";
+            if (!ValidateInput(ref errorText))
+            {
+                MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // Execute the operation through 2 step:
+            // Step1: update madonvi for nhanvien
+            string madonviOld;
+            var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text.Trim());
+            madonviOld = nhanvien.MaDonVi;
+            nhanvien.MaDonVi = txtDonViChuyenDen.Text.Trim();
+            if (NhanVienRepository.Save())
+            {
+                // Step2: insert new record to ChuyenDonVi table
+                var nhanvienchuyendi = new ChuyenDonVi
+                {
+                    MaNhanVien = nhanvien.MaNhanVien,
+                    MaDonViDi = madonviOld,
+                    MaDonViDen = txtDonViChuyenDen.Text.Trim()
+                };
+                if (ChuyenDonViRepository.Insert(nhanvienchuyendi))
+                {
+                    MessageBox.Show("Lập phiếu chuyển đơn vị thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadNhanVienChuyenDi();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Lập phiếu chuyển đơn vị thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -87,11 +118,28 @@ namespace QuanLyHoSoCongChuc.DataManager
             Close();
         }
 
+        /// <summary>
+        /// Validate user input
+        /// </summary>
+        /// <returns></returns>
+        public bool ValidateInput(ref string errorText)
+        {
+            if (txtMaNhanVien.Text == "")
+            {
+                errorText = "Vui lòng chọn nhân viên";
+                return false;
+            }
+            if (txtDonViChuyenDen.Text == "")
+            {
+                errorText = "Vui lòng chọn đơn vị chuyển đến";
+                return false;
+            }
+            return true;
+        }
+
         public void ResetForm()
         {
             btnThem.Enabled = true;
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
             btnGhi.Enabled = false;
             btnHuy.Enabled = false;
             btnChonNhanVien.Enabled = false;
@@ -110,8 +158,6 @@ namespace QuanLyHoSoCongChuc.DataManager
                 btnChonNhanVien.Enabled = false;
 
             btnThem.Enabled = false;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = false;
             btnGhi.Enabled = true;
             btnHuy.Enabled = true;
             btnChonDonViChuyenDen.Enabled = true;
@@ -149,7 +195,7 @@ namespace QuanLyHoSoCongChuc.DataManager
             txtMaDonVi.Text = comp[0];
             txtTenDonViDayDu.Text = comp[1];
             // Load list of nhan vien updated ngach luong, bac luong, he so
-            //LoadNhanVienPhuCap();
+            LoadNhanVienChuyenDi();
         }
 
         /// <summary>
@@ -163,6 +209,30 @@ namespace QuanLyHoSoCongChuc.DataManager
             string[] comp = eventType.Data.Split(new char[] { '#' });
             txtDonViChuyenDen.Text = comp[0];
             txtTenDonViChuyenDenDayDu.Text = comp[1];
+        }
+
+        /// <summary>
+        /// Load list of nhan vien moved out of donvi
+        /// </summary>
+        public void LoadNhanVienChuyenDi()
+        {
+            var lstItem = ChuyenDonViRepository.SelectByMaDonViDi(txtMaDonVi.Text);
+            if (lstItem.Count > 0)
+            {
+                lstvNhanVien.Items.Clear();
+                for (int i = 0; i < lstItem.Count; i++)
+                {
+                    var objListViewItem = new ListViewItem();
+                    objListViewItem.Tag = lstItem[i];
+                    objListViewItem.Text = (i + 1).ToString();
+                    objListViewItem.SubItems.Add(lstItem[i].MaNhanVien);
+                    objListViewItem.SubItems.Add(lstItem[i].NhanVien.HoTenNhanVien);
+                    objListViewItem.SubItems.Add(lstItem[i].NhanVien.GioiTinh.TenGioiTinh);
+                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NhanVien.NgaySinh));
+                    objListViewItem.SubItems.Add(lstItem[i].NhanVien.NoiOHienTai);
+                    lstvNhanVien.Items.Add(objListViewItem);
+                }
+            }
         }
     }
 }

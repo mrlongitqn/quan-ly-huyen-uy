@@ -31,6 +31,9 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtVaoDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtNamSinh = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenDonViChuyenDenDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDonViChuyenDen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.txtTaiCoQuan = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -58,18 +61,13 @@
             this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTenDonViDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.btnChonDonViChuyenDen = new System.Windows.Forms.Button();
             this.btnChonNhanVien = new System.Windows.Forms.Button();
             this.btnHuy = new DevComponents.DotNetBar.ButtonX();
             this.btnGhi = new DevComponents.DotNetBar.ButtonX();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
-            this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
-            this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this.btnChonDonVi = new System.Windows.Forms.Button();
-            this.btnChonDonViChuyenDen = new System.Windows.Forms.Button();
-            this.txtTenDonViChuyenDenDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtVaoDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtNamSinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -146,6 +144,39 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(779, 205);
             this.panel5.TabIndex = 2;
+            // 
+            // txtVaoDonVi
+            // 
+            // 
+            // 
+            // 
+            this.txtVaoDonVi.Border.Class = "TextBoxBorder";
+            this.txtVaoDonVi.Location = new System.Drawing.Point(169, 93);
+            this.txtVaoDonVi.Name = "txtVaoDonVi";
+            this.txtVaoDonVi.ReadOnly = true;
+            this.txtVaoDonVi.Size = new System.Drawing.Size(200, 20);
+            this.txtVaoDonVi.TabIndex = 221;
+            // 
+            // txtNamSinh
+            // 
+            // 
+            // 
+            // 
+            this.txtNamSinh.Border.Class = "TextBoxBorder";
+            this.txtNamSinh.Location = new System.Drawing.Point(169, 67);
+            this.txtNamSinh.Name = "txtNamSinh";
+            this.txtNamSinh.ReadOnly = true;
+            this.txtNamSinh.Size = new System.Drawing.Size(200, 20);
+            this.txtNamSinh.TabIndex = 220;
+            // 
+            // txtTenDonViChuyenDenDayDu
+            // 
+            this.txtTenDonViChuyenDenDayDu.Location = new System.Drawing.Point(169, 145);
+            this.txtTenDonViChuyenDenDayDu.Multiline = true;
+            this.txtTenDonViChuyenDenDayDu.Name = "txtTenDonViChuyenDenDayDu";
+            this.txtTenDonViChuyenDenDayDu.ReadOnly = true;
+            this.txtTenDonViChuyenDenDayDu.Size = new System.Drawing.Size(586, 44);
+            this.txtTenDonViChuyenDenDayDu.TabIndex = 219;
             // 
             // txtDonViChuyenDen
             // 
@@ -282,9 +313,7 @@
             this.panel4.Controls.Add(this.btnHuy);
             this.panel4.Controls.Add(this.btnGhi);
             this.panel4.Controls.Add(this.btnThoat);
-            this.panel4.Controls.Add(this.btnSua);
             this.panel4.Controls.Add(this.btnThem);
-            this.panel4.Controls.Add(this.btnXoa);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel4.Location = new System.Drawing.Point(0, 477);
             this.panel4.Name = "panel4";
@@ -407,11 +436,23 @@
             // labelX1
             // 
             this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            this.labelX1.Location = new System.Drawing.Point(24, 13);
+            this.labelX1.Location = new System.Drawing.Point(24, 18);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(63, 19);
             this.labelX1.TabIndex = 159;
             this.labelX1.Text = "Mã đơn vị";
+            // 
+            // btnChonDonViChuyenDen
+            // 
+            this.btnChonDonViChuyenDen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonViChuyenDen.Enabled = false;
+            this.btnChonDonViChuyenDen.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonViChuyenDen.Location = new System.Drawing.Point(375, 114);
+            this.btnChonDonViChuyenDen.Name = "btnChonDonViChuyenDen";
+            this.btnChonDonViChuyenDen.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonViChuyenDen.TabIndex = 218;
+            this.btnChonDonViChuyenDen.UseVisualStyleBackColor = true;
+            this.btnChonDonViChuyenDen.Click += new System.EventHandler(this.btnChonDonViChuyenDen_Click);
             // 
             // btnChonNhanVien
             // 
@@ -469,20 +510,6 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // btnSua
-            // 
-            this.btnSua.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSua.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSua.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnSua.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_39;
-            this.btnSua.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnSua.Location = new System.Drawing.Point(284, 7);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(64, 23);
-            this.btnSua.TabIndex = 27;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
             // btnThem
             // 
             this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -490,26 +517,12 @@
             this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnThem.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_01;
             this.btnThem.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnThem.Location = new System.Drawing.Point(214, 7);
+            this.btnThem.Location = new System.Drawing.Point(361, 7);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(64, 23);
             this.btnThem.TabIndex = 26;
             this.btnThem.Text = "Thêm";
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnXoa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnXoa.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_29;
-            this.btnXoa.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnXoa.Location = new System.Drawing.Point(354, 7);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(72, 23);
-            this.btnXoa.TabIndex = 25;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // btnChonDonVi
             // 
@@ -521,51 +534,6 @@
             this.btnChonDonVi.TabIndex = 162;
             this.btnChonDonVi.UseVisualStyleBackColor = true;
             this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
-            // 
-            // btnChonDonViChuyenDen
-            // 
-            this.btnChonDonViChuyenDen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonDonViChuyenDen.Enabled = false;
-            this.btnChonDonViChuyenDen.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonDonViChuyenDen.Location = new System.Drawing.Point(375, 114);
-            this.btnChonDonViChuyenDen.Name = "btnChonDonViChuyenDen";
-            this.btnChonDonViChuyenDen.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDonViChuyenDen.TabIndex = 218;
-            this.btnChonDonViChuyenDen.UseVisualStyleBackColor = true;
-            this.btnChonDonViChuyenDen.Click += new System.EventHandler(this.btnChonDonViChuyenDen_Click);
-            // 
-            // txtTenDonViChuyenDenDayDu
-            // 
-            this.txtTenDonViChuyenDenDayDu.Location = new System.Drawing.Point(169, 145);
-            this.txtTenDonViChuyenDenDayDu.Multiline = true;
-            this.txtTenDonViChuyenDenDayDu.Name = "txtTenDonViChuyenDenDayDu";
-            this.txtTenDonViChuyenDenDayDu.ReadOnly = true;
-            this.txtTenDonViChuyenDenDayDu.Size = new System.Drawing.Size(586, 44);
-            this.txtTenDonViChuyenDenDayDu.TabIndex = 219;
-            // 
-            // txtVaoDonVi
-            // 
-            // 
-            // 
-            // 
-            this.txtVaoDonVi.Border.Class = "TextBoxBorder";
-            this.txtVaoDonVi.Location = new System.Drawing.Point(169, 93);
-            this.txtVaoDonVi.Name = "txtVaoDonVi";
-            this.txtVaoDonVi.ReadOnly = true;
-            this.txtVaoDonVi.Size = new System.Drawing.Size(200, 20);
-            this.txtVaoDonVi.TabIndex = 221;
-            // 
-            // txtNamSinh
-            // 
-            // 
-            // 
-            // 
-            this.txtNamSinh.Border.Class = "TextBoxBorder";
-            this.txtNamSinh.Location = new System.Drawing.Point(169, 67);
-            this.txtNamSinh.Name = "txtNamSinh";
-            this.txtNamSinh.ReadOnly = true;
-            this.txtNamSinh.Size = new System.Drawing.Size(200, 20);
-            this.txtNamSinh.TabIndex = 220;
             // 
             // FrmPhieuBaoChuyenDonVi
             // 
@@ -606,9 +574,7 @@
         private DevComponents.DotNetBar.ButtonX btnHuy;
         private DevComponents.DotNetBar.ButtonX btnGhi;
         private DevComponents.DotNetBar.ButtonX btnThoat;
-        private DevComponents.DotNetBar.ButtonX btnSua;
         private DevComponents.DotNetBar.ButtonX btnThem;
-        private DevComponents.DotNetBar.ButtonX btnXoa;
         private System.Windows.Forms.Panel panel3;
         private DevComponents.DotNetBar.Controls.ListViewEx lstvNhanVien;
         private System.Windows.Forms.ColumnHeader columnHeader6;

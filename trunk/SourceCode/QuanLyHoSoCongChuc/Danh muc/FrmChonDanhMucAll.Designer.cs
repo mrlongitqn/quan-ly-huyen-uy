@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmChonDanhMucAll));
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.treeView1 = new System.Windows.Forms.TreeView();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.btChon = new DevComponents.DotNetBar.ButtonX();
+            this.treeView1 = new System.Windows.Forms.TreeView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,15 +70,6 @@
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 158;
             // 
-            // treeView1
-            // 
-            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.treeView1.Location = new System.Drawing.Point(0, 0);
-            this.treeView1.Name = "treeView1";
-            this.treeView1.Size = new System.Drawing.Size(447, 499);
-            this.treeView1.TabIndex = 157;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
-            // 
             // btnThoat
             // 
             this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -87,6 +81,7 @@
             this.btnThoat.Size = new System.Drawing.Size(75, 23);
             this.btnThoat.TabIndex = 9;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btChon
             // 
@@ -100,6 +95,27 @@
             this.btChon.TabIndex = 5;
             this.btChon.Text = "Chọn";
             this.btChon.Click += new System.EventHandler(this.btChon_Click);
+            // 
+            // treeView1
+            // 
+            this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.ImageIndex = 0;
+            this.treeView1.ImageList = this.imageList1;
+            this.treeView1.Location = new System.Drawing.Point(0, 0);
+            this.treeView1.Name = "treeView1";
+            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.Size = new System.Drawing.Size(447, 499);
+            this.treeView1.TabIndex = 157;
+            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "book_red.ico");
+            this.imageList1.Images.SetKeyName(1, "tinhthanh.gif");
+            this.imageList1.Images.SetKeyName(2, "quanhuyen.jpg");
+            this.imageList1.Images.SetKeyName(3, "houses.ico");
             // 
             // FrmChonDanhMucAll
             // 
@@ -121,5 +137,6 @@
         private DevComponents.DotNetBar.ButtonX btnThoat;
         private DevComponents.DotNetBar.ButtonX btChon;
         private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }

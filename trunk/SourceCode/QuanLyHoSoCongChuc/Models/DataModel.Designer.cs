@@ -69,6 +69,9 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "LoaiNguoiDung_ChucNang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung_ChucNang), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "NguoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NguoiDung), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_CanBoQuaCacThoiKi_DonVi", "DonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.DonVi), "CanBoQuaCacThoiKi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.CanBoQuaCacThoiKi), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_ChuyenDonVi_DonViDen", "DonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.DonVi), "ChuyenDonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.ChuyenDonVi), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_ChuyenDonVi_DonViDi", "DonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.DonVi), "ChuyenDonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.ChuyenDonVi), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_ChuyenDonVi_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "ChuyenDonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.ChuyenDonVi), true)]
 
 #endregion
 
@@ -935,6 +938,22 @@ namespace QuanLyHoSoCongChuc.Models
             }
         }
         private ObjectSet<CanBoQuaCacThoiKi> _CanBoQuaCacThoiKis;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<ChuyenDonVi> ChuyenDonVis
+        {
+            get
+            {
+                if ((_ChuyenDonVis == null))
+                {
+                    _ChuyenDonVis = base.CreateObjectSet<ChuyenDonVi>("ChuyenDonVis");
+                }
+                return _ChuyenDonVis;
+            }
+        }
+        private ObjectSet<ChuyenDonVi> _ChuyenDonVis;
 
         #endregion
         #region AddTo Methods
@@ -1345,6 +1364,14 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToCanBoQuaCacThoiKis(CanBoQuaCacThoiKi canBoQuaCacThoiKi)
         {
             base.AddObject("CanBoQuaCacThoiKis", canBoQuaCacThoiKi);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the ChuyenDonVis EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToChuyenDonVis(ChuyenDonVi chuyenDonVi)
+        {
+            base.AddObject("ChuyenDonVis", chuyenDonVi);
         }
 
         #endregion
@@ -2334,6 +2361,250 @@ namespace QuanLyHoSoCongChuc.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="ChuyenDonVi")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ChuyenDonVi : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ChuyenDonVi object.
+        /// </summary>
+        /// <param name="maChuyen">Initial value of the MaChuyen property.</param>
+        public static ChuyenDonVi CreateChuyenDonVi(global::System.Int32 maChuyen)
+        {
+            ChuyenDonVi chuyenDonVi = new ChuyenDonVi();
+            chuyenDonVi.MaChuyen = maChuyen;
+            return chuyenDonVi;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MaChuyen
+        {
+            get
+            {
+                return _MaChuyen;
+            }
+            set
+            {
+                if (_MaChuyen != value)
+                {
+                    OnMaChuyenChanging(value);
+                    ReportPropertyChanging("MaChuyen");
+                    _MaChuyen = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MaChuyen");
+                    OnMaChuyenChanged();
+                }
+            }
+        }
+        private global::System.Int32 _MaChuyen;
+        partial void OnMaChuyenChanging(global::System.Int32 value);
+        partial void OnMaChuyenChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MaNhanVien
+        {
+            get
+            {
+                return _MaNhanVien;
+            }
+            set
+            {
+                OnMaNhanVienChanging(value);
+                ReportPropertyChanging("MaNhanVien");
+                _MaNhanVien = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MaNhanVien");
+                OnMaNhanVienChanged();
+            }
+        }
+        private global::System.String _MaNhanVien;
+        partial void OnMaNhanVienChanging(global::System.String value);
+        partial void OnMaNhanVienChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MaDonViDi
+        {
+            get
+            {
+                return _MaDonViDi;
+            }
+            set
+            {
+                OnMaDonViDiChanging(value);
+                ReportPropertyChanging("MaDonViDi");
+                _MaDonViDi = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MaDonViDi");
+                OnMaDonViDiChanged();
+            }
+        }
+        private global::System.String _MaDonViDi;
+        partial void OnMaDonViDiChanging(global::System.String value);
+        partial void OnMaDonViDiChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String MaDonViDen
+        {
+            get
+            {
+                return _MaDonViDen;
+            }
+            set
+            {
+                OnMaDonViDenChanging(value);
+                ReportPropertyChanging("MaDonViDen");
+                _MaDonViDen = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("MaDonViDen");
+                OnMaDonViDenChanged();
+            }
+        }
+        private global::System.String _MaDonViDen;
+        partial void OnMaDonViDenChanging(global::System.String value);
+        partial void OnMaDonViDenChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_ChuyenDonVi_DonViDen", "DonVi")]
+        public DonVi DonVi
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDen", "DonVi").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDen", "DonVi").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<DonVi> DonViReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDen", "DonVi");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<DonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDen", "DonVi", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_ChuyenDonVi_DonViDi", "DonVi")]
+        public DonVi DonVi1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDi", "DonVi").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDi", "DonVi").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<DonVi> DonVi1Reference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<DonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDi", "DonVi");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<DonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDi", "DonVi", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_ChuyenDonVi_NhanVien", "NhanVien")]
+        public NhanVien NhanVien
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NhanVien>("QLHSCCModel.FK_ChuyenDonVi_NhanVien", "NhanVien").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NhanVien>("QLHSCCModel.FK_ChuyenDonVi_NhanVien", "NhanVien").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<NhanVien> NhanVienReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NhanVien>("QLHSCCModel.FK_ChuyenDonVi_NhanVien", "NhanVien");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<NhanVien>("QLHSCCModel.FK_ChuyenDonVi_NhanVien", "NhanVien", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="CongViec")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -3286,6 +3557,50 @@ namespace QuanLyHoSoCongChuc.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<CanBoQuaCacThoiKi>("QLHSCCModel.FK_CanBoQuaCacThoiKi_DonVi", "CanBoQuaCacThoiKi", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_ChuyenDonVi_DonViDen", "ChuyenDonVi")]
+        public EntityCollection<ChuyenDonVi> ChuyenDonVis
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ChuyenDonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDen", "ChuyenDonVi");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ChuyenDonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDen", "ChuyenDonVi", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_ChuyenDonVi_DonViDi", "ChuyenDonVi")]
+        public EntityCollection<ChuyenDonVi> ChuyenDonVis1
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ChuyenDonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDi", "ChuyenDonVi");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ChuyenDonVi>("QLHSCCModel.FK_ChuyenDonVi_DonViDi", "ChuyenDonVi", value);
                 }
             }
         }
@@ -8774,6 +9089,28 @@ namespace QuanLyHoSoCongChuc.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ThanNhan>("QLHSCCModel.FK_ThanNhanNuocNgoai_NhanVien", "ThanNhan", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_ChuyenDonVi_NhanVien", "ChuyenDonVi")]
+        public EntityCollection<ChuyenDonVi> ChuyenDonVis
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ChuyenDonVi>("QLHSCCModel.FK_ChuyenDonVi_NhanVien", "ChuyenDonVi");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ChuyenDonVi>("QLHSCCModel.FK_ChuyenDonVi_NhanVien", "ChuyenDonVi", value);
                 }
             }
         }

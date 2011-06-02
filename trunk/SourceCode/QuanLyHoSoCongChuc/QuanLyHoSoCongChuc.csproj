@@ -436,6 +436,7 @@
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Repositories\CanBoQuaCacThoiKiRepository.cs" />
+    <Compile Include="Repositories\ChuyenDonViRepository.cs" />
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
     <Compile Include="Search\CauHoiNguoiDung.cs" />
     <Compile Include="Search\DanhSachCauHoiNguoiDung.cs" />
