@@ -56,6 +56,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             FrmDanhMuc frm = new FrmDanhMuc();
             frm.Handler += GetDonVi;
+            frm.EnableButtonChon = true;
             frm.ShowDialog();
         }
 

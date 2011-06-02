@@ -18,5 +18,15 @@ namespace QuanLyHoSoCongChuc.DataManager
             }
             return dict;
         }
+
+        public static Dictionary<string, NhanVien> GetListNhanVienChuyenDiLoaded(ListView lstvNhanVien)
+        {
+            var dict = new Dictionary<string, NhanVien>();
+            for (int i = 0; i < lstvNhanVien.Items.Count; i++)
+            {
+                dict.Add(((ChuyenDonVi)lstvNhanVien.Items[i].Tag).MaNhanVien, ((ChuyenDonVi)lstvNhanVien.Items[i].Tag).NhanVien);
+            }
+            return dict;
+        }
     }
 }
