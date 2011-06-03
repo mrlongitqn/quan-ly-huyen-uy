@@ -93,6 +93,7 @@
             this.lstvCauHoi.TabIndex = 43;
             this.lstvCauHoi.UseCompatibleStateImageBehavior = false;
             this.lstvCauHoi.View = System.Windows.Forms.View.Details;
+            this.lstvCauHoi.DoubleClick += new System.EventHandler(this.lstvCauHoi_DoubleClick);
             // 
             // columnHeader1
             // 

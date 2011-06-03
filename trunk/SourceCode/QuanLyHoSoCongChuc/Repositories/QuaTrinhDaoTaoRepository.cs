@@ -15,7 +15,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return DataContext.Instance.QuaTrinhDaoTaos.ToList();
 		}
 
-		public static QuaTrinhDaoTao SelectByID(string maquatrinhdaotao)
+		public static QuaTrinhDaoTao SelectByID(int maquatrinhdaotao)
 		{
 			return DataContext.Instance.QuaTrinhDaoTaos.FirstOrDefault(item => item.MaQuaTrinhDaoTao == maquatrinhdaotao );
 		}
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(string maquatrinhdaotao)
+		public static bool Delete(int maquatrinhdaotao)
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<QuaTrinhDaoTao> RetrieveByID(string maquatrinhdaotao)
+		public static List<QuaTrinhDaoTao> RetrieveByID(int maquatrinhdaotao)
 		{
 			return (from item in DataContext.Instance.QuaTrinhDaoTaos where  item.MaQuaTrinhDaoTao == maquatrinhdaotao  select item).ToList();
 		}
@@ -70,6 +70,48 @@ namespace QuanLyHoSoCongChuc.Repositories
 		public static List<QuaTrinhDaoTao> SelectByMaNhanVien(string manhanvien)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhDaoTaos where item.MaNhanVien == manhanvien select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhDaoTao> SelectByMaNuocDaoTao(int manuocdaotao)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhDaoTaos where item.MaNuocDaoTao == manuocdaotao select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhDaoTao> SelectByMaHinhThucDaoTao(int mahinhthucdaotao)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhDaoTaos where item.MaHinhThucDaoTao == mahinhthucdaotao select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhDaoTao> SelectByMaBangGiaoDucPhoThong(int mabanggiaoducphothong)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhDaoTaos where item.MaBangGiaoDucPhoThong == mabanggiaoducphothong select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhDaoTao> SelectByMaBangLyLuanChinhTri(int mabanglyluanchinhtri)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhDaoTaos where item.MaBangLyLuanChinhTri == mabanglyluanchinhtri select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhDaoTao> SelectByMaBangNgoaiNgu(int mabangngoaingu)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhDaoTaos where item.MaBangNgoaiNgu == mabangngoaingu select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhDaoTao> SelectByMaBangChuyenMonNghiepVu(int mabangchuyenmonnghiepvu)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhDaoTaos where item.MaBangChuyenMonNghiepVu == mabangchuyenmonnghiepvu select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhDaoTao> SelectByMaHocHam(int mahocham)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhDaoTaos where item.MaHocHam == mahocham select item).ToList();
 			return lstItem;
 		}
 

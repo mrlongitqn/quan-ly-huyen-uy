@@ -32,7 +32,11 @@ namespace QuanLyHoSoCongChuc.Search
         {
             if (lstvCauHoi.SelectedItems.Count > 0)
             {
+                GlobalVars.PreLoading();
+
                 TransferDataInfo(sender, new MyQueryEvent((CauHoiNguoiDung)lstvCauHoi.SelectedItems[0].Tag));
+
+                GlobalVars.PosLoading();
             }
             else
             {
@@ -89,6 +93,22 @@ namespace QuanLyHoSoCongChuc.Search
         {
             this.Close();
             this.Handler(this, e);
+        }
+
+        private void lstvCauHoi_DoubleClick(object sender, EventArgs e)
+        {
+            if (lstvCauHoi.SelectedItems.Count > 0)
+            {
+                GlobalVars.PreLoading();
+
+                TransferDataInfo(sender, new MyQueryEvent((CauHoiNguoiDung)lstvCauHoi.SelectedItems[0].Tag));
+
+                GlobalVars.PosLoading();
+            }
+            else
+            {
+                MessageBox.Show("Vui lòng chọn câu hỏi", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

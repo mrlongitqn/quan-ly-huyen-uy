@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using QuanLyHoSoCongChuc.UsersDiary;
 using QuanLyHoSoCongChuc.Search;
+using System.Threading;
 
 namespace QuanLyHoSoCongChuc.Utils
 {
@@ -61,6 +62,10 @@ namespace QuanLyHoSoCongChuc.Utils
         public static NhatKyNguoiDung g_NhatKyNguoiDung { get; set; }
         public static CauHoiNguoiDung g_CauHoiNguoiDung { get; set; }
         public static string g_strDataBaseName = "";
+        public static FrmLoading waiting;
+        private delegate void TimeTask();
+        private static IAsyncResult result;
+        private static TimeTask ASynInvoke;
 
         /// <summary>
         /// Retrieve name from enum
@@ -137,6 +142,26 @@ namespace QuanLyHoSoCongChuc.Utils
                 }
             }
             return false;
+        }
+
+        public static void PreLoading()
+        {
+            ASynInvoke = new TimeTask(WaitLoad);
+            result = ASynInvoke.BeginInvoke(null, null);
+        }
+
+        public static void PosLoading()
+        {
+            waiting.Close();
+            waiting.Dispose();
+            waiting = null;
+            ASynInvoke.EndInvoke(result);
+        }   
+
+        public static void WaitLoad()
+        {
+            waiting = new FrmLoading("Đang lấy dữ liệu");
+            waiting.ShowDialog();
         }
     }
 
