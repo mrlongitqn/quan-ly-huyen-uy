@@ -106,12 +106,13 @@
             // 
             // grid1
             // 
+            this.grid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.grid1.EnableSort = true;
-            this.grid1.Location = new System.Drawing.Point(12, 18);
+            this.grid1.Location = new System.Drawing.Point(0, 0);
             this.grid1.Name = "grid1";
             this.grid1.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
             this.grid1.SelectionMode = SourceGrid.GridSelectionMode.Cell;
-            this.grid1.Size = new System.Drawing.Size(793, 212);
+            this.grid1.Size = new System.Drawing.Size(844, 242);
             this.grid1.TabIndex = 0;
             this.grid1.TabStop = true;
             this.grid1.ToolTipText = "";
@@ -161,6 +162,7 @@
             this.groupPanel1.Controls.Add(this.lblPassword);
             this.groupPanel1.Controls.Add(this.lblUsername);
             this.groupPanel1.Controls.Add(this.labelX1);
+            this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(844, 248);
