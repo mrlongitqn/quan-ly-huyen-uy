@@ -85,6 +85,8 @@ namespace QuanLyHoSoCongChuc.Search
 
         private void btnTim_Click(object sender, EventArgs e)
         {
+            GlobalVars.PreLoading();
+
             var nhanvien = new NhanVienModel
             {
                 MaDonVi = txtMaDonVi.Text,
@@ -127,6 +129,8 @@ namespace QuanLyHoSoCongChuc.Search
                 }
                 txtTongSo.Text = "Tìm thấy " + lstItem.Count + " nhân viên";
             }
+
+            GlobalVars.PosLoading();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
