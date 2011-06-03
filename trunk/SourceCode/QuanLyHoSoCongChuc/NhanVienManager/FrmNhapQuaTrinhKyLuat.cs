@@ -9,6 +9,9 @@ using DevComponents.DotNetBar;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
+    /// <summary>
+    /// tuansl added: insert new ky luat progress
+    /// </summary>
     public partial class FrmNhapQuaTrinhKyLuat : DevComponents.DotNetBar.Office2007Form
     {
         public FrmNhapQuaTrinhKyLuat()

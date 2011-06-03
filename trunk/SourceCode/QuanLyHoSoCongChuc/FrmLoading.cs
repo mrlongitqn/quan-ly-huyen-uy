@@ -9,6 +9,9 @@ using DevComponents.DotNetBar;
 
 namespace QuanLyHoSoCongChuc
 {
+    /// <summary>
+    /// tuansl added: show loading form when retrieve data
+    /// </summary>
     public partial class FrmLoading : DevComponents.DotNetBar.Office2007Form
     {
         public FrmLoading(string str)

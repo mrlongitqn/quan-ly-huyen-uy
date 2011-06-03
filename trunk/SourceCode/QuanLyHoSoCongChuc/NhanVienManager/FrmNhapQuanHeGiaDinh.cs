@@ -9,6 +9,9 @@ using DevComponents.DotNetBar;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
+    /// <summary>
+    /// tuansl added: insert new family relationships
+    /// </summary>
     public partial class FrmNhapQuanHeGiaDinh : DevComponents.DotNetBar.Office2007Form
     {
         public FrmNhapQuanHeGiaDinh()

@@ -11,6 +11,9 @@ using QuanLyHoSoCongChuc.Models;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
+    /// <summary>
+    /// tuansl added: main form is used to manage infos of nhanvien
+    /// </summary>
     public partial class FrmThongTinNhanVien : DevComponents.DotNetBar.Office2007Form
     {
         private string _maNhanVien;
@@ -35,7 +38,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         private void FrmThongTinNhanVien_Load(object sender, EventArgs e)
         {
-            InitForm();
+            
         }
 
         public void LoadThongTinNhanVien()
@@ -46,9 +49,11 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             txtHoTenKhaiSinh.Text = nhanvien.HoTenNhanVien;
             SetSelectedGioiTinh(nhanvien);
             dtSinhNgay.Value = nhanvien.NgaySinh.Value;
+
+            InitForm(nhanvien);
         }
 
-        public void InitForm()
+        public void InitForm(NhanVien nhanvien)
         {
             lblTomTat.MouseEnter += new EventHandler(NavigationChildControl_MouseEnter);
             lblTomTat.MouseLeave += new EventHandler(NavigationChildControl_MouseLeave);
@@ -70,22 +75,22 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             lblLuongPhuCap.MouseLeave += new EventHandler(NavigationChildControl_MouseLeave);
             lblLuongPhuCap.MouseUp += new MouseEventHandler(NavigationChildControl_MouseUp);
 
-            frmThongTinNhanVien_TomTat = new FrmThongTinNhanVien_TomTat();
+            frmThongTinNhanVien_TomTat = new FrmThongTinNhanVien_TomTat(nhanvien);
             frmThongTinNhanVien_TomTat.TopLevel = false;
             frmThongTinNhanVien_TomTat.FormBorderStyle = FormBorderStyle.None;
             frmThongTinNhanVien_TomTat.Dock = DockStyle.Fill;
 
-            frmThongTinNhanVien_CacQuaTrinh = new FrmThongTinNhanVien_CacQuaTrinh();
+            frmThongTinNhanVien_CacQuaTrinh = new FrmThongTinNhanVien_CacQuaTrinh(nhanvien);
             frmThongTinNhanVien_CacQuaTrinh.TopLevel = false;
             frmThongTinNhanVien_CacQuaTrinh.FormBorderStyle = FormBorderStyle.None;
             frmThongTinNhanVien_CacQuaTrinh.Dock = DockStyle.Fill;
 
-            frmThongTinNhanVien_DacDiemLichSu = new FrmThongTinNhanVien_DacDiemLichSu();
+            frmThongTinNhanVien_DacDiemLichSu = new FrmThongTinNhanVien_DacDiemLichSu(nhanvien);
             frmThongTinNhanVien_DacDiemLichSu.TopLevel = false;
             frmThongTinNhanVien_DacDiemLichSu.FormBorderStyle = FormBorderStyle.None;
             frmThongTinNhanVien_DacDiemLichSu.Dock = DockStyle.Fill;
 
-            frmThongTinNhanVien_GiaDinh = new FrmThongTinNhanVien_GiaDinh();
+            frmThongTinNhanVien_GiaDinh = new FrmThongTinNhanVien_GiaDinh(nhanvien);
             frmThongTinNhanVien_GiaDinh.TopLevel = false;
             frmThongTinNhanVien_GiaDinh.FormBorderStyle = FormBorderStyle.None;
             frmThongTinNhanVien_GiaDinh.Dock = DockStyle.Fill;

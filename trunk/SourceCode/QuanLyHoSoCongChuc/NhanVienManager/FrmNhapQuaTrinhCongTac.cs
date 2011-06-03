@@ -9,6 +9,9 @@ using DevComponents.DotNetBar;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
+    /// <summary>
+    /// tuansl added: insert new congtac progress
+    /// </summary>
     public partial class FrmNhapQuaTrinhCongTac : DevComponents.DotNetBar.Office2007Form
     {
         public FrmNhapQuaTrinhCongTac()

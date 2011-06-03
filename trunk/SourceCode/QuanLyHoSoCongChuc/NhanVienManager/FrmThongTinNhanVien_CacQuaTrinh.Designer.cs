@@ -35,14 +35,13 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonX5 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX3 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX2 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
             this.buttonX6 = new DevComponents.DotNetBar.ButtonX();
-            this.buttonX7 = new DevComponents.DotNetBar.ButtonX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.pnlTomTat.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,15 +49,14 @@
             // 
             this.pnlTomTat.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnlTomTat.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.pnlTomTat.Controls.Add(this.buttonX7);
+            this.pnlTomTat.Controls.Add(this.labelX5);
+            this.pnlTomTat.Controls.Add(this.labelX4);
+            this.pnlTomTat.Controls.Add(this.labelX3);
+            this.pnlTomTat.Controls.Add(this.labelX2);
+            this.pnlTomTat.Controls.Add(this.labelX1);
             this.pnlTomTat.Controls.Add(this.groupPanel1);
             this.pnlTomTat.Controls.Add(this.buttonX6);
             this.pnlTomTat.Controls.Add(this.lstvNhanVien);
-            this.pnlTomTat.Controls.Add(this.buttonX5);
-            this.pnlTomTat.Controls.Add(this.buttonX4);
-            this.pnlTomTat.Controls.Add(this.buttonX3);
-            this.pnlTomTat.Controls.Add(this.buttonX2);
-            this.pnlTomTat.Controls.Add(this.buttonX1);
             this.pnlTomTat.Controls.Add(this.labelX21);
             this.pnlTomTat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTomTat.Location = new System.Drawing.Point(0, 0);
@@ -90,7 +88,7 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.groupPanel1.Location = new System.Drawing.Point(10, 215);
+            this.groupPanel1.Location = new System.Drawing.Point(9, 157);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(125, 3);
             // 
@@ -156,66 +154,6 @@
             this.columnHeader4.Text = "Đơn vị, Chức vụ";
             this.columnHeader4.Width = 420;
             // 
-            // buttonX5
-            // 
-            this.buttonX5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX5.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX5.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonX5.Location = new System.Drawing.Point(9, 170);
-            this.buttonX5.Name = "buttonX5";
-            this.buttonX5.Size = new System.Drawing.Size(127, 23);
-            this.buttonX5.TabIndex = 89;
-            this.buttonX5.Text = "Danh hiệu được phong";
-            // 
-            // buttonX4
-            // 
-            this.buttonX4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX4.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX4.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonX4.Location = new System.Drawing.Point(9, 141);
-            this.buttonX4.Name = "buttonX4";
-            this.buttonX4.Size = new System.Drawing.Size(127, 23);
-            this.buttonX4.TabIndex = 88;
-            this.buttonX4.Text = "Huy hiệu đảng";
-            // 
-            // buttonX3
-            // 
-            this.buttonX3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX3.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX3.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonX3.Location = new System.Drawing.Point(8, 83);
-            this.buttonX3.Name = "buttonX3";
-            this.buttonX3.Size = new System.Drawing.Size(127, 23);
-            this.buttonX3.TabIndex = 87;
-            this.buttonX3.Text = "Khen thưởng";
-            // 
-            // buttonX2
-            // 
-            this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX2.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonX2.Location = new System.Drawing.Point(8, 54);
-            this.buttonX2.Name = "buttonX2";
-            this.buttonX2.Size = new System.Drawing.Size(127, 23);
-            this.buttonX2.TabIndex = 86;
-            this.buttonX2.Text = "Quá trình đào tạo";
-            // 
-            // buttonX1
-            // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonX1.Location = new System.Drawing.Point(8, 25);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(127, 23);
-            this.buttonX1.TabIndex = 85;
-            this.buttonX1.Text = "Quá trình công tác";
-            // 
             // labelX21
             // 
             this.labelX21.BackColor = System.Drawing.Color.Transparent;
@@ -234,23 +172,62 @@
             this.buttonX6.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.buttonX6.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
             this.buttonX6.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonX6.Location = new System.Drawing.Point(10, 234);
+            this.buttonX6.Location = new System.Drawing.Point(9, 176);
             this.buttonX6.Name = "buttonX6";
             this.buttonX6.Size = new System.Drawing.Size(127, 23);
             this.buttonX6.TabIndex = 91;
             this.buttonX6.Text = "Cập nhật dữ liệu";
             // 
-            // buttonX7
+            // labelX1
             // 
-            this.buttonX7.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX7.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX7.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonX7.Location = new System.Drawing.Point(9, 112);
-            this.buttonX7.Name = "buttonX7";
-            this.buttonX7.Size = new System.Drawing.Size(127, 23);
-            this.buttonX7.TabIndex = 93;
-            this.buttonX7.Text = "Kỷ luật";
+            this.labelX1.AutoSize = true;
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            this.labelX1.ForeColor = System.Drawing.Color.Crimson;
+            this.labelX1.Location = new System.Drawing.Point(10, 37);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(92, 15);
+            this.labelX1.TabIndex = 93;
+            this.labelX1.Text = "Quá trình công tác";
+            // 
+            // labelX2
+            // 
+            this.labelX2.AutoSize = true;
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            this.labelX2.Location = new System.Drawing.Point(10, 58);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(87, 15);
+            this.labelX2.TabIndex = 94;
+            this.labelX2.Text = "Quá trình đào tạo";
+            // 
+            // labelX3
+            // 
+            this.labelX3.AutoSize = true;
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            this.labelX3.Location = new System.Drawing.Point(10, 79);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(65, 15);
+            this.labelX3.TabIndex = 95;
+            this.labelX3.Text = "Khen thưởng";
+            // 
+            // labelX4
+            // 
+            this.labelX4.AutoSize = true;
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            this.labelX4.Location = new System.Drawing.Point(10, 100);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(36, 15);
+            this.labelX4.TabIndex = 96;
+            this.labelX4.Text = "Kỷ luật";
+            // 
+            // labelX5
+            // 
+            this.labelX5.AutoSize = true;
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            this.labelX5.Location = new System.Drawing.Point(10, 121);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(73, 15);
+            this.labelX5.TabIndex = 97;
+            this.labelX5.Text = "Huy hiệu đảng";
             // 
             // FrmThongTinNhanVien_CacQuaTrinh
             // 
@@ -260,6 +237,7 @@
             this.Name = "FrmThongTinNhanVien_CacQuaTrinh";
             this.Text = "FrmThongTinNhanVien_CacQuaTrinh";
             this.pnlTomTat.ResumeLayout(false);
+            this.pnlTomTat.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -272,14 +250,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
-        private DevComponents.DotNetBar.ButtonX buttonX5;
-        private DevComponents.DotNetBar.ButtonX buttonX4;
-        private DevComponents.DotNetBar.ButtonX buttonX3;
-        private DevComponents.DotNetBar.ButtonX buttonX2;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.LabelX labelX21;
         private DevComponents.DotNetBar.ButtonX buttonX6;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.ButtonX buttonX7;
+        private DevComponents.DotNetBar.LabelX labelX5;
+        private DevComponents.DotNetBar.LabelX labelX4;
+        private DevComponents.DotNetBar.LabelX labelX3;
+        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.LabelX labelX1;
     }
 }
