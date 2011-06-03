@@ -213,7 +213,7 @@
             // labelX10
             // 
             this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.Location = new System.Drawing.Point(362, 223);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(245, 20);
@@ -224,7 +224,7 @@
             // labelX15
             // 
             this.labelX15.BackColor = System.Drawing.Color.Transparent;
-            this.labelX15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX15.Location = new System.Drawing.Point(537, 198);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(56, 20);
@@ -235,7 +235,7 @@
             // labelX14
             // 
             this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            this.labelX14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX14.Location = new System.Drawing.Point(1, 223);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(122, 20);
@@ -246,7 +246,7 @@
             // labelX13
             // 
             this.labelX13.BackColor = System.Drawing.Color.Transparent;
-            this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX13.Location = new System.Drawing.Point(70, 198);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(56, 20);
@@ -257,7 +257,7 @@
             // labelX12
             // 
             this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX12.Location = new System.Drawing.Point(41, 171);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(82, 20);
@@ -268,7 +268,7 @@
             // labelX11
             // 
             this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX11.Location = new System.Drawing.Point(6, 146);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(117, 17);
@@ -279,7 +279,7 @@
             // labelX17
             // 
             this.labelX17.BackColor = System.Drawing.Color.Transparent;
-            this.labelX17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX17.Location = new System.Drawing.Point(44, 109);
             this.labelX17.Name = "labelX17";
             this.labelX17.Size = new System.Drawing.Size(79, 20);
@@ -314,7 +314,7 @@
             // labelX18
             // 
             this.labelX18.BackColor = System.Drawing.Color.Transparent;
-            this.labelX18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX18.Location = new System.Drawing.Point(67, 83);
             this.labelX18.Name = "labelX18";
             this.labelX18.Size = new System.Drawing.Size(56, 20);
@@ -337,7 +337,7 @@
             // labelX19
             // 
             this.labelX19.BackColor = System.Drawing.Color.Transparent;
-            this.labelX19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX19.Location = new System.Drawing.Point(11, 34);
             this.labelX19.Name = "labelX19";
             this.labelX19.Size = new System.Drawing.Size(115, 20);
@@ -360,7 +360,7 @@
             // labelX20
             // 
             this.labelX20.BackColor = System.Drawing.Color.Transparent;
-            this.labelX20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX20.Location = new System.Drawing.Point(452, 8);
             this.labelX20.Name = "labelX20";
             this.labelX20.Size = new System.Drawing.Size(81, 20);
@@ -382,7 +382,7 @@
             // labelX21
             // 
             this.labelX21.BackColor = System.Drawing.Color.Transparent;
-            this.labelX21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX21.Location = new System.Drawing.Point(44, 8);
             this.labelX21.Name = "labelX21";
             this.labelX21.Size = new System.Drawing.Size(81, 20);
@@ -431,6 +431,7 @@
             this.Name = "FrmThongTinNhanVien_TomTat";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmThongTinNhanVien_TomTat2";
+            this.Load += new System.EventHandler(this.FrmThongTinNhanVien_TomTat_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNv)).EndInit();

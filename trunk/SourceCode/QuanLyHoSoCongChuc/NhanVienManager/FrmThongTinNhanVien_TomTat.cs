@@ -22,6 +22,15 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         {
             InitializeComponent();
             _nhanvien = nhanvien;
+            LoadDanToc();
+            LoadTonGiao();
+            LoadNgheNghiepTruocTuyenDung();
+            LoadThanhPhanGiaDinh();
+        }
+
+        private void FrmThongTinNhanVien_TomTat_Load(object sender, EventArgs e)
+        {
+            LoadTomTat();
         }
 
         public void LoadTomTat()
@@ -34,6 +43,9 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             txtHoKhau.Text = _nhanvien.HoKhauThuongTru;
             txtNoiOTamTru.Text = _nhanvien.NoiOHienTai;
             SetSelectedDanToc(_nhanvien);
+            SetSelectedTonGiao(_nhanvien);
+            SetSelectedNgheNghiepTruocTuyenDung(_nhanvien);
+            SetSelectedThanhPhanXuatThan(_nhanvien);
         }
 
         public void LoadDanToc()
@@ -45,6 +57,33 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             }
         }
 
+        public void LoadTonGiao()
+        {
+            var lstItem = TonGiaoRepository.SelectAll();
+            if (lstItem.Count > 0)
+            {
+                cbxTonGiao.DataSource = lstItem;
+            }
+        }
+
+        public void LoadNgheNghiepTruocTuyenDung()
+        {
+            var lstItem = NgheNghiepRepository.SelectAll();
+            if (lstItem.Count > 0)
+            {
+                cbxNgheNghiepTruocKhiDuocTuyenDung.DataSource = lstItem;
+            }
+        }
+
+        public void LoadThanhPhanGiaDinh()
+        {
+            var lstItem = ThanhPhanXuatThanRepository.SelectAll();
+            if (lstItem.Count > 0)
+            {
+                cbxThanhPhanGiaDinh.DataSource = lstItem;
+            }
+        }
+
         public void SetSelectedDanToc(NhanVien nhanvien)
         {
             foreach (var item in cbxDanToc.Items)
@@ -52,6 +91,42 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 if (((DanToc)item).MaDanToc == nhanvien.MaDanToc)
                 {
                     cbxDanToc.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+
+        public void SetSelectedTonGiao(NhanVien nhanvien)
+        {
+            foreach (var item in cbxTonGiao.Items)
+            {
+                if (((TonGiao)item).MaTonGiao == nhanvien.MaTonGiao)
+                {
+                    cbxTonGiao.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+
+        public void SetSelectedThanhPhanXuatThan(NhanVien nhanvien)
+        {
+            foreach (var item in cbxThanhPhanGiaDinh.Items)
+            {
+                if (((ThanhPhanXuatThan)item).MaThanhPhanXuatThan == nhanvien.MaThanhPhanXuatThan)
+                {
+                    cbxThanhPhanGiaDinh.SelectedItem = item;
+                    break;
+                }
+            }
+        }
+
+        public void SetSelectedNgheNghiepTruocTuyenDung(NhanVien nhanvien)
+        {
+            foreach (var item in cbxNgheNghiepTruocKhiDuocTuyenDung.Items)
+            {
+                if (((NgheNghiep)item).MaNgheNghiep == nhanvien.MaNgheNghiepTruocTuyenDung)
+                {
+                    cbxNgheNghiepTruocKhiDuocTuyenDung.SelectedItem = item;
                     break;
                 }
             }

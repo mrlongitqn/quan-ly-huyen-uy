@@ -12,7 +12,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<DanToc> SelectAll()
 		{
-			return DataContext.Instance.DanTocs.ToList();
+			return DataContext.Instance.DanTocs.OrderBy(item => item.TenDanToc).ToList();
 		}
 
 		public static DanToc SelectByID(string madantoc)

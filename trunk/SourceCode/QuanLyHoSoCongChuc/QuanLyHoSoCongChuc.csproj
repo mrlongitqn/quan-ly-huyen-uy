@@ -515,6 +515,7 @@
     <Compile Include="Repositories\ChuyenDonViRepository.cs" />
     <Compile Include="Repositories\HinhThucDaoTaoRepository.cs" />
     <Compile Include="Repositories\HocHamRepository.cs" />
+    <Compile Include="Repositories\NgheNghiepRepository.cs" />
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
     <Compile Include="Repositories\QuaTrinhCongTacRepository.cs" />
     <Compile Include="Search\CauHoiNguoiDung.cs" />

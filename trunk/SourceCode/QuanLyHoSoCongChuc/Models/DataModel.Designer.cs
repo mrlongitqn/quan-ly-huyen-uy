@@ -62,6 +62,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NguoiDung_LoaiNGuoiDung", "LoaiNGuoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNGuoiDung), "NguoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NguoiDung), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LucLuongVuTrang_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "LucLuongVuTrang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LucLuongVuTrang), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_NgachCongChuc", "NgachCongChuc", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NgachCongChuc), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_NgheNghiep", "NgheNghiep", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NgheNghiep), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ThanhPhanXuatThan", "ThanhPhanXuatThan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.ThanhPhanXuatThan), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_TinhTrangHonNhan", "TinhTrangHonNhan", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TinhTrangHonNhan), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_TonGiao", "TonGiao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TonGiao), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
@@ -777,6 +778,22 @@ namespace QuanLyHoSoCongChuc.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<NgheNghiep> NgheNghieps
+        {
+            get
+            {
+                if ((_NgheNghieps == null))
+                {
+                    _NgheNghieps = base.CreateObjectSet<NgheNghiep>("NgheNghieps");
+                }
+                return _NgheNghieps;
+            }
+        }
+        private ObjectSet<NgheNghiep> _NgheNghieps;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<NguoiDung> NguoiDungs
         {
             get
@@ -1463,6 +1480,14 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToNgachCongChucs(NgachCongChuc ngachCongChuc)
         {
             base.AddObject("NgachCongChucs", ngachCongChuc);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the NgheNghieps EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToNgheNghieps(NgheNghiep ngheNghiep)
+        {
+            base.AddObject("NgheNghieps", ngheNghiep);
         }
     
         /// <summary>
@@ -7670,6 +7695,110 @@ namespace QuanLyHoSoCongChuc.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="NgheNghiep")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class NgheNghiep : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new NgheNghiep object.
+        /// </summary>
+        /// <param name="maNgheNghiep">Initial value of the MaNgheNghiep property.</param>
+        public static NgheNghiep CreateNgheNghiep(global::System.Int32 maNgheNghiep)
+        {
+            NgheNghiep ngheNghiep = new NgheNghiep();
+            ngheNghiep.MaNgheNghiep = maNgheNghiep;
+            return ngheNghiep;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MaNgheNghiep
+        {
+            get
+            {
+                return _MaNgheNghiep;
+            }
+            set
+            {
+                if (_MaNgheNghiep != value)
+                {
+                    OnMaNgheNghiepChanging(value);
+                    ReportPropertyChanging("MaNgheNghiep");
+                    _MaNgheNghiep = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MaNgheNghiep");
+                    OnMaNgheNghiepChanged();
+                }
+            }
+        }
+        private global::System.Int32 _MaNgheNghiep;
+        partial void OnMaNgheNghiepChanging(global::System.Int32 value);
+        partial void OnMaNgheNghiepChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TenNgheNghiep
+        {
+            get
+            {
+                return _TenNgheNghiep;
+            }
+            set
+            {
+                OnTenNgheNghiepChanging(value);
+                ReportPropertyChanging("TenNgheNghiep");
+                _TenNgheNghiep = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TenNgheNghiep");
+                OnTenNgheNghiepChanged();
+            }
+        }
+        private global::System.String _TenNgheNghiep;
+        partial void OnTenNgheNghiepChanging(global::System.String value);
+        partial void OnTenNgheNghiepChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhanVien_NgheNghiep", "NhanVien")]
+        public EntityCollection<NhanVien> NhanViens
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<NhanVien>("QLHSCCModel.FK_NhanVien_NgheNghiep", "NhanVien");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<NhanVien>("QLHSCCModel.FK_NhanVien_NgheNghiep", "NhanVien", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="NguoiDung")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -9563,6 +9692,30 @@ namespace QuanLyHoSoCongChuc.Models
         private global::System.String _MaDangVien;
         partial void OnMaDangVienChanging(global::System.String value);
         partial void OnMaDangVienChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> MaNgheNghiepTruocTuyenDung
+        {
+            get
+            {
+                return _MaNgheNghiepTruocTuyenDung;
+            }
+            set
+            {
+                OnMaNgheNghiepTruocTuyenDungChanging(value);
+                ReportPropertyChanging("MaNgheNghiepTruocTuyenDung");
+                _MaNgheNghiepTruocTuyenDung = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MaNgheNghiepTruocTuyenDung");
+                OnMaNgheNghiepTruocTuyenDungChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _MaNgheNghiepTruocTuyenDung;
+        partial void OnMaNgheNghiepTruocTuyenDungChanging(Nullable<global::System.Int32> value);
+        partial void OnMaNgheNghiepTruocTuyenDungChanged();
 
         #endregion
     
@@ -10228,6 +10381,44 @@ namespace QuanLyHoSoCongChuc.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<NgachCongChuc>("QLHSCCModel.FK_NhanVien_NgachCongChuc", "NgachCongChuc", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhanVien_NgheNghiep", "NgheNghiep")]
+        public NgheNghiep NgheNghiep
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NgheNghiep>("QLHSCCModel.FK_NhanVien_NgheNghiep", "NgheNghiep").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NgheNghiep>("QLHSCCModel.FK_NhanVien_NgheNghiep", "NgheNghiep").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<NgheNghiep> NgheNghiepReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NgheNghiep>("QLHSCCModel.FK_NhanVien_NgheNghiep", "NgheNghiep");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<NgheNghiep>("QLHSCCModel.FK_NhanVien_NgheNghiep", "NgheNghiep", value);
                 }
             }
         }

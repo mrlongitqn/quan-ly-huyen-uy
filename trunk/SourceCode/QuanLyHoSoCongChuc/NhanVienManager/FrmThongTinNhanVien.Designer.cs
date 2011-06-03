@@ -146,7 +146,7 @@
             // labelX6
             // 
             this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.Location = new System.Drawing.Point(549, 39);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(58, 20);
@@ -165,7 +165,7 @@
             // labelX7
             // 
             this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.Location = new System.Drawing.Point(386, 39);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(58, 20);
@@ -187,7 +187,7 @@
             // labelX8
             // 
             this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX8.Location = new System.Drawing.Point(8, 39);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(116, 20);
@@ -223,7 +223,7 @@
             // labelX9
             // 
             this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX9.Location = new System.Drawing.Point(65, 15);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(58, 20);
@@ -255,7 +255,7 @@
             // lblLuongPhuCap
             // 
             this.lblLuongPhuCap.AutoSize = true;
-            this.lblLuongPhuCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLuongPhuCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLuongPhuCap.ForeColor = System.Drawing.Color.White;
             this.lblLuongPhuCap.Location = new System.Drawing.Point(476, 5);
             this.lblLuongPhuCap.Name = "lblLuongPhuCap";
@@ -267,7 +267,7 @@
             // lblGiaDinh
             // 
             this.lblGiaDinh.AutoSize = true;
-            this.lblGiaDinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGiaDinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGiaDinh.ForeColor = System.Drawing.Color.White;
             this.lblGiaDinh.Location = new System.Drawing.Point(375, 5);
             this.lblGiaDinh.Name = "lblGiaDinh";
@@ -279,7 +279,7 @@
             // lblDacDiemLS
             // 
             this.lblDacDiemLS.AutoSize = true;
-            this.lblDacDiemLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDacDiemLS.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDacDiemLS.ForeColor = System.Drawing.Color.White;
             this.lblDacDiemLS.Location = new System.Drawing.Point(248, 5);
             this.lblDacDiemLS.Name = "lblDacDiemLS";
@@ -291,7 +291,7 @@
             // lblCacQuaTrinh
             // 
             this.lblCacQuaTrinh.AutoSize = true;
-            this.lblCacQuaTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCacQuaTrinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCacQuaTrinh.ForeColor = System.Drawing.Color.White;
             this.lblCacQuaTrinh.Location = new System.Drawing.Point(121, 5);
             this.lblCacQuaTrinh.Name = "lblCacQuaTrinh";
@@ -303,7 +303,7 @@
             // lblTomTat
             // 
             this.lblTomTat.AutoSize = true;
-            this.lblTomTat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTomTat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTomTat.ForeColor = System.Drawing.Color.Lime;
             this.lblTomTat.Location = new System.Drawing.Point(26, 5);
             this.lblTomTat.Name = "lblTomTat";
