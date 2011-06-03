@@ -9,6 +9,9 @@ using DevComponents.DotNetBar;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
+    /// <summary>
+    /// tuansl added: insert new huyhieudang
+    /// </summary>
     public partial class FrmNhapHuyHieuDaDuocTang : DevComponents.DotNetBar.Office2007Form
     {
         public FrmNhapHuyHieuDaDuocTang()

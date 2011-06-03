@@ -37,8 +37,8 @@
             this.cbxNgheNghiepTruocKhiDuocTuyenDung = new System.Windows.Forms.ComboBox();
             this.cbxTonGiao = new System.Windows.Forms.ComboBox();
             this.cbxDanToc = new System.Windows.Forms.ComboBox();
-            this.txtTenQueQuanDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtNoiSinhDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtQueQuan = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtNoiSinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
@@ -48,8 +48,6 @@
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.txtNoiOTamTru = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoKhau = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtQueQuan = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtNoiSinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.txtHoTenDangDung = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX19 = new DevComponents.DotNetBar.LabelX();
@@ -77,8 +75,8 @@
             this.groupPanel1.Controls.Add(this.cbxNgheNghiepTruocKhiDuocTuyenDung);
             this.groupPanel1.Controls.Add(this.cbxTonGiao);
             this.groupPanel1.Controls.Add(this.cbxDanToc);
-            this.groupPanel1.Controls.Add(this.txtTenQueQuanDayDu);
-            this.groupPanel1.Controls.Add(this.txtNoiSinhDayDu);
+            this.groupPanel1.Controls.Add(this.txtQueQuan);
+            this.groupPanel1.Controls.Add(this.txtNoiSinh);
             this.groupPanel1.Controls.Add(this.btnChonQueQuan);
             this.groupPanel1.Controls.Add(this.btnChonNoiSinh);
             this.groupPanel1.Controls.Add(this.labelX10);
@@ -90,8 +88,6 @@
             this.groupPanel1.Controls.Add(this.labelX17);
             this.groupPanel1.Controls.Add(this.txtNoiOTamTru);
             this.groupPanel1.Controls.Add(this.txtHoKhau);
-            this.groupPanel1.Controls.Add(this.txtQueQuan);
-            this.groupPanel1.Controls.Add(this.txtNoiSinh);
             this.groupPanel1.Controls.Add(this.labelX18);
             this.groupPanel1.Controls.Add(this.txtHoTenDangDung);
             this.groupPanel1.Controls.Add(this.labelX19);
@@ -190,29 +186,29 @@
             this.cbxDanToc.Size = new System.Drawing.Size(200, 21);
             this.cbxDanToc.TabIndex = 199;
             // 
-            // txtTenQueQuanDayDu
+            // txtQueQuan
             // 
             // 
             // 
             // 
-            this.txtTenQueQuanDayDu.Border.Class = "TextBoxBorder";
-            this.txtTenQueQuanDayDu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenQueQuanDayDu.Location = new System.Drawing.Point(326, 110);
-            this.txtTenQueQuanDayDu.Name = "txtTenQueQuanDayDu";
-            this.txtTenQueQuanDayDu.Size = new System.Drawing.Size(364, 20);
-            this.txtTenQueQuanDayDu.TabIndex = 198;
+            this.txtQueQuan.Border.Class = "TextBoxBorder";
+            this.txtQueQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQueQuan.Location = new System.Drawing.Point(148, 109);
+            this.txtQueQuan.Name = "txtQueQuan";
+            this.txtQueQuan.Size = new System.Drawing.Size(508, 20);
+            this.txtQueQuan.TabIndex = 198;
             // 
-            // txtNoiSinhDayDu
-            // 
-            // 
+            // txtNoiSinh
             // 
             // 
-            this.txtNoiSinhDayDu.Border.Class = "TextBoxBorder";
-            this.txtNoiSinhDayDu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoiSinhDayDu.Location = new System.Drawing.Point(326, 84);
-            this.txtNoiSinhDayDu.Name = "txtNoiSinhDayDu";
-            this.txtNoiSinhDayDu.Size = new System.Drawing.Size(364, 20);
-            this.txtNoiSinhDayDu.TabIndex = 197;
+            // 
+            // 
+            this.txtNoiSinh.Border.Class = "TextBoxBorder";
+            this.txtNoiSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoiSinh.Location = new System.Drawing.Point(148, 83);
+            this.txtNoiSinh.Name = "txtNoiSinh";
+            this.txtNoiSinh.Size = new System.Drawing.Size(508, 20);
+            this.txtNoiSinh.TabIndex = 197;
             // 
             // labelX10
             // 
@@ -315,30 +311,6 @@
             this.txtHoKhau.Size = new System.Drawing.Size(542, 20);
             this.txtHoKhau.TabIndex = 186;
             // 
-            // txtQueQuan
-            // 
-            // 
-            // 
-            // 
-            this.txtQueQuan.Border.Class = "TextBoxBorder";
-            this.txtQueQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQueQuan.Location = new System.Drawing.Point(148, 110);
-            this.txtQueQuan.Name = "txtQueQuan";
-            this.txtQueQuan.Size = new System.Drawing.Size(138, 20);
-            this.txtQueQuan.TabIndex = 185;
-            // 
-            // txtNoiSinh
-            // 
-            // 
-            // 
-            // 
-            this.txtNoiSinh.Border.Class = "TextBoxBorder";
-            this.txtNoiSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoiSinh.Location = new System.Drawing.Point(148, 84);
-            this.txtNoiSinh.Name = "txtNoiSinh";
-            this.txtNoiSinh.Size = new System.Drawing.Size(138, 20);
-            this.txtNoiSinh.TabIndex = 184;
-            // 
             // labelX18
             // 
             this.labelX18.BackColor = System.Drawing.Color.Transparent;
@@ -424,9 +396,9 @@
             this.picNv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picNv.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picNv.ErrorImage")));
             this.picNv.InitialImage = null;
-            this.picNv.Location = new System.Drawing.Point(701, 32);
+            this.picNv.Location = new System.Drawing.Point(706, 32);
             this.picNv.Name = "picNv";
-            this.picNv.Size = new System.Drawing.Size(124, 131);
+            this.picNv.Size = new System.Drawing.Size(122, 131);
             this.picNv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picNv.TabIndex = 203;
             this.picNv.TabStop = false;
@@ -435,7 +407,7 @@
             // 
             this.btnChonQueQuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnChonQueQuan.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonQueQuan.Location = new System.Drawing.Point(292, 105);
+            this.btnChonQueQuan.Location = new System.Drawing.Point(662, 105);
             this.btnChonQueQuan.Name = "btnChonQueQuan";
             this.btnChonQueQuan.Size = new System.Drawing.Size(28, 27);
             this.btnChonQueQuan.TabIndex = 196;
@@ -445,7 +417,7 @@
             // 
             this.btnChonNoiSinh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnChonNoiSinh.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonNoiSinh.Location = new System.Drawing.Point(292, 79);
+            this.btnChonNoiSinh.Location = new System.Drawing.Point(662, 79);
             this.btnChonNoiSinh.Name = "btnChonNoiSinh";
             this.btnChonNoiSinh.Size = new System.Drawing.Size(28, 27);
             this.btnChonNoiSinh.TabIndex = 195;
@@ -477,8 +449,8 @@
         private System.Windows.Forms.ComboBox cbxNgheNghiepTruocKhiDuocTuyenDung;
         private System.Windows.Forms.ComboBox cbxTonGiao;
         private System.Windows.Forms.ComboBox cbxDanToc;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTenQueQuanDayDu;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtNoiSinhDayDu;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtQueQuan;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNoiSinh;
         private System.Windows.Forms.Button btnChonQueQuan;
         private System.Windows.Forms.Button btnChonNoiSinh;
         private DevComponents.DotNetBar.LabelX labelX10;
@@ -490,8 +462,6 @@
         private DevComponents.DotNetBar.LabelX labelX17;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNoiOTamTru;
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoKhau;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtQueQuan;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtNoiSinh;
         private DevComponents.DotNetBar.LabelX labelX18;
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoTenDangDung;
         private DevComponents.DotNetBar.LabelX labelX19;
