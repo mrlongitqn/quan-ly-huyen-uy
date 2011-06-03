@@ -29,12 +29,9 @@
         private void InitializeComponent()
         {
             this.pnlTomTat = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.lstvNhanVien = new DevComponents.DotNetBar.Controls.ListViewEx();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.txtDatTuMua = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDienTichSuDungDat = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDienTichSuDungNhaO = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -62,9 +59,12 @@
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lstvNhanVien = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.pnlTomTat.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -105,6 +105,7 @@
             this.pnlTomTat.Controls.Add(this.label1);
             this.pnlTomTat.Controls.Add(this.lstvNhanVien);
             this.pnlTomTat.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlTomTat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlTomTat.Location = new System.Drawing.Point(0, 0);
             this.pnlTomTat.Name = "pnlTomTat";
             this.pnlTomTat.Size = new System.Drawing.Size(859, 346);
@@ -130,58 +131,36 @@
             this.pnlTomTat.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.pnlTomTat.TabIndex = 7;
             // 
-            // lstvNhanVien
+            // labelX1
             // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(8, 22);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(129, 40);
+            this.labelX1.TabIndex = 122;
+            this.labelX1.Text = "(Click chuột để thêm, sửa dữ liệu)";
+            this.labelX1.WordWrap = true;
             // 
+            // labelX10
             // 
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX10.Location = new System.Drawing.Point(12, 221);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(45, 23);
+            this.labelX10.TabIndex = 121;
+            this.labelX10.Text = "Đất ở";
             // 
-            this.lstvNhanVien.Border.Class = "ListViewBorder";
-            this.lstvNhanVien.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lstvNhanVien.FullRowSelect = true;
-            this.lstvNhanVien.Location = new System.Drawing.Point(148, 3);
-            this.lstvNhanVien.MultiSelect = false;
-            this.lstvNhanVien.Name = "lstvNhanVien";
-            this.lstvNhanVien.Size = new System.Drawing.Size(702, 107);
-            this.lstvNhanVien.TabIndex = 90;
-            this.lstvNhanVien.UseCompatibleStateImageBehavior = false;
-            this.lstvNhanVien.View = System.Windows.Forms.View.Details;
+            // labelX7
             // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "STT";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 40;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Từ tháng năm";
-            this.columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đến tháng năm";
-            this.columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Đơn vị, Chức vụ";
-            this.columnHeader4.Width = 420;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Crimson;
-            this.label1.Location = new System.Drawing.Point(9, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(124, 16);
-            this.label1.TabIndex = 91;
-            this.label1.Text = "Quan hệ gia đình";
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX7.Location = new System.Drawing.Point(12, 174);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(40, 20);
+            this.labelX7.TabIndex = 120;
+            this.labelX7.Text = "Nhà ở";
             // 
             // txtDatTuMua
             // 
@@ -230,7 +209,7 @@
             // labelX20
             // 
             this.labelX20.BackColor = System.Drawing.Color.Transparent;
-            this.labelX20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX20.Location = new System.Drawing.Point(442, 222);
             this.labelX20.Name = "labelX20";
             this.labelX20.Size = new System.Drawing.Size(107, 23);
@@ -240,7 +219,7 @@
             // labelX19
             // 
             this.labelX19.BackColor = System.Drawing.Color.Transparent;
-            this.labelX19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX19.Location = new System.Drawing.Point(432, 197);
             this.labelX19.Name = "labelX19";
             this.labelX19.Size = new System.Drawing.Size(167, 23);
@@ -250,7 +229,7 @@
             // labelX18
             // 
             this.labelX18.BackColor = System.Drawing.Color.Transparent;
-            this.labelX18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX18.Location = new System.Drawing.Point(432, 176);
             this.labelX18.Name = "labelX18";
             this.labelX18.Size = new System.Drawing.Size(167, 23);
@@ -260,7 +239,7 @@
             // labelX17
             // 
             this.labelX17.BackColor = System.Drawing.Color.Transparent;
-            this.labelX17.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX17.Location = new System.Drawing.Point(432, 150);
             this.labelX17.Name = "labelX17";
             this.labelX17.Size = new System.Drawing.Size(174, 23);
@@ -281,7 +260,7 @@
             // labelX16
             // 
             this.labelX16.BackColor = System.Drawing.Color.Transparent;
-            this.labelX16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX16.Location = new System.Drawing.Point(525, 308);
             this.labelX16.Name = "labelX16";
             this.labelX16.Size = new System.Drawing.Size(81, 23);
@@ -302,7 +281,7 @@
             // labelX15
             // 
             this.labelX15.BackColor = System.Drawing.Color.Transparent;
-            this.labelX15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX15.Location = new System.Drawing.Point(420, 279);
             this.labelX15.Name = "labelX15";
             this.labelX15.Size = new System.Drawing.Size(179, 23);
@@ -389,7 +368,7 @@
             // labelX14
             // 
             this.labelX14.BackColor = System.Drawing.Color.Transparent;
-            this.labelX14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX14.Location = new System.Drawing.Point(12, 308);
             this.labelX14.Name = "labelX14";
             this.labelX14.Size = new System.Drawing.Size(141, 23);
@@ -399,7 +378,7 @@
             // labelX13
             // 
             this.labelX13.BackColor = System.Drawing.Color.Transparent;
-            this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX13.Location = new System.Drawing.Point(12, 279);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(223, 23);
@@ -409,7 +388,7 @@
             // labelX12
             // 
             this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX12.Location = new System.Drawing.Point(12, 250);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(125, 23);
@@ -419,7 +398,7 @@
             // labelX11
             // 
             this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX11.Location = new System.Drawing.Point(63, 221);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(132, 23);
@@ -429,7 +408,7 @@
             // labelX9
             // 
             this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX9.Location = new System.Drawing.Point(63, 193);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(152, 23);
@@ -439,7 +418,7 @@
             // labelX8
             // 
             this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX8.Location = new System.Drawing.Point(63, 173);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(166, 23);
@@ -449,7 +428,7 @@
             // labelX6
             // 
             this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.Location = new System.Drawing.Point(12, 145);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(217, 23);
@@ -459,7 +438,7 @@
             // labelX5
             // 
             this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.ForeColor = System.Drawing.Color.Crimson;
             this.labelX5.Location = new System.Drawing.Point(12, 116);
             this.labelX5.Name = "labelX5";
@@ -467,36 +446,58 @@
             this.labelX5.TabIndex = 93;
             this.labelX5.Text = "Hoàn cảnh kinh tế của bản thân và gia đình";
             // 
-            // labelX10
+            // label1
             // 
-            this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX10.Location = new System.Drawing.Point(12, 221);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(45, 23);
-            this.labelX10.TabIndex = 121;
-            this.labelX10.Text = "Đất ở";
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Crimson;
+            this.label1.Location = new System.Drawing.Point(9, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 13);
+            this.label1.TabIndex = 91;
+            this.label1.Text = "Quan hệ gia đình";
             // 
-            // labelX7
+            // lstvNhanVien
             // 
-            this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX7.Location = new System.Drawing.Point(12, 174);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(40, 20);
-            this.labelX7.TabIndex = 120;
-            this.labelX7.Text = "Nhà ở";
             // 
-            // labelX1
             // 
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(8, 22);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(129, 40);
-            this.labelX1.TabIndex = 122;
-            this.labelX1.Text = "(Click chuột để thêm, sửa dữ liệu)";
-            this.labelX1.WordWrap = true;
+            // 
+            this.lstvNhanVien.Border.Class = "ListViewBorder";
+            this.lstvNhanVien.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader6,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lstvNhanVien.FullRowSelect = true;
+            this.lstvNhanVien.Location = new System.Drawing.Point(148, 3);
+            this.lstvNhanVien.MultiSelect = false;
+            this.lstvNhanVien.Name = "lstvNhanVien";
+            this.lstvNhanVien.Size = new System.Drawing.Size(702, 107);
+            this.lstvNhanVien.TabIndex = 90;
+            this.lstvNhanVien.UseCompatibleStateImageBehavior = false;
+            this.lstvNhanVien.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "STT";
+            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader6.Width = 40;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Từ tháng năm";
+            this.columnHeader2.Width = 100;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Đến tháng năm";
+            this.columnHeader3.Width = 100;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Đơn vị, Chức vụ";
+            this.columnHeader4.Width = 420;
             // 
             // FrmThongTinNhanVien_GiaDinh
             // 

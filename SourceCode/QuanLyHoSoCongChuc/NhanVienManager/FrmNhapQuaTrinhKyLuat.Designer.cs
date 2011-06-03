@@ -46,13 +46,13 @@
             this.dtpThoiGianBatdau = new System.Windows.Forms.DateTimePicker();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.listViewEx1 = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
-            this.listViewEx1 = new DevComponents.DotNetBar.Controls.ListViewEx();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -109,7 +109,7 @@
             // labelX1
             // 
             this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX1.Location = new System.Drawing.Point(12, 55);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(87, 20);
@@ -131,7 +131,7 @@
             // labelX2
             // 
             this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX2.Location = new System.Drawing.Point(12, 6);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(58, 20);
@@ -171,7 +171,7 @@
             // labelX6
             // 
             this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.Location = new System.Drawing.Point(4, 232);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(134, 20);
@@ -192,8 +192,8 @@
             // 
             // labelX5
             // 
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.Location = new System.Drawing.Point(11, 94);
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Location = new System.Drawing.Point(11, 91);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(127, 23);
             this.labelX5.TabIndex = 104;
@@ -203,7 +203,7 @@
             // labelX10
             // 
             this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.Location = new System.Drawing.Point(4, 68);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(134, 20);
@@ -214,7 +214,7 @@
             // labelX4
             // 
             this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX4.Location = new System.Drawing.Point(31, 42);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(107, 20);
@@ -264,6 +264,34 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(619, 47);
             this.panel4.TabIndex = 94;
+            // 
+            // listViewEx1
+            // 
+            // 
+            // 
+            // 
+            this.listViewEx1.Border.Class = "ListViewBorder";
+            this.listViewEx1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
+            this.columnHeader1});
+            this.listViewEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewEx1.Location = new System.Drawing.Point(0, 0);
+            this.listViewEx1.Name = "listViewEx1";
+            this.listViewEx1.Size = new System.Drawing.Size(212, 219);
+            this.listViewEx1.TabIndex = 1;
+            this.listViewEx1.UseCompatibleStateImageBehavior = false;
+            this.listViewEx1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "STT";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 40;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Năm";
+            this.columnHeader1.Width = 140;
             // 
             // btnThoat
             // 
@@ -316,34 +344,6 @@
             this.btnXoa.Size = new System.Drawing.Size(72, 23);
             this.btnXoa.TabIndex = 37;
             this.btnXoa.Text = "Xóa";
-            // 
-            // listViewEx1
-            // 
-            // 
-            // 
-            // 
-            this.listViewEx1.Border.Class = "ListViewBorder";
-            this.listViewEx1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2,
-            this.columnHeader1});
-            this.listViewEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewEx1.Location = new System.Drawing.Point(0, 0);
-            this.listViewEx1.Name = "listViewEx1";
-            this.listViewEx1.Size = new System.Drawing.Size(212, 219);
-            this.listViewEx1.TabIndex = 1;
-            this.listViewEx1.UseCompatibleStateImageBehavior = false;
-            this.listViewEx1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "STT";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 40;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Năm";
-            this.columnHeader1.Width = 140;
             // 
             // FrmNhapQuaTrinhKyLuat
             // 

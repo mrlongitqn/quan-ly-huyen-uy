@@ -34,12 +34,14 @@
             this.txtVaoDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNamSinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTenDonViChuyenDenDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnChonDonViChuyenDen = new System.Windows.Forms.Button();
             this.txtDonViChuyenDen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.txtTaiCoQuan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.txtGioiTinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.btnChonNhanVien = new System.Windows.Forms.Button();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.txtMaNhanVien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -47,6 +49,10 @@
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnHuy = new DevComponents.DotNetBar.ButtonX();
+            this.btnGhi = new DevComponents.DotNetBar.ButtonX();
+            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
+            this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lstvNhanVien = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -58,16 +64,10 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dtNgay = new System.Windows.Forms.DateTimePicker();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.btnChonDonVi = new System.Windows.Forms.Button();
             this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTenDonViDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.btnChonDonViChuyenDen = new System.Windows.Forms.Button();
-            this.btnChonNhanVien = new System.Windows.Forms.Button();
-            this.btnHuy = new DevComponents.DotNetBar.ButtonX();
-            this.btnGhi = new DevComponents.DotNetBar.ButtonX();
-            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
-            this.btnThem = new DevComponents.DotNetBar.ButtonX();
-            this.btnChonDonVi = new System.Windows.Forms.Button();
             this.groupPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -178,6 +178,18 @@
             this.txtTenDonViChuyenDenDayDu.Size = new System.Drawing.Size(586, 44);
             this.txtTenDonViChuyenDenDayDu.TabIndex = 219;
             // 
+            // btnChonDonViChuyenDen
+            // 
+            this.btnChonDonViChuyenDen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonViChuyenDen.Enabled = false;
+            this.btnChonDonViChuyenDen.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonViChuyenDen.Location = new System.Drawing.Point(375, 114);
+            this.btnChonDonViChuyenDen.Name = "btnChonDonViChuyenDen";
+            this.btnChonDonViChuyenDen.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonViChuyenDen.TabIndex = 218;
+            this.btnChonDonViChuyenDen.UseVisualStyleBackColor = true;
+            this.btnChonDonViChuyenDen.Click += new System.EventHandler(this.btnChonDonViChuyenDen_Click);
+            // 
             // txtDonViChuyenDen
             // 
             // 
@@ -193,12 +205,13 @@
             // labelX12
             // 
             this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX12.Location = new System.Drawing.Point(50, 122);
+            this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX12.Location = new System.Drawing.Point(45, 119);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(112, 17);
             this.labelX12.TabIndex = 216;
             this.labelX12.Text = "Đơn vị chuyển đến";
+            this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // txtTaiCoQuan
             // 
@@ -215,12 +228,13 @@
             // labelX7
             // 
             this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX7.Location = new System.Drawing.Point(394, 95);
+            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX7.Location = new System.Drawing.Point(386, 95);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(79, 17);
             this.labelX7.TabIndex = 208;
             this.labelX7.Text = "Tại cơ quan";
+            this.labelX7.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // txtGioiTinh
             // 
@@ -237,22 +251,36 @@
             // labelX8
             // 
             this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX8.Location = new System.Drawing.Point(417, 40);
+            this.labelX8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX8.Location = new System.Drawing.Point(409, 39);
             this.labelX8.Name = "labelX8";
             this.labelX8.Size = new System.Drawing.Size(56, 17);
             this.labelX8.TabIndex = 204;
             this.labelX8.Text = "Giới tính";
+            this.labelX8.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // btnChonNhanVien
+            // 
+            this.btnChonNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonNhanVien.Enabled = false;
+            this.btnChonNhanVien.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonNhanVien.Location = new System.Drawing.Point(375, 8);
+            this.btnChonNhanVien.Name = "btnChonNhanVien";
+            this.btnChonNhanVien.Size = new System.Drawing.Size(28, 27);
+            this.btnChonNhanVien.TabIndex = 202;
+            this.btnChonNhanVien.UseVisualStyleBackColor = true;
+            this.btnChonNhanVien.Click += new System.EventHandler(this.btnChonNhanVien_Click);
             // 
             // labelX4
             // 
             this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX4.Location = new System.Drawing.Point(76, 95);
+            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.Location = new System.Drawing.Point(70, 95);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(87, 17);
             this.labelX4.TabIndex = 199;
             this.labelX4.Text = "Vào đơn vị";
+            this.labelX4.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // txtMaNhanVien
             // 
@@ -281,32 +309,35 @@
             // labelX5
             // 
             this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.Location = new System.Drawing.Point(76, 40);
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Location = new System.Drawing.Point(113, 39);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(44, 17);
             this.labelX5.TabIndex = 197;
             this.labelX5.Text = "Họ tên";
+            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // labelX3
             // 
             this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX3.Location = new System.Drawing.Point(76, 67);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(81, 17);
             this.labelX3.TabIndex = 196;
             this.labelX3.Text = "Năm sinh";
+            this.labelX3.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // labelX6
             // 
             this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.Location = new System.Drawing.Point(76, 14);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(81, 17);
             this.labelX6.TabIndex = 195;
             this.labelX6.Text = "Mã nhân viên";
+            this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // panel4
             // 
@@ -319,6 +350,64 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(779, 36);
             this.panel4.TabIndex = 1;
+            // 
+            // btnHuy
+            // 
+            this.btnHuy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHuy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnHuy.Enabled = false;
+            this.btnHuy.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Eraser_icon;
+            this.btnHuy.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnHuy.Location = new System.Drawing.Point(596, 7);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(64, 23);
+            this.btnHuy.TabIndex = 30;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
+            // 
+            // btnGhi
+            // 
+            this.btnGhi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnGhi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnGhi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnGhi.Enabled = false;
+            this.btnGhi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
+            this.btnGhi.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnGhi.Location = new System.Drawing.Point(526, 7);
+            this.btnGhi.Name = "btnGhi";
+            this.btnGhi.Size = new System.Drawing.Size(64, 23);
+            this.btnGhi.TabIndex = 29;
+            this.btnGhi.Text = "Ghi";
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
+            this.btnThoat.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnThoat.Location = new System.Drawing.Point(666, 7);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(72, 23);
+            this.btnThoat.TabIndex = 28;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThem.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_01;
+            this.btnThem.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnThem.Location = new System.Drawing.Point(361, 7);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(64, 23);
+            this.btnThem.TabIndex = 26;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // panel3
             // 
@@ -413,6 +502,17 @@
             this.labelX2.TabIndex = 163;
             this.labelX2.Text = "Ngày";
             // 
+            // btnChonDonVi
+            // 
+            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonVi.Location = new System.Drawing.Point(299, 10);
+            this.btnChonDonVi.Name = "btnChonDonVi";
+            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonVi.TabIndex = 162;
+            this.btnChonDonVi.UseVisualStyleBackColor = true;
+            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
+            // 
             // txtMaDonVi
             // 
             // 
@@ -441,99 +541,6 @@
             this.labelX1.Size = new System.Drawing.Size(63, 19);
             this.labelX1.TabIndex = 159;
             this.labelX1.Text = "Mã đơn vị";
-            // 
-            // btnChonDonViChuyenDen
-            // 
-            this.btnChonDonViChuyenDen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonDonViChuyenDen.Enabled = false;
-            this.btnChonDonViChuyenDen.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonDonViChuyenDen.Location = new System.Drawing.Point(375, 114);
-            this.btnChonDonViChuyenDen.Name = "btnChonDonViChuyenDen";
-            this.btnChonDonViChuyenDen.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDonViChuyenDen.TabIndex = 218;
-            this.btnChonDonViChuyenDen.UseVisualStyleBackColor = true;
-            this.btnChonDonViChuyenDen.Click += new System.EventHandler(this.btnChonDonViChuyenDen_Click);
-            // 
-            // btnChonNhanVien
-            // 
-            this.btnChonNhanVien.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonNhanVien.Enabled = false;
-            this.btnChonNhanVien.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonNhanVien.Location = new System.Drawing.Point(375, 8);
-            this.btnChonNhanVien.Name = "btnChonNhanVien";
-            this.btnChonNhanVien.Size = new System.Drawing.Size(28, 27);
-            this.btnChonNhanVien.TabIndex = 202;
-            this.btnChonNhanVien.UseVisualStyleBackColor = true;
-            this.btnChonNhanVien.Click += new System.EventHandler(this.btnChonNhanVien_Click);
-            // 
-            // btnHuy
-            // 
-            this.btnHuy.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnHuy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHuy.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnHuy.Enabled = false;
-            this.btnHuy.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Eraser_icon;
-            this.btnHuy.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnHuy.Location = new System.Drawing.Point(596, 7);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(64, 23);
-            this.btnHuy.TabIndex = 30;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
-            // 
-            // btnGhi
-            // 
-            this.btnGhi.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnGhi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGhi.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnGhi.Enabled = false;
-            this.btnGhi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
-            this.btnGhi.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnGhi.Location = new System.Drawing.Point(526, 7);
-            this.btnGhi.Name = "btnGhi";
-            this.btnGhi.Size = new System.Drawing.Size(64, 23);
-            this.btnGhi.TabIndex = 29;
-            this.btnGhi.Text = "Ghi";
-            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThoat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
-            this.btnThoat.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnThoat.Location = new System.Drawing.Point(666, 7);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(72, 23);
-            this.btnThoat.TabIndex = 28;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThem.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThem.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_01;
-            this.btnThem.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnThem.Location = new System.Drawing.Point(361, 7);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(64, 23);
-            this.btnThem.TabIndex = 26;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnChonDonVi
-            // 
-            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonDonVi.Location = new System.Drawing.Point(299, 10);
-            this.btnChonDonVi.Name = "btnChonDonVi";
-            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDonVi.TabIndex = 162;
-            this.btnChonDonVi.UseVisualStyleBackColor = true;
-            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
             // 
             // FrmPhieuBaoChuyenDonVi
             // 
