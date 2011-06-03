@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHoSoCongChuc.NhanVienManager
 {
-    partial class FrmThongTinNhanVien_TomTat
+    partial class FrmThongTinNhanVien_GiaDinh
     {
         /// <summary>
         /// Required designer variable.
@@ -498,13 +498,13 @@
             this.labelX1.Text = "(Click chuột để thêm, sửa dữ liệu)";
             this.labelX1.WordWrap = true;
             // 
-            // FrmThongTinNhanVien_TomTat
+            // FrmThongTinNhanVien_GiaDinh
             // 
             this.ClientSize = new System.Drawing.Size(859, 346);
             this.Controls.Add(this.pnlTomTat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmThongTinNhanVien_TomTat";
-            this.Text = "FrmThongTinNhanVien_TomTat";
+            this.Name = "FrmThongTinNhanVien_GiaDinh";
+            this.Text = "FrmThongTinNhanVien_GiaDinh";
             this.pnlTomTat.ResumeLayout(false);
             this.pnlTomTat.PerformLayout();
             this.ResumeLayout(false);

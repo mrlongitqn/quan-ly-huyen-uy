@@ -9,9 +9,9 @@ using DevComponents.DotNetBar;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
-    public partial class FrmThongTinNhanVien_TomTat2 : DevComponents.DotNetBar.Office2007Form
+    public partial class FrmThongTinNhanVien_TomTat : DevComponents.DotNetBar.Office2007Form
     {
-        public FrmThongTinNhanVien_TomTat2()
+        public FrmThongTinNhanVien_TomTat()
         {
             InitializeComponent();
         }
