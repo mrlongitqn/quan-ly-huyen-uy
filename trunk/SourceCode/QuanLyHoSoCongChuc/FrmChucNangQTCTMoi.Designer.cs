@@ -46,6 +46,8 @@
             this.MaCapUyKiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaChucVuChinhQuyen = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dtpThoiGianKetThuc = new System.Windows.Forms.DateTimePicker();
+            this.dtpThoiGianBatdau = new System.Windows.Forms.DateTimePicker();
             this.cmbChucVuChinhQuyen = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.txtChucDanh = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -68,8 +70,6 @@
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
-            this.dtpThoiGianBatdau = new System.Windows.Forms.DateTimePicker();
-            this.dtpThoiGianKetThuc = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvQuaTrinhCongTac)).BeginInit();
@@ -247,6 +247,21 @@
             this.groupBox3.Size = new System.Drawing.Size(550, 388);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
+            // 
+            // dtpThoiGianKetThuc
+            // 
+            this.dtpThoiGianKetThuc.Location = new System.Drawing.Point(345, 37);
+            this.dtpThoiGianKetThuc.Name = "dtpThoiGianKetThuc";
+            this.dtpThoiGianKetThuc.Size = new System.Drawing.Size(199, 20);
+            this.dtpThoiGianKetThuc.TabIndex = 21;
+            // 
+            // dtpThoiGianBatdau
+            // 
+            this.dtpThoiGianBatdau.CustomFormat = "DD-MM-YYYY";
+            this.dtpThoiGianBatdau.Location = new System.Drawing.Point(111, 37);
+            this.dtpThoiGianBatdau.Name = "dtpThoiGianBatdau";
+            this.dtpThoiGianBatdau.Size = new System.Drawing.Size(199, 20);
+            this.dtpThoiGianBatdau.TabIndex = 20;
             // 
             // cmbChucVuChinhQuyen
             // 
@@ -486,21 +501,6 @@
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // dtpThoiGianBatdau
-            // 
-            this.dtpThoiGianBatdau.CustomFormat = "DD-MM-YYYY";
-            this.dtpThoiGianBatdau.Location = new System.Drawing.Point(111, 37);
-            this.dtpThoiGianBatdau.Name = "dtpThoiGianBatdau";
-            this.dtpThoiGianBatdau.Size = new System.Drawing.Size(199, 20);
-            this.dtpThoiGianBatdau.TabIndex = 20;
-            // 
-            // dtpThoiGianKetThuc
-            // 
-            this.dtpThoiGianKetThuc.Location = new System.Drawing.Point(345, 37);
-            this.dtpThoiGianKetThuc.Name = "dtpThoiGianKetThuc";
-            this.dtpThoiGianKetThuc.Size = new System.Drawing.Size(199, 20);
-            this.dtpThoiGianKetThuc.TabIndex = 21;
-            // 
             // FrmChucNangQTCTMoi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,7 +514,10 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmChucNangQTCTMoi";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chức năng quá trình công tác";
             this.Load += new System.EventHandler(this.FrmChucNangQTCTMoi_Load);
             this.groupBox1.ResumeLayout(false);
