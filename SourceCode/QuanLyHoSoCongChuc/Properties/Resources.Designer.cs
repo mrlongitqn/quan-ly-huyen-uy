@@ -354,6 +354,13 @@ namespace QuanLyHoSoCongChuc.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap loading {
+            get {
+                object obj = ResourceManager.GetObject("loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Locked_users {
             get {
                 object obj = ResourceManager.GetObject("Locked users", resourceCulture);

@@ -69,6 +69,7 @@
             // 
             // pnlTomTat
             // 
+            this.pnlTomTat.AutoScroll = true;
             this.pnlTomTat.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnlTomTat.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.pnlTomTat.Controls.Add(this.textBoxX13);

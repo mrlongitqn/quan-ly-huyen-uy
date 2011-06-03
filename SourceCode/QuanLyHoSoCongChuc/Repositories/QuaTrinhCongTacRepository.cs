@@ -15,7 +15,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return DataContext.Instance.QuaTrinhCongTacs.ToList();
 		}
 
-		public static QuaTrinhCongTac SelectByID(string maquatrinhcongtac)
+		public static QuaTrinhCongTac SelectByID(int maquatrinhcongtac)
 		{
 			return DataContext.Instance.QuaTrinhCongTacs.FirstOrDefault(item => item.MaQuaTrinhCongTac == maquatrinhcongtac );
 		}
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(string maquatrinhcongtac)
+		public static bool Delete(int maquatrinhcongtac)
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<QuaTrinhCongTac> RetrieveByID(string maquatrinhcongtac)
+		public static List<QuaTrinhCongTac> RetrieveByID(int maquatrinhcongtac)
 		{
 			return (from item in DataContext.Instance.QuaTrinhCongTacs where  item.MaQuaTrinhCongTac == maquatrinhcongtac  select item).ToList();
 		}
@@ -70,6 +70,30 @@ namespace QuanLyHoSoCongChuc.Repositories
 		public static List<QuaTrinhCongTac> SelectByMaNhanVien(string manhanvien)
 		{
 			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacs where item.MaNhanVien == manhanvien select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhCongTac> SelectByMaNuocCongTac(int manuoccongtac)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacs where item.MaNuocCongTac == manuoccongtac select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhCongTac> SelectByMaCapUy(int macapuy)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacs where item.MaCapUy == macapuy select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhCongTac> SelectByMaCapUyKiem(int macapuykiem)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacs where item.MaCapUyKiem == macapuykiem select item).ToList();
+			return lstItem;
+		}
+
+		public static List<QuaTrinhCongTac> SelectByMaChucVuChinhQuyen(int machucvuchinhquyen)
+		{
+			var lstItem = (from item in DataContext.Instance.QuaTrinhCongTacs where item.MaChucVuChinhQuyen == machucvuchinhquyen select item).ToList();
 			return lstItem;
 		}
 

@@ -21,6 +21,7 @@ namespace QuanLyHoSoCongChuc.Search
     using QuanLyHoSoCongChuc.Utils;
     using WeifenLuo.WinFormsUI.Docking;
     using QuanLyHoSoCongChuc.Danh_muc;
+    using QuanLyHoSoCongChuc.NhanVienManager;
     #endregion
 
     /// <summary>
@@ -28,27 +29,34 @@ namespace QuanLyHoSoCongChuc.Search
     /// </summary>
     public partial class FrmTimKiem : DockContent
     {
+        public bool bnLoading;
         public FrmTimKiem()
         {
+            bnLoading = true;
             InitializeComponent();
             InitControlGiaTriTimKiem();
+            bnLoading = false;
         }
 
         public FrmTimKiem(string _madonvi, string _tendaydu)
         {
+            bnLoading = true;
             InitializeComponent();
             InitControlGiaTriTimKiem();
             txtMaDonVi.Text = _madonvi;
             txtTenDonViDayDu.Text = _tendaydu;
             txtMaDonVi_TieuChiKhac.Text = _madonvi;
+            bnLoading = false;
         }
 
         public FrmTimKiem(CauHoiNguoiDung cauhoi)
         {
+            bnLoading = true;
             InitializeComponent();
             InitControlGiaTriTimKiem();
             FillQueryDataToListView(cauhoi);
             tabControl1.SelectedTabIndex = 1;
+            bnLoading = false;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -416,9 +424,14 @@ namespace QuanLyHoSoCongChuc.Search
 
         private void btnTim_TieuChiKhac_Click(object sender, EventArgs e)
         {
+            int num = lstvDieuKienTimKiem.Items.Count;
+            
+            if(num > 0)
+                GlobalVars.PreLoading();
+
             // Init list of searching condition to transfer data 
             List<DieuKienTimKiem> lstDieuKienTimKiem = new List<DieuKienTimKiem>();
-            for (int i = 0; i < lstvDieuKienTimKiem.Items.Count; i++)
+            for (int i = 0; i < num; i++)
             {
                 lstDieuKienTimKiem.Add((DieuKienTimKiem)lstvDieuKienTimKiem.Items[i].Tag);
             }
@@ -450,7 +463,7 @@ namespace QuanLyHoSoCongChuc.Search
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
                         var objListViewItem = new ListViewItem();
-                        objListViewItem.Tag = ds.Tables[0].Rows[i]["MaNhanVien"].ToString();
+                        objListViewItem.Tag = NhanVienRepository.SelectByID(ds.Tables[0].Rows[i]["MaNhanVien"].ToString().Trim());
                         objListViewItem.Text = ds.Tables[0].Rows[i]["MaNhanVien"].ToString();
                         objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["HoTenNhanVien"].ToString());
                         objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["TenGioiTinh"].ToString());
@@ -465,6 +478,9 @@ namespace QuanLyHoSoCongChuc.Search
             {
                 MessageBox.Show("Không có giá trị tìm kiếm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            if (num > 0)
+                GlobalVars.PosLoading();
         }
 
         /// <summary>
@@ -627,6 +643,9 @@ namespace QuanLyHoSoCongChuc.Search
         {
             try
             {
+                if(!bnLoading)
+                    GlobalVars.PreLoading();
+
                 // Init criteria
                 Table tbl = criteria.InitCriterias();
                 lstvTenTruongDuLieu.Items.Clear();
@@ -649,6 +668,9 @@ namespace QuanLyHoSoCongChuc.Search
 
                     lstvTenTruongDuLieu.Items.Add(objListViewItem);
                 }
+
+                if (!bnLoading)
+                    GlobalVars.PosLoading();
             }
             catch (Exception ex)
             {
@@ -915,6 +937,21 @@ namespace QuanLyHoSoCongChuc.Search
         private void tbTongHop_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lstvNhanVien_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void lstvNhanVien_DoubleClick(object sender, EventArgs e)
+        {
+            if (lstvNhanVien.SelectedItems.Count > 0)
+            {
+                var nhanvien = (NhanVien)lstvNhanVien.SelectedItems[0].Tag;
+                FrmThongTinNhanVien frm = new FrmThongTinNhanVien(nhanvien.MaNhanVien);
+                frm.ShowDialog();
+            }
         }
     }
 }

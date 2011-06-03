@@ -30,7 +30,6 @@
         {
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.listViewEx1 = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -42,6 +41,18 @@
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
+            this.listViewEx1 = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.cmbCapUy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.txtMoTaCongTac = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.dtpThoiGianBatdau = new System.Windows.Forms.DateTimePicker();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,19 +80,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(212, 219);
             this.panel3.TabIndex = 3;
-            // 
-            // listViewEx1
-            // 
-            // 
-            // 
-            // 
-            this.listViewEx1.Border.Class = "ListViewBorder";
-            this.listViewEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewEx1.Location = new System.Drawing.Point(0, 0);
-            this.listViewEx1.Name = "listViewEx1";
-            this.listViewEx1.Size = new System.Drawing.Size(212, 219);
-            this.listViewEx1.TabIndex = 0;
-            this.listViewEx1.UseCompatibleStateImageBehavior = false;
             // 
             // panel2
             // 
@@ -143,6 +141,15 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.panel1.Controls.Add(this.textBoxX2);
+            this.panel1.Controls.Add(this.labelX6);
+            this.panel1.Controls.Add(this.cmbCapUy);
+            this.panel1.Controls.Add(this.labelX5);
+            this.panel1.Controls.Add(this.labelX10);
+            this.panel1.Controls.Add(this.labelX4);
+            this.panel1.Controls.Add(this.txtMoTaCongTac);
+            this.panel1.Controls.Add(this.dtpThoiGianBatdau);
+            this.panel1.Controls.Add(this.labelX3);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(212, 0);
@@ -215,6 +222,129 @@
             this.btnXoa.TabIndex = 37;
             this.btnXoa.Text = "Xóa";
             // 
+            // listViewEx1
+            // 
+            // 
+            // 
+            // 
+            this.listViewEx1.Border.Class = "ListViewBorder";
+            this.listViewEx1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
+            this.columnHeader1});
+            this.listViewEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewEx1.Location = new System.Drawing.Point(0, 0);
+            this.listViewEx1.Name = "listViewEx1";
+            this.listViewEx1.Size = new System.Drawing.Size(212, 219);
+            this.listViewEx1.TabIndex = 1;
+            this.listViewEx1.UseCompatibleStateImageBehavior = false;
+            this.listViewEx1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "STT";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 40;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Năm";
+            this.columnHeader1.Width = 140;
+            // 
+            // textBoxX2
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX2.Border.Class = "TextBoxBorder";
+            this.textBoxX2.Location = new System.Drawing.Point(143, 96);
+            this.textBoxX2.Name = "textBoxX2";
+            this.textBoxX2.Size = new System.Drawing.Size(130, 20);
+            this.textBoxX2.TabIndex = 134;
+            // 
+            // labelX6
+            // 
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Location = new System.Drawing.Point(10, 93);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(127, 23);
+            this.labelX6.TabIndex = 133;
+            this.labelX6.Text = "Số huy hiệu";
+            this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // cmbCapUy
+            // 
+            this.cmbCapUy.DisplayMember = "Text";
+            this.cmbCapUy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cmbCapUy.FormattingEnabled = true;
+            this.cmbCapUy.ItemHeight = 14;
+            this.cmbCapUy.Location = new System.Drawing.Point(143, 70);
+            this.cmbCapUy.Name = "cmbCapUy";
+            this.cmbCapUy.Size = new System.Drawing.Size(461, 20);
+            this.cmbCapUy.TabIndex = 132;
+            // 
+            // labelX5
+            // 
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Location = new System.Drawing.Point(10, 122);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(127, 23);
+            this.labelX5.TabIndex = 131;
+            this.labelX5.Text = "Ghi chú";
+            this.labelX5.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX10
+            // 
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX10.Location = new System.Drawing.Point(10, 70);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(127, 20);
+            this.labelX10.TabIndex = 130;
+            this.labelX10.Text = "Loại huy hiệu";
+            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.Location = new System.Drawing.Point(10, 44);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(127, 20);
+            this.labelX4.TabIndex = 129;
+            this.labelX4.Text = "Năm nhận huy hiệu";
+            this.labelX4.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // txtMoTaCongTac
+            // 
+            // 
+            // 
+            // 
+            this.txtMoTaCongTac.Border.Class = "TextBoxBorder";
+            this.txtMoTaCongTac.Location = new System.Drawing.Point(143, 122);
+            this.txtMoTaCongTac.Multiline = true;
+            this.txtMoTaCongTac.Name = "txtMoTaCongTac";
+            this.txtMoTaCongTac.Size = new System.Drawing.Size(461, 132);
+            this.txtMoTaCongTac.TabIndex = 128;
+            // 
+            // dtpThoiGianBatdau
+            // 
+            this.dtpThoiGianBatdau.CustomFormat = "DD-MM-YYYY";
+            this.dtpThoiGianBatdau.Location = new System.Drawing.Point(143, 44);
+            this.dtpThoiGianBatdau.Name = "dtpThoiGianBatdau";
+            this.dtpThoiGianBatdau.Size = new System.Drawing.Size(199, 20);
+            this.dtpThoiGianBatdau.TabIndex = 127;
+            // 
+            // labelX3
+            // 
+            this.labelX3.AutoSize = true;
+            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.ForeColor = System.Drawing.Color.Crimson;
+            this.labelX3.Location = new System.Drawing.Point(177, 7);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(262, 19);
+            this.labelX3.TabIndex = 126;
+            this.labelX3.Text = "Danh sách các lần được phong huy hiệu";
+            // 
             // FrmNhapHuyHieuDaDuocTang
             // 
             this.ClientSize = new System.Drawing.Size(831, 332);
@@ -224,11 +354,12 @@
             this.MinimizeBox = false;
             this.Name = "FrmNhapHuyHieuDaDuocTang";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập quá trình công tác";
+            this.Text = "Danh sách các lần được phong huy hiệu";
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -244,11 +375,22 @@
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaDonVi;
-        private DevComponents.DotNetBar.Controls.ListViewEx listViewEx1;
         private System.Windows.Forms.Panel panel4;
         private DevComponents.DotNetBar.ButtonX btnThoat;
         private DevComponents.DotNetBar.ButtonX btnSua;
         private DevComponents.DotNetBar.ButtonX btnThem;
         private DevComponents.DotNetBar.ButtonX btnXoa;
+        private DevComponents.DotNetBar.Controls.ListViewEx listViewEx1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
+        private DevComponents.DotNetBar.LabelX labelX6;
+        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbCapUy;
+        private DevComponents.DotNetBar.LabelX labelX5;
+        private DevComponents.DotNetBar.LabelX labelX10;
+        private DevComponents.DotNetBar.LabelX labelX4;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMoTaCongTac;
+        private System.Windows.Forms.DateTimePicker dtpThoiGianBatdau;
+        private DevComponents.DotNetBar.LabelX labelX3;
     }
 }

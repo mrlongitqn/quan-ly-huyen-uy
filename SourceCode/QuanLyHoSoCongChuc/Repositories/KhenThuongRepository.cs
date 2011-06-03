@@ -15,7 +15,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return DataContext.Instance.KhenThuongs.ToList();
 		}
 
-		public static KhenThuong SelectByID(string makhenthuong)
+		public static KhenThuong SelectByID(int makhenthuong)
 		{
 			return DataContext.Instance.KhenThuongs.FirstOrDefault(item => item.MaKhenThuong == makhenthuong );
 		}
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(string makhenthuong)
+		public static bool Delete(int makhenthuong)
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<KhenThuong> RetrieveByID(string makhenthuong)
+		public static List<KhenThuong> RetrieveByID(int makhenthuong)
 		{
 			return (from item in DataContext.Instance.KhenThuongs where  item.MaKhenThuong == makhenthuong  select item).ToList();
 		}
@@ -70,6 +70,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 		public static List<KhenThuong> SelectByMaNhanVien(string manhanvien)
 		{
 			var lstItem = (from item in DataContext.Instance.KhenThuongs where item.MaNhanVien == manhanvien select item).ToList();
+			return lstItem;
+		}
+
+		public static List<KhenThuong> SelectByMaHinhThucKhenThuong(int mahinhthuckhenthuong)
+		{
+			var lstItem = (from item in DataContext.Instance.KhenThuongs where item.MaHinhThucKhenThuong == mahinhthuckhenthuong select item).ToList();
 			return lstItem;
 		}
 

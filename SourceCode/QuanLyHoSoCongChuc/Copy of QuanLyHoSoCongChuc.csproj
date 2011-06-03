@@ -339,12 +339,6 @@
     <Compile Include="Danh muc\FrmThemPhanLoaiDonVi.Designer.cs">
       <DependentUpon>FrmThemPhanLoaiDonVi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLoading.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLoading.Designer.cs">
-      <DependentUpon>FrmLoading.cs</DependentUpon>
-    </Compile>
     <Compile Include="NhanVienManager\FrmNhapQuanHeGiaDinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -362,6 +356,12 @@
     </Compile>
     <Compile Include="NhanVienManager\FrmThongTinNhanVien_DacDiemLichSu.Designer.cs">
       <DependentUpon>FrmThongTinNhanVien_DacDiemLichSu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienManager\FrmNhapCacDanhHieuDaDuocPhong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienManager\FrmNhapCacDanhHieuDaDuocPhong.Designer.cs">
+      <DependentUpon>FrmNhapCacDanhHieuDaDuocPhong.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVienManager\FrmNhapHuyHieuDaDuocTang.cs">
       <SubType>Form</SubType>
@@ -507,16 +507,9 @@
     <Compile Include="Report\FrmPrintReport.Designer.cs">
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\BangChuyenMonNghiepVuRepository.cs" />
-    <Compile Include="Repositories\BangGiaoDucPhoThongRepository.cs" />
-    <Compile Include="Repositories\BangLyLuanChinhTriRepository.cs" />
-    <Compile Include="Repositories\BangNgoaiNguRepository.cs" />
     <Compile Include="Repositories\CanBoQuaCacThoiKiRepository.cs" />
     <Compile Include="Repositories\ChuyenDonViRepository.cs" />
-    <Compile Include="Repositories\HinhThucDaoTaoRepository.cs" />
-    <Compile Include="Repositories\HocHamRepository.cs" />
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
-    <Compile Include="Repositories\QuaTrinhCongTacRepository.cs" />
     <Compile Include="Search\CauHoiNguoiDung.cs" />
     <Compile Include="Search\DanhSachCauHoiNguoiDung.cs" />
     <Compile Include="Search\FrmLuuCauHoi.cs">
@@ -980,9 +973,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmKyLuat.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLoading.resx">
-      <DependentUpon>FrmLoading.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmLoaiCanBo.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmLoaiCanBo.cs</DependentUpon>
@@ -1060,6 +1050,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienManager\FrmThongTinNhanVien_DacDiemLichSu.resx">
       <DependentUpon>FrmThongTinNhanVien_DacDiemLichSu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienManager\FrmNhapCacDanhHieuDaDuocPhong.resx">
+      <DependentUpon>FrmNhapCacDanhHieuDaDuocPhong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienManager\FrmNhapHuyHieuDaDuocTang.resx">
       <DependentUpon>FrmNhapHuyHieuDaDuocTang.cs</DependentUpon>
@@ -1320,6 +1313,8 @@
     <Compile Include="Repositories\QuanHeRepository.cs" />
     <Compile Include="Repositories\QuanHuyenRepository.cs" />
     <Compile Include="Repositories\QuaTrinhBoiDuongRepository.cs" />
+    <Compile Include="Repositories\QuaTrinhCongTacMoiRepository.cs" />
+    <Compile Include="Repositories\QuaTrinhCongTacRepository.cs" />
     <Compile Include="Repositories\QuaTrinhDaoTaoRepository.cs" />
     <Compile Include="Repositories\QuocGiaRepository.cs" />
     <Compile Include="Repositories\ThanhPhanXuatThanRepository.cs" />
@@ -1475,7 +1470,6 @@
     <Content Include="Configs\NhomChucNang.xml">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Resources\loading.gif" />
     <None Include="Resources\quanhuyen.jpg" />
     <None Include="Resources\tinhthanh.gif" />
     <None Include="Resources\excel.png" />
