@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHoSoCongChuc.NhanVienManager
 {
-    partial class FrmThongTinNhanVien_TomTat2
+    partial class FrmThongTinNhanVien_TomTat
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThongTinNhanVien_TomTat2));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThongTinNhanVien_TomTat));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnBocAnh = new DevComponents.DotNetBar.ButtonX();
             this.btnChonAnh = new DevComponents.DotNetBar.ButtonX();

@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHoSoCongChuc.NhanVienManager
 {
-    partial class FrmNhapQuaTrinhCongTac
+    partial class FrmNhapQuanHeGiaDinh
     {
         /// <summary>
         /// Required designer variable.
@@ -302,14 +302,14 @@
             this.cmbCapUy.Size = new System.Drawing.Size(461, 20);
             this.cmbCapUy.TabIndex = 98;
             // 
-            // FrmNhapQuaTrinhCongTac
+            // FrmNhapQuanHeGiaDinh
             // 
             this.ClientSize = new System.Drawing.Size(831, 332);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmNhapQuaTrinhCongTac";
+            this.Name = "FrmNhapQuanHeGiaDinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập quá trình công tác";
             this.panel5.ResumeLayout(false);

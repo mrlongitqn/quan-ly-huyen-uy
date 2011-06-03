@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHoSoCongChuc.NhanVienManager
 {
-    partial class FrmThongTinNhanVien_TomTat
+    partial class FrmThongTinNhanVien_CacQuaTrinh
     {
         /// <summary>
         /// Required designer variable.
@@ -252,13 +252,13 @@
             this.buttonX7.TabIndex = 93;
             this.buttonX7.Text = "Kỷ luật";
             // 
-            // FrmThongTinNhanVien_TomTat
+            // FrmThongTinNhanVien_CacQuaTrinh
             // 
             this.ClientSize = new System.Drawing.Size(859, 346);
             this.Controls.Add(this.pnlTomTat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmThongTinNhanVien_TomTat";
-            this.Text = "FrmThongTinNhanVien_TomTat";
+            this.Name = "FrmThongTinNhanVien_CacQuaTrinh";
+            this.Text = "FrmThongTinNhanVien_CacQuaTrinh";
             this.pnlTomTat.ResumeLayout(false);
             this.ResumeLayout(false);
 

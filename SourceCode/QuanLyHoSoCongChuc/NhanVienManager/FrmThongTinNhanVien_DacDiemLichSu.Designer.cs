@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHoSoCongChuc.NhanVienManager
 {
-    partial class FrmThongTinNhanVien_TomTat
+    partial class FrmThongTinNhanVien_DacDiemLichSu
     {
         /// <summary>
         /// Required designer variable.
@@ -500,13 +500,13 @@
             this.labelX21.TabIndex = 84;
             this.labelX21.Text = "Đặc điểm lịch sử bản thân";
             // 
-            // FrmThongTinNhanVien_TomTat
+            // FrmThongTinNhanVien_DacDiemLichSu
             // 
             this.ClientSize = new System.Drawing.Size(859, 467);
             this.Controls.Add(this.pnlTomTat);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmThongTinNhanVien_TomTat";
-            this.Text = "FrmThongTinNhanVien_TomTat";
+            this.Name = "FrmThongTinNhanVien_DacDiemLichSu";
+            this.Text = "FrmThongTinNhanVien_DacDiemLichSu";
             this.pnlTomTat.ResumeLayout(false);
             this.ResumeLayout(false);
 
