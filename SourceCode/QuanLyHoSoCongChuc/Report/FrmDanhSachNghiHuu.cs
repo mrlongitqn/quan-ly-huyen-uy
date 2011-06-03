@@ -67,6 +67,21 @@ namespace QuanLyHoSoCongChuc.Report
             sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
             sql += " where nv.MaDonVi='" + DV.ID + "'";
 
+            sql += " and (DATEDIFF(YYYY, NgaySinh, GETDATE()) > ";
+            sql += " case MaGioiTinh";
+            sql += " when 1 then 60";
+            sql += " else 55";
+            sql += " end)";
+            sql += " or";
+            sql += " ((DATEDIFF(YYYY, NgaySinh, GETDATE()) = ";
+            sql += " case MaGioiTinh";
+            sql += " when 1 then 60";
+            sql += " else 55";
+            sql += " end)";
+            sql += " and";
+            sql += " (datepart(mm,getdate()) - datepart(mm,NgaySinh) ) >= 6";
+            sql += " )";
+
             SqlCommand cmd = new SqlCommand(sql);
             dataService.Load(cmd);
             DataTable myDt = dataService;

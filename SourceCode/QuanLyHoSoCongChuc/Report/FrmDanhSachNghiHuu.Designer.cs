@@ -41,6 +41,8 @@
             this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.comboItem8 = new DevComponents.Editors.ComboItem();
             this.comboItem9 = new DevComponents.Editors.ComboItem();
+            this.comboItem1 = new DevComponents.Editors.ComboItem();
+            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.cbDonVi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.btLuuBieu = new DevComponents.DotNetBar.ButtonX();
@@ -74,8 +76,6 @@
             this.TenTrinhDoChinhTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianBatDauTru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboItem1 = new DevComponents.Editors.ComboItem();
-            this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -125,6 +125,7 @@
             this.groupPanel2.Controls.Add(this.labelX9);
             this.groupPanel2.Controls.Add(this.labelX11);
             this.groupPanel2.Controls.Add(this.labelX12);
+            this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel2.Location = new System.Drawing.Point(0, 0);
             this.groupPanel2.Name = "groupPanel2";
             this.groupPanel2.Size = new System.Drawing.Size(882, 248);
@@ -209,6 +210,14 @@
             // comboItem9
             // 
             this.comboItem9.Text = "Quý III";
+            // 
+            // comboItem1
+            // 
+            this.comboItem1.Text = "Quý IV";
+            // 
+            // comboItem2
+            // 
+            this.comboItem2.Text = "Cả năm";
             // 
             // cbDonVi
             // 
@@ -536,14 +545,6 @@
             this.GhiChu.DataPropertyName = "GhiChu";
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
-            // 
-            // comboItem1
-            // 
-            this.comboItem1.Text = "Quý IV";
-            // 
-            // comboItem2
-            // 
-            this.comboItem2.Text = "Cả năm";
             // 
             // FrmDanhSachNghiHuu
             // 
