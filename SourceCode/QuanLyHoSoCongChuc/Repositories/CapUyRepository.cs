@@ -12,7 +12,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<CapUy> SelectAll()
 		{
-			return DataContext.Instance.CapUys.ToList();
+			return DataContext.Instance.CapUys.OrderBy(item => item.TenCapUy).ToList();
 		}
 
 		public static CapUy SelectByID(int macapuy)

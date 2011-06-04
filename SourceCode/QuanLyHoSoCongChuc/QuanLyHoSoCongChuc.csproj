@@ -166,12 +166,6 @@
     <Compile Include="BusinessObject\TrinhDoNgoaiNguInfo.cs" />
     <Compile Include="BusinessObject\TrinhDoQuanLyNhaNuocInfo.cs" />
     <Compile Include="BusinessObject\TrinhDoTinHocInfo.cs" />
-    <Compile Include="ChucNangQTDT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChucNangQTDT.Designer.cs">
-      <DependentUpon>ChucNangQTDT.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controller\CapUyControl.cs" />
     <Compile Include="Controller\CapUyKiemControl.cs" />
     <Compile Include="Controller\ChucNangQTCTMoiControl.cs" />
@@ -232,11 +226,23 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="OtherForms\FrmQuanLyPhanLoaiDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyPhanLoaiDonVi.Designer.cs">
+      <DependentUpon>FrmQuanLyPhanLoaiDonVi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Danh muc\FrmChonDanhMucAll.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Danh muc\FrmChonDanhMucAll.Designer.cs">
       <DependentUpon>FrmChonDanhMucAll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyLoaiDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyLoaiDonVi.Designer.cs">
+      <DependentUpon>FrmQuanLyLoaiDonVi.cs</DependentUpon>
     </Compile>
     <Compile Include="Danh muc\GlobalDanhMucs.cs" />
     <Compile Include="DataLayer\CapUyData.cs" />
@@ -327,23 +333,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Ds4RP1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Danh muc\FrmThemLoaiDonVi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Danh muc\FrmThemLoaiDonVi.Designer.cs">
-      <DependentUpon>FrmThemLoaiDonVi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Danh muc\FrmThemPhanLoaiDonVi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Danh muc\FrmThemPhanLoaiDonVi.Designer.cs">
-      <DependentUpon>FrmThemPhanLoaiDonVi.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLoading.Designer.cs">
       <DependentUpon>FrmLoading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVienManager\FrmThongTinNhanVien_LuongPhuCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienManager\FrmThongTinNhanVien_LuongPhuCap.Designer.cs">
+      <DependentUpon>FrmThongTinNhanVien_LuongPhuCap.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVienManager\FrmNhapQuanHeGiaDinh.cs">
       <SubType>Form</SubType>
@@ -512,12 +512,51 @@
     <Compile Include="Repositories\BangLyLuanChinhTriRepository.cs" />
     <Compile Include="Repositories\BangNgoaiNguRepository.cs" />
     <Compile Include="Repositories\CanBoQuaCacThoiKiRepository.cs" />
+    <Compile Include="Repositories\CanBoVeHuuChuyenDenRepository.cs" />
+    <Compile Include="Repositories\CapUyKiemRepository.cs" />
+    <Compile Include="Repositories\CapUyRepository.cs" />
+    <Compile Include="Repositories\ChucNangRepository.cs" />
+    <Compile Include="Repositories\ChucVuChinhQuyenRepository.cs" />
     <Compile Include="Repositories\ChuyenDonViRepository.cs" />
+    <Compile Include="Repositories\DanTocRepository.cs" />
+    <Compile Include="Repositories\DonViRepository.cs" />
+    <Compile Include="Repositories\GioiTinhRepository.cs" />
+    <Compile Include="Repositories\HinhThucBoDonViRepository.cs" />
     <Compile Include="Repositories\HinhThucDaoTaoRepository.cs" />
+    <Compile Include="Repositories\HinhThucKhenThuongRepository.cs" />
+    <Compile Include="Repositories\HinhThucKyLuatRepository.cs" />
+    <Compile Include="Repositories\HoanCanhKinhTeRepository.cs" />
+    <Compile Include="Repositories\HoatDongKinhTeRepository.cs" />
     <Compile Include="Repositories\HocHamRepository.cs" />
+    <Compile Include="Repositories\HocViRepository.cs" />
+    <Compile Include="Repositories\Huong85Repository.cs" />
+    <Compile Include="Repositories\HuyHieuRepository.cs" />
+    <Compile Include="Repositories\KhenThuongRepository.cs" />
+    <Compile Include="Repositories\KhoiXomRepository.cs" />
+    <Compile Include="Repositories\KyLuatRepository.cs" />
+    <Compile Include="Repositories\LoaiCanBoQuaCacThoiKiRepository.cs" />
+    <Compile Include="Repositories\LoaiDonViRepository.cs" />
+    <Compile Include="Repositories\LoaiHuyHieuRepository.cs" />
+    <Compile Include="Repositories\LoaiNguoiDungRepository.cs" />
+    <Compile Include="Repositories\LoaiNguoiDung_ChucNangRepository.cs" />
+    <Compile Include="Repositories\LuongPhuCapRepository.cs" />
+    <Compile Include="Repositories\NgachCongChucRepository.cs" />
     <Compile Include="Repositories\NgheNghiepRepository.cs" />
+    <Compile Include="Repositories\NguoiDungRepository.cs" />
+    <Compile Include="Repositories\NhanVienRepository.cs" />
+    <Compile Include="Repositories\NoiDungViPhamRepository.cs" />
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
-    <Compile Include="Repositories\QuaTrinhCongTacRepository.cs" />
+    <Compile Include="Repositories\PhuongXaRepository.cs" />
+    <Compile Include="Repositories\QuanHeRepository.cs" />
+    <Compile Include="Repositories\QuanHuyenRepository.cs" />
+    <Compile Include="Repositories\QuaTrinhDaoTaoRepository.cs" />
+    <Compile Include="Repositories\QuocGiaRepository.cs" />
+    <Compile Include="Repositories\ThanhPhanGiaDinhRepository.cs" />
+    <Compile Include="Repositories\ThanNhanRepository.cs" />
+    <Compile Include="Repositories\ThuongBinhRepository.cs" />
+    <Compile Include="Repositories\TinhThanhRepository.cs" />
+    <Compile Include="Repositories\TinhTrangSucKhoeRepository.cs" />
+    <Compile Include="Repositories\TonGiaoRepository.cs" />
     <Compile Include="Search\CauHoiNguoiDung.cs" />
     <Compile Include="Search\DanhSachCauHoiNguoiDung.cs" />
     <Compile Include="Search\FrmLuuCauHoi.cs">
@@ -560,53 +599,11 @@
     <Compile Include="Utils\Attribute.cs" />
     <Compile Include="Utils\DBProvider.cs" />
     <Compile Include="Utils\EncryptText.cs" />
-    <Compile Include="FrmChucNangKhenThuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmChucNangKhenThuong.Designer.cs">
-      <DependentUpon>FrmChucNangKhenThuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmChucNangKyLuat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmChucNangKyLuat.Designer.cs">
-      <DependentUpon>FrmChucNangKyLuat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmChucNangQTBD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmChucNangQTBD.Designer.cs">
-      <DependentUpon>FrmChucNangQTBD.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmChucNangQTCT.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmChucNangQTCT.Designer.cs">
-      <DependentUpon>FrmChucNangQTCT.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmChucNangQTCTMoi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmChucNangQTCTMoi.Designer.cs">
-      <DependentUpon>FrmChucNangQTCTMoi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmChucNangThanNhan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmChucNangThanNhan.Designer.cs">
-      <DependentUpon>FrmChucNangThanNhan.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmChucVu.Designer.cs">
       <DependentUpon>FrmChucVu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmCongViec.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCongViec.Designer.cs">
-      <DependentUpon>FrmCongViec.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDangNhap.cs">
       <SubType>Form</SubType>
@@ -638,65 +635,17 @@
     <Compile Include="FrmDanToc.Designer.cs">
       <DependentUpon>FrmDanToc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDienUuTienBanThan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDienUuTienBanThan.Designer.cs">
-      <DependentUpon>FrmDienUuTienBanThan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmDienUuTienGiaDinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDienUuTienGiaDinh.Designer.cs">
-      <DependentUpon>FrmDienUuTienGiaDinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmDoiMatKhau.Designer.cs">
       <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDonVi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDonVi.Designer.cs">
-      <DependentUpon>FrmDonVi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmGiaDinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGiaDinh.Designer.cs">
-      <DependentUpon>FrmGiaDinh.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmHinhThucTuyenDung.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmHinhThucTuyenDung.Designer.cs">
-      <DependentUpon>FrmHinhThucTuyenDung.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmKetNoiCSDL.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmKetNoiCSDL.Designer.cs">
       <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmKhenThuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmKhenThuong.Designer.cs">
-      <DependentUpon>FrmKhenThuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmKyLuat.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmKyLuat.Designer.cs">
-      <DependentUpon>FrmKyLuat.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmLoaiCanBo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmLoaiCanBo.Designer.cs">
-      <DependentUpon>FrmLoaiCanBo.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmLoaiNghiBaoHiemXaHoi.cs">
       <SubType>Form</SubType>
@@ -722,18 +671,6 @@
     <Compile Include="FrmNgachCongChuc.Designer.cs">
       <DependentUpon>FrmNgachCongChuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmNhanVien.Designer.cs">
-      <DependentUpon>FrmNhanVien.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmNhapQuanHeGiaDinh.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmNhapQuanHeGiaDinh.Designer.cs">
-      <DependentUpon>FrmNhapQuanHeGiaDinh.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmQuanLyDonVi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -746,35 +683,11 @@
     <Compile Include="FrmQuanHe.Designer.cs">
       <DependentUpon>FrmQuanHe.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmQuaTrinhBoiDuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmQuaTrinhBoiDuong.Designer.cs">
-      <DependentUpon>FrmQuaTrinhBoiDuong.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmQuaTrinhCongTac.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmQuaTrinhCongTac.Designer.cs">
-      <DependentUpon>FrmQuaTrinhCongTac.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmQuaTrinhDaoTao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmQuaTrinhDaoTao.Designer.cs">
-      <DependentUpon>FrmQuaTrinhDaoTao.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmThanhPhanXuatThan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmThanhPhanXuatThan.Designer.cs">
       <DependentUpon>FrmThanhPhanXuatThan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmThanNhan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmThanNhan.Designer.cs">
-      <DependentUpon>FrmThanNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="Danh muc\FrmThemDanhMucHanhChinh.cs">
       <SubType>Form</SubType>
@@ -788,12 +701,6 @@
     <Compile Include="FrmThongTinLienHe.Designer.cs">
       <DependentUpon>FrmThongTinLienHe.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmThongTinPhongNoiVu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmThongTinPhongNoiVu.Designer.cs">
-      <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Search\FrmTimKiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -805,12 +712,6 @@
     </Compile>
     <Compile Include="Search\FrmTimKiem2.Designer.cs">
       <DependentUpon>FrmTimKiem2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmTinhTrangHonNhan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTinhTrangHonNhan.Designer.cs">
-      <DependentUpon>FrmTinhTrangHonNhan.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmTonGiao.cs">
       <SubType>Form</SubType>
@@ -842,23 +743,11 @@
     <Compile Include="FrmTrinhDoNgoaiNgu.Designer.cs">
       <DependentUpon>FrmTrinhDoNgoaiNgu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTrinhDoQuanLyNhaNuoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTrinhDoQuanLyNhaNuoc.Designer.cs">
-      <DependentUpon>FrmTrinhDoQuanLyNhaNuoc.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmTrinhDoTinHoc.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmTrinhDoTinHoc.Designer.cs">
       <DependentUpon>FrmTrinhDoTinHoc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmTKNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTKNhanVien.Designer.cs">
-      <DependentUpon>FrmTKNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Criteria.cs" />
     <Compile Include="Utils\Keys.cs" />
@@ -871,10 +760,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\Table.cs" />
-    <EmbeddedResource Include="ChucNangQTDT.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>ChucNangQTDT.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
@@ -883,8 +768,14 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyPhanLoaiDonVi.resx">
+      <DependentUpon>FrmQuanLyPhanLoaiDonVi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Danh muc\FrmChonDanhMucAll.resx">
       <DependentUpon>FrmChonDanhMucAll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyLoaiDonVi.resx">
+      <DependentUpon>FrmQuanLyLoaiDonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataManager\FrmPhieuBaoChuyenDonVi.resx">
       <DependentUpon>FrmPhieuBaoChuyenDonVi.cs</DependentUpon>
@@ -898,36 +789,9 @@
     <EmbeddedResource Include="DataManager\FrmPhieuBaoChuyenNgach.resx">
       <DependentUpon>FrmPhieuBaoChuyenNgach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmChucNangKhenThuong.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmChucNangKhenThuong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmChucNangKyLuat.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmChucNangKyLuat.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmChucNangQTBD.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmChucNangQTBD.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmChucNangQTCT.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmChucNangQTCT.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmChucNangQTCTMoi.resx">
-      <DependentUpon>FrmChucNangQTCTMoi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmChucNangThanNhan.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmChucNangThanNhan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmChucVu.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmChucVu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmCongViec.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmCongViec.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmDangNhap.resx">
       <SubType>Designer</SubType>
@@ -946,47 +810,16 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmDanToc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDienUuTienBanThan.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmDienUuTienBanThan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDienUuTienGiaDinh.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmDienUuTienGiaDinh.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmDoiMatKhau.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmDonVi.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmDonVi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmGiaDinh.resx">
-      <DependentUpon>FrmGiaDinh.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmHinhThucTuyenDung.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmHinhThucTuyenDung.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmKetNoiCSDL.resx">
       <SubType>Designer</SubType>
       <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmKhenThuong.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmKhenThuong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmKyLuat.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmKyLuat.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmLoaiCanBo.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmLoaiCanBo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoaiNghiBaoHiemXaHoi.resx">
       <SubType>Designer</SubType>
@@ -1004,13 +837,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmNgachCongChuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNhanVien.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmNhapQuanHeGiaDinh.resx">
-      <DependentUpon>FrmNhapQuanHeGiaDinh.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmQuanLyDonVi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmQuanLyDonVi.cs</DependentUpon>
@@ -1019,39 +845,20 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmQuanHe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmQuaTrinhBoiDuong.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmQuaTrinhBoiDuong.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmQuaTrinhCongTac.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmQuaTrinhCongTac.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmQuaTrinhDaoTao.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmQuaTrinhDaoTao.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmThanhPhanXuatThan.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmThanhPhanXuatThan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmThanNhan.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmThanNhan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Danh muc\FrmThemDanhMucHanhChinh.resx">
       <DependentUpon>FrmThemDanhMucHanhChinh.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Danh muc\FrmThemLoaiDonVi.resx">
-      <DependentUpon>FrmThemLoaiDonVi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Danh muc\FrmThemPhanLoaiDonVi.resx">
-      <DependentUpon>FrmThemPhanLoaiDonVi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmThongTinLienHe.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmThongTinLienHe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienManager\FrmThongTinNhanVien_LuongPhuCap.resx">
+      <DependentUpon>FrmThongTinNhanVien_LuongPhuCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienManager\FrmNhapQuanHeGiaDinh.resx">
       <DependentUpon>FrmNhapQuanHeGiaDinh.cs</DependentUpon>
@@ -1079,10 +886,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienManager\FrmNhapQuaTrinhCongTac.resx">
       <DependentUpon>FrmNhapQuaTrinhCongTac.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmThongTinPhongNoiVu.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmThongTinPhongNoiVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienManager\FrmThongTinNhanVien.resx">
       <DependentUpon>FrmThongTinNhanVien.cs</DependentUpon>
@@ -1153,10 +956,6 @@
     <EmbeddedResource Include="Search\FrmTimKiem2.resx">
       <DependentUpon>FrmTimKiem2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTinhTrangHonNhan.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTinhTrangHonNhan.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmTonGiao.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmTonGiao.cs</DependentUpon>
@@ -1177,17 +976,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmTrinhDoNgoaiNgu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTrinhDoQuanLyNhaNuoc.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTrinhDoQuanLyNhaNuoc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmTrinhDoTinHoc.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmTrinhDoTinHoc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTKNhanVien.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTKNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -1287,54 +1078,7 @@
     <Compile Include="Report\FrmBaoCaoLuong.Designer.cs">
       <DependentUpon>FrmBaoCaoLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\CapUyKiemRepository.cs" />
-    <Compile Include="Repositories\CapUyRepository.cs" />
-    <Compile Include="Repositories\ChucNangRepository.cs" />
-    <Compile Include="Repositories\ChucVuChinhQuyenRepository.cs" />
-    <Compile Include="Repositories\ChucVuRepository.cs" />
-    <Compile Include="Repositories\CongViecRepository.cs" />
-    <Compile Include="Repositories\DangHocBoiDuongDaoTaoRepository.cs" />
-    <Compile Include="Repositories\DanTocRepository.cs" />
     <Compile Include="DataContext.cs" />
-    <Compile Include="Repositories\DienUuTienBanThanRepository.cs" />
-    <Compile Include="Repositories\DienUuTienGiaDinhRepository.cs" />
-    <Compile Include="Repositories\DoanVienRepository.cs" />
-    <Compile Include="Repositories\DonViRepository.cs" />
-    <Compile Include="Repositories\GioiTinhRepository.cs" />
-    <Compile Include="Repositories\HinhThucTuyenDungRepository.cs" />
-    <Compile Include="Repositories\HoanCanhKinhTeRepository.cs" />
-    <Compile Include="Repositories\HoatDongKinhTeRepository.cs" />
-    <Compile Include="Repositories\Huong85Repository.cs" />
-    <Compile Include="Repositories\KhenThuongRepository.cs" />
-    <Compile Include="Repositories\KhoiXomRepository.cs" />
-    <Compile Include="Repositories\KyLuatRepository.cs" />
-    <Compile Include="Repositories\LoaiCanBoRepository.cs" />
-    <Compile Include="Repositories\LoaiDonViRepository.cs" />
-    <Compile Include="Repositories\LoaiNghiBaoHiemXaHoiRepository.cs" />
-    <Compile Include="Repositories\LoaiNGuoiDungRepository.cs" />
-    <Compile Include="Repositories\LoaiNguoiDung_ChucNangRepository.cs" />
-    <Compile Include="Repositories\LucLuongVuTrangRepository.cs" />
-    <Compile Include="Repositories\NgachCongChucRepository.cs" />
-    <Compile Include="Repositories\NguoiDungRepository.cs" />
-    <Compile Include="Repositories\NhanVienRepository.cs" />
-    <Compile Include="Repositories\PhuongXaRepository.cs" />
-    <Compile Include="Repositories\QuanHeRepository.cs" />
-    <Compile Include="Repositories\QuanHuyenRepository.cs" />
-    <Compile Include="Repositories\QuaTrinhBoiDuongRepository.cs" />
-    <Compile Include="Repositories\QuaTrinhDaoTaoRepository.cs" />
-    <Compile Include="Repositories\QuocGiaRepository.cs" />
-    <Compile Include="Repositories\ThanhPhanXuatThanRepository.cs" />
-    <Compile Include="Repositories\ThanNhanMoiRepository.cs" />
-    <Compile Include="Repositories\ThanNhanRepository.cs" />
-    <Compile Include="Repositories\TinhThanhRepository.cs" />
-    <Compile Include="Repositories\TinhTrangHonNhanRepository.cs" />
-    <Compile Include="Repositories\TonGiaoRepository.cs" />
-    <Compile Include="Repositories\TrinhDoChinhTriRepository.cs" />
-    <Compile Include="Repositories\TrinhDoChuyenMonRepository.cs" />
-    <Compile Include="Repositories\TrinhDoHocVanRepository.cs" />
-    <Compile Include="Repositories\TrinhDoNgoaiNguRepository.cs" />
-    <Compile Include="Repositories\TrinhDoQuanLyNhaNuocRepository.cs" />
-    <Compile Include="Repositories\TrinhDoTinHocRepository.cs" />
     <Compile Include="staticClass.cs" />
     <Compile Include="UsersDiary\NhatKyNguoiDung.cs" />
     <Compile Include="UsersManager\FrmQuanLyChucNang.cs">
@@ -1553,9 +1297,7 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SystemManager\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

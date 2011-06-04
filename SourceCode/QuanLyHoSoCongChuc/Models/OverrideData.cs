@@ -1,154 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace QuanLyHoSoCongChuc.Models
+﻿namespace QuanLyHoSoCongChuc.Models
 {
-    public partial class GioiTinh
+    public partial class LoaiHuyHieu
     {
         public override string ToString()
         {
-            return TenGioiTinh;
+            return TenLoaiHuyHieu;
         }
     }
-
-    public partial class DanToc
+    public partial class QuanHe
     {
         public override string ToString()
         {
-            return TenDanToc;
+            return TenQuanHe;
         }
     }
-
-    public partial class TonGiao
+    public partial class HocHam
     {
         public override string ToString()
         {
-            return TenTonGiao;
+            return TenHocHam;
         }
     }
-
-    public partial class TrinhDoChinhTri
+    public partial class ThanNhan
     {
         public override string ToString()
         {
-            return TenTrinhDoChinhTri;
+            return TenThanNhan;
         }
     }
-
-    public partial class TrinhDoHocVan
+    public partial class NgheNghiep
     {
         public override string ToString()
         {
-            return TenTrinhDoHocVan;
+            return TenNgheNghiep;
         }
     }
-
-    public partial class TrinhDoChuyenMon
-    {
-        public override string ToString()
-        {
-            return TenTrinhDoChuyenMon;
-        }
-    }
-
-    public partial class HinhThucTuyenDung
-    {
-        public override string ToString()
-        {
-            return TenHinhThucTuyenDung;
-        }
-    }
-
-    public partial class TrinhDoNgoaiNgu
-    {
-        public override string ToString()
-        {
-            return TenTrinhDoNgoaiNgu;
-        }
-    }
-    
-    public partial class TrinhDoTinHoc
-    {
-        public override string ToString()
-        {
-            return TenTrinhDoTinHoc;
-        }
-    }
-
-    public partial class TrinhDoQuanLyNhaNuoc
-    {
-        public override string ToString()
-        {
-            return TenTrinhDoQuanLyNhaNuoc;
-        }
-    }
-
-    public partial class CongViec
-    {
-        public override string ToString()
-        {
-            return TenCongViec;
-        }
-    }
-
-    public partial class DienUuTienGiaDinh
-    {
-        public override string ToString()
-        {
-            return TenDienUuTienGiaDinh;
-        }
-    }
-
-    public partial class DienUuTienBanThan
-    {
-        public override string ToString()
-        {
-            return TenDienUuTienBanThan;
-        }
-    }
-
-    public partial class ChucVu
-    {
-        public override string ToString()
-        {
-            return TenChucVu;
-        }
-    }
-
-    public partial class TinhTrangHonNhan
-    {
-        public override string ToString()
-        {
-            return TenTinhTrangHonNhan;
-        }
-    }
-
-    public partial class ThanhPhanXuatThan
-    {
-        public override string ToString()
-        {
-            return TenThanhPhanXuatThan;
-        }
-    }
-
-    public partial class DoanVien
-    {
-        public override string ToString()
-        {
-            return GiaTri;
-        }
-    }
-
-    public partial class Huong85
-    {
-        public override string ToString()
-        {
-            return GiaTriHuong;
-        }
-    }
-
     public partial class NgachCongChuc
     {
         public override string ToString()
@@ -156,23 +42,132 @@ namespace QuanLyHoSoCongChuc.Models
             return TenNgachCongChuc;
         }
     }
-
-    public partial class LoaiCanBo
+    public partial class HoatDongKinhTe
     {
         public override string ToString()
         {
-            return TenLoaiCanBo;
+            return TenHoatDongKinhTe;
         }
     }
-
-    public partial class LoaiNghiBaoHiemXaHoi
+    public partial class PhanLoaiDonVi
     {
         public override string ToString()
         {
-            return TenLoaiNghiBaoHiemXaHoi;
+            return TenPhanLoai;
         }
     }
-
+    public partial class NoiDungViPham
+    {
+        public override string ToString()
+        {
+            return TenNoiDungViPham;
+        }
+    }
+    public partial class BangNgoaiNgu
+    {
+        public override string ToString()
+        {
+            return TenBangNgoaiNgu;
+        }
+    }
+    public partial class ThanhPhanGiaDinh
+    {
+        public override string ToString()
+        {
+            return TenThanhPhanGiaDinh;
+        }
+    }
+    public partial class BangLyLuanChinhTri
+    {
+        public override string ToString()
+        {
+            return TenBangLyLuanChinhTri;
+        }
+    }
+    public partial class BangGiaoDucPhoThong
+    {
+        public override string ToString()
+        {
+            return TenBangGiaoDucPhoThong;
+        }
+    }
+    public partial class BangChuyenMonNghiepVu
+    {
+        public override string ToString()
+        {
+            return TenBangChuyenMonNghiepVu;
+        }
+    }
+    public partial class ChucVuChinhQuyen
+    {
+        public override string ToString()
+        {
+            return TenChucVuChinhQuyen;
+        }
+    }
+    public partial class ChucNang
+    {
+        public override string ToString()
+        {
+            return TenChucNang;
+        }
+    }
+    public partial class CapUyKiem
+    {
+        public override string ToString()
+        {
+            return TenCapUyKiem;
+        }
+    }
+    public partial class HocVi
+    {
+        public override string ToString()
+        {
+            return TenHocVi;
+        }
+    }
+    public partial class CapUy
+    {
+        public override string ToString()
+        {
+            return TenCapUy;
+        }
+    }
+    public partial class HinhThucKyLuat
+    {
+        public override string ToString()
+        {
+            return TenHinhThucKyLuat;
+        }
+    }
+    public partial class HinhThucKhenThuong
+    {
+        public override string ToString()
+        {
+            return TenHinhThucKhenThuong;
+        }
+    }
+    public partial class HinhThucDaoTao
+    {
+        public override string ToString()
+        {
+            return TenHinhThucDaoTao;
+        }
+    }
+    public partial class HinhThucBoDonVi
+    {
+        public override string ToString()
+        {
+            return TenHinhThuc;
+        }
+    }
+    public partial class LoaiDonVi
+    {
+        public override string ToString()
+        {
+            return TenLoaiDonVi;
+        }
+    }
     public partial class DonVi
     {
         public override string ToString()
@@ -180,12 +175,81 @@ namespace QuanLyHoSoCongChuc.Models
             return TenDonVi;
         }
     }
-
-    public partial class DangHocBoiDuongDaoTao
+    public partial class TonGiao
     {
         public override string ToString()
         {
-            return GiaTriDTBD;
+            return TenTonGiao;
+        }
+    }
+    public partial class TinhThanh
+    {
+        public override string ToString()
+        {
+            return TenTinh;
+        }
+    }
+    public partial class QuocGia
+    {
+        public override string ToString()
+        {
+            return TenQuocGia;
+        }
+    }
+    public partial class QuanHuyen
+    {
+        public override string ToString()
+        {
+            return TenQuanHuyen;
+        }
+    }
+    public partial class PhuongXa
+    {
+        public override string ToString()
+        {
+            return TenPhuongXa;
+        }
+    }
+    public partial class GioiTinh
+    {
+        public override string ToString()
+        {
+            return TenGioiTinh;
+        }
+    }
+    public partial class DanToc
+    {
+        public override string ToString()
+        {
+            return TenDanToc;
+        }
+    }
+    public partial class LoaiCanBoQuaCacThoiKi
+    {
+        public override string ToString()
+        {
+            return TenLoaiCanBoQuaCacThoiKi;
+        }
+    }
+    public partial class KhoiXom
+    {
+        public override string ToString()
+        {
+            return TenKhoiXom;
+        }
+    }
+    public partial class QuaTrinhDaoTao
+    {
+        public override string ToString()
+        {
+            return TenTruong;
+        }
+    }
+    public partial class LoaiNguoiDung
+    {
+        public override string ToString()
+        {
+            return TenQuyen;
         }
     }
 }

@@ -39,16 +39,16 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             if (lstvCanBo.SelectedItems.Count > 0)
             {
-                var canbo = (CanBoQuaCacThoiKi)lstvCanBo.SelectedItems[0].Tag;
-                if (CanBoQuaCacThoiKiRepository.Delete(canbo.MaCanBo))
-                {
-                    MessageBox.Show("Xóa cán bộ thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    LoadData();
-                }
-                else
-                {
-                    MessageBox.Show("Xóa cán bộ thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //var canbo = (CanBoQuaCacThoiKi)lstvCanBo.SelectedItems[0].Tag;
+                //if (CanBoQuaCacThoiKiRepository.Delete(canbo.MaCanBo))
+                //{
+                //    MessageBox.Show("Xóa cán bộ thành công", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    LoadData();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Xóa cán bộ thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             }
             else
             {
@@ -98,12 +98,12 @@ namespace QuanLyHoSoCongChuc.UsersManager
                 for (int i = 0; i < lstItem.Count; i++)
                 {
                     var objListViewItem = new ListViewItem();
-                    objListViewItem.Tag = lstItem[i];
-                    objListViewItem.Text = (i + 1).ToString();
-                    objListViewItem.SubItems.Add(lstItem[i].HoTen);
-                    objListViewItem.SubItems.Add(lstItem[i].TinhTrang.Value ? "Còn sống" : "Đã mất");
-                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh.Value));
-                    objListViewItem.SubItems.Add(lstItem[i].NoiOHienNay);
+                    //objListViewItem.Tag = lstItem[i];
+                    //objListViewItem.Text = (i + 1).ToString();
+                    //objListViewItem.SubItems.Add(lstItem[i].HoTen);
+                    //objListViewItem.SubItems.Add(lstItem[i].TinhTrang.Value ? "Còn sống" : "Đã mất");
+                    //objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh.Value));
+                    //objListViewItem.SubItems.Add(lstItem[i].NoiOHienNay);
                     lstvCanBo.Items.Add(objListViewItem);
                 }
             }

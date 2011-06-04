@@ -67,170 +67,83 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return (from item in DataContext.Instance.NhanViens where  item.MaNhanVien == manhanvien  select item).ToList();
 		}
 
-		public static List<NhanVien> SelectByMaGioiTinh(string magioitinh)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaGioiTinh == magioitinh select item).ToList();
-			return lstItem;
-		}
-
-		public static List<NhanVien> SelectByMaDanToc(string madantoc)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaDanToc == madantoc select item).ToList();
-			return lstItem;
-		}
-
-		public static List<NhanVien> SelectByMaTonGiao(string matongiao)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTonGiao == matongiao select item).ToList();
-			return lstItem;
-		}
-
-		public static List<NhanVien> SelectByMaTinhTrangHonNhan(string matinhtranghonnhan)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTinhTrangHonNhan == matinhtranghonnhan select item).ToList();
-			return lstItem;
-		}
-
-		public static List<NhanVien> SelectByMaThanhPhanXuatThan(string mathanhphanxuatthan)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaThanhPhanXuatThan == mathanhphanxuatthan select item).ToList();
-			return lstItem;
-		}
-
-		public static List<NhanVien> SelectByMaDienUuTienCuaGiaDinh(string madienuutiencuagiadinh)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaDienUuTienCuaGiaDinh == madienuutiencuagiadinh select item).ToList();
-			return lstItem;
-		}
-
-		public static List<NhanVien> SelectByMaDienUuTienCuaBanThan(string madienuutiencuabanthan)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaDienUuTienCuaBanThan == madienuutiencuabanthan select item).ToList();
-			return lstItem;
-		}
-
-		public static List<NhanVien> SelectByMaHinhThucTuyenDung(string mahinhthuctuyendung)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaHinhThucTuyenDung == mahinhthuctuyendung select item).ToList();
-			return lstItem;
-		}
-
 		public static List<NhanVien> SelectByMaDonVi(string madonvi)
 		{
 			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaDonVi == madonvi select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaCongViec(string macongviec)
+		public static List<NhanVien> SelectByMaDanToc(int madantoc)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaCongViec == macongviec select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaDanToc == madantoc select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaLoaiCanBo(string maloaicanbo)
+		public static List<NhanVien> SelectByMaTonGiao(int matongiao)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaLoaiCanBo == maloaicanbo select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTonGiao == matongiao select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaLoaiNghiBaoHiemXaHoi(string maloainghibaohiemxahoi)
+		public static List<NhanVien> SelectByMaThanhPhanGiaDinh(int mathanhphangiadinh)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaLoaiNghiBaoHiemXaHoi == maloainghibaohiemxahoi select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaThanhPhanGiaDinh == mathanhphangiadinh select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaChucVu(string machucvu)
+		public static List<NhanVien> SelectByMaNgheNghiepTruocKhiDuocTuyenDung(int manghenghieptruockhiduoctuyendung)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaChucVu == machucvu select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaNgheNghiepTruocKhiDuocTuyenDung == manghenghieptruockhiduoctuyendung select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByDoanVien(string doanvien)
+		public static List<NhanVien> SelectByMaBangGiaoDucPhoThong(int mabanggiaoducphothong)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.DoanVien == doanvien select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaBangGiaoDucPhoThong == mabanggiaoducphothong select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByDangDTBD(string dangdtbd)
+		public static List<NhanVien> SelectByMaBangChuyenMonNghiepVu(int mabangchuyenmonnghiepvu)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.DangDTBD == dangdtbd select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaBangChuyenMonNghiepVu == mabangchuyenmonnghiepvu select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaTrinhDoHocVan(string matrinhdohocvan)
+		public static List<NhanVien> SelectByMaBangLyLuanChinhTri(int mabanglyluanchinhtri)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTrinhDoHocVan == matrinhdohocvan select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaBangLyLuanChinhTri == mabanglyluanchinhtri select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaTrinhDoChuyenMon(string matrinhdochuyenmon)
+		public static List<NhanVien> SelectByMaBangNgoaiNgu(int mabangngoaingu)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTrinhDoChuyenMon == matrinhdochuyenmon select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaBangNgoaiNgu == mabangngoaingu select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaTrinhDoChinhTri(string matrinhdochinhtri)
+		public static List<NhanVien> SelectByMaHocVi(int mahocvi)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTrinhDoChinhTri == matrinhdochinhtri select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaHocVi == mahocvi select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaTrinhDoQuanLyNhaNuoc(string matrinhdoquanlynhanuoc)
+		public static List<NhanVien> SelectByMaHocHam(int mahocham)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTrinhDoQuanLyNhaNuoc == matrinhdoquanlynhanuoc select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaHocHam == mahocham select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaTrinhDoTinHoc(string matrinhdotinhoc)
+		public static List<NhanVien> SelectByMaTinhTrangSucKhoe(int matinhtrangsuckhoe)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTrinhDoTinHoc == matrinhdotinhoc select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTinhTrangSucKhoe == matinhtrangsuckhoe select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaTrinhDoNgoaiNgu(string matrinhdongoaingu)
+		public static List<NhanVien> SelectByMaThuongBinh(int mathuongbinh)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaTrinhDoNgoaiNgu == matrinhdongoaingu select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaThuongBinh == mathuongbinh select item).ToList();
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaNgach(string mangach)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaNgach == mangach select item).ToList();
-			return lstItem;
-		}
-
-		public static List<NhanVien> SelectByLuongCongChucDuBi(string luongcongchucdubi)
-		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.LuongCongChucDuBi == luongcongchucdubi select item).ToList();
-			return lstItem;
-		}
-
-        /// <summary>
-        /// Search by tieu chi chung
-        /// </summary>
-        /// <param name="nhanvien"></param>
-        /// <returns></returns>
-        public static List<NhanVien> SearchByTieuChiChung(NhanVienModel nhanvien)
-        {
-            var lst = (from item in DataContext.Instance.NhanViens
-                       where
-                        item.MaDonVi == (nhanvien.MaDonVi == "" ? item.MaDonVi : nhanvien.MaDonVi) &&
-                        item.HoTenNhanVien.ToUpper() == (nhanvien.HoTenNhanVien.ToUpper() == "" ? item.HoTenNhanVien.ToUpper() : nhanvien.HoTenNhanVien.ToUpper()) &&
-                        item.MaGioiTinh == (nhanvien.MaGioiTinh == null ? item.MaGioiTinh : nhanvien.MaGioiTinh) &&
-                        item.NgaySinh.Value == (nhanvien.NgaySinh.Kind == DateTimeKind.Unspecified  ? item.NgaySinh.Value : nhanvien.NgaySinh) &&
-                        item.QueQuan.ToUpper() == (nhanvien.QueQuan.ToUpper() == "" ? item.QueQuan.ToUpper() : nhanvien.QueQuan.ToUpper()) && 
-                        item.MaDanToc == (nhanvien.MaDanToc == null ? item.MaDanToc : nhanvien.MaDanToc) && 
-                        item.MaTonGiao == (nhanvien.MaTonGiao == null ? item.MaTonGiao : nhanvien.MaTonGiao) && 
-                        item.MaTrinhDoChinhTri == (nhanvien.MaTrinhDoChinhTri == null ? item.MaTrinhDoChinhTri : nhanvien.MaTrinhDoChinhTri) &&
-                        item.MaTrinhDoHocVan == (nhanvien.MaTrinhDoHocVan == null ? item.MaTrinhDoHocVan : nhanvien.MaTrinhDoHocVan) &&
-                        item.MaTrinhDoChuyenMon == (nhanvien.MaTrinhDoChuyenMon == null ? item.MaTrinhDoChuyenMon : nhanvien.MaTrinhDoChuyenMon) &&
-                        item.CongViecHienNay.ToUpper().Contains(nhanvien.CongViecHienNay.ToUpper() == "" ? item.CongViecHienNay.ToUpper() : nhanvien.CongViecHienNay.ToUpper()) &&
-                        item.NgayVaoDang.Value == (nhanvien.NgayVaoDang.Kind == DateTimeKind.Unspecified ? item.NgayVaoDang.Value : nhanvien.NgayVaoDang) &&
-                        item.NgayChinhThuc.Value == (nhanvien.NgayChinhThuc.Kind == DateTimeKind.Unspecified ? item.NgayChinhThuc.Value : nhanvien.NgayChinhThuc) &&
-                        (DateTime.Now.Year - item.NgaySinh.Value.Year) == (nhanvien.TuoiDoi == 0 ? (DateTime.Now.Year - item.NgaySinh.Value.Year) : nhanvien.TuoiDoi) &&
-                        (DateTime.Now.Year - item.NgayVaoDang.Value.Year) == (nhanvien.TuoiDang == 0 ? (DateTime.Now.Year - item.NgayVaoDang.Value.Year) : nhanvien.TuoiDang)
-                       select item).ToList();
-            return lst;
-        }
 	}
 }

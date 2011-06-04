@@ -24,7 +24,7 @@ namespace QuanLyHoSoCongChuc.DataManager
             var dict = new Dictionary<string, NhanVien>();
             for (int i = 0; i < lstvNhanVien.Items.Count; i++)
             {
-                dict.Add(((ChuyenDonVi)lstvNhanVien.Items[i].Tag).MaNhanVien, ((ChuyenDonVi)lstvNhanVien.Items[i].Tag).NhanVien);
+                //dict.Add(((ChuyenDonVi)lstvNhanVien.Items[i].Tag).MaNhanVien, ((ChuyenDonVi)lstvNhanVien.Items[i].Tag).NhanVien);
             }
             return dict;
         }

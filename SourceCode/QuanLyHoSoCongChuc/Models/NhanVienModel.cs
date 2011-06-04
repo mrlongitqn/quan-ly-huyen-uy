@@ -7,73 +7,48 @@ namespace QuanLyHoSoCongChuc.Models
 {
     public class NhanVienModel
     {
+        public string MaDonVi { get; set; }
+        public int MaDanToc { get; set; }
+        public int MaTonGiao { get; set; }
+        public int MaThanhPhanGiaDinh { get; set; }
+        public int MaNgheNghiepTruocKhiDuocTuyenDung { get; set; }
+        public int MaBangGiaoDucPhoThong { get; set; }
+        public int MaBangChuyenMonNghiepVu { get; set; }
+        public int MaBangLyLuanChinhTri { get; set; }
+        public int MaBangNgoaiNgu { get; set; }
+        public int MaHocVi { get; set; }
+        public int MaHocHam { get; set; }
+        public int MaTinhTrangSucKhoe { get; set; }
+        public int MaThuongBinh { get; set; }
         public string HinhAnh { get; set; }
-        public string HoTenNhanVien { get; set; }
-        public string TenGoiKhac { get; set; }
-        public string MaGioiTinh { get; set; }
+        public string HoTenKhaiSinh { get; set; }
+        public string HoTenDangDung { get; set; }
         public DateTime NgaySinh { get; set; }
         public string NoiSinh { get; set; }
-        public string SoChungMinhNhanDan { get; set; }
-        public string NoiCap { get; set; }
-        public DateTime NgayCap { get; set; }
-        public string MaDanToc { get; set; }
-        public string MaTonGiao { get; set; }
         public string QueQuan { get; set; }
-        public string HoKhauThuongTru { get; set; }
-        public string NoiOHienTai { get; set; }
-        public string DienThoaiNhaRieng { get; set; }
-        public string DienThoaiDiDong { get; set; }
-        public string MaTinhTrangHonNhan { get; set; }
-        public string MaThanhPhanXuatThan { get; set; }
-        public string MaDienUuTienCuaGiaDinh { get; set; }
-        public string MaDienUuTienCuaBanThan { get; set; }
-        public string NangKhieu { get; set; }
-        public DateTime NgayHopDong { get; set; }
-        public DateTime NgayTuyenDung { get; set; }
-        public string MaHinhThucTuyenDung { get; set; }
-        public string MaDonVi { get; set; }
-        public string MaCongViec { get; set; }
-        public DateTime NgayBoNhiemVaoNgach { get; set; }
-        public DateTime NgayVeCoQuanHienTai { get; set; }
-        public string MaLoaiCanBo { get; set; }
-        public string CongViecHienNay { get; set; }
-        public string MaLoaiNghiBaoHiemXaHoi { get; set; }
-        public string MaChucVu { get; set; }
-        public string HeSoPhuCapChucVu { get; set; }
-        public DateTime NgayBoNhiemChucVuHienTai { get; set; }
-        public string LanBoNhiemCVCQHienTai { get; set; }
-        public string ChucVuLanhDaoKiemNhiem { get; set; }
-        public string ChucVuChinhQuyenCaoNhat { get; set; }
+        public string HoKhau { get; set; }
+        public string TamTru { get; set; }
+        public string CongViecChinh { get; set; }
         public DateTime NgayVaoDang { get; set; }
+        public string VaoDangTaiChiBo { get; set; }
+        public string NguoiGioiThieu1 { get; set; }
+        public string ChucVuNguoi1 { get; set; }
+        public string NguoiGioiThieu2 { get; set; }
+        public string ChucVuNguoi2 { get; set; }
         public DateTime NgayChinhThuc { get; set; }
-        public string ChucVuDangHienTai { get; set; }
-        public string DoanVien { get; set; }
-        public DateTime NgayThamGiaTCCTXH { get; set; }
-        public string TenTCCTXH { get; set; }
-        public string ChucVuDoan { get; set; }
-        public string DangDTBD { get; set; }
-        public string MaTrinhDoHocVan { get; set; }
-        public string MaTrinhDoChuyenMon { get; set; }
-        public string MaTrinhDoChinhTri { get; set; }
-        public string MaTrinhDoQuanLyNhaNuoc { get; set; }
-        public string MaTrinhDoTinHoc { get; set; }
-        public string MaTrinhDoNgoaiNgu { get; set; }
-        public string MaNgach { get; set; }
-        public string BacLuong { get; set; }
-        public string HeSoLuong { get; set; }
-        public string LuongCongChucDuBi { get; set; }
-        public string ChenhLechBaoLuuHeSoLuong { get; set; }
-        public DateTime HuongLuongTuNgay { get; set; }
-        public DateTime MocTinhNangLuongLanSau { get; set; }
-        public string HeSoPhuCapThamNienVuotKhung { get; set; }
-        public string HeSoPhuCapKiemNhiem { get; set; }
-        public string HeSoPhuCapKhac { get; set; }
-        public string SoSoBHXH { get; set; }
-        public DateTime NgayDongBHXH { get; set; }
-        public string MaLuongNhanVien { get; set; }
-        public DateTime NgayNangLuong { get; set; }
-        public string MaDangVien { get; set; }
-        public bool Added { get; set; }
+        public string ChinhThucTaiChiBo { get; set; }
+        public DateTime NgayTuyenDung { get; set; }
+        public string CoQuanTuyenDung { get; set; }
+        public DateTime NgayVaoDoan { get; set; }
+        public string ChiDoan { get; set; }
+        public string ThamGiaCTXH { get; set; }
+        public DateTime NgayNhapNgu { get; set; }
+        public DateTime NgayXuatNgu { get; set; }
+        public bool GiaDinhLietSy { get; set; }
+        public bool GiaDinhCoCongVoiCM { get; set; }
+        public string SoCMND { get; set; }
+        public DateTime NgayMienSHD { get; set; }
+        public bool ConSinhHoat { get; set; }
 
         // tuansl: add manually
         public int TuoiDoi { get; set; }

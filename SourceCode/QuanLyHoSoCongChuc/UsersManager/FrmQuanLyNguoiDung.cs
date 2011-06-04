@@ -247,7 +247,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                var lstItem = LoaiNGuoiDungRepository.SelectAll();
+                var lstItem = LoaiNguoiDungRepository.SelectAll();
                 if (lstItem.Count > 0)
                 {
                     ListViewItem objListViewItem;

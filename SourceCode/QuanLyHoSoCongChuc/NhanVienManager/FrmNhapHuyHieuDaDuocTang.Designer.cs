@@ -30,29 +30,30 @@
         {
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.listViewEx1 = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.listViewEx1 = new DevComponents.DotNetBar.Controls.ListViewEx();
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.textBoxX2 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.cmbCapUy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.labelX4 = new DevComponents.DotNetBar.LabelX();
             this.txtMoTaCongTac = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtpThoiGianBatdau = new System.Windows.Forms.DateTimePicker();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
+            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnChonGDPT = new System.Windows.Forms.Button();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +81,34 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(212, 219);
             this.panel3.TabIndex = 3;
+            // 
+            // listViewEx1
+            // 
+            // 
+            // 
+            // 
+            this.listViewEx1.Border.Class = "ListViewBorder";
+            this.listViewEx1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader2,
+            this.columnHeader1});
+            this.listViewEx1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listViewEx1.Location = new System.Drawing.Point(0, 0);
+            this.listViewEx1.Name = "listViewEx1";
+            this.listViewEx1.Size = new System.Drawing.Size(212, 219);
+            this.listViewEx1.TabIndex = 1;
+            this.listViewEx1.UseCompatibleStateImageBehavior = false;
+            this.listViewEx1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "STT";
+            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader2.Width = 40;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Năm";
+            this.columnHeader1.Width = 140;
             // 
             // panel2
             // 
@@ -141,9 +170,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.panel1.Controls.Add(this.textBoxX6);
+            this.panel1.Controls.Add(this.btnChonGDPT);
             this.panel1.Controls.Add(this.textBoxX2);
             this.panel1.Controls.Add(this.labelX6);
-            this.panel1.Controls.Add(this.cmbCapUy);
             this.panel1.Controls.Add(this.labelX5);
             this.panel1.Controls.Add(this.labelX10);
             this.panel1.Controls.Add(this.labelX4);
@@ -156,47 +186,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(619, 332);
             this.panel1.TabIndex = 2;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
-            this.panel4.Controls.Add(this.btnThoat);
-            this.panel4.Controls.Add(this.btnSua);
-            this.panel4.Controls.Add(this.btnThem);
-            this.panel4.Controls.Add(this.btnXoa);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 285);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(619, 47);
-            this.panel4.TabIndex = 94;
-            // 
-            // listViewEx1
-            // 
-            // 
-            // 
-            // 
-            this.listViewEx1.Border.Class = "ListViewBorder";
-            this.listViewEx1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader2,
-            this.columnHeader1});
-            this.listViewEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewEx1.Location = new System.Drawing.Point(0, 0);
-            this.listViewEx1.Name = "listViewEx1";
-            this.listViewEx1.Size = new System.Drawing.Size(212, 219);
-            this.listViewEx1.TabIndex = 1;
-            this.listViewEx1.UseCompatibleStateImageBehavior = false;
-            this.listViewEx1.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "STT";
-            this.columnHeader2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader2.Width = 40;
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "Năm";
-            this.columnHeader1.Width = 140;
             // 
             // textBoxX2
             // 
@@ -218,17 +207,6 @@
             this.labelX6.TabIndex = 133;
             this.labelX6.Text = "Số huy hiệu";
             this.labelX6.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // cmbCapUy
-            // 
-            this.cmbCapUy.DisplayMember = "Text";
-            this.cmbCapUy.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbCapUy.FormattingEnabled = true;
-            this.cmbCapUy.ItemHeight = 14;
-            this.cmbCapUy.Location = new System.Drawing.Point(143, 70);
-            this.cmbCapUy.Name = "cmbCapUy";
-            this.cmbCapUy.Size = new System.Drawing.Size(461, 20);
-            this.cmbCapUy.TabIndex = 132;
             // 
             // labelX5
             // 
@@ -293,6 +271,19 @@
             this.labelX3.TabIndex = 126;
             this.labelX3.Text = "Danh sách các lần được phong huy hiệu";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.panel4.Controls.Add(this.btnThoat);
+            this.panel4.Controls.Add(this.btnSua);
+            this.panel4.Controls.Add(this.btnThem);
+            this.panel4.Controls.Add(this.btnXoa);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel4.Location = new System.Drawing.Point(0, 285);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(619, 47);
+            this.panel4.TabIndex = 94;
+            // 
             // btnThoat
             // 
             this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -345,6 +336,28 @@
             this.btnXoa.TabIndex = 37;
             this.btnXoa.Text = "Xóa";
             // 
+            // textBoxX6
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX6.Border.Class = "TextBoxBorder";
+            this.textBoxX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxX6.Location = new System.Drawing.Point(143, 71);
+            this.textBoxX6.Name = "textBoxX6";
+            this.textBoxX6.Size = new System.Drawing.Size(200, 20);
+            this.textBoxX6.TabIndex = 311;
+            // 
+            // btnChonGDPT
+            // 
+            this.btnChonGDPT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonGDPT.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonGDPT.Location = new System.Drawing.Point(349, 66);
+            this.btnChonGDPT.Name = "btnChonGDPT";
+            this.btnChonGDPT.Size = new System.Drawing.Size(28, 27);
+            this.btnChonGDPT.TabIndex = 310;
+            this.btnChonGDPT.UseVisualStyleBackColor = true;
+            // 
             // FrmNhapHuyHieuDaDuocTang
             // 
             this.ClientSize = new System.Drawing.Size(831, 332);
@@ -385,12 +398,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private DevComponents.DotNetBar.Controls.TextBoxX textBoxX2;
         private DevComponents.DotNetBar.LabelX labelX6;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbCapUy;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX4;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMoTaCongTac;
         private System.Windows.Forms.DateTimePicker dtpThoiGianBatdau;
         private DevComponents.DotNetBar.LabelX labelX3;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
+        private System.Windows.Forms.Button btnChonGDPT;
     }
 }

@@ -12,7 +12,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<KhoiXom> SelectAll()
 		{
-			return DataContext.Instance.KhoiXoms.ToList();
+			return DataContext.Instance.KhoiXoms.OrderBy(item => item.TenKhoiXom).ToList();
 		}
 
 		public static KhoiXom SelectByID(string makhoixom)

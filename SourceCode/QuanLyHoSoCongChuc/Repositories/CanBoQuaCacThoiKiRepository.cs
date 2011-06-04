@@ -67,19 +67,23 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return (from item in DataContext.Instance.CanBoQuaCacThoiKis where  item.MaCanBo == macanbo  select item).ToList();
 		}
 
-        /// <summary>
-        /// Search can bo qua cac thoi ki
-        /// </summary>
-        /// <param name="nhanvien"></param>
-        /// <returns></returns>
-        public static List<CanBoQuaCacThoiKi> SearchCanBoQuaCacThoiKi(CanBoQuaCacThoiKiModel canbo)
-        {
-            var lst = (from item in DataContext.Instance.CanBoQuaCacThoiKis
-                       where
-                        item.MaDonVi == (canbo.MaDonVi == "" ? item.MaDonVi : canbo.MaDonVi) &&
-                        item.HoTen == (canbo.HoTen == "" ? item.HoTen : canbo.HoTen)
-                       select item).ToList();
-            return lst;
-        }
+		public static List<CanBoQuaCacThoiKi> SelectByMaLoaiCanBo(int maloaicanbo)
+		{
+			var lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.MaLoaiCanBo == maloaicanbo select item).ToList();
+			return lstItem;
+		}
+
+		public static List<CanBoQuaCacThoiKi> SelectByMaDonVi(string madonvi)
+		{
+			var lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.MaDonVi == madonvi select item).ToList();
+			return lstItem;
+		}
+
+		public static List<CanBoQuaCacThoiKi> SelectByMaNhanVien(string manhanvien)
+		{
+			var lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.MaNhanVien == manhanvien select item).ToList();
+			return lstItem;
+		}
+
 	}
 }

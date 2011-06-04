@@ -15,9 +15,9 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return DataContext.Instance.ChuyenDonVis.ToList();
 		}
 
-		public static ChuyenDonVi SelectByID(int machuyen)
+		public static ChuyenDonVi SelectByID(int macanbo)
 		{
-			return DataContext.Instance.ChuyenDonVis.FirstOrDefault(item => item.MaChuyen == machuyen );
+			return DataContext.Instance.ChuyenDonVis.FirstOrDefault(item => item.MaCanBo == macanbo );
 		}
 
 		public static bool Insert(ChuyenDonVi obj)
@@ -34,11 +34,11 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(int machuyen)
+		public static bool Delete(int macanbo)
 		{
 			try
 			{
-				var delitem = DataContext.Instance.ChuyenDonVis.FirstOrDefault(item => item.MaChuyen == machuyen );
+				var delitem = DataContext.Instance.ChuyenDonVis.FirstOrDefault(item => item.MaCanBo == macanbo );
 				DataContext.Instance.ChuyenDonVis.DeleteObject(delitem);
 				DataContext.Instance.SaveChanges();
 				return true;
@@ -62,20 +62,14 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<ChuyenDonVi> RetrieveByID(int machuyen)
+		public static List<ChuyenDonVi> RetrieveByID(int macanbo)
 		{
-			return (from item in DataContext.Instance.ChuyenDonVis where  item.MaChuyen == machuyen  select item).ToList();
+			return (from item in DataContext.Instance.ChuyenDonVis where  item.MaCanBo == macanbo  select item).ToList();
 		}
 
-		public static List<ChuyenDonVi> SelectByMaNhanVien(string manhanvien)
+		public static List<ChuyenDonVi> SelectByMaCanBo(int macanbo)
 		{
-			var lstItem = (from item in DataContext.Instance.ChuyenDonVis where item.MaNhanVien == manhanvien select item).ToList();
-			return lstItem;
-		}
-
-		public static List<ChuyenDonVi> SelectByMaDonViDi(string madonvidi)
-		{
-			var lstItem = (from item in DataContext.Instance.ChuyenDonVis where item.MaDonViDi == madonvidi select item).ToList();
+			var lstItem = (from item in DataContext.Instance.ChuyenDonVis where item.MaCanBo == macanbo select item).ToList();
 			return lstItem;
 		}
 

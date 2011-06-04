@@ -12,7 +12,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<QuanHuyen> SelectAll()
 		{
-			return DataContext.Instance.QuanHuyens.ToList();
+			return DataContext.Instance.QuanHuyens.OrderBy(item => item.TenQuanHuyen).ToList();
 		}
 
 		public static QuanHuyen SelectByID(string maquanhuyen)

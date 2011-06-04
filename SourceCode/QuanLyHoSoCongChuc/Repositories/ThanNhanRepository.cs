@@ -12,10 +12,10 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<ThanNhan> SelectAll()
 		{
-			return DataContext.Instance.ThanNhans.ToList();
+			return DataContext.Instance.ThanNhans.OrderBy(item => item.TenThanNhan).ToList();
 		}
 
-		public static ThanNhan SelectByID(string mathannhan)
+		public static ThanNhan SelectByID(int mathannhan)
 		{
 			return DataContext.Instance.ThanNhans.FirstOrDefault(item => item.MaThanNhan == mathannhan );
 		}
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(string mathannhan)
+		public static bool Delete(int mathannhan)
 		{
 			try
 			{
@@ -62,20 +62,20 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<ThanNhan> RetrieveByID(string mathannhan)
+		public static List<ThanNhan> RetrieveByID(int mathannhan)
 		{
 			return (from item in DataContext.Instance.ThanNhans where  item.MaThanNhan == mathannhan  select item).ToList();
+		}
+
+		public static List<ThanNhan> SelectByMaQuanHe(int maquanhe)
+		{
+			var lstItem = (from item in DataContext.Instance.ThanNhans where item.MaQuanHe == maquanhe select item).ToList();
+			return lstItem;
 		}
 
 		public static List<ThanNhan> SelectByMaNhanVien(string manhanvien)
 		{
 			var lstItem = (from item in DataContext.Instance.ThanNhans where item.MaNhanVien == manhanvien select item).ToList();
-			return lstItem;
-		}
-
-		public static List<ThanNhan> SelectByMaQuanHe(string maquanhe)
-		{
-			var lstItem = (from item in DataContext.Instance.ThanNhans where item.MaQuanHe == maquanhe select item).ToList();
 			return lstItem;
 		}
 

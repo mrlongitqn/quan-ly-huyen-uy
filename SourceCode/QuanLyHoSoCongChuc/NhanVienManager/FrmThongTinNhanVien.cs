@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using QuanLyHoSoCongChuc.Repositories;
 using QuanLyHoSoCongChuc.Models;
+using QuanLyHoSoCongChuc.Utils;
+using QuanLyHoSoCongChuc.Danh_muc;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
@@ -22,6 +24,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         private FrmThongTinNhanVien_CacQuaTrinh frmThongTinNhanVien_CacQuaTrinh;
         private FrmThongTinNhanVien_GiaDinh frmThongTinNhanVien_GiaDinh;
         private FrmThongTinNhanVien_DacDiemLichSu frmThongTinNhanVien_DacDiemLichSu;
+        private FrmThongTinNhanVien_LuongPhuCap frmThongTinNhanVien_LuongPhuCap;
 
         public FrmThongTinNhanVien()
         {
@@ -43,14 +46,14 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         public void LoadThongTinNhanVien()
         {
-            var nhanvien = NhanVienRepository.SelectByID(_maNhanVien);
-            txtMaDonVi.Text = nhanvien.MaDonVi;
-            txtTenDonViDayDu.Text = nhanvien.DonVi.TenDonVi;
-            txtHoTenKhaiSinh.Text = nhanvien.HoTenNhanVien;
-            SetSelectedGioiTinh(nhanvien);
-            dtSinhNgay.Value = nhanvien.NgaySinh.Value;
+            //var nhanvien = NhanVienRepository.SelectByID(_maNhanVien);
+            //txtMaDonVi.Text = nhanvien.MaDonVi;
+            //txtTenDonViDayDu.Text = nhanvien.DonVi.TenDonVi;
+            //txtHoTenKhaiSinh.Text = nhanvien.HoTenNhanVien;
+            //SetSelectedGioiTinh(nhanvien);
+            //dtSinhNgay.Value = nhanvien.NgaySinh.Value;
 
-            InitForm(nhanvien);
+            //InitForm(nhanvien);
         }
 
         public void InitForm(NhanVien nhanvien)
@@ -94,6 +97,11 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             frmThongTinNhanVien_GiaDinh.TopLevel = false;
             frmThongTinNhanVien_GiaDinh.FormBorderStyle = FormBorderStyle.None;
             frmThongTinNhanVien_GiaDinh.Dock = DockStyle.Fill;
+
+            frmThongTinNhanVien_LuongPhuCap = new FrmThongTinNhanVien_LuongPhuCap(nhanvien);
+            frmThongTinNhanVien_LuongPhuCap.TopLevel = false;
+            frmThongTinNhanVien_LuongPhuCap.FormBorderStyle = FormBorderStyle.None;
+            frmThongTinNhanVien_LuongPhuCap.Dock = DockStyle.Fill;
 
             //Add to middle view
             pnlChangeView.Controls.Clear();
@@ -201,6 +209,9 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                             if (Shortcut == "lblLuongPhuCap")
                             {
                                 objControl.ForeColor = Color.Lime;
+                                pnlChangeView.Controls.Clear();
+                                pnlChangeView.Controls.Add(frmThongTinNhanVien_LuongPhuCap);
+                                frmThongTinNhanVien_LuongPhuCap.Show();
                             }
                             else
                             {
@@ -211,15 +222,16 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 }
             }
         }
+
         public void SetSelectedGioiTinh(NhanVien nhanvien)
         {
             foreach (var item in cbxGioiTinh.Items)
             {
-                if (((GioiTinh)item).MaGioiTinh == nhanvien.MaGioiTinh)
-                {
-                    cbxGioiTinh.SelectedItem = item;
-                    break;
-                }
+                //if (((GioiTinh)item).MaGioiTinh == nhanvien.MaGioiTinh)
+                //{
+                //    cbxGioiTinh.SelectedItem = item;
+                //    break;
+                //}
             }
         }
 
@@ -230,6 +242,26 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             {
                 cbxGioiTinh.DataSource = lstItem;
             }
+        }
+
+        private void btnChonDonVi_Click(object sender, EventArgs e)
+        {
+            FrmDanhMuc frm = new FrmDanhMuc();
+            frm.Handler += GetDonVi;
+            frm.ShowDialog();
+        }
+
+        /// <summary>
+        /// Get thong tin don vi
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetDonVi(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaDonVi.Text = comp[0];
+            txtTenDonViDayDu.Text = comp[1];
         }
     }
 }

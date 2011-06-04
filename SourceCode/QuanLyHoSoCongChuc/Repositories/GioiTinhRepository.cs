@@ -12,10 +12,10 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<GioiTinh> SelectAll()
 		{
-			return DataContext.Instance.GioiTinhs.ToList();
+			return DataContext.Instance.GioiTinhs.OrderBy(item => item.TenGioiTinh).ToList();
 		}
 
-		public static GioiTinh SelectByID(string magioitinh)
+		public static GioiTinh SelectByID(int magioitinh)
 		{
 			return DataContext.Instance.GioiTinhs.FirstOrDefault(item => item.MaGioiTinh == magioitinh );
 		}
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(string magioitinh)
+		public static bool Delete(int magioitinh)
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<GioiTinh> RetrieveByID(string magioitinh)
+		public static List<GioiTinh> RetrieveByID(int magioitinh)
 		{
 			return (from item in DataContext.Instance.GioiTinhs where  item.MaGioiTinh == magioitinh  select item).ToList();
 		}

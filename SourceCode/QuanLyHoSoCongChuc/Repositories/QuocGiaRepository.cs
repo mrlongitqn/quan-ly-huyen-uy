@@ -12,7 +12,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<QuocGia> SelectAll()
 		{
-			return DataContext.Instance.QuocGias.ToList();
+			return DataContext.Instance.QuocGias.OrderBy(item => item.TenQuocGia).ToList();
 		}
 
 		public static QuocGia SelectByID(int maquocgia)

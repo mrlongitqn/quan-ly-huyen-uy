@@ -61,18 +61,18 @@ namespace QuanLyHoSoCongChuc.DataManager
             if (txtMaNhanVien.Text == "")
                 return;
             var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text.Trim());
-            nhanvien.MaNgach = "";
-            nhanvien.BacLuong = "";
-            nhanvien.HeSoLuong = "";
-            if (NhanVienRepository.Save())
-            {
-                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadNhanVienPhuCap();
-            }
-            else
-            {
-                MessageBox.Show("Cập nhật thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //nhanvien.MaNgach = "";
+            //nhanvien.BacLuong = "";
+            //nhanvien.HeSoLuong = "";
+            //if (NhanVienRepository.Save())
+            //{
+            //    MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    LoadNhanVienPhuCap();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Cập nhật thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -83,20 +83,20 @@ namespace QuanLyHoSoCongChuc.DataManager
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text.Trim());
-            nhanvien.HeSoPhuCapChucVu = txtPhuCapChucVu.Text.Trim();
-            nhanvien.HeSoPhuCapKiemNhiem = txtPhuCapKiemNhiem.Text.Trim();
-            nhanvien.HeSoPhuCapThamNienVuotKhung = txtPhuCapThamNien.Text.Trim();
-            nhanvien.HeSoPhuCapKhac = txtPhuCapKhac.Text.Trim();
-            if (NhanVienRepository.Save())
-            {
-                MessageBox.Show("Lập phiếu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                LoadNhanVienPhuCap();
-            }
-            else
-            {
-                MessageBox.Show("Lập phiếu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text.Trim());
+            //nhanvien.HeSoPhuCapChucVu = txtPhuCapChucVu.Text.Trim();
+            //nhanvien.HeSoPhuCapKiemNhiem = txtPhuCapKiemNhiem.Text.Trim();
+            //nhanvien.HeSoPhuCapThamNienVuotKhung = txtPhuCapThamNien.Text.Trim();
+            //nhanvien.HeSoPhuCapKhac = txtPhuCapKhac.Text.Trim();
+            //if (NhanVienRepository.Save())
+            //{
+            //    MessageBox.Show("Lập phiếu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //    LoadNhanVienPhuCap();
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Lập phiếu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
@@ -118,25 +118,25 @@ namespace QuanLyHoSoCongChuc.DataManager
         {
             if (lstvNhanVien.SelectedItems.Count > 0)
             {
-                var nhanvien = (NhanVien)lstvNhanVien.SelectedItems[0].Tag;
-                txtMaNhanVien.Text = nhanvien.MaNhanVien;
-                txtHoTen.Text = nhanvien.HoTenNhanVien;
-                txtGioiTinh.Text = nhanvien.GioiTinh.TenGioiTinh;
-                txtTaiCoQuan.Text = nhanvien.DonVi.TenDonVi;
-                txtNamSinh.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh.Value);
-                txtVaoDonVi.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgayVeCoQuanHienTai.Value);
-                txtChucVu.Text = nhanvien.ChucVu.TenChucVu;
-                txtChucVuKiemNhiem.Text = nhanvien.ChucVuLanhDaoKiemNhiem;
+                //var nhanvien = (NhanVien)lstvNhanVien.SelectedItems[0].Tag;
+                //txtMaNhanVien.Text = nhanvien.MaNhanVien;
+                //txtHoTen.Text = nhanvien.HoTenNhanVien;
+                //txtGioiTinh.Text = nhanvien.GioiTinh.TenGioiTinh;
+                //txtTaiCoQuan.Text = nhanvien.DonVi.TenDonVi;
+                //txtNamSinh.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh.Value);
+                //txtVaoDonVi.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgayVeCoQuanHienTai.Value);
+                //txtChucVu.Text = nhanvien.ChucVu.TenChucVu;
+                //txtChucVuKiemNhiem.Text = nhanvien.ChucVuLanhDaoKiemNhiem;
 
-                txtPhuCapChucVu.Text = nhanvien.HeSoPhuCapChucVu;
-                txtPhuCapKiemNhiem.Text = nhanvien.HeSoPhuCapKiemNhiem;
-                txtPhuCapThamNien.Text = nhanvien.HeSoPhuCapThamNienVuotKhung;
-                txtPhuCapKhac.Text = nhanvien.HeSoPhuCapKhac;
+                //txtPhuCapChucVu.Text = nhanvien.HeSoPhuCapChucVu;
+                //txtPhuCapKiemNhiem.Text = nhanvien.HeSoPhuCapKiemNhiem;
+                //txtPhuCapThamNien.Text = nhanvien.HeSoPhuCapThamNienVuotKhung;
+                //txtPhuCapKhac.Text = nhanvien.HeSoPhuCapKhac;
                 
-                txtPhuCapChucVu.ReadOnly = true;
-                txtPhuCapKiemNhiem.ReadOnly = true;
-                txtPhuCapThamNien.ReadOnly = true;
-                txtPhuCapKhac.ReadOnly = true;
+                //txtPhuCapChucVu.ReadOnly = true;
+                //txtPhuCapKiemNhiem.ReadOnly = true;
+                //txtPhuCapThamNien.ReadOnly = true;
+                //txtPhuCapKhac.ReadOnly = true;
             }
         }
 
@@ -207,31 +207,31 @@ namespace QuanLyHoSoCongChuc.DataManager
         /// </summary>
         public void LoadNhanVienPhuCap()
         {
-            var lstTmp = NhanVienRepository.SelectByMaDonVi(txtMaDonVi.Text);
-            var lstItem = new List<NhanVien>();
-            foreach (var item in lstTmp)
-            {
-                if (item.HeSoPhuCapChucVu != "" || item.HeSoPhuCapKiemNhiem != "" || item.HeSoPhuCapThamNienVuotKhung != "" || item.HeSoPhuCapKhac != "")
-                {
-                    lstItem.Add(item);
-                }
-            }
-            if (lstItem.Count > 0)
-            {
-                lstvNhanVien.Items.Clear();
-                for (int i = 0; i < lstItem.Count; i++)
-                {
-                    var objListViewItem = new ListViewItem();
-                    objListViewItem.Tag = lstItem[i];
-                    objListViewItem.Text = (i + 1).ToString();
-                    objListViewItem.SubItems.Add(lstItem[i].MaNhanVien);
-                    objListViewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
-                    objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
-                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
-                    objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
-                    lstvNhanVien.Items.Add(objListViewItem);
-                }
-            }
+            //var lstTmp = NhanVienRepository.SelectByMaDonVi(txtMaDonVi.Text);
+            //var lstItem = new List<NhanVien>();
+            //foreach (var item in lstTmp)
+            //{
+            //    if (item.HeSoPhuCapChucVu != "" || item.HeSoPhuCapKiemNhiem != "" || item.HeSoPhuCapThamNienVuotKhung != "" || item.HeSoPhuCapKhac != "")
+            //    {
+            //        lstItem.Add(item);
+            //    }
+            //}
+            //if (lstItem.Count > 0)
+            //{
+            //    lstvNhanVien.Items.Clear();
+            //    for (int i = 0; i < lstItem.Count; i++)
+            //    {
+            //        //var objListViewItem = new ListViewItem();
+            //        //objListViewItem.Tag = lstItem[i];
+            //        //objListViewItem.Text = (i + 1).ToString();
+            //        //objListViewItem.SubItems.Add(lstItem[i].MaNhanVien);
+            //        //objListViewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
+            //        //objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
+            //        //objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
+            //        //objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
+            //        //lstvNhanVien.Items.Add(objListViewItem);
+            //    }
+            //}
         }
 
         /// <summary>
@@ -246,15 +246,15 @@ namespace QuanLyHoSoCongChuc.DataManager
             txtMaNhanVien.Text = comp[0];
 
             // Load nhanvien info
-            var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text);
-            txtHoTen.Text = nhanvien.HoTenNhanVien;
-            txtGioiTinh.Text = nhanvien.GioiTinh.TenGioiTinh;
-            txtTaiCoQuan.Text = nhanvien.DonVi.TenDonVi;
-            txtNamSinh.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh.Value);
-            txtVaoDonVi.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgayVeCoQuanHienTai.Value);
+            //var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text);
+            //txtHoTen.Text = nhanvien.HoTenNhanVien;
+            //txtGioiTinh.Text = nhanvien.GioiTinh.TenGioiTinh;
+            //txtTaiCoQuan.Text = nhanvien.DonVi.TenDonVi;
+            //txtNamSinh.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh.Value);
+            //txtVaoDonVi.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgayVeCoQuanHienTai.Value);
 
-            txtChucVu.Text = nhanvien.ChucVu.TenChucVu;
-            txtChucVuKiemNhiem.Text = nhanvien.ChucVuLanhDaoKiemNhiem;
+            //txtChucVu.Text = nhanvien.ChucVu.TenChucVu;
+            //txtChucVuKiemNhiem.Text = nhanvien.ChucVuLanhDaoKiemNhiem;
         }
     }
 }

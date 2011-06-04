@@ -259,6 +259,8 @@
             this.ClientSize = new System.Drawing.Size(447, 562);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmDanhMucHanhChinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Mục Hành Chính";

@@ -46,7 +46,6 @@
             this.labelX15 = new DevComponents.DotNetBar.LabelX();
             this.txtTaiSanGiaTri = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtDienTichDatKinhDoanhTrangTrai = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.cmbHoatDongKinhTe = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.txtDatDuocCap = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNhaOTuMua = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNhaODuocCap = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -65,6 +64,8 @@
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnChonGDPT = new System.Windows.Forms.Button();
+            this.textBoxX1 = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.pnlTomTat.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +73,8 @@
             // 
             this.pnlTomTat.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnlTomTat.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.pnlTomTat.Controls.Add(this.textBoxX1);
+            this.pnlTomTat.Controls.Add(this.btnChonGDPT);
             this.pnlTomTat.Controls.Add(this.labelX1);
             this.pnlTomTat.Controls.Add(this.labelX10);
             this.pnlTomTat.Controls.Add(this.labelX7);
@@ -89,7 +92,6 @@
             this.pnlTomTat.Controls.Add(this.labelX15);
             this.pnlTomTat.Controls.Add(this.txtTaiSanGiaTri);
             this.pnlTomTat.Controls.Add(this.txtDienTichDatKinhDoanhTrangTrai);
-            this.pnlTomTat.Controls.Add(this.cmbHoatDongKinhTe);
             this.pnlTomTat.Controls.Add(this.txtDatDuocCap);
             this.pnlTomTat.Controls.Add(this.txtNhaOTuMua);
             this.pnlTomTat.Controls.Add(this.txtNhaODuocCap);
@@ -310,17 +312,6 @@
             this.txtDienTichDatKinhDoanhTrangTrai.Size = new System.Drawing.Size(100, 20);
             this.txtDienTichDatKinhDoanhTrangTrai.TabIndex = 106;
             // 
-            // cmbHoatDongKinhTe
-            // 
-            this.cmbHoatDongKinhTe.DisplayMember = "Text";
-            this.cmbHoatDongKinhTe.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbHoatDongKinhTe.FormattingEnabled = true;
-            this.cmbHoatDongKinhTe.ItemHeight = 14;
-            this.cmbHoatDongKinhTe.Location = new System.Drawing.Point(235, 253);
-            this.cmbHoatDongKinhTe.Name = "cmbHoatDongKinhTe";
-            this.cmbHoatDongKinhTe.Size = new System.Drawing.Size(176, 20);
-            this.cmbHoatDongKinhTe.TabIndex = 105;
-            // 
             // txtDatDuocCap
             // 
             // 
@@ -499,6 +490,27 @@
             this.columnHeader4.Text = "Đơn vị, Chức vụ";
             this.columnHeader4.Width = 420;
             // 
+            // btnChonGDPT
+            // 
+            this.btnChonGDPT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonGDPT.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonGDPT.Location = new System.Drawing.Point(417, 248);
+            this.btnChonGDPT.Name = "btnChonGDPT";
+            this.btnChonGDPT.Size = new System.Drawing.Size(28, 27);
+            this.btnChonGDPT.TabIndex = 283;
+            this.btnChonGDPT.UseVisualStyleBackColor = true;
+            // 
+            // textBoxX1
+            // 
+            // 
+            // 
+            // 
+            this.textBoxX1.Border.Class = "TextBoxBorder";
+            this.textBoxX1.Location = new System.Drawing.Point(235, 253);
+            this.textBoxX1.Name = "textBoxX1";
+            this.textBoxX1.Size = new System.Drawing.Size(176, 20);
+            this.textBoxX1.TabIndex = 284;
+            // 
             // FrmThongTinNhanVien_GiaDinh
             // 
             this.ClientSize = new System.Drawing.Size(859, 346);
@@ -535,7 +547,6 @@
         private DevComponents.DotNetBar.LabelX labelX15;
         private DevComponents.DotNetBar.Controls.TextBoxX txtTaiSanGiaTri;
         private DevComponents.DotNetBar.Controls.TextBoxX txtDienTichDatKinhDoanhTrangTrai;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cmbHoatDongKinhTe;
         private DevComponents.DotNetBar.Controls.TextBoxX txtDatDuocCap;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNhaOTuMua;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNhaODuocCap;
@@ -551,5 +562,7 @@
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.Button btnChonGDPT;
+        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX1;
     }
 }
