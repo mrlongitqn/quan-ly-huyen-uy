@@ -53,25 +53,25 @@
             // 
             // labelX1
             // 
-            this.labelX1.Location = new System.Drawing.Point(17, 80);
+            this.labelX1.Location = new System.Drawing.Point(17, 83);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(75, 23);
+            this.labelX1.Size = new System.Drawing.Size(75, 20);
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "Tên tỉnh thành";
             // 
             // labelX2
             // 
-            this.labelX2.Location = new System.Drawing.Point(17, 123);
+            this.labelX2.Location = new System.Drawing.Point(17, 126);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(75, 23);
+            this.labelX2.Size = new System.Drawing.Size(75, 20);
             this.labelX2.TabIndex = 1;
             this.labelX2.Text = "Quận / Huyện";
             // 
             // labelX3
             // 
-            this.labelX3.Location = new System.Drawing.Point(17, 165);
+            this.labelX3.Location = new System.Drawing.Point(17, 168);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(75, 23);
+            this.labelX3.Size = new System.Drawing.Size(75, 20);
             this.labelX3.TabIndex = 2;
             this.labelX3.Text = "Phường, xã";
             // 
@@ -248,7 +248,7 @@
             // labelX5
             // 
             this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.Location = new System.Drawing.Point(44, 0);
+            this.labelX5.Location = new System.Drawing.Point(44, 12);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(368, 58);
             this.labelX5.TabIndex = 25;

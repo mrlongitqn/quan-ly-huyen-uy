@@ -7,10 +7,9 @@ namespace QuanLyHoSoCongChuc.Models
 {
     public class CanBoQuaCacThoiKiModel
     {
-        public string MaDonVi { get; set; }
         public string HoTen { get; set; }
         public DateTime NgaySinh { get; set; }
-        public bool TinhTrang { get; set; }
+        public bool ConSong { get; set; }
         public string QueQuan { get; set; }
         public string NoiOHienNay { get; set; }
         public string ChucVuDaGiu { get; set; }

@@ -12,7 +12,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<DonVi> SelectAll()
 		{
-			return DataContext.Instance.DonVis.ToList();
+			return DataContext.Instance.DonVis.OrderBy(item => item.TenDonVi).ToList();
 		}
 
 		public static DonVi SelectByID(string madonvi)
@@ -67,7 +67,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return (from item in DataContext.Instance.DonVis where  item.MaDonVi == madonvi  select item).ToList();
 		}
 
-		public static List<DonVi> SelectByMaLoaiDonVi(string maloaidonvi)
+		public static List<DonVi> SelectByMaLoaiDonVi(int maloaidonvi)
 		{
 			var lstItem = (from item in DataContext.Instance.DonVis where item.MaLoaiDonVi == maloaidonvi select item).ToList();
 			return lstItem;
@@ -79,11 +79,11 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return lstItem;
 		}
 
-        //public static List<DonVi> SelectByMaPhanLoaiDonVi(string maphanloaidonvi)
-        //{
-        //    var lstItem = (from item in DataContext.Instance.DonVis where item.MaPhanLoaiDonVi == maphanloaidonvi select item).ToList();
-        //    return lstItem;
-        //}
+		public static List<DonVi> SelectByMaPhanLoaiDonVi(int maphanloaidonvi)
+		{
+			var lstItem = (from item in DataContext.Instance.DonVis where item.MaPhanLoaiDonVi == maphanloaidonvi select item).ToList();
+			return lstItem;
+		}
 
 	}
 }

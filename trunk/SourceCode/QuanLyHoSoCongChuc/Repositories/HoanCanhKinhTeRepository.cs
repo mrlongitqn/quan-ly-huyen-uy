@@ -73,7 +73,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return lstItem;
 		}
 
-		public static List<HoanCanhKinhTe> SelectByMaHoatDongKinhTe(string mahoatdongkinhte)
+		public static List<HoanCanhKinhTe> SelectByMaHoatDongKinhTe(int mahoatdongkinhte)
 		{
 			var lstItem = (from item in DataContext.Instance.HoanCanhKinhTes where item.MaHoatDongKinhTe == mahoatdongkinhte select item).ToList();
 			return lstItem;

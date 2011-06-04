@@ -26,25 +26,25 @@ namespace QuanLyHoSoCongChuc.UsersManager
 
         private void btnTim_Click(object sender, EventArgs e)
         {
-            var canbo = new CanBoQuaCacThoiKiModel
-            {
-                MaDonVi = txtMaDonVi.Text.Trim(),
-                HoTen = txtHoTen.Text.Trim()
-            };
-            var lstItem = CanBoQuaCacThoiKiRepository.SearchCanBoQuaCacThoiKi(canbo);
-            lstvCanBo.Items.Clear();
-            if (lstItem.Count > 0)
-            {
-                for (int i = 0; i < lstItem.Count; i++)
-                {
-                    var objListViewItem = new ListViewItem();
-                    objListViewItem.Tag = lstItem[i];
-                    objListViewItem.Text = (i + 1).ToString();
-                    objListViewItem.SubItems.Add(lstItem[i].HoTen);
-                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh.Value));
-                    lstvCanBo.Items.Add(objListViewItem);
-                }
-            }
+            //var canbo = new CanBoQuaCacThoiKiModel
+            //{
+            //    MaDonVi = txtMaDonVi.Text.Trim(),
+            //    HoTen = txtHoTen.Text.Trim()
+            //};
+            //var lstItem = CanBoQuaCacThoiKiRepository.SearchCanBoQuaCacThoiKi(canbo);
+            //lstvCanBo.Items.Clear();
+            //if (lstItem.Count > 0)
+            //{
+            //    for (int i = 0; i < lstItem.Count; i++)
+            //    {
+            //        var objListViewItem = new ListViewItem();
+            //        objListViewItem.Tag = lstItem[i];
+            //        objListViewItem.Text = (i + 1).ToString();
+            //        objListViewItem.SubItems.Add(lstItem[i].HoTen);
+            //        objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh.Value));
+            //        lstvCanBo.Items.Add(objListViewItem);
+            //    }
+            //}
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

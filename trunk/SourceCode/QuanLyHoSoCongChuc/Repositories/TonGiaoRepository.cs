@@ -15,7 +15,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return DataContext.Instance.TonGiaos.OrderBy(item => item.TenTonGiao).ToList();
 		}
 
-		public static TonGiao SelectByID(string matongiao)
+		public static TonGiao SelectByID(int matongiao)
 		{
 			return DataContext.Instance.TonGiaos.FirstOrDefault(item => item.MaTonGiao == matongiao );
 		}
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(string matongiao)
+		public static bool Delete(int matongiao)
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<TonGiao> RetrieveByID(string matongiao)
+		public static List<TonGiao> RetrieveByID(int matongiao)
 		{
 			return (from item in DataContext.Instance.TonGiaos where  item.MaTonGiao == matongiao  select item).ToList();
 		}

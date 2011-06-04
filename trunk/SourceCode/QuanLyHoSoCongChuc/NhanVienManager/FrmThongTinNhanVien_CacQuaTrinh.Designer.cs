@@ -29,33 +29,31 @@
         private void InitializeComponent()
         {
             this.pnlTomTat = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.pnlChucNang = new System.Windows.Forms.Panel();
+            this.lblHuyHieuDang = new DevComponents.DotNetBar.LabelX();
+            this.lblKyLuat = new DevComponents.DotNetBar.LabelX();
+            this.lblKhenThuong = new DevComponents.DotNetBar.LabelX();
+            this.lblQuaTrinhDaoTao = new DevComponents.DotNetBar.LabelX();
+            this.lblQuaTrinhCongTac = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnCapNhatDuLieu = new DevComponents.DotNetBar.ButtonX();
             this.lstvNhanVien = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
-            this.buttonX6 = new DevComponents.DotNetBar.ButtonX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.pnlTomTat.SuspendLayout();
+            this.pnlChucNang.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTomTat
             // 
             this.pnlTomTat.CanvasColor = System.Drawing.SystemColors.Control;
             this.pnlTomTat.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.pnlTomTat.Controls.Add(this.labelX5);
-            this.pnlTomTat.Controls.Add(this.labelX4);
-            this.pnlTomTat.Controls.Add(this.labelX3);
-            this.pnlTomTat.Controls.Add(this.labelX2);
-            this.pnlTomTat.Controls.Add(this.labelX1);
+            this.pnlTomTat.Controls.Add(this.pnlChucNang);
             this.pnlTomTat.Controls.Add(this.groupPanel1);
-            this.pnlTomTat.Controls.Add(this.buttonX6);
+            this.pnlTomTat.Controls.Add(this.btnCapNhatDuLieu);
             this.pnlTomTat.Controls.Add(this.lstvNhanVien);
             this.pnlTomTat.Controls.Add(this.labelX21);
             this.pnlTomTat.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -83,6 +81,70 @@
             this.pnlTomTat.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.pnlTomTat.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.pnlTomTat.TabIndex = 7;
+            // 
+            // pnlChucNang
+            // 
+            this.pnlChucNang.BackColor = System.Drawing.Color.Transparent;
+            this.pnlChucNang.Controls.Add(this.lblHuyHieuDang);
+            this.pnlChucNang.Controls.Add(this.lblKyLuat);
+            this.pnlChucNang.Controls.Add(this.lblKhenThuong);
+            this.pnlChucNang.Controls.Add(this.lblQuaTrinhDaoTao);
+            this.pnlChucNang.Controls.Add(this.lblQuaTrinhCongTac);
+            this.pnlChucNang.Location = new System.Drawing.Point(4, 31);
+            this.pnlChucNang.Name = "pnlChucNang";
+            this.pnlChucNang.Size = new System.Drawing.Size(132, 120);
+            this.pnlChucNang.TabIndex = 93;
+            // 
+            // lblHuyHieuDang
+            // 
+            this.lblHuyHieuDang.AutoSize = true;
+            this.lblHuyHieuDang.BackColor = System.Drawing.Color.Transparent;
+            this.lblHuyHieuDang.Location = new System.Drawing.Point(20, 95);
+            this.lblHuyHieuDang.Name = "lblHuyHieuDang";
+            this.lblHuyHieuDang.Size = new System.Drawing.Size(73, 15);
+            this.lblHuyHieuDang.TabIndex = 102;
+            this.lblHuyHieuDang.Text = "Huy hiệu đảng";
+            // 
+            // lblKyLuat
+            // 
+            this.lblKyLuat.AutoSize = true;
+            this.lblKyLuat.BackColor = System.Drawing.Color.Transparent;
+            this.lblKyLuat.Location = new System.Drawing.Point(20, 74);
+            this.lblKyLuat.Name = "lblKyLuat";
+            this.lblKyLuat.Size = new System.Drawing.Size(36, 15);
+            this.lblKyLuat.TabIndex = 101;
+            this.lblKyLuat.Text = "Kỷ luật";
+            // 
+            // lblKhenThuong
+            // 
+            this.lblKhenThuong.AutoSize = true;
+            this.lblKhenThuong.BackColor = System.Drawing.Color.Transparent;
+            this.lblKhenThuong.Location = new System.Drawing.Point(20, 53);
+            this.lblKhenThuong.Name = "lblKhenThuong";
+            this.lblKhenThuong.Size = new System.Drawing.Size(65, 15);
+            this.lblKhenThuong.TabIndex = 100;
+            this.lblKhenThuong.Text = "Khen thưởng";
+            // 
+            // lblQuaTrinhDaoTao
+            // 
+            this.lblQuaTrinhDaoTao.AutoSize = true;
+            this.lblQuaTrinhDaoTao.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuaTrinhDaoTao.Location = new System.Drawing.Point(20, 32);
+            this.lblQuaTrinhDaoTao.Name = "lblQuaTrinhDaoTao";
+            this.lblQuaTrinhDaoTao.Size = new System.Drawing.Size(87, 15);
+            this.lblQuaTrinhDaoTao.TabIndex = 99;
+            this.lblQuaTrinhDaoTao.Text = "Quá trình đào tạo";
+            // 
+            // lblQuaTrinhCongTac
+            // 
+            this.lblQuaTrinhCongTac.AutoSize = true;
+            this.lblQuaTrinhCongTac.BackColor = System.Drawing.Color.Transparent;
+            this.lblQuaTrinhCongTac.ForeColor = System.Drawing.Color.Crimson;
+            this.lblQuaTrinhCongTac.Location = new System.Drawing.Point(20, 11);
+            this.lblQuaTrinhCongTac.Name = "lblQuaTrinhCongTac";
+            this.lblQuaTrinhCongTac.Size = new System.Drawing.Size(92, 15);
+            this.lblQuaTrinhCongTac.TabIndex = 98;
+            this.lblQuaTrinhCongTac.Text = "Quá trình công tác";
             // 
             // groupPanel1
             // 
@@ -112,6 +174,19 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 92;
+            // 
+            // btnCapNhatDuLieu
+            // 
+            this.btnCapNhatDuLieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCapNhatDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCapNhatDuLieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCapNhatDuLieu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
+            this.btnCapNhatDuLieu.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnCapNhatDuLieu.Location = new System.Drawing.Point(9, 176);
+            this.btnCapNhatDuLieu.Name = "btnCapNhatDuLieu";
+            this.btnCapNhatDuLieu.Size = new System.Drawing.Size(127, 23);
+            this.btnCapNhatDuLieu.TabIndex = 91;
+            this.btnCapNhatDuLieu.Text = "Cập nhật dữ liệu";
             // 
             // lstvNhanVien
             // 
@@ -156,78 +231,15 @@
             // 
             // labelX21
             // 
+            this.labelX21.AutoSize = true;
             this.labelX21.BackColor = System.Drawing.Color.Transparent;
-            this.labelX21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX21.Location = new System.Drawing.Point(1, -1);
+            this.labelX21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX21.Location = new System.Drawing.Point(9, 9);
             this.labelX21.Name = "labelX21";
-            this.labelX21.Size = new System.Drawing.Size(130, 20);
+            this.labelX21.Size = new System.Drawing.Size(110, 15);
             this.labelX21.TabIndex = 84;
             this.labelX21.Text = "Tóm tắt các quá trình";
             this.labelX21.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // buttonX6
-            // 
-            this.buttonX6.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX6.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX6.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
-            this.buttonX6.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.buttonX6.Location = new System.Drawing.Point(9, 176);
-            this.buttonX6.Name = "buttonX6";
-            this.buttonX6.Size = new System.Drawing.Size(127, 23);
-            this.buttonX6.TabIndex = 91;
-            this.buttonX6.Text = "Cập nhật dữ liệu";
-            // 
-            // labelX1
-            // 
-            this.labelX1.AutoSize = true;
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            this.labelX1.ForeColor = System.Drawing.Color.Crimson;
-            this.labelX1.Location = new System.Drawing.Point(10, 37);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(92, 15);
-            this.labelX1.TabIndex = 93;
-            this.labelX1.Text = "Quá trình công tác";
-            // 
-            // labelX2
-            // 
-            this.labelX2.AutoSize = true;
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Location = new System.Drawing.Point(10, 58);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(87, 15);
-            this.labelX2.TabIndex = 94;
-            this.labelX2.Text = "Quá trình đào tạo";
-            // 
-            // labelX3
-            // 
-            this.labelX3.AutoSize = true;
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Location = new System.Drawing.Point(10, 79);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(65, 15);
-            this.labelX3.TabIndex = 95;
-            this.labelX3.Text = "Khen thưởng";
-            // 
-            // labelX4
-            // 
-            this.labelX4.AutoSize = true;
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Location = new System.Drawing.Point(10, 100);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(36, 15);
-            this.labelX4.TabIndex = 96;
-            this.labelX4.Text = "Kỷ luật";
-            // 
-            // labelX5
-            // 
-            this.labelX5.AutoSize = true;
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Location = new System.Drawing.Point(10, 121);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(73, 15);
-            this.labelX5.TabIndex = 97;
-            this.labelX5.Text = "Huy hiệu đảng";
             // 
             // FrmThongTinNhanVien_CacQuaTrinh
             // 
@@ -238,6 +250,8 @@
             this.Text = "FrmThongTinNhanVien_CacQuaTrinh";
             this.pnlTomTat.ResumeLayout(false);
             this.pnlTomTat.PerformLayout();
+            this.pnlChucNang.ResumeLayout(false);
+            this.pnlChucNang.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -251,12 +265,13 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private DevComponents.DotNetBar.LabelX labelX21;
-        private DevComponents.DotNetBar.ButtonX buttonX6;
+        private DevComponents.DotNetBar.ButtonX btnCapNhatDuLieu;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        private DevComponents.DotNetBar.LabelX labelX5;
-        private DevComponents.DotNetBar.LabelX labelX4;
-        private DevComponents.DotNetBar.LabelX labelX3;
-        private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.DotNetBar.LabelX labelX1;
+        private System.Windows.Forms.Panel pnlChucNang;
+        private DevComponents.DotNetBar.LabelX lblHuyHieuDang;
+        private DevComponents.DotNetBar.LabelX lblKyLuat;
+        private DevComponents.DotNetBar.LabelX lblKhenThuong;
+        private DevComponents.DotNetBar.LabelX lblQuaTrinhDaoTao;
+        private DevComponents.DotNetBar.LabelX lblQuaTrinhCongTac;
     }
 }

@@ -29,23 +29,23 @@ namespace QuanLyHoSoCongChuc.UsersManager
         public FrmChiTietCanBoQuaCacThoiKi(int macanbo)
         {
             InitializeComponent();
-            var canbo = CanBoQuaCacThoiKiRepository.SelectByID(macanbo);
-            txtMaCanBo.Text = canbo.MaCanBo.ToString();
-            txtMaDonVi.Text = canbo.MaDonVi;
-            txtHoTen.Text = canbo.HoTen;
-            dtNamSinh.Value = canbo.NgaySinh.Value;
-            chkbxConSong.Checked = canbo.TinhTrang.Value;
-            txtQueQuan.Text = canbo.QueQuan;
-            txtNoiOHienNay.Text = canbo.NoiOHienNay;
-            txtChucVuDaGiu.Text = canbo.ChucVuDaGiu;
-            txtCoQuanDaTungLamViec.Text = canbo.CoQuanDaLamViec;
-            dtNgayVaoDang.Value = canbo.NgayVaoDang.Value;
-            dtNgayChinhThuc.Value = canbo.NgayChinhThuc.Value;
-            txtDiDong.Text = canbo.DiDong;
-            txtMayBan.Text = canbo.MayBan;
-            txtDanhHieu.Text = canbo.DanhHieuDaDuocPhong;
-            txtQuaTrinhCongTac.Text = canbo.QuaTrinhCongTac;
-            txtThamGiaChinhTri.Text = canbo.ThamGiaChinhTriXaHoi;
+            //var canbo = CanBoQuaCacThoiKiRepository.SelectByID(macanbo);
+            //txtMaCanBo.Text = canbo.MaCanBo.ToString();
+            //txtMaDonVi.Text = canbo.MaDonVi;
+            //txtHoTen.Text = canbo.HoTen;
+            //dtNamSinh.Value = canbo.NgaySinh.Value;
+            //chkbxConSong.Checked = canbo.TinhTrang.Value;
+            //txtQueQuan.Text = canbo.QueQuan;
+            //txtNoiOHienNay.Text = canbo.NoiOHienNay;
+            //txtChucVuDaGiu.Text = canbo.ChucVuDaGiu;
+            //txtCoQuanDaTungLamViec.Text = canbo.CoQuanDaLamViec;
+            //dtNgayVaoDang.Value = canbo.NgayVaoDang.Value;
+            //dtNgayChinhThuc.Value = canbo.NgayChinhThuc.Value;
+            //txtDiDong.Text = canbo.DiDong;
+            //txtMayBan.Text = canbo.MayBan;
+            //txtDanhHieu.Text = canbo.DanhHieuDaDuocPhong;
+            //txtQuaTrinhCongTac.Text = canbo.QuaTrinhCongTac;
+            //txtThamGiaChinhTri.Text = canbo.ThamGiaChinhTriXaHoi;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -141,21 +141,21 @@ namespace QuanLyHoSoCongChuc.UsersManager
             {
                 var item = new CanBoQuaCacThoiKi
                 {
-                    HoTen = txtHoTen.Text.Trim(),
-                    MaDonVi = txtMaDonVi.Text,
-                    NgaySinh = dtNamSinh.Value,
-                    TinhTrang = chkbxConSong.Checked ? true : false,
-                    QueQuan = txtQueQuan.Text,
-                    NoiOHienNay = txtNoiOHienNay.Text,
-                    ChucVuDaGiu = txtChucVuDaGiu.Text,
-                    CoQuanDaLamViec = txtCoQuanDaTungLamViec.Text,
-                    NgayVaoDang = dtNgayVaoDang.Value,
-                    NgayChinhThuc = dtNgayChinhThuc.Value,
-                    DiDong = txtDiDong.Text,
-                    MayBan = txtMayBan.Text,
-                    DanhHieuDaDuocPhong = txtDanhHieu.Text,
-                    QuaTrinhCongTac = txtQuaTrinhCongTac.Text,
-                    ThamGiaChinhTriXaHoi = txtThamGiaChinhTri.Text
+                    //HoTen = txtHoTen.Text.Trim(),
+                    //MaDonVi = txtMaDonVi.Text,
+                    //NgaySinh = dtNamSinh.Value,
+                    //TinhTrang = chkbxConSong.Checked ? true : false,
+                    //QueQuan = txtQueQuan.Text,
+                    //NoiOHienNay = txtNoiOHienNay.Text,
+                    //ChucVuDaGiu = txtChucVuDaGiu.Text,
+                    //CoQuanDaLamViec = txtCoQuanDaTungLamViec.Text,
+                    //NgayVaoDang = dtNgayVaoDang.Value,
+                    //NgayChinhThuc = dtNgayChinhThuc.Value,
+                    //DiDong = txtDiDong.Text,
+                    //MayBan = txtMayBan.Text,
+                    //DanhHieuDaDuocPhong = txtDanhHieu.Text,
+                    //QuaTrinhCongTac = txtQuaTrinhCongTac.Text,
+                    //ThamGiaChinhTriXaHoi = txtThamGiaChinhTri.Text
                 };
                 if (!CanBoQuaCacThoiKiRepository.Insert(item))
                 {
@@ -177,22 +177,22 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                var item = CanBoQuaCacThoiKiRepository.SelectByID(int.Parse(txtMaCanBo.Text));
-                item.HoTen = txtHoTen.Text.Trim();
-                item.MaDonVi = txtMaDonVi.Text;
-                item.NgaySinh = dtNamSinh.Value;
-                item.TinhTrang = chkbxConSong.Checked ? true : false;
-                item.QueQuan = txtQueQuan.Text;
-                item.NoiOHienNay = txtNoiOHienNay.Text;
-                item.ChucVuDaGiu = txtChucVuDaGiu.Text;
-                item.CoQuanDaLamViec = txtCoQuanDaTungLamViec.Text;
-                item.NgayVaoDang = dtNgayVaoDang.Value;
-                item.NgayChinhThuc = dtNgayChinhThuc.Value;
-                item.DiDong = txtDiDong.Text;
-                item.MayBan = txtMayBan.Text;
-                item.DanhHieuDaDuocPhong = txtDanhHieu.Text;
-                item.QuaTrinhCongTac = txtQuaTrinhCongTac.Text;
-                item.ThamGiaChinhTriXaHoi = txtThamGiaChinhTri.Text;
+                //var item = CanBoQuaCacThoiKiRepository.SelectByID(int.Parse(txtMaCanBo.Text));
+                //item.HoTen = txtHoTen.Text.Trim();
+                //item.MaDonVi = txtMaDonVi.Text;
+                //item.NgaySinh = dtNamSinh.Value;
+                //item.TinhTrang = chkbxConSong.Checked ? true : false;
+                //item.QueQuan = txtQueQuan.Text;
+                //item.NoiOHienNay = txtNoiOHienNay.Text;
+                //item.ChucVuDaGiu = txtChucVuDaGiu.Text;
+                //item.CoQuanDaLamViec = txtCoQuanDaTungLamViec.Text;
+                //item.NgayVaoDang = dtNgayVaoDang.Value;
+                //item.NgayChinhThuc = dtNgayChinhThuc.Value;
+                //item.DiDong = txtDiDong.Text;
+                //item.MayBan = txtMayBan.Text;
+                //item.DanhHieuDaDuocPhong = txtDanhHieu.Text;
+                //item.QuaTrinhCongTac = txtQuaTrinhCongTac.Text;
+                //item.ThamGiaChinhTriXaHoi = txtThamGiaChinhTri.Text;
                 return CanBoQuaCacThoiKiRepository.Save();
             }
             catch

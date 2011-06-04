@@ -15,7 +15,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return DataContext.Instance.DanTocs.OrderBy(item => item.TenDanToc).ToList();
 		}
 
-		public static DanToc SelectByID(string madantoc)
+		public static DanToc SelectByID(int madantoc)
 		{
 			return DataContext.Instance.DanTocs.FirstOrDefault(item => item.MaDanToc == madantoc );
 		}
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(string madantoc)
+		public static bool Delete(int madantoc)
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<DanToc> RetrieveByID(string madantoc)
+		public static List<DanToc> RetrieveByID(int madantoc)
 		{
 			return (from item in DataContext.Instance.DanTocs where  item.MaDanToc == madantoc  select item).ToList();
 		}

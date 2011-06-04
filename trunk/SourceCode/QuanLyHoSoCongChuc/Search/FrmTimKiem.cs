@@ -89,16 +89,16 @@ namespace QuanLyHoSoCongChuc.Search
 
             var nhanvien = new NhanVienModel
             {
-                MaDonVi = txtMaDonVi.Text,
-                HoTenNhanVien = txtHoTen.Text.Trim(),
-                MaGioiTinh = cbxGioiTinh.SelectedIndex > -1 ? ((GioiTinh)cbxGioiTinh.SelectedItem).MaGioiTinh : null,
-                QueQuan = txtQueQuan.Text.Trim(),
-                MaDanToc = cbxDanToc.SelectedIndex > -1 ? ((DanToc)cbxDanToc.SelectedItem).MaDanToc : null,
-                MaTonGiao = cbxTonGiao.SelectedIndex > -1 ? ((TonGiao)cbxTonGiao.SelectedItem).MaTonGiao : null,
-                MaTrinhDoChinhTri = cbxLyLuanChinhTri.SelectedIndex > -1 ? ((TrinhDoChinhTri)cbxLyLuanChinhTri.SelectedItem).MaTrinhDoChinhTri : null,
-                MaTrinhDoHocVan = cbxHocVan.SelectedIndex > -1 ? ((TrinhDoHocVan)cbxHocVan.SelectedItem).MaTrinhDoHocVan : null,
-                MaTrinhDoChuyenMon = cbxHocHam.SelectedIndex > -1 ? ((TrinhDoChuyenMon)cbxHocHam.SelectedItem).MaTrinhDoChuyenMon : null,
-                CongViecHienNay = txtCongVienChinh.Text.Trim()
+                //MaDonVi = txtMaDonVi.Text,
+                //HoTenNhanVien = txtHoTen.Text.Trim(),
+                //MaGioiTinh = cbxGioiTinh.SelectedIndex > -1 ? ((GioiTinh)cbxGioiTinh.SelectedItem).MaGioiTinh : null,
+                //QueQuan = txtQueQuan.Text.Trim(),
+                //MaDanToc = cbxDanToc.SelectedIndex > -1 ? ((DanToc)cbxDanToc.SelectedItem).MaDanToc : null,
+                //MaTonGiao = cbxTonGiao.SelectedIndex > -1 ? ((TonGiao)cbxTonGiao.SelectedItem).MaTonGiao : null,
+                //MaTrinhDoChinhTri = cbxLyLuanChinhTri.SelectedIndex > -1 ? ((TrinhDoChinhTri)cbxLyLuanChinhTri.SelectedItem).MaTrinhDoChinhTri : null,
+                //MaTrinhDoHocVan = cbxHocVan.SelectedIndex > -1 ? ((TrinhDoHocVan)cbxHocVan.SelectedItem).MaTrinhDoHocVan : null,
+                //MaTrinhDoChuyenMon = cbxHocHam.SelectedIndex > -1 ? ((TrinhDoChuyenMon)cbxHocHam.SelectedItem).MaTrinhDoChuyenMon : null,
+                //CongViecHienNay = txtCongVienChinh.Text.Trim()
             };
             if (ckbxEnableNgaySinh.Checked)
                 nhanvien.NgaySinh = dtpSinhNgay.Value;
@@ -111,24 +111,24 @@ namespace QuanLyHoSoCongChuc.Search
             if (dmTuoiDang.Text != "")
                 nhanvien.TuoiDang = int.Parse(dmTuoiDang.Text);
 
-            var lstItem = NhanVienRepository.SearchByTieuChiChung(nhanvien);
-            lstvNhanVien.Items.Clear();
-            if (lstItem.Count > 0)
-            {
-                ListViewItem objListViewItem;
-                for (int i = 0; i < lstItem.Count; i++)
-                {
-                    objListViewItem = new ListViewItem();
-                    objListViewItem.Tag = lstItem[i];
-                    objListViewItem.Text = lstItem[i].MaNhanVien;
-                    objListViewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
-                    objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
-                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
-                    objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
-                    lstvNhanVien.Items.Add(objListViewItem);
-                }
-                txtTongSo.Text = "Tìm thấy " + lstItem.Count + " nhân viên";
-            }
+            //var lstItem = NhanVienRepository.SearchByTieuChiChung(nhanvien);
+            //lstvNhanVien.Items.Clear();
+            //if (lstItem.Count > 0)
+            //{
+            //    ListViewItem objListViewItem;
+            //    for (int i = 0; i < lstItem.Count; i++)
+            //    {
+            //        objListViewItem = new ListViewItem();
+            //        objListViewItem.Tag = lstItem[i];
+            //        objListViewItem.Text = lstItem[i].MaNhanVien;
+            //        objListViewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
+            //        objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
+            //        objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
+            //        objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
+            //        lstvNhanVien.Items.Add(objListViewItem);
+            //    }
+            //    txtTongSo.Text = "Tìm thấy " + lstItem.Count + " nhân viên";
+            //}
 
             GlobalVars.PosLoading();
         }
@@ -222,12 +222,12 @@ namespace QuanLyHoSoCongChuc.Search
         /// </summary>
         public void LoadTrinhDoChinhTri()
         {
-            var lstItem = TrinhDoChinhTriRepository.SelectAll();
-            if (lstItem.Count > 0)
-            {
-                cbxLyLuanChinhTri.DataSource = lstItem;
-                cbxLyLuanChinhTri.SelectedIndex = -1;
-            }
+            //var lstItem = TrinhDoChinhTriRepository.SelectAll();
+            //if (lstItem.Count > 0)
+            //{
+            //    cbxLyLuanChinhTri.DataSource = lstItem;
+            //    cbxLyLuanChinhTri.SelectedIndex = -1;
+            //}
         }
 
         /// <summary>
@@ -235,12 +235,12 @@ namespace QuanLyHoSoCongChuc.Search
         /// </summary>
         public void LoadHocVan()
         {
-            var lstItem = TrinhDoHocVanRepository.SelectAll();
-            if (lstItem.Count > 0)
-            {
-                cbxHocVan.DataSource = lstItem;
-                cbxHocVan.SelectedIndex = -1;
-            }
+            //var lstItem = TrinhDoHocVanRepository.SelectAll();
+            //if (lstItem.Count > 0)
+            //{
+            //    cbxHocVan.DataSource = lstItem;
+            //    cbxHocVan.SelectedIndex = -1;
+            //}
         }
 
         /// <summary>
@@ -248,12 +248,12 @@ namespace QuanLyHoSoCongChuc.Search
         /// </summary>
         public void LoadHocHam()
         {
-            var lstItem = TrinhDoChuyenMonRepository.SelectAll();
-            if (lstItem.Count > 0)
-            {
-                cbxHocHam.DataSource = lstItem;
-                cbxHocHam.SelectedIndex = -1;
-            }
+            //var lstItem = TrinhDoChuyenMonRepository.SelectAll();
+            //if (lstItem.Count > 0)
+            //{
+            //    cbxHocHam.DataSource = lstItem;
+            //    cbxHocHam.SelectedIndex = -1;
+            //}
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -720,103 +720,103 @@ namespace QuanLyHoSoCongChuc.Search
             cbxDieuKien.Items.Clear();
             if (attr.IsForeignKey)
             {
-                cbxGiaTriTimKiem.Visible = true;
-                txtGiaTriTimKiem.Visible = false;
-                switch (attr.ReferTo)
-                {
-                    case "HinhThucTuyenDung":
-                        var lstHinhThucTuyenDung = HinhThucTuyenDungRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstHinhThucTuyenDung;
-                        break;
-                    case "TrinhDoNgoaiNgu":
-                        var lstTrinhDoNgoaiNgu = TrinhDoNgoaiNguRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstTrinhDoNgoaiNgu;
-                        break;
-                    case "TrinhDoChuyenMon":
-                        var lstTrinhDoChuyenMon = TrinhDoChuyenMonRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstTrinhDoChuyenMon;
-                        break;
-                    case "TrinhDoChinhTri":
-                        var lstTrinhDoChinhTri = TrinhDoChinhTriRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstTrinhDoChinhTri;
-                        break;
-                    case "TrinhDoTinHoc":
-                        var lstTrinhDoTinHoc = TrinhDoTinHocRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstTrinhDoTinHoc;
-                        break;
-                    case "TrinhDoHocVan":
-                        var lstTrinhDoHocVan = TrinhDoHocVanRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstTrinhDoHocVan;
-                        break;
-                    case "TrinhDoQuanLyNhaNuoc":
-                        var lstTrinhDoQuanLyNhaNuoc = TrinhDoQuanLyNhaNuocRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstTrinhDoQuanLyNhaNuoc;
-                        break;
-                    case "CongViec":
-                        var lstCongViec = CongViecRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstCongViec;
-                        break;
-                    case "DienUuTienGiaDinh":
-                        var lstDienUuTienGiaDinh = DienUuTienGiaDinhRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstDienUuTienGiaDinh;
-                        break;
-                    case "DienUuTienBanThan":
-                        var lstDienUuTienBanThan = DienUuTienBanThanRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstDienUuTienBanThan;
-                        break;
-                    case "ChucVu":
-                        var lstChucVu = ChucVuRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstChucVu;
-                        break;
-                    case "TinhTrangHonNhan":
-                        var lstTinhTrangHonNhan = TinhTrangHonNhanRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstTinhTrangHonNhan;
-                        break;
-                    case "TonGiao":
-                        var lstTonGiao = TonGiaoRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstTonGiao;
-                        break;
-                    case "ThanhPhanXuatThan":
-                        var lstThanhPhanXuatThan = ThanhPhanXuatThanRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstThanhPhanXuatThan;
-                        break;
-                    case "DangHocBoiDuongDaoTao":
-                        var lstDangHocBoiDuongDaoTao = DangHocBoiDuongDaoTaoRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstDangHocBoiDuongDaoTao;
-                        break;
-                    case "GioiTinh":
-                        var lstGioiTinh = GioiTinhRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstGioiTinh;
-                        break;
-                    case "DanToc":
-                        var lstDanToc = DanTocRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstDanToc;
-                        break;
-                    case "DoanVien":
-                        var lstDoanVien = DoanVienRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstDoanVien;
-                        break;
-                    case "Huong85":
-                        var lstHuong85 = Huong85Repository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstHuong85;
-                        break;
-                    case "NgachCongChuc":
-                        var lstNgachCongChuc = NgachCongChucRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstNgachCongChuc;
-                        break;
-                    case "LoaiCanBo":
-                        var lstLoaiCanBo = LoaiCanBoRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstLoaiCanBo;
-                        break;
-                    case "LoaiNghiBaoHiemXaHoi":
-                        var lstLoaiNghiBaoHiemXaHoi = LoaiNghiBaoHiemXaHoiRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstLoaiNghiBaoHiemXaHoi;
-                        break;
-                    case "DonVi":
-                        var lstDonVi = DonViRepository.SelectAll();
-                        cbxGiaTriTimKiem.DataSource = lstDonVi;
-                        break;
-                }
+                //cbxGiaTriTimKiem.Visible = true;
+                //txtGiaTriTimKiem.Visible = false;
+                //switch (attr.ReferTo)
+                //{
+                //    case "HinhThucTuyenDung":
+                //        var lstHinhThucTuyenDung = HinhThucTuyenDungRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstHinhThucTuyenDung;
+                //        break;
+                //    case "TrinhDoNgoaiNgu":
+                //        var lstTrinhDoNgoaiNgu = TrinhDoNgoaiNguRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstTrinhDoNgoaiNgu;
+                //        break;
+                //    case "TrinhDoChuyenMon":
+                //        var lstTrinhDoChuyenMon = TrinhDoChuyenMonRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstTrinhDoChuyenMon;
+                //        break;
+                //    case "TrinhDoChinhTri":
+                //        var lstTrinhDoChinhTri = TrinhDoChinhTriRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstTrinhDoChinhTri;
+                //        break;
+                //    case "TrinhDoTinHoc":
+                //        var lstTrinhDoTinHoc = TrinhDoTinHocRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstTrinhDoTinHoc;
+                //        break;
+                //    case "TrinhDoHocVan":
+                //        var lstTrinhDoHocVan = TrinhDoHocVanRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstTrinhDoHocVan;
+                //        break;
+                //    case "TrinhDoQuanLyNhaNuoc":
+                //        var lstTrinhDoQuanLyNhaNuoc = TrinhDoQuanLyNhaNuocRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstTrinhDoQuanLyNhaNuoc;
+                //        break;
+                //    case "CongViec":
+                //        var lstCongViec = CongViecRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstCongViec;
+                //        break;
+                //    case "DienUuTienGiaDinh":
+                //        var lstDienUuTienGiaDinh = DienUuTienGiaDinhRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstDienUuTienGiaDinh;
+                //        break;
+                //    case "DienUuTienBanThan":
+                //        var lstDienUuTienBanThan = DienUuTienBanThanRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstDienUuTienBanThan;
+                //        break;
+                //    case "ChucVu":
+                //        var lstChucVu = ChucVuRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstChucVu;
+                //        break;
+                //    case "TinhTrangHonNhan":
+                //        var lstTinhTrangHonNhan = TinhTrangHonNhanRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstTinhTrangHonNhan;
+                //        break;
+                //    case "TonGiao":
+                //        var lstTonGiao = TonGiaoRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstTonGiao;
+                //        break;
+                //    case "ThanhPhanXuatThan":
+                //        var lstThanhPhanXuatThan = ThanhPhanXuatThanRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstThanhPhanXuatThan;
+                //        break;
+                //    case "DangHocBoiDuongDaoTao":
+                //        var lstDangHocBoiDuongDaoTao = DangHocBoiDuongDaoTaoRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstDangHocBoiDuongDaoTao;
+                //        break;
+                //    case "GioiTinh":
+                //        var lstGioiTinh = GioiTinhRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstGioiTinh;
+                //        break;
+                //    case "DanToc":
+                //        var lstDanToc = DanTocRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstDanToc;
+                //        break;
+                //    case "DoanVien":
+                //        var lstDoanVien = DoanVienRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstDoanVien;
+                //        break;
+                //    case "Huong85":
+                //        var lstHuong85 = Huong85Repository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstHuong85;
+                //        break;
+                //    case "NgachCongChuc":
+                //        var lstNgachCongChuc = NgachCongChucRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstNgachCongChuc;
+                //        break;
+                //    case "LoaiCanBo":
+                //        var lstLoaiCanBo = LoaiCanBoRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstLoaiCanBo;
+                //        break;
+                //    case "LoaiNghiBaoHiemXaHoi":
+                //        var lstLoaiNghiBaoHiemXaHoi = LoaiNghiBaoHiemXaHoiRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstLoaiNghiBaoHiemXaHoi;
+                //        break;
+                //    case "DonVi":
+                //        var lstDonVi = DonViRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstDonVi;
+                //        break;
+                //}
                 cbxGiaTriTimKiem.SelectedIndex = -1;
                 cbxDieuKien.Items.Add("=");
                 cbxDieuKien.Items.Add("<>");
@@ -886,52 +886,52 @@ namespace QuanLyHoSoCongChuc.Search
         public string GetGiaTriTimKiem(object item)
         {
             var value = "";
-            if (item.GetType() == typeof(HinhThucTuyenDung))
-                value = ((HinhThucTuyenDung)item).MaHinhThucTuyenDung;
-            else if (item.GetType() == typeof(TrinhDoNgoaiNgu))
-                value = ((TrinhDoNgoaiNgu)item).MaTrinhDoNgoaiNgu;
-            else if (item.GetType() == typeof(TrinhDoChuyenMon))
-                value = ((TrinhDoChuyenMon)item).MaTrinhDoChuyenMon;
-            else if (item.GetType() == typeof(TrinhDoChinhTri))
-                value = ((TrinhDoChinhTri)item).MaTrinhDoChinhTri;
-            else if (item.GetType() == typeof(TrinhDoTinHoc))
-                value = ((TrinhDoTinHoc)item).MaTrinhDoTinHoc;
-            else if (item.GetType() == typeof(TrinhDoHocVan))
-                value = ((TrinhDoHocVan)item).MaTrinhDoHocVan;
-            else if (item.GetType() == typeof(TrinhDoQuanLyNhaNuoc))
-                value = ((TrinhDoQuanLyNhaNuoc)item).MaTrinhDoQuanLyNhaNuoc;
-            else if (item.GetType() == typeof(CongViec))
-                value = ((CongViec)item).MaCongViec;
-            else if (item.GetType() == typeof(DienUuTienGiaDinh))
-                value = ((DienUuTienGiaDinh)item).MaDienUuTienGiaDinh;
-            else if (item.GetType() == typeof(DienUuTienBanThan))
-                value = ((DienUuTienBanThan)item).MaDienUuTienBanThan;
-            else if (item.GetType() == typeof(ChucVu))
-                value = ((ChucVu)item).MaChucVu;
-            else if (item.GetType() == typeof(TinhTrangHonNhan))
-                value = ((TinhTrangHonNhan)item).MaTinhTrangHonNhan;
-            else if (item.GetType() == typeof(TonGiao))
-                value = ((TonGiao)item).MaTonGiao;
-            else if (item.GetType() == typeof(ThanhPhanXuatThan))
-                value = ((ThanhPhanXuatThan)item).MaThanhPhanXuatThan;
-            else if (item.GetType() == typeof(DangHocBoiDuongDaoTao))
-                value = ((DangHocBoiDuongDaoTao)item).MaDTBD;
-            else if (item.GetType() == typeof(GioiTinh))
-                value = ((GioiTinh)item).MaGioiTinh;
-            else if (item.GetType() == typeof(DanToc))
-                value = ((DanToc)item).MaDanToc;
-            else if (item.GetType() == typeof(DoanVien))
-                value = ((DoanVien)item).MaDoanVien;
-            else if (item.GetType() == typeof(Huong85))
-                value = ((Huong85)item).MaHuong;
-            else if (item.GetType() == typeof(NgachCongChuc))
-                value = ((NgachCongChuc)item).MaNgachCongChuc;
-            else if (item.GetType() == typeof(LoaiCanBo))
-                value = ((LoaiCanBo)item).MaLoaiCanBo;
-            else if (item.GetType() == typeof(LoaiNghiBaoHiemXaHoi))
-                value = ((LoaiNghiBaoHiemXaHoi)item).MaLoaiNghiBaoHiemXaHoi;
-            else if (item.GetType() == typeof(DonVi))
-                value = ((DonVi)item).MaDonVi;
+            //if (item.GetType() == typeof(HinhThucTuyenDung))
+            //    value = ((HinhThucTuyenDung)item).MaHinhThucTuyenDung;
+            //else if (item.GetType() == typeof(TrinhDoNgoaiNgu))
+            //    value = ((TrinhDoNgoaiNgu)item).MaTrinhDoNgoaiNgu;
+            //else if (item.GetType() == typeof(TrinhDoChuyenMon))
+            //    value = ((TrinhDoChuyenMon)item).MaTrinhDoChuyenMon;
+            //else if (item.GetType() == typeof(TrinhDoChinhTri))
+            //    value = ((TrinhDoChinhTri)item).MaTrinhDoChinhTri;
+            //else if (item.GetType() == typeof(TrinhDoTinHoc))
+            //    value = ((TrinhDoTinHoc)item).MaTrinhDoTinHoc;
+            //else if (item.GetType() == typeof(TrinhDoHocVan))
+            //    value = ((TrinhDoHocVan)item).MaTrinhDoHocVan;
+            //else if (item.GetType() == typeof(TrinhDoQuanLyNhaNuoc))
+            //    value = ((TrinhDoQuanLyNhaNuoc)item).MaTrinhDoQuanLyNhaNuoc;
+            //else if (item.GetType() == typeof(CongViec))
+            //    value = ((CongViec)item).MaCongViec;
+            //else if (item.GetType() == typeof(DienUuTienGiaDinh))
+            //    value = ((DienUuTienGiaDinh)item).MaDienUuTienGiaDinh;
+            //else if (item.GetType() == typeof(DienUuTienBanThan))
+            //    value = ((DienUuTienBanThan)item).MaDienUuTienBanThan;
+            //else if (item.GetType() == typeof(ChucVu))
+            //    value = ((ChucVu)item).MaChucVu;
+            //else if (item.GetType() == typeof(TinhTrangHonNhan))
+            //    value = ((TinhTrangHonNhan)item).MaTinhTrangHonNhan;
+            //else if (item.GetType() == typeof(TonGiao))
+            //    value = ((TonGiao)item).MaTonGiao;
+            //else if (item.GetType() == typeof(ThanhPhanXuatThan))
+            //    value = ((ThanhPhanXuatThan)item).MaThanhPhanXuatThan;
+            //else if (item.GetType() == typeof(DangHocBoiDuongDaoTao))
+            //    value = ((DangHocBoiDuongDaoTao)item).MaDTBD;
+            //else if (item.GetType() == typeof(GioiTinh))
+            //    value = ((GioiTinh)item).MaGioiTinh;
+            //else if (item.GetType() == typeof(DanToc))
+            //    value = ((DanToc)item).MaDanToc;
+            //else if (item.GetType() == typeof(DoanVien))
+            //    value = ((DoanVien)item).MaDoanVien;
+            //else if (item.GetType() == typeof(Huong85))
+            //    value = ((Huong85)item).MaHuong;
+            //else if (item.GetType() == typeof(NgachCongChuc))
+            //    value = ((NgachCongChuc)item).MaNgachCongChuc;
+            //else if (item.GetType() == typeof(LoaiCanBo))
+            //    value = ((LoaiCanBo)item).MaLoaiCanBo;
+            //else if (item.GetType() == typeof(LoaiNghiBaoHiemXaHoi))
+            //    value = ((LoaiNghiBaoHiemXaHoi)item).MaLoaiNghiBaoHiemXaHoi;
+            //else if (item.GetType() == typeof(DonVi))
+            //    value = ((DonVi)item).MaDonVi;
             return value;
         }
 
@@ -952,8 +952,12 @@ namespace QuanLyHoSoCongChuc.Search
         {
             if (lstvNhanVien.SelectedItems.Count > 0)
             {
+                GlobalVars.PreLoading();
+
                 var nhanvien = (NhanVien)lstvNhanVien.SelectedItems[0].Tag;
                 FrmThongTinNhanVien frm = new FrmThongTinNhanVien(nhanvien.MaNhanVien);
+
+                GlobalVars.PosLoading();
                 frm.ShowDialog();
             }
         }

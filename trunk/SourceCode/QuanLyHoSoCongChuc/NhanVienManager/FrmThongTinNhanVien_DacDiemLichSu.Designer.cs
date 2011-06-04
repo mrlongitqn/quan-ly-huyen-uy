@@ -496,7 +496,7 @@
             // 
             this.labelX21.BackColor = System.Drawing.Color.Transparent;
             this.labelX21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX21.Location = new System.Drawing.Point(3, -1);
+            this.labelX21.Location = new System.Drawing.Point(3, 1);
             this.labelX21.Name = "labelX21";
             this.labelX21.Size = new System.Drawing.Size(156, 20);
             this.labelX21.TabIndex = 84;

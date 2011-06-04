@@ -35,11 +35,11 @@ namespace QuanLyHoSoCongChuc.UsersManager
 
         private void dtgvChucNang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dtgvLoaiNguoiDung.SelectedRows == null || dtgvLoaiNguoiDung.SelectedRows.Count == 0)
-                return;
-            var selectedItem = dtgvLoaiNguoiDung.SelectedRows[0];
-            txtMaLoaiNguoiDung.Text = ((LoaiNGuoiDung)selectedItem.DataBoundItem).MaQuyen.ToString();
-            txtTenLoaiNguoiDung.Text = ((LoaiNGuoiDung)selectedItem.DataBoundItem).TenQuyen.ToString();
+            //if (dtgvLoaiNguoiDung.SelectedRows == null || dtgvLoaiNguoiDung.SelectedRows.Count == 0)
+            //    return;
+            //var selectedItem = dtgvLoaiNguoiDung.SelectedRows[0];
+            //txtMaLoaiNguoiDung.Text = ((LoaiNguoiDung)selectedItem.DataBoundItem).MaQuyen.ToString();
+            //txtTenLoaiNguoiDung.Text = ((LoaiNguoiDung)selectedItem.DataBoundItem).TenQuyen.ToString();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         /// </summary>
         private void LoadData()
         {
-            var lstItem = LoaiNGuoiDungRepository.SelectAll();
+            var lstItem = LoaiNguoiDungRepository.SelectAll();
             if (lstItem.Count > 0)
             {
                 dtgvLoaiNguoiDung.DataSource = lstItem;
@@ -187,11 +187,11 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                var item = new LoaiNGuoiDung
+                var item = new LoaiNguoiDung
                 {
                     TenQuyen = txtTenLoaiNguoiDung.Text
                 };
-                if (!LoaiNGuoiDungRepository.Insert(item))
+                if (!LoaiNguoiDungRepository.Insert(item))
                 {
                     return false;
                 }
@@ -211,9 +211,9 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                var item = LoaiNGuoiDungRepository.SelectByID(int.Parse(txtMaLoaiNguoiDung.Text));
+                var item = LoaiNguoiDungRepository.SelectByID(int.Parse(txtMaLoaiNguoiDung.Text));
                 item.TenQuyen = txtTenLoaiNguoiDung.Text;
-                return LoaiNGuoiDungRepository.Save();
+                return LoaiNguoiDungRepository.Save();
             }
             catch
             {
@@ -229,7 +229,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                return LoaiNGuoiDungRepository.Delete(int.Parse(txtMaLoaiNguoiDung.Text));
+                return LoaiNguoiDungRepository.Delete(int.Parse(txtMaLoaiNguoiDung.Text));
             }
             catch
             {

@@ -8,23 +8,23 @@ namespace QuanLyHoSoCongChuc.Repositories
 	#region using
 	using QuanLyHoSoCongChuc.Models;
 	#endregion
-	public class LoaiNGuoiDungRepository
+	public class LoaiNguoiDungRepository
 	{
-		public static List<LoaiNGuoiDung> SelectAll()
+		public static List<LoaiNguoiDung> SelectAll()
 		{
-			return DataContext.Instance.LoaiNGuoiDungs.ToList();
+			return DataContext.Instance.LoaiNguoiDungs.OrderBy(item => item.TenQuyen).ToList();
 		}
 
-		public static LoaiNGuoiDung SelectByID(int maquyen)
+		public static LoaiNguoiDung SelectByID(int maquyen)
 		{
-			return DataContext.Instance.LoaiNGuoiDungs.FirstOrDefault(item => item.MaQuyen == maquyen );
+			return DataContext.Instance.LoaiNguoiDungs.FirstOrDefault(item => item.MaQuyen == maquyen );
 		}
 
-		public static bool Insert(LoaiNGuoiDung obj)
+		public static bool Insert(LoaiNguoiDung obj)
 		{
 			try
 			{
-				DataContext.Instance.LoaiNGuoiDungs.AddObject(obj);
+				DataContext.Instance.LoaiNguoiDungs.AddObject(obj);
 				DataContext.Instance.SaveChanges();
 				return true;
 			}
@@ -38,8 +38,8 @@ namespace QuanLyHoSoCongChuc.Repositories
 		{
 			try
 			{
-				var delitem = DataContext.Instance.LoaiNGuoiDungs.FirstOrDefault(item => item.MaQuyen == maquyen );
-				DataContext.Instance.LoaiNGuoiDungs.DeleteObject(delitem);
+				var delitem = DataContext.Instance.LoaiNguoiDungs.FirstOrDefault(item => item.MaQuyen == maquyen );
+				DataContext.Instance.LoaiNguoiDungs.DeleteObject(delitem);
 				DataContext.Instance.SaveChanges();
 				return true;
 			}
@@ -62,9 +62,9 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<LoaiNGuoiDung> RetrieveByID(int maquyen)
+		public static List<LoaiNguoiDung> RetrieveByID(int maquyen)
 		{
-			return (from item in DataContext.Instance.LoaiNGuoiDungs where  item.MaQuyen == maquyen  select item).ToList();
+			return (from item in DataContext.Instance.LoaiNguoiDungs where  item.MaQuyen == maquyen  select item).ToList();
 		}
 
 	}

@@ -9,6 +9,30 @@ using System.Threading;
 namespace QuanLyHoSoCongChuc.Utils
 {
     /// <summary>
+    /// Class is used to transfer data
+    /// </summary>
+    public class MyEvent : EventArgs
+    {
+        public string Data { get; set; }
+        public MyEvent(string _data)
+        {
+            Data = _data;
+        }
+    }
+
+    /// <summary>
+    /// Class is used to transfer data loaded from file
+    /// </summary>
+    public class MyQueryEvent : EventArgs
+    {
+        public object Data { get; set; }
+        public MyQueryEvent(object _data)
+        {
+            Data = _data;
+        }
+    }
+
+    /// <summary>
     /// Enum is used to detemine update mode
     /// </summary>
     public enum EnumUpdateMode
@@ -152,40 +176,18 @@ namespace QuanLyHoSoCongChuc.Utils
 
         public static void PosLoading()
         {
-            waiting.Close();
-            waiting.Dispose();
-            waiting = null;
-            ASynInvoke.EndInvoke(result);
+            if (waiting != null)
+            {
+                waiting.Close();
+                waiting = null;
+            }
         }   
 
         public static void WaitLoad()
         {
-            waiting = new FrmLoading("Đang lấy dữ liệu");
+            waiting = new FrmLoading("Đang thực hiện");
             waiting.ShowDialog();
-        }
-    }
-
-    /// <summary>
-    /// Class is used to transfer data
-    /// </summary>
-    public class MyEvent : EventArgs
-    {
-        public string Data { get; set; }
-        public MyEvent(string _data)
-        {
-            Data = _data;
-        }
-    }
-
-    /// <summary>
-    /// Class is used to transfer data loaded from file
-    /// </summary>
-    public class MyQueryEvent : EventArgs
-    {
-        public object Data { get; set; }
-        public MyQueryEvent(object _data)
-        {
-            Data = _data;
+            Thread.Sleep(500);
         }
     }
 }

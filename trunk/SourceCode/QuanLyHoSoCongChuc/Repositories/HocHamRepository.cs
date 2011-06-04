@@ -12,7 +12,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<HocHam> SelectAll()
 		{
-			return DataContext.Instance.HocHams.ToList();
+			return DataContext.Instance.HocHams.OrderBy(item => item.TenHocHam).ToList();
 		}
 
 		public static HocHam SelectByID(int mahocham)

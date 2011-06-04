@@ -12,10 +12,10 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<LoaiDonVi> SelectAll()
 		{
-			return DataContext.Instance.LoaiDonVis.ToList();
+			return DataContext.Instance.LoaiDonVis.OrderBy(item => item.TenLoaiDonVi).ToList();
 		}
 
-		public static LoaiDonVi SelectByID(string maloaidonvi)
+		public static LoaiDonVi SelectByID(int maloaidonvi)
 		{
 			return DataContext.Instance.LoaiDonVis.FirstOrDefault(item => item.MaLoaiDonVi == maloaidonvi );
 		}
@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(string maloaidonvi)
+		public static bool Delete(int maloaidonvi)
 		{
 			try
 			{
@@ -62,7 +62,7 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<LoaiDonVi> RetrieveByID(string maloaidonvi)
+		public static List<LoaiDonVi> RetrieveByID(int maloaidonvi)
 		{
 			return (from item in DataContext.Instance.LoaiDonVis where  item.MaLoaiDonVi == maloaidonvi  select item).ToList();
 		}

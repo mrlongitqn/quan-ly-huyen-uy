@@ -21,15 +21,17 @@ namespace QuanLyHoSoCongChuc.Danh_muc
     #region Using
     using QuanLyHoSoCongChuc.Models;
     using QuanLyHoSoCongChuc.Repositories;
+    using QuanLyHoSoCongChuc.OtherForms;
     #endregion
-    public partial class FrmDanhMuc :  DockContent
+    public partial class FrmDanhMuc : Office2007Form
     {
         NhanVienControl m_NhanVienCtrl = new NhanVienControl();
-        List<LoaiDonVi> lstLoaiDonVi;
-        List<PhanLoaiDonVi> lstPhanLoai;
         public bool EnableButtonChon = false;
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
+        // Hidden files are used to store ids 
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaLoaiDonVi;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaPhanLoai;
 
         public FrmDanhMuc()
         {
@@ -39,6 +41,7 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             btXoa.Enabled = false;
             btSave.Enabled = false;
             btChon.Enabled = false;
+            InitHiddenFields();
         }
 
         private string m_tagNode = string.Empty;
@@ -56,33 +59,13 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             else
                 btChon.Visible = false;
         }
-        void init()
+
+        private void init()
         {
-            loadLoaiDonVi();
-            loadPhanLoai();
             loadTreeView();
         }
-        void loadPhanLoai()
-        {
-            lstPhanLoai = PhanLoaiDonViRepository.SelectAll();
-            for (int i = 0; i < lstPhanLoai.Count; i++)
-            {
-                cbPhanLoai.Items.Add(new ListItem(lstPhanLoai[i].MaPhanLoai, lstPhanLoai[i].TenPhanLoai));
-            }
-            if (lstPhanLoai.Count > 0)
-                cbPhanLoai.SelectedIndex = 0;
-        }
-        void loadLoaiDonVi()
-        {
-            lstLoaiDonVi = LoaiDonViRepository.SelectAll();
-            for (int i = 0; i < lstLoaiDonVi.Count; i++)
-            {
-                cbLoaiDonVi.Items.Add(new ListItem(lstLoaiDonVi[i].MaLoaiDonVi, lstLoaiDonVi[i].TenLoaiDonVi));
-            }
-            if (lstLoaiDonVi.Count > 0)
-                cbLoaiDonVi.SelectedIndex = 0;
-        }
-        void loadTreeView()
+
+        private void loadTreeView()
         {
             treeView1.Nodes.Clear();
             TreeNode root = new TreeNode("039 - Đảng bộ Tỉnh Hà Tĩnh");
@@ -136,8 +119,17 @@ namespace QuanLyHoSoCongChuc.Danh_muc
 
         private void btnThemLoaiDonVi_Click(object sender, EventArgs e)
         {
-            FrmThemLoaiDonVi frm = new FrmThemLoaiDonVi();//FrmLoaiCoSo();
+            FrmQuanLyLoaiDonVi frm = new FrmQuanLyLoaiDonVi();//FrmLoaiCoSo();
+            frm.Handler += RetrieveLoaiDonVi;
             frm.ShowDialog();
+        }
+
+        public void RetrieveLoaiDonVi(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaLoaiDonVi.Text = comp[0];
+            txtLoaiDonVi.Text = comp[1];
         }
 
         private void btXoa_Click(object sender, EventArgs e)
@@ -149,7 +141,7 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             bool Kq = DonViRepository.Delete(DonViID);
             if (Kq)
             {
-                MessageBox.Show("Xóa đơn vị thành công.");
+                MessageBox.Show("Xóa đơn vị thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadTreeView();
             }
         }
@@ -166,28 +158,19 @@ namespace QuanLyHoSoCongChuc.Danh_muc
                 MessageBox.Show("Vui lòng nhập tên đơn vị");
                 return;
             }
+
             DonVi dv = new DonVi();
-            dv.MaDonVi = txtMaDonVi.Text;
-            dv.TenDonVi = txtTenDonVi.Text;
+            dv.MaDonVi = txtMaDonVi.Text.Trim();
+            dv.TenDonVi = txtTenDonVi.Text.Trim();
 
             string maQuanHuyen = treeView1.SelectedNode.Text.Split('-')[0].Trim();
             dv.MaQuanHuyen = maQuanHuyen;
-            try
-            {
-                ListItem LoaiDV = (ListItem)cbLoaiDonVi.SelectedItem;
-                dv.MaLoaiDonVi = LoaiDV.ID;
-            }
-            catch (Exception ex)
-            {
-                
-            }
+            dv.MaLoaiDonVi = int.Parse(txtMaLoaiDonVi.Text);
+            dv.MaPhanLoaiDonVi = int.Parse(txtMaPhanLoai.Text);
 
-            ListItem PhanLoaiDV = (ListItem)cbPhanLoai.SelectedItem;
-            dv.MaPhanLoaiDonVi = PhanLoaiDV.ID;
-            bool Kq = DonViRepository.Insert(dv);
-            if (Kq)
+            if (DonViRepository.Insert(dv))
             {
-                MessageBox.Show("Thêm 1 đơn vị mới thành công.");
+                MessageBox.Show("Thêm 1 đơn vị mới thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadTreeView();
             }
         }
@@ -207,104 +190,75 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             if (level == 1 || level == 3)
             {
                 btThem.Enabled = false;
-                //btXoa.Enabled = false;
-                //btSave.Enabled = false;
             }
             else
             {
                 btThem.Enabled = true;
-                //btXoa.Enabled = true;
-                //btSave.Enabled = true;
             }
+
             if (level == 3)
             {
                 btChon.Enabled = true;
                 btXoa.Enabled = true;
                 btSave.Enabled = true;
+
+                string maDonVi = treeView1.SelectedNode.Text.Split('-')[0].Trim();
+                var donvi = DonViRepository.SelectByID(maDonVi);
+                if (donvi != null)
+                {
+                    txtMaDonVi.Text = donvi.MaDonVi;
+                    txtMaDonVi.ReadOnly = true;
+                    txtTenDonVi.Text = donvi.TenDonVi;
+                    txtLoaiDonVi.Text = donvi.LoaiDonVi.TenLoaiDonVi;
+                    txtMaLoaiDonVi.Text = donvi.MaLoaiDonVi.ToString();
+                    txtPhanLoaiDonVi.Text = donvi.PhanLoaiDonVi.TenPhanLoai;
+                    txtMaPhanLoai.Text = donvi.MaPhanLoaiDonVi.ToString();
+                }
             }
             else {
                 btChon.Enabled = false;
                 btXoa.Enabled = false;
                 btSave.Enabled = false;
-            }
-            string maDonVi = treeView1.SelectedNode.Text.Split('-')[0].Trim();
-            var DonVi = DonViRepository.SelectByID(maDonVi);
-            if (DonVi != null) 
-            {
-                txtMaDonVi.Text = DonVi.MaDonVi;
-                txtTenDonVi.Text = DonVi.TenDonVi;
 
-                for (int i = 0; i < lstLoaiDonVi.Count; i++)
-                {
-                    if (lstLoaiDonVi[i].MaLoaiDonVi == DonVi.MaLoaiDonVi)
-                        cbLoaiDonVi.SelectedIndex = i;
-                }
-                for (int i = 0; i < lstPhanLoai.Count; i++)
-                {
-                    if (lstPhanLoai[i].MaPhanLoai == DonVi.MaPhanLoaiDonVi)
-                        cbPhanLoai.SelectedIndex = i;
-                }
+                txtMaDonVi.ReadOnly = false;
+                txtMaDonVi.Text = "";
+                txtTenDonVi.Text = "";
+                txtLoaiDonVi.Text = "";
+                txtMaLoaiDonVi.Text = "";
+                txtPhanLoaiDonVi.Text = "";
+                txtMaPhanLoai.Text = "";
             }
-            
         }
 
         private void btSave_Click(object sender, EventArgs e)
         {
-            var dv = DonViRepository.SelectByID( txtMaDonVi.Text);
-            
+            var dv = DonViRepository.SelectByID(txtMaDonVi.Text);
+
             dv.TenDonVi = txtTenDonVi.Text;
+            dv.MaLoaiDonVi = int.Parse(txtMaLoaiDonVi.Text);
+            dv.MaPhanLoaiDonVi = int.Parse(txtMaPhanLoai.Text);
 
-            //string maQuanHuyen = treeView1.SelectedNode.Text.Split('-')[0].Trim();
-            //dv.MaQuanHuyen = maQuanHuyen;
-            try
-            {
-                ListItem LoaiDV = (ListItem)cbLoaiDonVi.SelectedItem;
-                dv.MaLoaiDonVi = LoaiDV.ID;
-            }
-            catch (Exception ex)
-            {
-
-            }
-
-            ListItem PhanLoaiDV = (ListItem)cbPhanLoai.SelectedItem;
-            dv.MaPhanLoaiDonVi = PhanLoaiDV.ID;
             bool Kq = DonViRepository.Save();
             if (Kq)
             {
-                MessageBox.Show("Lưu thành công.");
+                MessageBox.Show("Lưu thành công.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 loadTreeView();
             }
         }
 
-        private void cbPhanLoai_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btThemPhanLoai_Click(object sender, EventArgs e)
         {
-            FrmThemPhanLoaiDonVi frm = new FrmThemPhanLoaiDonVi();
-            frm.HandleExitForm += ShowMe;
+            FrmQuanLyPhanLoaiDonVi frm = new FrmQuanLyPhanLoaiDonVi();
+            frm.Handler += RetrievePhanLoaiDonVi;
             frm.ShowDialog();
         }
 
-        //Process change forms screen
-        public void ShowMe(object sender, EventArgs e)
+        public void RetrievePhanLoaiDonVi(object sender, EventArgs e)
         {
             var eventType = (MyEvent)e;
-            string ErrorText = "";
-            switch (eventType.Data)
-            {
-                //case MyEnum.ADD_CONTACT:
-                //case MyEnum.EDIT_CONTACT:
-                //case MyEnum.DELETE_CONTACT:
-                //    //LoadData(ref ErrorText);
-                //    break;
-
-                //case MyEnum.DEFAULT:
-                //    break;
-            }
-            Show();
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaPhanLoai.Text = comp[0];
+            txtPhanLoaiDonVi.Text = comp[1];
         }
 
         /// <summary>
@@ -331,9 +285,29 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             this.Handler(this, e);
         }
 
-        private void btnThoat_Click_1(object sender, EventArgs e)
+        private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        /// <summary>
+        /// tuansl added: Init hidden fields to store ids
+        /// </summary>
+        private void InitHiddenFields()
+        {
+            // Add a new textbox
+            txtMaLoaiDonVi = new DevComponents.DotNetBar.Controls.TextBoxX
+            {
+                Name = "txtMaLoaiDonVi"
+            };
+            txtMaLoaiDonVi.Visible = false;
+
+            // Add a new textbox
+            txtMaPhanLoai = new DevComponents.DotNetBar.Controls.TextBoxX
+            {
+                Name = "txtMaPhanLoai"
+            };
+            txtMaPhanLoai.Visible = false;
         }
     } 
 }
