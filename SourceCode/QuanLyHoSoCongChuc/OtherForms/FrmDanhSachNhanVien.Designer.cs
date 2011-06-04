@@ -1,4 +1,4 @@
-﻿namespace QuanLyHoSoCongChuc
+﻿namespace QuanLyHoSoCongChuc.OtherForms
 {
     partial class FrmDanhSachNhanVien
     {

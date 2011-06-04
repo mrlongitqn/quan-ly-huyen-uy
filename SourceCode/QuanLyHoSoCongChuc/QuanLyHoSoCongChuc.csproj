@@ -599,10 +599,10 @@
     <Compile Include="Utils\Attribute.cs" />
     <Compile Include="Utils\DBProvider.cs" />
     <Compile Include="Utils\EncryptText.cs" />
-    <Compile Include="FrmChucVu.cs">
+    <Compile Include="OtherForms\FrmChucVu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmChucVu.Designer.cs">
+    <Compile Include="OtherForms\FrmChucVu.Designer.cs">
       <DependentUpon>FrmChucVu.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDangNhap.cs">
@@ -623,16 +623,16 @@
     <Compile Include="Danh muc\FrmDanhMucHanhChinh.Designer.cs">
       <DependentUpon>FrmDanhMucHanhChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDanhSachNhanVien.cs">
+    <Compile Include="OtherForms\FrmDanhSachNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDanhSachNhanVien.Designer.cs">
+    <Compile Include="OtherForms\FrmDanhSachNhanVien.Designer.cs">
       <DependentUpon>FrmDanhSachNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDanToc.cs">
+    <Compile Include="OtherForms\FrmDanToc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmDanToc.Designer.cs">
+    <Compile Include="OtherForms\FrmDanToc.Designer.cs">
       <DependentUpon>FrmDanToc.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDoiMatKhau.cs">
@@ -647,16 +647,16 @@
     <Compile Include="frmKetNoiCSDL.Designer.cs">
       <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLoaiNghiBaoHiemXaHoi.cs">
+    <Compile Include="OtherForms\FrmLoaiNghiBaoHiemXaHoi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLoaiNghiBaoHiemXaHoi.Designer.cs">
+    <Compile Include="OtherForms\FrmLoaiNghiBaoHiemXaHoi.Designer.cs">
       <DependentUpon>FrmLoaiNghiBaoHiemXaHoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmLuong.cs">
+    <Compile Include="OtherForms\FrmLuong.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmLuong.Designer.cs">
+    <Compile Include="OtherForms\FrmLuong.Designer.cs">
       <DependentUpon>FrmLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
@@ -665,28 +665,28 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmNgachCongChuc.cs">
+    <Compile Include="OtherForms\FrmNgachCongChuc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmNgachCongChuc.Designer.cs">
+    <Compile Include="OtherForms\FrmNgachCongChuc.Designer.cs">
       <DependentUpon>FrmNgachCongChuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmQuanLyDonVi.cs">
+    <Compile Include="OtherForms\FrmQuanLyDonVi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmQuanLyDonVi.Designer.cs">
+    <Compile Include="OtherForms\FrmQuanLyDonVi.Designer.cs">
       <DependentUpon>FrmQuanLyDonVi.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmQuanHe.cs">
+    <Compile Include="OtherForms\FrmQuanHe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmQuanHe.Designer.cs">
+    <Compile Include="OtherForms\FrmQuanHe.Designer.cs">
       <DependentUpon>FrmQuanHe.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmThanhPhanXuatThan.cs">
+    <Compile Include="OtherForms\FrmThanhPhanXuatThan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmThanhPhanXuatThan.Designer.cs">
+    <Compile Include="OtherForms\FrmThanhPhanXuatThan.Designer.cs">
       <DependentUpon>FrmThanhPhanXuatThan.cs</DependentUpon>
     </Compile>
     <Compile Include="Danh muc\FrmThemDanhMucHanhChinh.cs">
@@ -713,40 +713,40 @@
     <Compile Include="Search\FrmTimKiem2.Designer.cs">
       <DependentUpon>FrmTimKiem2.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTonGiao.cs">
+    <Compile Include="OtherForms\FrmTonGiao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTonGiao.Designer.cs">
+    <Compile Include="OtherForms\FrmTonGiao.Designer.cs">
       <DependentUpon>FrmTonGiao.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTrinhDoChinhTri.cs">
+    <Compile Include="OtherForms\FrmTrinhDoChinhTri.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTrinhDoChinhTri.Designer.cs">
+    <Compile Include="OtherForms\FrmTrinhDoChinhTri.Designer.cs">
       <DependentUpon>FrmTrinhDoChinhTri.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTrinhDoChuyenMon.cs">
+    <Compile Include="OtherForms\FrmTrinhDoChuyenMon.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTrinhDoChuyenMon.Designer.cs">
+    <Compile Include="OtherForms\FrmTrinhDoChuyenMon.Designer.cs">
       <DependentUpon>FrmTrinhDoChuyenMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTrinhDoHocVan.cs">
+    <Compile Include="OtherForms\FrmTrinhDoHocVan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTrinhDoHocVan.Designer.cs">
+    <Compile Include="OtherForms\FrmTrinhDoHocVan.Designer.cs">
       <DependentUpon>FrmTrinhDoHocVan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTrinhDoNgoaiNgu.cs">
+    <Compile Include="OtherForms\FrmTrinhDoNgoaiNgu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTrinhDoNgoaiNgu.Designer.cs">
+    <Compile Include="OtherForms\FrmTrinhDoNgoaiNgu.Designer.cs">
       <DependentUpon>FrmTrinhDoNgoaiNgu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTrinhDoTinHoc.cs">
+    <Compile Include="OtherForms\FrmTrinhDoTinHoc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmTrinhDoTinHoc.Designer.cs">
+    <Compile Include="OtherForms\FrmTrinhDoTinHoc.Designer.cs">
       <DependentUpon>FrmTrinhDoTinHoc.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Criteria.cs" />
@@ -789,7 +789,7 @@
     <EmbeddedResource Include="DataManager\FrmPhieuBaoChuyenNgach.resx">
       <DependentUpon>FrmPhieuBaoChuyenNgach.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmChucVu.resx">
+    <EmbeddedResource Include="OtherForms\FrmChucVu.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmChucVu.cs</DependentUpon>
     </EmbeddedResource>
@@ -803,10 +803,10 @@
     <EmbeddedResource Include="Danh muc\FrmDanhMucHanhChinh.resx">
       <DependentUpon>FrmDanhMucHanhChinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDanhSachNhanVien.resx">
+    <EmbeddedResource Include="OtherForms\FrmDanhSachNhanVien.resx">
       <DependentUpon>FrmDanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmDanToc.resx">
+    <EmbeddedResource Include="OtherForms\FrmDanToc.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmDanToc.cs</DependentUpon>
     </EmbeddedResource>
@@ -821,11 +821,11 @@
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLoaiNghiBaoHiemXaHoi.resx">
+    <EmbeddedResource Include="OtherForms\FrmLoaiNghiBaoHiemXaHoi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmLoaiNghiBaoHiemXaHoi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmLuong.resx">
+    <EmbeddedResource Include="OtherForms\FrmLuong.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmLuong.cs</DependentUpon>
     </EmbeddedResource>
@@ -833,19 +833,19 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmNgachCongChuc.resx">
+    <EmbeddedResource Include="OtherForms\FrmNgachCongChuc.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmNgachCongChuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmQuanLyDonVi.resx">
+    <EmbeddedResource Include="OtherForms\FrmQuanLyDonVi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmQuanLyDonVi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmQuanHe.resx">
+    <EmbeddedResource Include="OtherForms\FrmQuanHe.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmQuanHe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmThanhPhanXuatThan.resx">
+    <EmbeddedResource Include="OtherForms\FrmThanhPhanXuatThan.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmThanhPhanXuatThan.cs</DependentUpon>
     </EmbeddedResource>
@@ -956,27 +956,27 @@
     <EmbeddedResource Include="Search\FrmTimKiem2.resx">
       <DependentUpon>FrmTimKiem2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTonGiao.resx">
+    <EmbeddedResource Include="OtherForms\FrmTonGiao.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmTonGiao.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTrinhDoChinhTri.resx">
+    <EmbeddedResource Include="OtherForms\FrmTrinhDoChinhTri.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmTrinhDoChinhTri.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTrinhDoChuyenMon.resx">
+    <EmbeddedResource Include="OtherForms\FrmTrinhDoChuyenMon.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmTrinhDoChuyenMon.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTrinhDoHocVan.resx">
+    <EmbeddedResource Include="OtherForms\FrmTrinhDoHocVan.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmTrinhDoHocVan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTrinhDoNgoaiNgu.resx">
+    <EmbeddedResource Include="OtherForms\FrmTrinhDoNgoaiNgu.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmTrinhDoNgoaiNgu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmTrinhDoTinHoc.resx">
+    <EmbeddedResource Include="OtherForms\FrmTrinhDoTinHoc.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmTrinhDoTinHoc.cs</DependentUpon>
     </EmbeddedResource>
