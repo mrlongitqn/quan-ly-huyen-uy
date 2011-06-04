@@ -10,7 +10,7 @@ using QuanLyHoSoCongChuc.BusinessObject;
 using QuanLyHoSoCongChuc.Controller;
 using QuanLyHoSoCongChuc.DataLayer;
 
-namespace QuanLyHoSoCongChuc
+namespace QuanLyHoSoCongChuc.OtherForms
 {
     public partial class FrmDanhSachNhanVien : Form
     {
