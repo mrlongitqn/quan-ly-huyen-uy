@@ -336,6 +336,7 @@
             // dateTimePicker2
             // 
             this.dateTimePicker2.CustomFormat = "DD-MM-YYYY";
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(179, 154);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(199, 20);
@@ -344,6 +345,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "DD-MM-YYYY";
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(179, 128);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(199, 20);
@@ -363,6 +365,7 @@
             // dtpThoiGianBatdau
             // 
             this.dtpThoiGianBatdau.CustomFormat = "DD-MM-YYYY";
+            this.dtpThoiGianBatdau.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpThoiGianBatdau.Location = new System.Drawing.Point(179, 50);
             this.dtpThoiGianBatdau.Name = "dtpThoiGianBatdau";
             this.dtpThoiGianBatdau.Size = new System.Drawing.Size(199, 20);

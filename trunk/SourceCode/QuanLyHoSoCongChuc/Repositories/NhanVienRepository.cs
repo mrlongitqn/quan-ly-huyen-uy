@@ -139,9 +139,9 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return lstItem;
 		}
 
-		public static List<NhanVien> SelectByMaThuongBinh(int mathuongbinh)
+        public static List<NhanVien> SelectByMaLoaiThuongBinh(int maloaithuongbinh)
 		{
-			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaThuongBinh == mathuongbinh select item).ToList();
+			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaLoaiThuongBinh == maloaithuongbinh select item).ToList();
 			return lstItem;
 		}
 

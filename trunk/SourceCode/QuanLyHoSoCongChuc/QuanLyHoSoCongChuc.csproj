@@ -226,6 +226,12 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="OtherForms\FrmQuanLyChucVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyChucVu.Designer.cs">
+      <DependentUpon>FrmQuanLyChucVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtherForms\FrmQuanLyHuong85.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -607,6 +613,7 @@
     <Compile Include="Repositories\CapUyRepository.cs" />
     <Compile Include="Repositories\ChucNangRepository.cs" />
     <Compile Include="Repositories\ChucVuChinhQuyenRepository.cs" />
+    <Compile Include="Repositories\ChucVuRepository.cs" />
     <Compile Include="Repositories\ChuyenDonViRepository.cs" />
     <Compile Include="Repositories\DanTocRepository.cs" />
     <Compile Include="Repositories\DonViRepository.cs" />
@@ -749,11 +756,11 @@
     <Compile Include="OtherForms\FrmQuanLyNgachCongChuc.Designer.cs">
       <DependentUpon>FrmQuanLyNgachCongChuc.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherForms\FrmQuanLyDonVi.cs">
+    <Compile Include="OtherForms\FrmQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OtherForms\FrmQuanLyDonVi.Designer.cs">
-      <DependentUpon>FrmQuanLyDonVi.cs</DependentUpon>
+    <Compile Include="OtherForms\FrmQuanLyNhanVien.Designer.cs">
+      <DependentUpon>FrmQuanLyNhanVien.cs</DependentUpon>
     </Compile>
     <Compile Include="Danh muc\FrmThemDanhMucHanhChinh.cs">
       <SubType>Form</SubType>
@@ -797,6 +804,9 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyChucVu.resx">
+      <DependentUpon>FrmQuanLyChucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\FrmQuanLyHuong85.resx">
       <DependentUpon>FrmQuanLyHuong85.cs</DependentUpon>
@@ -904,9 +914,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmQuanLyNgachCongChuc.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmQuanLyDonVi.resx">
+    <EmbeddedResource Include="OtherForms\FrmQuanLyNhanVien.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>FrmQuanLyDonVi.cs</DependentUpon>
+      <DependentUpon>FrmQuanLyNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Danh muc\FrmThemDanhMucHanhChinh.resx">
       <DependentUpon>FrmThemDanhMucHanhChinh.cs</DependentUpon>

@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using DevComponents.DotNetBar;
 using QuanLyHoSoCongChuc.Models;
 using QuanLyHoSoCongChuc.Repositories;
+using QuanLyHoSoCongChuc.Utils;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
@@ -17,119 +18,46 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
     public partial class FrmThongTinNhanVien_TomTat : DevComponents.DotNetBar.Office2007Form
     {
         private NhanVien _nhanvien;
+        // Hidden files are used to store ids 
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaChucVu;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaDanToc;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaTonGiao;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaThanhPhanGiaDinh;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaNgheNghiepTruocKhiDuocTuyenDung;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaGiaoDucPhoThong;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaChuyenMonNghiepVu;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaLyLuanChinhTri;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaNgoaiNgu;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaHocViCaoNhat;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaHocHam;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaTinhTrangSucKhoe;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaLoaiThuongBinh;
 
         public FrmThongTinNhanVien_TomTat(NhanVien nhanvien)
         {
             InitializeComponent();
             _nhanvien = nhanvien;
-            LoadDanToc();
-            LoadTonGiao();
-            LoadNgheNghiepTruocTuyenDung();
-            LoadThanhPhanGiaDinh();
+            LoadTomTat();
         }
 
         private void FrmThongTinNhanVien_TomTat_Load(object sender, EventArgs e)
         {
-            LoadTomTat();
+            
         }
 
         public void LoadTomTat()
         {
-            //txtMaNhanVien.Text = _nhanvien.MaNhanVien;
-            //txtSoDienThoai.Text = _nhanvien.DienThoaiDiDong;
-            //txtHoTenDangDung.Text = _nhanvien.TenGoiKhac;
-            //txtNoiSinh.Text = _nhanvien.NoiSinh;
-            //txtQueQuan.Text = _nhanvien.QueQuan;
-            //txtHoKhau.Text = _nhanvien.HoKhauThuongTru;
-            //txtNoiOTamTru.Text = _nhanvien.NoiOHienTai;
-            //SetSelectedDanToc(_nhanvien);
-            //SetSelectedTonGiao(_nhanvien);
-            //SetSelectedNgheNghiepTruocTuyenDung(_nhanvien);
-            //SetSelectedThanhPhanXuatThan(_nhanvien);
-        }
+            txtMaNhanVien.Text = _nhanvien.MaNhanVien;
+            txtSoDienThoai.Text = _nhanvien.SoDienThoai;
+            txtHoTenDangDung.Text = _nhanvien.HoTenDangDung;
+            txtNoiSinh.Text = _nhanvien.NoiSinh;
+            txtQueQuan.Text = _nhanvien.QueQuan;
+            txtHoKhau.Text = _nhanvien.HoKhau;
+            txtNoiOTamTru.Text = _nhanvien.TamTru;
+            picNv.Image = new Bitmap(GlobalVars.g_strPathImages + "\\" + _nhanvien.HinhAnh);
+            txtChucVu.Text = _nhanvien.ChucVu.TenChucVu; 
 
-        public void LoadDanToc()
-        {
-            //var lstItem = DanTocRepository.SelectAll();
-            //if (lstItem.Count > 0)
-            //{
-            //    cbxDanToc.DataSource = lstItem;
-            //}
-        }
-
-        public void LoadTonGiao()
-        {
-            //var lstItem = TonGiaoRepository.SelectAll();
-            //if (lstItem.Count > 0)
-            //{
-            //    cbxTonGiao.DataSource = lstItem;
-            //}
-        }
-
-        public void LoadNgheNghiepTruocTuyenDung()
-        {
-            //var lstItem = NgheNghiepRepository.SelectAll();
-            //if (lstItem.Count > 0)
-            //{
-            //    cbxNgheNghiepTruocKhiDuocTuyenDung.DataSource = lstItem;
-            //}
-        }
-
-        public void LoadThanhPhanGiaDinh()
-        {
-            //var lstItem = ThanhPhanXuatThanRepository.SelectAll();
-            //if (lstItem.Count > 0)
-            //{
-            //    cbxThanhPhanGiaDinh.DataSource = lstItem;
-            //}
-        }
-
-        public void SetSelectedDanToc(NhanVien nhanvien)
-        {
-            //foreach (var item in cbxDanToc.Items)
-            //{
-            //    if (((DanToc)item).MaDanToc == nhanvien.MaDanToc)
-            //    {
-            //        cbxDanToc.SelectedItem = item;
-            //        break;
-            //    }
-            //}
-        }
-
-        public void SetSelectedTonGiao(NhanVien nhanvien)
-        {
-            //foreach (var item in cbxTonGiao.Items)
-            //{
-            //    if (((TonGiao)item).MaTonGiao == nhanvien.MaTonGiao)
-            //    {
-            //        cbxTonGiao.SelectedItem = item;
-            //        break;
-            //    }
-            //}
-        }
-
-        public void SetSelectedThanhPhanXuatThan(NhanVien nhanvien)
-        {
-            //foreach (var item in cbxThanhPhanGiaDinh.Items)
-            //{
-            //    if (((ThanhPhanXuatThan)item).MaThanhPhanXuatThan == nhanvien.MaThanhPhanXuatThan)
-            //    {
-            //        cbxThanhPhanGiaDinh.SelectedItem = item;
-            //        break;
-            //    }
-            //}
-        }
-
-        public void SetSelectedNgheNghiepTruocTuyenDung(NhanVien nhanvien)
-        {
-            //foreach (var item in cbxNgheNghiepTruocKhiDuocTuyenDung.Items)
-            //{
-            //    if (((NgheNghiep)item).MaNgheNghiep == nhanvien.MaNgheNghiepTruocTuyenDung)
-            //    {
-            //        cbxNgheNghiepTruocKhiDuocTuyenDung.SelectedItem = item;
-            //        break;
-            //    }
-            //}
+            
         }
     }
 }
