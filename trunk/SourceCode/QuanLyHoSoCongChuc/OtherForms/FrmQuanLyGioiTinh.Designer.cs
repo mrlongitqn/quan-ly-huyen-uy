@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHoSoCongChuc.OtherForms
 {
-    partial class FrmQuanLyLoaiDonVi
+    partial class FrmQuanLyGioiTinh
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmQuanLyLoaiDonVi));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
@@ -37,25 +36,8 @@
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.txtTenLoaiDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtMaLoaiDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.miniToolStrip = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorChucVu = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSua = new System.Windows.Forms.ToolStripButton();
-            this.toolStripLuu = new System.Windows.Forms.ToolStripButton();
-            this.toolStripThoat = new System.Windows.Forms.ToolStripButton();
+            this.txtTenGioiTinh = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaGioiTinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvDataList = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -73,9 +55,6 @@
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             this.groupPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.miniToolStrip)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorChucVu)).BeginInit();
-            this.bindingNavigatorChucVu.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDataList)).BeginInit();
@@ -110,7 +89,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(492, 52);
             this.labelX3.TabIndex = 1;
-            this.labelX3.Text = "LOẠI ĐƠN VỊ";
+            this.labelX3.Text = "GIỚI TÍNH";
             this.labelX3.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // panelEx2
@@ -137,8 +116,8 @@
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.labelX1);
             this.groupPanel2.Controls.Add(this.labelX2);
-            this.groupPanel2.Controls.Add(this.txtTenLoaiDonVi);
-            this.groupPanel2.Controls.Add(this.txtMaLoaiDonVi);
+            this.groupPanel2.Controls.Add(this.txtTenGioiTinh);
+            this.groupPanel2.Controls.Add(this.txtMaGioiTinh);
             this.groupPanel2.Location = new System.Drawing.Point(77, 6);
             this.groupPanel2.Name = "groupPanel2";
             this.groupPanel2.Size = new System.Drawing.Size(334, 92);
@@ -163,217 +142,49 @@
             this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 1;
-            this.groupPanel2.Text = "Thông Tin Loại Đơn Vị";
+            this.groupPanel2.Text = "Thông Tin Giới Tính";
             // 
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(14, 11);
+            this.labelX1.Location = new System.Drawing.Point(30, 11);
             this.labelX1.Name = "labelX1";
             this.labelX1.Size = new System.Drawing.Size(89, 23);
             this.labelX1.TabIndex = 20;
-            this.labelX1.Text = "Mã loại đơn vị";
+            this.labelX1.Text = "Mã giới tính";
             // 
             // labelX2
             // 
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.Location = new System.Drawing.Point(14, 37);
+            this.labelX2.Location = new System.Drawing.Point(30, 37);
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(89, 23);
             this.labelX2.TabIndex = 16;
-            this.labelX2.Text = "Tên loại đơn vị";
+            this.labelX2.Text = "Tên giới tính";
             // 
-            // txtTenLoaiDonVi
-            // 
-            // 
-            // 
-            // 
-            this.txtTenLoaiDonVi.Border.Class = "TextBoxBorder";
-            this.txtTenLoaiDonVi.Location = new System.Drawing.Point(137, 40);
-            this.txtTenLoaiDonVi.Name = "txtTenLoaiDonVi";
-            this.txtTenLoaiDonVi.Size = new System.Drawing.Size(163, 20);
-            this.txtTenLoaiDonVi.TabIndex = 2;
-            // 
-            // txtMaLoaiDonVi
+            // txtTenGioiTinh
             // 
             // 
             // 
             // 
-            this.txtMaLoaiDonVi.Border.Class = "TextBoxBorder";
-            this.txtMaLoaiDonVi.Enabled = false;
-            this.txtMaLoaiDonVi.Location = new System.Drawing.Point(137, 14);
-            this.txtMaLoaiDonVi.Name = "txtMaLoaiDonVi";
-            this.txtMaLoaiDonVi.ReadOnly = true;
-            this.txtMaLoaiDonVi.Size = new System.Drawing.Size(163, 20);
-            this.txtMaLoaiDonVi.TabIndex = 1;
+            this.txtTenGioiTinh.Border.Class = "TextBoxBorder";
+            this.txtTenGioiTinh.Location = new System.Drawing.Point(137, 40);
+            this.txtTenGioiTinh.Name = "txtTenGioiTinh";
+            this.txtTenGioiTinh.Size = new System.Drawing.Size(163, 20);
+            this.txtTenGioiTinh.TabIndex = 2;
             // 
-            // miniToolStrip
+            // txtMaGioiTinh
             // 
-            this.miniToolStrip.AddNewItem = null;
-            this.miniToolStrip.AutoSize = false;
-            this.miniToolStrip.CanOverflow = false;
-            this.miniToolStrip.CountItem = null;
-            this.miniToolStrip.DeleteItem = null;
-            this.miniToolStrip.Dock = System.Windows.Forms.DockStyle.None;
-            this.miniToolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.miniToolStrip.Location = new System.Drawing.Point(377, 8);
-            this.miniToolStrip.MoveFirstItem = null;
-            this.miniToolStrip.MoveLastItem = null;
-            this.miniToolStrip.MoveNextItem = null;
-            this.miniToolStrip.MovePreviousItem = null;
-            this.miniToolStrip.Name = "miniToolStrip";
-            this.miniToolStrip.PositionItem = null;
-            this.miniToolStrip.Size = new System.Drawing.Size(477, 36);
-            this.miniToolStrip.TabIndex = 0;
             // 
-            // bindingNavigatorSeparator
             // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 36);
             // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 21);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 33);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 36);
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 36);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 36);
-            // 
-            // bindingNavigatorChucVu
-            // 
-            this.bindingNavigatorChucVu.AddNewItem = null;
-            this.bindingNavigatorChucVu.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigatorChucVu.DeleteItem = null;
-            this.bindingNavigatorChucVu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.toolStripSua,
-            this.toolStripLuu,
-            this.toolStripSeparator1,
-            this.toolStripThoat});
-            this.bindingNavigatorChucVu.Location = new System.Drawing.Point(0, 0);
-            this.bindingNavigatorChucVu.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigatorChucVu.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigatorChucVu.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigatorChucVu.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigatorChucVu.Name = "bindingNavigatorChucVu";
-            this.bindingNavigatorChucVu.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigatorChucVu.Size = new System.Drawing.Size(477, 36);
-            this.bindingNavigatorChucVu.TabIndex = 0;
-            this.bindingNavigatorChucVu.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 33);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 33);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 33);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 33);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_01;
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(37, 33);
-            this.bindingNavigatorAddNewItem.Text = "Thêm";
-            this.bindingNavigatorAddNewItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_29;
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(29, 33);
-            this.bindingNavigatorDeleteItem.Text = "Xóa";
-            this.bindingNavigatorDeleteItem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripSua
-            // 
-            this.toolStripSua.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_39;
-            this.toolStripSua.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripSua.Name = "toolStripSua";
-            this.toolStripSua.Size = new System.Drawing.Size(30, 33);
-            this.toolStripSua.Text = "Sửa";
-            this.toolStripSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripLuu
-            // 
-            this.toolStripLuu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
-            this.toolStripLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripLuu.Name = "toolStripLuu";
-            this.toolStripLuu.Size = new System.Drawing.Size(29, 33);
-            this.toolStripLuu.Text = "Lưu";
-            this.toolStripLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            // 
-            // toolStripThoat
-            // 
-            this.toolStripThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
-            this.toolStripThoat.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripThoat.Name = "toolStripThoat";
-            this.toolStripThoat.Size = new System.Drawing.Size(39, 33);
-            this.toolStripThoat.Text = "Thoát";
-            this.toolStripThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.txtMaGioiTinh.Border.Class = "TextBoxBorder";
+            this.txtMaGioiTinh.Enabled = false;
+            this.txtMaGioiTinh.Location = new System.Drawing.Point(137, 14);
+            this.txtMaGioiTinh.Name = "txtMaGioiTinh";
+            this.txtMaGioiTinh.ReadOnly = true;
+            this.txtMaGioiTinh.Size = new System.Drawing.Size(163, 20);
+            this.txtMaGioiTinh.TabIndex = 1;
             // 
             // groupPanel1
             // 
@@ -406,7 +217,7 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 25;
-            this.groupPanel1.Text = "Danh sách loại đơn vị";
+            this.groupPanel1.Text = "Danh sách giới tính";
             // 
             // panel2
             // 
@@ -550,7 +361,7 @@
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // FrmQuanLyLoaiDonVi
+            // FrmQuanLyGioiTinh
             // 
             this.ClientSize = new System.Drawing.Size(492, 528);
             this.Controls.Add(this.groupPanel1);
@@ -558,17 +369,13 @@
             this.Controls.Add(this.panelEx1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmQuanLyLoaiDonVi";
+            this.Name = "FrmQuanLyGioiTinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý chức năng";
-            this.Load += new System.EventHandler(this.FrmQuanLyLoaiDonVi_Load);
+            this.Text = "Quản lý giới tính";
+            this.Load += new System.EventHandler(this.FrmQuanLyGioiTinh_Load);
             this.panelEx1.ResumeLayout(false);
             this.panelEx2.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.miniToolStrip)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorChucVu)).EndInit();
-            this.bindingNavigatorChucVu.ResumeLayout(false);
-            this.bindingNavigatorChucVu.PerformLayout();
             this.groupPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDataList)).EndInit();
@@ -587,25 +394,8 @@
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTenLoaiDonVi;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMaLoaiDonVi;
-        private System.Windows.Forms.BindingNavigator miniToolStrip;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton toolStripSua;
-        private System.Windows.Forms.ToolStripButton toolStripLuu;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripButton toolStripThoat;
-        private System.Windows.Forms.BindingNavigator bindingNavigatorChucVu;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenGioiTinh;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaGioiTinh;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX1;
@@ -615,12 +405,12 @@
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton btnXoa;
         private System.Windows.Forms.ToolStripButton btnLuu;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnThoat;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
         private System.Windows.Forms.ToolStripButton btnReset;
         private System.Windows.Forms.ToolStripButton btnThemMoi;
         private System.Windows.Forms.ToolStripButton btnChon;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator6;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }

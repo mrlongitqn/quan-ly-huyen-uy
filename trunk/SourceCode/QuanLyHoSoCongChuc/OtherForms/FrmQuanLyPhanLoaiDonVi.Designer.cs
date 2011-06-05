@@ -477,7 +477,6 @@
             // 
             // btnChon
             // 
-            this.btnChon.Enabled = false;
             this.btnChon.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Sign_Select_icon;
             this.btnChon.Name = "btnChon";
             this.btnChon.RightToLeftAutoMirrorImage = true;
