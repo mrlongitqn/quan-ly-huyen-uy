@@ -110,8 +110,8 @@ namespace QuanLyHoSoCongChuc.Report
         {
             grid1.Rows.Clear();
             initGird();
-            String sql = " select nv.*, t.TenTrinhDoChuyenMon, dv.TenDonVi";
-            sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+            String sql = " select nv.*, t.TenBangChuyenMonNghiepVu, dv.TenDonVi";
+            sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
             sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
             sql += " where nv.MaDonVi='" + SelectedId + "'";
 
@@ -128,7 +128,7 @@ namespace QuanLyHoSoCongChuc.Report
 
                 DateTime dt = (DateTime)myDt.Rows[r]["NgaySinh"];
                 grid1[2 + r, 3] = new SourceGrid.Cells.Cell(dt.Year, typeof(int));
-                grid1[2 + r, 4] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenTrinhDoChuyenMon"], typeof(String));
+                grid1[2 + r, 4] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenBangChuyenMonNghiepVu"], typeof(String));
                 grid1[2 + r, 5] = new SourceGrid.Cells.Cell("", typeof(String));
                 grid1[2 + r, 6] = new SourceGrid.Cells.Cell("", typeof(String));
                 grid1[2 + r, 7] = new SourceGrid.Cells.Cell("", typeof(String));
@@ -167,6 +167,11 @@ namespace QuanLyHoSoCongChuc.Report
             SelectedId = comp[0];
             txtDonVi.Text = comp[1];
             Level = int.Parse(comp[2]);
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
        
     }

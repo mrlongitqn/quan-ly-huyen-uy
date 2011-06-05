@@ -479,5 +479,10 @@ namespace QuanLyHoSoCongChuc.Report
             txtDonVi.Text = comp[1];
             Level = int.Parse(comp[2]); 
         }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

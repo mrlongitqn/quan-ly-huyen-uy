@@ -97,8 +97,8 @@ namespace QuanLyHoSoCongChuc.Report
                 DGV.Rows[i].Cells["NamCongTac"].Value = dt.ToString("dd/MM/yyyy");
                 DGV.Rows[i].Cells["HeSoLuong"].Value = myDt.Rows[i]["HeSoLuong"].ToString();
                 DGV.Rows[i].Cells["TenChucVu"].Value = myDt.Rows[i]["TenChucVu"].ToString();
-                DGV.Rows[i].Cells["TenTrinhDoChuyenMon"].Value = myDt.Rows[i]["TenTrinhDoChuyenMon"].ToString();
-                DGV.Rows[i].Cells["TenTrinhDoChinhTri"].Value = myDt.Rows[i]["TenTrinhDoChinhTri"].ToString();
+                DGV.Rows[i].Cells["TenBangChuyenMonNghiepVu"].Value = myDt.Rows[i]["TenBangChuyenMonNghiepVu"].ToString();
+                DGV.Rows[i].Cells["TenBangLyLuanChinhTri"].Value = myDt.Rows[i]["TenBangLyLuanChinhTri"].ToString();
             }
             if (myDt.Rows.Count == 0)
             {
@@ -119,6 +119,11 @@ namespace QuanLyHoSoCongChuc.Report
             frm.Handler += GetDonVi;
             frm.EnableButtonChon = true;
             frm.ShowDialog();
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -31,6 +31,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtNK3 = new System.Windows.Forms.TextBox();
+            this.txtNK2 = new System.Windows.Forms.TextBox();
+            this.txtNK1 = new System.Windows.Forms.TextBox();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.txtNLB3 = new System.Windows.Forms.TextBox();
+            this.txtNLB2 = new System.Windows.Forms.TextBox();
+            this.txtNLB1 = new System.Windows.Forms.TextBox();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.txtDonVi = new System.Windows.Forms.TextBox();
             this.btnChonDonVi = new System.Windows.Forms.Button();
             this.cbKy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -41,7 +49,7 @@
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.btLuuBieu = new DevComponents.DotNetBar.ButtonX();
             this.btInBieu = new DevComponents.DotNetBar.ButtonX();
             this.btBaoBieu = new DevComponents.DotNetBar.ButtonX();
@@ -62,18 +70,10 @@
             this.QueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NoiOHienTai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTrinhDoChuyenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenBangChuyenMonNghiepVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChuyenNganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTrinhDoChinhTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenBangLyLuanChinhTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtNK3 = new System.Windows.Forms.TextBox();
-            this.txtNK2 = new System.Windows.Forms.TextBox();
-            this.txtNK1 = new System.Windows.Forms.TextBox();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.txtNLB3 = new System.Windows.Forms.TextBox();
-            this.txtNLB2 = new System.Windows.Forms.TextBox();
-            this.txtNLB1 = new System.Windows.Forms.TextBox();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -113,7 +113,7 @@
             this.groupPanel1.Controls.Add(this.btnChonDonVi);
             this.groupPanel1.Controls.Add(this.cbKy);
             this.groupPanel1.Controls.Add(this.cbDoiTuong);
-            this.groupPanel1.Controls.Add(this.buttonX1);
+            this.groupPanel1.Controls.Add(this.btThoat);
             this.groupPanel1.Controls.Add(this.btLuuBieu);
             this.groupPanel1.Controls.Add(this.btInBieu);
             this.groupPanel1.Controls.Add(this.btBaoBieu);
@@ -151,6 +151,74 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
+            // 
+            // txtNK3
+            // 
+            this.txtNK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK3.Location = new System.Drawing.Point(506, 176);
+            this.txtNK3.Name = "txtNK3";
+            this.txtNK3.Size = new System.Drawing.Size(192, 22);
+            this.txtNK3.TabIndex = 166;
+            // 
+            // txtNK2
+            // 
+            this.txtNK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK2.Location = new System.Drawing.Point(506, 151);
+            this.txtNK2.Name = "txtNK2";
+            this.txtNK2.Size = new System.Drawing.Size(192, 22);
+            this.txtNK2.TabIndex = 165;
+            // 
+            // txtNK1
+            // 
+            this.txtNK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK1.Location = new System.Drawing.Point(506, 126);
+            this.txtNK1.Name = "txtNK1";
+            this.txtNK1.Size = new System.Drawing.Size(192, 22);
+            this.txtNK1.TabIndex = 164;
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Location = new System.Drawing.Point(442, 127);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(84, 25);
+            this.labelX5.TabIndex = 163;
+            this.labelX5.Text = "Người Ký";
+            // 
+            // txtNLB3
+            // 
+            this.txtNLB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB3.Location = new System.Drawing.Point(150, 176);
+            this.txtNLB3.Name = "txtNLB3";
+            this.txtNLB3.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB3.TabIndex = 162;
+            // 
+            // txtNLB2
+            // 
+            this.txtNLB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB2.Location = new System.Drawing.Point(150, 151);
+            this.txtNLB2.Name = "txtNLB2";
+            this.txtNLB2.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB2.TabIndex = 161;
+            // 
+            // txtNLB1
+            // 
+            this.txtNLB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB1.Location = new System.Drawing.Point(150, 126);
+            this.txtNLB1.Name = "txtNLB1";
+            this.txtNLB1.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB1.TabIndex = 160;
+            // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Location = new System.Drawing.Point(44, 126);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(94, 25);
+            this.labelX6.TabIndex = 159;
+            this.labelX6.Text = "Người lập biểu";
             // 
             // txtDonVi
             // 
@@ -225,15 +293,16 @@
             // 
             this.comboItem3.Text = "Danh sách tổng hợp cán bộ, CC, VC  hợp đồng";
             // 
-            // buttonX1
+            // btThoat
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(745, 78);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(80, 20);
-            this.buttonX1.TabIndex = 145;
-            this.buttonX1.Text = "Thoát";
+            this.btThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btThoat.Location = new System.Drawing.Point(745, 78);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(80, 20);
+            this.btThoat.TabIndex = 145;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btLuuBieu
             // 
@@ -392,9 +461,9 @@
             this.QueQuan,
             this.NoiOHienTai,
             this.TenChucVu,
-            this.TenTrinhDoChuyenMon,
+            this.TenBangChuyenMonNghiepVu,
             this.ChuyenNganh,
-            this.TenTrinhDoChinhTri,
+            this.TenBangLyLuanChinhTri,
             this.GhiChu});
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -447,11 +516,11 @@
             this.TenChucVu.HeaderText = "Chức vụ công tác";
             this.TenChucVu.Name = "TenChucVu";
             // 
-            // TenTrinhDoChuyenMon
+            // TenBangChuyenMonNghiepVu
             // 
-            this.TenTrinhDoChuyenMon.DataPropertyName = "TenTrinhDoChuyenMon";
-            this.TenTrinhDoChuyenMon.HeaderText = "Trình độ chuyên môn";
-            this.TenTrinhDoChuyenMon.Name = "TenTrinhDoChuyenMon";
+            this.TenBangChuyenMonNghiepVu.DataPropertyName = "TenBangChuyenMonNghiepVu";
+            this.TenBangChuyenMonNghiepVu.HeaderText = "Trình độ chuyên môn";
+            this.TenBangChuyenMonNghiepVu.Name = "TenBangChuyenMonNghiepVu";
             // 
             // ChuyenNganh
             // 
@@ -459,85 +528,17 @@
             this.ChuyenNganh.HeaderText = "Chuyên ngành";
             this.ChuyenNganh.Name = "ChuyenNganh";
             // 
-            // TenTrinhDoChinhTri
+            // TenBangLyLuanChinhTri
             // 
-            this.TenTrinhDoChinhTri.DataPropertyName = "TenTrinhDoChinhTri";
-            this.TenTrinhDoChinhTri.HeaderText = "Trình độ lý luận chính trị";
-            this.TenTrinhDoChinhTri.Name = "TenTrinhDoChinhTri";
+            this.TenBangLyLuanChinhTri.DataPropertyName = "TenBangLyLuanChinhTri";
+            this.TenBangLyLuanChinhTri.HeaderText = "Trình độ lý luận chính trị";
+            this.TenBangLyLuanChinhTri.Name = "TenBangLyLuanChinhTri";
             // 
             // GhiChu
             // 
             this.GhiChu.DataPropertyName = "GhiChu";
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
-            // 
-            // txtNK3
-            // 
-            this.txtNK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK3.Location = new System.Drawing.Point(506, 176);
-            this.txtNK3.Name = "txtNK3";
-            this.txtNK3.Size = new System.Drawing.Size(192, 22);
-            this.txtNK3.TabIndex = 166;
-            // 
-            // txtNK2
-            // 
-            this.txtNK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK2.Location = new System.Drawing.Point(506, 151);
-            this.txtNK2.Name = "txtNK2";
-            this.txtNK2.Size = new System.Drawing.Size(192, 22);
-            this.txtNK2.TabIndex = 165;
-            // 
-            // txtNK1
-            // 
-            this.txtNK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK1.Location = new System.Drawing.Point(506, 126);
-            this.txtNK1.Name = "txtNK1";
-            this.txtNK1.Size = new System.Drawing.Size(192, 22);
-            this.txtNK1.TabIndex = 164;
-            // 
-            // labelX5
-            // 
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.Location = new System.Drawing.Point(442, 127);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(84, 25);
-            this.labelX5.TabIndex = 163;
-            this.labelX5.Text = "Người Ký";
-            // 
-            // txtNLB3
-            // 
-            this.txtNLB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNLB3.Location = new System.Drawing.Point(150, 176);
-            this.txtNLB3.Name = "txtNLB3";
-            this.txtNLB3.Size = new System.Drawing.Size(192, 22);
-            this.txtNLB3.TabIndex = 162;
-            // 
-            // txtNLB2
-            // 
-            this.txtNLB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNLB2.Location = new System.Drawing.Point(150, 151);
-            this.txtNLB2.Name = "txtNLB2";
-            this.txtNLB2.Size = new System.Drawing.Size(192, 22);
-            this.txtNLB2.TabIndex = 161;
-            // 
-            // txtNLB1
-            // 
-            this.txtNLB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNLB1.Location = new System.Drawing.Point(150, 126);
-            this.txtNLB1.Name = "txtNLB1";
-            this.txtNLB1.Size = new System.Drawing.Size(192, 22);
-            this.txtNLB1.TabIndex = 160;
-            // 
-            // labelX6
-            // 
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX6.Location = new System.Drawing.Point(44, 126);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(94, 25);
-            this.labelX6.TabIndex = 159;
-            this.labelX6.Text = "Người lập biểu";
             // 
             // FrmDanhSachCBCCVC
             // 
@@ -570,7 +571,7 @@
         private DevComponents.Editors.ComboItem comboItem1;
         private DevComponents.Editors.ComboItem comboItem2;
         private DevComponents.Editors.ComboItem comboItem3;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX btThoat;
         private DevComponents.DotNetBar.ButtonX btLuuBieu;
         private DevComponents.DotNetBar.ButtonX btInBieu;
         private DevComponents.DotNetBar.ButtonX btBaoBieu;
@@ -591,9 +592,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn QueQuan;
         private System.Windows.Forms.DataGridViewTextBoxColumn NoiOHienTai;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenChucVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTrinhDoChuyenMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBangChuyenMonNghiepVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChuyenNganh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTrinhDoChinhTri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBangLyLuanChinhTri;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         public System.Windows.Forms.TextBox txtDonVi;
         private System.Windows.Forms.Button btnChonDonVi;

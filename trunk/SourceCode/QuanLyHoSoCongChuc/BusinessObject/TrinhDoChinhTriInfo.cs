@@ -4,23 +4,23 @@ using System.Text;
 
 namespace QuanLyHoSoCongChuc.BusinessObject
 {
-    public class TrinhDoChinhTriInfo
+    public class BangLyLuanChinhTriInfo
     {
-        public TrinhDoChinhTriInfo()
+        public BangLyLuanChinhTriInfo()
         {
         }
-        private String m_MaTrinhDoChinhTri;
-        public String MaTrinhDoChinhTri
+        private String m_MaBangLyLuanChinhTri;
+        public String MaBangLyLuanChinhTri
         {
-            get { return m_MaTrinhDoChinhTri; }
-            set { m_MaTrinhDoChinhTri = value; }
+            get { return m_MaBangLyLuanChinhTri; }
+            set { m_MaBangLyLuanChinhTri = value; }
         }
 
-        private String m_TenTrinhDoChinhTri;
-        public String TenTrinhDoChinhTri
+        private String m_TenBangLyLuanChinhTri;
+        public String TenBangLyLuanChinhTri
         {
-            get { return m_TenTrinhDoChinhTri; }
-            set { m_TenTrinhDoChinhTri = value; }
+            get { return m_TenBangLyLuanChinhTri; }
+            set { m_TenBangLyLuanChinhTri = value; }
         }
     }
 }

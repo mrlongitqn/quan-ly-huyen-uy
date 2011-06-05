@@ -131,15 +131,15 @@ namespace QuanLyHoSoCongChuc
                 rpt.DataDefinition.FormulaFields["HocVi"].Text = "'- Học hàm, học vị cao nhất: Cử nhân, năm 2010, chuyên ngành Công nghệ thông tin'";
 
                 // Parameter 17b
-                sql = "select * from TrinhDoChinhTri where MaTrinhDoChinhTri='" + NhanVienDt.Rows[0]["MaTrinhDoChinhTri"].ToString() + "'";
+                sql = "select * from BangLyLuanChinhTri where MaBangLyLuanChinhTri='" + NhanVienDt.Rows[0]["MaBangLyLuanChinhTri"].ToString() + "'";
                 ds.Clear();
                 ds = service.ExecuteQuery(sql);
-                String TenTrinhDoChinhTri = ds.Tables[0].Rows[0]["TenTrinhDoChinhTri"].ToString() ;
+                String TenBangLyLuanChinhTri = ds.Tables[0].Rows[0]["TenBangLyLuanChinhTri"].ToString() ;
 
                 sql = "select * from TrinhDoNgoaiNgu where MaTrinhDoNgoaiNgu='" + NhanVienDt.Rows[0]["MaTrinhDoNgoaiNgu"].ToString() + "'";
                 ds.Clear();
                 ds = service.ExecuteQuery(sql);
-                rpt.DataDefinition.FormulaFields["LyLuanChinhTri"].Text = "'- Lý luận chính trị: " + TenTrinhDoChinhTri + ".   - Ngoại ngữ: " + ds.Tables[0].Rows[0]["TenTrinhDoNgoaiNgu"] + "'";
+                rpt.DataDefinition.FormulaFields["LyLuanChinhTri"].Text = "'- Lý luận chính trị: " + TenBangLyLuanChinhTri + ".   - Ngoại ngữ: " + ds.Tables[0].Rows[0]["TenTrinhDoNgoaiNgu"] + "'";
 
                 // Parameter 18
 

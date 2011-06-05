@@ -389,11 +389,11 @@ namespace QuanLyHoSoCongChuc.BusinessObject
         }
 
         //
-        private String m_TrinhDoChuyenMon;
-        public String TrinhDoChuyenMon
+        private String m_BangChuyenMonNghiepVu;
+        public String BangChuyenMonNghiepVu
         {
-            get { return m_TrinhDoChuyenMon; }
-            set { m_TrinhDoChuyenMon = value; }
+            get { return m_BangChuyenMonNghiepVu; }
+            set { m_BangChuyenMonNghiepVu = value; }
         }
 
         //

@@ -7,62 +7,62 @@ using QuanLyHoSoCongChuc.BusinessObject;
 
 namespace QuanLyHoSoCongChuc.Controller
 {
-    public class TrinhDoChinhTriControl
+    public class BangLyLuanChinhTriControl
     {
-        TrinhDoChinhTriData m_TrinhDoChinhTriData = new TrinhDoChinhTriData();
+        BangLyLuanChinhTriData m_BangLyLuanChinhTriData = new BangLyLuanChinhTriData();
 
 
         public void HienThiComboBox(ComboBox cmb)
         {
-            cmb.DataSource = m_TrinhDoChinhTriData.LayDanhSachTrinhDoChinhTri();
-            cmb.DisplayMember = "TenTrinhDoChinhTri";
-            cmb.ValueMember = "MaTrinhDoChinhTri";
+            cmb.DataSource = m_BangLyLuanChinhTriData.LayDanhSachBangLyLuanChinhTri();
+            cmb.DisplayMember = "TenBangLyLuanChinhTri";
+            cmb.ValueMember = "MaBangLyLuanChinhTri";
         }
 
         //        
-        public void HienThiDataGridViewComboBoxColumnTrinhDoChinhTri(DataGridViewComboBoxColumn cmbColumnTrinhDoChinhTri)
+        public void HienThiDataGridViewComboBoxColumnBangLyLuanChinhTri(DataGridViewComboBoxColumn cmbColumnBangLyLuanChinhTri)
         {
-            cmbColumnTrinhDoChinhTri.DataSource = m_TrinhDoChinhTriData.LayDanhSachTrinhDoChinhTri();
-            cmbColumnTrinhDoChinhTri.DisplayMember = "TenTrinhDoChinhTri";
-            cmbColumnTrinhDoChinhTri.ValueMember = "MaTrinhDoChinhTri";
+            cmbColumnBangLyLuanChinhTri.DataSource = m_BangLyLuanChinhTriData.LayDanhSachBangLyLuanChinhTri();
+            cmbColumnBangLyLuanChinhTri.DisplayMember = "TenBangLyLuanChinhTri";
+            cmbColumnBangLyLuanChinhTri.ValueMember = "MaBangLyLuanChinhTri";
         }
 
         public void HienThi(DataGridView dGV, BindingNavigator bN)
         {
             BindingSource bS = new BindingSource();
-            DataTable tbl = m_TrinhDoChinhTriData.LayDanhSachTrinhDoChinhTri();
+            DataTable tbl = m_BangLyLuanChinhTriData.LayDanhSachBangLyLuanChinhTri();
             bS.DataSource = tbl;
             bN.BindingSource = bS;
             dGV.DataSource = bS;
         }
         //Hien thi DataGirdView     
-        public void HienThi(DataGridView dGV, BindingNavigator bN, TextBox txtMaTrinhDoChinhTri, TextBox txtTenTrinhDoChinhTri)
+        public void HienThi(DataGridView dGV, BindingNavigator bN, TextBox txtMaBangLyLuanChinhTri, TextBox txtTenBangLyLuanChinhTri)
         {
             BindingSource bS = new BindingSource();
-            DataTable tbl = m_TrinhDoChinhTriData.LayDanhSachTrinhDoChinhTri();
+            DataTable tbl = m_BangLyLuanChinhTriData.LayDanhSachBangLyLuanChinhTri();
             bS.DataSource = tbl;
 
-            txtMaTrinhDoChinhTri.DataBindings.Clear();
-            txtMaTrinhDoChinhTri.DataBindings.Add("Text", bS, "MaTrinhDoChinhTri");
-            txtTenTrinhDoChinhTri.DataBindings.Clear();
-            txtTenTrinhDoChinhTri.DataBindings.Add("Text", bS, "TenTrinhDoChinhTri");
+            txtMaBangLyLuanChinhTri.DataBindings.Clear();
+            txtMaBangLyLuanChinhTri.DataBindings.Add("Text", bS, "MaBangLyLuanChinhTri");
+            txtTenBangLyLuanChinhTri.DataBindings.Clear();
+            txtTenBangLyLuanChinhTri.DataBindings.Add("Text", bS, "TenBangLyLuanChinhTri");
 
             bN.BindingSource = bS;
             dGV.DataSource = bS;
         }
         public DataRow ThemDongMoi()
         {
-            return m_TrinhDoChinhTriData.ThemDongMoi();
+            return m_BangLyLuanChinhTriData.ThemDongMoi();
         }
 
-        public void ThemTrinhDoChinhTri(DataRow m_Row)
+        public void ThemBangLyLuanChinhTri(DataRow m_Row)
         {
-            m_TrinhDoChinhTriData.ThemTrinhDoChinhTri(m_Row);
+            m_BangLyLuanChinhTriData.ThemBangLyLuanChinhTri(m_Row);
         }
 
-        public bool LuuTrinhDoChinhTri()
+        public bool LuuBangLyLuanChinhTri()
         {
-            return m_TrinhDoChinhTriData.LuuTrinhDoChinhTri();
+            return m_BangLyLuanChinhTriData.LuuBangLyLuanChinhTri();
         }
     }
 
