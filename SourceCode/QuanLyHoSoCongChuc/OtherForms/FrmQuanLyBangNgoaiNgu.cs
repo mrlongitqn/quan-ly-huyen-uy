@@ -18,19 +18,19 @@ namespace QuanLyHoSoCongChuc.OtherForms
     /// <summary>
     /// tuansl added: manage loai don vi corresponding with menus in app
     /// </summary>
-    public partial class FrmQuanLyLoaiDonVi: DevComponents.DotNetBar.Office2007Form
+    public partial class FrmQuanLyBangNgoaiNgu: DevComponents.DotNetBar.Office2007Form
     {
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
         // ---------------- E -----------------
 
-        public FrmQuanLyLoaiDonVi()
+        public FrmQuanLyBangNgoaiNgu()
         {
             InitializeComponent();
             InitGridView();
         }
 
-        private void FrmQuanLyLoaiDonVi_Load(object sender, EventArgs e)
+        private void FrmQuanLyBangNgoaiNgu_Load(object sender, EventArgs e)
         {
             LoadData();
             // No choose any item
@@ -107,8 +107,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtMaLoaiDonVi.Text = "";
-            txtTenLoaiDonVi.Text = "";
+            txtMaBangNgoaiNgu.Text = "";
+            txtTenBangNgoaiNgu.Text = "";
         }
 
         private void dtgvDataList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -117,8 +117,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
                 return;
             btnChon.Enabled = true;
             var selectedItem = dtgvDataList.SelectedRows[0];
-            txtMaLoaiDonVi.Text = ((LoaiDonVi)selectedItem.DataBoundItem).MaLoaiDonVi.ToString();
-            txtTenLoaiDonVi.Text = ((LoaiDonVi)selectedItem.DataBoundItem).TenLoaiDonVi.ToString();
+            txtMaBangNgoaiNgu.Text = ((BangNgoaiNgu)selectedItem.DataBoundItem).MaBangNgoaiNgu.ToString();
+            txtTenBangNgoaiNgu.Text = ((BangNgoaiNgu)selectedItem.DataBoundItem).TenBangNgoaiNgu.ToString();
         }
 
         private void btnChon_Click(object sender, EventArgs e)
@@ -129,8 +129,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var id = int.Parse(txtMaLoaiDonVi.Text);
-            var name = LoaiDonViRepository.SelectByID(id).TenLoaiDonVi;
+            var id = int.Parse(txtMaBangNgoaiNgu.Text);
+            var name = BangNgoaiNguRepository.SelectByID(id).TenBangNgoaiNgu;
             TransferDataInfo(this, new MyEvent(id + "#" + name));
         }
 
@@ -144,16 +144,16 @@ namespace QuanLyHoSoCongChuc.OtherForms
 
             DataGridViewTextBoxColumn objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Mã loại đơn vị",
-                DataPropertyName = "MaLoaiDonVi",
+                HeaderText = "Mã ngoại ngữ",
+                DataPropertyName = "MaBangNgoaiNgu",
                 Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.3)
             };
             dtgvDataList.Columns.Add(objColumn);
 
             objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Tên loại đơn vị",
-                DataPropertyName = "TenLoaiDonVi",
+                HeaderText = "Tên ngoại ngữ",
+                DataPropertyName = "TenBangNgoaiNgu",
                 Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.7 - 1)
             };
             dtgvDataList.Columns.Add(objColumn);
@@ -164,7 +164,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         /// </summary>
         private void LoadData()
         {
-            var lstItem = LoaiDonViRepository.SelectAll();
+            var lstItem = BangNgoaiNguRepository.SelectAll();
             dtgvDataList.DataSource = lstItem;
             dtgvDataList.ClearSelection();
         }
@@ -176,20 +176,20 @@ namespace QuanLyHoSoCongChuc.OtherForms
         /// <returns></returns>
         private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
         {
-            // Mode update -> checking MaLoaiDonVi is exists on textbox
+            // Mode update -> checking MaBangNgoaiNgu is exists on textbox
             if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE || mode == EnumUpdateMode.CHOOSING)
             {
-                if (txtMaLoaiDonVi.Text == "")
+                if (txtMaBangNgoaiNgu.Text == "")
                 {
-                    errorText = "Vui lòng chọn loại đơn vị";
+                    errorText = "Vui lòng chọn ngoại ngữ";
                     return false;
                 }
             }
             if (mode != EnumUpdateMode.DELETE)
             {
-                if (txtTenLoaiDonVi.Text == "")
+                if (txtTenBangNgoaiNgu.Text == "")
                 {
-                    errorText = "Vui lòng nhập tên loại đơn vị";
+                    errorText = "Vui lòng nhập tên ngoại ngữ";
                     return false;
                 }
             }
@@ -205,11 +205,11 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                var item = new LoaiDonVi
+                var item = new BangNgoaiNgu
                 {
-                    TenLoaiDonVi = txtTenLoaiDonVi.Text
+                    TenBangNgoaiNgu = txtTenBangNgoaiNgu.Text
                 };
-                if (!LoaiDonViRepository.Insert(item))
+                if (!BangNgoaiNguRepository.Insert(item))
                 {
                     return false;
                 }
@@ -229,9 +229,9 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                var item = LoaiDonViRepository.SelectByID(int.Parse(txtMaLoaiDonVi.Text));
-                item.TenLoaiDonVi = txtTenLoaiDonVi.Text;
-                return LoaiDonViRepository.Save();
+                var item = BangNgoaiNguRepository.SelectByID(int.Parse(txtMaBangNgoaiNgu.Text));
+                item.TenBangNgoaiNgu = txtTenBangNgoaiNgu.Text;
+                return BangNgoaiNguRepository.Save();
             }
             catch
             {
@@ -247,7 +247,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                return LoaiDonViRepository.Delete(int.Parse(txtMaLoaiDonVi.Text));
+                return BangNgoaiNguRepository.Delete(int.Parse(txtMaBangNgoaiNgu.Text));
             }
             catch
             {

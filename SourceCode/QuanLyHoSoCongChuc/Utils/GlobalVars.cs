@@ -39,7 +39,8 @@ namespace QuanLyHoSoCongChuc.Utils
     {
         UPDATE,
         DELETE,
-        INSERT
+        INSERT,
+        CHOOSING
     }
 
     /// <summary>

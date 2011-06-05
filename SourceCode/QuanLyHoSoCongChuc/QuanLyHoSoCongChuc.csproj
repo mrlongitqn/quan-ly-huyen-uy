@@ -226,6 +226,96 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHuong85.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHuong85.Designer.cs">
+      <DependentUpon>FrmQuanLyHuong85.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyNgheNghiep.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyNgheNghiep.Designer.cs">
+      <DependentUpon>FrmQuanLyNgheNghiep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyTinhTrangSucKhoe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyTinhTrangSucKhoe.Designer.cs">
+      <DependentUpon>FrmQuanLyTinhTrangSucKhoe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyLoaiThuongBinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyLoaiThuongBinh.Designer.cs">
+      <DependentUpon>FrmQuanLyLoaiThuongBinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyGioiTinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyGioiTinh.Designer.cs">
+      <DependentUpon>FrmQuanLyGioiTinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHocVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHocVi.Designer.cs">
+      <DependentUpon>FrmQuanLyHocVi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHocHam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHocHam.Designer.cs">
+      <DependentUpon>FrmQuanLyHocHam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyBangGiaoDucPhoThong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyBangGiaoDucPhoThong.Designer.cs">
+      <DependentUpon>FrmQuanLyBangGiaoDucPhoThong.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyBangNgoaiNgu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyBangNgoaiNgu.Designer.cs">
+      <DependentUpon>FrmQuanLyBangNgoaiNgu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyBangChuyenMonNghiepVu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyBangChuyenMonNghiepVu.Designer.cs">
+      <DependentUpon>FrmQuanLyBangChuyenMonNghiepVu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyBangLyLuanChinhTri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyBangLyLuanChinhTri.Designer.cs">
+      <DependentUpon>FrmQuanLyBangLyLuanChinhTri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyTonGiao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyTonGiao.Designer.cs">
+      <DependentUpon>FrmQuanLyTonGiao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyThanhPhanGiaDinh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyThanhPhanGiaDinh.Designer.cs">
+      <DependentUpon>FrmQuanLyThanhPhanGiaDinh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyQuanHe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyQuanHe.Designer.cs">
+      <DependentUpon>FrmQuanLyQuanHe.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyDanToc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyDanToc.Designer.cs">
+      <DependentUpon>FrmQuanLyDanToc.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtherForms\FrmQuanLyPhanLoaiDonVi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -539,6 +629,7 @@
     <Compile Include="Repositories\LoaiHuyHieuRepository.cs" />
     <Compile Include="Repositories\LoaiNguoiDungRepository.cs" />
     <Compile Include="Repositories\LoaiNguoiDung_ChucNangRepository.cs" />
+    <Compile Include="Repositories\LoaiThuongBinhRepository.cs" />
     <Compile Include="Repositories\LuongPhuCapRepository.cs" />
     <Compile Include="Repositories\NgachCongChucRepository.cs" />
     <Compile Include="Repositories\NgheNghiepRepository.cs" />
@@ -553,7 +644,6 @@
     <Compile Include="Repositories\QuocGiaRepository.cs" />
     <Compile Include="Repositories\ThanhPhanGiaDinhRepository.cs" />
     <Compile Include="Repositories\ThanNhanRepository.cs" />
-    <Compile Include="Repositories\ThuongBinhRepository.cs" />
     <Compile Include="Repositories\TinhThanhRepository.cs" />
     <Compile Include="Repositories\TinhTrangSucKhoeRepository.cs" />
     <Compile Include="Repositories\TonGiaoRepository.cs" />
@@ -629,12 +719,6 @@
     <Compile Include="OtherForms\FrmDanhSachNhanVien.Designer.cs">
       <DependentUpon>FrmDanhSachNhanVien.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherForms\FrmDanToc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmDanToc.Designer.cs">
-      <DependentUpon>FrmDanToc.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -646,12 +730,6 @@
     </Compile>
     <Compile Include="frmKetNoiCSDL.Designer.cs">
       <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherForms\FrmLoaiNghiBaoHiemXaHoi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmLoaiNghiBaoHiemXaHoi.Designer.cs">
-      <DependentUpon>FrmLoaiNghiBaoHiemXaHoi.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherForms\FrmLuong.cs">
       <SubType>Form</SubType>
@@ -665,29 +743,17 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherForms\FrmNgachCongChuc.cs">
+    <Compile Include="OtherForms\FrmQuanLyNgachCongChuc.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="OtherForms\FrmNgachCongChuc.Designer.cs">
-      <DependentUpon>FrmNgachCongChuc.cs</DependentUpon>
+    <Compile Include="OtherForms\FrmQuanLyNgachCongChuc.Designer.cs">
+      <DependentUpon>FrmQuanLyNgachCongChuc.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherForms\FrmQuanLyDonVi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="OtherForms\FrmQuanLyDonVi.Designer.cs">
       <DependentUpon>FrmQuanLyDonVi.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherForms\FrmQuanHe.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmQuanHe.Designer.cs">
-      <DependentUpon>FrmQuanHe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherForms\FrmThanhPhanXuatThan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmThanhPhanXuatThan.Designer.cs">
-      <DependentUpon>FrmThanhPhanXuatThan.cs</DependentUpon>
     </Compile>
     <Compile Include="Danh muc\FrmThemDanhMucHanhChinh.cs">
       <SubType>Form</SubType>
@@ -713,42 +779,6 @@
     <Compile Include="Search\FrmTimKiem2.Designer.cs">
       <DependentUpon>FrmTimKiem2.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherForms\FrmTonGiao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmTonGiao.Designer.cs">
-      <DependentUpon>FrmTonGiao.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoChinhTri.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoChinhTri.Designer.cs">
-      <DependentUpon>FrmTrinhDoChinhTri.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoChuyenMon.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoChuyenMon.Designer.cs">
-      <DependentUpon>FrmTrinhDoChuyenMon.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoHocVan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoHocVan.Designer.cs">
-      <DependentUpon>FrmTrinhDoHocVan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoNgoaiNgu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoNgoaiNgu.Designer.cs">
-      <DependentUpon>FrmTrinhDoNgoaiNgu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoTinHoc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmTrinhDoTinHoc.Designer.cs">
-      <DependentUpon>FrmTrinhDoTinHoc.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utils\Criteria.cs" />
     <Compile Include="Utils\Keys.cs" />
     <Compile Include="Utils\ListItem.cs" />
@@ -767,6 +797,51 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyHuong85.resx">
+      <DependentUpon>FrmQuanLyHuong85.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyNgheNghiep.resx">
+      <DependentUpon>FrmQuanLyNgheNghiep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyTinhTrangSucKhoe.resx">
+      <DependentUpon>FrmQuanLyTinhTrangSucKhoe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyLoaiThuongBinh.resx">
+      <DependentUpon>FrmQuanLyLoaiThuongBinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyGioiTinh.resx">
+      <DependentUpon>FrmQuanLyGioiTinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyHocVi.resx">
+      <DependentUpon>FrmQuanLyHocVi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyHocHam.resx">
+      <DependentUpon>FrmQuanLyHocHam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyBangGiaoDucPhoThong.resx">
+      <DependentUpon>FrmQuanLyBangGiaoDucPhoThong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyBangNgoaiNgu.resx">
+      <DependentUpon>FrmQuanLyBangNgoaiNgu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyBangChuyenMonNghiepVu.resx">
+      <DependentUpon>FrmQuanLyBangChuyenMonNghiepVu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyBangLyLuanChinhTri.resx">
+      <DependentUpon>FrmQuanLyBangLyLuanChinhTri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyTonGiao.resx">
+      <DependentUpon>FrmQuanLyTonGiao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyThanhPhanGiaDinh.resx">
+      <DependentUpon>FrmQuanLyThanhPhanGiaDinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyQuanHe.resx">
+      <DependentUpon>FrmQuanLyQuanHe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyDanToc.resx">
+      <DependentUpon>FrmQuanLyDanToc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\FrmQuanLyPhanLoaiDonVi.resx">
       <DependentUpon>FrmQuanLyPhanLoaiDonVi.cs</DependentUpon>
@@ -806,10 +881,6 @@
     <EmbeddedResource Include="OtherForms\FrmDanhSachNhanVien.resx">
       <DependentUpon>FrmDanhSachNhanVien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmDanToc.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmDanToc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmDoiMatKhau.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
@@ -821,10 +892,6 @@
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmLoaiNghiBaoHiemXaHoi.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmLoaiNghiBaoHiemXaHoi.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\FrmLuong.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmLuong.cs</DependentUpon>
@@ -833,21 +900,13 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmNgachCongChuc.resx">
+    <EmbeddedResource Include="OtherForms\FrmQuanLyNgachCongChuc.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>FrmNgachCongChuc.cs</DependentUpon>
+      <DependentUpon>FrmQuanLyNgachCongChuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\FrmQuanLyDonVi.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmQuanLyDonVi.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmQuanHe.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmQuanHe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmThanhPhanXuatThan.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmThanhPhanXuatThan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Danh muc\FrmThemDanhMucHanhChinh.resx">
       <DependentUpon>FrmThemDanhMucHanhChinh.cs</DependentUpon>
@@ -955,30 +1014,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search\FrmTimKiem2.resx">
       <DependentUpon>FrmTimKiem2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmTonGiao.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTonGiao.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmTrinhDoChinhTri.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTrinhDoChinhTri.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmTrinhDoChuyenMon.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTrinhDoChuyenMon.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmTrinhDoHocVan.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTrinhDoHocVan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmTrinhDoNgoaiNgu.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTrinhDoNgoaiNgu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmTrinhDoTinHoc.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmTrinhDoTinHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

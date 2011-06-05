@@ -124,6 +124,12 @@ namespace QuanLyHoSoCongChuc.OtherForms
 
         private void btnChon_Click(object sender, EventArgs e)
         {
+            var errorText = "";
+            if (!ValidateInput(EnumUpdateMode.CHOOSING, ref errorText))
+            {
+                MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var id = int.Parse(txtMaPhanLoaiDonVi.Text);
             var name = PhanLoaiDonViRepository.SelectByID(id).TenPhanLoai;
             TransferDataInfo(this, new MyEvent(id + "#" + name));
@@ -171,10 +177,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         private void LoadData()
         {
             var lstItem = PhanLoaiDonViRepository.SelectAll();
-            if (lstItem.Count > 0)
-            {
-                dtgvDataList.DataSource = lstItem;
-            }
+            dtgvDataList.DataSource = lstItem;
             dtgvDataList.ClearSelection();
         }
 
@@ -186,7 +189,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
         {
             // Mode update -> checking MaPhanLoaiDonVi is exists on textbox
-            if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE)
+            if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE || mode == EnumUpdateMode.CHOOSING)
             {
                 if (txtMaPhanLoaiDonVi.Text == "")
                 {

@@ -18,19 +18,19 @@ namespace QuanLyHoSoCongChuc.OtherForms
     /// <summary>
     /// tuansl added: manage loai don vi corresponding with menus in app
     /// </summary>
-    public partial class FrmQuanLyLoaiDonVi: DevComponents.DotNetBar.Office2007Form
+    public partial class FrmQuanLyLoaiThuongBinh: DevComponents.DotNetBar.Office2007Form
     {
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
         // ---------------- E -----------------
 
-        public FrmQuanLyLoaiDonVi()
+        public FrmQuanLyLoaiThuongBinh()
         {
             InitializeComponent();
             InitGridView();
         }
 
-        private void FrmQuanLyLoaiDonVi_Load(object sender, EventArgs e)
+        private void FrmQuanLyLoaiThuongBinh_Load(object sender, EventArgs e)
         {
             LoadData();
             // No choose any item
@@ -107,8 +107,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtMaLoaiDonVi.Text = "";
-            txtTenLoaiDonVi.Text = "";
+            txtMaLoaiThuongBinh.Text = "";
+            txtTenLoaiThuongBinh.Text = "";
         }
 
         private void dtgvDataList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -117,8 +117,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
                 return;
             btnChon.Enabled = true;
             var selectedItem = dtgvDataList.SelectedRows[0];
-            txtMaLoaiDonVi.Text = ((LoaiDonVi)selectedItem.DataBoundItem).MaLoaiDonVi.ToString();
-            txtTenLoaiDonVi.Text = ((LoaiDonVi)selectedItem.DataBoundItem).TenLoaiDonVi.ToString();
+            txtMaLoaiThuongBinh.Text = ((LoaiThuongBinh)selectedItem.DataBoundItem).MaLoaiThuongBinh.ToString();
+            txtTenLoaiThuongBinh.Text = ((LoaiThuongBinh)selectedItem.DataBoundItem).TenLoaiThuongBinh.ToString();
         }
 
         private void btnChon_Click(object sender, EventArgs e)
@@ -129,8 +129,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var id = int.Parse(txtMaLoaiDonVi.Text);
-            var name = LoaiDonViRepository.SelectByID(id).TenLoaiDonVi;
+            var id = int.Parse(txtMaLoaiThuongBinh.Text);
+            var name = LoaiThuongBinhRepository.SelectByID(id).TenLoaiThuongBinh;
             TransferDataInfo(this, new MyEvent(id + "#" + name));
         }
 
@@ -144,16 +144,16 @@ namespace QuanLyHoSoCongChuc.OtherForms
 
             DataGridViewTextBoxColumn objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Mã loại đơn vị",
-                DataPropertyName = "MaLoaiDonVi",
+                HeaderText = "Mã loại thương binh",
+                DataPropertyName = "MaLoaiThuongBinh",
                 Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.3)
             };
             dtgvDataList.Columns.Add(objColumn);
 
             objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Tên loại đơn vị",
-                DataPropertyName = "TenLoaiDonVi",
+                HeaderText = "Tên loại thương binh",
+                DataPropertyName = "TenLoaiThuongBinh",
                 Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.7 - 1)
             };
             dtgvDataList.Columns.Add(objColumn);
@@ -164,7 +164,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         /// </summary>
         private void LoadData()
         {
-            var lstItem = LoaiDonViRepository.SelectAll();
+            var lstItem = LoaiThuongBinhRepository.SelectAll();
             dtgvDataList.DataSource = lstItem;
             dtgvDataList.ClearSelection();
         }
@@ -176,20 +176,20 @@ namespace QuanLyHoSoCongChuc.OtherForms
         /// <returns></returns>
         private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
         {
-            // Mode update -> checking MaLoaiDonVi is exists on textbox
+            // Mode update -> checking MaLoaiThuongBinh is exists on textbox
             if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE || mode == EnumUpdateMode.CHOOSING)
             {
-                if (txtMaLoaiDonVi.Text == "")
+                if (txtMaLoaiThuongBinh.Text == "")
                 {
-                    errorText = "Vui lòng chọn loại đơn vị";
+                    errorText = "Vui lòng chọn loại thương binh";
                     return false;
                 }
             }
             if (mode != EnumUpdateMode.DELETE)
             {
-                if (txtTenLoaiDonVi.Text == "")
+                if (txtTenLoaiThuongBinh.Text == "")
                 {
-                    errorText = "Vui lòng nhập tên loại đơn vị";
+                    errorText = "Vui lòng nhập tên loại thương binh";
                     return false;
                 }
             }
@@ -205,11 +205,11 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                var item = new LoaiDonVi
+                var item = new LoaiThuongBinh
                 {
-                    TenLoaiDonVi = txtTenLoaiDonVi.Text
+                    TenLoaiThuongBinh = txtTenLoaiThuongBinh.Text
                 };
-                if (!LoaiDonViRepository.Insert(item))
+                if (!LoaiThuongBinhRepository.Insert(item))
                 {
                     return false;
                 }
@@ -229,9 +229,9 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                var item = LoaiDonViRepository.SelectByID(int.Parse(txtMaLoaiDonVi.Text));
-                item.TenLoaiDonVi = txtTenLoaiDonVi.Text;
-                return LoaiDonViRepository.Save();
+                var item = LoaiThuongBinhRepository.SelectByID(int.Parse(txtMaLoaiThuongBinh.Text));
+                item.TenLoaiThuongBinh = txtTenLoaiThuongBinh.Text;
+                return LoaiThuongBinhRepository.Save();
             }
             catch
             {
@@ -247,7 +247,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                return LoaiDonViRepository.Delete(int.Parse(txtMaLoaiDonVi.Text));
+                return LoaiThuongBinhRepository.Delete(int.Parse(txtMaLoaiThuongBinh.Text));
             }
             catch
             {

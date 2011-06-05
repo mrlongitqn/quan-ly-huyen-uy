@@ -18,19 +18,19 @@ namespace QuanLyHoSoCongChuc.OtherForms
     /// <summary>
     /// tuansl added: manage loai don vi corresponding with menus in app
     /// </summary>
-    public partial class FrmQuanLyLoaiDonVi: DevComponents.DotNetBar.Office2007Form
+    public partial class FrmQuanLyHuong85: DevComponents.DotNetBar.Office2007Form
     {
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
         // ---------------- E -----------------
 
-        public FrmQuanLyLoaiDonVi()
+        public FrmQuanLyHuong85()
         {
             InitializeComponent();
             InitGridView();
         }
 
-        private void FrmQuanLyLoaiDonVi_Load(object sender, EventArgs e)
+        private void FrmQuanLyHuong85_Load(object sender, EventArgs e)
         {
             LoadData();
             // No choose any item
@@ -107,8 +107,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtMaLoaiDonVi.Text = "";
-            txtTenLoaiDonVi.Text = "";
+            txtMaHuong85.Text = "";
+            txtTenHuong85.Text = "";
         }
 
         private void dtgvDataList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -117,8 +117,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
                 return;
             btnChon.Enabled = true;
             var selectedItem = dtgvDataList.SelectedRows[0];
-            txtMaLoaiDonVi.Text = ((LoaiDonVi)selectedItem.DataBoundItem).MaLoaiDonVi.ToString();
-            txtTenLoaiDonVi.Text = ((LoaiDonVi)selectedItem.DataBoundItem).TenLoaiDonVi.ToString();
+            txtMaHuong85.Text = ((Huong85)selectedItem.DataBoundItem).MaHuong.ToString();
+            txtTenHuong85.Text = ((Huong85)selectedItem.DataBoundItem).GiaTriHuong.ToString();
         }
 
         private void btnChon_Click(object sender, EventArgs e)
@@ -129,8 +129,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var id = int.Parse(txtMaLoaiDonVi.Text);
-            var name = LoaiDonViRepository.SelectByID(id).TenLoaiDonVi;
+            var id = txtMaHuong85.Text;
+            var name = Huong85Repository.SelectByID(id).GiaTriHuong;
             TransferDataInfo(this, new MyEvent(id + "#" + name));
         }
 
@@ -144,16 +144,16 @@ namespace QuanLyHoSoCongChuc.OtherForms
 
             DataGridViewTextBoxColumn objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Mã loại đơn vị",
-                DataPropertyName = "MaLoaiDonVi",
+                HeaderText = "Mã hưởng 85",
+                DataPropertyName = "MaHuong",
                 Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.3)
             };
             dtgvDataList.Columns.Add(objColumn);
 
             objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Tên loại đơn vị",
-                DataPropertyName = "TenLoaiDonVi",
+                HeaderText = "Giá trị hưởng",
+                DataPropertyName = "GiaTriHuong",
                 Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.7 - 1)
             };
             dtgvDataList.Columns.Add(objColumn);
@@ -164,7 +164,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         /// </summary>
         private void LoadData()
         {
-            var lstItem = LoaiDonViRepository.SelectAll();
+            var lstItem = Huong85Repository.SelectAll();
             dtgvDataList.DataSource = lstItem;
             dtgvDataList.ClearSelection();
         }
@@ -176,20 +176,20 @@ namespace QuanLyHoSoCongChuc.OtherForms
         /// <returns></returns>
         private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
         {
-            // Mode update -> checking MaLoaiDonVi is exists on textbox
+            // Mode update -> checking MaHuong85 is exists on textbox
             if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE || mode == EnumUpdateMode.CHOOSING)
             {
-                if (txtMaLoaiDonVi.Text == "")
+                if (txtMaHuong85.Text == "")
                 {
-                    errorText = "Vui lòng chọn loại đơn vị";
+                    errorText = "Vui lòng chọn hưởng 85";
                     return false;
                 }
             }
             if (mode != EnumUpdateMode.DELETE)
             {
-                if (txtTenLoaiDonVi.Text == "")
+                if (txtTenHuong85.Text == "")
                 {
-                    errorText = "Vui lòng nhập tên loại đơn vị";
+                    errorText = "Vui lòng nhập tên hưởng 85";
                     return false;
                 }
             }
@@ -205,11 +205,12 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                var item = new LoaiDonVi
+                var item = new Huong85
                 {
-                    TenLoaiDonVi = txtTenLoaiDonVi.Text
+                    MaHuong = txtMaHuong85.Text,
+                    GiaTriHuong = txtTenHuong85.Text
                 };
-                if (!LoaiDonViRepository.Insert(item))
+                if (!Huong85Repository.Insert(item))
                 {
                     return false;
                 }
@@ -229,9 +230,9 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                var item = LoaiDonViRepository.SelectByID(int.Parse(txtMaLoaiDonVi.Text));
-                item.TenLoaiDonVi = txtTenLoaiDonVi.Text;
-                return LoaiDonViRepository.Save();
+                var item = Huong85Repository.SelectByID(txtMaHuong85.Text);
+                item.GiaTriHuong = txtTenHuong85.Text;
+                return Huong85Repository.Save();
             }
             catch
             {
@@ -247,7 +248,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                return LoaiDonViRepository.Delete(int.Parse(txtMaLoaiDonVi.Text));
+                return Huong85Repository.Delete(txtMaHuong85.Text);
             }
             catch
             {
