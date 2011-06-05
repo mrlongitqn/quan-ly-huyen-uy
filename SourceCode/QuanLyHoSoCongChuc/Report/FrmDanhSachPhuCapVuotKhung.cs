@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using QuanLyHoSoCongChuc.Danh_muc;
+using QuanLyHoSoCongChuc.Utils;
 using System.Data.SqlClient;
 
 namespace QuanLyHoSoCongChuc.Report
@@ -17,6 +19,8 @@ namespace QuanLyHoSoCongChuc.Report
     public partial class FrmDanhSachPhuCapVuotKhung : Form
     {
         DataService dataService = new DataService();
+        String SelectedId;
+        int Level;
         public FrmDanhSachPhuCapVuotKhung()
         {
             InitializeComponent();
@@ -24,21 +28,11 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void FrmDanhSachPhuCapVuotKhung_Load(object sender, EventArgs e)
         {
-            loadDonVi();
             loadNam();
             initGird();
             cboKy.SelectedIndex = 0;
         }
-        void loadDonVi()
-        {
-            var lstDonVi = DonViRepository.SelectAll();
-            for (int i = 0; i < lstDonVi.Count; i++)
-            {
-                cbDonVi.Items.Add(new ListItem(lstDonVi[i].MaDonVi, lstDonVi[i].TenDonVi));
-            }
-            if (lstDonVi.Count > 0)
-                cbDonVi.SelectedIndex = 0;
-        }
+       
         void loadNam()
         {
             for (int i = 0; i < 100; i++)
@@ -52,11 +46,10 @@ namespace QuanLyHoSoCongChuc.Report
         {
             grid1.Rows.Clear();
             initGird();
-            ListItem DV = (ListItem)cbDonVi.SelectedItem;
             String sql = " select nv.*, t.TenTrinhDoChuyenMon, dv.TenDonVi";
             sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
             sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
-            sql += " where nv.MaDonVi='" + DV.ID + "'";
+            sql += " where nv.MaDonVi='" + SelectedId + "'";
 
             SqlCommand cmd = new SqlCommand(sql);
             dataService.Load(cmd);
@@ -97,9 +90,8 @@ namespace QuanLyHoSoCongChuc.Report
         private void btInBieu_Click(object sender, EventArgs e)
         {
             String strDt = cboKy.Text + " năm " + dupNam.Text;
-            ListItem DV = (ListItem)cbDonVi.SelectedItem;
 
-            FrmPrintReport frm = new FrmPrintReport("3", DV.ID, strDt);
+            FrmPrintReport frm = new FrmPrintReport("3", SelectedId, strDt);
             frm.Show();
         }
         void initGird()
@@ -164,6 +156,23 @@ namespace QuanLyHoSoCongChuc.Report
             grid1[2, 17] = new SourceGrid.Cells.ColumnHeader("18");
           
             grid1.AutoSizeCells();
+        }
+
+        public void GetDonVi(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            SelectedId = comp[0];
+            txtDonVi.Text = comp[1];
+            Level = int.Parse(comp[2]);
+        }
+
+        private void btnChonDonVi_Click(object sender, EventArgs e)
+        {
+            FrmDanhMuc frm = new FrmDanhMuc();
+            frm.Handler += GetDonVi;
+            frm.EnableButtonChon = true;
+            frm.ShowDialog();
         }
     }
 }
