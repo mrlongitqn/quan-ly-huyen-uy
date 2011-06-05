@@ -84,7 +84,7 @@
             this.cmbTinhThanh.Location = new System.Drawing.Point(156, 83);
             this.cmbTinhThanh.Name = "cmbTinhThanh";
             this.cmbTinhThanh.Size = new System.Drawing.Size(177, 20);
-            this.cmbTinhThanh.TabIndex = 4;
+            this.cmbTinhThanh.TabIndex = 2;
             this.cmbTinhThanh.SelectedIndexChanged += new System.EventHandler(this.cmbTinhThanh_SelectedIndexChanged);
             // 
             // cmbQuanHuyen
@@ -96,7 +96,7 @@
             this.cmbQuanHuyen.Location = new System.Drawing.Point(156, 126);
             this.cmbQuanHuyen.Name = "cmbQuanHuyen";
             this.cmbQuanHuyen.Size = new System.Drawing.Size(177, 20);
-            this.cmbQuanHuyen.TabIndex = 5;
+            this.cmbQuanHuyen.TabIndex = 7;
             this.cmbQuanHuyen.SelectedIndexChanged += new System.EventHandler(this.cmbQuanHuyen_SelectedIndexChanged);
             // 
             // cmbPhuongXa
@@ -108,7 +108,7 @@
             this.cmbPhuongXa.Location = new System.Drawing.Point(156, 168);
             this.cmbPhuongXa.Name = "cmbPhuongXa";
             this.cmbPhuongXa.Size = new System.Drawing.Size(177, 20);
-            this.cmbPhuongXa.TabIndex = 6;
+            this.cmbPhuongXa.TabIndex = 12;
             this.cmbPhuongXa.SelectedIndexChanged += new System.EventHandler(this.cmbPhuongXa_SelectedIndexChanged);
             // 
             // txtMaTinhThanh
@@ -120,7 +120,7 @@
             this.txtMaTinhThanh.Location = new System.Drawing.Point(106, 83);
             this.txtMaTinhThanh.Name = "txtMaTinhThanh";
             this.txtMaTinhThanh.Size = new System.Drawing.Size(44, 20);
-            this.txtMaTinhThanh.TabIndex = 8;
+            this.txtMaTinhThanh.TabIndex = 1;
             // 
             // txtMaQuanHuyen
             // 
@@ -131,7 +131,7 @@
             this.txtMaQuanHuyen.Location = new System.Drawing.Point(106, 126);
             this.txtMaQuanHuyen.Name = "txtMaQuanHuyen";
             this.txtMaQuanHuyen.Size = new System.Drawing.Size(44, 20);
-            this.txtMaQuanHuyen.TabIndex = 9;
+            this.txtMaQuanHuyen.TabIndex = 6;
             // 
             // txtMaPhuongXa
             // 
@@ -142,7 +142,7 @@
             this.txtMaPhuongXa.Location = new System.Drawing.Point(106, 168);
             this.txtMaPhuongXa.Name = "txtMaPhuongXa";
             this.txtMaPhuongXa.Size = new System.Drawing.Size(44, 20);
-            this.txtMaPhuongXa.TabIndex = 10;
+            this.txtMaPhuongXa.TabIndex = 11;
             // 
             // btnThoat
             // 
@@ -151,7 +151,7 @@
             this.btnThoat.Location = new System.Drawing.Point(193, 209);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(86, 30);
-            this.btnThoat.TabIndex = 12;
+            this.btnThoat.TabIndex = 16;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
@@ -161,7 +161,7 @@
             this.btnThemTinhThanh.Location = new System.Drawing.Point(350, 80);
             this.btnThemTinhThanh.Name = "btnThemTinhThanh";
             this.btnThemTinhThanh.Size = new System.Drawing.Size(28, 27);
-            this.btnThemTinhThanh.TabIndex = 13;
+            this.btnThemTinhThanh.TabIndex = 3;
             this.btnThemTinhThanh.UseVisualStyleBackColor = true;
             this.btnThemTinhThanh.Click += new System.EventHandler(this.btnThemTinhThanh_Click);
             // 
@@ -171,7 +171,7 @@
             this.btnThemQuanHuyen.Location = new System.Drawing.Point(350, 123);
             this.btnThemQuanHuyen.Name = "btnThemQuanHuyen";
             this.btnThemQuanHuyen.Size = new System.Drawing.Size(28, 27);
-            this.btnThemQuanHuyen.TabIndex = 14;
+            this.btnThemQuanHuyen.TabIndex = 8;
             this.btnThemQuanHuyen.UseVisualStyleBackColor = true;
             this.btnThemQuanHuyen.Click += new System.EventHandler(this.btnThemQuanHuyen_Click);
             // 
@@ -181,7 +181,7 @@
             this.btnThemPhuongXa.Location = new System.Drawing.Point(350, 165);
             this.btnThemPhuongXa.Name = "btnThemPhuongXa";
             this.btnThemPhuongXa.Size = new System.Drawing.Size(28, 27);
-            this.btnThemPhuongXa.TabIndex = 15;
+            this.btnThemPhuongXa.TabIndex = 13;
             this.btnThemPhuongXa.UseVisualStyleBackColor = true;
             this.btnThemPhuongXa.Click += new System.EventHandler(this.btnThemPhuongXa_Click);
             // 
@@ -191,7 +191,7 @@
             this.btnLuuTinhThanh.Location = new System.Drawing.Point(384, 80);
             this.btnLuuTinhThanh.Name = "btnLuuTinhThanh";
             this.btnLuuTinhThanh.Size = new System.Drawing.Size(28, 27);
-            this.btnLuuTinhThanh.TabIndex = 17;
+            this.btnLuuTinhThanh.TabIndex = 4;
             this.btnLuuTinhThanh.UseVisualStyleBackColor = true;
             this.btnLuuTinhThanh.Click += new System.EventHandler(this.btnLuuTinhThanh_Click);
             // 
@@ -201,7 +201,7 @@
             this.btnLuuQuanHuyen.Location = new System.Drawing.Point(384, 123);
             this.btnLuuQuanHuyen.Name = "btnLuuQuanHuyen";
             this.btnLuuQuanHuyen.Size = new System.Drawing.Size(28, 27);
-            this.btnLuuQuanHuyen.TabIndex = 18;
+            this.btnLuuQuanHuyen.TabIndex = 9;
             this.btnLuuQuanHuyen.UseVisualStyleBackColor = true;
             this.btnLuuQuanHuyen.Click += new System.EventHandler(this.btnLuuQuanHuyen_Click);
             // 
@@ -211,7 +211,7 @@
             this.btnLuuPhuongXa.Location = new System.Drawing.Point(384, 165);
             this.btnLuuPhuongXa.Name = "btnLuuPhuongXa";
             this.btnLuuPhuongXa.Size = new System.Drawing.Size(28, 27);
-            this.btnLuuPhuongXa.TabIndex = 19;
+            this.btnLuuPhuongXa.TabIndex = 14;
             this.btnLuuPhuongXa.UseVisualStyleBackColor = true;
             this.btnLuuPhuongXa.Click += new System.EventHandler(this.btnLuuPhuongXa_Click);
             // 
@@ -221,7 +221,7 @@
             this.btnXoaTinhThanh.Location = new System.Drawing.Point(418, 80);
             this.btnXoaTinhThanh.Name = "btnXoaTinhThanh";
             this.btnXoaTinhThanh.Size = new System.Drawing.Size(28, 27);
-            this.btnXoaTinhThanh.TabIndex = 21;
+            this.btnXoaTinhThanh.TabIndex = 5;
             this.btnXoaTinhThanh.UseVisualStyleBackColor = true;
             this.btnXoaTinhThanh.Click += new System.EventHandler(this.btnXoaTinhThanh_Click);
             // 
@@ -231,7 +231,7 @@
             this.btnXoaQuanHuyen.Location = new System.Drawing.Point(418, 123);
             this.btnXoaQuanHuyen.Name = "btnXoaQuanHuyen";
             this.btnXoaQuanHuyen.Size = new System.Drawing.Size(28, 27);
-            this.btnXoaQuanHuyen.TabIndex = 22;
+            this.btnXoaQuanHuyen.TabIndex = 10;
             this.btnXoaQuanHuyen.UseVisualStyleBackColor = true;
             this.btnXoaQuanHuyen.Click += new System.EventHandler(this.btnXoaQuanHuyen_Click);
             // 
@@ -241,7 +241,7 @@
             this.btnXoaPhuongXa.Location = new System.Drawing.Point(418, 167);
             this.btnXoaPhuongXa.Name = "btnXoaPhuongXa";
             this.btnXoaPhuongXa.Size = new System.Drawing.Size(28, 27);
-            this.btnXoaPhuongXa.TabIndex = 23;
+            this.btnXoaPhuongXa.TabIndex = 15;
             this.btnXoaPhuongXa.UseVisualStyleBackColor = true;
             this.btnXoaPhuongXa.Click += new System.EventHandler(this.btnXoaPhuongXa_Click);
             // 
@@ -280,6 +280,7 @@
             this.Controls.Add(this.labelX3);
             this.Controls.Add(this.labelX2);
             this.Controls.Add(this.labelX1);
+            this.DoubleBuffered = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmThemDanhMucHanhChinh";
