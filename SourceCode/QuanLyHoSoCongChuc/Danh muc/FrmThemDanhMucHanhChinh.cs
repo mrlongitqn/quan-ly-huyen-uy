@@ -55,11 +55,11 @@ namespace QuanLyHoSoCongChuc
 
         }
 
-        private void FrmThemDanhMucHanhChinh_Load(object sender, EventArgs e)
+        private void init()
         {
             DataTable dtDanhMucTinhThanh = m_ThemDanhMucHanhChinhControl.TinhThanhData.LayDSTinhThanh();
             m_ThemDanhMucHanhChinhControl.HienThiComboBox(cmbTinhThanh, dtDanhMucTinhThanh, ThemDanhMucHanhChinhControl.KieuHanhChinh.TinhThanh);
-            
+
             if (cmbTinhThanh.SelectedValue != null)
             {
                 txtMaTinhThanh.Text = cmbTinhThanh.SelectedValue.ToString();
@@ -93,6 +93,10 @@ namespace QuanLyHoSoCongChuc
                     }
                 }
             }
+        }
+        private void FrmThemDanhMucHanhChinh_Load(object sender, EventArgs e)
+        {
+            init();
         }
 
 
@@ -255,6 +259,7 @@ namespace QuanLyHoSoCongChuc
                     if (result != 0)
                     {
                         MessageBox.Show("Thêm tỉnh thành mới thành công.");
+                        init();
                         Updated = true;
                     }
                 }
@@ -297,6 +302,7 @@ namespace QuanLyHoSoCongChuc
                         if (result != 0)
                         {
                             MessageBox.Show("Thêm quận/huyện mới thành công.");
+                            init();
                             Updated = true;
                         }
                     }
@@ -338,6 +344,7 @@ namespace QuanLyHoSoCongChuc
                         if (result != 0)
                         {
                             MessageBox.Show("Thêm phường/xã mới thành công.");
+                            init();
                             Updated = true;
                         }
                     }
@@ -403,6 +410,7 @@ namespace QuanLyHoSoCongChuc
                 TinhThanhObj.TenTinh = TenTinh;
                 m_ThemDanhMucHanhChinhControl.CapNhatTinhThanh(TinhThanhObj);                
                 MessageBox.Show("Cập nhật thông tinh tỉnh/thành thành công.");
+                init(); 
                 Updated = true;
             }
 
@@ -425,6 +433,7 @@ namespace QuanLyHoSoCongChuc
                 QuanHuyenObj.TenQuanHuyen = TenQuanHuyen;
                 m_ThemDanhMucHanhChinhControl.CapNhatQuanHuyen(QuanHuyenObj);
                 MessageBox.Show("Cập nhật thông tinh quận/huyện thành công.");
+                init();
                 Updated = true;
 
             }
@@ -449,6 +458,7 @@ namespace QuanLyHoSoCongChuc
                 m_ThemDanhMucHanhChinhControl.CapNhatPhuongXa(PhuongXaObj);
                 MessageBox.Show("Cập nhật thông tinh phường/xã thành công.");
                 Updated = true;
+                init();
             }
 
             FrmThemDanhMucHanhChinh_Load(sender, e);
@@ -521,6 +531,7 @@ namespace QuanLyHoSoCongChuc
             {
                 m_ThemDanhMucHanhChinhControl.XoaPhuongXa(MaPhuongXa);
                 MessageBox.Show("Xóa thông tinh phường/xã thành công.");
+                init();
                 Updated = true;
             }
 
@@ -539,6 +550,7 @@ namespace QuanLyHoSoCongChuc
             {
                 m_ThemDanhMucHanhChinhControl.XoaQuanHuyen(MaQuanHuyen);
                 MessageBox.Show("Xóa thông tinh Quận/Huyện thành công.");
+                init();
                 Updated = true;
             }
 
