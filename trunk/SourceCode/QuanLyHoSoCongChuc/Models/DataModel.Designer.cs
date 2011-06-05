@@ -55,11 +55,11 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_KyLuat_NoiDungViPham", "NoiDungViPham", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NoiDungViPham), "KyLuat", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.KyLuat), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LoaiNguoiDung_ChucNang_LoaiNGuoiDung", "LoaiNguoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung), "LoaiNguoiDung_ChucNang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung_ChucNang), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NguoiDung_LoaiNGuoiDung", "LoaiNguoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung), "NguoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NguoiDung), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ThuongBinh", "LoaiThuongBinh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.LoaiThuongBinh), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LuongPhuCap_NgachCongChuc", "NgachCongChuc", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NgachCongChuc), "LuongPhuCap", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LuongPhuCap), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LuongPhuCap_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "LuongPhuCap", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LuongPhuCap), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_NgheNghiep", "NgheNghiep", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NgheNghiep), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ThanhPhanGiaDinh", "ThanhPhanGiaDinh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.ThanhPhanGiaDinh), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
-[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ThuongBinh", "ThuongBinh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.ThuongBinh), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_TinhTrangSucKhoe", "TinhTrangSucKhoe", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TinhTrangSucKhoe), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_TonGiao", "TonGiao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TonGiao), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhDaoTao_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "QuaTrinhDaoTao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhDaoTao), true)]
@@ -634,6 +634,22 @@ namespace QuanLyHoSoCongChuc.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<LoaiThuongBinh> LoaiThuongBinhs
+        {
+            get
+            {
+                if ((_LoaiThuongBinhs == null))
+                {
+                    _LoaiThuongBinhs = base.CreateObjectSet<LoaiThuongBinh>("LoaiThuongBinhs");
+                }
+                return _LoaiThuongBinhs;
+            }
+        }
+        private ObjectSet<LoaiThuongBinh> _LoaiThuongBinhs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<LuongPhuCap> LuongPhuCaps
         {
             get
@@ -854,22 +870,6 @@ namespace QuanLyHoSoCongChuc.Models
             }
         }
         private ObjectSet<ThanNhan> _ThanNhans;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<ThuongBinh> ThuongBinhs
-        {
-            get
-            {
-                if ((_ThuongBinhs == null))
-                {
-                    _ThuongBinhs = base.CreateObjectSet<ThuongBinh>("ThuongBinhs");
-                }
-                return _ThuongBinhs;
-            }
-        }
-        private ObjectSet<ThuongBinh> _ThuongBinhs;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -1179,6 +1179,14 @@ namespace QuanLyHoSoCongChuc.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the LoaiThuongBinhs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToLoaiThuongBinhs(LoaiThuongBinh loaiThuongBinh)
+        {
+            base.AddObject("LoaiThuongBinhs", loaiThuongBinh);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the LuongPhuCaps EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToLuongPhuCaps(LuongPhuCap luongPhuCap)
@@ -1288,14 +1296,6 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToThanNhans(ThanNhan thanNhan)
         {
             base.AddObject("ThanNhans", thanNhan);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the ThuongBinhs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToThuongBinhs(ThuongBinh thuongBinh)
-        {
-            base.AddObject("ThuongBinhs", thuongBinh);
         }
     
         /// <summary>
@@ -6464,6 +6464,110 @@ namespace QuanLyHoSoCongChuc.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="LoaiThuongBinh")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class LoaiThuongBinh : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new LoaiThuongBinh object.
+        /// </summary>
+        /// <param name="maLoaiThuongBinh">Initial value of the MaLoaiThuongBinh property.</param>
+        public static LoaiThuongBinh CreateLoaiThuongBinh(global::System.Int32 maLoaiThuongBinh)
+        {
+            LoaiThuongBinh loaiThuongBinh = new LoaiThuongBinh();
+            loaiThuongBinh.MaLoaiThuongBinh = maLoaiThuongBinh;
+            return loaiThuongBinh;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MaLoaiThuongBinh
+        {
+            get
+            {
+                return _MaLoaiThuongBinh;
+            }
+            set
+            {
+                if (_MaLoaiThuongBinh != value)
+                {
+                    OnMaLoaiThuongBinhChanging(value);
+                    ReportPropertyChanging("MaLoaiThuongBinh");
+                    _MaLoaiThuongBinh = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MaLoaiThuongBinh");
+                    OnMaLoaiThuongBinhChanged();
+                }
+            }
+        }
+        private global::System.Int32 _MaLoaiThuongBinh;
+        partial void OnMaLoaiThuongBinhChanging(global::System.Int32 value);
+        partial void OnMaLoaiThuongBinhChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TenLoaiThuongBinh
+        {
+            get
+            {
+                return _TenLoaiThuongBinh;
+            }
+            set
+            {
+                OnTenLoaiThuongBinhChanging(value);
+                ReportPropertyChanging("TenLoaiThuongBinh");
+                _TenLoaiThuongBinh = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TenLoaiThuongBinh");
+                OnTenLoaiThuongBinhChanged();
+            }
+        }
+        private global::System.String _TenLoaiThuongBinh;
+        partial void OnTenLoaiThuongBinhChanging(global::System.String value);
+        partial void OnTenLoaiThuongBinhChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhanVien_ThuongBinh", "NhanVien")]
+        public EntityCollection<NhanVien> NhanViens
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<NhanVien>("QLHSCCModel.FK_NhanVien_ThuongBinh", "NhanVien");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<NhanVien>("QLHSCCModel.FK_NhanVien_ThuongBinh", "NhanVien", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
     [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="LuongPhuCap")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
@@ -8980,6 +9084,44 @@ namespace QuanLyHoSoCongChuc.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhanVien_ThuongBinh", "LoaiThuongBinh")]
+        public LoaiThuongBinh LoaiThuongBinh
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiThuongBinh>("QLHSCCModel.FK_NhanVien_ThuongBinh", "LoaiThuongBinh").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiThuongBinh>("QLHSCCModel.FK_NhanVien_ThuongBinh", "LoaiThuongBinh").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<LoaiThuongBinh> LoaiThuongBinhReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<LoaiThuongBinh>("QLHSCCModel.FK_NhanVien_ThuongBinh", "LoaiThuongBinh");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<LoaiThuongBinh>("QLHSCCModel.FK_NhanVien_ThuongBinh", "LoaiThuongBinh", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_LuongPhuCap_NhanVien", "LuongPhuCap")]
         public EntityCollection<LuongPhuCap> LuongPhuCaps
         {
@@ -9068,44 +9210,6 @@ namespace QuanLyHoSoCongChuc.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ThanhPhanGiaDinh>("QLHSCCModel.FK_NhanVien_ThanhPhanGiaDinh", "ThanhPhanGiaDinh", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhanVien_ThuongBinh", "ThuongBinh")]
-        public ThuongBinh ThuongBinh
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ThuongBinh>("QLHSCCModel.FK_NhanVien_ThuongBinh", "ThuongBinh").Value;
-            }
-            set
-            {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ThuongBinh>("QLHSCCModel.FK_NhanVien_ThuongBinh", "ThuongBinh").Value = value;
-            }
-        }
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [BrowsableAttribute(false)]
-        [DataMemberAttribute()]
-        public EntityReference<ThuongBinh> ThuongBinhReference
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<ThuongBinh>("QLHSCCModel.FK_NhanVien_ThuongBinh", "ThuongBinh");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<ThuongBinh>("QLHSCCModel.FK_NhanVien_ThuongBinh", "ThuongBinh", value);
                 }
             }
         }
@@ -11006,110 +11110,6 @@ namespace QuanLyHoSoCongChuc.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<QuanHe>("QLHSCCModel.FK_ThanNhanMoi_QuanHe", "QuanHe", value);
-                }
-            }
-        }
-
-        #endregion
-    }
-    
-    /// <summary>
-    /// No Metadata Documentation available.
-    /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="ThuongBinh")]
-    [Serializable()]
-    [DataContractAttribute(IsReference=true)]
-    public partial class ThuongBinh : EntityObject
-    {
-        #region Factory Method
-    
-        /// <summary>
-        /// Create a new ThuongBinh object.
-        /// </summary>
-        /// <param name="maThuongBinh">Initial value of the MaThuongBinh property.</param>
-        public static ThuongBinh CreateThuongBinh(global::System.Int32 maThuongBinh)
-        {
-            ThuongBinh thuongBinh = new ThuongBinh();
-            thuongBinh.MaThuongBinh = maThuongBinh;
-            return thuongBinh;
-        }
-
-        #endregion
-        #region Primitive Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
-        [DataMemberAttribute()]
-        public global::System.Int32 MaThuongBinh
-        {
-            get
-            {
-                return _MaThuongBinh;
-            }
-            set
-            {
-                if (_MaThuongBinh != value)
-                {
-                    OnMaThuongBinhChanging(value);
-                    ReportPropertyChanging("MaThuongBinh");
-                    _MaThuongBinh = StructuralObject.SetValidValue(value);
-                    ReportPropertyChanged("MaThuongBinh");
-                    OnMaThuongBinhChanged();
-                }
-            }
-        }
-        private global::System.Int32 _MaThuongBinh;
-        partial void OnMaThuongBinhChanging(global::System.Int32 value);
-        partial void OnMaThuongBinhChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
-        public global::System.String TenThuongBinh
-        {
-            get
-            {
-                return _TenThuongBinh;
-            }
-            set
-            {
-                OnTenThuongBinhChanging(value);
-                ReportPropertyChanging("TenThuongBinh");
-                _TenThuongBinh = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("TenThuongBinh");
-                OnTenThuongBinhChanged();
-            }
-        }
-        private global::System.String _TenThuongBinh;
-        partial void OnTenThuongBinhChanging(global::System.String value);
-        partial void OnTenThuongBinhChanged();
-
-        #endregion
-    
-        #region Navigation Properties
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhanVien_ThuongBinh", "NhanVien")]
-        public EntityCollection<NhanVien> NhanViens
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<NhanVien>("QLHSCCModel.FK_NhanVien_ThuongBinh", "NhanVien");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<NhanVien>("QLHSCCModel.FK_NhanVien_ThuongBinh", "NhanVien", value);
                 }
             }
         }
