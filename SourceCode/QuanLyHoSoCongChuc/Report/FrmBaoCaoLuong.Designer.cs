@@ -45,7 +45,6 @@
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.cbDonVi = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
             this.btLuuBieu = new DevComponents.DotNetBar.ButtonX();
             this.btInBieu = new DevComponents.DotNetBar.ButtonX();
@@ -62,6 +61,9 @@
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.btnChonDonVi = new System.Windows.Forms.Button();
+            this.txtDonVi = new System.Windows.Forms.TextBox();
+            this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.panelEx2.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -75,7 +77,7 @@
             this.labelX2.Name = "labelX2";
             this.labelX2.Size = new System.Drawing.Size(29, 22);
             this.labelX2.TabIndex = 84;
-            this.labelX2.Text = "Kỳ";
+            this.labelX2.Text = "Quý";
             // 
             // labelX10
             // 
@@ -138,12 +140,13 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.txtDonVi);
+            this.groupPanel1.Controls.Add(this.btnChonDonVi);
             this.groupPanel1.Controls.Add(this.textBox1);
             this.groupPanel1.Controls.Add(this.textBox5);
             this.groupPanel1.Controls.Add(this.textBox6);
             this.groupPanel1.Controls.Add(this.cbKy);
             this.groupPanel1.Controls.Add(this.cbDoiTuong);
-            this.groupPanel1.Controls.Add(this.cbDonVi);
             this.groupPanel1.Controls.Add(this.buttonX1);
             this.groupPanel1.Controls.Add(this.btLuuBieu);
             this.groupPanel1.Controls.Add(this.btInBieu);
@@ -219,6 +222,7 @@
             this.cbKy.FormattingEnabled = true;
             this.cbKy.ItemHeight = 14;
             this.cbKy.Items.AddRange(new object[] {
+            this.comboItem7,
             this.comboItem4,
             this.comboItem5,
             this.comboItem6});
@@ -266,17 +270,6 @@
             // comboItem3
             // 
             this.comboItem3.Text = "Quỹ lương viện chức hợp đồng";
-            // 
-            // cbDonVi
-            // 
-            this.cbDonVi.DisplayMember = "Text";
-            this.cbDonVi.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbDonVi.FormattingEnabled = true;
-            this.cbDonVi.ItemHeight = 14;
-            this.cbDonVi.Location = new System.Drawing.Point(150, 45);
-            this.cbDonVi.Name = "cbDonVi";
-            this.cbDonVi.Size = new System.Drawing.Size(192, 20);
-            this.cbDonVi.TabIndex = 146;
             // 
             // buttonX1
             // 
@@ -441,6 +434,29 @@
             this.labelX1.Text = "BÁO CÁO LƯƠNG - QUỸ LƯƠNG";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // btnChonDonVi
+            // 
+            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonVi.Location = new System.Drawing.Point(348, 42);
+            this.btnChonDonVi.Name = "btnChonDonVi";
+            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonVi.TabIndex = 155;
+            this.btnChonDonVi.UseVisualStyleBackColor = true;
+            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
+            // 
+            // txtDonVi
+            // 
+            this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi.Location = new System.Drawing.Point(150, 42);
+            this.txtDonVi.Name = "txtDonVi";
+            this.txtDonVi.Size = new System.Drawing.Size(192, 22);
+            this.txtDonVi.TabIndex = 156;
+            // 
+            // comboItem7
+            // 
+            this.comboItem7.Text = "----";
+            // 
             // FrmBaoCaoLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -483,7 +499,6 @@
         private DevComponents.DotNetBar.ButtonX btInBieu;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX btLuuBieu;
-        private DevComponents.DotNetBar.Controls.ComboBoxEx cbDonVi;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbKy;
         private DevComponents.Editors.ComboItem comboItem4;
         private DevComponents.Editors.ComboItem comboItem5;
@@ -496,5 +511,8 @@
         public System.Windows.Forms.TextBox textBox5;
         public System.Windows.Forms.TextBox textBox6;
         private SourceGrid.Grid grid1;
+        public System.Windows.Forms.TextBox txtDonVi;
+        private System.Windows.Forms.Button btnChonDonVi;
+        private DevComponents.Editors.ComboItem comboItem7;
     }
 }

@@ -55,7 +55,9 @@ namespace QuanLyHoSoCongChuc.Danh_muc
         {
             init();
             if (EnableButtonChon)
+            {
                 btChon.Visible = true;
+            }
             else
                 btChon.Visible = false;
         }
@@ -186,19 +188,22 @@ namespace QuanLyHoSoCongChuc.Danh_muc
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
+            
             int level = GlobalDanhMucs.GetLevelTreeView(treeView1.SelectedNode);
+            if (level>0) 
+                btChon.Enabled = true; // enable for all level --> Use for form Report to load it
             if (level == 1 || level == 3)
             {
                 btThem.Enabled = false;
             }
-            else
+            else 
             {
                 btThem.Enabled = true;
             }
 
             if (level == 3)
             {
-                btChon.Enabled = true;
+                //btChon.Enabled = true;
                 btXoa.Enabled = true;
                 btSave.Enabled = true;
 
@@ -216,7 +221,7 @@ namespace QuanLyHoSoCongChuc.Danh_muc
                 }
             }
             else {
-                btChon.Enabled = false;
+                //btChon.Enabled = false;
                 btXoa.Enabled = false;
                 btSave.Enabled = false;
 
@@ -270,8 +275,26 @@ namespace QuanLyHoSoCongChuc.Danh_muc
         {
             var madonvi = txtMaDonVi.Text;
             var donvi = DonViRepository.SelectByID(madonvi);
-            var tendonvidaydu = donvi.TenDonVi + ", huyện " + donvi.QuanHuyen.TenQuanHuyen + ", tỉnh " + donvi.QuanHuyen.TinhThanh.TenTinh;
-            TransferDataInfo(this, new MyEvent(madonvi + "#" + tendonvidaydu));
+            int level = GlobalDanhMucs.GetLevelTreeView(treeView1.SelectedNode);
+            var tendonvidaydu = "";
+            if (level == 3)
+            {
+                tendonvidaydu = donvi.TenDonVi + ", huyện " + donvi.QuanHuyen.TenQuanHuyen + ", tỉnh " + donvi.QuanHuyen.TinhThanh.TenTinh;
+                TransferDataInfo(this, new MyEvent(madonvi + "#" + tendonvidaydu + "#" + level));
+            }
+            else if (level == 1)
+            {
+                var SelectedId = treeView1.SelectedNode.Text.Split(new char[] { '-' })[0].Trim();
+                tendonvidaydu = "Tỉnh " +TinhThanhRepository.SelectByID(SelectedId).TenTinh;
+                TransferDataInfo(this, new MyEvent(SelectedId + "#" + tendonvidaydu + "#" + level));
+            }
+            else if (level == 2)
+            {
+                var SelectedId = treeView1.SelectedNode.Text.Split(new char[] { '-' })[0].Trim();
+                tendonvidaydu = "Huyện " + QuanHuyenRepository.SelectByID(SelectedId).TenQuanHuyen;
+                TransferDataInfo(this, new MyEvent(SelectedId + "#" + tendonvidaydu + "#" + level));
+            }
+            
         }
 
         /// <summary>

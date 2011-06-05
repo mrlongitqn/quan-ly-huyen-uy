@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using QuanLyHoSoCongChuc.Danh_muc;
+using QuanLyHoSoCongChuc.Utils;
+using System.Data.SqlClient;
 
 namespace QuanLyHoSoCongChuc.Report
 {
@@ -15,6 +18,9 @@ namespace QuanLyHoSoCongChuc.Report
     #endregion
     public partial class FrmBaoCaoLuong : Form
     {
+        String SelectedId;
+        int Level;
+        DataService dataService = new DataService();
         public FrmBaoCaoLuong()
         {
             InitializeComponent();
@@ -22,29 +28,18 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void FrmBaoCaoLuong_Load(object sender, EventArgs e)
         {
-            loadDonVi();
             cbDoiTuong.SelectedIndex = 0;
             cbKy.SelectedIndex = 0;
         }
-        void loadDonVi()
-        {
-            var lstDonVi = DonViRepository.SelectAll();
-            for (int i = 0; i < lstDonVi.Count; i++)
-            {
-                cbDonVi.Items.Add(new ListItem(lstDonVi[i].MaDonVi, lstDonVi[i].TenDonVi));
-            }
-            if (lstDonVi.Count > 0)
-                cbDonVi.SelectedIndex = 0;
-        }
+        
 
         private void btInBieu_Click(object sender, EventArgs e)
         {
             DateTime dt = dtNgay.Value;
             String strDt = dt.ToString("dd/MM/yyyy");
-            ListItem DV = (ListItem)cbDonVi.SelectedItem;
             int type = cbDoiTuong.SelectedIndex;
 
-            FrmPrintReport frm = new FrmPrintReport("1-"+type.ToString(), DV.ID, strDt);
+            FrmPrintReport frm = new FrmPrintReport("1-" + type.ToString(), SelectedId, strDt);
             frm.Show();
         }
         void initGird1()
@@ -283,7 +278,66 @@ namespace QuanLyHoSoCongChuc.Report
         }
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Chua lam xong");
+            grid1.Rows.Clear();
+            if (cbDoiTuong.SelectedIndex == 0)
+            {
+                initGird1();
+                String sql = "Select * from DonVi";
+                sql += " where 1=1";
+                if (Level == 1)//Cap tinh
+                {
+                    sql += " and MaQuanHuyen in (";
+                    sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
+                    sql += " )";
+                }
+                if (Level == 2)//Cap huyen
+                {
+                    sql += " and MaQuanHuyen ='" + SelectedId + "'";
+                }
+
+                SqlCommand cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                DataTable myDt = dataService;
+
+                SourceGrid.Cells.Views.Cell yellowView = new SourceGrid.Cells.Views.Cell();
+                yellowView.BackColor = Color.Yellow;
+                yellowView.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+                for (int r = 0; r < myDt.Rows.Count; r++)
+                {
+                    grid1.Rows.Insert(r + 2);
+                    grid1[2 + r, 0] = new SourceGrid.Cells.Cell(r + 1, typeof(int));
+                    grid1[2 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
+                    grid1[2 + r, 2] = new SourceGrid.Cells.Cell("", typeof(String));
+
+                    grid1[2 + r, 2] = new SourceGrid.Cells.Cell("", typeof(int));
+                    grid1[2 + r, 3] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[2 + r, 4] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[2 + r, 5] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 5].View = yellowView;
+                    grid1[2 + r, 6] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 6].View = yellowView;
+                    grid1[2 + r, 7] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 7].View = yellowView;
+                    grid1[2 + r, 8] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 8].View = yellowView;
+                    grid1[2 + r, 9] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 9].View = yellowView;
+                    grid1[2 + r, 10] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 10].View = yellowView;
+                    grid1[2 + r, 11] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[2 + r, 12] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[2 + r, 13] = new SourceGrid.Cells.Cell("", typeof(String));
+                }
+
+                if (myDt.Rows.Count == 0)
+                {
+                    MessageBox.Show("No data");
+                }
+            }
+            else if (cbDoiTuong.SelectedIndex == 1)
+                initGird2();
+            else if (cbDoiTuong.SelectedIndex == 2)
+                initGird3();
+
+            
+            
+
+            grid1.AutoSizeCells();
+            
         }
 
         private void cbDoiTuong_SelectedIndexChanged(object sender, EventArgs e)
@@ -295,6 +349,22 @@ namespace QuanLyHoSoCongChuc.Report
             else if (cbDoiTuong.SelectedIndex == 2)
                 initGird3();
 
+        }
+
+        private void btnChonDonVi_Click(object sender, EventArgs e)
+        {
+            FrmDanhMuc frm = new FrmDanhMuc();
+            frm.Handler += GetDonVi;
+            frm.EnableButtonChon = true;
+            frm.ShowDialog();
+        }
+        public void GetDonVi(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            SelectedId = comp[0];
+            txtDonVi.Text = comp[1];
+            Level = int.Parse(comp[2]); 
         }
     }
 }
