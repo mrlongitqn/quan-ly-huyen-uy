@@ -38,8 +38,14 @@ namespace QuanLyHoSoCongChuc.Report
             DateTime dt = dtNgay.Value;
             String strDt = dt.ToString("dd/MM/yyyy");
             int type = cbDoiTuong.SelectedIndex;
-
-            FrmPrintReport frm = new FrmPrintReport("1-" + type.ToString(), SelectedId, strDt);
+            List<String> ChuKi = new List<string>();
+            ChuKi.Add(txtNLB1.Text);
+            ChuKi.Add(txtNLB2.Text);
+            ChuKi.Add(txtNLB3.Text);
+            ChuKi.Add(txtNK1.Text);
+            ChuKi.Add(txtNK2.Text);
+            ChuKi.Add(txtNK3.Text);
+            FrmPrintReport frm = new FrmPrintReport("1-" + type.ToString(), SelectedId, strDt, ChuKi);
             frm.Show();
         }
         void initGird1()

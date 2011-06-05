@@ -46,8 +46,8 @@ namespace QuanLyHoSoCongChuc.Report
         {
             grid1.Rows.Clear();
             initGird();
-            String sql = " select nv.*, t.TenTrinhDoChuyenMon, dv.TenDonVi";
-            sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+            String sql = " select nv.*, t.TenBangChuyenMonNghiepVu, dv.TenDonVi";
+            sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
             sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
             sql += " where nv.MaDonVi='" + SelectedId + "'";
 
@@ -90,8 +90,14 @@ namespace QuanLyHoSoCongChuc.Report
         private void btInBieu_Click(object sender, EventArgs e)
         {
             String strDt = cboKy.Text + " năm " + dupNam.Text;
-
-            FrmPrintReport frm = new FrmPrintReport("3", SelectedId, strDt);
+            List<String> ChuKi = new List<string>();
+            ChuKi.Add(txtNLB1.Text);
+            ChuKi.Add(txtNLB2.Text);
+            ChuKi.Add(txtNLB3.Text);
+            ChuKi.Add(txtNK1.Text);
+            ChuKi.Add(txtNK2.Text);
+            ChuKi.Add(txtNK3.Text);
+            FrmPrintReport frm = new FrmPrintReport("3", SelectedId, strDt, ChuKi);
             frm.Show();
         }
         void initGird()

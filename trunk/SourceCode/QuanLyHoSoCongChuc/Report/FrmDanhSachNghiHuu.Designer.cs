@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtDonVi = new System.Windows.Forms.TextBox();
+            this.btnChonDonVi = new System.Windows.Forms.Button();
             this.dupNam = new System.Windows.Forms.DomainUpDown();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtNK3 = new System.Windows.Forms.TextBox();
+            this.txtNK2 = new System.Windows.Forms.TextBox();
+            this.txtNK1 = new System.Windows.Forms.TextBox();
             this.cboKy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.comboItem8 = new DevComponents.Editors.ComboItem();
@@ -51,9 +53,9 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.txtNLB3 = new System.Windows.Forms.TextBox();
+            this.txtNLB2 = new System.Windows.Forms.TextBox();
+            this.txtNLB1 = new System.Windows.Forms.TextBox();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
@@ -75,8 +77,6 @@
             this.TenTrinhDoChinhTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianBatDauTru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDonVi = new System.Windows.Forms.TextBox();
-            this.btnChonDonVi = new System.Windows.Forms.Button();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -107,9 +107,9 @@
             this.groupPanel2.Controls.Add(this.txtDonVi);
             this.groupPanel2.Controls.Add(this.btnChonDonVi);
             this.groupPanel2.Controls.Add(this.dupNam);
-            this.groupPanel2.Controls.Add(this.textBox7);
-            this.groupPanel2.Controls.Add(this.textBox8);
-            this.groupPanel2.Controls.Add(this.textBox9);
+            this.groupPanel2.Controls.Add(this.txtNK3);
+            this.groupPanel2.Controls.Add(this.txtNK2);
+            this.groupPanel2.Controls.Add(this.txtNK1);
             this.groupPanel2.Controls.Add(this.cboKy);
             this.groupPanel2.Controls.Add(this.btThoat);
             this.groupPanel2.Controls.Add(this.btLuuBieu);
@@ -119,9 +119,9 @@
             this.groupPanel2.Controls.Add(this.radioButton1);
             this.groupPanel2.Controls.Add(this.radioButton2);
             this.groupPanel2.Controls.Add(this.labelX5);
-            this.groupPanel2.Controls.Add(this.textBox10);
-            this.groupPanel2.Controls.Add(this.textBox11);
-            this.groupPanel2.Controls.Add(this.textBox12);
+            this.groupPanel2.Controls.Add(this.txtNLB3);
+            this.groupPanel2.Controls.Add(this.txtNLB2);
+            this.groupPanel2.Controls.Add(this.txtNLB1);
             this.groupPanel2.Controls.Add(this.labelX6);
             this.groupPanel2.Controls.Add(this.labelX7);
             this.groupPanel2.Controls.Add(this.labelX9);
@@ -153,6 +153,25 @@
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 0;
             // 
+            // txtDonVi
+            // 
+            this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi.Location = new System.Drawing.Point(150, 41);
+            this.txtDonVi.Name = "txtDonVi";
+            this.txtDonVi.Size = new System.Drawing.Size(192, 22);
+            this.txtDonVi.TabIndex = 158;
+            // 
+            // btnChonDonVi
+            // 
+            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonVi.Location = new System.Drawing.Point(348, 41);
+            this.btnChonDonVi.Name = "btnChonDonVi";
+            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonVi.TabIndex = 157;
+            this.btnChonDonVi.UseVisualStyleBackColor = true;
+            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
+            // 
             // dupNam
             // 
             this.dupNam.Location = new System.Drawing.Point(150, 69);
@@ -160,29 +179,29 @@
             this.dupNam.Size = new System.Drawing.Size(77, 20);
             this.dupNam.TabIndex = 152;
             // 
-            // textBox7
+            // txtNK3
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(506, 170);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(192, 22);
-            this.textBox7.TabIndex = 151;
+            this.txtNK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK3.Location = new System.Drawing.Point(506, 170);
+            this.txtNK3.Name = "txtNK3";
+            this.txtNK3.Size = new System.Drawing.Size(192, 22);
+            this.txtNK3.TabIndex = 151;
             // 
-            // textBox8
+            // txtNK2
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(506, 145);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(192, 22);
-            this.textBox8.TabIndex = 150;
+            this.txtNK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK2.Location = new System.Drawing.Point(506, 145);
+            this.txtNK2.Name = "txtNK2";
+            this.txtNK2.Size = new System.Drawing.Size(192, 22);
+            this.txtNK2.TabIndex = 150;
             // 
-            // textBox9
+            // txtNK1
             // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(506, 120);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(192, 22);
-            this.textBox9.TabIndex = 149;
+            this.txtNK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK1.Location = new System.Drawing.Point(506, 120);
+            this.txtNK1.Name = "txtNK1";
+            this.txtNK1.Size = new System.Drawing.Size(192, 22);
+            this.txtNK1.TabIndex = 149;
             // 
             // cboKy
             // 
@@ -310,29 +329,29 @@
             this.labelX5.TabIndex = 94;
             this.labelX5.Text = "Người Ký";
             // 
-            // textBox10
+            // txtNLB3
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(150, 170);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(192, 22);
-            this.textBox10.TabIndex = 93;
+            this.txtNLB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB3.Location = new System.Drawing.Point(150, 170);
+            this.txtNLB3.Name = "txtNLB3";
+            this.txtNLB3.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB3.TabIndex = 93;
             // 
-            // textBox11
+            // txtNLB2
             // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(150, 145);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(192, 22);
-            this.textBox11.TabIndex = 92;
+            this.txtNLB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB2.Location = new System.Drawing.Point(150, 145);
+            this.txtNLB2.Name = "txtNLB2";
+            this.txtNLB2.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB2.TabIndex = 92;
             // 
-            // textBox12
+            // txtNLB1
             // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(150, 120);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(192, 22);
-            this.textBox12.TabIndex = 91;
+            this.txtNLB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB1.Location = new System.Drawing.Point(150, 120);
+            this.txtNLB1.Name = "txtNLB1";
+            this.txtNLB1.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB1.TabIndex = 91;
             // 
             // labelX6
             // 
@@ -404,14 +423,14 @@
             // DGV
             // 
             this.DGV.AllowUserToAddRows = false;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
@@ -428,26 +447,26 @@
             this.TenTrinhDoChinhTri,
             this.ThoiGianBatDauTru,
             this.GhiChu});
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DGV.Location = new System.Drawing.Point(0, 0);
             this.DGV.Name = "DGV";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.DGV.Size = new System.Drawing.Size(882, 234);
             this.DGV.TabIndex = 2;
             // 
@@ -537,25 +556,6 @@
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
             // 
-            // txtDonVi
-            // 
-            this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonVi.Location = new System.Drawing.Point(150, 41);
-            this.txtDonVi.Name = "txtDonVi";
-            this.txtDonVi.Size = new System.Drawing.Size(192, 22);
-            this.txtDonVi.TabIndex = 158;
-            // 
-            // btnChonDonVi
-            // 
-            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonDonVi.Location = new System.Drawing.Point(348, 41);
-            this.btnChonDonVi.Name = "btnChonDonVi";
-            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDonVi.TabIndex = 157;
-            this.btnChonDonVi.UseVisualStyleBackColor = true;
-            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
-            // 
             // FrmDanhSachNghiHuu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -580,9 +580,9 @@
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private System.Windows.Forms.DomainUpDown dupNam;
-        public System.Windows.Forms.TextBox textBox7;
-        public System.Windows.Forms.TextBox textBox8;
-        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox txtNK3;
+        public System.Windows.Forms.TextBox txtNK2;
+        public System.Windows.Forms.TextBox txtNK1;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboKy;
         private DevComponents.Editors.ComboItem comboItem7;
         private DevComponents.Editors.ComboItem comboItem8;
@@ -595,9 +595,9 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private DevComponents.DotNetBar.LabelX labelX5;
-        public System.Windows.Forms.TextBox textBox10;
-        public System.Windows.Forms.TextBox textBox11;
-        public System.Windows.Forms.TextBox textBox12;
+        public System.Windows.Forms.TextBox txtNLB3;
+        public System.Windows.Forms.TextBox txtNLB2;
+        public System.Windows.Forms.TextBox txtNLB1;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX9;
