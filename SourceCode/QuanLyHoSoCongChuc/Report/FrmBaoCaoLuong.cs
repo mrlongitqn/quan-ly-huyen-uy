@@ -329,9 +329,116 @@ namespace QuanLyHoSoCongChuc.Report
                 }
             }
             else if (cbDoiTuong.SelectedIndex == 1)
+            {
                 initGird2();
+                String sql = "Select * from DonVi";
+                sql += " where 1=1";
+                if (Level == 1)//Cap tinh
+                {
+                    sql += " and MaQuanHuyen in (";
+                    sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
+                    sql += " )";
+                }
+                if (Level == 2)//Cap huyen
+                {
+                    sql += " and MaQuanHuyen ='" + SelectedId + "'";
+                }
+
+                SqlCommand cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                DataTable myDt = dataService;
+
+                SourceGrid.Cells.Views.Cell yellowView = new SourceGrid.Cells.Views.Cell();
+                yellowView.BackColor = Color.Yellow;
+                yellowView.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+                for (int r = 0; r < myDt.Rows.Count; r++)
+                {
+                    grid1.Rows.Insert(r + 3);
+                    grid1[3 + r, 0] = new SourceGrid.Cells.Cell(r + 1, typeof(int));
+                    grid1[3 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
+                    grid1[3 + r, 2] = new SourceGrid.Cells.Cell("", typeof(String));
+
+                    grid1[3 + r, 3] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 4] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 5] = new SourceGrid.Cells.Cell("", typeof(String)); 
+                    grid1[3 + r, 6] = new SourceGrid.Cells.Cell("", typeof(String)); 
+                    grid1[3 + r, 7] = new SourceGrid.Cells.Cell("", typeof(String)); 
+                    grid1[3 + r, 8] = new SourceGrid.Cells.Cell("", typeof(String)); 
+                    grid1[3 + r, 9] = new SourceGrid.Cells.Cell("", typeof(String)); 
+                    grid1[3 + r, 10] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 11] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 12] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 13] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 14] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 15] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 16] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 17] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 18] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 19] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 20] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[3 + r, 20].View = yellowView;
+                    grid1[3 + r, 21] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[3 + r, 21].View = yellowView;
+                }
+
+                if (myDt.Rows.Count == 0)
+                {
+                    MessageBox.Show("No data");
+                }
+            }
             else if (cbDoiTuong.SelectedIndex == 2)
+            {
                 initGird3();
+                String sql = "Select * from DonVi";
+                sql += " where 1=1";
+                if (Level == 1)//Cap tinh
+                {
+                    sql += " and MaQuanHuyen in (";
+                    sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
+                    sql += " )";
+                }
+                if (Level == 2)//Cap huyen
+                {
+                    sql += " and MaQuanHuyen ='" + SelectedId + "'";
+                }
+
+                SqlCommand cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                DataTable myDt = dataService;
+
+                SourceGrid.Cells.Views.Cell yellowView = new SourceGrid.Cells.Views.Cell();
+                yellowView.BackColor = Color.Yellow;
+                yellowView.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+                for (int r = 0; r < myDt.Rows.Count; r++)
+                {
+                    grid1.Rows.Insert(r + 4);
+                    grid1[4 + r, 0] = new SourceGrid.Cells.Cell(r + 1, typeof(int));
+                    grid1[4 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
+                    grid1[4 + r, 2] = new SourceGrid.Cells.Cell("", typeof(String));
+
+                    grid1[4 + r, 3] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 4] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 5] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 6] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 7] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 8] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 9] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 10] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 11] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 12] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 13] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 14] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 15] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 16] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 17] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 18] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[4 + r, 18].View = yellowView;
+                    grid1[4 + r, 19] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[4 + r, 19].View = yellowView;
+                    grid1[4 + r, 20] = new SourceGrid.Cells.Cell("", typeof(String)); 
+                }
+
+                if (myDt.Rows.Count == 0)
+                {
+                    MessageBox.Show("No data");
+                }
+            }
 
             
             
