@@ -43,18 +43,24 @@ namespace QuanLyHoSoCongChuc.Report
         private void btInBieu_Click(object sender, EventArgs e)
         {
             String strDt = cboKy.Text + " năm " + dupNam.Text;
-
-            FrmPrintReport frm = new FrmPrintReport("5", SelectedId, "");
+            List<String> ChuKi = new List<string>();
+            ChuKi.Add(txtNLB1.Text);
+            ChuKi.Add(txtNLB2.Text);
+            ChuKi.Add(txtNLB3.Text);
+            ChuKi.Add(txtNK1.Text);
+            ChuKi.Add(txtNK2.Text);
+            ChuKi.Add(txtNK3.Text);
+            FrmPrintReport frm = new FrmPrintReport("5", SelectedId, "", ChuKi);
             frm.Show();
         }
 
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
             DGV.Rows.Clear();
-            String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri, dv.TenDonVi";
+            String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri, dv.TenDonVi";
             sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
-            sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
-            sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
+            sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+            sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
             sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
             sql += " where nv.MaDonVi='" + SelectedId + "'";
 

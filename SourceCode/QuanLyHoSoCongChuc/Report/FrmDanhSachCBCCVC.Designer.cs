@@ -31,9 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtDonVi = new System.Windows.Forms.TextBox();
+            this.btnChonDonVi = new System.Windows.Forms.Button();
             this.cbKy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.comboItem5 = new DevComponents.Editors.ComboItem();
@@ -49,11 +48,6 @@
             this.cbSaved = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.rdSaved = new System.Windows.Forms.RadioButton();
             this.rdFromDB = new System.Windows.Forms.RadioButton();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.dtNgay = new System.Windows.Forms.DateTimePicker();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
@@ -72,8 +66,14 @@
             this.ChuyenNganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTrinhDoChinhTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDonVi = new System.Windows.Forms.TextBox();
-            this.btnChonDonVi = new System.Windows.Forms.Button();
+            this.txtNK3 = new System.Windows.Forms.TextBox();
+            this.txtNK2 = new System.Windows.Forms.TextBox();
+            this.txtNK1 = new System.Windows.Forms.TextBox();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.txtNLB3 = new System.Windows.Forms.TextBox();
+            this.txtNLB2 = new System.Windows.Forms.TextBox();
+            this.txtNLB1 = new System.Windows.Forms.TextBox();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -101,11 +101,16 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.txtNK3);
+            this.groupPanel1.Controls.Add(this.txtNK2);
+            this.groupPanel1.Controls.Add(this.txtNK1);
+            this.groupPanel1.Controls.Add(this.labelX5);
+            this.groupPanel1.Controls.Add(this.txtNLB3);
+            this.groupPanel1.Controls.Add(this.txtNLB2);
+            this.groupPanel1.Controls.Add(this.txtNLB1);
+            this.groupPanel1.Controls.Add(this.labelX6);
             this.groupPanel1.Controls.Add(this.txtDonVi);
             this.groupPanel1.Controls.Add(this.btnChonDonVi);
-            this.groupPanel1.Controls.Add(this.textBox1);
-            this.groupPanel1.Controls.Add(this.textBox5);
-            this.groupPanel1.Controls.Add(this.textBox6);
             this.groupPanel1.Controls.Add(this.cbKy);
             this.groupPanel1.Controls.Add(this.cbDoiTuong);
             this.groupPanel1.Controls.Add(this.buttonX1);
@@ -115,11 +120,6 @@
             this.groupPanel1.Controls.Add(this.cbSaved);
             this.groupPanel1.Controls.Add(this.rdSaved);
             this.groupPanel1.Controls.Add(this.rdFromDB);
-            this.groupPanel1.Controls.Add(this.labelX4);
-            this.groupPanel1.Controls.Add(this.textBox4);
-            this.groupPanel1.Controls.Add(this.textBox3);
-            this.groupPanel1.Controls.Add(this.textBox2);
-            this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.dtNgay);
             this.groupPanel1.Controls.Add(this.labelX2);
             this.groupPanel1.Controls.Add(this.labelX10);
@@ -152,29 +152,24 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
             // 
-            // textBox1
+            // txtDonVi
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(506, 170);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 22);
-            this.textBox1.TabIndex = 151;
+            this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi.Location = new System.Drawing.Point(150, 42);
+            this.txtDonVi.Name = "txtDonVi";
+            this.txtDonVi.Size = new System.Drawing.Size(192, 22);
+            this.txtDonVi.TabIndex = 158;
             // 
-            // textBox5
+            // btnChonDonVi
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(506, 145);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(192, 22);
-            this.textBox5.TabIndex = 150;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(506, 120);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(192, 22);
-            this.textBox6.TabIndex = 149;
+            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonVi.Location = new System.Drawing.Point(348, 42);
+            this.btnChonDonVi.Name = "btnChonDonVi";
+            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonVi.TabIndex = 157;
+            this.btnChonDonVi.UseVisualStyleBackColor = true;
+            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
             // 
             // cbKy
             // 
@@ -308,50 +303,6 @@
             this.rdFromDB.TabStop = true;
             this.rdFromDB.Text = "Tổng hợp từ cơ sở dữ liệu";
             this.rdFromDB.UseVisualStyleBackColor = true;
-            // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX4.Location = new System.Drawing.Point(442, 121);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(84, 25);
-            this.labelX4.TabIndex = 94;
-            this.labelX4.Text = "Người Ký";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(150, 170);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(192, 22);
-            this.textBox4.TabIndex = 93;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(150, 145);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(192, 22);
-            this.textBox3.TabIndex = 92;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(150, 120);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 22);
-            this.textBox2.TabIndex = 91;
-            // 
-            // labelX3
-            // 
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.Location = new System.Drawing.Point(44, 120);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(94, 25);
-            this.labelX3.TabIndex = 90;
-            this.labelX3.Text = "Người lập biểu";
             // 
             // dtNgay
             // 
@@ -520,24 +471,73 @@
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
             // 
-            // txtDonVi
+            // txtNK3
             // 
-            this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonVi.Location = new System.Drawing.Point(150, 42);
-            this.txtDonVi.Name = "txtDonVi";
-            this.txtDonVi.Size = new System.Drawing.Size(192, 22);
-            this.txtDonVi.TabIndex = 158;
+            this.txtNK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK3.Location = new System.Drawing.Point(506, 176);
+            this.txtNK3.Name = "txtNK3";
+            this.txtNK3.Size = new System.Drawing.Size(192, 22);
+            this.txtNK3.TabIndex = 166;
             // 
-            // btnChonDonVi
+            // txtNK2
             // 
-            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonDonVi.Location = new System.Drawing.Point(348, 42);
-            this.btnChonDonVi.Name = "btnChonDonVi";
-            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDonVi.TabIndex = 157;
-            this.btnChonDonVi.UseVisualStyleBackColor = true;
-            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
+            this.txtNK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK2.Location = new System.Drawing.Point(506, 151);
+            this.txtNK2.Name = "txtNK2";
+            this.txtNK2.Size = new System.Drawing.Size(192, 22);
+            this.txtNK2.TabIndex = 165;
+            // 
+            // txtNK1
+            // 
+            this.txtNK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK1.Location = new System.Drawing.Point(506, 126);
+            this.txtNK1.Name = "txtNK1";
+            this.txtNK1.Size = new System.Drawing.Size(192, 22);
+            this.txtNK1.TabIndex = 164;
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Location = new System.Drawing.Point(442, 127);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(84, 25);
+            this.labelX5.TabIndex = 163;
+            this.labelX5.Text = "Người Ký";
+            // 
+            // txtNLB3
+            // 
+            this.txtNLB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB3.Location = new System.Drawing.Point(150, 176);
+            this.txtNLB3.Name = "txtNLB3";
+            this.txtNLB3.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB3.TabIndex = 162;
+            // 
+            // txtNLB2
+            // 
+            this.txtNLB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB2.Location = new System.Drawing.Point(150, 151);
+            this.txtNLB2.Name = "txtNLB2";
+            this.txtNLB2.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB2.TabIndex = 161;
+            // 
+            // txtNLB1
+            // 
+            this.txtNLB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB1.Location = new System.Drawing.Point(150, 126);
+            this.txtNLB1.Name = "txtNLB1";
+            this.txtNLB1.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB1.TabIndex = 160;
+            // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Location = new System.Drawing.Point(44, 126);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(94, 25);
+            this.labelX6.TabIndex = 159;
+            this.labelX6.Text = "Người lập biểu";
             // 
             // FrmDanhSachCBCCVC
             // 
@@ -562,9 +562,6 @@
 
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.TextBox textBox5;
-        public System.Windows.Forms.TextBox textBox6;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbKy;
         private DevComponents.Editors.ComboItem comboItem4;
         private DevComponents.Editors.ComboItem comboItem5;
@@ -580,11 +577,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbSaved;
         private System.Windows.Forms.RadioButton rdSaved;
         private System.Windows.Forms.RadioButton rdFromDB;
-        private DevComponents.DotNetBar.LabelX labelX4;
-        public System.Windows.Forms.TextBox textBox4;
-        public System.Windows.Forms.TextBox textBox3;
-        public System.Windows.Forms.TextBox textBox2;
-        private DevComponents.DotNetBar.LabelX labelX3;
         private System.Windows.Forms.DateTimePicker dtNgay;
         private DevComponents.DotNetBar.LabelX labelX2;
         private DevComponents.DotNetBar.LabelX labelX10;
@@ -605,5 +597,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         public System.Windows.Forms.TextBox txtDonVi;
         private System.Windows.Forms.Button btnChonDonVi;
+        public System.Windows.Forms.TextBox txtNK3;
+        public System.Windows.Forms.TextBox txtNK2;
+        public System.Windows.Forms.TextBox txtNK1;
+        private DevComponents.DotNetBar.LabelX labelX5;
+        public System.Windows.Forms.TextBox txtNLB3;
+        public System.Windows.Forms.TextBox txtNLB2;
+        public System.Windows.Forms.TextBox txtNLB1;
+        private DevComponents.DotNetBar.LabelX labelX6;
     }
 }

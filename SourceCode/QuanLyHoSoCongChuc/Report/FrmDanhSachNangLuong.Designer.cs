@@ -30,10 +30,9 @@
         {
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtDonVi = new System.Windows.Forms.TextBox();
+            this.btnChonDonVi = new System.Windows.Forms.Button();
             this.dupNam = new System.Windows.Forms.DomainUpDown();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
             this.cboKy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.comboItem8 = new DevComponents.Editors.ComboItem();
@@ -45,11 +44,6 @@
             this.comboBoxEx4 = new DevComponents.DotNetBar.Controls.ComboBoxEx();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
@@ -57,8 +51,14 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.grid1 = new SourceGrid.Grid();
             this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
-            this.txtDonVi = new System.Windows.Forms.TextBox();
-            this.btnChonDonVi = new System.Windows.Forms.Button();
+            this.txtNK3 = new System.Windows.Forms.TextBox();
+            this.txtNK2 = new System.Windows.Forms.TextBox();
+            this.txtNK1 = new System.Windows.Forms.TextBox();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.txtNLB3 = new System.Windows.Forms.TextBox();
+            this.txtNLB2 = new System.Windows.Forms.TextBox();
+            this.txtNLB1 = new System.Windows.Forms.TextBox();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -85,12 +85,17 @@
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel2.Controls.Add(this.txtNK3);
+            this.groupPanel2.Controls.Add(this.txtNK2);
+            this.groupPanel2.Controls.Add(this.txtNK1);
+            this.groupPanel2.Controls.Add(this.labelX5);
+            this.groupPanel2.Controls.Add(this.txtNLB3);
+            this.groupPanel2.Controls.Add(this.txtNLB2);
+            this.groupPanel2.Controls.Add(this.txtNLB1);
+            this.groupPanel2.Controls.Add(this.labelX6);
             this.groupPanel2.Controls.Add(this.txtDonVi);
             this.groupPanel2.Controls.Add(this.btnChonDonVi);
             this.groupPanel2.Controls.Add(this.dupNam);
-            this.groupPanel2.Controls.Add(this.textBox7);
-            this.groupPanel2.Controls.Add(this.textBox8);
-            this.groupPanel2.Controls.Add(this.textBox9);
             this.groupPanel2.Controls.Add(this.cboKy);
             this.groupPanel2.Controls.Add(this.btThoat);
             this.groupPanel2.Controls.Add(this.btLuuBieu);
@@ -99,11 +104,6 @@
             this.groupPanel2.Controls.Add(this.comboBoxEx4);
             this.groupPanel2.Controls.Add(this.radioButton1);
             this.groupPanel2.Controls.Add(this.radioButton2);
-            this.groupPanel2.Controls.Add(this.labelX5);
-            this.groupPanel2.Controls.Add(this.textBox10);
-            this.groupPanel2.Controls.Add(this.textBox11);
-            this.groupPanel2.Controls.Add(this.textBox12);
-            this.groupPanel2.Controls.Add(this.labelX6);
             this.groupPanel2.Controls.Add(this.labelX7);
             this.groupPanel2.Controls.Add(this.labelX9);
             this.groupPanel2.Controls.Add(this.labelX11);
@@ -134,36 +134,31 @@
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 0;
             // 
+            // txtDonVi
+            // 
+            this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDonVi.Location = new System.Drawing.Point(150, 42);
+            this.txtDonVi.Name = "txtDonVi";
+            this.txtDonVi.Size = new System.Drawing.Size(192, 22);
+            this.txtDonVi.TabIndex = 158;
+            // 
+            // btnChonDonVi
+            // 
+            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonVi.Location = new System.Drawing.Point(348, 42);
+            this.btnChonDonVi.Name = "btnChonDonVi";
+            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonVi.TabIndex = 157;
+            this.btnChonDonVi.UseVisualStyleBackColor = true;
+            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
+            // 
             // dupNam
             // 
             this.dupNam.Location = new System.Drawing.Point(150, 69);
             this.dupNam.Name = "dupNam";
             this.dupNam.Size = new System.Drawing.Size(77, 20);
             this.dupNam.TabIndex = 152;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(506, 170);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(192, 22);
-            this.textBox7.TabIndex = 151;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(506, 145);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(192, 22);
-            this.textBox8.TabIndex = 150;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(506, 120);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(192, 22);
-            this.textBox9.TabIndex = 149;
             // 
             // cboKy
             // 
@@ -271,50 +266,6 @@
             this.radioButton2.Text = "Tổng hợp từ cơ sở dữ liệu";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
-            // labelX5
-            // 
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.Location = new System.Drawing.Point(442, 121);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(84, 25);
-            this.labelX5.TabIndex = 94;
-            this.labelX5.Text = "Người Ký";
-            // 
-            // textBox10
-            // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(150, 170);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(192, 22);
-            this.textBox10.TabIndex = 93;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(150, 145);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(192, 22);
-            this.textBox11.TabIndex = 92;
-            // 
-            // textBox12
-            // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(150, 120);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(192, 22);
-            this.textBox12.TabIndex = 91;
-            // 
-            // labelX6
-            // 
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX6.Location = new System.Drawing.Point(44, 120);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(94, 25);
-            this.labelX6.TabIndex = 90;
-            this.labelX6.Text = "Người lập biểu";
-            // 
             // labelX7
             // 
             this.labelX7.BackColor = System.Drawing.Color.Transparent;
@@ -385,24 +336,73 @@
             this.grid1.TabStop = true;
             this.grid1.ToolTipText = "";
             // 
-            // txtDonVi
+            // txtNK3
             // 
-            this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDonVi.Location = new System.Drawing.Point(150, 42);
-            this.txtDonVi.Name = "txtDonVi";
-            this.txtDonVi.Size = new System.Drawing.Size(192, 22);
-            this.txtDonVi.TabIndex = 158;
+            this.txtNK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK3.Location = new System.Drawing.Point(506, 174);
+            this.txtNK3.Name = "txtNK3";
+            this.txtNK3.Size = new System.Drawing.Size(192, 22);
+            this.txtNK3.TabIndex = 166;
             // 
-            // btnChonDonVi
+            // txtNK2
             // 
-            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonDonVi.Location = new System.Drawing.Point(348, 42);
-            this.btnChonDonVi.Name = "btnChonDonVi";
-            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDonVi.TabIndex = 157;
-            this.btnChonDonVi.UseVisualStyleBackColor = true;
-            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
+            this.txtNK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK2.Location = new System.Drawing.Point(506, 149);
+            this.txtNK2.Name = "txtNK2";
+            this.txtNK2.Size = new System.Drawing.Size(192, 22);
+            this.txtNK2.TabIndex = 165;
+            // 
+            // txtNK1
+            // 
+            this.txtNK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK1.Location = new System.Drawing.Point(506, 124);
+            this.txtNK1.Name = "txtNK1";
+            this.txtNK1.Size = new System.Drawing.Size(192, 22);
+            this.txtNK1.TabIndex = 164;
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Location = new System.Drawing.Point(442, 125);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(84, 25);
+            this.labelX5.TabIndex = 163;
+            this.labelX5.Text = "Người Ký";
+            // 
+            // txtNLB3
+            // 
+            this.txtNLB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB3.Location = new System.Drawing.Point(150, 174);
+            this.txtNLB3.Name = "txtNLB3";
+            this.txtNLB3.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB3.TabIndex = 162;
+            // 
+            // txtNLB2
+            // 
+            this.txtNLB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB2.Location = new System.Drawing.Point(150, 149);
+            this.txtNLB2.Name = "txtNLB2";
+            this.txtNLB2.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB2.TabIndex = 161;
+            // 
+            // txtNLB1
+            // 
+            this.txtNLB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB1.Location = new System.Drawing.Point(150, 124);
+            this.txtNLB1.Name = "txtNLB1";
+            this.txtNLB1.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB1.TabIndex = 160;
+            // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Location = new System.Drawing.Point(44, 124);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(94, 25);
+            this.labelX6.TabIndex = 159;
+            this.labelX6.Text = "Người lập biểu";
             // 
             // FrmDanhSachNangLuong
             // 
@@ -426,9 +426,6 @@
 
         private DevComponents.DotNetBar.PanelEx panelEx1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
-        public System.Windows.Forms.TextBox textBox7;
-        public System.Windows.Forms.TextBox textBox8;
-        public System.Windows.Forms.TextBox textBox9;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cboKy;
         private DevComponents.Editors.ComboItem comboItem7;
         private DevComponents.Editors.ComboItem comboItem8;
@@ -440,11 +437,6 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx comboBoxEx4;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private DevComponents.DotNetBar.LabelX labelX5;
-        public System.Windows.Forms.TextBox textBox10;
-        public System.Windows.Forms.TextBox textBox11;
-        public System.Windows.Forms.TextBox textBox12;
-        private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX11;
@@ -455,6 +447,14 @@
         private CachedCrystalReport2 cachedCrystalReport21;
         public System.Windows.Forms.TextBox txtDonVi;
         private System.Windows.Forms.Button btnChonDonVi;
+        public System.Windows.Forms.TextBox txtNK3;
+        public System.Windows.Forms.TextBox txtNK2;
+        public System.Windows.Forms.TextBox txtNK1;
+        private DevComponents.DotNetBar.LabelX labelX5;
+        public System.Windows.Forms.TextBox txtNLB3;
+        public System.Windows.Forms.TextBox txtNLB2;
+        public System.Windows.Forms.TextBox txtNLB1;
+        private DevComponents.DotNetBar.LabelX labelX6;
 
 
     }

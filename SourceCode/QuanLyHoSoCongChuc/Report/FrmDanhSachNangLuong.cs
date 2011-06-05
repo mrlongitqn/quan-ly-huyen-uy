@@ -45,8 +45,14 @@ namespace QuanLyHoSoCongChuc.Report
         private void btInBieu_Click(object sender, EventArgs e)
         {
             String strDt = cboKy.Text + " năm " + dupNam.Text;
-            
-            FrmPrintReport frm = new FrmPrintReport("2", this.SelectedId, strDt);
+            List<String> ChuKi = new List<string>();
+            ChuKi.Add(txtNLB1.Text);
+            ChuKi.Add(txtNLB2.Text);
+            ChuKi.Add(txtNLB3.Text);
+            ChuKi.Add(txtNK1.Text);
+            ChuKi.Add(txtNK2.Text);
+            ChuKi.Add(txtNK3.Text);
+            FrmPrintReport frm = new FrmPrintReport("2", this.SelectedId, strDt, ChuKi);
             frm.Show();
         }
 
