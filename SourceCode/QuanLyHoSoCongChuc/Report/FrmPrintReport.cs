@@ -38,11 +38,11 @@ namespace QuanLyHoSoCongChuc.Report
                 CrBaoCaoLuong1 rpt = new CrBaoCaoLuong1();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[0] + "'";
+                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
+                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
+                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
+                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
+                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
 
@@ -50,10 +50,10 @@ namespace QuanLyHoSoCongChuc.Report
             else if (BaoCao == "1-1")// Bao cáo lương - 1
             {
                 this.Text = "Báo cáo lương";
-                String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
+                String sql = " select nv.*, t.TenBangChuyenMonNghiepVu,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
-                sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+                sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " where MaDonVi='" + MaDV + "'";
 
 
@@ -63,21 +63,21 @@ namespace QuanLyHoSoCongChuc.Report
                 CrBaoCaoLuong2 rpt = new CrBaoCaoLuong2();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[0] + "'";
+                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
+                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
+                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
+                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
+                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "1-2") // Bao cáo lương - 2
             {
                 this.Text = "Báo cáo lương";
-                String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
+                String sql = " select nv.*, t.TenBangChuyenMonNghiepVu,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
-                sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+                sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " where MaDonVi='" + MaDV + "'";
 
 
@@ -87,21 +87,21 @@ namespace QuanLyHoSoCongChuc.Report
                 CrBaoCaoLuong3 rpt = new CrBaoCaoLuong3();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[0] + "'";
+                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
+                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
+                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
+                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
+                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "2") // danh sách nâng lương
             {
                 this.Text = "Danh sách nâng lương";
-                String sql = " select nv.*, t.TenTrinhDoChuyenMon,";
+                String sql = " select nv.*, t.TenBangChuyenMonNghiepVu,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
-                sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+                sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " where MaDonVi='" + MaDV + "'";
 
 
@@ -111,19 +111,19 @@ namespace QuanLyHoSoCongChuc.Report
                 CrDanhSachNangLuong rpt = new CrDanhSachNangLuong();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[0] + "'";
+                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
+                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
+                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
+                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
+                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "3") // Danh sách phụ cấp thâm niên vượt khung
             {
                 this.Text = "Danh sách phụ cấp thâm niên vượt khung";
-                String sql = " select nv.*, t.TenTrinhDoChuyenMon, dv.TenDonVi";
-                sql += " from NhanVien nv left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
+                String sql = " select nv.*, t.TenBangChuyenMonNghiepVu, dv.TenDonVi";
+                sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where nv.MaDonVi='" + MaDV + "'";
 
@@ -135,21 +135,21 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["Title"].Text = "'DANH SÁCH KẾT QUẢ NÂNG PCTNVK CB, CC UBND HUYỆN "+strDt.ToUpper()+"'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[0] + "'";
+                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
+                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
+                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
+                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
+                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "4-0") // Danh sách CB, CC, VC và hợp đồng 1    
             {
                 this.Text = "Danh sách CB, CC, VC và hợp đồng";
-                String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
+                String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri";
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
-                sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
-                sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
+                sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+                sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
                 sql += " where MaDonVi='" + MaDV + "'";
 
                 SqlCommand cmd = new SqlCommand(sql);
@@ -158,21 +158,21 @@ namespace QuanLyHoSoCongChuc.Report
                 CrBaoCaoDanhSachCBCCVC1 rpt = new CrBaoCaoDanhSachCBCCVC1();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[0] + "'";
+                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
+                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
+                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
+                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
+                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "4-1") // Danh sách CB, CC, VC và hợp đồng 2    
             {
                 this.Text = "Danh sách CB, CC, VC và hợp đồng";
-                String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
+                String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri";
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
-                sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
-                sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
+                sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+                sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
                 sql += " where MaDonVi='" + MaDV + "'";
 
                 SqlCommand cmd = new SqlCommand(sql);
@@ -181,21 +181,21 @@ namespace QuanLyHoSoCongChuc.Report
                 CrBaoCaoDanhSachCBCCVC2 rpt = new CrBaoCaoDanhSachCBCCVC2();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[0] + "'";
+                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
+                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
+                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
+                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
+                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "4-2") // Danh sách CB, CC, VC và hợp đồng 3  
             {
                 this.Text = "Danh sách CB, CC, VC và hợp đồng";
-                String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
+                String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri";
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
-                sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
-                sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
+                sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+                sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
                 sql += " where MaDonVi='" + MaDV + "'";
 
                 SqlCommand cmd = new SqlCommand(sql);
@@ -204,11 +204,11 @@ namespace QuanLyHoSoCongChuc.Report
                 CrBaoCaoDanhSachCBCCVC3 rpt = new CrBaoCaoDanhSachCBCCVC3();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[0] + "'";
+                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
+                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
+                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
+                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
+                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
@@ -251,11 +251,11 @@ namespace QuanLyHoSoCongChuc.Report
 
                 CrDanhSachNghiHuu rpt = new CrDanhSachNghiHuu();
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[0] + "'";
-                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[0] + "'";
+                rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
+                rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
+                rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
+                rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
+                rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
                 rpt.SetDataSource(myDt);
                 this.crystalReportViewer1.ReportSource = rpt;
             }

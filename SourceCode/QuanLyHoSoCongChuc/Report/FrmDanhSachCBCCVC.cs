@@ -49,10 +49,10 @@ namespace QuanLyHoSoCongChuc.Report
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
             DGV.Rows.Clear();
-            String sql = " select nv.*, cv.TenChucVu, t.TenTrinhDoChuyenMon, tt.TenTrinhDoChinhTri";
+            String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri";
             sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
-            sql += " left join TrinhDoChuyenMon t on nv.MaTrinhDoChuyenMon = t.MaTrinhDoChuyenMon";
-            sql += " left join TrinhDoChinhTri tt on nv.MaTrinhDoChinhTri = tt.MaTrinhDoChinhTri";
+            sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+            sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
             sql += " where MaDonVi='" + SelectedId + "'";
 
             SqlCommand cmd = new SqlCommand(sql);
@@ -69,8 +69,8 @@ namespace QuanLyHoSoCongChuc.Report
                 DGV.Rows[i].Cells["QueQuan"].Value = myDt.Rows[i]["QueQuan"].ToString();
                 DGV.Rows[i].Cells["NoiOHienTai"].Value = myDt.Rows[i]["NoiOHienTai"].ToString();
                 DGV.Rows[i].Cells["TenChucVu"].Value = myDt.Rows[i]["TenChucVu"].ToString();
-                DGV.Rows[i].Cells["TenTrinhDoChuyenMon"].Value = myDt.Rows[i]["TenTrinhDoChuyenMon"].ToString();
-                DGV.Rows[i].Cells["TenTrinhDoChinhTri"].Value = myDt.Rows[i]["TenTrinhDoChinhTri"].ToString();
+                DGV.Rows[i].Cells["TenBangChuyenMonNghiepVu"].Value = myDt.Rows[i]["TenBangChuyenMonNghiepVu"].ToString();
+                DGV.Rows[i].Cells["TenBangLyLuanChinhTri"].Value = myDt.Rows[i]["TenBangLyLuanChinhTri"].ToString();
             }
             if (myDt.Rows.Count == 0)
             {
@@ -91,6 +91,11 @@ namespace QuanLyHoSoCongChuc.Report
             frm.Handler += GetDonVi;
             frm.EnableButtonChon = true;
             frm.ShowDialog();
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

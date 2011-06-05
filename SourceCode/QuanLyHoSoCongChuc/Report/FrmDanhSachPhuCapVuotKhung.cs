@@ -64,7 +64,7 @@ namespace QuanLyHoSoCongChuc.Report
 
                 DateTime dt = (DateTime)myDt.Rows[r]["NgaySinh"];
                 grid1[3 + r, 3] = new SourceGrid.Cells.Cell(dt.Year, typeof(int));
-                grid1[3 + r, 4] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenTrinhDoChuyenMon"], typeof(String));
+                grid1[3 + r, 4] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenBangChuyenMonNghiepVu"], typeof(String));
                 grid1[3 + r, 5] = new SourceGrid.Cells.Cell("", typeof(String));
                 grid1[3 + r, 6] = new SourceGrid.Cells.Cell("", typeof(String));
                 grid1[3 + r, 7] = new SourceGrid.Cells.Cell("", typeof(String));
@@ -179,6 +179,11 @@ namespace QuanLyHoSoCongChuc.Report
             frm.Handler += GetDonVi;
             frm.EnableButtonChon = true;
             frm.ShowDialog();
+        }
+
+        private void btThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

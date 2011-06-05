@@ -4,23 +4,23 @@ using System.Text;
 
 namespace QuanLyHoSoCongChuc.BusinessObject
 {
-    public class TrinhDoChuyenMonInfo
+    public class BangChuyenMonNghiepVuInfo
     {
-        public TrinhDoChuyenMonInfo()
+        public BangChuyenMonNghiepVuInfo()
         {
         }
-        private String m_MaTrinhDoChuyenMon;
-        public String MaTrinhDoChuyenMon
+        private String m_MaBangChuyenMonNghiepVu;
+        public String MaBangChuyenMonNghiepVu
         {
-            get { return m_MaTrinhDoChuyenMon; }
-            set { m_MaTrinhDoChuyenMon = value; }
+            get { return m_MaBangChuyenMonNghiepVu; }
+            set { m_MaBangChuyenMonNghiepVu = value; }
         }
 
-        private String m_TenTrinhDoChuyenMon;
-        public String TenTrinhDoChuyenMon
+        private String m_TenBangChuyenMonNghiepVu;
+        public String TenBangChuyenMonNghiepVu
         {
-            get { return m_TenTrinhDoChuyenMon; }
-            set { m_TenTrinhDoChuyenMon = value; }
+            get { return m_TenBangChuyenMonNghiepVu; }
+            set { m_TenBangChuyenMonNghiepVu = value; }
         }
     }
 }

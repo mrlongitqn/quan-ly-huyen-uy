@@ -72,9 +72,9 @@
             this.NamCongTac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HeSoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTrinhDoChuyenMon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenBangChuyenMonNghiepVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ChuyenNganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTrinhDoChinhTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenBangLyLuanChinhTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ThoiGianBatDauTru = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelEx1.SuspendLayout();
@@ -249,6 +249,7 @@
             this.btThoat.Size = new System.Drawing.Size(80, 20);
             this.btThoat.TabIndex = 145;
             this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btLuuBieu
             // 
@@ -442,9 +443,9 @@
             this.NamCongTac,
             this.HeSoLuong,
             this.TenChucVu,
-            this.TenTrinhDoChuyenMon,
+            this.TenBangChuyenMonNghiepVu,
             this.ChuyenNganh,
-            this.TenTrinhDoChinhTri,
+            this.TenBangLyLuanChinhTri,
             this.ThoiGianBatDauTru,
             this.GhiChu});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -527,11 +528,11 @@
             this.TenChucVu.HeaderText = "Chức vụ khi nghỉ hưu";
             this.TenChucVu.Name = "TenChucVu";
             // 
-            // TenTrinhDoChuyenMon
+            // TenBangChuyenMonNghiepVu
             // 
-            this.TenTrinhDoChuyenMon.DataPropertyName = "TenTrinhDoChuyenMon";
-            this.TenTrinhDoChuyenMon.HeaderText = "Trình độ chuyên môn";
-            this.TenTrinhDoChuyenMon.Name = "TenTrinhDoChuyenMon";
+            this.TenBangChuyenMonNghiepVu.DataPropertyName = "TenBangChuyenMonNghiepVu";
+            this.TenBangChuyenMonNghiepVu.HeaderText = "Trình độ chuyên môn";
+            this.TenBangChuyenMonNghiepVu.Name = "TenBangChuyenMonNghiepVu";
             // 
             // ChuyenNganh
             // 
@@ -539,11 +540,11 @@
             this.ChuyenNganh.HeaderText = "Chuyên ngành";
             this.ChuyenNganh.Name = "ChuyenNganh";
             // 
-            // TenTrinhDoChinhTri
+            // TenBangLyLuanChinhTri
             // 
-            this.TenTrinhDoChinhTri.DataPropertyName = "TenTrinhDoChinhTri";
-            this.TenTrinhDoChinhTri.HeaderText = "Trình độ lý luận chính trị";
-            this.TenTrinhDoChinhTri.Name = "TenTrinhDoChinhTri";
+            this.TenBangLyLuanChinhTri.DataPropertyName = "TenBangLyLuanChinhTri";
+            this.TenBangLyLuanChinhTri.HeaderText = "Trình độ lý luận chính trị";
+            this.TenBangLyLuanChinhTri.Name = "TenBangLyLuanChinhTri";
             // 
             // ThoiGianBatDauTru
             // 
@@ -614,9 +615,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NamCongTac;
         private System.Windows.Forms.DataGridViewTextBoxColumn HeSoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenChucVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTrinhDoChuyenMon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBangChuyenMonNghiepVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn ChuyenNganh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTrinhDoChinhTri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBangLyLuanChinhTri;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianBatDauTru;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         private DevComponents.Editors.ComboItem comboItem1;

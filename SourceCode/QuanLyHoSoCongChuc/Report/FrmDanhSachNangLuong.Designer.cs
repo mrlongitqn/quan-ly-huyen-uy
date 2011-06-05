@@ -30,6 +30,14 @@
         {
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtNK3 = new System.Windows.Forms.TextBox();
+            this.txtNK2 = new System.Windows.Forms.TextBox();
+            this.txtNK1 = new System.Windows.Forms.TextBox();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.txtNLB3 = new System.Windows.Forms.TextBox();
+            this.txtNLB2 = new System.Windows.Forms.TextBox();
+            this.txtNLB1 = new System.Windows.Forms.TextBox();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.txtDonVi = new System.Windows.Forms.TextBox();
             this.btnChonDonVi = new System.Windows.Forms.Button();
             this.dupNam = new System.Windows.Forms.DomainUpDown();
@@ -51,14 +59,6 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.grid1 = new SourceGrid.Grid();
             this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
-            this.txtNK3 = new System.Windows.Forms.TextBox();
-            this.txtNK2 = new System.Windows.Forms.TextBox();
-            this.txtNK1 = new System.Windows.Forms.TextBox();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.txtNLB3 = new System.Windows.Forms.TextBox();
-            this.txtNLB2 = new System.Windows.Forms.TextBox();
-            this.txtNLB1 = new System.Windows.Forms.TextBox();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -134,6 +134,74 @@
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 0;
             // 
+            // txtNK3
+            // 
+            this.txtNK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK3.Location = new System.Drawing.Point(506, 174);
+            this.txtNK3.Name = "txtNK3";
+            this.txtNK3.Size = new System.Drawing.Size(192, 22);
+            this.txtNK3.TabIndex = 166;
+            // 
+            // txtNK2
+            // 
+            this.txtNK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK2.Location = new System.Drawing.Point(506, 149);
+            this.txtNK2.Name = "txtNK2";
+            this.txtNK2.Size = new System.Drawing.Size(192, 22);
+            this.txtNK2.TabIndex = 165;
+            // 
+            // txtNK1
+            // 
+            this.txtNK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK1.Location = new System.Drawing.Point(506, 124);
+            this.txtNK1.Name = "txtNK1";
+            this.txtNK1.Size = new System.Drawing.Size(192, 22);
+            this.txtNK1.TabIndex = 164;
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Location = new System.Drawing.Point(442, 125);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(84, 25);
+            this.labelX5.TabIndex = 163;
+            this.labelX5.Text = "Người Ký";
+            // 
+            // txtNLB3
+            // 
+            this.txtNLB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB3.Location = new System.Drawing.Point(150, 174);
+            this.txtNLB3.Name = "txtNLB3";
+            this.txtNLB3.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB3.TabIndex = 162;
+            // 
+            // txtNLB2
+            // 
+            this.txtNLB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB2.Location = new System.Drawing.Point(150, 149);
+            this.txtNLB2.Name = "txtNLB2";
+            this.txtNLB2.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB2.TabIndex = 161;
+            // 
+            // txtNLB1
+            // 
+            this.txtNLB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB1.Location = new System.Drawing.Point(150, 124);
+            this.txtNLB1.Name = "txtNLB1";
+            this.txtNLB1.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB1.TabIndex = 160;
+            // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Location = new System.Drawing.Point(44, 124);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(94, 25);
+            this.labelX6.TabIndex = 159;
+            this.labelX6.Text = "Người lập biểu";
+            // 
             // txtDonVi
             // 
             this.txtDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -196,6 +264,7 @@
             this.btThoat.Size = new System.Drawing.Size(80, 20);
             this.btThoat.TabIndex = 145;
             this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btLuuBieu
             // 
@@ -335,74 +404,6 @@
             this.grid1.TabIndex = 0;
             this.grid1.TabStop = true;
             this.grid1.ToolTipText = "";
-            // 
-            // txtNK3
-            // 
-            this.txtNK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK3.Location = new System.Drawing.Point(506, 174);
-            this.txtNK3.Name = "txtNK3";
-            this.txtNK3.Size = new System.Drawing.Size(192, 22);
-            this.txtNK3.TabIndex = 166;
-            // 
-            // txtNK2
-            // 
-            this.txtNK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK2.Location = new System.Drawing.Point(506, 149);
-            this.txtNK2.Name = "txtNK2";
-            this.txtNK2.Size = new System.Drawing.Size(192, 22);
-            this.txtNK2.TabIndex = 165;
-            // 
-            // txtNK1
-            // 
-            this.txtNK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK1.Location = new System.Drawing.Point(506, 124);
-            this.txtNK1.Name = "txtNK1";
-            this.txtNK1.Size = new System.Drawing.Size(192, 22);
-            this.txtNK1.TabIndex = 164;
-            // 
-            // labelX5
-            // 
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.Location = new System.Drawing.Point(442, 125);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(84, 25);
-            this.labelX5.TabIndex = 163;
-            this.labelX5.Text = "Người Ký";
-            // 
-            // txtNLB3
-            // 
-            this.txtNLB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNLB3.Location = new System.Drawing.Point(150, 174);
-            this.txtNLB3.Name = "txtNLB3";
-            this.txtNLB3.Size = new System.Drawing.Size(192, 22);
-            this.txtNLB3.TabIndex = 162;
-            // 
-            // txtNLB2
-            // 
-            this.txtNLB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNLB2.Location = new System.Drawing.Point(150, 149);
-            this.txtNLB2.Name = "txtNLB2";
-            this.txtNLB2.Size = new System.Drawing.Size(192, 22);
-            this.txtNLB2.TabIndex = 161;
-            // 
-            // txtNLB1
-            // 
-            this.txtNLB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNLB1.Location = new System.Drawing.Point(150, 124);
-            this.txtNLB1.Name = "txtNLB1";
-            this.txtNLB1.Size = new System.Drawing.Size(192, 22);
-            this.txtNLB1.TabIndex = 160;
-            // 
-            // labelX6
-            // 
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX6.Location = new System.Drawing.Point(44, 124);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(94, 25);
-            this.labelX6.TabIndex = 159;
-            this.labelX6.Text = "Người lập biểu";
             // 
             // FrmDanhSachNangLuong
             // 

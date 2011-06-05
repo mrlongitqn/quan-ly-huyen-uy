@@ -95,9 +95,9 @@ namespace QuanLyHoSoCongChuc.Search
                 //QueQuan = txtQueQuan.Text.Trim(),
                 //MaDanToc = cbxDanToc.SelectedIndex > -1 ? ((DanToc)cbxDanToc.SelectedItem).MaDanToc : null,
                 //MaTonGiao = cbxTonGiao.SelectedIndex > -1 ? ((TonGiao)cbxTonGiao.SelectedItem).MaTonGiao : null,
-                //MaTrinhDoChinhTri = cbxLyLuanChinhTri.SelectedIndex > -1 ? ((TrinhDoChinhTri)cbxLyLuanChinhTri.SelectedItem).MaTrinhDoChinhTri : null,
+                //MaBangLyLuanChinhTri = cbxLyLuanChinhTri.SelectedIndex > -1 ? ((BangLyLuanChinhTri)cbxLyLuanChinhTri.SelectedItem).MaBangLyLuanChinhTri : null,
                 //MaTrinhDoHocVan = cbxHocVan.SelectedIndex > -1 ? ((TrinhDoHocVan)cbxHocVan.SelectedItem).MaTrinhDoHocVan : null,
-                //MaTrinhDoChuyenMon = cbxHocHam.SelectedIndex > -1 ? ((TrinhDoChuyenMon)cbxHocHam.SelectedItem).MaTrinhDoChuyenMon : null,
+                //MaBangChuyenMonNghiepVu = cbxHocHam.SelectedIndex > -1 ? ((BangChuyenMonNghiepVu)cbxHocHam.SelectedItem).MaBangChuyenMonNghiepVu : null,
                 //CongViecHienNay = txtCongVienChinh.Text.Trim()
             };
             if (ckbxEnableNgaySinh.Checked)
@@ -173,7 +173,7 @@ namespace QuanLyHoSoCongChuc.Search
             LoadGioiTinh();
             LoadDanToc();
             LoadTonGiao();
-            LoadTrinhDoChinhTri();
+            LoadBangLyLuanChinhTri();
             LoadHocVan();
             LoadHocHam();
         }
@@ -218,11 +218,11 @@ namespace QuanLyHoSoCongChuc.Search
         }
 
         /// <summary>
-        /// Load list of TrinhDoChinhTri
+        /// Load list of BangLyLuanChinhTri
         /// </summary>
-        public void LoadTrinhDoChinhTri()
+        public void LoadBangLyLuanChinhTri()
         {
-            //var lstItem = TrinhDoChinhTriRepository.SelectAll();
+            //var lstItem = BangLyLuanChinhTriRepository.SelectAll();
             //if (lstItem.Count > 0)
             //{
             //    cbxLyLuanChinhTri.DataSource = lstItem;
@@ -244,11 +244,11 @@ namespace QuanLyHoSoCongChuc.Search
         }
 
         /// <summary>
-        /// Load list of TrinhDoChinhTri
+        /// Load list of BangLyLuanChinhTri
         /// </summary>
         public void LoadHocHam()
         {
-            //var lstItem = TrinhDoChuyenMonRepository.SelectAll();
+            //var lstItem = BangChuyenMonNghiepVuRepository.SelectAll();
             //if (lstItem.Count > 0)
             //{
             //    cbxHocHam.DataSource = lstItem;
@@ -732,13 +732,13 @@ namespace QuanLyHoSoCongChuc.Search
                 //        var lstTrinhDoNgoaiNgu = TrinhDoNgoaiNguRepository.SelectAll();
                 //        cbxGiaTriTimKiem.DataSource = lstTrinhDoNgoaiNgu;
                 //        break;
-                //    case "TrinhDoChuyenMon":
-                //        var lstTrinhDoChuyenMon = TrinhDoChuyenMonRepository.SelectAll();
-                //        cbxGiaTriTimKiem.DataSource = lstTrinhDoChuyenMon;
+                //    case "BangChuyenMonNghiepVu":
+                //        var lstBangChuyenMonNghiepVu = BangChuyenMonNghiepVuRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstBangChuyenMonNghiepVu;
                 //        break;
-                //    case "TrinhDoChinhTri":
-                //        var lstTrinhDoChinhTri = TrinhDoChinhTriRepository.SelectAll();
-                //        cbxGiaTriTimKiem.DataSource = lstTrinhDoChinhTri;
+                //    case "BangLyLuanChinhTri":
+                //        var lstBangLyLuanChinhTri = BangLyLuanChinhTriRepository.SelectAll();
+                //        cbxGiaTriTimKiem.DataSource = lstBangLyLuanChinhTri;
                 //        break;
                 //    case "TrinhDoTinHoc":
                 //        var lstTrinhDoTinHoc = TrinhDoTinHocRepository.SelectAll();
@@ -890,10 +890,10 @@ namespace QuanLyHoSoCongChuc.Search
             //    value = ((HinhThucTuyenDung)item).MaHinhThucTuyenDung;
             //else if (item.GetType() == typeof(TrinhDoNgoaiNgu))
             //    value = ((TrinhDoNgoaiNgu)item).MaTrinhDoNgoaiNgu;
-            //else if (item.GetType() == typeof(TrinhDoChuyenMon))
-            //    value = ((TrinhDoChuyenMon)item).MaTrinhDoChuyenMon;
-            //else if (item.GetType() == typeof(TrinhDoChinhTri))
-            //    value = ((TrinhDoChinhTri)item).MaTrinhDoChinhTri;
+            //else if (item.GetType() == typeof(BangChuyenMonNghiepVu))
+            //    value = ((BangChuyenMonNghiepVu)item).MaBangChuyenMonNghiepVu;
+            //else if (item.GetType() == typeof(BangLyLuanChinhTri))
+            //    value = ((BangLyLuanChinhTri)item).MaBangLyLuanChinhTri;
             //else if (item.GetType() == typeof(TrinhDoTinHoc))
             //    value = ((TrinhDoTinHoc)item).MaTrinhDoTinHoc;
             //else if (item.GetType() == typeof(TrinhDoHocVan))

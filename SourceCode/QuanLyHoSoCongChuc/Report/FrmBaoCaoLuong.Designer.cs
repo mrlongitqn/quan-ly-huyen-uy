@@ -34,6 +34,14 @@
             this.grid1 = new SourceGrid.Grid();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtNK3 = new System.Windows.Forms.TextBox();
+            this.txtNK2 = new System.Windows.Forms.TextBox();
+            this.txtNK1 = new System.Windows.Forms.TextBox();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.txtNLB3 = new System.Windows.Forms.TextBox();
+            this.txtNLB2 = new System.Windows.Forms.TextBox();
+            this.txtNLB1 = new System.Windows.Forms.TextBox();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.txtDonVi = new System.Windows.Forms.TextBox();
             this.btnChonDonVi = new System.Windows.Forms.Button();
             this.cbKy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
@@ -45,7 +53,7 @@
             this.comboItem1 = new DevComponents.Editors.ComboItem();
             this.comboItem2 = new DevComponents.Editors.ComboItem();
             this.comboItem3 = new DevComponents.Editors.ComboItem();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.btThoat = new DevComponents.DotNetBar.ButtonX();
             this.btLuuBieu = new DevComponents.DotNetBar.ButtonX();
             this.btInBieu = new DevComponents.DotNetBar.ButtonX();
             this.btBaoBieu = new DevComponents.DotNetBar.ButtonX();
@@ -56,14 +64,6 @@
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtNK3 = new System.Windows.Forms.TextBox();
-            this.txtNK2 = new System.Windows.Forms.TextBox();
-            this.txtNK1 = new System.Windows.Forms.TextBox();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.txtNLB3 = new System.Windows.Forms.TextBox();
-            this.txtNLB2 = new System.Windows.Forms.TextBox();
-            this.txtNLB1 = new System.Windows.Forms.TextBox();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.panelEx2.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -152,7 +152,7 @@
             this.groupPanel1.Controls.Add(this.btnChonDonVi);
             this.groupPanel1.Controls.Add(this.cbKy);
             this.groupPanel1.Controls.Add(this.cbDoiTuong);
-            this.groupPanel1.Controls.Add(this.buttonX1);
+            this.groupPanel1.Controls.Add(this.btThoat);
             this.groupPanel1.Controls.Add(this.btLuuBieu);
             this.groupPanel1.Controls.Add(this.btInBieu);
             this.groupPanel1.Controls.Add(this.btBaoBieu);
@@ -190,6 +190,74 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
+            // 
+            // txtNK3
+            // 
+            this.txtNK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK3.Location = new System.Drawing.Point(506, 176);
+            this.txtNK3.Name = "txtNK3";
+            this.txtNK3.Size = new System.Drawing.Size(192, 22);
+            this.txtNK3.TabIndex = 164;
+            // 
+            // txtNK2
+            // 
+            this.txtNK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK2.Location = new System.Drawing.Point(506, 151);
+            this.txtNK2.Name = "txtNK2";
+            this.txtNK2.Size = new System.Drawing.Size(192, 22);
+            this.txtNK2.TabIndex = 163;
+            // 
+            // txtNK1
+            // 
+            this.txtNK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNK1.Location = new System.Drawing.Point(506, 126);
+            this.txtNK1.Name = "txtNK1";
+            this.txtNK1.Size = new System.Drawing.Size(192, 22);
+            this.txtNK1.TabIndex = 162;
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Location = new System.Drawing.Point(442, 127);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(84, 25);
+            this.labelX5.TabIndex = 161;
+            this.labelX5.Text = "Người Ký";
+            // 
+            // txtNLB3
+            // 
+            this.txtNLB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB3.Location = new System.Drawing.Point(150, 176);
+            this.txtNLB3.Name = "txtNLB3";
+            this.txtNLB3.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB3.TabIndex = 160;
+            // 
+            // txtNLB2
+            // 
+            this.txtNLB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB2.Location = new System.Drawing.Point(150, 151);
+            this.txtNLB2.Name = "txtNLB2";
+            this.txtNLB2.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB2.TabIndex = 159;
+            // 
+            // txtNLB1
+            // 
+            this.txtNLB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNLB1.Location = new System.Drawing.Point(150, 126);
+            this.txtNLB1.Name = "txtNLB1";
+            this.txtNLB1.Size = new System.Drawing.Size(192, 22);
+            this.txtNLB1.TabIndex = 158;
+            // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Location = new System.Drawing.Point(44, 126);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(94, 25);
+            this.labelX6.TabIndex = 157;
+            this.labelX6.Text = "Người lập biểu";
             // 
             // txtDonVi
             // 
@@ -270,15 +338,16 @@
             // 
             this.comboItem3.Text = "Quỹ lương viện chức hợp đồng";
             // 
-            // buttonX1
+            // btThoat
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.buttonX1.Location = new System.Drawing.Point(745, 78);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(80, 20);
-            this.buttonX1.TabIndex = 145;
-            this.buttonX1.Text = "Thoát";
+            this.btThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btThoat.Location = new System.Drawing.Point(745, 78);
+            this.btThoat.Name = "btThoat";
+            this.btThoat.Size = new System.Drawing.Size(80, 20);
+            this.btThoat.TabIndex = 145;
+            this.btThoat.Text = "Thoát";
+            this.btThoat.Click += new System.EventHandler(this.btThoat_Click);
             // 
             // btLuuBieu
             // 
@@ -389,74 +458,6 @@
             this.labelX1.Text = "BÁO CÁO LƯƠNG - QUỸ LƯƠNG";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // txtNK3
-            // 
-            this.txtNK3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK3.Location = new System.Drawing.Point(506, 176);
-            this.txtNK3.Name = "txtNK3";
-            this.txtNK3.Size = new System.Drawing.Size(192, 22);
-            this.txtNK3.TabIndex = 164;
-            // 
-            // txtNK2
-            // 
-            this.txtNK2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK2.Location = new System.Drawing.Point(506, 151);
-            this.txtNK2.Name = "txtNK2";
-            this.txtNK2.Size = new System.Drawing.Size(192, 22);
-            this.txtNK2.TabIndex = 163;
-            // 
-            // txtNK1
-            // 
-            this.txtNK1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNK1.Location = new System.Drawing.Point(506, 126);
-            this.txtNK1.Name = "txtNK1";
-            this.txtNK1.Size = new System.Drawing.Size(192, 22);
-            this.txtNK1.TabIndex = 162;
-            // 
-            // labelX5
-            // 
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX5.Location = new System.Drawing.Point(442, 127);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(84, 25);
-            this.labelX5.TabIndex = 161;
-            this.labelX5.Text = "Người Ký";
-            // 
-            // txtNLB3
-            // 
-            this.txtNLB3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNLB3.Location = new System.Drawing.Point(150, 176);
-            this.txtNLB3.Name = "txtNLB3";
-            this.txtNLB3.Size = new System.Drawing.Size(192, 22);
-            this.txtNLB3.TabIndex = 160;
-            // 
-            // txtNLB2
-            // 
-            this.txtNLB2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNLB2.Location = new System.Drawing.Point(150, 151);
-            this.txtNLB2.Name = "txtNLB2";
-            this.txtNLB2.Size = new System.Drawing.Size(192, 22);
-            this.txtNLB2.TabIndex = 159;
-            // 
-            // txtNLB1
-            // 
-            this.txtNLB1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNLB1.Location = new System.Drawing.Point(150, 126);
-            this.txtNLB1.Name = "txtNLB1";
-            this.txtNLB1.Size = new System.Drawing.Size(192, 22);
-            this.txtNLB1.TabIndex = 158;
-            // 
-            // labelX6
-            // 
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX6.Location = new System.Drawing.Point(44, 126);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(94, 25);
-            this.labelX6.TabIndex = 157;
-            this.labelX6.Text = "Người lập biểu";
-            // 
             // FrmBaoCaoLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,7 +493,7 @@
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbSaved;
         private DevComponents.DotNetBar.ButtonX btBaoBieu;
         private DevComponents.DotNetBar.ButtonX btInBieu;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX btThoat;
         private DevComponents.DotNetBar.ButtonX btLuuBieu;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbKy;
         private DevComponents.Editors.ComboItem comboItem4;
