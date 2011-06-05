@@ -10,6 +10,7 @@ using QuanLyHoSoCongChuc.Repositories;
 using QuanLyHoSoCongChuc.Models;
 using QuanLyHoSoCongChuc.Utils;
 using QuanLyHoSoCongChuc.Danh_muc;
+using QuanLyHoSoCongChuc.OtherForms;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
@@ -25,18 +26,36 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         private FrmThongTinNhanVien_GiaDinh frmThongTinNhanVien_GiaDinh;
         private FrmThongTinNhanVien_DacDiemLichSu frmThongTinNhanVien_DacDiemLichSu;
         private FrmThongTinNhanVien_LuongPhuCap frmThongTinNhanVien_LuongPhuCap;
+        // Hidden files are used to store ids 
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaGioiTinh;
 
-        public FrmThongTinNhanVien()
+        public FrmThongTinNhanVien(string madonvi, string tendonvidaydu)
         {
             InitializeComponent();
+            InitHiddenFields();
+            txtMaDonVi.Text = madonvi;
+            txtTenDonViDayDu.Text = tendonvidaydu;
         }
 
         public FrmThongTinNhanVien(string manhanvien)
         {
             InitializeComponent();
+            InitHiddenFields();
             _maNhanVien = manhanvien;
-            LoadGioiTinh();
             LoadThongTinNhanVien();
+        }
+
+        /// <summary>
+        /// tuansl added: Init hidden fields to store ids
+        /// </summary>
+        private void InitHiddenFields()
+        {
+            // Add a new textbox
+            txtMaGioiTinh = new DevComponents.DotNetBar.Controls.TextBoxX
+            {
+                Name = "txtMaGioiTinh"
+            };
+            txtMaGioiTinh.Visible = false;
         }
 
         private void FrmThongTinNhanVien_Load(object sender, EventArgs e)
@@ -46,14 +65,14 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         public void LoadThongTinNhanVien()
         {
-            //var nhanvien = NhanVienRepository.SelectByID(_maNhanVien);
-            //txtMaDonVi.Text = nhanvien.MaDonVi;
-            //txtTenDonViDayDu.Text = nhanvien.DonVi.TenDonVi;
-            //txtHoTenKhaiSinh.Text = nhanvien.HoTenNhanVien;
-            //SetSelectedGioiTinh(nhanvien);
-            //dtSinhNgay.Value = nhanvien.NgaySinh.Value;
+            var nhanvien = NhanVienRepository.SelectByID(_maNhanVien);
+            
+            txtHoTenKhaiSinh.Text = nhanvien.HoTenKhaiSinh;
+            dtSinhNgay.Value = nhanvien.NgaySinh.Value;
+            txtGioiTinh.Text = nhanvien.GioiTinh.TenGioiTinh;
+            txtMaGioiTinh.Text = nhanvien.MaGioiTinh.ToString();
 
-            //InitForm(nhanvien);
+            InitForm(nhanvien);
         }
 
         public void InitForm(NhanVien nhanvien)
@@ -223,27 +242,6 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             }
         }
 
-        public void SetSelectedGioiTinh(NhanVien nhanvien)
-        {
-            foreach (var item in cbxGioiTinh.Items)
-            {
-                //if (((GioiTinh)item).MaGioiTinh == nhanvien.MaGioiTinh)
-                //{
-                //    cbxGioiTinh.SelectedItem = item;
-                //    break;
-                //}
-            }
-        }
-
-        public void LoadGioiTinh()
-        {
-            var lstItem = GioiTinhRepository.SelectAll();
-            if (lstItem.Count > 0)
-            {
-                cbxGioiTinh.DataSource = lstItem;
-            }
-        }
-
         private void btnChonDonVi_Click(object sender, EventArgs e)
         {
             FrmDanhMuc frm = new FrmDanhMuc();
@@ -257,6 +255,36 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         /// <param name="sender"></param>
         /// <param name="e"></param>
         public void GetDonVi(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaDonVi.Text = comp[0];
+            txtTenDonViDayDu.Text = comp[1];
+        }
+
+        private void FrmThongTinNhanVien_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnChonGioiTinh_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyGioiTinh frm = new FrmQuanLyGioiTinh();
+            frm.Handler += GetGioiTinh;
+            frm.ShowDialog();
+        }
+
+        /// <summary>
+        /// Get chose gioitinh 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void GetGioiTinh(object sender, EventArgs e)
         {
             var eventType = (MyEvent)e;
             string[] comp = eventType.Data.Split(new char[] { '#' });

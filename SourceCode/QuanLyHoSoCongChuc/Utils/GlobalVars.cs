@@ -83,6 +83,7 @@ namespace QuanLyHoSoCongChuc.Utils
         public static string g_strTenMayTram = "";
         public static string g_strPathNhatKi = "D:\\user_diary.xml";
         public static string g_strPathCauhoiTimKiem = "D:\\user_queries.xml";
+        public static string g_strPathImages = "D:\\HuyenUyImages";
         public static EnumChucNangHeThong g_ChucNangSuDung;
         public static NhatKyNguoiDung g_NhatKyNguoiDung { get; set; }
         public static CauHoiNguoiDung g_CauHoiNguoiDung { get; set; }
