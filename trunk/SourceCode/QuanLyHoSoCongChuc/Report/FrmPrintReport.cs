@@ -273,18 +273,13 @@ namespace QuanLyHoSoCongChuc.Report
                     myRow["TenBangChuyenMonNghiepVu"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
                     myRow["ChuyenNganh"] = myDt.Rows[i]["ChuyenNganh"];
                     myRow["TenBangLyLuanChinhTri"] = myDt.Rows[i]["TenBangLyLuanChinhTri"];
-                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
-                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
-                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
-                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
-                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
+  
                     DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
                     myRow["TuoiDoi"] = DateTime.Now.Year - dt.Year;
                     try
                     {
                         dt = (DateTime)myDt.Rows[i]["NgayChinhThuc"];
-                        //myRow["NgayChinhThuc"] = dt.ToString("dd/MM/yyyy");
-                        myRow["NamCongTac"] = dt.ToString("dd/MM/yyyy");
+                        myRow["NgayChinhThuc"] = dt.ToString("dd/MM/yyyy");
                     }
                     catch (Exception ex) { }
                     try
