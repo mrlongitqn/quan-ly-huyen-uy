@@ -90,7 +90,7 @@
             this.panelEx1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelEx1.Location = new System.Drawing.Point(0, 0);
             this.panelEx1.Name = "panelEx1";
-            this.panelEx1.Size = new System.Drawing.Size(882, 248);
+            this.panelEx1.Size = new System.Drawing.Size(882, 223);
             this.panelEx1.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx1.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx1.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -130,7 +130,7 @@
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel2.Location = new System.Drawing.Point(0, 0);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(882, 248);
+            this.groupPanel2.Size = new System.Drawing.Size(882, 223);
             // 
             // 
             // 
@@ -297,11 +297,11 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
-            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.radioButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton1.ForeColor = System.Drawing.Color.Navy;
             this.radioButton1.Location = new System.Drawing.Point(442, 71);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(195, 20);
+            this.radioButton1.Size = new System.Drawing.Size(163, 17);
             this.radioButton1.TabIndex = 99;
             this.radioButton1.Text = "Mở báo cáo đã lưu trước đây";
             this.radioButton1.UseVisualStyleBackColor = true;
@@ -310,11 +310,11 @@
             // 
             this.radioButton2.AutoSize = true;
             this.radioButton2.Checked = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radioButton2.ForeColor = System.Drawing.Color.Navy;
             this.radioButton2.Location = new System.Drawing.Point(442, 51);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(175, 20);
+            this.radioButton2.Size = new System.Drawing.Size(146, 17);
             this.radioButton2.TabIndex = 98;
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Tổng hợp từ cơ sở dữ liệu";
@@ -323,7 +323,7 @@
             // labelX5
             // 
             this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX5.Location = new System.Drawing.Point(442, 121);
             this.labelX5.Name = "labelX5";
             this.labelX5.Size = new System.Drawing.Size(84, 25);
@@ -357,7 +357,7 @@
             // labelX6
             // 
             this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX6.Location = new System.Drawing.Point(44, 120);
             this.labelX6.Name = "labelX6";
             this.labelX6.Size = new System.Drawing.Size(94, 25);
@@ -367,7 +367,7 @@
             // labelX7
             // 
             this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX7.Location = new System.Drawing.Point(235, 70);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(29, 22);
@@ -377,7 +377,7 @@
             // labelX9
             // 
             this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX9.Location = new System.Drawing.Point(44, 70);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(86, 22);
@@ -387,7 +387,7 @@
             // labelX11
             // 
             this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX11.Location = new System.Drawing.Point(44, 45);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(94, 22);
@@ -409,9 +409,9 @@
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
             this.panelEx2.Controls.Add(this.DGV);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelEx2.Location = new System.Drawing.Point(0, 248);
+            this.panelEx2.Location = new System.Drawing.Point(0, 223);
             this.panelEx2.Name = "panelEx2";
-            this.panelEx2.Size = new System.Drawing.Size(882, 234);
+            this.panelEx2.Size = new System.Drawing.Size(882, 259);
             this.panelEx2.Style.Alignment = System.Drawing.StringAlignment.Center;
             this.panelEx2.Style.BackColor1.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
             this.panelEx2.Style.BackColor2.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
@@ -468,7 +468,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.DGV.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.DGV.Size = new System.Drawing.Size(882, 234);
+            this.DGV.Size = new System.Drawing.Size(882, 259);
             this.DGV.TabIndex = 2;
             // 
             // STT
@@ -548,6 +548,7 @@
             // 
             // ThoiGianBatDauTru
             // 
+            this.ThoiGianBatDauTru.DataPropertyName = "ThoiGianBatDauTru";
             this.ThoiGianBatDauTru.HeaderText = "Thời gian bắt đầu trừ";
             this.ThoiGianBatDauTru.Name = "ThoiGianBatDauTru";
             // 
@@ -606,6 +607,10 @@
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.DataGridViewX DGV;
+        private DevComponents.Editors.ComboItem comboItem1;
+        private DevComponents.Editors.ComboItem comboItem2;
+        public System.Windows.Forms.TextBox txtDonVi;
+        private System.Windows.Forms.Button btnChonDonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
         private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKhaiSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDonVi;
@@ -620,9 +625,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenBangLyLuanChinhTri;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThoiGianBatDauTru;
         private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
-        private DevComponents.Editors.ComboItem comboItem1;
-        private DevComponents.Editors.ComboItem comboItem2;
-        public System.Windows.Forms.TextBox txtDonVi;
-        private System.Windows.Forms.Button btnChonDonVi;
     }
 }

@@ -50,14 +50,15 @@ namespace QuanLyHoSoCongChuc.Report
             ChuKi.Add(txtNK1.Text);
             ChuKi.Add(txtNK2.Text);
             ChuKi.Add(txtNK3.Text);
-            FrmPrintReport frm = new FrmPrintReport("5", SelectedId, "", ChuKi, Level);
+            FrmPrintReport frm = new FrmPrintReport("5", SelectedId, strDt, ChuKi, Level);
             frm.Show();
         }
 
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
             DGV.Rows.Clear();
-            String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri, dv.TenDonVi, lpc.HeSoLuong";
+            String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, t.ChuyenNganh, tt.TenBangLyLuanChinhTri, dv.TenDonVi, lpc.HeSoLuong, ";
+            sql += " DATEADD (yyyy ,  (case MaGioiTinh when 1 then 60 else 55 end) , NgaySinh ) as ThoiGianBatDauTru";
             sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
             sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
             sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
@@ -81,6 +82,8 @@ namespace QuanLyHoSoCongChuc.Report
             sql += " (datepart(mm,getdate()) - datepart(mm,NgaySinh) ) >= 6";
             sql += " )";
 
+            //Ngay nghi huu tính theo ngày sinh
+
             SqlCommand cmd = new SqlCommand(sql);
             dataService.Load(cmd);
             DataTable myDt = dataService;
@@ -95,16 +98,23 @@ namespace QuanLyHoSoCongChuc.Report
                 DGV.Rows[i].Cells["NgaySinh"].Value = dt.ToString("dd/MM/yyyy");
                 DGV.Rows[i].Cells["QueQuan"].Value = myDt.Rows[i]["QueQuan"].ToString();
                 DGV.Rows[i].Cells["TuoiDoi"].Value = DateTime.Now.Year - dt.Year;
-                try{
-                    dt = (DateTime)myDt.Rows[i]["NgayChinhThuc"];
-                }
-                catch(Exception ex)
+                try
                 {
+                    dt = (DateTime)myDt.Rows[i]["NgayChinhThuc"];
+                    DGV.Rows[i].Cells["NamCongTac"].Value = dt.ToString("dd/MM/yyyy");
                 }
-                DGV.Rows[i].Cells["NamCongTac"].Value = dt.ToString("dd/MM/yyyy");
+                catch (Exception ex) { }
+                
                 DGV.Rows[i].Cells["HeSoLuong"].Value = myDt.Rows[i]["HeSoLuong"].ToString();
                 DGV.Rows[i].Cells["TenChucVu"].Value = myDt.Rows[i]["TenChucVu"].ToString();
                 DGV.Rows[i].Cells["TenBangChuyenMonNghiepVu"].Value = myDt.Rows[i]["TenBangChuyenMonNghiepVu"].ToString();
+                DGV.Rows[i].Cells["ChuyenNganh"].Value = myDt.Rows[i]["ChuyenNganh"].ToString();
+                try
+                {
+                    dt = (DateTime)myDt.Rows[i]["ThoiGianBatDauTru"];
+                }
+                catch (Exception ex) { }
+                DGV.Rows[i].Cells["ThoiGianBatDauTru"].Value = dt.ToString("dd/MM/yyyy");
                 DGV.Rows[i].Cells["TenBangLyLuanChinhTri"].Value = myDt.Rows[i]["TenBangLyLuanChinhTri"].ToString();
             }
             if (myDt.Rows.Count == 0)
