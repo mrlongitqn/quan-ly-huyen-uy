@@ -227,7 +227,8 @@ namespace QuanLyHoSoCongChuc.Report
             else if (BaoCao == "5") // Danh sách đủ tuổi về hưu, đủ năm công tác về hưu
             {
                 this.Text = "Danh sách đủ tuổi về hưu, đủ năm công tác về hưu";
-                String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri, dv.TenDonVi, lpc.HeSoLuong, -1 as TuoiDoi";
+                String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu,t.ChuyenNganh, tt.TenBangLyLuanChinhTri, dv.TenDonVi, lpc.HeSoLuong, -1 as TuoiDoi, ";
+                sql += " DATEADD (yyyy ,  (case MaGioiTinh when 1 then 60 else 55 end) , NgaySinh ) as ThoiGianBatDauTru";
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
@@ -255,28 +256,61 @@ namespace QuanLyHoSoCongChuc.Report
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
 
+                DSBaoCao1 myDS = new DSBaoCao1();
+                
+                myDS.Tables.Add(myDt);
                 for (int i = 0; i < myDt.Rows.Count; i++)
                 {
+                    DataRow myRow = dsBaoCao1.Tables["NhanVien"].NewRow();
+                    myRow["MaNhanVien"] = myDt.Rows[i]["MaNhanVien"];
+                    myRow["MaGioiTinh"] = myDt.Rows[i]["MaGioiTinh"];
+                    myRow["HoTenKhaiSinh"] = myDt.Rows[i]["HoTenKhaiSinh"];
+                    myRow["TenDonVi"] = myDt.Rows[i]["TenDonVi"];
+                    myRow["QueQuan"] = myDt.Rows[i]["QueQuan"];
+                    myRow["TuoiDoi"] = myDt.Rows[i]["TuoiDoi"];
+                    myRow["HeSoLuong"] = myDt.Rows[i]["HeSoLuong"];
+                    myRow["TenChucVu"] = myDt.Rows[i]["TenChucVu"];
+                    myRow["TenBangChuyenMonNghiepVu"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
+                    myRow["ChuyenNganh"] = myDt.Rows[i]["ChuyenNganh"];
+                    myRow["TenBangLyLuanChinhTri"] = myDt.Rows[i]["TenBangLyLuanChinhTri"];
+                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
+                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
+                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
+                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
+                    myRow["MaDanToc"] = myDt.Rows[i]["MaDanToc"];
                     DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
-                    myDt.Rows[i]["TuoiDoi"] = DateTime.Now.Year - dt.Year;
+                    myRow["TuoiDoi"] = DateTime.Now.Year - dt.Year;
                     try
                     {
                         dt = (DateTime)myDt.Rows[i]["NgayChinhThuc"];
+                        //myRow["NgayChinhThuc"] = dt.ToString("dd/MM/yyyy");
+                        myRow["NamCongTac"] = dt.ToString("dd/MM/yyyy");
                     }
-                    catch (Exception ex)
+                    catch (Exception ex) { }
+                    try
                     {
+                        dt = (DateTime)myDt.Rows[i]["NgaySinh"];
+                        myRow["NgaySinh"] = dt.ToString("dd/MM/yyyy");
                     }
-                    //myDt.Rows[i]["NgayChinhThuc"] = dt.ToString("dd/MM/yyyy");
+                    catch (Exception ex) { }
+                    try
+                    {
+                        dt = (DateTime)myDt.Rows[i]["ThoiGianBatDauTru"];
+                        myRow["ThoiGianBatDauTru"] = dt.ToString("dd/MM/yyyy");
+                    }
+                    catch (Exception ex) { }
+                    dsBaoCao1.Tables["NhanVien"].Rows.Add(myRow);
                 }
 
                 CrDanhSachNghiHuu rpt = new CrDanhSachNghiHuu();
+                rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
                 rpt.DataDefinition.FormulaFields["NLB2"].Text = "'" + ChuKi[1] + "'";
                 rpt.DataDefinition.FormulaFields["NLB3"].Text = "'" + ChuKi[2] + "'";
                 rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
                 rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
                 rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
-                rpt.SetDataSource(myDt);
+                rpt.SetDataSource(dsBaoCao1.Tables["NhanVien"]);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else
