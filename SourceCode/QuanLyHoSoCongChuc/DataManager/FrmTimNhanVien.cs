@@ -97,7 +97,7 @@ namespace QuanLyHoSoCongChuc.DataManager
             //        objLstviewItem.Tag = lstItem[i];
             //        objLstviewItem.Text = (i + 1).ToString();
             //        objLstviewItem.SubItems.Add(lstItem[i].MaNhanVien);
-            //        objLstviewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
+            //        objLstviewItem.SubItems.Add(lstItem[i].HoTenKhaiSinh);
             //        lstvNhanVien.Items.Add(objLstviewItem);
             //    }
             //}

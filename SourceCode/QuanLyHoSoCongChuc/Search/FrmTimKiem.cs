@@ -90,7 +90,7 @@ namespace QuanLyHoSoCongChuc.Search
             var nhanvien = new NhanVienModel
             {
                 //MaDonVi = txtMaDonVi.Text,
-                //HoTenNhanVien = txtHoTen.Text.Trim(),
+                //HoTenKhaiSinh = txtHoTen.Text.Trim(),
                 //MaGioiTinh = cbxGioiTinh.SelectedIndex > -1 ? ((GioiTinh)cbxGioiTinh.SelectedItem).MaGioiTinh : null,
                 //QueQuan = txtQueQuan.Text.Trim(),
                 //MaDanToc = cbxDanToc.SelectedIndex > -1 ? ((DanToc)cbxDanToc.SelectedItem).MaDanToc : null,
@@ -121,7 +121,7 @@ namespace QuanLyHoSoCongChuc.Search
             //        objListViewItem = new ListViewItem();
             //        objListViewItem.Tag = lstItem[i];
             //        objListViewItem.Text = lstItem[i].MaNhanVien;
-            //        objListViewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
+            //        objListViewItem.SubItems.Add(lstItem[i].HoTenKhaiSinh);
             //        objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
             //        objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
             //        objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
@@ -469,7 +469,7 @@ namespace QuanLyHoSoCongChuc.Search
                         var objListViewItem = new ListViewItem();
                         objListViewItem.Tag = NhanVienRepository.SelectByID(ds.Tables[0].Rows[i]["MaNhanVien"].ToString().Trim());
                         objListViewItem.Text = ds.Tables[0].Rows[i]["MaNhanVien"].ToString();
-                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["HoTenNhanVien"].ToString());
+                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["HoTenKhaiSinh"].ToString());
                         objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["TenGioiTinh"].ToString());
                         objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["NgaySinh"].ToString());
                         objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["NoiOHienTai"].ToString());

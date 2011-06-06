@@ -23,7 +23,7 @@ namespace QuanLyHoSoCongChuc.Controller
         {
             DataTable dt = LayDanhSachNhanVien();
             cmb.DataSource = dt;
-            cmb.DisplayMember = "HoTenNhanVien";
+            cmb.DisplayMember = "HoTenKhaiSinh";
             cmb.ValueMember = "MaNhanVien";
         }
 

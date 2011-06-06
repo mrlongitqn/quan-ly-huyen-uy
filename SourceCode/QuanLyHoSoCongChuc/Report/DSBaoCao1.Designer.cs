@@ -652,7 +652,7 @@ namespace QuanLyHoSoCongChuc.Report {
             
             private global::System.Data.DataColumn columnHinhAnh;
             
-            private global::System.Data.DataColumn columnHoTenNhanVien;
+            private global::System.Data.DataColumn columnHoTenKhaiSinh;
             
             private global::System.Data.DataColumn columnTenGoiKhac;
             
@@ -847,9 +847,9 @@ namespace QuanLyHoSoCongChuc.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn HoTenNhanVienColumn {
+            public global::System.Data.DataColumn HoTenKhaiSinhColumn {
                 get {
-                    return this.columnHoTenNhanVien;
+                    return this.columnHoTenKhaiSinh;
                 }
             }
             
@@ -1461,7 +1461,7 @@ namespace QuanLyHoSoCongChuc.Report {
             public NhanVienRow AddNhanVienRow(
                         string MaNhanVien, 
                         string HinhAnh, 
-                        string HoTenNhanVien, 
+                        string HoTenKhaiSinh, 
                         string TenGoiKhac, 
                         string MaGioiTinh, 
                         System.DateTime NgaySinh, 
@@ -1537,7 +1537,7 @@ namespace QuanLyHoSoCongChuc.Report {
                 object[] columnValuesArray = new object[] {
                         MaNhanVien,
                         HinhAnh,
-                        HoTenNhanVien,
+                        HoTenKhaiSinh,
                         TenGoiKhac,
                         MaGioiTinh,
                         NgaySinh,
@@ -1640,7 +1640,7 @@ namespace QuanLyHoSoCongChuc.Report {
             internal void InitVars() {
                 this.columnMaNhanVien = base.Columns["MaNhanVien"];
                 this.columnHinhAnh = base.Columns["HinhAnh"];
-                this.columnHoTenNhanVien = base.Columns["HoTenNhanVien"];
+                this.columnHoTenKhaiSinh = base.Columns["HoTenKhaiSinh"];
                 this.columnTenGoiKhac = base.Columns["TenGoiKhac"];
                 this.columnMaGioiTinh = base.Columns["MaGioiTinh"];
                 this.columnNgaySinh = base.Columns["NgaySinh"];
@@ -1721,8 +1721,8 @@ namespace QuanLyHoSoCongChuc.Report {
                 base.Columns.Add(this.columnMaNhanVien);
                 this.columnHinhAnh = new global::System.Data.DataColumn("HinhAnh", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHinhAnh);
-                this.columnHoTenNhanVien = new global::System.Data.DataColumn("HoTenNhanVien", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHoTenNhanVien);
+                this.columnHoTenKhaiSinh = new global::System.Data.DataColumn("HoTenKhaiSinh", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHoTenKhaiSinh);
                 this.columnTenGoiKhac = new global::System.Data.DataColumn("TenGoiKhac", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTenGoiKhac);
                 this.columnMaGioiTinh = new global::System.Data.DataColumn("MaGioiTinh", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1871,7 +1871,7 @@ namespace QuanLyHoSoCongChuc.Report {
                 this.columnMaNhanVien.Unique = true;
                 this.columnMaNhanVien.MaxLength = 10;
                 this.columnHinhAnh.MaxLength = 50;
-                this.columnHoTenNhanVien.MaxLength = 50;
+                this.columnHoTenKhaiSinh.MaxLength = 50;
                 this.columnTenGoiKhac.MaxLength = 50;
                 this.columnMaGioiTinh.AllowDBNull = false;
                 this.columnMaGioiTinh.MaxLength = 10;
@@ -2260,17 +2260,17 @@ namespace QuanLyHoSoCongChuc.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string HoTenNhanVien {
+            public string HoTenKhaiSinh {
                 get {
                     try {
-                        return ((string)(this[this.tableNhanVien.HoTenNhanVienColumn]));
+                        return ((string)(this[this.tableNhanVien.HoTenKhaiSinhColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'HoTenNhanVien\' in table \'NhanVien\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'HoTenKhaiSinh\' in table \'NhanVien\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableNhanVien.HoTenNhanVienColumn] = value;
+                    this[this.tableNhanVien.HoTenKhaiSinhColumn] = value;
                 }
             }
             
@@ -3325,14 +3325,14 @@ namespace QuanLyHoSoCongChuc.Report {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public bool IsHoTenNhanVienNull() {
-                return this.IsNull(this.tableNhanVien.HoTenNhanVienColumn);
+            public bool IsHoTenKhaiSinhNull() {
+                return this.IsNull(this.tableNhanVien.HoTenKhaiSinhColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void SetHoTenNhanVienNull() {
-                this[this.tableNhanVien.HoTenNhanVienColumn] = global::System.Convert.DBNull;
+            public void SetHoTenKhaiSinhNull() {
+                this[this.tableNhanVien.HoTenKhaiSinhColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -34,7 +34,7 @@ namespace QuanLyHoSoCongChuc.DataManager
             {
                 //var nhanvienchuyendi = (ChuyenDonVi)lstvNhanVien.SelectedItems[0].Tag;
                 //txtMaNhanVien.Text = nhanvienchuyendi.MaNhanVien;
-                //txtHoTen.Text = nhanvienchuyendi.NhanVien.HoTenNhanVien;
+                //txtHoTen.Text = nhanvienchuyendi.NhanVien.HoTenKhaiSinh;
                 //txtGioiTinh.Text = nhanvienchuyendi.NhanVien.GioiTinh.TenGioiTinh;
                 //txtTaiCoQuan.Text = nhanvienchuyendi.NhanVien.DonVi.TenDonVi;
                 //txtNamSinh.Text = String.Format("{0:dd/MM/yyyy}", nhanvienchuyendi.NhanVien.NgaySinh.Value);
@@ -176,7 +176,7 @@ namespace QuanLyHoSoCongChuc.DataManager
 
             // Load nhanvien info
             //var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text.Trim());
-            //txtHoTen.Text = nhanvien.HoTenNhanVien;
+            //txtHoTen.Text = nhanvien.HoTenKhaiSinh;
             //txtGioiTinh.Text = nhanvien.GioiTinh.TenGioiTinh;
             //txtTaiCoQuan.Text = nhanvien.DonVi.TenDonVi;
             //txtNamSinh.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh.Value);
@@ -226,7 +226,7 @@ namespace QuanLyHoSoCongChuc.DataManager
             //        objListViewItem.Tag = lstItem[i];
             //        objListViewItem.Text = (i + 1).ToString();
             //        objListViewItem.SubItems.Add(lstItem[i].MaNhanVien);
-            //        objListViewItem.SubItems.Add(lstItem[i].NhanVien.HoTenNhanVien);
+            //        objListViewItem.SubItems.Add(lstItem[i].NhanVien.HoTenKhaiSinh);
             //        objListViewItem.SubItems.Add(lstItem[i].NhanVien.GioiTinh.TenGioiTinh);
             //        objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NhanVien.NgaySinh));
             //        objListViewItem.SubItems.Add(lstItem[i].NhanVien.NoiOHienTai);

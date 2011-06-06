@@ -42,7 +42,7 @@ namespace QuanLyHoSoCongChuc.Report
             ChuKi.Add(txtNK1.Text);
             ChuKi.Add(txtNK2.Text);
             ChuKi.Add(txtNK3.Text);
-            FrmPrintReport frm = new FrmPrintReport("4-" + type.ToString(), SelectedId, "", ChuKi);
+            FrmPrintReport frm = new FrmPrintReport("4-" + type.ToString(), SelectedId, "", ChuKi, Level);
             frm.Show();
         }
 
@@ -53,7 +53,8 @@ namespace QuanLyHoSoCongChuc.Report
             sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
             sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
             sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
-            sql += " where MaDonVi='" + SelectedId + "'";
+            sql += " where 1=1";
+            sql += LoadSql_MaDonVi();
 
             SqlCommand cmd = new SqlCommand(sql);
             dataService.Load(cmd);
@@ -63,7 +64,7 @@ namespace QuanLyHoSoCongChuc.Report
             {
                 DGV.Rows.Add();
                 DGV.Rows[i].Cells["STT"].Value = i + 1;
-                DGV.Rows[i].Cells["HoTenNhanVien"].Value = myDt.Rows[i]["HoTenNhanVien"].ToString();
+                DGV.Rows[i].Cells["HoTenKhaiSinh"].Value = myDt.Rows[i]["HoTenKhaiSinh"].ToString();
                 DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
                 DGV.Rows[i].Cells["NgaySinh"].Value = dt.ToString("dd/MM/yyyy");
                 DGV.Rows[i].Cells["QueQuan"].Value = myDt.Rows[i]["QueQuan"].ToString();
@@ -96,6 +97,21 @@ namespace QuanLyHoSoCongChuc.Report
         private void btThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        private String LoadSql_MaDonVi()
+        {
+            String sql = "";
+            if (Level == 1)//Cap tinh
+            {
+                sql += " and MaQuanHuyen in (";
+                sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
+                sql += " )";
+            }
+            if (Level == 2)//Cap huyen
+            {
+                sql += " and MaQuanHuyen ='" + SelectedId + "'";
+            }
+            return sql;
         }
     }
 }

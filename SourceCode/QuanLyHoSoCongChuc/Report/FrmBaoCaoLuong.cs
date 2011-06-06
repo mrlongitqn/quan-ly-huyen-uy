@@ -45,7 +45,7 @@ namespace QuanLyHoSoCongChuc.Report
             ChuKi.Add(txtNK1.Text);
             ChuKi.Add(txtNK2.Text);
             ChuKi.Add(txtNK3.Text);
-            FrmPrintReport frm = new FrmPrintReport("1-" + type.ToString(), SelectedId, strDt, ChuKi);
+            FrmPrintReport frm = new FrmPrintReport("1-" + type.ToString(), SelectedId, strDt, ChuKi, Level);
             frm.Show();
         }
         void initGird1()
@@ -290,16 +290,7 @@ namespace QuanLyHoSoCongChuc.Report
                 initGird1();
                 String sql = "Select * from DonVi";
                 sql += " where 1=1";
-                if (Level == 1)//Cap tinh
-                {
-                    sql += " and MaQuanHuyen in (";
-                    sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
-                    sql += " )";
-                }
-                if (Level == 2)//Cap huyen
-                {
-                    sql += " and MaQuanHuyen ='" + SelectedId + "'";
-                }
+                sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
@@ -339,16 +330,7 @@ namespace QuanLyHoSoCongChuc.Report
                 initGird2();
                 String sql = "Select * from DonVi";
                 sql += " where 1=1";
-                if (Level == 1)//Cap tinh
-                {
-                    sql += " and MaQuanHuyen in (";
-                    sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
-                    sql += " )";
-                }
-                if (Level == 2)//Cap huyen
-                {
-                    sql += " and MaQuanHuyen ='" + SelectedId + "'";
-                }
+                sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
@@ -395,16 +377,7 @@ namespace QuanLyHoSoCongChuc.Report
                 initGird3();
                 String sql = "Select * from DonVi";
                 sql += " where 1=1";
-                if (Level == 1)//Cap tinh
-                {
-                    sql += " and MaQuanHuyen in (";
-                    sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
-                    sql += " )";
-                }
-                if (Level == 2)//Cap huyen
-                {
-                    sql += " and MaQuanHuyen ='" + SelectedId + "'";
-                }
+                sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
@@ -451,6 +424,22 @@ namespace QuanLyHoSoCongChuc.Report
 
             grid1.AutoSizeCells();
             
+        }
+
+        private String LoadSql_MaDonVi()
+        {
+            String sql = "";
+            if (Level == 1)//Cap tinh
+            {
+                sql += " and MaQuanHuyen in (";
+                sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
+                sql += " )";
+            }
+            if (Level == 2)//Cap huyen
+            {
+                sql += " and MaQuanHuyen ='" + SelectedId + "'";
+            }
+            return sql;
         }
 
         private void cbDoiTuong_SelectedIndexChanged(object sender, EventArgs e)

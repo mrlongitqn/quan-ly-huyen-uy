@@ -66,7 +66,7 @@ namespace QuanLyHoSoCongChuc.Controller
             foreach (DataRow row in table.Rows)
             {
                 System.Windows.Forms.TreeNode n1 = new TreeNode();
-                n1.Text = row["HoTenNhanVien"].ToString();
+                n1.Text = row["HoTenKhaiSinh"].ToString();
                 n1.Tag = row["MaNhanVien"].ToString();
                 n0.Nodes.Add(n1);
             }

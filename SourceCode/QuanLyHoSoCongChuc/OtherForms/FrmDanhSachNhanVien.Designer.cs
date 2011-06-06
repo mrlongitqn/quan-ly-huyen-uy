@@ -31,7 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.DGVLuong = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.MaNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenKhaiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaGioiTinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaChucVu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,7 +47,7 @@
             this.DGVLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGVLuong.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaNhanVien,
-            this.HoTenNhanVien,
+            this.HoTenKhaiSinh,
             this.MaGioiTinh,
             this.MaChucVu,
             this.MaDonVi,
@@ -76,11 +76,11 @@
             this.MaNhanVien.HeaderText = "Mã NV";
             this.MaNhanVien.Name = "MaNhanVien";
             // 
-            // HoTenNhanVien
+            // HoTenKhaiSinh
             // 
-            this.HoTenNhanVien.DataPropertyName = "HoTenNhanVien";
-            this.HoTenNhanVien.HeaderText = "Họ Tên Nhân Viên";
-            this.HoTenNhanVien.Name = "HoTenNhanVien";
+            this.HoTenKhaiSinh.DataPropertyName = "HoTenKhaiSinh";
+            this.HoTenKhaiSinh.HeaderText = "Họ Tên Nhân Viên";
+            this.HoTenKhaiSinh.Name = "HoTenKhaiSinh";
             // 
             // MaGioiTinh
             // 
@@ -136,7 +136,7 @@
 
         private DevComponents.DotNetBar.Controls.DataGridViewX DGVLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaNhanVien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKhaiSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaGioiTinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaChucVu;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaDonVi;

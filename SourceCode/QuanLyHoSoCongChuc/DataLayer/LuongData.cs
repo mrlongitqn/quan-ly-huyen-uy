@@ -15,14 +15,14 @@ namespace QuanLyHoSoCongChuc.DataLayer
         DataService m_LuongData = new DataService();
         public DataTable LayDSNV(DateTime dt)
         {
-            SqlCommand cmd = new SqlCommand("SELECT  HoTenNhanVien,MaNgach, MocTinhNangLuongLanSau, NgayNangLuong from NhanVien where DateDiff(dd,NgayNangLuong,'" + dt + "')>0");
+            SqlCommand cmd = new SqlCommand("SELECT  HoTenKhaiSinh,MaNgach, MocTinhNangLuongLanSau, NgayNangLuong from NhanVien where DateDiff(dd,NgayNangLuong,'" + dt + "')>0");
             m_LuongData.Load(cmd);
             return m_LuongData;
         }
         public DataTable CapNhatCanSu(DateTime dt)
         {
             SqlCommand cmd = new SqlCommand("Update NhanVien set  MocTinhNangLuongLanSau = NgayNangLuong, NgayNangLuong = DateAdd(year,2,NgayNangLuong) Where NhanVien.MaNgach = 'MN001' and DateDiff(dd, NgayNangLuong, '" + dt + "')>0");
-            //SqlCommand cmd = new SqlCommand("Update HoTenNhanVien, MaNgach, MocTinhNangLuongLanSau = NgayNangLuong, NgayNangLuong = DateAdd(year,2,NgayNangLuong) from NhanVien Where NhanVien.MaNgach = 'MN001' And DateDiff(dd,NgayNangLuong,'" + dt + "')>0");
+            //SqlCommand cmd = new SqlCommand("Update HoTenKhaiSinh, MaNgach, MocTinhNangLuongLanSau = NgayNangLuong, NgayNangLuong = DateAdd(year,2,NgayNangLuong) from NhanVien Where NhanVien.MaNgach = 'MN001' And DateDiff(dd,NgayNangLuong,'" + dt + "')>0");
             m_LuongData.Load(cmd);
             return m_LuongData;
 
