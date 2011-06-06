@@ -227,7 +227,7 @@ namespace QuanLyHoSoCongChuc.Report
             else if (BaoCao == "5") // Danh sách đủ tuổi về hưu, đủ năm công tác về hưu
             {
                 this.Text = "Danh sách đủ tuổi về hưu, đủ năm công tác về hưu";
-                String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri, dv.TenDonVi, lpc.HeSoLuong";
+                String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri, dv.TenDonVi, lpc.HeSoLuong, -1 as TuoiDoi";
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
@@ -259,7 +259,13 @@ namespace QuanLyHoSoCongChuc.Report
                 {
                     DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
                     myDt.Rows[i]["TuoiDoi"] = DateTime.Now.Year - dt.Year;
-                    dt = (DateTime)myDt.Rows[i]["NgayChinhThuc"];
+                    try
+                    {
+                        dt = (DateTime)myDt.Rows[i]["NgayChinhThuc"];
+                    }
+                    catch (Exception ex)
+                    {
+                    }
                     //myDt.Rows[i]["NgayChinhThuc"] = dt.ToString("dd/MM/yyyy");
                 }
 
