@@ -38,7 +38,7 @@ namespace QuanLyHoSoCongChuc
                 ParameterFieldDefinition crParameterFieldDefinition;
                 ParameterValues crParameterValues = new ParameterValues();
                 ParameterDiscreteValue crParameterDiscreteValue = new ParameterDiscreteValue();
-                crParameterDiscreteValue.Value = NhanVienDt.Rows[0]["HoTenNhanVien"].ToString();
+                crParameterDiscreteValue.Value = NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString();
                 crParameterFieldDefinitions = rpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition = crParameterFieldDefinitions["name"];
                 crParameterValues = crParameterFieldDefinition.CurrentValues;
@@ -119,7 +119,7 @@ namespace QuanLyHoSoCongChuc
                 ParameterFieldDefinition crParameterFieldDefinition7;
                 ParameterValues crParameterValues7 = new ParameterValues();
                 ParameterDiscreteValue crParameterDiscreteValue7 = new ParameterDiscreteValue();
-                crParameterDiscreteValue7.Value = "		Nay, Ủy ban nhân dân huyện Thạch Hà thông báo cho ông: " + NhanVienDt.Rows[0]["HoTenNhanVien"].ToString() + " và các cơ quan có thẩm quyền biết để thực hiện các thủ tục liên quan.";
+                crParameterDiscreteValue7.Value = "		Nay, Ủy ban nhân dân huyện Thạch Hà thông báo cho ông: " + NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString() + " và các cơ quan có thẩm quyền biết để thực hiện các thủ tục liên quan.";
                 crParameterFieldDefinitions7 = rpt.DataDefinition.ParameterFields;
                 crParameterFieldDefinition7 = crParameterFieldDefinitions7["LoiThongBao"];
                 crParameterValues7 = crParameterFieldDefinition7.CurrentValues;

@@ -13,17 +13,19 @@ namespace QuanLyHoSoCongChuc.Report
     public partial class FrmPrintReport : Form
     {
         String BaoCao = "";
-        String MaDV;
+        String SelectedId;
         String strDt;
         List<String> ChuKi = new List<string>();
+        int Level;
         DataService dataService = new DataService();
-        public FrmPrintReport(String _BC, String _MaDV, String _dt, List<String> _ChuKi)
+        public FrmPrintReport(String _BC, String _MaDV, String _dt, List<String> _ChuKi, int _level)
         {
             InitializeComponent();
             BaoCao = _BC;
-            MaDV = _MaDV;
+            SelectedId = _MaDV;
             strDt = _dt;
             ChuKi = _ChuKi;
+            Level = _level;
         }
 
         private void FrmPrintReport_Load(object sender, EventArgs e)
@@ -32,7 +34,10 @@ namespace QuanLyHoSoCongChuc.Report
             if (BaoCao == "1-0") // Bao cáo lương - 0
             {
                 this.Text = "Báo cáo lương";
-                SqlCommand cmd = new SqlCommand("SELECT * FROM DonVi where MaDonVi='" + MaDV + "'");
+                String sql = " SELECT * FROM DonVi where 1=1";
+                sql += LoadSql_MaDonVi();
+                SqlCommand cmd = new SqlCommand(sql);
+
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
                 CrBaoCaoLuong1 rpt = new CrBaoCaoLuong1();
@@ -54,7 +59,8 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
-                sql += " where MaDonVi='" + MaDV + "'";
+                sql += " where 1=1";
+                sql += LoadSql_MaDonVi();
 
 
                 SqlCommand cmd = new SqlCommand(sql);
@@ -78,7 +84,8 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
-                sql += " where MaDonVi='" + MaDV + "'";
+                sql += " where 1=1";
+                sql += LoadSql_MaDonVi();
 
 
                 SqlCommand cmd = new SqlCommand(sql);
@@ -102,7 +109,8 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
-                sql += " where MaDonVi='" + MaDV + "'";
+                sql += " where 1=1";
+                sql += LoadSql_MaDonVi();
 
 
                 SqlCommand cmd = new SqlCommand(sql);
@@ -125,7 +133,8 @@ namespace QuanLyHoSoCongChuc.Report
                 String sql = " select nv.*, t.TenBangChuyenMonNghiepVu, dv.TenDonVi";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
-                sql += " where nv.MaDonVi='" + MaDV + "'";
+                sql += " where 1=1";
+                sql += LoadSql_MaDonVi();
 
 
                 SqlCommand cmd = new SqlCommand(sql);
@@ -150,7 +159,8 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
-                sql += " where MaDonVi='" + MaDV + "'";
+                sql += " where 1=1";
+                sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
@@ -173,7 +183,8 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
-                sql += " where MaDonVi='" + MaDV + "'";
+                sql += " where 1=1";
+                sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
@@ -196,7 +207,8 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
-                sql += " where MaDonVi='" + MaDV + "'";
+                sql += " where 1=1";
+                sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
@@ -215,12 +227,14 @@ namespace QuanLyHoSoCongChuc.Report
             else if (BaoCao == "5") // Danh sách đủ tuổi về hưu, đủ năm công tác về hưu
             {
                 this.Text = "Danh sách đủ tuổi về hưu, đủ năm công tác về hưu";
-                String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri, dv.TenDonVi";
+                String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri, dv.TenDonVi, lpc.HeSoLuong";
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
                 sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
-                sql += " where nv.MaDonVi='" + MaDV + "'";
+                sql += " left join LuongPhuCap lpc on lpc.MaNhanVien = nv.MaNhanVien";
+                sql += " where 1=1";
+                sql += LoadSql_MaDonVi();
 
                 sql += " and (DATEDIFF(YYYY, NgaySinh, GETDATE()) > ";
                 sql += " case MaGioiTinh";
@@ -245,8 +259,8 @@ namespace QuanLyHoSoCongChuc.Report
                 {
                     DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
                     myDt.Rows[i]["TuoiDoi"] = DateTime.Now.Year - dt.Year;
-                    dt = (DateTime)myDt.Rows[i]["NgayHopDong"];
-                    //myDt.Rows[i]["NgayHopDong"] = dt.ToString("dd/MM/yyyy");
+                    dt = (DateTime)myDt.Rows[i]["NgayChinhThuc"];
+                    //myDt.Rows[i]["NgayChinhThuc"] = dt.ToString("dd/MM/yyyy");
                 }
 
                 CrDanhSachNghiHuu rpt = new CrDanhSachNghiHuu();
@@ -263,6 +277,21 @@ namespace QuanLyHoSoCongChuc.Report
             {
                 MessageBox.Show("Chua tao report");
             }
+        }
+        private String LoadSql_MaDonVi()
+        {
+            String sql = "";
+            if (Level == 1)//Cap tinh
+            {
+                sql += " and MaQuanHuyen in (";
+                sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
+                sql += " )";
+            }
+            if (Level == 2)//Cap huyen
+            {
+                sql += " and MaQuanHuyen ='" + SelectedId + "'";
+            }
+            return sql;
         }
     }
 }

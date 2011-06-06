@@ -52,7 +52,7 @@ namespace QuanLyHoSoCongChuc.Report
             ChuKi.Add(txtNK1.Text);
             ChuKi.Add(txtNK2.Text);
             ChuKi.Add(txtNK3.Text);
-            FrmPrintReport frm = new FrmPrintReport("2", this.SelectedId, strDt, ChuKi);
+            FrmPrintReport frm = new FrmPrintReport("2", this.SelectedId, strDt, ChuKi, Level);
             frm.Show();
         }
 
@@ -106,6 +106,21 @@ namespace QuanLyHoSoCongChuc.Report
 
             grid1.AutoSizeCells();
         }
+        private String LoadSql_MaDonVi()
+        {
+            String sql = "";
+            if (Level == 1)//Cap tinh
+            {
+                sql += " and MaQuanHuyen in (";
+                sql += " Select MaQuanHuyen from QuanHuyen where MaTinh='" + SelectedId + "'";
+                sql += " )";
+            }
+            if (Level == 2)//Cap huyen
+            {
+                sql += " and MaQuanHuyen ='" + SelectedId + "'";
+            }
+            return sql;
+        }
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
             grid1.Rows.Clear();
@@ -113,7 +128,8 @@ namespace QuanLyHoSoCongChuc.Report
             String sql = " select nv.*, t.TenBangChuyenMonNghiepVu, dv.TenDonVi";
             sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
             sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
-            sql += " where nv.MaDonVi='" + SelectedId + "'";
+            sql += " where 1=1";//nv.MaDonVi='" + SelectedId + "'";
+            sql += LoadSql_MaDonVi();
 
             SqlCommand cmd = new SqlCommand(sql);
             dataService.Load(cmd);
@@ -124,7 +140,7 @@ namespace QuanLyHoSoCongChuc.Report
                 grid1.Rows.Insert(r+2);
                 grid1[2 + r, 0] = new SourceGrid.Cells.Cell(r+1, typeof(int));
                 grid1[2 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
-                grid1[2 + r, 2] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HoTenNhanVien"], typeof(String));
+                grid1[2 + r, 2] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HoTenKhaiSinh"], typeof(String));
 
                 DateTime dt = (DateTime)myDt.Rows[r]["NgaySinh"];
                 grid1[2 + r, 3] = new SourceGrid.Cells.Cell(dt.Year, typeof(int));

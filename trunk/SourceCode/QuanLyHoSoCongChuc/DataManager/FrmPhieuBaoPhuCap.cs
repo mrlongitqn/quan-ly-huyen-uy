@@ -120,7 +120,7 @@ namespace QuanLyHoSoCongChuc.DataManager
             {
                 //var nhanvien = (NhanVien)lstvNhanVien.SelectedItems[0].Tag;
                 //txtMaNhanVien.Text = nhanvien.MaNhanVien;
-                //txtHoTen.Text = nhanvien.HoTenNhanVien;
+                //txtHoTen.Text = nhanvien.HoTenKhaiSinh;
                 //txtGioiTinh.Text = nhanvien.GioiTinh.TenGioiTinh;
                 //txtTaiCoQuan.Text = nhanvien.DonVi.TenDonVi;
                 //txtNamSinh.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh.Value);
@@ -225,7 +225,7 @@ namespace QuanLyHoSoCongChuc.DataManager
             //        //objListViewItem.Tag = lstItem[i];
             //        //objListViewItem.Text = (i + 1).ToString();
             //        //objListViewItem.SubItems.Add(lstItem[i].MaNhanVien);
-            //        //objListViewItem.SubItems.Add(lstItem[i].HoTenNhanVien);
+            //        //objListViewItem.SubItems.Add(lstItem[i].HoTenKhaiSinh);
             //        //objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
             //        //objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
             //        //objListViewItem.SubItems.Add(lstItem[i].NoiOHienTai);
@@ -247,7 +247,7 @@ namespace QuanLyHoSoCongChuc.DataManager
 
             // Load nhanvien info
             //var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text);
-            //txtHoTen.Text = nhanvien.HoTenNhanVien;
+            //txtHoTen.Text = nhanvien.HoTenKhaiSinh;
             //txtGioiTinh.Text = nhanvien.GioiTinh.TenGioiTinh;
             //txtTaiCoQuan.Text = nhanvien.DonVi.TenDonVi;
             //txtNamSinh.Text = String.Format("{0:dd/MM/yyyy}", nhanvien.NgaySinh.Value);

@@ -73,7 +73,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="HoTenNhanVien" msprop:Generator_ColumnVarNameInTable="columnHoTenNhanVien" msprop:Generator_ColumnPropNameInRow="HoTenNhanVien" msprop:Generator_ColumnPropNameInTable="HoTenNhanVienColumn" msprop:Generator_UserColumnName="HoTenNhanVien" minOccurs="0">
+              <xs:element name="HoTenKhaiSinh" msprop:Generator_ColumnVarNameInTable="columnHoTenKhaiSinh" msprop:Generator_ColumnPropNameInRow="HoTenKhaiSinh" msprop:Generator_ColumnPropNameInTable="HoTenKhaiSinhColumn" msprop:Generator_UserColumnName="HoTenKhaiSinh" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />

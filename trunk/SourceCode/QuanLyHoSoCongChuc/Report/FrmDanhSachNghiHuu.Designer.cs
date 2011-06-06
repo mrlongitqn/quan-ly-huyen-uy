@@ -64,7 +64,7 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.DGV = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTenNhanVien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTenKhaiSinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenDonVi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.QueQuan = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -435,7 +435,7 @@
             this.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.STT,
-            this.HoTenNhanVien,
+            this.HoTenKhaiSinh,
             this.TenDonVi,
             this.NgaySinh,
             this.QueQuan,
@@ -478,11 +478,11 @@
             this.STT.Name = "STT";
             this.STT.Width = 40;
             // 
-            // HoTenNhanVien
+            // HoTenKhaiSinh
             // 
-            this.HoTenNhanVien.DataPropertyName = "HoTenNhanVien";
-            this.HoTenNhanVien.HeaderText = "Họ và Tên";
-            this.HoTenNhanVien.Name = "HoTenNhanVien";
+            this.HoTenKhaiSinh.DataPropertyName = "HoTenKhaiSinh";
+            this.HoTenKhaiSinh.HeaderText = "Họ và Tên";
+            this.HoTenKhaiSinh.Name = "HoTenKhaiSinh";
             // 
             // TenDonVi
             // 
@@ -607,7 +607,7 @@
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.DataGridViewX DGV;
         private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenNhanVien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKhaiSinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenDonVi;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn QueQuan;

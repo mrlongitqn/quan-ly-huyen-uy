@@ -43,7 +43,7 @@ namespace QuanLyHoSoCongChuc.Controller
         {
             DataTable dt = m_NhanVienControl.LayDSNhanVien();
             cmbNhanVien.DataSource = dt;
-            cmbNhanVien.DisplayMember = "HoTenNhanVien";
+            cmbNhanVien.DisplayMember = "HoTenKhaiSinh";
             cmbNhanVien.ValueMember = "MaNhanVien";
         }
 

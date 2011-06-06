@@ -25,7 +25,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         private void FrmLuong_Load(object sender, EventArgs e)
         {
             DataService.OpenConnection();
-            m_NhanVienControl.HienThiTTLuong(DGVLuong, txtHoTenNhanVien, cbxDonVi, cbxGioiTinh, cbxChucVu, cbxNgachCongChuc, txtMaNghach, txtBacLuong, txtHeSoLuong, cbxHuong85, txtCLBLHeSoLuong, dtHuongTuNgay, dtMocTinhNangLuongLanSau, txtHeSoPhuCapChucVu, txtHeSoPhuCapThamNienVuotKhung, txtHeSoPhuCapKiemNhiem, txtHeSoPhuCapKhac);
+            m_NhanVienControl.HienThiTTLuong(DGVLuong, txtHoTenKhaiSinh, cbxDonVi, cbxGioiTinh, cbxChucVu, cbxNgachCongChuc, txtMaNghach, txtBacLuong, txtHeSoLuong, cbxHuong85, txtCLBLHeSoLuong, dtHuongTuNgay, dtMocTinhNangLuongLanSau, txtHeSoPhuCapChucVu, txtHeSoPhuCapThamNienVuotKhung, txtHeSoPhuCapKiemNhiem, txtHeSoPhuCapKhac);
             m_NhanVienControl.HienThiComboBoxLuong(cbxGioiTinh, cbxDonVi, cbxChucVu, cbxNgachCongChuc, cbxHuong85);
         }
 

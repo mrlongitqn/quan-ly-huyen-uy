@@ -44,7 +44,7 @@ namespace QuanLyHoSoCongChuc
                 CrystalReport1 rpt = new CrystalReport1();
 
                 // Parameter 1
-                rpt.DataDefinition.FormulaFields["HoTen"].Text = "'1) Họ và tên: " + NhanVienDt.Rows[0]["HoTenNhanVien"].ToString() + ". Giới tính: " + getGioiTinh(NhanVienDt.Rows[0]["HoTenNhanVien"].ToString())+"'";
+                rpt.DataDefinition.FormulaFields["HoTen"].Text = "'1) Họ và tên: " + NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString() + ". Giới tính: " + getGioiTinh(NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString())+"'";
 
                 // Parameter 3b
                 rpt.DataDefinition.FormulaFields["ChucVu"].Text = "'- Chức vụ: " + NhanVienDt.Rows[0]["ChucVuLanhDaoKiemNhiem"].ToString() + "'";
