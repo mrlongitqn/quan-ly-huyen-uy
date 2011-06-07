@@ -132,9 +132,9 @@ namespace QuanLyHoSoCongChuc.Report
             else if (BaoCao == "2") // danh sách nâng lương
             {
                 this.Text = "Danh sách nâng lương";
-                String sql = " select nv.*, t.TenBangChuyenMonNghiepVu,";
-                sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
-                sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
+                String sql = " select nv.*, t.TenBangChuyenMonNghiepVu, dv.TenDonVi";
+                //sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
+                //sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
@@ -157,19 +157,21 @@ namespace QuanLyHoSoCongChuc.Report
                         DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
                         myRow["NamSinh"] = dt.ToString("yyyy");
                     }
-                    catch(){}
+                    catch(Exception ex){}
                     
                     myRow["TrinhDoDaoTao"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
                     myRow["TenNgach1"] = "HD681";
                     myRow["MaNgach1"] = "TongSo2";
                     myRow["Bac1"] = "CBCC2";
                     myRow["HeSoLuong1"] = "CBVC2";
+                    myRow["HeSoCL1"] = "CBVC2";
                     myRow["NgayThangNamHuong1"] = "HD682";
 
                     myRow["TenNgach2"] = "HD681";
                     myRow["MaNgach2"] = "TongSo2";
                     myRow["Bac2"] = "CBCC2";
                     myRow["HeSoLuong2"] = "CBVC2";
+                    myRow["HeSoCL2"] = "CBVC2";
                     myRow["NgayThangNamHuong2"] = "HD682";
 
                     myRow["ChenhLech"] = "HD682";
