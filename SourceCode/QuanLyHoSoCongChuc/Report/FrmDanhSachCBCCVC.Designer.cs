@@ -74,6 +74,7 @@
             this.ChuyenNganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenBangLyLuanChinhTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -246,6 +247,7 @@
             this.cbKy.FormattingEnabled = true;
             this.cbKy.ItemHeight = 14;
             this.cbKy.Items.AddRange(new object[] {
+            this.comboItem7,
             this.comboItem4,
             this.comboItem5,
             this.comboItem6});
@@ -540,6 +542,10 @@
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
             // 
+            // comboItem7
+            // 
+            this.comboItem7.Text = "----";
+            // 
             // FrmDanhSachCBCCVC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -606,5 +612,6 @@
         public System.Windows.Forms.TextBox txtNLB2;
         public System.Windows.Forms.TextBox txtNLB1;
         private DevComponents.DotNetBar.LabelX labelX6;
+        private DevComponents.Editors.ComboItem comboItem7;
     }
 }
