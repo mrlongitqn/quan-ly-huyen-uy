@@ -309,12 +309,12 @@ namespace QuanLyHoSoCongChuc.Report
                     grid1[2 + r, 2] = new SourceGrid.Cells.Cell("", typeof(int));
                     grid1[2 + r, 3] = new SourceGrid.Cells.Cell("", typeof(String));
                     grid1[2 + r, 4] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[2 + r, 5] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 5].View = yellowView;
-                    grid1[2 + r, 6] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 6].View = yellowView;
-                    grid1[2 + r, 7] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 7].View = yellowView;
-                    grid1[2 + r, 8] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 8].View = yellowView;
-                    grid1[2 + r, 9] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 9].View = yellowView;
-                    grid1[2 + r, 10] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[2 + r, 10].View = yellowView;
+                    grid1[2 + r, 5] = new SourceGrid.Cells.Cell("1", typeof(String)); grid1[2 + r, 5].View = yellowView;
+                    grid1[2 + r, 6] = new SourceGrid.Cells.Cell("1", typeof(String)); grid1[2 + r, 6].View = yellowView;
+                    grid1[2 + r, 7] = new SourceGrid.Cells.Cell("1", typeof(String)); grid1[2 + r, 7].View = yellowView;
+                    grid1[2 + r, 8] = new SourceGrid.Cells.Cell("1", typeof(String)); grid1[2 + r, 8].View = yellowView;
+                    grid1[2 + r, 9] = new SourceGrid.Cells.Cell("1", typeof(String)); grid1[2 + r, 9].View = yellowView;
+                    grid1[2 + r, 10] = new SourceGrid.Cells.Cell("1", typeof(String)); grid1[2 + r, 10].View = yellowView;
                     grid1[2 + r, 11] = new SourceGrid.Cells.Cell("", typeof(String));
                     grid1[2 + r, 12] = new SourceGrid.Cells.Cell("", typeof(String));
                     grid1[2 + r, 13] = new SourceGrid.Cells.Cell("", typeof(String));
@@ -346,25 +346,25 @@ namespace QuanLyHoSoCongChuc.Report
                     grid1[3 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
                     grid1[3 + r, 2] = new SourceGrid.Cells.Cell("", typeof(String));
 
-                    grid1[3 + r, 3] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 4] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 5] = new SourceGrid.Cells.Cell("", typeof(String)); 
-                    grid1[3 + r, 6] = new SourceGrid.Cells.Cell("", typeof(String)); 
-                    grid1[3 + r, 7] = new SourceGrid.Cells.Cell("", typeof(String)); 
-                    grid1[3 + r, 8] = new SourceGrid.Cells.Cell("", typeof(String)); 
-                    grid1[3 + r, 9] = new SourceGrid.Cells.Cell("", typeof(String)); 
-                    grid1[3 + r, 10] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 11] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 12] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 13] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 14] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 15] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 16] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 17] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 18] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 19] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[3 + r, 20] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[3 + r, 20].View = yellowView;
-                    grid1[3 + r, 21] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[3 + r, 21].View = yellowView;
+                    grid1[3 + r, 3] = new SourceGrid.Cells.Cell("3", typeof(String));
+                    grid1[3 + r, 4] = new SourceGrid.Cells.Cell("4", typeof(String));
+                    grid1[3 + r, 5] = new SourceGrid.Cells.Cell("5", typeof(String)); 
+                    grid1[3 + r, 6] = new SourceGrid.Cells.Cell("6", typeof(String)); 
+                    grid1[3 + r, 7] = new SourceGrid.Cells.Cell("7", typeof(String)); 
+                    grid1[3 + r, 8] = new SourceGrid.Cells.Cell("8", typeof(String)); 
+                    grid1[3 + r, 9] = new SourceGrid.Cells.Cell("9", typeof(String)); 
+                    grid1[3 + r, 10] = new SourceGrid.Cells.Cell("10", typeof(String));
+                    grid1[3 + r, 11] = new SourceGrid.Cells.Cell("11", typeof(String));
+                    grid1[3 + r, 12] = new SourceGrid.Cells.Cell("12", typeof(String));
+                    grid1[3 + r, 13] = new SourceGrid.Cells.Cell("13", typeof(String));
+                    grid1[3 + r, 14] = new SourceGrid.Cells.Cell("14", typeof(String));
+                    grid1[3 + r, 15] = new SourceGrid.Cells.Cell("15", typeof(String));
+                    grid1[3 + r, 16] = new SourceGrid.Cells.Cell("16", typeof(String));
+                    grid1[3 + r, 17] = new SourceGrid.Cells.Cell("17", typeof(String));
+                    grid1[3 + r, 18] = new SourceGrid.Cells.Cell("18", typeof(String));
+                    grid1[3 + r, 19] = new SourceGrid.Cells.Cell("19", typeof(String));
+                    grid1[3 + r, 20] = new SourceGrid.Cells.Cell("20", typeof(String)); grid1[3 + r, 20].View = yellowView;
+                    grid1[3 + r, 21] = new SourceGrid.Cells.Cell("21", typeof(String)); grid1[3 + r, 21].View = yellowView;
                 }
 
                 if (myDt.Rows.Count == 0)
@@ -391,26 +391,26 @@ namespace QuanLyHoSoCongChuc.Report
                     grid1.Rows.Insert(r + 4);
                     grid1[4 + r, 0] = new SourceGrid.Cells.Cell(r + 1, typeof(int));
                     grid1[4 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
-                    grid1[4 + r, 2] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[4 + r, 2] = new SourceGrid.Cells.Cell("2", typeof(String));
 
-                    grid1[4 + r, 3] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 4] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 5] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 6] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 7] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 8] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 9] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 10] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 11] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 12] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 13] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 14] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 15] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 16] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 17] = new SourceGrid.Cells.Cell("", typeof(String));
-                    grid1[4 + r, 18] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[4 + r, 18].View = yellowView;
-                    grid1[4 + r, 19] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[4 + r, 19].View = yellowView;
-                    grid1[4 + r, 20] = new SourceGrid.Cells.Cell("", typeof(String)); 
+                    grid1[4 + r, 3] = new SourceGrid.Cells.Cell("3", typeof(String));
+                    grid1[4 + r, 4] = new SourceGrid.Cells.Cell("4", typeof(String));
+                    grid1[4 + r, 5] = new SourceGrid.Cells.Cell("5", typeof(String));
+                    grid1[4 + r, 6] = new SourceGrid.Cells.Cell("6", typeof(String));
+                    grid1[4 + r, 7] = new SourceGrid.Cells.Cell("7", typeof(String));
+                    grid1[4 + r, 8] = new SourceGrid.Cells.Cell("8", typeof(String));
+                    grid1[4 + r, 9] = new SourceGrid.Cells.Cell("9", typeof(String));
+                    grid1[4 + r, 10] = new SourceGrid.Cells.Cell("10", typeof(String));
+                    grid1[4 + r, 11] = new SourceGrid.Cells.Cell("11", typeof(String));
+                    grid1[4 + r, 12] = new SourceGrid.Cells.Cell("12", typeof(String));
+                    grid1[4 + r, 13] = new SourceGrid.Cells.Cell("13", typeof(String));
+                    grid1[4 + r, 14] = new SourceGrid.Cells.Cell("14", typeof(String));
+                    grid1[4 + r, 15] = new SourceGrid.Cells.Cell("15", typeof(String));
+                    grid1[4 + r, 16] = new SourceGrid.Cells.Cell("16", typeof(String));
+                    grid1[4 + r, 17] = new SourceGrid.Cells.Cell("17", typeof(String));
+                    grid1[4 + r, 18] = new SourceGrid.Cells.Cell("18", typeof(String)); grid1[4 + r, 18].View = yellowView;
+                    grid1[4 + r, 19] = new SourceGrid.Cells.Cell("19", typeof(String)); grid1[4 + r, 19].View = yellowView;
+                    grid1[4 + r, 20] = new SourceGrid.Cells.Cell("20", typeof(String)); 
                 }
 
                 if (myDt.Rows.Count == 0)

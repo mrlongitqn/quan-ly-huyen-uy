@@ -40,6 +40,31 @@ namespace QuanLyHoSoCongChuc.Report
 
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
+                DSBaoCao1 myDS = new DSBaoCao1();
+
+                myDS.Tables.Add(myDt);
+                for (int i = 0; i < myDt.Rows.Count; i++)
+                {
+                    DataRow myRow = dsBaoCao1.Tables["BCLuong1"].NewRow();
+                    myRow["STT"] = i+1;
+                    myRow["TenDonVi"] = myDt.Rows[i]["TenDonVi"];
+                    myRow["TongSo1"] = "TongSo1";
+                    myRow["CBCC1"] = "CBCC1";
+                    myRow["CBVC1"] = "CBVC1";
+                    myRow["HD681"] = "HD681";
+
+                    myRow["TongSo2"] = "TongSo2";
+                    myRow["CBCC2"] = "CBCC2";
+                    myRow["CBVC2"] = "CBVC2";
+                    myRow["HD682"] = "HD682";
+
+                    myRow["HeSoLuong"] = 1;
+                    myRow["HeSoPCTNVK"] =2;
+                    myRow["ChucVu"] = "ChucVu";
+                    myRow["ThamNienNghe"] = 3;
+
+                    dsBaoCao1.Tables["BCLuong1"].Rows.Add(myRow);
+                }
                 CrBaoCaoLuong1 rpt = new CrBaoCaoLuong1();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
@@ -48,9 +73,9 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
                 rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
                 rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
-                rpt.SetDataSource(myDt);
-                this.crystalReportViewer1.ReportSource = rpt;
 
+                rpt.SetDataSource(dsBaoCao1.Tables["BCLuong1"]);
+                this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "1-1")// Bao cáo lương - 1
             {
