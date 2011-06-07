@@ -59,6 +59,7 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
                 sql += LoadSql_MaDonVi();
 
@@ -84,6 +85,7 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
                 sql += LoadSql_MaDonVi();
 
@@ -109,6 +111,7 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
                 sql += LoadSql_MaDonVi();
 
@@ -132,7 +135,7 @@ namespace QuanLyHoSoCongChuc.Report
                 this.Text = "Danh sách phụ cấp thâm niên vượt khung";
                 String sql = " select nv.*, t.TenBangChuyenMonNghiepVu, dv.TenDonVi";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
-                sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
                 sql += LoadSql_MaDonVi();
 
@@ -159,8 +162,9 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
-                //sql += LoadSql_MaDonVi();
+                sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
@@ -212,8 +216,9 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
-                //sql += LoadSql_MaDonVi();
+                sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
@@ -265,8 +270,9 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
-                //sql += LoadSql_MaDonVi();
+                sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
@@ -319,7 +325,7 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
                 sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
                 sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
-                sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " left join LuongPhuCap lpc on lpc.MaNhanVien = nv.MaNhanVien";
                 sql += " where 1=1";
                 sql += LoadSql_MaDonVi();
