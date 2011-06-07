@@ -127,7 +127,7 @@ namespace QuanLyHoSoCongChuc.Report
             initGird();
             String sql = " select nv.*, t.TenBangChuyenMonNghiepVu, dv.TenDonVi";
             sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
-            sql += " left join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+            sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
             sql += " where 1=1";//nv.MaDonVi='" + SelectedId + "'";
             sql += LoadSql_MaDonVi();
 

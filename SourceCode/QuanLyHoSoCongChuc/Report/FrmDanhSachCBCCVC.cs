@@ -53,9 +53,9 @@ namespace QuanLyHoSoCongChuc.Report
             sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
             sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
             sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
+            sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
             sql += " where 1=1";
-            //sql += LoadSql_MaDonVi();
-
+            sql += LoadSql_MaDonVi();
             SqlCommand cmd = new SqlCommand(sql);
             dataService.Load(cmd);
             DataTable myDt = dataService;
