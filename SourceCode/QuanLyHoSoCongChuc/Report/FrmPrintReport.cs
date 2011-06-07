@@ -80,7 +80,7 @@ namespace QuanLyHoSoCongChuc.Report
             else if (BaoCao == "1-1")// Bao cáo lương - 1
             {
                 this.Text = "Báo cáo lương";
-                String sql = " select nv.*, t.TenBangChuyenMonNghiepVu,";
+                String sql = " select nv.*, t.TenBangChuyenMonNghiepVu,dv.TenDonVi,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
                 sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
@@ -92,6 +92,51 @@ namespace QuanLyHoSoCongChuc.Report
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
+                DSBaoCao1 myDS = new DSBaoCao1();
+
+                myDS.Tables.Add(myDt);
+                for (int i = 0; i < myDt.Rows.Count; i++)
+                {
+                    DataRow myRow = dsBaoCao1.Tables["BCLuong2"].NewRow();
+                    myRow["STT"] = i + 1;
+                    myRow["TenDonVi"] = myDt.Rows[i]["TenDonVi"];
+                    myRow["HoTen"] = myDt.Rows[i]["HoTenKhaiSinh"];
+                    try
+                    {
+                        DateTime dt = (DateTime)myDt.Rows[i]["NgaySinhNam"];
+                        myRow["NgaySinhNam"] = dt.ToString("dd/MM/yyyy");
+                    }
+                    catch (Exception ex) { }
+                    try
+                    {
+                        DateTime dt = (DateTime)myDt.Rows[i]["NgaySinhNu"];
+                        myRow["NgaySinhNu"] = dt.ToString("dd/MM/yyyy");
+                    }
+                    catch (Exception ex) { }
+                    myRow["TrinhDoDaoTao"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
+                    myRow["CongViecDangDN"] = "CBVC1";
+                    myRow["MaNgach"] = "HD681";
+
+                    myRow["Bac"] = "TongSo2";
+                    myRow["%"] = "CBCC2";
+                    myRow["HeSo"] = "CBVC2";
+                    myRow["ChenhLechBL"] = "HD682";
+
+                    myRow["ThoiGianNLSau"] = 1;
+                    myRow["ChucVu"] = "ChucVu";
+
+                    myRow["ThamNienNghe"] = 3;
+                    myRow["TrachNhiem"] = "ChucVu";
+                    myRow["DocHai"] = 3;
+                    myRow["UuDaiNghe"] = 3;
+
+                    myRow["PhuCapKhac"] = "ChucVu";
+                    myRow["TongHeSo"] = 3;
+                    myRow["TongTien"] = 3;
+
+     
+                    dsBaoCao1.Tables["BCLuong2"].Rows.Add(myRow);
+                }
                 CrBaoCaoLuong2 rpt = new CrBaoCaoLuong2();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
@@ -100,7 +145,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
                 rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
                 rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
-                rpt.SetDataSource(myDt);
+                rpt.SetDataSource(dsBaoCao1.Tables["BCLuong2"]);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "1-2") // Bao cáo lương - 2

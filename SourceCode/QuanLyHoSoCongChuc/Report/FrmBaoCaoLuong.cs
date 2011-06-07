@@ -158,28 +158,28 @@ namespace QuanLyHoSoCongChuc.Report
             grid1[0, 21].RowSpan = 2;
 
 
-            grid1[2, 0] = new SourceGrid.Cells.ColumnHeader("A");
-            grid1[2, 1] = new SourceGrid.Cells.ColumnHeader("");
-            grid1[2, 2] = new SourceGrid.Cells.ColumnHeader("B");
-            grid1[2, 3] = new SourceGrid.Cells.ColumnHeader("1");
-            grid1[2, 4] = new SourceGrid.Cells.ColumnHeader("2");
-            grid1[2, 5] = new SourceGrid.Cells.ColumnHeader("3");
-            grid1[2, 6] = new SourceGrid.Cells.ColumnHeader("4");
-            grid1[2, 7] = new SourceGrid.Cells.ColumnHeader("5");
-            grid1[2, 8] = new SourceGrid.Cells.ColumnHeader("6");
-            grid1[2, 9] = new SourceGrid.Cells.ColumnHeader("7");
-            grid1[2, 10] = new SourceGrid.Cells.ColumnHeader("8");
-            grid1[2, 11] = new SourceGrid.Cells.ColumnHeader("9");
-            grid1[2, 12] = new SourceGrid.Cells.ColumnHeader("10");
-            grid1[2, 13] = new SourceGrid.Cells.ColumnHeader("11");
-            grid1[2, 14] = new SourceGrid.Cells.ColumnHeader("12");
-            grid1[2, 15] = new SourceGrid.Cells.ColumnHeader("13");
-            grid1[2, 16] = new SourceGrid.Cells.ColumnHeader("14");
-            grid1[2, 17] = new SourceGrid.Cells.ColumnHeader("15");
-            grid1[2, 18] = new SourceGrid.Cells.ColumnHeader("16");
-            grid1[2, 19] = new SourceGrid.Cells.ColumnHeader("17");
-            grid1[2, 20] = new SourceGrid.Cells.ColumnHeader("18");
-            grid1[2, 21] = new SourceGrid.Cells.ColumnHeader("19");
+            grid1[2, 0] = new SourceGrid.Cells.ColumnHeader("A"); grid1[2, 0].View = yellowView;
+            grid1[2, 1] = new SourceGrid.Cells.ColumnHeader(""); grid1[2, 1].View = yellowView;
+            grid1[2, 2] = new SourceGrid.Cells.ColumnHeader("B"); grid1[2, 2].View = yellowView;
+            grid1[2, 3] = new SourceGrid.Cells.ColumnHeader("1"); grid1[2, 3].View = yellowView;
+            grid1[2, 4] = new SourceGrid.Cells.ColumnHeader("2"); grid1[2, 4].View = yellowView;
+            grid1[2, 5] = new SourceGrid.Cells.ColumnHeader("3"); grid1[2, 5].View = yellowView;
+            grid1[2, 6] = new SourceGrid.Cells.ColumnHeader("4"); grid1[2, 6].View = yellowView;
+            grid1[2, 7] = new SourceGrid.Cells.ColumnHeader("5"); grid1[2, 7].View = yellowView;
+            grid1[2, 8] = new SourceGrid.Cells.ColumnHeader("6"); grid1[2, 8].View = yellowView;
+            grid1[2, 9] = new SourceGrid.Cells.ColumnHeader("7"); grid1[2, 9].View = yellowView;
+            grid1[2, 10] = new SourceGrid.Cells.ColumnHeader("8"); grid1[2, 10].View = yellowView;
+            grid1[2, 11] = new SourceGrid.Cells.ColumnHeader("9"); grid1[2, 11].View = yellowView;
+            grid1[2, 12] = new SourceGrid.Cells.ColumnHeader("10"); grid1[2, 12].View = yellowView;
+            grid1[2, 13] = new SourceGrid.Cells.ColumnHeader("11"); grid1[2, 13].View = yellowView;
+            grid1[2, 14] = new SourceGrid.Cells.ColumnHeader("12"); grid1[2, 14].View = yellowView;
+            grid1[2, 15] = new SourceGrid.Cells.ColumnHeader("13"); grid1[2, 15].View = yellowView;
+            grid1[2, 16] = new SourceGrid.Cells.ColumnHeader("14"); grid1[2, 16].View = yellowView;
+            grid1[2, 17] = new SourceGrid.Cells.ColumnHeader("15"); grid1[2, 17].View = yellowView;
+            grid1[2, 18] = new SourceGrid.Cells.ColumnHeader("16"); grid1[2, 18].View = yellowView;
+            grid1[2, 19] = new SourceGrid.Cells.ColumnHeader("17"); grid1[2, 19].View = yellowView;
+            grid1[2, 20] = new SourceGrid.Cells.ColumnHeader("18"); grid1[2, 20].View = yellowView;
+            grid1[2, 21] = new SourceGrid.Cells.ColumnHeader("19"); grid1[2, 21].View = yellowView;
 
             grid1.AutoSizeCells();
         }
@@ -328,7 +328,9 @@ namespace QuanLyHoSoCongChuc.Report
             else if (cbDoiTuong.SelectedIndex == 1)
             {
                 initGird2();
-                String sql = "Select * from DonVi";
+                String sql = " select nv.*, dv.TenDonVi";
+                sql += " from NhanVien nv";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
                 sql += LoadSql_MaDonVi();
 
@@ -342,9 +344,9 @@ namespace QuanLyHoSoCongChuc.Report
                 for (int r = 0; r < myDt.Rows.Count; r++)
                 {
                     grid1.Rows.Insert(r + 3);
-                    grid1[3 + r, 0] = new SourceGrid.Cells.Cell(r + 1, typeof(int));
-                    grid1[3 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
-                    grid1[3 + r, 2] = new SourceGrid.Cells.Cell("", typeof(String));
+                    grid1[3 + r, 0] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
+                    grid1[3 + r, 1] = new SourceGrid.Cells.Cell(r + 1, typeof(int));
+                    grid1[3 + r, 2] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HoTenKhaiSinh"], typeof(String));
 
                     grid1[3 + r, 3] = new SourceGrid.Cells.Cell("3", typeof(String));
                     grid1[3 + r, 4] = new SourceGrid.Cells.Cell("4", typeof(String));
