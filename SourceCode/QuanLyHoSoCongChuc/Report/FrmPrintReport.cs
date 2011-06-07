@@ -204,6 +204,40 @@ namespace QuanLyHoSoCongChuc.Report
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
+                DSBaoCao1 myDS = new DSBaoCao1();
+
+                myDS.Tables.Add(myDt);
+                for (int i = 0; i < myDt.Rows.Count; i++)
+                {
+                    DataRow myRow = dsBaoCao1.Tables["PCVK"].NewRow();
+                    myRow["STT"] = i + 1;
+                    myRow["TenDonVi"] = myDt.Rows[i]["TenDonVi"];
+                    myRow["HoTen"] = myDt.Rows[i]["HoTenKhaiSinh"];
+                    try
+                    {
+                        DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
+                        myRow["NamSinh"] = dt.ToString("yyyy");
+                    }
+                    catch (Exception ex) { }
+
+                    myRow["TrinhDoDaoTao"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
+                    myRow["TenNgach1"] = "HD681";
+                    myRow["MaNgach1"] = "TongSo2";
+                    myRow["BacCuoi1"] = "CBCC2";
+                    myRow["HeSoLuongMoi1"] = "CBVC2";
+                    myRow["%PC1"] = "CBVC2";
+                    myRow["HeSoPC1"] = "CBVC2";
+                    myRow["HeSoCL1"] = "CBVC2";
+                    myRow["NgayHuong1"] = "HD682";
+
+                    myRow["%PC2"] = "CBVC2";
+                    myRow["HeSoPC2"] = "CBVC2";
+                    myRow["HeSoCL2"] = "CBVC2";
+                    myRow["NgayHuong2"] = "HD682";
+
+                    myRow["ChenhLech"] = "HD682";
+                    dsBaoCao1.Tables["PCVK"].Rows.Add(myRow);
+                }
                 CrBaoCaoDanhSachVuotKhung rpt = new CrBaoCaoDanhSachVuotKhung();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["Title"].Text = "'DANH SÁCH KẾT QUẢ NÂNG PCTNVK CB, CC UBND HUYỆN "+strDt.ToUpper()+"'";
@@ -213,7 +247,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
                 rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
                 rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
-                rpt.SetDataSource(myDt);
+                rpt.SetDataSource(dsBaoCao1.Tables["PCVK"]);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "4-0") // Danh sách CB, CC, VC và hợp đồng 1    
