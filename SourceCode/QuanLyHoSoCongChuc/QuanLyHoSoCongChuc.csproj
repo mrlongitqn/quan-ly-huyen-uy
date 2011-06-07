@@ -510,6 +510,12 @@
     <Compile Include="NhanVienManager\FrmThongTinNhanVien_TomTat.Designer.cs">
       <DependentUpon>FrmThongTinNhanVien_TomTat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\CrBaoCaoDanhSachCBCCVC3.cs">
+      <DependentUpon>CrBaoCaoDanhSachCBCCVC3.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Report\CrBaoCaoDanhSachVuotKhung.cs">
       <DependentUpon>CrBaoCaoDanhSachVuotKhung.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -518,12 +524,6 @@
     </Compile>
     <Compile Include="Report\CrDanhSachNangLuong.cs">
       <DependentUpon>CrDanhSachNangLuong.rpt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <SubType>Component</SubType>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Report\CrBaoCaoDanhSachCBCCVC3.cs">
-      <DependentUpon>CrBaoCaoDanhSachCBCCVC3.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
       <SubType>Component</SubType>
       <DesignTime>True</DesignTime>
@@ -962,6 +962,10 @@
     <EmbeddedResource Include="NhanVienManager\FrmThongTinNhanVien_TomTat.resx">
       <DependentUpon>FrmThongTinNhanVien_TomTat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrBaoCaoDanhSachCBCCVC3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrBaoCaoDanhSachCBCCVC3.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\CrBaoCaoDanhSachVuotKhung.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrBaoCaoDanhSachVuotKhung.cs</LastGenOutput>
@@ -969,10 +973,6 @@
     <EmbeddedResource Include="Report\CrDanhSachNangLuong.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrDanhSachNangLuong.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Report\CrBaoCaoDanhSachCBCCVC3.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrBaoCaoDanhSachCBCCVC3.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\CrBaoCaoDanhSachCBCCVC2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

@@ -49,12 +49,12 @@ namespace QuanLyHoSoCongChuc.Report
         private void btBaoBieu_Click(object sender, EventArgs e)
         {
             DGV.Rows.Clear();
-            String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, tt.TenBangLyLuanChinhTri";
+            String sql = " select nv.*, cv.TenChucVu, t.TenBangChuyenMonNghiepVu, t.ChuyenNganh, tt.TenBangLyLuanChinhTri";
             sql += " from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
             sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
             sql += " left join BangLyLuanChinhTri tt on nv.MaBangLyLuanChinhTri = tt.MaBangLyLuanChinhTri";
             sql += " where 1=1";
-            sql += LoadSql_MaDonVi();
+            //sql += LoadSql_MaDonVi();
 
             SqlCommand cmd = new SqlCommand(sql);
             dataService.Load(cmd);
@@ -68,9 +68,10 @@ namespace QuanLyHoSoCongChuc.Report
                 DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
                 DGV.Rows[i].Cells["NgaySinh"].Value = dt.ToString("dd/MM/yyyy");
                 DGV.Rows[i].Cells["QueQuan"].Value = myDt.Rows[i]["QueQuan"].ToString();
-                DGV.Rows[i].Cells["NoiOHienTai"].Value = myDt.Rows[i]["NoiOHienTai"].ToString();
+                DGV.Rows[i].Cells["NoiOHienTai"].Value = myDt.Rows[i]["TamTru"].ToString();
                 DGV.Rows[i].Cells["TenChucVu"].Value = myDt.Rows[i]["TenChucVu"].ToString();
                 DGV.Rows[i].Cells["TenBangChuyenMonNghiepVu"].Value = myDt.Rows[i]["TenBangChuyenMonNghiepVu"].ToString();
+                DGV.Rows[i].Cells["ChuyenNganh"].Value = myDt.Rows[i]["ChuyenNganh"].ToString();
                 DGV.Rows[i].Cells["TenBangLyLuanChinhTri"].Value = myDt.Rows[i]["TenBangLyLuanChinhTri"].ToString();
             }
             if (myDt.Rows.Count == 0)
