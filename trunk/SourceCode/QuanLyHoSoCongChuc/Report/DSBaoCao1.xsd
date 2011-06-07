@@ -59,7 +59,7 @@
         <xs:element name="NhanVien" msprop:Generator_TableClassName="NhanVienDataTable" msprop:Generator_TableVarName="tableNhanVien" msprop:Generator_TablePropName="NhanVien" msprop:Generator_RowDeletingName="NhanVienRowDeleting" msprop:Generator_UserTableName="NhanVien" msprop:Generator_RowChangingName="NhanVienRowChanging" msprop:Generator_RowEvHandlerName="NhanVienRowChangeEventHandler" msprop:Generator_RowDeletedName="NhanVienRowDeleted" msprop:Generator_RowEvArgName="NhanVienRowChangeEvent" msprop:Generator_RowChangedName="NhanVienRowChanged" msprop:Generator_RowClassName="NhanVienRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaNhanVien" msprop:Generator_ColumnVarNameInTable="columnMaNhanVien" msprop:Generator_ColumnPropNameInRow="MaNhanVien" msprop:Generator_ColumnPropNameInTable="MaNhanVienColumn" msprop:Generator_UserColumnName="MaNhanVien" minOccurs="0">
+              <xs:element name="MaNhanVien" msprop:Generator_ColumnVarNameInTable="columnMaNhanVien" msprop:Generator_ColumnPropNameInRow="MaNhanVien" msprop:Generator_ColumnPropNameInTable="MaNhanVienColumn" msprop:Generator_UserColumnName="MaNhanVien">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -471,6 +471,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="ChuyenNganh" msprop:Generator_ColumnVarNameInTable="columnChuyenNganh" msprop:Generator_ColumnPropNameInRow="ChuyenNganh" msprop:Generator_ColumnPropNameInTable="ChuyenNganhColumn" msprop:Generator_UserColumnName="ChuyenNganh" type="xs:string" minOccurs="0" />
+              <xs:element name="TamTru" msprop:Generator_ColumnVarNameInTable="columnTamTru" msprop:Generator_ColumnPropNameInRow="TamTru" msprop:Generator_ColumnPropNameInTable="TamTruColumn" msprop:Generator_UserColumnName="TamTru" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
