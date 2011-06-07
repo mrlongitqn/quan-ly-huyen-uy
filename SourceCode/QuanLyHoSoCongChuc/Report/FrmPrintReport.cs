@@ -144,6 +144,40 @@ namespace QuanLyHoSoCongChuc.Report
                 SqlCommand cmd = new SqlCommand(sql);
                 dataService.Load(cmd);
                 DataTable myDt = dataService;
+                DSBaoCao1 myDS = new DSBaoCao1();
+
+                myDS.Tables.Add(myDt);
+                for (int i = 0; i < myDt.Rows.Count; i++)
+                {
+                    DataRow myRow = dsBaoCao1.Tables["DSNangLuong"].NewRow();
+                    myRow["STT"] = i + 1;
+                    myRow["TenDonVi"] = myDt.Rows[i]["TenDonVi"];
+                    myRow["HoTen"] = myDt.Rows[i]["HoTenKhaiSinh"];
+                    try { 
+                        DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
+                        myRow["NamSinh"] = dt.ToString("yyyy");
+                    }
+                    catch(){}
+                    
+                    myRow["TrinhDoDaoTao"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
+                    myRow["TenNgach1"] = "HD681";
+                    myRow["MaNgach1"] = "TongSo2";
+                    myRow["Bac1"] = "CBCC2";
+                    myRow["HeSoLuong1"] = "CBVC2";
+                    myRow["NgayThangNamHuong1"] = "HD682";
+
+                    myRow["TenNgach2"] = "HD681";
+                    myRow["MaNgach2"] = "TongSo2";
+                    myRow["Bac2"] = "CBCC2";
+                    myRow["HeSoLuong2"] = "CBVC2";
+                    myRow["NgayThangNamHuong2"] = "HD682";
+
+                    myRow["ChenhLech"] = "HD682";
+                    myRow["SoThangDuocHuong"] = "HD682";
+                    myRow["TongTienLuongTang"] = "HD682";
+
+                    dsBaoCao1.Tables["DSNangLuong"].Rows.Add(myRow);
+                }
                 CrDanhSachNangLuong rpt = new CrDanhSachNangLuong();
                 rpt.DataDefinition.FormulaFields["NgayThang"].Text = "'" + strDt + "'";
                 rpt.DataDefinition.FormulaFields["NLB1"].Text = "'" + ChuKi[0] + "'";
@@ -152,7 +186,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
                 rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
                 rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
-                rpt.SetDataSource(myDt);
+                rpt.SetDataSource(dsBaoCao1.Tables["DSNangLuong"]);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "3") // Danh sách phụ cấp thâm niên vượt khung
