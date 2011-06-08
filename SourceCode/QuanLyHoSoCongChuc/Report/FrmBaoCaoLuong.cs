@@ -377,7 +377,9 @@ namespace QuanLyHoSoCongChuc.Report
             else if (cbDoiTuong.SelectedIndex == 2)
             {
                 initGird3();
-                String sql = "Select * from DonVi";
+                String sql = " select nv.*, dv.TenDonVi";
+                sql += " from NhanVien nv";
+                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
                 sql += " where 1=1";
                 sql += LoadSql_MaDonVi();
 
