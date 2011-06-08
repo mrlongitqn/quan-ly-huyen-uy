@@ -391,9 +391,9 @@ namespace QuanLyHoSoCongChuc.Report
                 for (int r = 0; r < myDt.Rows.Count; r++)
                 {
                     grid1.Rows.Insert(r + 4);
-                    grid1[4 + r, 0] = new SourceGrid.Cells.Cell(r + 1, typeof(int));
-                    grid1[4 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
-                    grid1[4 + r, 2] = new SourceGrid.Cells.Cell("2", typeof(String));
+                    grid1[4 + r, 0] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
+                    grid1[4 + r, 1] = new SourceGrid.Cells.Cell(r + 1, typeof(int));
+                    grid1[4 + r, 2] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HoTenKhaiSinh"], typeof(String));
 
                     grid1[4 + r, 3] = new SourceGrid.Cells.Cell("3", typeof(String));
                     grid1[4 + r, 4] = new SourceGrid.Cells.Cell("4", typeof(String));
