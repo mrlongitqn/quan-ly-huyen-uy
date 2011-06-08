@@ -213,7 +213,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.DataDefinition.FormulaFields["NK1"].Text = "'" + ChuKi[3] + "'";
                 rpt.DataDefinition.FormulaFields["NK2"].Text = "'" + ChuKi[4] + "'";
                 rpt.DataDefinition.FormulaFields["NK3"].Text = "'" + ChuKi[5] + "'";
-                rpt.SetDataSource(myDt);
+                rpt.SetDataSource(dsBaoCao1.Tables["BCLuong2"]);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
             else if (BaoCao == "2") // danh sách nâng lương
