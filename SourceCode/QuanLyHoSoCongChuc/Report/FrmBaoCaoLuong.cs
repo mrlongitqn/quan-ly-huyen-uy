@@ -245,9 +245,9 @@ namespace QuanLyHoSoCongChuc.Report
 
             grid1[1, 13] = new SourceGrid.Cells.ColumnHeader("Chức vụ"); grid1[1, 13].RowSpan = 2;
             grid1[1, 14] = new SourceGrid.Cells.ColumnHeader("Trách nhiệm"); grid1[1, 14].RowSpan = 2;
-            grid1[1, 15] = new SourceGrid.Cells.ColumnHeader("Độc hại"); grid1[1, 14].RowSpan = 2;
-            grid1[1, 16] = new SourceGrid.Cells.ColumnHeader("Ưu đãi nghề"); grid1[1, 14].RowSpan = 2;
-            grid1[1, 17] = new SourceGrid.Cells.ColumnHeader("Phụ cấp khác"); grid1[1, 14].RowSpan = 2;
+            grid1[1, 15] = new SourceGrid.Cells.ColumnHeader("Độc hại"); grid1[1, 15].RowSpan = 2;
+            grid1[1, 16] = new SourceGrid.Cells.ColumnHeader("Ưu đãi nghề"); grid1[1, 16].RowSpan = 2;
+            grid1[1, 17] = new SourceGrid.Cells.ColumnHeader("Phụ cấp khác"); grid1[1, 17].RowSpan = 2;
 
             grid1[0, 18] = new SourceGrid.Cells.ColumnHeader("Tổng hệ số lương và phụ cấp");
             grid1[0, 18].RowSpan = 3;
@@ -258,27 +258,27 @@ namespace QuanLyHoSoCongChuc.Report
             grid1[0, 20] = new SourceGrid.Cells.ColumnHeader("Ghi chú");
             grid1[0, 20].RowSpan = 3;
 
-            grid1[3, 0] = new SourceGrid.Cells.ColumnHeader("A");
-            grid1[3, 1] = new SourceGrid.Cells.ColumnHeader("B");
-            grid1[3, 2] = new SourceGrid.Cells.ColumnHeader("1");
-            grid1[3, 3] = new SourceGrid.Cells.ColumnHeader("2");
-            grid1[3, 4] = new SourceGrid.Cells.ColumnHeader("3");
-            grid1[3, 5] = new SourceGrid.Cells.ColumnHeader("4");
-            grid1[3, 6] = new SourceGrid.Cells.ColumnHeader("5");
-            grid1[3, 7] = new SourceGrid.Cells.ColumnHeader("6");
-            grid1[3, 8] = new SourceGrid.Cells.ColumnHeader("7");
-            grid1[3, 9] = new SourceGrid.Cells.ColumnHeader("8");
-            grid1[3, 10] = new SourceGrid.Cells.ColumnHeader("9");
-            grid1[3, 11] = new SourceGrid.Cells.ColumnHeader("10");
-            grid1[3, 13] = new SourceGrid.Cells.ColumnHeader("11");
-            grid1[3, 12] = new SourceGrid.Cells.ColumnHeader("12");
-            grid1[3, 14] = new SourceGrid.Cells.ColumnHeader("13");
-            grid1[3, 15] = new SourceGrid.Cells.ColumnHeader("14");
-            grid1[3, 16] = new SourceGrid.Cells.ColumnHeader("15");
-            grid1[3, 17] = new SourceGrid.Cells.ColumnHeader("16");
-            grid1[3, 18] = new SourceGrid.Cells.ColumnHeader("17");
-            grid1[3, 19] = new SourceGrid.Cells.ColumnHeader("18");
-            grid1[3, 20] = new SourceGrid.Cells.ColumnHeader("19");
+            grid1[3, 0] = new SourceGrid.Cells.ColumnHeader("A"); grid1[3, 0].View = yellowView;
+            grid1[3, 1] = new SourceGrid.Cells.ColumnHeader("B"); grid1[3, 1].View = yellowView;
+            grid1[3, 2] = new SourceGrid.Cells.ColumnHeader("1"); grid1[3, 2].View = yellowView;
+            grid1[3, 3] = new SourceGrid.Cells.ColumnHeader("2"); grid1[3, 3].View = yellowView;
+            grid1[3, 4] = new SourceGrid.Cells.ColumnHeader("3"); grid1[3, 4].View = yellowView;
+            grid1[3, 5] = new SourceGrid.Cells.ColumnHeader("4"); grid1[3, 5].View = yellowView;
+            grid1[3, 6] = new SourceGrid.Cells.ColumnHeader("5"); grid1[3, 6].View = yellowView;
+            grid1[3, 7] = new SourceGrid.Cells.ColumnHeader("6"); grid1[3, 7].View = yellowView;
+            grid1[3, 8] = new SourceGrid.Cells.ColumnHeader("7"); grid1[3, 8].View = yellowView;
+            grid1[3, 9] = new SourceGrid.Cells.ColumnHeader("8"); grid1[3, 9].View = yellowView;
+            grid1[3, 10] = new SourceGrid.Cells.ColumnHeader("9"); grid1[3, 10].View = yellowView;
+            grid1[3, 11] = new SourceGrid.Cells.ColumnHeader("10"); grid1[3, 11].View = yellowView;
+            grid1[3, 13] = new SourceGrid.Cells.ColumnHeader("11"); grid1[3, 12].View = yellowView;
+            grid1[3, 12] = new SourceGrid.Cells.ColumnHeader("12"); grid1[3, 13].View = yellowView;
+            grid1[3, 14] = new SourceGrid.Cells.ColumnHeader("13"); grid1[3, 14].View = yellowView;
+            grid1[3, 15] = new SourceGrid.Cells.ColumnHeader("14"); grid1[3, 15].View = yellowView;
+            grid1[3, 16] = new SourceGrid.Cells.ColumnHeader("15"); grid1[3, 16].View = yellowView;
+            grid1[3, 17] = new SourceGrid.Cells.ColumnHeader("16"); grid1[3, 17].View = yellowView;
+            grid1[3, 18] = new SourceGrid.Cells.ColumnHeader("17"); grid1[3, 18].View = yellowView;
+            grid1[3, 19] = new SourceGrid.Cells.ColumnHeader("18"); grid1[3, 19].View = yellowView;
+            grid1[3, 20] = new SourceGrid.Cells.ColumnHeader("19"); grid1[3, 20].View = yellowView;
 
             grid1.AutoSizeCells();
         }
