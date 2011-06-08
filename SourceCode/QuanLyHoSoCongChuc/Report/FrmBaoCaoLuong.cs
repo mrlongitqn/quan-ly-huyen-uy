@@ -270,8 +270,8 @@ namespace QuanLyHoSoCongChuc.Report
             grid1[3, 9] = new SourceGrid.Cells.ColumnHeader("8"); grid1[3, 9].View = yellowView;
             grid1[3, 10] = new SourceGrid.Cells.ColumnHeader("9"); grid1[3, 10].View = yellowView;
             grid1[3, 11] = new SourceGrid.Cells.ColumnHeader("10"); grid1[3, 11].View = yellowView;
-            grid1[3, 13] = new SourceGrid.Cells.ColumnHeader("11"); grid1[3, 12].View = yellowView;
-            grid1[3, 12] = new SourceGrid.Cells.ColumnHeader("12"); grid1[3, 13].View = yellowView;
+            grid1[3, 12] = new SourceGrid.Cells.ColumnHeader("11"); grid1[3, 12].View = yellowView;
+            grid1[3, 13] = new SourceGrid.Cells.ColumnHeader("12"); grid1[3, 13].View = yellowView;
             grid1[3, 14] = new SourceGrid.Cells.ColumnHeader("13"); grid1[3, 14].View = yellowView;
             grid1[3, 15] = new SourceGrid.Cells.ColumnHeader("14"); grid1[3, 15].View = yellowView;
             grid1[3, 16] = new SourceGrid.Cells.ColumnHeader("15"); grid1[3, 16].View = yellowView;
