@@ -118,6 +118,7 @@ namespace QuanLyHoSoCongChuc.Report
                     myRow["MaNgach"] = "HD681";
 
                     myRow["Bac"] = "TongSo2";
+                    myRow["HeSoLuong"] = "HSL";
                     myRow["%"] = "CBCC2";
                     myRow["HeSo"] = "CBVC2";
                     myRow["ChenhLechBL"] = "HD682";
@@ -188,6 +189,7 @@ namespace QuanLyHoSoCongChuc.Report
                     myRow["MaNgach"] = "HD681";
 
                     myRow["Bac"] = "TongSo2";
+                    myRow["HeSoLuong"] = "HS";
                     myRow["%"] = "CBCC2";
                     myRow["HeSo"] = "CBVC2";
                     myRow["ChenhLechBL"] = "HD682";
