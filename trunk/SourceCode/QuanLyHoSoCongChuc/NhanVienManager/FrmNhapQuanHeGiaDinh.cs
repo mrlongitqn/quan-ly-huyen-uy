@@ -9,6 +9,13 @@ using DevComponents.DotNetBar;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
+    #region Using
+    using QuanLyHoSoCongChuc.Models;
+    using QuanLyHoSoCongChuc.Utils;
+    using QuanLyHoSoCongChuc.Repositories;
+    using QuanLyHoSoCongChuc.OtherForms;
+    #endregion
+
     /// <summary>
     /// tuansl added: insert new family relationships
     /// </summary>
@@ -17,6 +24,21 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         public FrmNhapQuanHeGiaDinh()
         {
             InitializeComponent();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -36,6 +36,41 @@
             this.txtTongSo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tabControl1 = new DevComponents.DotNetBar.TabControl();
+            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
+            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.cbxHocVan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.dmTuoiDang = new System.Windows.Forms.DomainUpDown();
+            this.dmTuoiDoi = new System.Windows.Forms.DomainUpDown();
+            this.btnTim = new DevComponents.DotNetBar.ButtonX();
+            this.txtTenQueQuanDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnChonQueQuan = new System.Windows.Forms.Button();
+            this.txtQueQuan = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtCongVienChinh = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnChonDonVi = new System.Windows.Forms.Button();
+            this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.cbxHocHam = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbxLyLuanChinhTri = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbxTonGiao = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.cbxDanToc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.labelX13 = new DevComponents.DotNetBar.LabelX();
+            this.labelX12 = new DevComponents.DotNetBar.LabelX();
+            this.labelX11 = new DevComponents.DotNetBar.LabelX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.labelX6 = new DevComponents.DotNetBar.LabelX();
+            this.cbxGioiTinh = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.txtTenDonViDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.tbTieuChiChung = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel3 = new DevComponents.DotNetBar.TabControlPanel();
             this.tbTongHop = new DevComponents.DotNetBar.TabItem(this.components);
             this.tabControlPanel2 = new DevComponents.DotNetBar.TabControlPanel();
@@ -68,47 +103,6 @@
             this.txtMaDonVi_TieuChiKhac = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
             this.tbTieuChiKhac = new DevComponents.DotNetBar.TabItem(this.components);
-            this.tabControlPanel1 = new DevComponents.DotNetBar.TabControlPanel();
-            this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
-            this.cbxHocVan = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.ckbxEnableNgayChinhThuc = new System.Windows.Forms.CheckBox();
-            this.ckbxEnableNgayVaoDang = new System.Windows.Forms.CheckBox();
-            this.ckbxEnableNgaySinh = new System.Windows.Forms.CheckBox();
-            this.dmTuoiDang = new System.Windows.Forms.DomainUpDown();
-            this.dmTuoiDoi = new System.Windows.Forms.DomainUpDown();
-            this.btnTim = new DevComponents.DotNetBar.ButtonX();
-            this.txtTenQueQuanDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnChonQueQuan = new System.Windows.Forms.Button();
-            this.txtQueQuan = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtCongVienChinh = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnChonDonVi = new System.Windows.Forms.Button();
-            this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.dtpNgayChinhThuc = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgayVaoDang = new System.Windows.Forms.DateTimePicker();
-            this.cbxHocHam = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbxLyLuanChinhTri = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbxTonGiao = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.cbxDanToc = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX16 = new DevComponents.DotNetBar.LabelX();
-            this.labelX15 = new DevComponents.DotNetBar.LabelX();
-            this.labelX13 = new DevComponents.DotNetBar.LabelX();
-            this.labelX12 = new DevComponents.DotNetBar.LabelX();
-            this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.labelX8 = new DevComponents.DotNetBar.LabelX();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
-            this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.dtpSinhNgay = new System.Windows.Forms.DateTimePicker();
-            this.cbxGioiTinh = new DevComponents.DotNetBar.Controls.ComboBoxEx();
-            this.labelX5 = new DevComponents.DotNetBar.LabelX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.txtTenDonViDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.tbTieuChiChung = new DevComponents.DotNetBar.TabItem(this.components);
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lstvNhanVien = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -116,6 +110,9 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.dateTimeInput1 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.dateTimeInput2 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.dateTimeInput3 = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.groupPanel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -123,12 +120,15 @@
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabControlPanel1.SuspendLayout();
+            this.groupPanel1.SuspendLayout();
             this.tabControlPanel2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.groupPanel5.SuspendLayout();
-            this.tabControlPanel1.SuspendLayout();
-            this.groupPanel1.SuspendLayout();
             this.groupPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel4
@@ -231,8 +231,8 @@
             this.tabControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
             this.tabControl1.CanReorderTabs = true;
             this.tabControl1.Controls.Add(this.tabControlPanel1);
-            this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Controls.Add(this.tabControlPanel2);
+            this.tabControl1.Controls.Add(this.tabControlPanel3);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
@@ -245,6 +245,405 @@
             this.tabControl1.Tabs.Add(this.tbTieuChiKhac);
             this.tabControl1.Tabs.Add(this.tbTongHop);
             this.tabControl1.Text = "tabControl1";
+            // 
+            // tabControlPanel1
+            // 
+            this.tabControlPanel1.Controls.Add(this.groupPanel1);
+            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
+            this.tabControlPanel1.Name = "tabControlPanel1";
+            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
+            this.tabControlPanel1.Size = new System.Drawing.Size(333, 481);
+            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
+            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
+            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
+            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
+            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
+                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
+            this.tabControlPanel1.Style.GradientAngle = 90;
+            this.tabControlPanel1.TabIndex = 0;
+            this.tabControlPanel1.TabItem = this.tbTieuChiChung;
+            // 
+            // groupPanel1
+            // 
+            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
+            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
+            this.groupPanel1.Controls.Add(this.dateTimeInput3);
+            this.groupPanel1.Controls.Add(this.dateTimeInput2);
+            this.groupPanel1.Controls.Add(this.dateTimeInput1);
+            this.groupPanel1.Controls.Add(this.labelX10);
+            this.groupPanel1.Controls.Add(this.cbxHocVan);
+            this.groupPanel1.Controls.Add(this.dmTuoiDang);
+            this.groupPanel1.Controls.Add(this.dmTuoiDoi);
+            this.groupPanel1.Controls.Add(this.btnTim);
+            this.groupPanel1.Controls.Add(this.txtTenQueQuanDayDu);
+            this.groupPanel1.Controls.Add(this.btnChonQueQuan);
+            this.groupPanel1.Controls.Add(this.txtQueQuan);
+            this.groupPanel1.Controls.Add(this.txtCongVienChinh);
+            this.groupPanel1.Controls.Add(this.txtHoTen);
+            this.groupPanel1.Controls.Add(this.btnChonDonVi);
+            this.groupPanel1.Controls.Add(this.txtMaDonVi);
+            this.groupPanel1.Controls.Add(this.cbxHocHam);
+            this.groupPanel1.Controls.Add(this.cbxLyLuanChinhTri);
+            this.groupPanel1.Controls.Add(this.cbxTonGiao);
+            this.groupPanel1.Controls.Add(this.cbxDanToc);
+            this.groupPanel1.Controls.Add(this.labelX16);
+            this.groupPanel1.Controls.Add(this.labelX15);
+            this.groupPanel1.Controls.Add(this.labelX13);
+            this.groupPanel1.Controls.Add(this.labelX12);
+            this.groupPanel1.Controls.Add(this.labelX11);
+            this.groupPanel1.Controls.Add(this.labelX9);
+            this.groupPanel1.Controls.Add(this.labelX8);
+            this.groupPanel1.Controls.Add(this.labelX7);
+            this.groupPanel1.Controls.Add(this.labelX6);
+            this.groupPanel1.Controls.Add(this.cbxGioiTinh);
+            this.groupPanel1.Controls.Add(this.labelX5);
+            this.groupPanel1.Controls.Add(this.labelX4);
+            this.groupPanel1.Controls.Add(this.labelX3);
+            this.groupPanel1.Controls.Add(this.labelX2);
+            this.groupPanel1.Controls.Add(this.txtTenDonViDayDu);
+            this.groupPanel1.Controls.Add(this.labelX1);
+            this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupPanel1.Location = new System.Drawing.Point(1, 1);
+            this.groupPanel1.Name = "groupPanel1";
+            this.groupPanel1.Size = new System.Drawing.Size(331, 479);
+            // 
+            // 
+            // 
+            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.groupPanel1.Style.BackColorGradientAngle = 90;
+            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderBottomWidth = 1;
+            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
+            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderLeftWidth = 1;
+            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderRightWidth = 1;
+            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.groupPanel1.Style.BorderTopWidth = 1;
+            this.groupPanel1.Style.CornerDiameter = 4;
+            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
+            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
+            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
+            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
+            this.groupPanel1.TabIndex = 0;
+            // 
+            // labelX10
+            // 
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            this.labelX10.Location = new System.Drawing.Point(3, 301);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(48, 17);
+            this.labelX10.TabIndex = 169;
+            this.labelX10.Text = "Học hàm";
+            // 
+            // cbxHocVan
+            // 
+            this.cbxHocVan.DisplayMember = "Text";
+            this.cbxHocVan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxHocVan.FormattingEnabled = true;
+            this.cbxHocVan.ItemHeight = 14;
+            this.cbxHocVan.Location = new System.Drawing.Point(93, 301);
+            this.cbxHocVan.Name = "cbxHocVan";
+            this.cbxHocVan.Size = new System.Drawing.Size(196, 20);
+            this.cbxHocVan.TabIndex = 168;
+            // 
+            // dmTuoiDang
+            // 
+            this.dmTuoiDang.Location = new System.Drawing.Point(93, 435);
+            this.dmTuoiDang.Name = "dmTuoiDang";
+            this.dmTuoiDang.Size = new System.Drawing.Size(121, 20);
+            this.dmTuoiDang.TabIndex = 164;
+            // 
+            // dmTuoiDoi
+            // 
+            this.dmTuoiDoi.Location = new System.Drawing.Point(93, 412);
+            this.dmTuoiDoi.Name = "dmTuoiDoi";
+            this.dmTuoiDoi.Size = new System.Drawing.Size(121, 20);
+            this.dmTuoiDoi.TabIndex = 163;
+            // 
+            // btnTim
+            // 
+            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnTim.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnTim.Image = global::QuanLyHoSoCongChuc.Properties.Resources.book_blue_view;
+            this.btnTim.ImageFixedSize = new System.Drawing.Size(24, 24);
+            this.btnTim.Location = new System.Drawing.Point(239, 430);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 25);
+            this.btnTim.TabIndex = 162;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // txtTenQueQuanDayDu
+            // 
+            this.txtTenQueQuanDayDu.Location = new System.Drawing.Point(3, 184);
+            this.txtTenQueQuanDayDu.Multiline = true;
+            this.txtTenQueQuanDayDu.Name = "txtTenQueQuanDayDu";
+            this.txtTenQueQuanDayDu.Size = new System.Drawing.Size(320, 39);
+            this.txtTenQueQuanDayDu.TabIndex = 159;
+            // 
+            // btnChonQueQuan
+            // 
+            this.btnChonQueQuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonQueQuan.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonQueQuan.Location = new System.Drawing.Point(223, 153);
+            this.btnChonQueQuan.Name = "btnChonQueQuan";
+            this.btnChonQueQuan.Size = new System.Drawing.Size(28, 27);
+            this.btnChonQueQuan.TabIndex = 158;
+            this.btnChonQueQuan.UseVisualStyleBackColor = true;
+            this.btnChonQueQuan.Click += new System.EventHandler(this.btnChonQueQuan_Click);
+            // 
+            // txtQueQuan
+            // 
+            // 
+            // 
+            // 
+            this.txtQueQuan.Border.Class = "TextBoxBorder";
+            this.txtQueQuan.Location = new System.Drawing.Point(72, 158);
+            this.txtQueQuan.Name = "txtQueQuan";
+            this.txtQueQuan.Size = new System.Drawing.Size(142, 20);
+            this.txtQueQuan.TabIndex = 157;
+            // 
+            // txtCongVienChinh
+            // 
+            // 
+            // 
+            // 
+            this.txtCongVienChinh.Border.Class = "TextBoxBorder";
+            this.txtCongVienChinh.Location = new System.Drawing.Point(93, 345);
+            this.txtCongVienChinh.Name = "txtCongVienChinh";
+            this.txtCongVienChinh.Size = new System.Drawing.Size(196, 20);
+            this.txtCongVienChinh.TabIndex = 156;
+            // 
+            // txtHoTen
+            // 
+            // 
+            // 
+            // 
+            this.txtHoTen.Border.Class = "TextBoxBorder";
+            this.txtHoTen.Location = new System.Drawing.Point(72, 84);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(221, 20);
+            this.txtHoTen.TabIndex = 155;
+            // 
+            // btnChonDonVi
+            // 
+            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonDonVi.Location = new System.Drawing.Point(287, 1);
+            this.btnChonDonVi.Name = "btnChonDonVi";
+            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
+            this.btnChonDonVi.TabIndex = 154;
+            this.btnChonDonVi.UseVisualStyleBackColor = true;
+            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
+            // 
+            // txtMaDonVi
+            // 
+            // 
+            // 
+            // 
+            this.txtMaDonVi.Border.Class = "TextBoxBorder";
+            this.txtMaDonVi.Location = new System.Drawing.Point(93, 6);
+            this.txtMaDonVi.Name = "txtMaDonVi";
+            this.txtMaDonVi.Size = new System.Drawing.Size(182, 20);
+            this.txtMaDonVi.TabIndex = 34;
+            // 
+            // cbxHocHam
+            // 
+            this.cbxHocHam.DisplayMember = "Text";
+            this.cbxHocHam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxHocHam.FormattingEnabled = true;
+            this.cbxHocHam.ItemHeight = 14;
+            this.cbxHocHam.Location = new System.Drawing.Point(93, 323);
+            this.cbxHocHam.Name = "cbxHocHam";
+            this.cbxHocHam.Size = new System.Drawing.Size(196, 20);
+            this.cbxHocHam.TabIndex = 25;
+            // 
+            // cbxLyLuanChinhTri
+            // 
+            this.cbxLyLuanChinhTri.DisplayMember = "Text";
+            this.cbxLyLuanChinhTri.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxLyLuanChinhTri.FormattingEnabled = true;
+            this.cbxLyLuanChinhTri.ItemHeight = 14;
+            this.cbxLyLuanChinhTri.Location = new System.Drawing.Point(93, 279);
+            this.cbxLyLuanChinhTri.Name = "cbxLyLuanChinhTri";
+            this.cbxLyLuanChinhTri.Size = new System.Drawing.Size(196, 20);
+            this.cbxLyLuanChinhTri.TabIndex = 24;
+            // 
+            // cbxTonGiao
+            // 
+            this.cbxTonGiao.DisplayMember = "Text";
+            this.cbxTonGiao.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxTonGiao.FormattingEnabled = true;
+            this.cbxTonGiao.ItemHeight = 14;
+            this.cbxTonGiao.Location = new System.Drawing.Point(93, 257);
+            this.cbxTonGiao.Name = "cbxTonGiao";
+            this.cbxTonGiao.Size = new System.Drawing.Size(196, 20);
+            this.cbxTonGiao.TabIndex = 23;
+            // 
+            // cbxDanToc
+            // 
+            this.cbxDanToc.DisplayMember = "Text";
+            this.cbxDanToc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxDanToc.FormattingEnabled = true;
+            this.cbxDanToc.ItemHeight = 14;
+            this.cbxDanToc.Location = new System.Drawing.Point(93, 235);
+            this.cbxDanToc.Name = "cbxDanToc";
+            this.cbxDanToc.Size = new System.Drawing.Size(196, 20);
+            this.cbxDanToc.TabIndex = 22;
+            // 
+            // labelX16
+            // 
+            this.labelX16.BackColor = System.Drawing.Color.Transparent;
+            this.labelX16.Location = new System.Drawing.Point(2, 413);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(55, 18);
+            this.labelX16.TabIndex = 21;
+            this.labelX16.Text = "Tuổi đời";
+            // 
+            // labelX15
+            // 
+            this.labelX15.BackColor = System.Drawing.Color.Transparent;
+            this.labelX15.Location = new System.Drawing.Point(2, 435);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(60, 19);
+            this.labelX15.TabIndex = 20;
+            this.labelX15.Text = "Tuổi Đảng";
+            // 
+            // labelX13
+            // 
+            this.labelX13.BackColor = System.Drawing.Color.Transparent;
+            this.labelX13.Location = new System.Drawing.Point(3, 391);
+            this.labelX13.Name = "labelX13";
+            this.labelX13.Size = new System.Drawing.Size(88, 17);
+            this.labelX13.TabIndex = 18;
+            this.labelX13.Text = "Ngày chính thức";
+            // 
+            // labelX12
+            // 
+            this.labelX12.BackColor = System.Drawing.Color.Transparent;
+            this.labelX12.Location = new System.Drawing.Point(3, 368);
+            this.labelX12.Name = "labelX12";
+            this.labelX12.Size = new System.Drawing.Size(81, 18);
+            this.labelX12.TabIndex = 17;
+            this.labelX12.Text = "Ngày vào Đảng";
+            // 
+            // labelX11
+            // 
+            this.labelX11.BackColor = System.Drawing.Color.Transparent;
+            this.labelX11.Location = new System.Drawing.Point(3, 347);
+            this.labelX11.Name = "labelX11";
+            this.labelX11.Size = new System.Drawing.Size(87, 17);
+            this.labelX11.TabIndex = 16;
+            this.labelX11.Text = "Công việc chính";
+            // 
+            // labelX9
+            // 
+            this.labelX9.BackColor = System.Drawing.Color.Transparent;
+            this.labelX9.Location = new System.Drawing.Point(3, 324);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(81, 17);
+            this.labelX9.TabIndex = 14;
+            this.labelX9.Text = "Học vị cao nhất";
+            // 
+            // labelX8
+            // 
+            this.labelX8.BackColor = System.Drawing.Color.Transparent;
+            this.labelX8.Location = new System.Drawing.Point(3, 280);
+            this.labelX8.Name = "labelX8";
+            this.labelX8.Size = new System.Drawing.Size(84, 19);
+            this.labelX8.TabIndex = 13;
+            this.labelX8.Text = "Lý luận chính trị";
+            // 
+            // labelX7
+            // 
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            this.labelX7.Location = new System.Drawing.Point(3, 258);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(46, 19);
+            this.labelX7.TabIndex = 12;
+            this.labelX7.Text = "Tôn giáo";
+            // 
+            // labelX6
+            // 
+            this.labelX6.BackColor = System.Drawing.Color.Transparent;
+            this.labelX6.Location = new System.Drawing.Point(3, 236);
+            this.labelX6.Name = "labelX6";
+            this.labelX6.Size = new System.Drawing.Size(41, 18);
+            this.labelX6.TabIndex = 11;
+            this.labelX6.Text = "Dân tộc";
+            // 
+            // cbxGioiTinh
+            // 
+            this.cbxGioiTinh.DisplayMember = "Text";
+            this.cbxGioiTinh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbxGioiTinh.FormattingEnabled = true;
+            this.cbxGioiTinh.ItemHeight = 14;
+            this.cbxGioiTinh.Location = new System.Drawing.Point(72, 107);
+            this.cbxGioiTinh.Name = "cbxGioiTinh";
+            this.cbxGioiTinh.Size = new System.Drawing.Size(94, 20);
+            this.cbxGioiTinh.TabIndex = 8;
+            // 
+            // labelX5
+            // 
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            this.labelX5.Location = new System.Drawing.Point(10, 155);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(51, 23);
+            this.labelX5.TabIndex = 7;
+            this.labelX5.Text = "Quê quán";
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            this.labelX4.Location = new System.Drawing.Point(10, 130);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(56, 23);
+            this.labelX4.TabIndex = 6;
+            this.labelX4.Text = "Sinh ngày";
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            this.labelX3.Location = new System.Drawing.Point(11, 104);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(50, 23);
+            this.labelX3.TabIndex = 5;
+            this.labelX3.Text = "Giới tính";
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            this.labelX2.Location = new System.Drawing.Point(11, 81);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(52, 23);
+            this.labelX2.TabIndex = 4;
+            this.labelX2.Text = "Họ và tên";
+            // 
+            // txtTenDonViDayDu
+            // 
+            this.txtTenDonViDayDu.Location = new System.Drawing.Point(3, 32);
+            this.txtTenDonViDayDu.Multiline = true;
+            this.txtTenDonViDayDu.Name = "txtTenDonViDayDu";
+            this.txtTenDonViDayDu.Size = new System.Drawing.Size(320, 43);
+            this.txtTenDonViDayDu.TabIndex = 2;
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            this.labelX1.Location = new System.Drawing.Point(10, 6);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(63, 19);
+            this.labelX1.TabIndex = 0;
+            this.labelX1.Text = "Mã đơn vị";
+            // 
+            // tbTieuChiChung
+            // 
+            this.tbTieuChiChung.AttachedControl = this.tabControlPanel1;
+            this.tbTieuChiChung.Name = "tbTieuChiChung";
+            this.tbTieuChiChung.Text = "Tiêu chí chung";
             // 
             // tabControlPanel3
             // 
@@ -690,456 +1089,6 @@
             this.tbTieuChiKhac.Name = "tbTieuChiKhac";
             this.tbTieuChiKhac.Text = "Tiêu chí khác";
             // 
-            // tabControlPanel1
-            // 
-            this.tabControlPanel1.Controls.Add(this.groupPanel1);
-            this.tabControlPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControlPanel1.Location = new System.Drawing.Point(0, 26);
-            this.tabControlPanel1.Name = "tabControlPanel1";
-            this.tabControlPanel1.Padding = new System.Windows.Forms.Padding(1);
-            this.tabControlPanel1.Size = new System.Drawing.Size(333, 481);
-            this.tabControlPanel1.Style.BackColor1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(179)))), ((int)(((byte)(231)))));
-            this.tabControlPanel1.Style.BackColor2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(237)))), ((int)(((byte)(254)))));
-            this.tabControlPanel1.Style.Border = DevComponents.DotNetBar.eBorderType.SingleLine;
-            this.tabControlPanel1.Style.BorderColor.Color = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(97)))), ((int)(((byte)(156)))));
-            this.tabControlPanel1.Style.BorderSide = ((DevComponents.DotNetBar.eBorderSide)(((DevComponents.DotNetBar.eBorderSide.Left | DevComponents.DotNetBar.eBorderSide.Right)
-                        | DevComponents.DotNetBar.eBorderSide.Bottom)));
-            this.tabControlPanel1.Style.GradientAngle = 90;
-            this.tabControlPanel1.TabIndex = 0;
-            this.tabControlPanel1.TabItem = this.tbTieuChiChung;
-            // 
-            // groupPanel1
-            // 
-            this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
-            this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.labelX10);
-            this.groupPanel1.Controls.Add(this.cbxHocVan);
-            this.groupPanel1.Controls.Add(this.ckbxEnableNgayChinhThuc);
-            this.groupPanel1.Controls.Add(this.ckbxEnableNgayVaoDang);
-            this.groupPanel1.Controls.Add(this.ckbxEnableNgaySinh);
-            this.groupPanel1.Controls.Add(this.dmTuoiDang);
-            this.groupPanel1.Controls.Add(this.dmTuoiDoi);
-            this.groupPanel1.Controls.Add(this.btnTim);
-            this.groupPanel1.Controls.Add(this.txtTenQueQuanDayDu);
-            this.groupPanel1.Controls.Add(this.btnChonQueQuan);
-            this.groupPanel1.Controls.Add(this.txtQueQuan);
-            this.groupPanel1.Controls.Add(this.txtCongVienChinh);
-            this.groupPanel1.Controls.Add(this.txtHoTen);
-            this.groupPanel1.Controls.Add(this.btnChonDonVi);
-            this.groupPanel1.Controls.Add(this.txtMaDonVi);
-            this.groupPanel1.Controls.Add(this.dtpNgayChinhThuc);
-            this.groupPanel1.Controls.Add(this.dtpNgayVaoDang);
-            this.groupPanel1.Controls.Add(this.cbxHocHam);
-            this.groupPanel1.Controls.Add(this.cbxLyLuanChinhTri);
-            this.groupPanel1.Controls.Add(this.cbxTonGiao);
-            this.groupPanel1.Controls.Add(this.cbxDanToc);
-            this.groupPanel1.Controls.Add(this.labelX16);
-            this.groupPanel1.Controls.Add(this.labelX15);
-            this.groupPanel1.Controls.Add(this.labelX13);
-            this.groupPanel1.Controls.Add(this.labelX12);
-            this.groupPanel1.Controls.Add(this.labelX11);
-            this.groupPanel1.Controls.Add(this.labelX9);
-            this.groupPanel1.Controls.Add(this.labelX8);
-            this.groupPanel1.Controls.Add(this.labelX7);
-            this.groupPanel1.Controls.Add(this.labelX6);
-            this.groupPanel1.Controls.Add(this.dtpSinhNgay);
-            this.groupPanel1.Controls.Add(this.cbxGioiTinh);
-            this.groupPanel1.Controls.Add(this.labelX5);
-            this.groupPanel1.Controls.Add(this.labelX4);
-            this.groupPanel1.Controls.Add(this.labelX3);
-            this.groupPanel1.Controls.Add(this.labelX2);
-            this.groupPanel1.Controls.Add(this.txtTenDonViDayDu);
-            this.groupPanel1.Controls.Add(this.labelX1);
-            this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupPanel1.Location = new System.Drawing.Point(1, 1);
-            this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(331, 479);
-            // 
-            // 
-            // 
-            this.groupPanel1.Style.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.groupPanel1.Style.BackColorGradientAngle = 90;
-            this.groupPanel1.Style.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.groupPanel1.Style.BorderBottom = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderBottomWidth = 1;
-            this.groupPanel1.Style.BorderColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBorder;
-            this.groupPanel1.Style.BorderLeft = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderLeftWidth = 1;
-            this.groupPanel1.Style.BorderRight = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderRightWidth = 1;
-            this.groupPanel1.Style.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.groupPanel1.Style.BorderTopWidth = 1;
-            this.groupPanel1.Style.CornerDiameter = 4;
-            this.groupPanel1.Style.CornerType = DevComponents.DotNetBar.eCornerType.Rounded;
-            this.groupPanel1.Style.TextAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Center;
-            this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
-            this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
-            this.groupPanel1.TabIndex = 0;
-            // 
-            // labelX10
-            // 
-            this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            this.labelX10.Location = new System.Drawing.Point(3, 301);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(48, 17);
-            this.labelX10.TabIndex = 169;
-            this.labelX10.Text = "Học vấn";
-            // 
-            // cbxHocVan
-            // 
-            this.cbxHocVan.DisplayMember = "Text";
-            this.cbxHocVan.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxHocVan.FormattingEnabled = true;
-            this.cbxHocVan.ItemHeight = 14;
-            this.cbxHocVan.Location = new System.Drawing.Point(93, 301);
-            this.cbxHocVan.Name = "cbxHocVan";
-            this.cbxHocVan.Size = new System.Drawing.Size(152, 20);
-            this.cbxHocVan.TabIndex = 168;
-            // 
-            // ckbxEnableNgayChinhThuc
-            // 
-            this.ckbxEnableNgayChinhThuc.AutoSize = true;
-            this.ckbxEnableNgayChinhThuc.Location = new System.Drawing.Point(299, 395);
-            this.ckbxEnableNgayChinhThuc.Name = "ckbxEnableNgayChinhThuc";
-            this.ckbxEnableNgayChinhThuc.Size = new System.Drawing.Size(15, 14);
-            this.ckbxEnableNgayChinhThuc.TabIndex = 167;
-            this.ckbxEnableNgayChinhThuc.UseVisualStyleBackColor = true;
-            // 
-            // ckbxEnableNgayVaoDang
-            // 
-            this.ckbxEnableNgayVaoDang.AutoSize = true;
-            this.ckbxEnableNgayVaoDang.Location = new System.Drawing.Point(299, 370);
-            this.ckbxEnableNgayVaoDang.Name = "ckbxEnableNgayVaoDang";
-            this.ckbxEnableNgayVaoDang.Size = new System.Drawing.Size(15, 14);
-            this.ckbxEnableNgayVaoDang.TabIndex = 166;
-            this.ckbxEnableNgayVaoDang.UseVisualStyleBackColor = true;
-            // 
-            // ckbxEnableNgaySinh
-            // 
-            this.ckbxEnableNgaySinh.AutoSize = true;
-            this.ckbxEnableNgaySinh.Location = new System.Drawing.Point(299, 134);
-            this.ckbxEnableNgaySinh.Name = "ckbxEnableNgaySinh";
-            this.ckbxEnableNgaySinh.Size = new System.Drawing.Size(15, 14);
-            this.ckbxEnableNgaySinh.TabIndex = 165;
-            this.ckbxEnableNgaySinh.UseVisualStyleBackColor = true;
-            // 
-            // dmTuoiDang
-            // 
-            this.dmTuoiDang.Location = new System.Drawing.Point(93, 435);
-            this.dmTuoiDang.Name = "dmTuoiDang";
-            this.dmTuoiDang.Size = new System.Drawing.Size(121, 20);
-            this.dmTuoiDang.TabIndex = 164;
-            // 
-            // dmTuoiDoi
-            // 
-            this.dmTuoiDoi.Location = new System.Drawing.Point(93, 412);
-            this.dmTuoiDoi.Name = "dmTuoiDoi";
-            this.dmTuoiDoi.Size = new System.Drawing.Size(121, 20);
-            this.dmTuoiDoi.TabIndex = 163;
-            // 
-            // btnTim
-            // 
-            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTim.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTim.Image = global::QuanLyHoSoCongChuc.Properties.Resources.book_blue_view;
-            this.btnTim.ImageFixedSize = new System.Drawing.Size(24, 24);
-            this.btnTim.Location = new System.Drawing.Point(239, 430);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 25);
-            this.btnTim.TabIndex = 162;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // txtTenQueQuanDayDu
-            // 
-            this.txtTenQueQuanDayDu.Location = new System.Drawing.Point(3, 184);
-            this.txtTenQueQuanDayDu.Multiline = true;
-            this.txtTenQueQuanDayDu.Name = "txtTenQueQuanDayDu";
-            this.txtTenQueQuanDayDu.Size = new System.Drawing.Size(320, 39);
-            this.txtTenQueQuanDayDu.TabIndex = 159;
-            // 
-            // btnChonQueQuan
-            // 
-            this.btnChonQueQuan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonQueQuan.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonQueQuan.Location = new System.Drawing.Point(223, 153);
-            this.btnChonQueQuan.Name = "btnChonQueQuan";
-            this.btnChonQueQuan.Size = new System.Drawing.Size(28, 27);
-            this.btnChonQueQuan.TabIndex = 158;
-            this.btnChonQueQuan.UseVisualStyleBackColor = true;
-            this.btnChonQueQuan.Click += new System.EventHandler(this.btnChonQueQuan_Click);
-            // 
-            // txtQueQuan
-            // 
-            // 
-            // 
-            // 
-            this.txtQueQuan.Border.Class = "TextBoxBorder";
-            this.txtQueQuan.Location = new System.Drawing.Point(72, 158);
-            this.txtQueQuan.Name = "txtQueQuan";
-            this.txtQueQuan.Size = new System.Drawing.Size(142, 20);
-            this.txtQueQuan.TabIndex = 157;
-            // 
-            // txtCongVienChinh
-            // 
-            // 
-            // 
-            // 
-            this.txtCongVienChinh.Border.Class = "TextBoxBorder";
-            this.txtCongVienChinh.Location = new System.Drawing.Point(93, 345);
-            this.txtCongVienChinh.Name = "txtCongVienChinh";
-            this.txtCongVienChinh.Size = new System.Drawing.Size(188, 20);
-            this.txtCongVienChinh.TabIndex = 156;
-            // 
-            // txtHoTen
-            // 
-            // 
-            // 
-            // 
-            this.txtHoTen.Border.Class = "TextBoxBorder";
-            this.txtHoTen.Location = new System.Drawing.Point(72, 84);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(221, 20);
-            this.txtHoTen.TabIndex = 155;
-            // 
-            // btnChonDonVi
-            // 
-            this.btnChonDonVi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonDonVi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonDonVi.Location = new System.Drawing.Point(287, 1);
-            this.btnChonDonVi.Name = "btnChonDonVi";
-            this.btnChonDonVi.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDonVi.TabIndex = 154;
-            this.btnChonDonVi.UseVisualStyleBackColor = true;
-            this.btnChonDonVi.Click += new System.EventHandler(this.btnChonDonVi_Click);
-            // 
-            // txtMaDonVi
-            // 
-            // 
-            // 
-            // 
-            this.txtMaDonVi.Border.Class = "TextBoxBorder";
-            this.txtMaDonVi.Location = new System.Drawing.Point(93, 6);
-            this.txtMaDonVi.Name = "txtMaDonVi";
-            this.txtMaDonVi.Size = new System.Drawing.Size(182, 20);
-            this.txtMaDonVi.TabIndex = 34;
-            // 
-            // dtpNgayChinhThuc
-            // 
-            this.dtpNgayChinhThuc.Location = new System.Drawing.Point(93, 390);
-            this.dtpNgayChinhThuc.Name = "dtpNgayChinhThuc";
-            this.dtpNgayChinhThuc.Size = new System.Drawing.Size(200, 20);
-            this.dtpNgayChinhThuc.TabIndex = 29;
-            // 
-            // dtpNgayVaoDang
-            // 
-            this.dtpNgayVaoDang.Location = new System.Drawing.Point(93, 367);
-            this.dtpNgayVaoDang.Name = "dtpNgayVaoDang";
-            this.dtpNgayVaoDang.Size = new System.Drawing.Size(200, 20);
-            this.dtpNgayVaoDang.TabIndex = 28;
-            // 
-            // cbxHocHam
-            // 
-            this.cbxHocHam.DisplayMember = "Text";
-            this.cbxHocHam.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxHocHam.FormattingEnabled = true;
-            this.cbxHocHam.ItemHeight = 14;
-            this.cbxHocHam.Location = new System.Drawing.Point(93, 323);
-            this.cbxHocHam.Name = "cbxHocHam";
-            this.cbxHocHam.Size = new System.Drawing.Size(152, 20);
-            this.cbxHocHam.TabIndex = 25;
-            // 
-            // cbxLyLuanChinhTri
-            // 
-            this.cbxLyLuanChinhTri.DisplayMember = "Text";
-            this.cbxLyLuanChinhTri.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxLyLuanChinhTri.FormattingEnabled = true;
-            this.cbxLyLuanChinhTri.ItemHeight = 14;
-            this.cbxLyLuanChinhTri.Location = new System.Drawing.Point(93, 279);
-            this.cbxLyLuanChinhTri.Name = "cbxLyLuanChinhTri";
-            this.cbxLyLuanChinhTri.Size = new System.Drawing.Size(197, 20);
-            this.cbxLyLuanChinhTri.TabIndex = 24;
-            // 
-            // cbxTonGiao
-            // 
-            this.cbxTonGiao.DisplayMember = "Text";
-            this.cbxTonGiao.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxTonGiao.FormattingEnabled = true;
-            this.cbxTonGiao.ItemHeight = 14;
-            this.cbxTonGiao.Location = new System.Drawing.Point(93, 257);
-            this.cbxTonGiao.Name = "cbxTonGiao";
-            this.cbxTonGiao.Size = new System.Drawing.Size(152, 20);
-            this.cbxTonGiao.TabIndex = 23;
-            // 
-            // cbxDanToc
-            // 
-            this.cbxDanToc.DisplayMember = "Text";
-            this.cbxDanToc.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxDanToc.FormattingEnabled = true;
-            this.cbxDanToc.ItemHeight = 14;
-            this.cbxDanToc.Location = new System.Drawing.Point(93, 235);
-            this.cbxDanToc.Name = "cbxDanToc";
-            this.cbxDanToc.Size = new System.Drawing.Size(152, 20);
-            this.cbxDanToc.TabIndex = 22;
-            // 
-            // labelX16
-            // 
-            this.labelX16.BackColor = System.Drawing.Color.Transparent;
-            this.labelX16.Location = new System.Drawing.Point(2, 413);
-            this.labelX16.Name = "labelX16";
-            this.labelX16.Size = new System.Drawing.Size(55, 18);
-            this.labelX16.TabIndex = 21;
-            this.labelX16.Text = "Tuổi đời";
-            // 
-            // labelX15
-            // 
-            this.labelX15.BackColor = System.Drawing.Color.Transparent;
-            this.labelX15.Location = new System.Drawing.Point(2, 435);
-            this.labelX15.Name = "labelX15";
-            this.labelX15.Size = new System.Drawing.Size(60, 19);
-            this.labelX15.TabIndex = 20;
-            this.labelX15.Text = "Tuổi Đảng";
-            // 
-            // labelX13
-            // 
-            this.labelX13.BackColor = System.Drawing.Color.Transparent;
-            this.labelX13.Location = new System.Drawing.Point(3, 391);
-            this.labelX13.Name = "labelX13";
-            this.labelX13.Size = new System.Drawing.Size(88, 17);
-            this.labelX13.TabIndex = 18;
-            this.labelX13.Text = "Ngày chính thức";
-            // 
-            // labelX12
-            // 
-            this.labelX12.BackColor = System.Drawing.Color.Transparent;
-            this.labelX12.Location = new System.Drawing.Point(3, 368);
-            this.labelX12.Name = "labelX12";
-            this.labelX12.Size = new System.Drawing.Size(81, 18);
-            this.labelX12.TabIndex = 17;
-            this.labelX12.Text = "Ngày vào Đảng";
-            // 
-            // labelX11
-            // 
-            this.labelX11.BackColor = System.Drawing.Color.Transparent;
-            this.labelX11.Location = new System.Drawing.Point(3, 347);
-            this.labelX11.Name = "labelX11";
-            this.labelX11.Size = new System.Drawing.Size(87, 17);
-            this.labelX11.TabIndex = 16;
-            this.labelX11.Text = "Công việc chính";
-            // 
-            // labelX9
-            // 
-            this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            this.labelX9.Location = new System.Drawing.Point(3, 324);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(48, 17);
-            this.labelX9.TabIndex = 14;
-            this.labelX9.Text = "Học hàm";
-            // 
-            // labelX8
-            // 
-            this.labelX8.BackColor = System.Drawing.Color.Transparent;
-            this.labelX8.Location = new System.Drawing.Point(3, 280);
-            this.labelX8.Name = "labelX8";
-            this.labelX8.Size = new System.Drawing.Size(84, 19);
-            this.labelX8.TabIndex = 13;
-            this.labelX8.Text = "Lý luận chính trị";
-            // 
-            // labelX7
-            // 
-            this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Location = new System.Drawing.Point(3, 258);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(46, 19);
-            this.labelX7.TabIndex = 12;
-            this.labelX7.Text = "Tôn giáo";
-            // 
-            // labelX6
-            // 
-            this.labelX6.BackColor = System.Drawing.Color.Transparent;
-            this.labelX6.Location = new System.Drawing.Point(3, 236);
-            this.labelX6.Name = "labelX6";
-            this.labelX6.Size = new System.Drawing.Size(41, 18);
-            this.labelX6.TabIndex = 11;
-            this.labelX6.Text = "Dân tộc";
-            // 
-            // dtpSinhNgay
-            // 
-            this.dtpSinhNgay.Location = new System.Drawing.Point(72, 130);
-            this.dtpSinhNgay.Name = "dtpSinhNgay";
-            this.dtpSinhNgay.Size = new System.Drawing.Size(221, 20);
-            this.dtpSinhNgay.TabIndex = 9;
-            // 
-            // cbxGioiTinh
-            // 
-            this.cbxGioiTinh.DisplayMember = "Text";
-            this.cbxGioiTinh.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cbxGioiTinh.FormattingEnabled = true;
-            this.cbxGioiTinh.ItemHeight = 14;
-            this.cbxGioiTinh.Location = new System.Drawing.Point(72, 107);
-            this.cbxGioiTinh.Name = "cbxGioiTinh";
-            this.cbxGioiTinh.Size = new System.Drawing.Size(94, 20);
-            this.cbxGioiTinh.TabIndex = 8;
-            // 
-            // labelX5
-            // 
-            this.labelX5.BackColor = System.Drawing.Color.Transparent;
-            this.labelX5.Location = new System.Drawing.Point(10, 155);
-            this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(51, 23);
-            this.labelX5.TabIndex = 7;
-            this.labelX5.Text = "Quê quán";
-            // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Location = new System.Drawing.Point(10, 127);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(56, 23);
-            this.labelX4.TabIndex = 6;
-            this.labelX4.Text = "Sinh ngày";
-            // 
-            // labelX3
-            // 
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Location = new System.Drawing.Point(11, 104);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(50, 23);
-            this.labelX3.TabIndex = 5;
-            this.labelX3.Text = "Giới tính";
-            // 
-            // labelX2
-            // 
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Location = new System.Drawing.Point(11, 81);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(52, 23);
-            this.labelX2.TabIndex = 4;
-            this.labelX2.Text = "Họ và tên";
-            // 
-            // txtTenDonViDayDu
-            // 
-            this.txtTenDonViDayDu.Location = new System.Drawing.Point(3, 32);
-            this.txtTenDonViDayDu.Multiline = true;
-            this.txtTenDonViDayDu.Name = "txtTenDonViDayDu";
-            this.txtTenDonViDayDu.Size = new System.Drawing.Size(320, 43);
-            this.txtTenDonViDayDu.TabIndex = 2;
-            // 
-            // labelX1
-            // 
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            this.labelX1.Location = new System.Drawing.Point(10, 6);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(63, 19);
-            this.labelX1.TabIndex = 0;
-            this.labelX1.Text = "Mã đơn vị";
-            // 
-            // tbTieuChiChung
-            // 
-            this.tbTieuChiChung.AttachedControl = this.tabControlPanel1;
-            this.tbTieuChiChung.Name = "tbTieuChiChung";
-            this.tbTieuChiChung.Text = "Tiêu chí chung";
-            // 
             // groupPanel2
             // 
             this.groupPanel2.CanvasColor = System.Drawing.SystemColors.Control;
@@ -1219,6 +1168,126 @@
             this.columnHeader5.Text = "Địa chỉ";
             this.columnHeader5.Width = 300;
             // 
+            // dateTimeInput1
+            // 
+            // 
+            // 
+            // 
+            this.dateTimeInput1.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateTimeInput1.ButtonDropDown.Visible = true;
+            this.dateTimeInput1.Location = new System.Drawing.Point(72, 133);
+            // 
+            // 
+            // 
+            this.dateTimeInput1.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput1.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateTimeInput1.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateTimeInput1.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateTimeInput1.MonthCalendar.DisplayMonth = new System.DateTime(2011, 6, 1, 0, 0, 0, 0);
+            this.dateTimeInput1.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateTimeInput1.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput1.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateTimeInput1.MonthCalendar.TodayButtonVisible = true;
+            this.dateTimeInput1.Name = "dateTimeInput1";
+            this.dateTimeInput1.Size = new System.Drawing.Size(142, 20);
+            this.dateTimeInput1.TabIndex = 170;
+            // 
+            // dateTimeInput2
+            // 
+            // 
+            // 
+            // 
+            this.dateTimeInput2.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateTimeInput2.ButtonDropDown.Visible = true;
+            this.dateTimeInput2.Location = new System.Drawing.Point(93, 367);
+            // 
+            // 
+            // 
+            this.dateTimeInput2.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput2.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateTimeInput2.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateTimeInput2.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateTimeInput2.MonthCalendar.DisplayMonth = new System.DateTime(2011, 6, 1, 0, 0, 0, 0);
+            this.dateTimeInput2.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateTimeInput2.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput2.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateTimeInput2.MonthCalendar.TodayButtonVisible = true;
+            this.dateTimeInput2.Name = "dateTimeInput2";
+            this.dateTimeInput2.Size = new System.Drawing.Size(152, 20);
+            this.dateTimeInput2.TabIndex = 171;
+            // 
+            // dateTimeInput3
+            // 
+            // 
+            // 
+            // 
+            this.dateTimeInput3.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dateTimeInput3.ButtonDropDown.Visible = true;
+            this.dateTimeInput3.Location = new System.Drawing.Point(93, 389);
+            // 
+            // 
+            // 
+            this.dateTimeInput3.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput3.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dateTimeInput3.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dateTimeInput3.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dateTimeInput3.MonthCalendar.DisplayMonth = new System.DateTime(2011, 6, 1, 0, 0, 0, 0);
+            this.dateTimeInput3.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dateTimeInput3.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dateTimeInput3.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dateTimeInput3.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dateTimeInput3.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dateTimeInput3.MonthCalendar.TodayButtonVisible = true;
+            this.dateTimeInput3.Name = "dateTimeInput3";
+            this.dateTimeInput3.Size = new System.Drawing.Size(152, 20);
+            this.dateTimeInput3.TabIndex = 172;
+            // 
             // FrmTimKiem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1238,15 +1307,17 @@
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tabControl1)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabControlPanel1.ResumeLayout(false);
+            this.groupPanel1.ResumeLayout(false);
             this.tabControlPanel2.ResumeLayout(false);
             this.groupPanel3.ResumeLayout(false);
             this.groupPanel3.PerformLayout();
             this.groupPanel5.ResumeLayout(false);
             this.groupPanel5.PerformLayout();
-            this.tabControlPanel1.ResumeLayout(false);
-            this.groupPanel1.ResumeLayout(false);
-            this.groupPanel1.PerformLayout();
             this.groupPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dateTimeInput3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1267,8 +1338,6 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoTen;
         private System.Windows.Forms.Button btnChonDonVi;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaDonVi;
-        private System.Windows.Forms.DateTimePicker dtpNgayChinhThuc;
-        private System.Windows.Forms.DateTimePicker dtpNgayVaoDang;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbxHocHam;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbxLyLuanChinhTri;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbxTonGiao;
@@ -1281,7 +1350,6 @@
         private DevComponents.DotNetBar.LabelX labelX8;
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.LabelX labelX6;
-        private System.Windows.Forms.DateTimePicker dtpSinhNgay;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbxGioiTinh;
         private DevComponents.DotNetBar.LabelX labelX5;
         private DevComponents.DotNetBar.LabelX labelX4;
@@ -1301,9 +1369,6 @@
         private DevComponents.DotNetBar.LabelX labelX15;
         private System.Windows.Forms.DomainUpDown dmTuoiDang;
         private System.Windows.Forms.DomainUpDown dmTuoiDoi;
-        private System.Windows.Forms.CheckBox ckbxEnableNgayChinhThuc;
-        private System.Windows.Forms.CheckBox ckbxEnableNgayVaoDang;
-        private System.Windows.Forms.CheckBox ckbxEnableNgaySinh;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.Controls.ComboBoxEx cbxHocVan;
         private DevComponents.DotNetBar.Controls.ListViewEx lstvNhanVien;
@@ -1340,5 +1405,8 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.Button btnChonDonVi_TieuChiKhac;
         private DevComponents.DotNetBar.Controls.ListViewEx lstvDieuKienTimKiem;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput3;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput2;
+        private DevComponents.Editors.DateTimeAdv.DateTimeInput dateTimeInput1;
     }
 }

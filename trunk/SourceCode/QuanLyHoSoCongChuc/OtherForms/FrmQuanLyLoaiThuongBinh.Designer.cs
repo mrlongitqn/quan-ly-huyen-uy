@@ -147,18 +147,18 @@
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(30, 11);
+            this.labelX1.Location = new System.Drawing.Point(15, 11);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(89, 23);
+            this.labelX1.Size = new System.Drawing.Size(104, 23);
             this.labelX1.TabIndex = 20;
             this.labelX1.Text = "Mã loại thương binh";
             // 
             // labelX2
             // 
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.Location = new System.Drawing.Point(30, 37);
+            this.labelX2.Location = new System.Drawing.Point(15, 37);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(89, 23);
+            this.labelX2.Size = new System.Drawing.Size(104, 23);
             this.labelX2.TabIndex = 16;
             this.labelX2.Text = "Tên loại thương binh";
             // 
@@ -291,7 +291,7 @@
             this.btnChon.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Sign_Select_icon;
             this.btnChon.Name = "btnChon";
             this.btnChon.RightToLeftAutoMirrorImage = true;
-            this.btnChon.Size = new System.Drawing.Size(36, 33);
+            this.btnChon.Size = new System.Drawing.Size(37, 33);
             this.btnChon.Text = "Chọn";
             this.btnChon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
@@ -306,7 +306,7 @@
             this.btnReset.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Eraser_icon;
             this.btnReset.Name = "btnReset";
             this.btnReset.RightToLeftAutoMirrorImage = true;
-            this.btnReset.Size = new System.Drawing.Size(55, 33);
+            this.btnReset.Size = new System.Drawing.Size(57, 33);
             this.btnReset.Text = "Nhập mới";
             this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -321,7 +321,7 @@
             this.btnThemMoi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_01;
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.RightToLeftAutoMirrorImage = true;
-            this.btnThemMoi.Size = new System.Drawing.Size(37, 33);
+            this.btnThemMoi.Size = new System.Drawing.Size(39, 33);
             this.btnThemMoi.Text = "Thêm";
             this.btnThemMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
@@ -331,7 +331,7 @@
             this.btnXoa.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_29;
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.RightToLeftAutoMirrorImage = true;
-            this.btnXoa.Size = new System.Drawing.Size(29, 33);
+            this.btnXoa.Size = new System.Drawing.Size(30, 33);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);

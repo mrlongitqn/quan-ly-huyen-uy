@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,14 +9,408 @@ using DevComponents.DotNetBar;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
+    #region Using
+    using QuanLyHoSoCongChuc.Models;
+    using QuanLyHoSoCongChuc.Utils;
+    using QuanLyHoSoCongChuc.Repositories;
+    using QuanLyHoSoCongChuc.OtherForms;
+    #endregion
+
     /// <summary>
     /// tuansl added: insert new ky luat progress
     /// </summary>
     public partial class FrmNhapQuaTrinhKyLuat : DevComponents.DotNetBar.Office2007Form
     {
-        public FrmNhapQuaTrinhKyLuat()
+        public EventHandler Handler { get; set; }
+        private bool Updated = false;
+        private NhanVien _nhanvien;
+        private EnumUpdateMode UpdateMode = EnumUpdateMode.INSERT;
+        // Hidden files are used to store ids 
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaQuaTrinh;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaHinhThucKyLuat;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaNoiDungViPham;
+
+        public FrmNhapQuaTrinhKyLuat(NhanVien nhanvien)
         {
             InitializeComponent();
+            InitHiddenFields();
+            _nhanvien = nhanvien;
+            txtHoTen.Text = _nhanvien.HoTenKhaiSinh;
+            txtMaNhanVien.Text = _nhanvien.MaNhanVien;
+            LoadData();
         }
+
+        private void btnChonHinhThuc_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyHinhThucKyLuat frm = new FrmQuanLyHinhThucKyLuat();
+            frm.Handler += GetHinhThucKyLuat;
+            frm.ShowDialog();
+        }
+
+        public void GetHinhThucKyLuat(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaHinhThucKyLuat.Text = comp[0];
+            txtHinhThuc.Text = comp[1];
+        }
+
+        private void btnChonNoiDungViPham_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyNoiDungViPham frm = new FrmQuanLyNoiDungViPham();
+            frm.Handler += GetNoiDungViPham;
+            frm.ShowDialog();
+        }
+
+        public void GetNoiDungViPham(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaNoiDungViPham.Text = comp[0];
+            txtNoiDungViPham.Text = comp[1];
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            UpdateMode = EnumUpdateMode.INSERT;
+            EraseTextboxes();
+            SetDefaultMode(false);
+            DisableCmdButtons();
+            txtNam.Focus();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            if (txtMaQuaTrinh.Text != "")
+            {
+                UpdateMode = EnumUpdateMode.UPDATE;
+                SetDefaultMode(false);
+                DisableCmdButtons();
+                txtNam.Focus();
+            }
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (txtMaQuaTrinh.Text != "")
+            {
+                if (MessageBox.Show("Bạn có chắc chắn xóa dữ liệu này không?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    if (QuaTrinhCongTacRepository.Delete(int.Parse(txtMaQuaTrinh.Text)))
+                    {
+                        MessageBox.Show("Xóa dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        EraseTextboxes();
+                        txtMaQuaTrinh.Text = "";
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Xóa dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+        private void btnGhi_Click(object sender, EventArgs e)
+        {
+            string errorText = "";
+            if (!ValidateUserInput(ref errorText))
+            {
+                MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (UpdateMode == EnumUpdateMode.INSERT)
+            {
+                if (ActionAdd())
+                {
+                    MessageBox.Show("Lưu dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                    SetDefaultMode(true);
+                    Updated = true;
+                }
+                else
+                {
+                    MessageBox.Show("Lưu dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (UpdateMode == EnumUpdateMode.UPDATE)
+            {
+                if (ActionUpdate())
+                {
+                    MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    LoadData();
+                    SetDefaultMode(true);
+                    Updated = true;
+                }
+                else
+                {
+                    MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            // Case 1
+            if (txtMaQuaTrinh.Text != "")
+                LoadCurrentQuaTrinhInfo(int.Parse(txtMaQuaTrinh.Text));
+            else
+                EraseTextboxes();
+
+            SetDefaultMode(true);
+            btnThem.Focus();
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmNhapQuaTrinhKyLuat_Load(object sender, EventArgs e)
+        {
+            EraseTextboxes();
+            SetDefaultMode(true);
+        }
+
+        private void lstvData_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (lstvData.SelectedItems.Count > 0)
+            {
+                var item = (KyLuat)lstvData.SelectedItems[0].Tag;
+
+                txtMaQuaTrinh.Text = item.MaKyLuat.ToString();
+                txtNam.Text = item.NamKyLuat.ToString();
+                txtLyDo.Text = item.LyDo;
+
+                txtHinhThuc.Text = item.MaHinhThucKyLuat == null ? "" : item.HinhThucKyLuat.TenHinhThucKyLuat;
+                txtMaHinhThucKyLuat.Text = item.MaHinhThucKyLuat == null ? "" : item.MaHinhThucKyLuat.ToString();
+            }
+        }
+
+        private void FrmNhapQuaTrinhKyLuat_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TransferDataInfo(this, new MyEvent(Updated ? "true" : "false"));
+        }
+
+        /// <summary>
+        /// Load list of congtac progresses of specified nhanvien
+        /// </summary>
+        public void LoadData()
+        {
+            if (_nhanvien != null)
+            {
+                var lstItem = KyLuatRepository.SelectByMaNhanVien(_nhanvien.MaNhanVien);
+                lstvData.Items.Clear();
+                for (int i = 0; i < lstItem.Count; i++)
+                {
+                    var objListViewItem = new ListViewItem();
+                    objListViewItem.Tag = lstItem[i];
+                    objListViewItem.Text = (i + 1).ToString();
+                    objListViewItem.SubItems.Add(lstItem[i].NamKyLuat.ToString());
+                    lstvData.Items.Add(objListViewItem);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Init hidden fields
+        /// </summary>
+        public void InitHiddenFields()
+        {
+            // Add a new textbox
+            txtMaQuaTrinh = new DevComponents.DotNetBar.Controls.TextBoxX
+            {
+                Name = "txtMaQuaTrinh",
+                Text = ""
+            };
+            txtMaQuaTrinh.Visible = false;
+
+            // Add a new textbox
+            txtMaHinhThucKyLuat = new DevComponents.DotNetBar.Controls.TextBoxX
+            {
+                Name = "txtMaHinhThucKyLuat",
+                Text = ""
+            };
+            txtMaHinhThucKyLuat.Visible = false;
+
+            // Add a new textbox
+            txtMaNoiDungViPham = new DevComponents.DotNetBar.Controls.TextBoxX
+            {
+                Name = "txtMaNoiDungViPham",
+                Text = ""
+            };
+            txtMaNoiDungViPham.Visible = false;
+        }
+
+        /// <summary>
+        /// tuansl added: function is used to transfer data when event would be raised
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void TransferDataInfo(object sender, MyEvent e)
+        {
+            this.Handler(this, e);
+        }
+
+        /// <summary>
+        /// Validate user inputs
+        /// </summary>
+        /// <returns></returns>
+        public bool ValidateUserInput(ref string errorText)
+        {
+            if (txtNam.Text == "")
+            {
+                errorText = "Vui lòng nhập năm kỷ luật";
+                return false;
+            }
+            else
+            {
+                if (!Validations.IsNumeric(txtNam.Text))
+                {
+                    errorText = "Năm kỷ luật phải là số";
+                    return false;
+                }
+            }
+            if (txtHinhThuc.Text == "")
+            {
+                errorText = "Vui lòng nhập hình thức kỷ luật";
+                return false;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Update foreign keys need to insert
+        /// </summary>
+        /// <param name="quatrinhcongtac"></param>
+        public void UpdateForeignKeys(ref KyLuat quatrinh)
+        {
+            if (txtMaHinhThucKyLuat.Text != "")
+            {
+                quatrinh.MaHinhThucKyLuat = int.Parse(txtMaHinhThucKyLuat.Text);
+            }
+        }
+
+        /// <summary>
+        /// Add a new item to DB
+        /// </summary>
+        /// <returns></returns>
+        private bool ActionAdd()
+        {
+            try
+            {
+                var newItem = new KyLuat
+                {
+                    MaNhanVien = _nhanvien.MaNhanVien,
+                    NamKyLuat = int.Parse(txtNam.Text),
+                    LyDo = txtLyDo.Text
+                };
+
+                UpdateForeignKeys(ref newItem);
+
+                if (!KyLuatRepository.Insert(newItem))
+                {
+                    return false;
+                }
+                RefreshQuaTrinh(newItem.MaKyLuat.ToString());
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Update an item in DB
+        /// </summary>
+        /// <returns></returns>
+        private bool ActionUpdate()
+        {
+            try
+            {
+                var quatrinh = KyLuatRepository.SelectByID(int.Parse(txtMaQuaTrinh.Text));
+                quatrinh.MaNhanVien = _nhanvien.MaNhanVien;
+                quatrinh.NamKyLuat = int.Parse(txtNam.Text);
+                quatrinh.LyDo = txtLyDo.Text;
+
+                UpdateForeignKeys(ref quatrinh);
+
+                return QuaTrinhCongTacRepository.Save();
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Load info of current quatrinh
+        /// If mode is insert: update txtMaQuaTrinhCongTac
+        /// Else: not change
+        /// </summary>
+        public void LoadCurrentQuaTrinhInfo(int id)
+        {
+            var item = KyLuatRepository.SelectByID(id);
+
+            txtMaQuaTrinh.Text = id.ToString();
+            txtNam.Text = item.NamKyLuat.ToString();
+            txtLyDo.Text = item.LyDo;
+
+            txtHinhThuc.Text = item.MaHinhThucKyLuat == null ? "" : item.HinhThucKyLuat.TenHinhThucKyLuat;
+            txtMaHinhThucKyLuat.Text = item.MaHinhThucKyLuat == null ? "" : item.MaHinhThucKyLuat.ToString();
+        }
+
+        /// <summary>
+        /// Disable them, xoa, sua
+        /// </summary>
+        public void DisableCmdButtons()
+        {
+            btnThem.Enabled = false;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = false;
+        }
+
+        /// <summary>
+        /// Store ma qua trinh cong tac
+        /// </summary>
+        /// <param name="val"></param>
+        public void RefreshQuaTrinh(string val)
+        {
+            txtMaQuaTrinh.Text = val;
+        }
+
+        /// <summary>
+        /// Erase data in textboxes when mode is insert
+        /// </summary>
+        public void EraseTextboxes()
+        {
+            txtNam.Text = "";
+            txtHinhThuc.Text = "";
+            txtMaHinhThucKyLuat.Text = "";
+            txtLyDo.Text = "";
+        }
+
+        /// <summary>
+        /// Set default status
+        /// </summary>
+        /// <param name="val">default is true</param>
+        public void SetDefaultMode(bool val = true)
+        {
+            txtNam.ReadOnly = val;
+            txtLyDo.ReadOnly = val;
+
+            btnChonHinhThuc.Enabled = !val;
+
+            btnThem.Enabled = val;
+            btnSua.Enabled = val;
+            btnXoa.Enabled = val;
+            btnGhi.Enabled = !val;
+            btnHuy.Enabled = !val;
+        }
+
+        
+ 
     }
 }

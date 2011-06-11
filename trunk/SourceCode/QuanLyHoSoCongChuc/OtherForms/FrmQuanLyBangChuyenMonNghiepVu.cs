@@ -109,6 +109,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             txtMaBangChuyenMonNghiepVu.Text = "";
             txtTenBangChuyenMonNghiepVu.Text = "";
+            txtChuyenNganh.Text = "";
         }
 
         private void dtgvDataList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -119,6 +120,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
             var selectedItem = dtgvDataList.SelectedRows[0];
             txtMaBangChuyenMonNghiepVu.Text = ((BangChuyenMonNghiepVu)selectedItem.DataBoundItem).MaBangChuyenMonNghiepVu.ToString();
             txtTenBangChuyenMonNghiepVu.Text = ((BangChuyenMonNghiepVu)selectedItem.DataBoundItem).TenBangChuyenMonNghiepVu.ToString();
+            txtChuyenNganh.Text = ((BangChuyenMonNghiepVu)selectedItem.DataBoundItem).ChuyenNganh.ToString();
         }
 
         private void btnChon_Click(object sender, EventArgs e)
@@ -154,7 +156,15 @@ namespace QuanLyHoSoCongChuc.OtherForms
             {
                 HeaderText = "Tên bằng chuyên môn nghiệp vụ",
                 DataPropertyName = "TenBangChuyenMonNghiepVu",
-                Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.7 - 1)
+                Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.4 - 1)
+            };
+            dtgvDataList.Columns.Add(objColumn);
+
+            objColumn = new DataGridViewTextBoxColumn
+            {
+                HeaderText = "Chuyên ngành",
+                DataPropertyName = "ChuyenNganh",
+                Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.3 - 1)
             };
             dtgvDataList.Columns.Add(objColumn);
         }
@@ -207,7 +217,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
             {
                 var item = new BangChuyenMonNghiepVu
                 {
-                    TenBangChuyenMonNghiepVu = txtTenBangChuyenMonNghiepVu.Text
+                    TenBangChuyenMonNghiepVu = txtTenBangChuyenMonNghiepVu.Text,
+                    ChuyenNganh = txtChuyenNganh.Text
                 };
                 if (!BangChuyenMonNghiepVuRepository.Insert(item))
                 {
@@ -231,6 +242,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
             {
                 var item = BangChuyenMonNghiepVuRepository.SelectByID(int.Parse(txtMaBangChuyenMonNghiepVu.Text));
                 item.TenBangChuyenMonNghiepVu = txtTenBangChuyenMonNghiepVu.Text;
+                item.ChuyenNganh = txtChuyenNganh.Text;
                 return BangChuyenMonNghiepVuRepository.Save();
             }
             catch

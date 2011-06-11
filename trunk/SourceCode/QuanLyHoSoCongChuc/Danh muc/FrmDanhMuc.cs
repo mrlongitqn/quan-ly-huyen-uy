@@ -53,6 +53,8 @@ namespace QuanLyHoSoCongChuc.Danh_muc
 
         private void FrmReportLuong_Load(object sender, EventArgs e)
         {
+            GlobalVars.PreLoading();
+            
             init();
             if (EnableButtonChon)
             {
@@ -60,6 +62,8 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             }
             else
                 btChon.Visible = false;
+
+            GlobalVars.PosLoading();
         }
 
         private void init()

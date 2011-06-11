@@ -37,12 +37,9 @@
             this.lblQuaTrinhCongTac = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnCapNhatDuLieu = new DevComponents.DotNetBar.ButtonX();
-            this.lstvNhanVien = new DevComponents.DotNetBar.Controls.ListViewEx();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.lstvQuaTrinh = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
+            this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
             this.pnlTomTat.SuspendLayout();
             this.pnlChucNang.SuspendLayout();
             this.SuspendLayout();
@@ -54,7 +51,7 @@
             this.pnlTomTat.Controls.Add(this.pnlChucNang);
             this.pnlTomTat.Controls.Add(this.groupPanel1);
             this.pnlTomTat.Controls.Add(this.btnCapNhatDuLieu);
-            this.pnlTomTat.Controls.Add(this.lstvNhanVien);
+            this.pnlTomTat.Controls.Add(this.lstvQuaTrinh);
             this.pnlTomTat.Controls.Add(this.labelX21);
             this.pnlTomTat.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlTomTat.Location = new System.Drawing.Point(0, 0);
@@ -187,47 +184,22 @@
             this.btnCapNhatDuLieu.Size = new System.Drawing.Size(127, 23);
             this.btnCapNhatDuLieu.TabIndex = 91;
             this.btnCapNhatDuLieu.Text = "Cập nhật dữ liệu";
+            this.btnCapNhatDuLieu.Click += new System.EventHandler(this.btnCapNhatDuLieu_Click);
             // 
-            // lstvNhanVien
+            // lstvQuaTrinh
             // 
             // 
             // 
             // 
-            this.lstvNhanVien.Border.Class = "ListViewBorder";
-            this.lstvNhanVien.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader6,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lstvNhanVien.FullRowSelect = true;
-            this.lstvNhanVien.Location = new System.Drawing.Point(148, 3);
-            this.lstvNhanVien.MultiSelect = false;
-            this.lstvNhanVien.Name = "lstvNhanVien";
-            this.lstvNhanVien.Size = new System.Drawing.Size(702, 334);
-            this.lstvNhanVien.TabIndex = 90;
-            this.lstvNhanVien.UseCompatibleStateImageBehavior = false;
-            this.lstvNhanVien.View = System.Windows.Forms.View.Details;
-            // 
-            // columnHeader6
-            // 
-            this.columnHeader6.Text = "STT";
-            this.columnHeader6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader6.Width = 40;
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Từ tháng năm";
-            this.columnHeader2.Width = 100;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Đến tháng năm";
-            this.columnHeader3.Width = 100;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Đơn vị, Chức vụ";
-            this.columnHeader4.Width = 420;
+            this.lstvQuaTrinh.Border.Class = "ListViewBorder";
+            this.lstvQuaTrinh.FullRowSelect = true;
+            this.lstvQuaTrinh.Location = new System.Drawing.Point(148, 3);
+            this.lstvQuaTrinh.MultiSelect = false;
+            this.lstvQuaTrinh.Name = "lstvQuaTrinh";
+            this.lstvQuaTrinh.Size = new System.Drawing.Size(702, 334);
+            this.lstvQuaTrinh.TabIndex = 90;
+            this.lstvQuaTrinh.UseCompatibleStateImageBehavior = false;
+            this.lstvQuaTrinh.View = System.Windows.Forms.View.Details;
             // 
             // labelX21
             // 
@@ -259,11 +231,7 @@
         #endregion
 
         private DevComponents.DotNetBar.Controls.GroupPanel pnlTomTat;
-        private DevComponents.DotNetBar.Controls.ListViewEx lstvNhanVien;
-        private System.Windows.Forms.ColumnHeader columnHeader6;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private DevComponents.DotNetBar.Controls.ListViewEx lstvQuaTrinh;
         private DevComponents.DotNetBar.LabelX labelX21;
         private DevComponents.DotNetBar.ButtonX btnCapNhatDuLieu;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
@@ -273,5 +241,6 @@
         private DevComponents.DotNetBar.LabelX lblKhenThuong;
         private DevComponents.DotNetBar.LabelX lblQuaTrinhDaoTao;
         private DevComponents.DotNetBar.LabelX lblQuaTrinhCongTac;
+        private CachedCrystalReport2 cachedCrystalReport21;
     }
 }

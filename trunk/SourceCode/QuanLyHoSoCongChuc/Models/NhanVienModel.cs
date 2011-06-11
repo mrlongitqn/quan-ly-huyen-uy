@@ -7,6 +7,7 @@ namespace QuanLyHoSoCongChuc.Models
 {
     public class NhanVienModel
     {
+        public int MaGioiTinh { get; set; }
         public string MaDonVi { get; set; }
         public int MaDanToc { get; set; }
         public int MaTonGiao { get; set; }
@@ -19,7 +20,8 @@ namespace QuanLyHoSoCongChuc.Models
         public int MaHocVi { get; set; }
         public int MaHocHam { get; set; }
         public int MaTinhTrangSucKhoe { get; set; }
-        public int MaThuongBinh { get; set; }
+        public int MaLoaiThuongBinh { get; set; }
+        public int MaChucVu { get; set; }
         public string HinhAnh { get; set; }
         public string HoTenKhaiSinh { get; set; }
         public string HoTenDangDung { get; set; }
@@ -49,6 +51,7 @@ namespace QuanLyHoSoCongChuc.Models
         public string SoCMND { get; set; }
         public DateTime NgayMienSHD { get; set; }
         public bool ConSinhHoat { get; set; }
+        public string SoDienThoai { get; set; }
 
         // tuansl: add manually
         public int TuoiDoi { get; set; }
