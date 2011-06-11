@@ -6,7 +6,7 @@ using System.Text;
 namespace QuanLyHoSoCongChuc.Utils
 {
     /// <summary>
-    /// Mapping table in DB to Table object in App
+    /// taunsl added: Mapping table in DB to Table object in App
     /// </summary>
     public class Table
     {

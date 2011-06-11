@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThongTinNhanVien_TomTat));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtChucVu = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX40 = new DevComponents.DotNetBar.LabelX();
             this.txtLoaiThuongBinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtTinhTrangSucKhoe = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHocHam = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -70,11 +72,9 @@
             this.labelX30 = new DevComponents.DotNetBar.LabelX();
             this.labelX29 = new DevComponents.DotNetBar.LabelX();
             this.labelX28 = new DevComponents.DotNetBar.LabelX();
-            this.txtMoTaHocViCaoNhat = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX27 = new DevComponents.DotNetBar.LabelX();
             this.labelX26 = new DevComponents.DotNetBar.LabelX();
             this.labelX25 = new DevComponents.DotNetBar.LabelX();
-            this.txtMoTaCMNV = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX24 = new DevComponents.DotNetBar.LabelX();
             this.labelX23 = new DevComponents.DotNetBar.LabelX();
             this.labelX22 = new DevComponents.DotNetBar.LabelX();
@@ -112,8 +112,7 @@
             this.labelX20 = new DevComponents.DotNetBar.LabelX();
             this.txtMaNhanVien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
-            this.txtChucVu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX40 = new DevComponents.DotNetBar.LabelX();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.btnChonChucVu = new System.Windows.Forms.Button();
             this.btnChonThuongBinh = new System.Windows.Forms.Button();
             this.btnChonTinhTrangSucKhoe = new System.Windows.Forms.Button();
@@ -201,11 +200,9 @@
             this.groupPanel1.Controls.Add(this.labelX30);
             this.groupPanel1.Controls.Add(this.labelX29);
             this.groupPanel1.Controls.Add(this.labelX28);
-            this.groupPanel1.Controls.Add(this.txtMoTaHocViCaoNhat);
             this.groupPanel1.Controls.Add(this.labelX27);
             this.groupPanel1.Controls.Add(this.labelX26);
             this.groupPanel1.Controls.Add(this.labelX25);
-            this.groupPanel1.Controls.Add(this.txtMoTaCMNV);
             this.groupPanel1.Controls.Add(this.labelX24);
             this.groupPanel1.Controls.Add(this.labelX23);
             this.groupPanel1.Controls.Add(this.labelX22);
@@ -271,6 +268,28 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
+            // 
+            // txtChucVu
+            // 
+            // 
+            // 
+            // 
+            this.txtChucVu.Border.Class = "TextBoxBorder";
+            this.txtChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChucVu.Location = new System.Drawing.Point(148, 113);
+            this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.Size = new System.Drawing.Size(200, 20);
+            this.txtChucVu.TabIndex = 321;
+            // 
+            // labelX40
+            // 
+            this.labelX40.BackColor = System.Drawing.Color.Transparent;
+            this.labelX40.Location = new System.Drawing.Point(66, 112);
+            this.labelX40.Name = "labelX40";
+            this.labelX40.Size = new System.Drawing.Size(59, 23);
+            this.labelX40.TabIndex = 320;
+            this.labelX40.Text = "Chức vụ";
+            this.labelX40.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // txtLoaiThuongBinh
             // 
@@ -423,6 +442,8 @@
             // 
             this.dtMienSHD.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtMienSHD.ButtonDropDown.Visible = true;
+            this.dtMienSHD.CustomFormat = "dd/MM/yyyy";
+            this.dtMienSHD.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtMienSHD.Location = new System.Drawing.Point(508, 742);
             // 
             // 
@@ -463,6 +484,8 @@
             // 
             this.dtNgayXuatNgu.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtNgayXuatNgu.ButtonDropDown.Visible = true;
+            this.dtNgayXuatNgu.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayXuatNgu.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtNgayXuatNgu.Location = new System.Drawing.Point(508, 458);
             // 
             // 
@@ -503,6 +526,8 @@
             // 
             this.dtNgayNhapNgu.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtNgayNhapNgu.ButtonDropDown.Visible = true;
+            this.dtNgayNhapNgu.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayNhapNgu.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtNgayNhapNgu.Location = new System.Drawing.Point(148, 458);
             // 
             // 
@@ -543,6 +568,8 @@
             // 
             this.dtNgayVaoDoan.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtNgayVaoDoan.ButtonDropDown.Visible = true;
+            this.dtNgayVaoDoan.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayVaoDoan.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtNgayVaoDoan.Location = new System.Drawing.Point(148, 408);
             // 
             // 
@@ -583,6 +610,8 @@
             // 
             this.dtNgayTuyenDung.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtNgayTuyenDung.ButtonDropDown.Visible = true;
+            this.dtNgayTuyenDung.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayTuyenDung.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtNgayTuyenDung.Location = new System.Drawing.Point(148, 381);
             // 
             // 
@@ -623,6 +652,8 @@
             // 
             this.dtNgayChinhThuc.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtNgayChinhThuc.ButtonDropDown.Visible = true;
+            this.dtNgayChinhThuc.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayChinhThuc.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtNgayChinhThuc.Location = new System.Drawing.Point(148, 354);
             // 
             // 
@@ -663,6 +694,8 @@
             // 
             this.dtNgayVaoDang.BackgroundStyle.Class = "DateTimeInputBackground";
             this.dtNgayVaoDang.ButtonDropDown.Visible = true;
+            this.dtNgayVaoDang.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayVaoDang.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
             this.dtNgayVaoDang.Location = new System.Drawing.Point(148, 275);
             // 
             // 
@@ -932,18 +965,6 @@
             this.labelX28.Text = "Học hàm";
             this.labelX28.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // txtMoTaHocViCaoNhat
-            // 
-            // 
-            // 
-            // 
-            this.txtMoTaHocViCaoNhat.Border.Class = "TextBoxBorder";
-            this.txtMoTaHocViCaoNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMoTaHocViCaoNhat.Location = new System.Drawing.Point(388, 613);
-            this.txtMoTaHocViCaoNhat.Name = "txtMoTaHocViCaoNhat";
-            this.txtMoTaHocViCaoNhat.Size = new System.Drawing.Size(437, 20);
-            this.txtMoTaHocViCaoNhat.TabIndex = 236;
-            // 
             // labelX27
             // 
             this.labelX27.BackColor = System.Drawing.Color.Transparent;
@@ -976,18 +997,6 @@
             this.labelX25.TabIndex = 231;
             this.labelX25.Text = "Lý luận chính trị";
             this.labelX25.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // txtMoTaCMNV
-            // 
-            // 
-            // 
-            // 
-            this.txtMoTaCMNV.Border.Class = "TextBoxBorder";
-            this.txtMoTaCMNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMoTaCMNV.Location = new System.Drawing.Point(388, 535);
-            this.txtMoTaCMNV.Name = "txtMoTaCMNV";
-            this.txtMoTaCMNV.Size = new System.Drawing.Size(437, 20);
-            this.txtMoTaCMNV.TabIndex = 230;
             // 
             // labelX24
             // 
@@ -1179,6 +1188,7 @@
             this.btnBocAnh.Size = new System.Drawing.Size(56, 23);
             this.btnBocAnh.TabIndex = 206;
             this.btnBocAnh.Text = "Bóc ảnh";
+            this.btnBocAnh.Click += new System.EventHandler(this.btnBocAnh_Click);
             // 
             // btnChonAnh
             // 
@@ -1190,6 +1200,7 @@
             this.btnChonAnh.Size = new System.Drawing.Size(56, 23);
             this.btnChonAnh.TabIndex = 205;
             this.btnChonAnh.Text = "Chọn ảnh";
+            this.btnChonAnh.Click += new System.EventHandler(this.btnChonAnh_Click);
             // 
             // labelX16
             // 
@@ -1407,27 +1418,9 @@
             this.labelX21.Text = "Mã nhân viên";
             this.labelX21.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // txtChucVu
+            // openFileDialog1
             // 
-            // 
-            // 
-            // 
-            this.txtChucVu.Border.Class = "TextBoxBorder";
-            this.txtChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChucVu.Location = new System.Drawing.Point(148, 113);
-            this.txtChucVu.Name = "txtChucVu";
-            this.txtChucVu.Size = new System.Drawing.Size(200, 20);
-            this.txtChucVu.TabIndex = 321;
-            // 
-            // labelX40
-            // 
-            this.labelX40.BackColor = System.Drawing.Color.Transparent;
-            this.labelX40.Location = new System.Drawing.Point(66, 112);
-            this.labelX40.Name = "labelX40";
-            this.labelX40.Size = new System.Drawing.Size(59, 23);
-            this.labelX40.TabIndex = 320;
-            this.labelX40.Text = "Chức vụ";
-            this.labelX40.TextAlignment = System.Drawing.StringAlignment.Far;
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // btnChonChucVu
             // 
@@ -1438,6 +1431,7 @@
             this.btnChonChucVu.Size = new System.Drawing.Size(28, 27);
             this.btnChonChucVu.TabIndex = 322;
             this.btnChonChucVu.UseVisualStyleBackColor = true;
+            this.btnChonChucVu.Click += new System.EventHandler(this.btnChonChucVu_Click);
             // 
             // btnChonThuongBinh
             // 
@@ -1448,6 +1442,7 @@
             this.btnChonThuongBinh.Size = new System.Drawing.Size(28, 27);
             this.btnChonThuongBinh.TabIndex = 289;
             this.btnChonThuongBinh.UseVisualStyleBackColor = true;
+            this.btnChonThuongBinh.Click += new System.EventHandler(this.btnChonThuongBinh_Click);
             // 
             // btnChonTinhTrangSucKhoe
             // 
@@ -1458,6 +1453,7 @@
             this.btnChonTinhTrangSucKhoe.Size = new System.Drawing.Size(28, 27);
             this.btnChonTinhTrangSucKhoe.TabIndex = 288;
             this.btnChonTinhTrangSucKhoe.UseVisualStyleBackColor = true;
+            this.btnChonTinhTrangSucKhoe.Click += new System.EventHandler(this.btnChonTinhTrangSucKhoe_Click);
             // 
             // btnChonHocHam
             // 
@@ -1468,6 +1464,7 @@
             this.btnChonHocHam.Size = new System.Drawing.Size(28, 27);
             this.btnChonHocHam.TabIndex = 287;
             this.btnChonHocHam.UseVisualStyleBackColor = true;
+            this.btnChonHocHam.Click += new System.EventHandler(this.btnChonHocHam_Click);
             // 
             // btnChonHocViCaoNhat
             // 
@@ -1478,6 +1475,7 @@
             this.btnChonHocViCaoNhat.Size = new System.Drawing.Size(28, 27);
             this.btnChonHocViCaoNhat.TabIndex = 286;
             this.btnChonHocViCaoNhat.UseVisualStyleBackColor = true;
+            this.btnChonHocViCaoNhat.Click += new System.EventHandler(this.btnChonHocViCaoNhat_Click);
             // 
             // btnChonNgoaiNgu
             // 
@@ -1488,6 +1486,7 @@
             this.btnChonNgoaiNgu.Size = new System.Drawing.Size(28, 27);
             this.btnChonNgoaiNgu.TabIndex = 285;
             this.btnChonNgoaiNgu.UseVisualStyleBackColor = true;
+            this.btnChonNgoaiNgu.Click += new System.EventHandler(this.btnChonNgoaiNgu_Click);
             // 
             // btnChonLLCT
             // 
@@ -1498,6 +1497,7 @@
             this.btnChonLLCT.Size = new System.Drawing.Size(28, 27);
             this.btnChonLLCT.TabIndex = 284;
             this.btnChonLLCT.UseVisualStyleBackColor = true;
+            this.btnChonLLCT.Click += new System.EventHandler(this.btnChonLLCT_Click);
             // 
             // btnChonCMNV
             // 
@@ -1508,6 +1508,7 @@
             this.btnChonCMNV.Size = new System.Drawing.Size(28, 27);
             this.btnChonCMNV.TabIndex = 283;
             this.btnChonCMNV.UseVisualStyleBackColor = true;
+            this.btnChonCMNV.Click += new System.EventHandler(this.btnChonCMNV_Click);
             // 
             // btnChonGDPT
             // 
@@ -1518,6 +1519,7 @@
             this.btnChonGDPT.Size = new System.Drawing.Size(28, 27);
             this.btnChonGDPT.TabIndex = 282;
             this.btnChonGDPT.UseVisualStyleBackColor = true;
+            this.btnChonGDPT.Click += new System.EventHandler(this.btnChonGDPT_Click);
             // 
             // btnChonNgheNghiepTruocKhiDuocTuyenDung
             // 
@@ -1528,6 +1530,7 @@
             this.btnChonNgheNghiepTruocKhiDuocTuyenDung.Size = new System.Drawing.Size(28, 27);
             this.btnChonNgheNghiepTruocKhiDuocTuyenDung.TabIndex = 281;
             this.btnChonNgheNghiepTruocKhiDuocTuyenDung.UseVisualStyleBackColor = true;
+            this.btnChonNgheNghiepTruocKhiDuocTuyenDung.Click += new System.EventHandler(this.btnChonNgheNghiepTruocKhiDuocTuyenDung_Click);
             // 
             // btnChonTonGiao
             // 
@@ -1538,6 +1541,7 @@
             this.btnChonTonGiao.Size = new System.Drawing.Size(28, 27);
             this.btnChonTonGiao.TabIndex = 280;
             this.btnChonTonGiao.UseVisualStyleBackColor = true;
+            this.btnChonTonGiao.Click += new System.EventHandler(this.btnChonTonGiao_Click);
             // 
             // btnChonThanhPhanXuatThan
             // 
@@ -1548,6 +1552,7 @@
             this.btnChonThanhPhanXuatThan.Size = new System.Drawing.Size(28, 27);
             this.btnChonThanhPhanXuatThan.TabIndex = 279;
             this.btnChonThanhPhanXuatThan.UseVisualStyleBackColor = true;
+            this.btnChonThanhPhanXuatThan.Click += new System.EventHandler(this.btnChonThanhPhanXuatThan_Click);
             // 
             // btnChonDanToc
             // 
@@ -1558,6 +1563,7 @@
             this.btnChonDanToc.Size = new System.Drawing.Size(28, 27);
             this.btnChonDanToc.TabIndex = 278;
             this.btnChonDanToc.UseVisualStyleBackColor = true;
+            this.btnChonDanToc.Click += new System.EventHandler(this.btnChonDanToc_Click);
             // 
             // picNv
             // 
@@ -1581,6 +1587,7 @@
             this.btnChonQueQuan.Size = new System.Drawing.Size(28, 27);
             this.btnChonQueQuan.TabIndex = 196;
             this.btnChonQueQuan.UseVisualStyleBackColor = true;
+            this.btnChonQueQuan.Click += new System.EventHandler(this.btnChonQueQuan_Click);
             // 
             // btnChonNoiSinh
             // 
@@ -1591,6 +1598,7 @@
             this.btnChonNoiSinh.Size = new System.Drawing.Size(28, 27);
             this.btnChonNoiSinh.TabIndex = 195;
             this.btnChonNoiSinh.UseVisualStyleBackColor = true;
+            this.btnChonNoiSinh.Click += new System.EventHandler(this.btnChonNoiSinh_Click);
             // 
             // FrmThongTinNhanVien_TomTat
             // 
@@ -1649,11 +1657,9 @@
         private DevComponents.DotNetBar.LabelX labelX30;
         private DevComponents.DotNetBar.LabelX labelX29;
         private DevComponents.DotNetBar.LabelX labelX28;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMoTaHocViCaoNhat;
         private DevComponents.DotNetBar.LabelX labelX27;
         private DevComponents.DotNetBar.LabelX labelX26;
         private DevComponents.DotNetBar.LabelX labelX25;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMoTaCMNV;
         private DevComponents.DotNetBar.LabelX labelX24;
         private DevComponents.DotNetBar.LabelX labelX23;
         private DevComponents.DotNetBar.LabelX labelX22;
@@ -1718,5 +1724,6 @@
         private System.Windows.Forms.Button btnChonChucVu;
         private DevComponents.DotNetBar.Controls.TextBoxX txtChucVu;
         private DevComponents.DotNetBar.LabelX labelX40;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

@@ -100,12 +100,6 @@ namespace QuanLyHoSoCongChuc.Search
                 //MaBangChuyenMonNghiepVu = cbxHocHam.SelectedIndex > -1 ? ((BangChuyenMonNghiepVu)cbxHocHam.SelectedItem).MaBangChuyenMonNghiepVu : null,
                 //CongViecHienNay = txtCongVienChinh.Text.Trim()
             };
-            if (ckbxEnableNgaySinh.Checked)
-                nhanvien.NgaySinh = dtpSinhNgay.Value;
-            if (ckbxEnableNgayVaoDang.Checked)
-                nhanvien.NgayVaoDang = dtpNgayVaoDang.Value;
-            if (ckbxEnableNgayChinhThuc.Checked)
-                nhanvien.NgayChinhThuc = dtpNgayChinhThuc.Value;
             if (dmTuoiDoi.Text != "")
                 nhanvien.TuoiDoi = int.Parse(dmTuoiDoi.Text);
             if (dmTuoiDang.Text != "")
@@ -955,7 +949,7 @@ namespace QuanLyHoSoCongChuc.Search
                 GlobalVars.PreLoading();
 
                 var nhanvien = (NhanVien)lstvNhanVien.SelectedItems[0].Tag;
-                FrmThongTinNhanVien frm = new FrmThongTinNhanVien(nhanvien.MaNhanVien);
+                FrmThongTinNhanVien frm = new FrmThongTinNhanVien(nhanvien);
 
                 GlobalVars.PosLoading();
                 frm.ShowDialog();

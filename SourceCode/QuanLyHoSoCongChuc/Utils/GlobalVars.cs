@@ -37,6 +37,7 @@ namespace QuanLyHoSoCongChuc.Utils
     /// </summary>
     public enum EnumUpdateMode
     {
+        DEFAULT,
         UPDATE,
         DELETE,
         INSERT,
@@ -172,17 +173,17 @@ namespace QuanLyHoSoCongChuc.Utils
 
         public static void PreLoading()
         {
-            ASynInvoke = new TimeTask(WaitLoad);
-            result = ASynInvoke.BeginInvoke(null, null);
+            //ASynInvoke = new TimeTask(WaitLoad);
+            //result = ASynInvoke.BeginInvoke(null, null);
         }
 
         public static void PosLoading()
         {
-            if (waiting != null)
-            {
-                waiting.Close();
-                waiting = null;
-            }
+            //if (waiting != null)
+            //{
+            //    waiting.Close();
+            //    waiting = null;
+            //}
         }   
 
         public static void WaitLoad()
