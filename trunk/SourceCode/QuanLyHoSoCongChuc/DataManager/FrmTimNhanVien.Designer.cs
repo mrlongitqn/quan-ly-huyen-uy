@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
+            this.btChon = new DevComponents.DotNetBar.ButtonX();
             this.lstvNhanVien = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btChon = new DevComponents.DotNetBar.ButtonX();
-            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,6 +71,32 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 1;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
+            this.btnThoat.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.btnThoat.Location = new System.Drawing.Point(227, 438);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 160;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btChon
+            // 
+            this.btChon.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btChon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btChon.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Sign_Select_icon;
+            this.btChon.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.btChon.Location = new System.Drawing.Point(146, 438);
+            this.btChon.Name = "btChon";
+            this.btChon.Size = new System.Drawing.Size(75, 23);
+            this.btChon.TabIndex = 159;
+            this.btChon.Text = "Chọn";
+            this.btChon.Click += new System.EventHandler(this.btChon_Click);
+            // 
             // lstvNhanVien
             // 
             // 
@@ -83,6 +109,7 @@
             this.columnHeader2});
             this.lstvNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.lstvNhanVien.FullRowSelect = true;
+            this.lstvNhanVien.GridLines = true;
             this.lstvNhanVien.Location = new System.Drawing.Point(0, 0);
             this.lstvNhanVien.MultiSelect = false;
             this.lstvNhanVien.Name = "lstvNhanVien";
@@ -98,41 +125,15 @@
             this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader3.Width = 40;
             // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Họ tên";
-            this.columnHeader2.Width = 150;
-            // 
             // columnHeader4
             // 
             this.columnHeader4.Text = "Mã nhân viên";
             this.columnHeader4.Width = 100;
             // 
-            // btChon
+            // columnHeader2
             // 
-            this.btChon.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btChon.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btChon.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Sign_Select_icon;
-            this.btChon.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btChon.Location = new System.Drawing.Point(146, 438);
-            this.btChon.Name = "btChon";
-            this.btChon.Size = new System.Drawing.Size(75, 23);
-            this.btChon.TabIndex = 159;
-            this.btChon.Text = "Chọn";
-            this.btChon.Click += new System.EventHandler(this.btChon_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
-            this.btnThoat.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btnThoat.Location = new System.Drawing.Point(227, 438);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 160;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            this.columnHeader2.Text = "Họ tên";
+            this.columnHeader2.Width = 150;
             // 
             // FrmTimNhanVien
             // 

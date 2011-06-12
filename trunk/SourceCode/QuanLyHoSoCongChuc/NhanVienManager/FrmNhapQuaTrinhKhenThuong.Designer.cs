@@ -41,19 +41,19 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHinhThuc = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnChonHinhThuc = new System.Windows.Forms.Button();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.labelX4 = new DevComponents.DotNetBar.LabelX();
+            this.txtLyDo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.btnChonHinhThuc = new System.Windows.Forms.Button();
             this.btnHuy = new DevComponents.DotNetBar.ButtonX();
             this.btnGhi = new DevComponents.DotNetBar.ButtonX();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
-            this.labelX4 = new DevComponents.DotNetBar.LabelX();
-            this.txtLyDo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -93,6 +93,7 @@
             this.columnHeader1});
             this.lstvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstvData.FullRowSelect = true;
+            this.lstvData.GridLines = true;
             this.lstvData.Location = new System.Drawing.Point(0, 0);
             this.lstvData.MultiSelect = false;
             this.lstvData.Name = "lstvData";
@@ -116,6 +117,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.txtMaNhanVien);
             this.panel2.Controls.Add(this.labelX1);
             this.panel2.Controls.Add(this.txtHoTen);
@@ -198,6 +200,7 @@
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(57, 20);
             this.txtNam.TabIndex = 320;
+            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             // 
             // txtHinhThuc
             // 
@@ -212,17 +215,6 @@
             this.txtHinhThuc.ReadOnly = true;
             this.txtHinhThuc.Size = new System.Drawing.Size(426, 20);
             this.txtHinhThuc.TabIndex = 319;
-            // 
-            // btnChonHinhThuc
-            // 
-            this.btnChonHinhThuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonHinhThuc.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonHinhThuc.Location = new System.Drawing.Point(579, 77);
-            this.btnChonHinhThuc.Name = "btnChonHinhThuc";
-            this.btnChonHinhThuc.Size = new System.Drawing.Size(28, 27);
-            this.btnChonHinhThuc.TabIndex = 318;
-            this.btnChonHinhThuc.UseVisualStyleBackColor = true;
-            this.btnChonHinhThuc.Click += new System.EventHandler(this.btnChonHinhThucKhenThuong_Click);
             // 
             // labelX5
             // 
@@ -259,6 +251,50 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(619, 47);
             this.panel4.TabIndex = 94;
+            // 
+            // labelX4
+            // 
+            this.labelX4.BackColor = System.Drawing.Color.Transparent;
+            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX4.Location = new System.Drawing.Point(33, 42);
+            this.labelX4.Name = "labelX4";
+            this.labelX4.Size = new System.Drawing.Size(107, 20);
+            this.labelX4.TabIndex = 76;
+            this.labelX4.Text = "Năm khen thưởng";
+            this.labelX4.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // txtLyDo
+            // 
+            // 
+            // 
+            // 
+            this.txtLyDo.Border.Class = "TextBoxBorder";
+            this.txtLyDo.Location = new System.Drawing.Point(146, 121);
+            this.txtLyDo.Multiline = true;
+            this.txtLyDo.Name = "txtLyDo";
+            this.txtLyDo.Size = new System.Drawing.Size(461, 132);
+            this.txtLyDo.TabIndex = 27;
+            // 
+            // labelX3
+            // 
+            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.ForeColor = System.Drawing.Color.Crimson;
+            this.labelX3.Location = new System.Drawing.Point(234, 6);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(150, 23);
+            this.labelX3.TabIndex = 1;
+            this.labelX3.Text = "Quá trình khen thưởng";
+            // 
+            // btnChonHinhThuc
+            // 
+            this.btnChonHinhThuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonHinhThuc.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonHinhThuc.Location = new System.Drawing.Point(579, 77);
+            this.btnChonHinhThuc.Name = "btnChonHinhThuc";
+            this.btnChonHinhThuc.Size = new System.Drawing.Size(28, 27);
+            this.btnChonHinhThuc.TabIndex = 318;
+            this.btnChonHinhThuc.UseVisualStyleBackColor = true;
+            this.btnChonHinhThuc.Click += new System.EventHandler(this.btnChonHinhThucKhenThuong_Click);
             // 
             // btnHuy
             // 
@@ -345,39 +381,6 @@
             this.btnXoa.TabIndex = 37;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // labelX4
-            // 
-            this.labelX4.BackColor = System.Drawing.Color.Transparent;
-            this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX4.Location = new System.Drawing.Point(33, 42);
-            this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(107, 20);
-            this.labelX4.TabIndex = 76;
-            this.labelX4.Text = "Năm khen thưởng";
-            this.labelX4.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // txtLyDo
-            // 
-            // 
-            // 
-            // 
-            this.txtLyDo.Border.Class = "TextBoxBorder";
-            this.txtLyDo.Location = new System.Drawing.Point(146, 121);
-            this.txtLyDo.Multiline = true;
-            this.txtLyDo.Name = "txtLyDo";
-            this.txtLyDo.Size = new System.Drawing.Size(461, 132);
-            this.txtLyDo.TabIndex = 27;
-            // 
-            // labelX3
-            // 
-            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.ForeColor = System.Drawing.Color.Crimson;
-            this.labelX3.Location = new System.Drawing.Point(234, 6);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(150, 23);
-            this.labelX3.TabIndex = 1;
-            this.labelX3.Text = "Quá trình khen thưởng";
             // 
             // FrmNhapQuaTrinhKhenThuong
             // 

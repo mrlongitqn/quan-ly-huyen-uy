@@ -46,7 +46,6 @@
             this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.pnlChucNang = new DevComponents.DotNetBar.PanelEx();
-            this.lblLuongPhuCap = new DevComponents.DotNetBar.LabelX();
             this.lblGiaDinh = new DevComponents.DotNetBar.LabelX();
             this.lblDacDiemLS = new DevComponents.DotNetBar.LabelX();
             this.lblCacQuaTrinh = new DevComponents.DotNetBar.LabelX();
@@ -171,12 +170,14 @@
             // 
             // txtGioiTinh
             // 
+            this.txtGioiTinh.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtGioiTinh.Border.Class = "TextBoxBorder";
             this.txtGioiTinh.Location = new System.Drawing.Point(439, 39);
             this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.ReadOnly = true;
             this.txtGioiTinh.Size = new System.Drawing.Size(46, 20);
             this.txtGioiTinh.TabIndex = 171;
             // 
@@ -268,6 +269,7 @@
             // 
             // txtTenDonViDayDu
             // 
+            this.txtTenDonViDayDu.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -292,6 +294,7 @@
             // 
             // txtMaDonVi
             // 
+            this.txtMaDonVi.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -299,6 +302,7 @@
             this.txtMaDonVi.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMaDonVi.Location = new System.Drawing.Point(146, 15);
             this.txtMaDonVi.Name = "txtMaDonVi";
+            this.txtMaDonVi.ReadOnly = true;
             this.txtMaDonVi.Size = new System.Drawing.Size(200, 20);
             this.txtMaDonVi.TabIndex = 75;
             // 
@@ -316,7 +320,6 @@
             // pnlChucNang
             // 
             this.pnlChucNang.CanvasColor = System.Drawing.SystemColors.Control;
-            this.pnlChucNang.Controls.Add(this.lblLuongPhuCap);
             this.pnlChucNang.Controls.Add(this.lblGiaDinh);
             this.pnlChucNang.Controls.Add(this.lblDacDiemLS);
             this.pnlChucNang.Controls.Add(this.lblCacQuaTrinh);
@@ -333,18 +336,6 @@
             this.pnlChucNang.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.pnlChucNang.Style.GradientAngle = 90;
             this.pnlChucNang.TabIndex = 0;
-            // 
-            // lblLuongPhuCap
-            // 
-            this.lblLuongPhuCap.AutoSize = true;
-            this.lblLuongPhuCap.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLuongPhuCap.ForeColor = System.Drawing.Color.White;
-            this.lblLuongPhuCap.Location = new System.Drawing.Point(476, 5);
-            this.lblLuongPhuCap.Name = "lblLuongPhuCap";
-            this.lblLuongPhuCap.Size = new System.Drawing.Size(94, 15);
-            this.lblLuongPhuCap.TabIndex = 4;
-            this.lblLuongPhuCap.Text = "5. Lương - phụ cấp";
-            this.lblLuongPhuCap.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // lblGiaDinh
             // 
@@ -436,7 +427,6 @@
         private DevComponents.DotNetBar.ButtonX btnGhi;
         private DevComponents.DotNetBar.ButtonX btnThoat;
         private System.Windows.Forms.Panel pnlChangeView;
-        private DevComponents.DotNetBar.LabelX lblLuongPhuCap;
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtSinhNgay;
         private System.Windows.Forms.Button btnChonGioiTinh;
         private DevComponents.DotNetBar.Controls.TextBoxX txtGioiTinh;

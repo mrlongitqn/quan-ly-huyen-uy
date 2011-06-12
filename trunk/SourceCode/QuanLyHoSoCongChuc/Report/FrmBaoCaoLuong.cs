@@ -459,9 +459,8 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btnChonDonVi_Click(object sender, EventArgs e)
         {
-            FrmDanhMuc frm = new FrmDanhMuc();
+            FrmDanhMuc frm = new FrmDanhMuc(true);
             frm.Handler += GetDonVi;
-            frm.EnableButtonChon = true;
             frm.ShowDialog();
         }
         public void GetDonVi(object sender, EventArgs e)

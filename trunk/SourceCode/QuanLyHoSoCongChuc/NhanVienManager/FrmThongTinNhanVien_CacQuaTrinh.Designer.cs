@@ -30,16 +30,17 @@
         {
             this.pnlTomTat = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.pnlChucNang = new System.Windows.Forms.Panel();
+            this.lblLuongPhuCap = new DevComponents.DotNetBar.LabelX();
             this.lblHuyHieuDang = new DevComponents.DotNetBar.LabelX();
             this.lblKyLuat = new DevComponents.DotNetBar.LabelX();
             this.lblKhenThuong = new DevComponents.DotNetBar.LabelX();
             this.lblQuaTrinhDaoTao = new DevComponents.DotNetBar.LabelX();
             this.lblQuaTrinhCongTac = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.btnCapNhatDuLieu = new DevComponents.DotNetBar.ButtonX();
             this.lstvQuaTrinh = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
             this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
+            this.btnCapNhatDuLieu = new DevComponents.DotNetBar.ButtonX();
             this.pnlTomTat.SuspendLayout();
             this.pnlChucNang.SuspendLayout();
             this.SuspendLayout();
@@ -82,6 +83,7 @@
             // pnlChucNang
             // 
             this.pnlChucNang.BackColor = System.Drawing.Color.Transparent;
+            this.pnlChucNang.Controls.Add(this.lblLuongPhuCap);
             this.pnlChucNang.Controls.Add(this.lblHuyHieuDang);
             this.pnlChucNang.Controls.Add(this.lblKyLuat);
             this.pnlChucNang.Controls.Add(this.lblKhenThuong);
@@ -89,8 +91,18 @@
             this.pnlChucNang.Controls.Add(this.lblQuaTrinhCongTac);
             this.pnlChucNang.Location = new System.Drawing.Point(4, 31);
             this.pnlChucNang.Name = "pnlChucNang";
-            this.pnlChucNang.Size = new System.Drawing.Size(132, 120);
+            this.pnlChucNang.Size = new System.Drawing.Size(132, 143);
             this.pnlChucNang.TabIndex = 93;
+            // 
+            // lblLuongPhuCap
+            // 
+            this.lblLuongPhuCap.AutoSize = true;
+            this.lblLuongPhuCap.BackColor = System.Drawing.Color.Transparent;
+            this.lblLuongPhuCap.Location = new System.Drawing.Point(20, 116);
+            this.lblLuongPhuCap.Name = "lblLuongPhuCap";
+            this.lblLuongPhuCap.Size = new System.Drawing.Size(83, 15);
+            this.lblLuongPhuCap.TabIndex = 103;
+            this.lblLuongPhuCap.Text = "Lương - Phụ cấp";
             // 
             // lblHuyHieuDang
             // 
@@ -147,7 +159,7 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
-            this.groupPanel1.Location = new System.Drawing.Point(9, 157);
+            this.groupPanel1.Location = new System.Drawing.Point(11, 176);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(125, 3);
             // 
@@ -172,20 +184,6 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 92;
             // 
-            // btnCapNhatDuLieu
-            // 
-            this.btnCapNhatDuLieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnCapNhatDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCapNhatDuLieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnCapNhatDuLieu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
-            this.btnCapNhatDuLieu.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnCapNhatDuLieu.Location = new System.Drawing.Point(9, 176);
-            this.btnCapNhatDuLieu.Name = "btnCapNhatDuLieu";
-            this.btnCapNhatDuLieu.Size = new System.Drawing.Size(127, 23);
-            this.btnCapNhatDuLieu.TabIndex = 91;
-            this.btnCapNhatDuLieu.Text = "Cập nhật dữ liệu";
-            this.btnCapNhatDuLieu.Click += new System.EventHandler(this.btnCapNhatDuLieu_Click);
-            // 
             // lstvQuaTrinh
             // 
             // 
@@ -193,6 +191,7 @@
             // 
             this.lstvQuaTrinh.Border.Class = "ListViewBorder";
             this.lstvQuaTrinh.FullRowSelect = true;
+            this.lstvQuaTrinh.GridLines = true;
             this.lstvQuaTrinh.Location = new System.Drawing.Point(148, 3);
             this.lstvQuaTrinh.MultiSelect = false;
             this.lstvQuaTrinh.Name = "lstvQuaTrinh";
@@ -212,6 +211,20 @@
             this.labelX21.TabIndex = 84;
             this.labelX21.Text = "Tóm tắt các quá trình";
             this.labelX21.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // btnCapNhatDuLieu
+            // 
+            this.btnCapNhatDuLieu.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnCapNhatDuLieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCapNhatDuLieu.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnCapNhatDuLieu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
+            this.btnCapNhatDuLieu.ImageFixedSize = new System.Drawing.Size(16, 16);
+            this.btnCapNhatDuLieu.Location = new System.Drawing.Point(9, 192);
+            this.btnCapNhatDuLieu.Name = "btnCapNhatDuLieu";
+            this.btnCapNhatDuLieu.Size = new System.Drawing.Size(127, 23);
+            this.btnCapNhatDuLieu.TabIndex = 91;
+            this.btnCapNhatDuLieu.Text = "Cập nhật dữ liệu";
+            this.btnCapNhatDuLieu.Click += new System.EventHandler(this.btnCapNhatDuLieu_Click);
             // 
             // FrmThongTinNhanVien_CacQuaTrinh
             // 
@@ -242,5 +255,6 @@
         private DevComponents.DotNetBar.LabelX lblQuaTrinhDaoTao;
         private DevComponents.DotNetBar.LabelX lblQuaTrinhCongTac;
         private CachedCrystalReport2 cachedCrystalReport21;
+        private DevComponents.DotNetBar.LabelX lblLuongPhuCap;
     }
 }

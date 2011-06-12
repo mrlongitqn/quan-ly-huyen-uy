@@ -489,6 +489,7 @@
             this.columnHeader5});
             this.lstvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstvNhanVien.FullRowSelect = true;
+            this.lstvNhanVien.GridLines = true;
             this.lstvNhanVien.Location = new System.Drawing.Point(0, 0);
             this.lstvNhanVien.MultiSelect = false;
             this.lstvNhanVien.Name = "lstvNhanVien";

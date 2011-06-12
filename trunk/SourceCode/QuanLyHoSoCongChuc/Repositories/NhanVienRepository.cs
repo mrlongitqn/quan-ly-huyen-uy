@@ -145,5 +145,33 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return lstItem;
 		}
 
+        public static List<NhanVien> SearchByTieuChiChung(NhanVienModel nhanvien)
+        {
+            var lst = new List<NhanVien>();
+            foreach (var item in DataContext.Instance.NhanViens)
+            {
+                if (item.MaDonVi == (nhanvien.MaDonVi == "" ? item.MaDonVi : nhanvien.MaDonVi) &&
+                        item.HoTenKhaiSinh.ToUpper().Contains(nhanvien.HoTenKhaiSinh == "" ? item.HoTenKhaiSinh.ToUpper() : nhanvien.HoTenKhaiSinh.ToUpper()) &&
+                        item.MaGioiTinh == (nhanvien.MaGioiTinh == -1 ? item.MaGioiTinh : nhanvien.MaGioiTinh) &&
+                        item.NgaySinh == (nhanvien.NgaySinh == DateTime.MinValue ? item.NgaySinh : nhanvien.NgaySinh) &&
+                        item.QueQuan.ToUpper().Contains(nhanvien.QueQuan == "" ? item.QueQuan.ToUpper() : nhanvien.QueQuan.ToUpper()) &&
+                        item.MaDanToc == (nhanvien.MaDanToc == -1 ? item.MaDanToc : nhanvien.MaDanToc) &&
+                        item.MaTonGiao == (nhanvien.MaTonGiao == -1 ? item.MaTonGiao : nhanvien.MaTonGiao) &&
+                        item.MaBangLyLuanChinhTri == (nhanvien.MaBangLyLuanChinhTri == -1 ? item.MaBangLyLuanChinhTri : nhanvien.MaBangLyLuanChinhTri) &&
+                        item.MaHocHam == (nhanvien.MaHocHam == -1 ? item.MaHocHam : nhanvien.MaHocHam) &&
+                        item.NgayVaoDang == (nhanvien.NgayVaoDang == DateTime.MinValue ? item.NgayVaoDang : nhanvien.NgayVaoDang) &&
+                        item.NgayChinhThuc == (nhanvien.NgayChinhThuc == DateTime.MinValue ? item.NgayChinhThuc : nhanvien.NgayChinhThuc) &&
+                        item.NgaySinh.Value.Year == (nhanvien.TuoiDoi == -1 ? item.NgaySinh.Value.Year : (DateTime.Now.Year - nhanvien.NgaySinh.Year)) &&
+                        item.NgayVaoDang.Value.Year == (nhanvien.TuoiDang == -1 ? item.NgayVaoDang.Value.Year : (DateTime.Now.Year - nhanvien.NgayVaoDang.Year)))
+                {
+                    lst.Add(item);
+                }
+                else
+                {
+
+                }
+            }
+            return lst;
+        }
 	}
 }

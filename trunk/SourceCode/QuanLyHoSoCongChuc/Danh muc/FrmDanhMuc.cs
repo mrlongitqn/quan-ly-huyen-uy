@@ -26,14 +26,13 @@ namespace QuanLyHoSoCongChuc.Danh_muc
     public partial class FrmDanhMuc : Office2007Form
     {
         NhanVienControl m_NhanVienCtrl = new NhanVienControl();
-        public bool EnableButtonChon = false;
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
         // Hidden files are used to store ids 
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaLoaiDonVi;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaPhanLoai;
 
-        public FrmDanhMuc()
+        public FrmDanhMuc(bool EnableButtonChon)
         {
             DataService.OpenConnection();
             InitializeComponent();
@@ -42,6 +41,14 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             btSave.Enabled = false;
             btChon.Enabled = false;
             InitHiddenFields();
+
+            loadTreeView();
+            if (EnableButtonChon)
+            {
+                btChon.Visible = true;
+            }
+            else
+                btChon.Visible = false;
         }
 
         private string m_tagNode = string.Empty;
@@ -53,22 +60,6 @@ namespace QuanLyHoSoCongChuc.Danh_muc
 
         private void FrmReportLuong_Load(object sender, EventArgs e)
         {
-            GlobalVars.PreLoading();
-            
-            init();
-            if (EnableButtonChon)
-            {
-                btChon.Visible = true;
-            }
-            else
-                btChon.Visible = false;
-
-            GlobalVars.PosLoading();
-        }
-
-        private void init()
-        {
-            loadTreeView();
         }
 
         private void loadTreeView()

@@ -30,7 +30,7 @@
         {
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.listViewEx1 = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.lstvData = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,8 +39,8 @@
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxX6 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnChonGDPT = new System.Windows.Forms.Button();
+            this.txtQuanHe = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnChonQuanHe = new System.Windows.Forms.Button();
             this.txtThongTinCaNhan = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.txtNamSinh = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -77,31 +77,33 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
-            this.panel3.Controls.Add(this.listViewEx1);
+            this.panel3.Controls.Add(this.lstvData);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(0, 113);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(212, 219);
             this.panel3.TabIndex = 3;
             // 
-            // listViewEx1
+            // lstvData
             // 
             // 
             // 
             // 
-            this.listViewEx1.Border.Class = "ListViewBorder";
-            this.listViewEx1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstvData.Border.Class = "ListViewBorder";
+            this.lstvData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader2,
             this.columnHeader1});
-            this.listViewEx1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listViewEx1.FullRowSelect = true;
-            this.listViewEx1.Location = new System.Drawing.Point(0, 0);
-            this.listViewEx1.MultiSelect = false;
-            this.listViewEx1.Name = "listViewEx1";
-            this.listViewEx1.Size = new System.Drawing.Size(212, 219);
-            this.listViewEx1.TabIndex = 1;
-            this.listViewEx1.UseCompatibleStateImageBehavior = false;
-            this.listViewEx1.View = System.Windows.Forms.View.Details;
+            this.lstvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstvData.FullRowSelect = true;
+            this.lstvData.GridLines = true;
+            this.lstvData.Location = new System.Drawing.Point(0, 0);
+            this.lstvData.MultiSelect = false;
+            this.lstvData.Name = "lstvData";
+            this.lstvData.Size = new System.Drawing.Size(212, 219);
+            this.lstvData.TabIndex = 1;
+            this.lstvData.UseCompatibleStateImageBehavior = false;
+            this.lstvData.View = System.Windows.Forms.View.Details;
+            this.lstvData.SelectedIndexChanged += new System.EventHandler(this.lstvData_SelectedIndexChanged);
             // 
             // columnHeader2
             // 
@@ -111,12 +113,13 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "Năm";
-            this.columnHeader1.Width = 140;
+            this.columnHeader1.Text = "Họ tên";
+            this.columnHeader1.Width = 150;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.txtMaNhanVien);
             this.panel2.Controls.Add(this.labelX1);
             this.panel2.Controls.Add(this.txtHoTen);
@@ -174,8 +177,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
-            this.panel1.Controls.Add(this.textBoxX6);
-            this.panel1.Controls.Add(this.btnChonGDPT);
+            this.panel1.Controls.Add(this.txtQuanHe);
+            this.panel1.Controls.Add(this.btnChonQuanHe);
             this.panel1.Controls.Add(this.txtThongTinCaNhan);
             this.panel1.Controls.Add(this.labelX8);
             this.panel1.Controls.Add(this.txtNamSinh);
@@ -191,27 +194,28 @@
             this.panel1.Size = new System.Drawing.Size(619, 332);
             this.panel1.TabIndex = 2;
             // 
-            // textBoxX6
+            // txtQuanHe
             // 
             // 
             // 
             // 
-            this.textBoxX6.Border.Class = "TextBoxBorder";
-            this.textBoxX6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxX6.Location = new System.Drawing.Point(106, 42);
-            this.textBoxX6.Name = "textBoxX6";
-            this.textBoxX6.Size = new System.Drawing.Size(200, 20);
-            this.textBoxX6.TabIndex = 311;
+            this.txtQuanHe.Border.Class = "TextBoxBorder";
+            this.txtQuanHe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQuanHe.Location = new System.Drawing.Point(106, 42);
+            this.txtQuanHe.Name = "txtQuanHe";
+            this.txtQuanHe.Size = new System.Drawing.Size(200, 20);
+            this.txtQuanHe.TabIndex = 311;
             // 
-            // btnChonGDPT
+            // btnChonQuanHe
             // 
-            this.btnChonGDPT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonGDPT.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonGDPT.Location = new System.Drawing.Point(312, 37);
-            this.btnChonGDPT.Name = "btnChonGDPT";
-            this.btnChonGDPT.Size = new System.Drawing.Size(28, 27);
-            this.btnChonGDPT.TabIndex = 310;
-            this.btnChonGDPT.UseVisualStyleBackColor = true;
+            this.btnChonQuanHe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonQuanHe.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonQuanHe.Location = new System.Drawing.Point(312, 37);
+            this.btnChonQuanHe.Name = "btnChonQuanHe";
+            this.btnChonQuanHe.Size = new System.Drawing.Size(28, 27);
+            this.btnChonQuanHe.TabIndex = 310;
+            this.btnChonQuanHe.UseVisualStyleBackColor = true;
+            this.btnChonQuanHe.Click += new System.EventHandler(this.btnChonQuanHe_Click);
             // 
             // txtThongTinCaNhan
             // 
@@ -247,6 +251,7 @@
             this.txtNamSinh.Name = "txtNamSinh";
             this.txtNamSinh.Size = new System.Drawing.Size(76, 20);
             this.txtNamSinh.TabIndex = 102;
+            this.txtNamSinh.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNamSinh_KeyPress);
             // 
             // txtHoTenThanNhan
             // 
@@ -314,6 +319,7 @@
             this.btnHuy.Size = new System.Drawing.Size(64, 23);
             this.btnHuy.TabIndex = 48;
             this.btnHuy.Text = "Hủy";
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnGhi
             // 
@@ -328,6 +334,7 @@
             this.btnGhi.Size = new System.Drawing.Size(64, 23);
             this.btnGhi.TabIndex = 47;
             this.btnGhi.Text = "Ghi";
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
             // 
             // btnThoat
             // 
@@ -341,6 +348,7 @@
             this.btnThoat.Size = new System.Drawing.Size(72, 23);
             this.btnThoat.TabIndex = 46;
             this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnSua
             // 
@@ -368,6 +376,7 @@
             this.btnThem.Size = new System.Drawing.Size(64, 23);
             this.btnThem.TabIndex = 44;
             this.btnThem.Text = "Thêm";
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnXoa
             // 
@@ -381,6 +390,7 @@
             this.btnXoa.Size = new System.Drawing.Size(72, 23);
             this.btnXoa.TabIndex = 43;
             this.btnXoa.Text = "Xóa";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // labelX3
             // 
@@ -402,6 +412,8 @@
             this.Name = "FrmNhapQuanHeGiaDinh";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập quan hệ gia đình";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNhapQuanHeGiaDinh_FormClosed);
+            this.Load += new System.EventHandler(this.FrmNhapQuanHeGiaDinh_Load);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -423,7 +435,7 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoTen;
         private DevComponents.DotNetBar.LabelX labelX3;
         private System.Windows.Forms.Panel panel4;
-        private DevComponents.DotNetBar.Controls.ListViewEx listViewEx1;
+        private DevComponents.DotNetBar.Controls.ListViewEx lstvData;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNamSinh;
@@ -433,8 +445,8 @@
         private DevComponents.DotNetBar.LabelX labelX7;
         private DevComponents.DotNetBar.Controls.TextBoxX txtThongTinCaNhan;
         private DevComponents.DotNetBar.LabelX labelX8;
-        private DevComponents.DotNetBar.Controls.TextBoxX textBoxX6;
-        private System.Windows.Forms.Button btnChonGDPT;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtQuanHe;
+        private System.Windows.Forms.Button btnChonQuanHe;
         private DevComponents.DotNetBar.ButtonX btnHuy;
         private DevComponents.DotNetBar.ButtonX btnGhi;
         private DevComponents.DotNetBar.ButtonX btnThoat;

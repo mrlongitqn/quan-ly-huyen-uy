@@ -86,6 +86,7 @@
             this.columnHeader2});
             this.lstvCauHoi.Dock = System.Windows.Forms.DockStyle.Top;
             this.lstvCauHoi.FullRowSelect = true;
+            this.lstvCauHoi.GridLines = true;
             this.lstvCauHoi.Location = new System.Drawing.Point(0, 0);
             this.lstvCauHoi.MultiSelect = false;
             this.lstvCauHoi.Name = "lstvCauHoi";

@@ -145,6 +145,7 @@
             this.columnHeader5});
             this.lstvNhatKySuDung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstvNhatKySuDung.FullRowSelect = true;
+            this.lstvNhatKySuDung.GridLines = true;
             this.lstvNhatKySuDung.Location = new System.Drawing.Point(0, 0);
             this.lstvNhatKySuDung.MultiSelect = false;
             this.lstvNhatKySuDung.Name = "lstvNhatKySuDung";
@@ -191,6 +192,7 @@
             this.columnHeader8});
             this.lstvChucNangSuDung.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstvChucNangSuDung.FullRowSelect = true;
+            this.lstvChucNangSuDung.GridLines = true;
             this.lstvChucNangSuDung.Location = new System.Drawing.Point(0, 0);
             this.lstvChucNangSuDung.MultiSelect = false;
             this.lstvChucNangSuDung.Name = "lstvChucNangSuDung";

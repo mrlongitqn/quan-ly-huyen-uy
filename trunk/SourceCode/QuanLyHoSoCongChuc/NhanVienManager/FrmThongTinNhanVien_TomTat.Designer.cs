@@ -271,6 +271,7 @@
             // 
             // txtChucVu
             // 
+            this.txtChucVu.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -278,6 +279,7 @@
             this.txtChucVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChucVu.Location = new System.Drawing.Point(148, 113);
             this.txtChucVu.Name = "txtChucVu";
+            this.txtChucVu.ReadOnly = true;
             this.txtChucVu.Size = new System.Drawing.Size(200, 20);
             this.txtChucVu.TabIndex = 321;
             // 
@@ -293,6 +295,7 @@
             // 
             // txtLoaiThuongBinh
             // 
+            this.txtLoaiThuongBinh.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -300,11 +303,13 @@
             this.txtLoaiThuongBinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoaiThuongBinh.Location = new System.Drawing.Point(148, 692);
             this.txtLoaiThuongBinh.Name = "txtLoaiThuongBinh";
+            this.txtLoaiThuongBinh.ReadOnly = true;
             this.txtLoaiThuongBinh.Size = new System.Drawing.Size(200, 20);
             this.txtLoaiThuongBinh.TabIndex = 316;
             // 
             // txtTinhTrangSucKhoe
             // 
+            this.txtTinhTrangSucKhoe.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -312,11 +317,13 @@
             this.txtTinhTrangSucKhoe.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTinhTrangSucKhoe.Location = new System.Drawing.Point(148, 666);
             this.txtTinhTrangSucKhoe.Name = "txtTinhTrangSucKhoe";
+            this.txtTinhTrangSucKhoe.ReadOnly = true;
             this.txtTinhTrangSucKhoe.Size = new System.Drawing.Size(200, 20);
             this.txtTinhTrangSucKhoe.TabIndex = 315;
             // 
             // txtHocHam
             // 
+            this.txtHocHam.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -324,11 +331,13 @@
             this.txtHocHam.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHocHam.Location = new System.Drawing.Point(148, 640);
             this.txtHocHam.Name = "txtHocHam";
+            this.txtHocHam.ReadOnly = true;
             this.txtHocHam.Size = new System.Drawing.Size(200, 20);
             this.txtHocHam.TabIndex = 314;
             // 
             // txtHocViCaoNhat
             // 
+            this.txtHocViCaoNhat.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -336,11 +345,13 @@
             this.txtHocViCaoNhat.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHocViCaoNhat.Location = new System.Drawing.Point(148, 614);
             this.txtHocViCaoNhat.Name = "txtHocViCaoNhat";
+            this.txtHocViCaoNhat.ReadOnly = true;
             this.txtHocViCaoNhat.Size = new System.Drawing.Size(200, 20);
             this.txtHocViCaoNhat.TabIndex = 313;
             // 
             // txtNgoaiNgu
             // 
+            this.txtNgoaiNgu.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -348,11 +359,13 @@
             this.txtNgoaiNgu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNgoaiNgu.Location = new System.Drawing.Point(148, 588);
             this.txtNgoaiNgu.Name = "txtNgoaiNgu";
+            this.txtNgoaiNgu.ReadOnly = true;
             this.txtNgoaiNgu.Size = new System.Drawing.Size(200, 20);
             this.txtNgoaiNgu.TabIndex = 312;
             // 
             // txtLyLuanChinhTri
             // 
+            this.txtLyLuanChinhTri.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -360,11 +373,13 @@
             this.txtLyLuanChinhTri.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLyLuanChinhTri.Location = new System.Drawing.Point(148, 562);
             this.txtLyLuanChinhTri.Name = "txtLyLuanChinhTri";
+            this.txtLyLuanChinhTri.ReadOnly = true;
             this.txtLyLuanChinhTri.Size = new System.Drawing.Size(200, 20);
             this.txtLyLuanChinhTri.TabIndex = 311;
             // 
             // txtChuyenMonNghiepVu
             // 
+            this.txtChuyenMonNghiepVu.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -372,11 +387,13 @@
             this.txtChuyenMonNghiepVu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtChuyenMonNghiepVu.Location = new System.Drawing.Point(148, 535);
             this.txtChuyenMonNghiepVu.Name = "txtChuyenMonNghiepVu";
+            this.txtChuyenMonNghiepVu.ReadOnly = true;
             this.txtChuyenMonNghiepVu.Size = new System.Drawing.Size(200, 20);
             this.txtChuyenMonNghiepVu.TabIndex = 310;
             // 
             // txtGiaoDucPhoThong
             // 
+            this.txtGiaoDucPhoThong.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -384,11 +401,13 @@
             this.txtGiaoDucPhoThong.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGiaoDucPhoThong.Location = new System.Drawing.Point(148, 509);
             this.txtGiaoDucPhoThong.Name = "txtGiaoDucPhoThong";
+            this.txtGiaoDucPhoThong.ReadOnly = true;
             this.txtGiaoDucPhoThong.Size = new System.Drawing.Size(200, 20);
             this.txtGiaoDucPhoThong.TabIndex = 309;
             // 
             // txtNgheNghiepTruocKhiDuocTuyenDung
             // 
+            this.txtNgheNghiepTruocKhiDuocTuyenDung.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -396,11 +415,13 @@
             this.txtNgheNghiepTruocKhiDuocTuyenDung.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNgheNghiepTruocKhiDuocTuyenDung.Location = new System.Drawing.Point(591, 223);
             this.txtNgheNghiepTruocKhiDuocTuyenDung.Name = "txtNgheNghiepTruocKhiDuocTuyenDung";
+            this.txtNgheNghiepTruocKhiDuocTuyenDung.ReadOnly = true;
             this.txtNgheNghiepTruocKhiDuocTuyenDung.Size = new System.Drawing.Size(200, 20);
             this.txtNgheNghiepTruocKhiDuocTuyenDung.TabIndex = 308;
             // 
             // txtTonGiao
             // 
+            this.txtTonGiao.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -408,11 +429,13 @@
             this.txtTonGiao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTonGiao.Location = new System.Drawing.Point(591, 198);
             this.txtTonGiao.Name = "txtTonGiao";
+            this.txtTonGiao.ReadOnly = true;
             this.txtTonGiao.Size = new System.Drawing.Size(200, 20);
             this.txtTonGiao.TabIndex = 307;
             // 
             // txtThanhPhanGiaDinh
             // 
+            this.txtThanhPhanGiaDinh.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -420,11 +443,13 @@
             this.txtThanhPhanGiaDinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtThanhPhanGiaDinh.Location = new System.Drawing.Point(148, 224);
             this.txtThanhPhanGiaDinh.Name = "txtThanhPhanGiaDinh";
+            this.txtThanhPhanGiaDinh.ReadOnly = true;
             this.txtThanhPhanGiaDinh.Size = new System.Drawing.Size(200, 20);
             this.txtThanhPhanGiaDinh.TabIndex = 306;
             // 
             // txtDanToc
             // 
+            this.txtDanToc.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -432,6 +457,7 @@
             this.txtDanToc.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDanToc.Location = new System.Drawing.Point(148, 198);
             this.txtDanToc.Name = "txtDanToc";
+            this.txtDanToc.ReadOnly = true;
             this.txtDanToc.Size = new System.Drawing.Size(200, 20);
             this.txtDanToc.TabIndex = 305;
             // 
@@ -1215,6 +1241,7 @@
             // 
             // txtQueQuan
             // 
+            this.txtQueQuan.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -1222,11 +1249,13 @@
             this.txtQueQuan.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQueQuan.Location = new System.Drawing.Point(148, 87);
             this.txtQueQuan.Name = "txtQueQuan";
+            this.txtQueQuan.ReadOnly = true;
             this.txtQueQuan.Size = new System.Drawing.Size(508, 20);
             this.txtQueQuan.TabIndex = 198;
             // 
             // txtNoiSinh
             // 
+            this.txtNoiSinh.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -1234,6 +1263,7 @@
             this.txtNoiSinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNoiSinh.Location = new System.Drawing.Point(148, 61);
             this.txtNoiSinh.Name = "txtNoiSinh";
+            this.txtNoiSinh.ReadOnly = true;
             this.txtNoiSinh.Size = new System.Drawing.Size(508, 20);
             this.txtNoiSinh.TabIndex = 197;
             // 

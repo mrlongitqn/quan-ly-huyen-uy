@@ -41,7 +41,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtLoaiHuyHieu = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnChonHuyHieu = new System.Windows.Forms.Button();
             this.txtSoHuyHieu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -50,6 +49,7 @@
             this.txtGhiChu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnChonHuyHieu = new System.Windows.Forms.Button();
             this.btnHuy = new DevComponents.DotNetBar.ButtonX();
             this.btnGhi = new DevComponents.DotNetBar.ButtonX();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
@@ -95,6 +95,7 @@
             this.columnHeader1});
             this.lstvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstvData.FullRowSelect = true;
+            this.lstvData.GridLines = true;
             this.lstvData.Location = new System.Drawing.Point(0, 0);
             this.lstvData.MultiSelect = false;
             this.lstvData.Name = "lstvData";
@@ -118,6 +119,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.txtMaNhanVien);
             this.panel2.Controls.Add(this.labelX1);
             this.panel2.Controls.Add(this.txtHoTen);
@@ -202,9 +204,11 @@
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(57, 20);
             this.txtNam.TabIndex = 312;
+            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             // 
             // txtLoaiHuyHieu
             // 
+            this.txtLoaiHuyHieu.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -212,19 +216,9 @@
             this.txtLoaiHuyHieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtLoaiHuyHieu.Location = new System.Drawing.Point(143, 71);
             this.txtLoaiHuyHieu.Name = "txtLoaiHuyHieu";
+            this.txtLoaiHuyHieu.ReadOnly = true;
             this.txtLoaiHuyHieu.Size = new System.Drawing.Size(200, 20);
             this.txtLoaiHuyHieu.TabIndex = 311;
-            // 
-            // btnChonHuyHieu
-            // 
-            this.btnChonHuyHieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonHuyHieu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonHuyHieu.Location = new System.Drawing.Point(349, 66);
-            this.btnChonHuyHieu.Name = "btnChonHuyHieu";
-            this.btnChonHuyHieu.Size = new System.Drawing.Size(28, 27);
-            this.btnChonHuyHieu.TabIndex = 310;
-            this.btnChonHuyHieu.UseVisualStyleBackColor = true;
-            this.btnChonHuyHieu.Click += new System.EventHandler(this.btnChonHuyHieu_Click);
             // 
             // txtSoHuyHieu
             // 
@@ -316,6 +310,17 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(619, 47);
             this.panel4.TabIndex = 94;
+            // 
+            // btnChonHuyHieu
+            // 
+            this.btnChonHuyHieu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonHuyHieu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonHuyHieu.Location = new System.Drawing.Point(349, 66);
+            this.btnChonHuyHieu.Name = "btnChonHuyHieu";
+            this.btnChonHuyHieu.Size = new System.Drawing.Size(28, 27);
+            this.btnChonHuyHieu.TabIndex = 310;
+            this.btnChonHuyHieu.UseVisualStyleBackColor = true;
+            this.btnChonHuyHieu.Click += new System.EventHandler(this.btnChonHuyHieu_Click);
             // 
             // btnHuy
             // 

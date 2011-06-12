@@ -40,9 +40,7 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtNoiDungViPham = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnChonNoiDungViPham = new System.Windows.Forms.Button();
             this.txtHinhThuc = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.btnChonHinhThuc = new System.Windows.Forms.Button();
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -51,6 +49,8 @@
             this.txtLyDo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnChonNoiDungViPham = new System.Windows.Forms.Button();
+            this.btnChonHinhThuc = new System.Windows.Forms.Button();
             this.btnHuy = new DevComponents.DotNetBar.ButtonX();
             this.btnGhi = new DevComponents.DotNetBar.ButtonX();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
@@ -96,6 +96,7 @@
             this.columnHeader1});
             this.lstvData.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstvData.FullRowSelect = true;
+            this.lstvData.GridLines = true;
             this.lstvData.Location = new System.Drawing.Point(0, 0);
             this.lstvData.MultiSelect = false;
             this.lstvData.Name = "lstvData";
@@ -119,6 +120,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(194)))), ((int)(((byte)(217)))), ((int)(((byte)(247)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel2.Controls.Add(this.txtMaNhanVien);
             this.panel2.Controls.Add(this.labelX1);
             this.panel2.Controls.Add(this.txtHoTen);
@@ -208,17 +210,6 @@
             this.txtNoiDungViPham.Size = new System.Drawing.Size(426, 20);
             this.txtNoiDungViPham.TabIndex = 323;
             // 
-            // btnChonNoiDungViPham
-            // 
-            this.btnChonNoiDungViPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonNoiDungViPham.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonNoiDungViPham.Location = new System.Drawing.Point(577, 229);
-            this.btnChonNoiDungViPham.Name = "btnChonNoiDungViPham";
-            this.btnChonNoiDungViPham.Size = new System.Drawing.Size(28, 27);
-            this.btnChonNoiDungViPham.TabIndex = 322;
-            this.btnChonNoiDungViPham.UseVisualStyleBackColor = true;
-            this.btnChonNoiDungViPham.Click += new System.EventHandler(this.btnChonNoiDungViPham_Click);
-            // 
             // txtHinhThuc
             // 
             this.txtHinhThuc.BackColor = System.Drawing.Color.White;
@@ -233,17 +224,6 @@
             this.txtHinhThuc.Size = new System.Drawing.Size(426, 20);
             this.txtHinhThuc.TabIndex = 321;
             // 
-            // btnChonHinhThuc
-            // 
-            this.btnChonHinhThuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonHinhThuc.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonHinhThuc.Location = new System.Drawing.Point(577, 65);
-            this.btnChonHinhThuc.Name = "btnChonHinhThuc";
-            this.btnChonHinhThuc.Size = new System.Drawing.Size(28, 27);
-            this.btnChonHinhThuc.TabIndex = 320;
-            this.btnChonHinhThuc.UseVisualStyleBackColor = true;
-            this.btnChonHinhThuc.Click += new System.EventHandler(this.btnChonHinhThuc_Click);
-            // 
             // txtNam
             // 
             // 
@@ -254,6 +234,7 @@
             this.txtNam.Name = "txtNam";
             this.txtNam.Size = new System.Drawing.Size(57, 20);
             this.txtNam.TabIndex = 313;
+            this.txtNam.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNam_KeyPress);
             // 
             // labelX6
             // 
@@ -334,6 +315,28 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(619, 47);
             this.panel4.TabIndex = 94;
+            // 
+            // btnChonNoiDungViPham
+            // 
+            this.btnChonNoiDungViPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonNoiDungViPham.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonNoiDungViPham.Location = new System.Drawing.Point(577, 229);
+            this.btnChonNoiDungViPham.Name = "btnChonNoiDungViPham";
+            this.btnChonNoiDungViPham.Size = new System.Drawing.Size(28, 27);
+            this.btnChonNoiDungViPham.TabIndex = 322;
+            this.btnChonNoiDungViPham.UseVisualStyleBackColor = true;
+            this.btnChonNoiDungViPham.Click += new System.EventHandler(this.btnChonNoiDungViPham_Click);
+            // 
+            // btnChonHinhThuc
+            // 
+            this.btnChonHinhThuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonHinhThuc.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonHinhThuc.Location = new System.Drawing.Point(577, 65);
+            this.btnChonHinhThuc.Name = "btnChonHinhThuc";
+            this.btnChonHinhThuc.Size = new System.Drawing.Size(28, 27);
+            this.btnChonHinhThuc.TabIndex = 320;
+            this.btnChonHinhThuc.UseVisualStyleBackColor = true;
+            this.btnChonHinhThuc.Click += new System.EventHandler(this.btnChonHinhThuc_Click);
             // 
             // btnHuy
             // 
