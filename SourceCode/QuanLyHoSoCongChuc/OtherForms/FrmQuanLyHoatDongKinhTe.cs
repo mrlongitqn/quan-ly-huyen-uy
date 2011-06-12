@@ -18,19 +18,19 @@ namespace QuanLyHoSoCongChuc.OtherForms
     /// <summary>
     /// tuansl added: manage loai don vi corresponding with menus in app
     /// </summary>
-    public partial class FrmQuanLyNgachCongChuc: DevComponents.DotNetBar.Office2007Form
+    public partial class FrmQuanLyHoatDongKinhTe: DevComponents.DotNetBar.Office2007Form
     {
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
         // ---------------- E -----------------
 
-        public FrmQuanLyNgachCongChuc()
+        public FrmQuanLyHoatDongKinhTe()
         {
             InitializeComponent();
             InitGridView();
         }
 
-        private void FrmQuanLyNgachCongChuc_Load(object sender, EventArgs e)
+        private void FrmQuanLyHoatDongKinhTe_Load(object sender, EventArgs e)
         {
             LoadData();
             // No choose any item
@@ -107,9 +107,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            txtMaNgachCongChuc.Text = "";
-            txtTenNgachCongChuc.Text = "";
-            txtMaNgachCongChuc.ReadOnly = false;
+            txtMaHoatDongKinhTe.Text = "";
+            txtTenHoatDongKinhTe.Text = "";
         }
 
         private void dtgvDataList_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -118,9 +117,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
                 return;
             btnChon.Enabled = true;
             var selectedItem = dtgvDataList.SelectedRows[0];
-            txtMaNgachCongChuc.Text = ((NgachCongChuc)selectedItem.DataBoundItem).MaNgachCongChuc.ToString();
-            txtTenNgachCongChuc.Text = ((NgachCongChuc)selectedItem.DataBoundItem).TenNgachCongChuc.ToString();
-            txtMaNgachCongChuc.ReadOnly = true;
+            txtMaHoatDongKinhTe.Text = ((HoatDongKinhTe)selectedItem.DataBoundItem).MaHoatDongKinhTe.ToString();
+            txtTenHoatDongKinhTe.Text = ((HoatDongKinhTe)selectedItem.DataBoundItem).TenHoatDongKinhTe.ToString();
         }
 
         private void btnChon_Click(object sender, EventArgs e)
@@ -131,8 +129,8 @@ namespace QuanLyHoSoCongChuc.OtherForms
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            var id = txtMaNgachCongChuc.Text;
-            var name = NgachCongChucRepository.SelectByID(id).TenNgachCongChuc;
+            var id = int.Parse(txtMaHoatDongKinhTe.Text);
+            var name = HoatDongKinhTeRepository.SelectByID(id).TenHoatDongKinhTe;
             TransferDataInfo(this, new MyEvent(id + "#" + name));
         }
 
@@ -146,16 +144,16 @@ namespace QuanLyHoSoCongChuc.OtherForms
 
             DataGridViewTextBoxColumn objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Mã ngạch công chức",
-                DataPropertyName = "MaNgachCongChuc",
+                HeaderText = "Mã hoạt động kinh tế",
+                DataPropertyName = "MaHoatDongKinhTe",
                 Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.3)
             };
             dtgvDataList.Columns.Add(objColumn);
 
             objColumn = new DataGridViewTextBoxColumn
             {
-                HeaderText = "Tên ngạch công chức",
-                DataPropertyName = "TenNgachCongChuc",
+                HeaderText = "Tên hoạt động kinh tế",
+                DataPropertyName = "TenHoatDongKinhTe",
                 Width = (int)((dtgvDataList.Width - dtgvDataList.RowHeadersWidth) * 0.7 - 1)
             };
             dtgvDataList.Columns.Add(objColumn);
@@ -166,7 +164,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         /// </summary>
         private void LoadData()
         {
-            var lstItem = NgachCongChucRepository.SelectAll();
+            var lstItem = HoatDongKinhTeRepository.SelectAll();
             dtgvDataList.DataSource = lstItem;
             dtgvDataList.ClearSelection();
         }
@@ -178,28 +176,20 @@ namespace QuanLyHoSoCongChuc.OtherForms
         /// <returns></returns>
         private bool ValidateInput(EnumUpdateMode mode, ref string errorText)
         {
-            // Mode update -> checking MaNgachCongChuc is exists on textbox
+            // Mode update -> checking MaHoatDongKinhTe is exists on textbox
             if (mode == EnumUpdateMode.UPDATE || mode == EnumUpdateMode.DELETE || mode == EnumUpdateMode.CHOOSING)
             {
-                if (txtMaNgachCongChuc.Text == "")
+                if (txtMaHoatDongKinhTe.Text == "")
                 {
-                    errorText = "Vui lòng chọn ngạch công chức";
-                    return false;
-                }
-            }
-            else if(mode == EnumUpdateMode.INSERT)
-            {
-                if (txtMaNgachCongChuc.Text == "")
-                {
-                    errorText = "Vui lòng nhập mã ngạch công chức";
+                    errorText = "Vui lòng chọn hoạt động kinh tế";
                     return false;
                 }
             }
             if (mode != EnumUpdateMode.DELETE)
             {
-                if (txtTenNgachCongChuc.Text == "")
+                if (txtTenHoatDongKinhTe.Text == "")
                 {
-                    errorText = "Vui lòng nhập tên ngạch công chức";
+                    errorText = "Vui lòng nhập tên hoạt động kinh tế";
                     return false;
                 }
             }
@@ -215,12 +205,11 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                var item = new NgachCongChuc
+                var item = new HoatDongKinhTe
                 {
-                    MaNgachCongChuc = txtMaNgachCongChuc.Text,
-                    TenNgachCongChuc = txtTenNgachCongChuc.Text
+                    TenHoatDongKinhTe = txtTenHoatDongKinhTe.Text
                 };
-                if (!NgachCongChucRepository.Insert(item))
+                if (!HoatDongKinhTeRepository.Insert(item))
                 {
                     return false;
                 }
@@ -240,9 +229,9 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                var item = NgachCongChucRepository.SelectByID(txtMaNgachCongChuc.Text);
-                item.TenNgachCongChuc = txtTenNgachCongChuc.Text;
-                return NgachCongChucRepository.Save();
+                var item = HoatDongKinhTeRepository.SelectByID(int.Parse(txtMaHoatDongKinhTe.Text));
+                item.TenHoatDongKinhTe = txtTenHoatDongKinhTe.Text;
+                return HoatDongKinhTeRepository.Save();
             }
             catch
             {
@@ -258,7 +247,7 @@ namespace QuanLyHoSoCongChuc.OtherForms
         {
             try
             {
-                return NgachCongChucRepository.Delete(txtMaNgachCongChuc.Text);
+                return HoatDongKinhTeRepository.Delete(int.Parse(txtMaHoatDongKinhTe.Text));
             }
             catch
             {

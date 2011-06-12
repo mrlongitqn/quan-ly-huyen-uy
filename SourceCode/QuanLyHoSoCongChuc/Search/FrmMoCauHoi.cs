@@ -32,11 +32,15 @@ namespace QuanLyHoSoCongChuc.Search
         {
             if (lstvCauHoi.SelectedItems.Count > 0)
             {
+                // Show waiting form
                 GlobalVars.PreLoading();
+                //------- E ---------
 
                 TransferDataInfo(sender, new MyQueryEvent((CauHoiNguoiDung)lstvCauHoi.SelectedItems[0].Tag));
 
+                // Pos waiting form
                 GlobalVars.PosLoading();
+                //------- E ---------
             }
             else
             {
@@ -99,11 +103,15 @@ namespace QuanLyHoSoCongChuc.Search
         {
             if (lstvCauHoi.SelectedItems.Count > 0)
             {
+                // Show waiting form
                 GlobalVars.PreLoading();
+                //------- E ---------
 
                 TransferDataInfo(sender, new MyQueryEvent((CauHoiNguoiDung)lstvCauHoi.SelectedItems[0].Tag));
 
+                // Hide waiting form
                 GlobalVars.PosLoading();
+                //------- E ---------
             }
             else
             {

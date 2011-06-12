@@ -252,6 +252,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                     if (QuaTrinhCongTacRepository.Delete(int.Parse(txtMaQuaTrinhCongTac.Text)))
                     {
                         MessageBox.Show("Xóa dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Updated = true;
                         EraseTextboxes();
                         txtMaQuaTrinhCongTac.Text = "";
                         LoadData();

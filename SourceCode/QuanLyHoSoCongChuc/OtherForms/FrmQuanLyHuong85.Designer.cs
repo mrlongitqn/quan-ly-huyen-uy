@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
@@ -179,7 +179,6 @@
             // 
             // 
             this.txtMaHuong85.Border.Class = "TextBoxBorder";
-            this.txtMaHuong85.Enabled = false;
             this.txtMaHuong85.Location = new System.Drawing.Point(137, 14);
             this.txtMaHuong85.Name = "txtMaHuong85";
             this.txtMaHuong85.Size = new System.Drawing.Size(163, 20);
@@ -232,14 +231,14 @@
             this.dtgvDataList.AllowUserToAddRows = false;
             this.dtgvDataList.BackgroundColor = System.Drawing.Color.White;
             this.dtgvDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvDataList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvDataList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvDataList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDataList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvDataList.Location = new System.Drawing.Point(0, 0);
@@ -290,7 +289,7 @@
             this.btnChon.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Sign_Select_icon;
             this.btnChon.Name = "btnChon";
             this.btnChon.RightToLeftAutoMirrorImage = true;
-            this.btnChon.Size = new System.Drawing.Size(36, 33);
+            this.btnChon.Size = new System.Drawing.Size(37, 33);
             this.btnChon.Text = "Chọn";
             this.btnChon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
@@ -305,7 +304,7 @@
             this.btnReset.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Eraser_icon;
             this.btnReset.Name = "btnReset";
             this.btnReset.RightToLeftAutoMirrorImage = true;
-            this.btnReset.Size = new System.Drawing.Size(55, 33);
+            this.btnReset.Size = new System.Drawing.Size(57, 33);
             this.btnReset.Text = "Nhập mới";
             this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -320,7 +319,7 @@
             this.btnThemMoi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_01;
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.RightToLeftAutoMirrorImage = true;
-            this.btnThemMoi.Size = new System.Drawing.Size(37, 33);
+            this.btnThemMoi.Size = new System.Drawing.Size(39, 33);
             this.btnThemMoi.Text = "Thêm";
             this.btnThemMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
@@ -330,7 +329,7 @@
             this.btnXoa.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_29;
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.RightToLeftAutoMirrorImage = true;
-            this.btnXoa.Size = new System.Drawing.Size(29, 33);
+            this.btnXoa.Size = new System.Drawing.Size(30, 33);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);

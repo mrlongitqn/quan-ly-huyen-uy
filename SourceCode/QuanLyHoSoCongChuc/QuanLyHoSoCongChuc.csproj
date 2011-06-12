@@ -226,6 +226,24 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="NhanVienManager\FrmNhapLuongPhuCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVienManager\FrmNhapLuongPhuCap.Designer.cs">
+      <DependentUpon>FrmNhapLuongPhuCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyNgachCongChuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyNgachCongChuc.Designer.cs">
+      <DependentUpon>FrmQuanLyNgachCongChuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHoatDongKinhTe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHoatDongKinhTe.Designer.cs">
+      <DependentUpon>FrmQuanLyHoatDongKinhTe.cs</DependentUpon>
+    </Compile>
     <Compile Include="OtherForms\FrmQuanLyLoaiHuyHieu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -488,12 +506,6 @@
     </Compile>
     <Compile Include="FrmLoading.Designer.cs">
       <DependentUpon>FrmLoading.cs</DependentUpon>
-    </Compile>
-    <Compile Include="NhanVienManager\FrmThongTinNhanVien_LuongPhuCap.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhanVienManager\FrmThongTinNhanVien_LuongPhuCap.Designer.cs">
-      <DependentUpon>FrmThongTinNhanVien_LuongPhuCap.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVienManager\FrmNhapQuanHeGiaDinh.cs">
       <SubType>Form</SubType>
@@ -801,12 +813,6 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherForms\FrmQuanLyNgachCongChuc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmQuanLyNgachCongChuc.Designer.cs">
-      <DependentUpon>FrmQuanLyNgachCongChuc.cs</DependentUpon>
-    </Compile>
     <Compile Include="OtherForms\FrmQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -858,6 +864,15 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVienManager\FrmNhapLuongPhuCap.resx">
+      <DependentUpon>FrmNhapLuongPhuCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyNgachCongChuc.resx">
+      <DependentUpon>FrmQuanLyNgachCongChuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyHoatDongKinhTe.resx">
+      <DependentUpon>FrmQuanLyHoatDongKinhTe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\FrmQuanLyLoaiHuyHieu.resx">
       <DependentUpon>FrmQuanLyLoaiHuyHieu.cs</DependentUpon>
@@ -987,10 +1002,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmQuanLyNgachCongChuc.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmQuanLyNgachCongChuc.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\FrmQuanLyNhanVien.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmQuanLyNhanVien.cs</DependentUpon>
@@ -1002,9 +1013,6 @@
     <EmbeddedResource Include="FrmThongTinLienHe.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmThongTinLienHe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NhanVienManager\FrmThongTinNhanVien_LuongPhuCap.resx">
-      <DependentUpon>FrmThongTinNhanVien_LuongPhuCap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienManager\FrmNhapQuanHeGiaDinh.resx">
       <DependentUpon>FrmNhapQuanHeGiaDinh.cs</DependentUpon>

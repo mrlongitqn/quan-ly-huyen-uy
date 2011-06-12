@@ -6,15 +6,18 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using DevComponents.DotNetBar;
-using QuanLyHoSoCongChuc.Models;
-using QuanLyHoSoCongChuc.Repositories;
-using QuanLyHoSoCongChuc.Utils;
-using QuanLyHoSoCongChuc.Danh_muc;
-using QuanLyHoSoCongChuc.OtherForms;
-using System.IO;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
+    #region Using
+    using QuanLyHoSoCongChuc.Models;
+    using QuanLyHoSoCongChuc.Repositories;
+    using QuanLyHoSoCongChuc.Utils;
+    using QuanLyHoSoCongChuc.Danh_muc;
+    using QuanLyHoSoCongChuc.OtherForms;
+    using System.IO;
+    #endregion
+
     /// <summary>
     /// tuansl added: manage sumary info of nhanvien
     /// </summary>

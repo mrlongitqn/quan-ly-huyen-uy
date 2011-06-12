@@ -26,7 +26,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             QUATRINHDAOTAO,
             KHENTHUONG,
             KYLUAT,
-            HUYHIEU
+            HUYHIEU,
+            LUONGPHUCAP
         }
         private NhanVien _nhanvien;
         private Color imgCurrentNavImage;
@@ -62,6 +63,10 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             lblHuyHieuDang.MouseEnter += new EventHandler(NavigationChildControl_MouseEnter);
             lblHuyHieuDang.MouseLeave += new EventHandler(NavigationChildControl_MouseLeave);
             lblHuyHieuDang.MouseUp += new MouseEventHandler(NavigationChildControl_MouseUp);
+
+            lblLuongPhuCap.MouseEnter += new EventHandler(NavigationChildControl_MouseEnter);
+            lblLuongPhuCap.MouseLeave += new EventHandler(NavigationChildControl_MouseLeave);
+            lblLuongPhuCap.MouseUp += new MouseEventHandler(NavigationChildControl_MouseUp);
         }
 
         private void NavigationChildControl_MouseEnter(Object sender, EventArgs e)
@@ -141,6 +146,13 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                     lstvQuaTrinh.Columns.Insert(1, "Năm", 50, HorizontalAlignment.Center);
                     lstvQuaTrinh.Columns.Insert(2, "Loại", 570);
                     break;
+
+                case EnumCacQuaTrinh.LUONGPHUCAP:
+                    lstvQuaTrinh.Columns.Clear();
+                    lstvQuaTrinh.Columns.Insert(0, "STT", 40, HorizontalAlignment.Center);
+                    lstvQuaTrinh.Columns.Insert(1, "Ngày/Tháng/Năm", 120, HorizontalAlignment.Center);
+                    lstvQuaTrinh.Columns.Insert(2, "Ngạch công chức", 500);
+                    break;
             }
         }
 
@@ -215,6 +227,20 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                                 TypeOfQuaTrinh = EnumCacQuaTrinh.HUYHIEU;
                                 InitListView();
                                 LoadHuyHieu();
+                            }
+                            else
+                            {
+                                objControl.ForeColor = SystemColors.ControlText;
+                            }
+                            break;
+
+                        case "lblLuongPhuCap":
+                            if (Shortcut == "lblLuongPhuCap")
+                            {
+                                objControl.ForeColor = Color.Crimson;
+                                TypeOfQuaTrinh = EnumCacQuaTrinh.LUONGPHUCAP;
+                                InitListView();
+                                LoadLuongPhuCap();
                             }
                             else
                             {
@@ -321,6 +347,24 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         }
 
         /// <summary>
+        /// Load qua trinh ky luat
+        /// </summary>
+        public void LoadLuongPhuCap()
+        {
+            var lstItem = LuongPhuCapRepository.SelectByMaNhanVien(_nhanvien.MaNhanVien);
+            lstvQuaTrinh.Items.Clear();
+            for (int i = 0; i < lstItem.Count; i++)
+            {
+                var objListViewItem = new ListViewItem();
+                objListViewItem.Tag = lstItem[i];
+                objListViewItem.Text = (i + 1).ToString();
+                objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayThangNam.Value));
+                objListViewItem.SubItems.Add(lstItem[i].NgachCongChuc.TenNgachCongChuc);
+                lstvQuaTrinh.Items.Add(objListViewItem);
+            }
+        }
+
+        /// <summary>
         /// Get update status after show form thongtinnhanvien
         /// </summary>
         /// <param name="sender"></param>
@@ -381,6 +425,20 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
+        public void GetUpdatedState_LuongPhuCap(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            if (eventType.Data == "true")
+            {
+                LoadLuongPhuCap();
+            }
+        }
+
+        /// <summary>
+        /// Get update status after show form thongtinnhanvien
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void GetUpdatedState_QTCongTac(object sender, EventArgs e)
         {
             var eventType = (MyEvent)e;
@@ -422,6 +480,12 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                     FrmNhapHuyHieuDaDuocTang frm5 = new FrmNhapHuyHieuDaDuocTang(_nhanvien);
                     frm5.Handler += GetUpdatedState_HuyHieu;
                     frm5.ShowDialog();
+                    break;
+
+                case EnumCacQuaTrinh.LUONGPHUCAP:
+                    FrmNhapLuongPhuCap frm6 = new FrmNhapLuongPhuCap(_nhanvien);
+                    frm6.Handler += GetUpdatedState_LuongPhuCap;
+                    frm6.ShowDialog();
                     break;
             }
         }

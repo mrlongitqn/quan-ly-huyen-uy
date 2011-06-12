@@ -1,6 +1,6 @@
 ﻿namespace QuanLyHoSoCongChuc.OtherForms
 {
-    partial class FrmQuanLyNgachCongChuc
+    partial class FrmQuanLyHoatDongKinhTe
     {
         /// <summary>
         /// Required designer variable.
@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.txtTenNgachCongChuc = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtMaNgachCongChuc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtTenHoatDongKinhTe = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaHoatDongKinhTe = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dtgvDataList = new DevComponents.DotNetBar.Controls.DataGridViewX();
@@ -89,7 +89,7 @@
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(492, 52);
             this.labelX3.TabIndex = 1;
-            this.labelX3.Text = "NGẠCH CÔNG CHỨC";
+            this.labelX3.Text = "HOẠT ĐỘNG KINH TẾ";
             this.labelX3.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // panelEx2
@@ -116,8 +116,8 @@
             this.groupPanel2.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
             this.groupPanel2.Controls.Add(this.labelX1);
             this.groupPanel2.Controls.Add(this.labelX2);
-            this.groupPanel2.Controls.Add(this.txtTenNgachCongChuc);
-            this.groupPanel2.Controls.Add(this.txtMaNgachCongChuc);
+            this.groupPanel2.Controls.Add(this.txtTenHoatDongKinhTe);
+            this.groupPanel2.Controls.Add(this.txtMaHoatDongKinhTe);
             this.groupPanel2.Location = new System.Drawing.Point(77, 6);
             this.groupPanel2.Name = "groupPanel2";
             this.groupPanel2.Size = new System.Drawing.Size(334, 92);
@@ -142,47 +142,49 @@
             this.groupPanel2.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel2.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel2.TabIndex = 1;
-            this.groupPanel2.Text = "Thông tin ngạch công chức";
+            this.groupPanel2.Text = "Thông tin hoạt động kinh tế";
             // 
             // labelX1
             // 
             this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(16, 11);
+            this.labelX1.Location = new System.Drawing.Point(30, 11);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(103, 23);
+            this.labelX1.Size = new System.Drawing.Size(89, 23);
             this.labelX1.TabIndex = 20;
-            this.labelX1.Text = "Mã ngạch công chức";
+            this.labelX1.Text = "Mã hoạt động kinh tế";
             // 
             // labelX2
             // 
             this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.Location = new System.Drawing.Point(16, 37);
+            this.labelX2.Location = new System.Drawing.Point(30, 37);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(105, 23);
+            this.labelX2.Size = new System.Drawing.Size(89, 23);
             this.labelX2.TabIndex = 16;
-            this.labelX2.Text = "Tên ngạch công chức";
+            this.labelX2.Text = "Tên hoạt động kinh tế";
             // 
-            // txtTenNgachCongChuc
-            // 
-            // 
-            // 
-            // 
-            this.txtTenNgachCongChuc.Border.Class = "TextBoxBorder";
-            this.txtTenNgachCongChuc.Location = new System.Drawing.Point(137, 40);
-            this.txtTenNgachCongChuc.Name = "txtTenNgachCongChuc";
-            this.txtTenNgachCongChuc.Size = new System.Drawing.Size(163, 20);
-            this.txtTenNgachCongChuc.TabIndex = 2;
-            // 
-            // txtMaNgachCongChuc
+            // txtTenHoatDongKinhTe
             // 
             // 
             // 
             // 
-            this.txtMaNgachCongChuc.Border.Class = "TextBoxBorder";
-            this.txtMaNgachCongChuc.Location = new System.Drawing.Point(137, 14);
-            this.txtMaNgachCongChuc.Name = "txtMaNgachCongChuc";
-            this.txtMaNgachCongChuc.Size = new System.Drawing.Size(163, 20);
-            this.txtMaNgachCongChuc.TabIndex = 1;
+            this.txtTenHoatDongKinhTe.Border.Class = "TextBoxBorder";
+            this.txtTenHoatDongKinhTe.Location = new System.Drawing.Point(137, 40);
+            this.txtTenHoatDongKinhTe.Name = "txtTenHoatDongKinhTe";
+            this.txtTenHoatDongKinhTe.Size = new System.Drawing.Size(163, 20);
+            this.txtTenHoatDongKinhTe.TabIndex = 2;
+            // 
+            // txtMaHoatDongKinhTe
+            // 
+            // 
+            // 
+            // 
+            this.txtMaHoatDongKinhTe.Border.Class = "TextBoxBorder";
+            this.txtMaHoatDongKinhTe.Enabled = false;
+            this.txtMaHoatDongKinhTe.Location = new System.Drawing.Point(137, 14);
+            this.txtMaHoatDongKinhTe.Name = "txtMaHoatDongKinhTe";
+            this.txtMaHoatDongKinhTe.ReadOnly = true;
+            this.txtMaHoatDongKinhTe.Size = new System.Drawing.Size(163, 20);
+            this.txtMaHoatDongKinhTe.TabIndex = 1;
             // 
             // groupPanel1
             // 
@@ -215,7 +217,7 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 25;
-            this.groupPanel1.Text = "Danh sách ngạch công chức";
+            this.groupPanel1.Text = "Danh sách hoạt động kinh tế";
             // 
             // panel2
             // 
@@ -231,14 +233,14 @@
             this.dtgvDataList.AllowUserToAddRows = false;
             this.dtgvDataList.BackgroundColor = System.Drawing.Color.White;
             this.dtgvDataList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvDataList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvDataList.DefaultCellStyle = dataGridViewCellStyle1;
             this.dtgvDataList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvDataList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.dtgvDataList.Location = new System.Drawing.Point(0, 0);
@@ -359,7 +361,7 @@
             this.btnThoat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
-            // FrmQuanLyNgachCongChuc
+            // FrmQuanLyHoatDongKinhTe
             // 
             this.ClientSize = new System.Drawing.Size(492, 528);
             this.Controls.Add(this.groupPanel1);
@@ -367,10 +369,10 @@
             this.Controls.Add(this.panelEx1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmQuanLyNgachCongChuc";
+            this.Name = "FrmQuanLyHoatDongKinhTe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Quản lý ngạch công chức";
-            this.Load += new System.EventHandler(this.FrmQuanLyNgachCongChuc_Load);
+            this.Text = "Quản lý hoạt động kinh tế";
+            this.Load += new System.EventHandler(this.FrmQuanLyHoatDongKinhTe_Load);
             this.panelEx1.ResumeLayout(false);
             this.panelEx2.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);
@@ -392,8 +394,8 @@
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
         private DevComponents.DotNetBar.LabelX labelX2;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtTenNgachCongChuc;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtMaNgachCongChuc;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtTenHoatDongKinhTe;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaHoatDongKinhTe;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.LabelX labelX1;

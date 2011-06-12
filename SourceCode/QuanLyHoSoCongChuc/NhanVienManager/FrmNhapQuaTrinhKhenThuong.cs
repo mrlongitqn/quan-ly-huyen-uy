@@ -80,9 +80,10 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             {
                 if (MessageBox.Show("Bạn có chắc chắn xóa dữ liệu này không?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (QuaTrinhCongTacRepository.Delete(int.Parse(txtMaQuaTrinh.Text)))
+                    if (KhenThuongRepository.Delete(int.Parse(txtMaQuaTrinh.Text)))
                     {
                         MessageBox.Show("Xóa dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Updated = true;
                         EraseTextboxes();
                         txtMaQuaTrinh.Text = "";
                         LoadData();
@@ -259,7 +260,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         /// <summary>
         /// Update foreign keys need to insert
         /// </summary>
-        /// <param name="quatrinhcongtac"></param>
+        /// <param name="KhenThuong"></param>
         public void UpdateForeignKeys(ref KhenThuong quatrinh)
         {
             if (txtMaHinhThucKhenThuong.Text != "")
@@ -313,7 +314,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 
                 UpdateForeignKeys(ref quatrinh);
 
-                return QuaTrinhCongTacRepository.Save();
+                return KhenThuongRepository.Save();
             }
             catch
             {
@@ -323,7 +324,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         /// <summary>
         /// Load info of current quatrinh
-        /// If mode is insert: update txtMaQuaTrinhCongTac
+        /// If mode is insert: update txtMaKhenThuong
         /// Else: not change
         /// </summary>
         public void LoadCurrentQuaTrinhInfo(int id)
@@ -384,6 +385,15 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             btnXoa.Enabled = val;
             btnGhi.Enabled = !val;
             btnHuy.Enabled = !val;
+        }
+
+        private void txtNam_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Only allow type number
+            if (!char.IsNumber(e.KeyChar) && (Keys)e.KeyChar != Keys.Back)
+            {
+                e.Handled = true;
+            }
         }
     }
 }

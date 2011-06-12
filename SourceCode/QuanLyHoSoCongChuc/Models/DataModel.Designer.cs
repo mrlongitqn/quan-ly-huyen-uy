@@ -37,6 +37,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ChucVu", "ChucVu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.ChucVu), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhCongTac_ChucVuChinhQuyen", "ChucVuChinhQuyen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.ChucVuChinhQuyen), "QuaTrinhCongTac", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhCongTac), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_ChuyenDonVi_DonViDen", "DonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.DonVi), "ChuyenDonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.ChuyenDonVi), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_DacDiemLichSu_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "DacDiemLichSu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.DacDiemLichSu), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_DanToc", "DanToc", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.DanToc), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_DonVi_LoaiDonVi", "LoaiDonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.LoaiDonVi), "DonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.DonVi), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_DonVi_PhanLoaiDonVi", "PhanLoaiDonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.PhanLoaiDonVi), "DonVi", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.DonVi), true)]
@@ -75,7 +76,6 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuanHuyen_TinhThanh", "TinhThanh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TinhThanh), "QuanHuyen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuanHuyen), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhCongTac_QuocGia", "QuocGia", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.QuocGia), "QuaTrinhCongTac", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhCongTac), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhDaoTao_QuocGia", "QuocGia", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.QuocGia), "QuaTrinhDaoTao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhDaoTao), true)]
-[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_DacDiemLichSu_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "DacDiemLichSu", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.DacDiemLichSu), true)]
 
 #endregion
 
@@ -318,6 +318,22 @@ namespace QuanLyHoSoCongChuc.Models
             }
         }
         private ObjectSet<ChuyenDonVi> _ChuyenDonVis;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<DacDiemLichSu> DacDiemLichSus
+        {
+            get
+            {
+                if ((_DacDiemLichSus == null))
+                {
+                    _DacDiemLichSus = base.CreateObjectSet<DacDiemLichSu>("DacDiemLichSus");
+                }
+                return _DacDiemLichSus;
+            }
+        }
+        private ObjectSet<DacDiemLichSu> _DacDiemLichSus;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -958,22 +974,6 @@ namespace QuanLyHoSoCongChuc.Models
             }
         }
         private ObjectSet<TonGiao> _TonGiaos;
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        public ObjectSet<DacDiemLichSu> DacDiemLichSus
-        {
-            get
-            {
-                if ((_DacDiemLichSus == null))
-                {
-                    _DacDiemLichSus = base.CreateObjectSet<DacDiemLichSu>("DacDiemLichSus");
-                }
-                return _DacDiemLichSus;
-            }
-        }
-        private ObjectSet<DacDiemLichSu> _DacDiemLichSus;
 
         #endregion
         #region AddTo Methods
@@ -1072,6 +1072,14 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToChuyenDonVis(ChuyenDonVi chuyenDonVi)
         {
             base.AddObject("ChuyenDonVis", chuyenDonVi);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the DacDiemLichSus EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToDacDiemLichSus(DacDiemLichSu dacDiemLichSu)
+        {
+            base.AddObject("DacDiemLichSus", dacDiemLichSu);
         }
     
         /// <summary>
@@ -1392,14 +1400,6 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToTonGiaos(TonGiao tonGiao)
         {
             base.AddObject("TonGiaos", tonGiao);
-        }
-    
-        /// <summary>
-        /// Deprecated Method for adding a new object to the DacDiemLichSus EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
-        /// </summary>
-        public void AddToDacDiemLichSus(DacDiemLichSu dacDiemLichSu)
-        {
-            base.AddObject("DacDiemLichSus", dacDiemLichSu);
         }
 
         #endregion
@@ -4889,7 +4889,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String TongThuNhapGiaDinh
+        public Nullable<global::System.Int64> TongThuNhapGiaDinh
         {
             get
             {
@@ -4899,13 +4899,13 @@ namespace QuanLyHoSoCongChuc.Models
             {
                 OnTongThuNhapGiaDinhChanging(value);
                 ReportPropertyChanging("TongThuNhapGiaDinh");
-                _TongThuNhapGiaDinh = StructuralObject.SetValidValue(value, true);
+                _TongThuNhapGiaDinh = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("TongThuNhapGiaDinh");
                 OnTongThuNhapGiaDinhChanged();
             }
         }
-        private global::System.String _TongThuNhapGiaDinh;
-        partial void OnTongThuNhapGiaDinhChanging(global::System.String value);
+        private Nullable<global::System.Int64> _TongThuNhapGiaDinh;
+        partial void OnTongThuNhapGiaDinhChanging(Nullable<global::System.Int64> value);
         partial void OnTongThuNhapGiaDinhChanged();
     
         /// <summary>
@@ -4961,30 +4961,6 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String DatDuocCap
-        {
-            get
-            {
-                return _DatDuocCap;
-            }
-            set
-            {
-                OnDatDuocCapChanging(value);
-                ReportPropertyChanging("DatDuocCap");
-                _DatDuocCap = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("DatDuocCap");
-                OnDatDuocCapChanged();
-            }
-        }
-        private global::System.String _DatDuocCap;
-        partial void OnDatDuocCapChanging(global::System.String value);
-        partial void OnDatDuocCapChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public Nullable<global::System.Int32> MaHoatDongKinhTe
         {
             get
@@ -5009,7 +4985,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String DienTichDatKinhDoanhTrangTrai
+        public Nullable<global::System.Int32> DienTichDatKinhDoanhTrangTrai
         {
             get
             {
@@ -5019,13 +4995,13 @@ namespace QuanLyHoSoCongChuc.Models
             {
                 OnDienTichDatKinhDoanhTrangTraiChanging(value);
                 ReportPropertyChanging("DienTichDatKinhDoanhTrangTrai");
-                _DienTichDatKinhDoanhTrangTrai = StructuralObject.SetValidValue(value, true);
+                _DienTichDatKinhDoanhTrangTrai = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("DienTichDatKinhDoanhTrangTrai");
                 OnDienTichDatKinhDoanhTrangTraiChanged();
             }
         }
-        private global::System.String _DienTichDatKinhDoanhTrangTrai;
-        partial void OnDienTichDatKinhDoanhTrangTraiChanging(global::System.String value);
+        private Nullable<global::System.Int32> _DienTichDatKinhDoanhTrangTrai;
+        partial void OnDienTichDatKinhDoanhTrangTraiChanging(Nullable<global::System.Int32> value);
         partial void OnDienTichDatKinhDoanhTrangTraiChanged();
     
         /// <summary>
@@ -5057,7 +5033,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String BinhQuanDauNguoi
+        public Nullable<global::System.Int64> BinhQuanDauNguoi
         {
             get
             {
@@ -5067,13 +5043,13 @@ namespace QuanLyHoSoCongChuc.Models
             {
                 OnBinhQuanDauNguoiChanging(value);
                 ReportPropertyChanging("BinhQuanDauNguoi");
-                _BinhQuanDauNguoi = StructuralObject.SetValidValue(value, true);
+                _BinhQuanDauNguoi = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("BinhQuanDauNguoi");
                 OnBinhQuanDauNguoiChanged();
             }
         }
-        private global::System.String _BinhQuanDauNguoi;
-        partial void OnBinhQuanDauNguoiChanging(global::System.String value);
+        private Nullable<global::System.Int64> _BinhQuanDauNguoi;
+        partial void OnBinhQuanDauNguoiChanging(Nullable<global::System.Int64> value);
         partial void OnBinhQuanDauNguoiChanged();
     
         /// <summary>
@@ -5081,7 +5057,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String DienTichSuDungNhaO
+        public Nullable<global::System.Int32> DienTichSuDungNhaO
         {
             get
             {
@@ -5091,13 +5067,13 @@ namespace QuanLyHoSoCongChuc.Models
             {
                 OnDienTichSuDungNhaOChanging(value);
                 ReportPropertyChanging("DienTichSuDungNhaO");
-                _DienTichSuDungNhaO = StructuralObject.SetValidValue(value, true);
+                _DienTichSuDungNhaO = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("DienTichSuDungNhaO");
                 OnDienTichSuDungNhaOChanged();
             }
         }
-        private global::System.String _DienTichSuDungNhaO;
-        partial void OnDienTichSuDungNhaOChanging(global::System.String value);
+        private Nullable<global::System.Int32> _DienTichSuDungNhaO;
+        partial void OnDienTichSuDungNhaOChanging(Nullable<global::System.Int32> value);
         partial void OnDienTichSuDungNhaOChanged();
     
         /// <summary>
@@ -5105,7 +5081,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String DienTichSuDungDatO
+        public Nullable<global::System.Int32> DienTichSuDungDatO
         {
             get
             {
@@ -5115,13 +5091,13 @@ namespace QuanLyHoSoCongChuc.Models
             {
                 OnDienTichSuDungDatOChanging(value);
                 ReportPropertyChanging("DienTichSuDungDatO");
-                _DienTichSuDungDatO = StructuralObject.SetValidValue(value, true);
+                _DienTichSuDungDatO = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("DienTichSuDungDatO");
                 OnDienTichSuDungDatOChanged();
             }
         }
-        private global::System.String _DienTichSuDungDatO;
-        partial void OnDienTichSuDungDatOChanging(global::System.String value);
+        private Nullable<global::System.Int32> _DienTichSuDungDatO;
+        partial void OnDienTichSuDungDatOChanging(Nullable<global::System.Int32> value);
         partial void OnDienTichSuDungDatOChanged();
     
         /// <summary>
@@ -5129,31 +5105,55 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String DatTuMua
+        public Nullable<global::System.Int32> DienTichDatDuocCap
         {
             get
             {
-                return _DatTuMua;
+                return _DienTichDatDuocCap;
             }
             set
             {
-                OnDatTuMuaChanging(value);
-                ReportPropertyChanging("DatTuMua");
-                _DatTuMua = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("DatTuMua");
-                OnDatTuMuaChanged();
+                OnDienTichDatDuocCapChanging(value);
+                ReportPropertyChanging("DienTichDatDuocCap");
+                _DienTichDatDuocCap = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DienTichDatDuocCap");
+                OnDienTichDatDuocCapChanged();
             }
         }
-        private global::System.String _DatTuMua;
-        partial void OnDatTuMuaChanging(global::System.String value);
-        partial void OnDatTuMuaChanged();
+        private Nullable<global::System.Int32> _DienTichDatDuocCap;
+        partial void OnDienTichDatDuocCapChanging(Nullable<global::System.Int32> value);
+        partial void OnDienTichDatDuocCapChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String SoLaoDongThue
+        public Nullable<global::System.Int32> DienTichDatTuMua
+        {
+            get
+            {
+                return _DienTichDatTuMua;
+            }
+            set
+            {
+                OnDienTichDatTuMuaChanging(value);
+                ReportPropertyChanging("DienTichDatTuMua");
+                _DienTichDatTuMua = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("DienTichDatTuMua");
+                OnDienTichDatTuMuaChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _DienTichDatTuMua;
+        partial void OnDienTichDatTuMuaChanging(Nullable<global::System.Int32> value);
+        partial void OnDienTichDatTuMuaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> SoLaoDongThue
         {
             get
             {
@@ -5163,13 +5163,13 @@ namespace QuanLyHoSoCongChuc.Models
             {
                 OnSoLaoDongThueChanging(value);
                 ReportPropertyChanging("SoLaoDongThue");
-                _SoLaoDongThue = StructuralObject.SetValidValue(value, true);
+                _SoLaoDongThue = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("SoLaoDongThue");
                 OnSoLaoDongThueChanged();
             }
         }
-        private global::System.String _SoLaoDongThue;
-        partial void OnSoLaoDongThueChanging(global::System.String value);
+        private Nullable<global::System.Int32> _SoLaoDongThue;
+        partial void OnSoLaoDongThueChanging(Nullable<global::System.Int32> value);
         partial void OnSoLaoDongThueChanged();
     
         /// <summary>
@@ -5177,7 +5177,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String GiaTriTaiSan
+        public Nullable<global::System.Int64> GiaTriTaiSan
         {
             get
             {
@@ -5187,13 +5187,13 @@ namespace QuanLyHoSoCongChuc.Models
             {
                 OnGiaTriTaiSanChanging(value);
                 ReportPropertyChanging("GiaTriTaiSan");
-                _GiaTriTaiSan = StructuralObject.SetValidValue(value, true);
+                _GiaTriTaiSan = StructuralObject.SetValidValue(value);
                 ReportPropertyChanged("GiaTriTaiSan");
                 OnGiaTriTaiSanChanged();
             }
         }
-        private global::System.String _GiaTriTaiSan;
-        partial void OnGiaTriTaiSanChanging(global::System.String value);
+        private Nullable<global::System.Int64> _GiaTriTaiSan;
+        partial void OnGiaTriTaiSanChanging(Nullable<global::System.Int64> value);
         partial void OnGiaTriTaiSanChanged();
 
         #endregion
@@ -7499,6 +7499,30 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> NgayThangNam
+        {
+            get
+            {
+                return _NgayThangNam;
+            }
+            set
+            {
+                OnNgayThangNamChanging(value);
+                ReportPropertyChanging("NgayThangNam");
+                _NgayThangNam = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("NgayThangNam");
+                OnNgayThangNamChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _NgayThangNam;
+        partial void OnNgayThangNamChanging(Nullable<global::System.DateTime> value);
+        partial void OnNgayThangNamChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Double> BacLuong
         {
             get
@@ -7691,30 +7715,6 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Double> HeSoPhuCapThamNienVuotKhung
-        {
-            get
-            {
-                return _HeSoPhuCapThamNienVuotKhung;
-            }
-            set
-            {
-                OnHeSoPhuCapThamNienVuotKhungChanging(value);
-                ReportPropertyChanging("HeSoPhuCapThamNienVuotKhung");
-                _HeSoPhuCapThamNienVuotKhung = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("HeSoPhuCapThamNienVuotKhung");
-                OnHeSoPhuCapThamNienVuotKhungChanged();
-            }
-        }
-        private Nullable<global::System.Double> _HeSoPhuCapThamNienVuotKhung;
-        partial void OnHeSoPhuCapThamNienVuotKhungChanging(Nullable<global::System.Double> value);
-        partial void OnHeSoPhuCapThamNienVuotKhungChanged();
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
-        [DataMemberAttribute()]
         public Nullable<global::System.Double> HeSoPhuCapKiemNhiem
         {
             get
@@ -7733,6 +7733,30 @@ namespace QuanLyHoSoCongChuc.Models
         private Nullable<global::System.Double> _HeSoPhuCapKiemNhiem;
         partial void OnHeSoPhuCapKiemNhiemChanging(Nullable<global::System.Double> value);
         partial void OnHeSoPhuCapKiemNhiemChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> HeSoPhuCapThamNienVuotKhung
+        {
+            get
+            {
+                return _HeSoPhuCapThamNienVuotKhung;
+            }
+            set
+            {
+                OnHeSoPhuCapThamNienVuotKhungChanging(value);
+                ReportPropertyChanging("HeSoPhuCapThamNienVuotKhung");
+                _HeSoPhuCapThamNienVuotKhung = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("HeSoPhuCapThamNienVuotKhung");
+                OnHeSoPhuCapThamNienVuotKhungChanged();
+            }
+        }
+        private Nullable<global::System.Double> _HeSoPhuCapThamNienVuotKhung;
+        partial void OnHeSoPhuCapThamNienVuotKhungChanging(Nullable<global::System.Double> value);
+        partial void OnHeSoPhuCapThamNienVuotKhungChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -7763,6 +7787,150 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
+        public Nullable<global::System.Double> HeSoPhuCapThamNienNghe
+        {
+            get
+            {
+                return _HeSoPhuCapThamNienNghe;
+            }
+            set
+            {
+                OnHeSoPhuCapThamNienNgheChanging(value);
+                ReportPropertyChanging("HeSoPhuCapThamNienNghe");
+                _HeSoPhuCapThamNienNghe = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("HeSoPhuCapThamNienNghe");
+                OnHeSoPhuCapThamNienNgheChanged();
+            }
+        }
+        private Nullable<global::System.Double> _HeSoPhuCapThamNienNghe;
+        partial void OnHeSoPhuCapThamNienNgheChanging(Nullable<global::System.Double> value);
+        partial void OnHeSoPhuCapThamNienNgheChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> HeSoPhuCapKhuVuc
+        {
+            get
+            {
+                return _HeSoPhuCapKhuVuc;
+            }
+            set
+            {
+                OnHeSoPhuCapKhuVucChanging(value);
+                ReportPropertyChanging("HeSoPhuCapKhuVuc");
+                _HeSoPhuCapKhuVuc = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("HeSoPhuCapKhuVuc");
+                OnHeSoPhuCapKhuVucChanged();
+            }
+        }
+        private Nullable<global::System.Double> _HeSoPhuCapKhuVuc;
+        partial void OnHeSoPhuCapKhuVucChanging(Nullable<global::System.Double> value);
+        partial void OnHeSoPhuCapKhuVucChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> HeSoPhuCapPhanLoaiXa
+        {
+            get
+            {
+                return _HeSoPhuCapPhanLoaiXa;
+            }
+            set
+            {
+                OnHeSoPhuCapPhanLoaiXaChanging(value);
+                ReportPropertyChanging("HeSoPhuCapPhanLoaiXa");
+                _HeSoPhuCapPhanLoaiXa = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("HeSoPhuCapPhanLoaiXa");
+                OnHeSoPhuCapPhanLoaiXaChanged();
+            }
+        }
+        private Nullable<global::System.Double> _HeSoPhuCapPhanLoaiXa;
+        partial void OnHeSoPhuCapPhanLoaiXaChanging(Nullable<global::System.Double> value);
+        partial void OnHeSoPhuCapPhanLoaiXaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> HeSoPhuCapTrachNhiem
+        {
+            get
+            {
+                return _HeSoPhuCapTrachNhiem;
+            }
+            set
+            {
+                OnHeSoPhuCapTrachNhiemChanging(value);
+                ReportPropertyChanging("HeSoPhuCapTrachNhiem");
+                _HeSoPhuCapTrachNhiem = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("HeSoPhuCapTrachNhiem");
+                OnHeSoPhuCapTrachNhiemChanged();
+            }
+        }
+        private Nullable<global::System.Double> _HeSoPhuCapTrachNhiem;
+        partial void OnHeSoPhuCapTrachNhiemChanging(Nullable<global::System.Double> value);
+        partial void OnHeSoPhuCapTrachNhiemChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> HeSoPhuCapDocHai
+        {
+            get
+            {
+                return _HeSoPhuCapDocHai;
+            }
+            set
+            {
+                OnHeSoPhuCapDocHaiChanging(value);
+                ReportPropertyChanging("HeSoPhuCapDocHai");
+                _HeSoPhuCapDocHai = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("HeSoPhuCapDocHai");
+                OnHeSoPhuCapDocHaiChanged();
+            }
+        }
+        private Nullable<global::System.Double> _HeSoPhuCapDocHai;
+        partial void OnHeSoPhuCapDocHaiChanging(Nullable<global::System.Double> value);
+        partial void OnHeSoPhuCapDocHaiChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Double> HeSoPhuCapUuDaiNghe
+        {
+            get
+            {
+                return _HeSoPhuCapUuDaiNghe;
+            }
+            set
+            {
+                OnHeSoPhuCapUuDaiNgheChanging(value);
+                ReportPropertyChanging("HeSoPhuCapUuDaiNghe");
+                _HeSoPhuCapUuDaiNghe = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("HeSoPhuCapUuDaiNghe");
+                OnHeSoPhuCapUuDaiNgheChanged();
+            }
+        }
+        private Nullable<global::System.Double> _HeSoPhuCapUuDaiNghe;
+        partial void OnHeSoPhuCapUuDaiNgheChanging(Nullable<global::System.Double> value);
+        partial void OnHeSoPhuCapUuDaiNgheChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
         public Nullable<global::System.Double> SoSoBHXH
         {
             get
@@ -7787,7 +7955,7 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public Nullable<global::System.Double> NgayBatDauDongBHXH
+        public Nullable<global::System.DateTime> NgayBatDauDongBHXH
         {
             get
             {
@@ -7802,8 +7970,8 @@ namespace QuanLyHoSoCongChuc.Models
                 OnNgayBatDauDongBHXHChanged();
             }
         }
-        private Nullable<global::System.Double> _NgayBatDauDongBHXH;
-        partial void OnNgayBatDauDongBHXHChanging(Nullable<global::System.Double> value);
+        private Nullable<global::System.DateTime> _NgayBatDauDongBHXH;
+        partial void OnNgayBatDauDongBHXHChanging(Nullable<global::System.DateTime> value);
         partial void OnNgayBatDauDongBHXHChanged();
     
         /// <summary>
@@ -9760,6 +9928,28 @@ namespace QuanLyHoSoCongChuc.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_DacDiemLichSu_NhanVien", "DacDiemLichSu")]
+        public EntityCollection<DacDiemLichSu> DacDiemLichSus
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DacDiemLichSu>("QLHSCCModel.FK_DacDiemLichSu_NhanVien", "DacDiemLichSu");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DacDiemLichSu>("QLHSCCModel.FK_DacDiemLichSu_NhanVien", "DacDiemLichSu", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
         [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhanVien_DanToc", "DanToc")]
         public DanToc DanToc
         {
@@ -10306,28 +10496,6 @@ namespace QuanLyHoSoCongChuc.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ThanNhan>("QLHSCCModel.FK_ThanNhanMoi_NhanVien", "ThanNhan", value);
-                }
-            }
-        }
-    
-        /// <summary>
-        /// No Metadata Documentation available.
-        /// </summary>
-        [XmlIgnoreAttribute()]
-        [SoapIgnoreAttribute()]
-        [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_DacDiemLichSu_NhanVien", "DacDiemLichSu")]
-        public EntityCollection<DacDiemLichSu> DacDiemLichSus
-        {
-            get
-            {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<DacDiemLichSu>("QLHSCCModel.FK_DacDiemLichSu_NhanVien", "DacDiemLichSu");
-            }
-            set
-            {
-                if ((value != null))
-                {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<DacDiemLichSu>("QLHSCCModel.FK_DacDiemLichSu_NhanVien", "DacDiemLichSu", value);
                 }
             }
         }

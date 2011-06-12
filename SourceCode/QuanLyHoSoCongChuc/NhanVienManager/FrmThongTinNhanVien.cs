@@ -25,8 +25,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             TOMTAT,
             CACQUATRINH,
             DACDIEMLS,
-            GIADINH,
-            LUONGPHUCAP
+            GIADINH
         }
         private NhanVien _nhanvien;
         private Color imgCurrentNavImage;
@@ -34,7 +33,6 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         private FrmThongTinNhanVien_CacQuaTrinh frmThongTinNhanVien_CacQuaTrinh;
         private FrmThongTinNhanVien_GiaDinh frmThongTinNhanVien_GiaDinh;
         private FrmThongTinNhanVien_DacDiemLichSu frmThongTinNhanVien_DacDiemLichSu;
-        private FrmThongTinNhanVien_LuongPhuCap frmThongTinNhanVien_LuongPhuCap;
         // Hidden files are used to store ids 
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaGioiTinh;
         private EnumUpdateMode Mode = EnumUpdateMode.UPDATE;
@@ -130,10 +128,6 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             lblGiaDinh.MouseLeave += new EventHandler(NavigationChildControl_MouseLeave);
             lblGiaDinh.MouseUp += new MouseEventHandler(NavigationChildControl_MouseUp);
 
-            lblLuongPhuCap.MouseEnter += new EventHandler(NavigationChildControl_MouseEnter);
-            lblLuongPhuCap.MouseLeave += new EventHandler(NavigationChildControl_MouseLeave);
-            lblLuongPhuCap.MouseUp += new MouseEventHandler(NavigationChildControl_MouseUp);
-
             frmThongTinNhanVien_TomTat = new FrmThongTinNhanVien_TomTat(nhanvien);
             frmThongTinNhanVien_TomTat.TopLevel = false;
             frmThongTinNhanVien_TomTat.FormBorderStyle = FormBorderStyle.None;
@@ -153,11 +147,6 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             frmThongTinNhanVien_GiaDinh.TopLevel = false;
             frmThongTinNhanVien_GiaDinh.FormBorderStyle = FormBorderStyle.None;
             frmThongTinNhanVien_GiaDinh.Dock = DockStyle.Fill;
-
-            frmThongTinNhanVien_LuongPhuCap = new FrmThongTinNhanVien_LuongPhuCap(nhanvien);
-            frmThongTinNhanVien_LuongPhuCap.TopLevel = false;
-            frmThongTinNhanVien_LuongPhuCap.FormBorderStyle = FormBorderStyle.None;
-            frmThongTinNhanVien_LuongPhuCap.Dock = DockStyle.Fill;
 
             //Add to middle view
             pnlChangeView.Controls.Clear();
@@ -208,6 +197,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                         case "lblTomTat":
                             if (Shortcut == "lblTomTat")
                             {
+                                btnGhi.Enabled = true;
                                 Functionality = EnumThongTinNhanVien.TOMTAT;
                                 objControl.ForeColor = Color.Lime;
                                 pnlChangeView.Controls.Clear();
@@ -223,6 +213,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                         case "lblCacQuaTrinh":
                             if (Shortcut == "lblCacQuaTrinh")
                             {
+                                btnGhi.Enabled = false;
                                 Functionality = EnumThongTinNhanVien.CACQUATRINH;
                                 objControl.ForeColor = Color.Lime;
                                 pnlChangeView.Controls.Clear();
@@ -238,6 +229,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                         case "lblDacDiemLS":
                             if (Shortcut == "lblDacDiemLS")
                             {
+                                btnGhi.Enabled = true;
                                 Functionality = EnumThongTinNhanVien.DACDIEMLS;
                                 objControl.ForeColor = Color.Lime;
                                 pnlChangeView.Controls.Clear();
@@ -253,26 +245,12 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                         case "lblGiaDinh":
                             if (Shortcut == "lblGiaDinh")
                             {
+                                btnGhi.Enabled = true;
                                 Functionality = EnumThongTinNhanVien.GIADINH;
                                 objControl.ForeColor = Color.Lime;
                                 pnlChangeView.Controls.Clear();
                                 pnlChangeView.Controls.Add(frmThongTinNhanVien_GiaDinh);
                                 frmThongTinNhanVien_GiaDinh.Show();
-                            }
-                            else
-                            {
-                                objControl.ForeColor = Color.White;
-                            }
-                            break;
-
-                        case "lblLuongPhuCap":
-                            if (Shortcut == "lblLuongPhuCap")
-                            {
-                                Functionality = EnumThongTinNhanVien.LUONGPHUCAP;
-                                objControl.ForeColor = Color.Lime;
-                                pnlChangeView.Controls.Clear();
-                                pnlChangeView.Controls.Add(frmThongTinNhanVien_LuongPhuCap);
-                                frmThongTinNhanVien_LuongPhuCap.Show();
                             }
                             else
                             {
@@ -286,9 +264,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         private void btnChonDonVi_Click(object sender, EventArgs e)
         {
-            FrmDanhMuc frm = new FrmDanhMuc();
+            FrmDanhMuc frm = new FrmDanhMuc(true);
             frm.Handler += GetDonVi;
-            frm.EnableButtonChon = true;
             frm.ShowDialog();
         }
 
@@ -452,110 +429,95 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         private void btnGhi_Click(object sender, EventArgs e)
         {
             var errorText = "";
+            var success = false;
+            if (Functionality == EnumThongTinNhanVien.TOMTAT)
+            {
+                if (!ValidateUserInput(ref errorText))
+                {
+                    MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            // Show waiting form
+            GlobalVars.PreLoading();
+            //------- E ---------
             switch (Functionality)
             {
                 case EnumThongTinNhanVien.TOMTAT:
                     if (Mode == EnumUpdateMode.INSERT)
                     {
-                        if (!ValidateUserInput(ref errorText))
-                        {
-                            MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
                         if (ActionAdd_TomTat())
                         {
-                            MessageBox.Show("Thêm dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Updated = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Thêm dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            success = true;
                         }
                     }
                     else if(Mode == EnumUpdateMode.UPDATE)
                     {
-                        if (!ValidateUserInput(ref errorText))
-                        {
-                            MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            return;
-                        }
-
                         if (ActionUpdate_TomTat())
                         {
-                            MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            success = true;
                             Updated = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                     break;
 
                 case EnumThongTinNhanVien.DACDIEMLS:
-                    if (Mode == EnumUpdateMode.INSERT)
+                    var lstItem = DacDiemLichSuRepository.SelectByMaNhanVien(_nhanvien.MaNhanVien);
+                    if (lstItem.Count > 0)
+                    {
+                        var item = lstItem[0];
+                        if (ActionUpdate_DacDiemLS(item))
+                        {
+                            success = true;
+                            Updated = true;
+                        }
+                    }
+                    else// Neu nhanvien chua cap nhat dac diem lich su, thuc hien them moi
                     {
                         if (ActionAdd_DacDiemLS())
                         {
-                            MessageBox.Show("Thêm dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            success = true;
                             Updated = true;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Thêm dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
-                    }
-                    else if (Mode == EnumUpdateMode.UPDATE)
-                    {
-                        var lstItem = DacDiemLichSuRepository.SelectByMaNhanVien(_nhanvien.MaNhanVien);
-                        if (lstItem.Count > 0)
-                        {
-                            var item = lstItem[0];
-                            if (ActionUpdate_DacDiemLS(item))
-                            {
-                                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Updated = true;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                        else// Neu nhanvien chua cap nhat dac diem lich su, thuc hien them moi
-                        {
-                            if (ActionAdd_DacDiemLS())
-                            {
-                                MessageBox.Show("Thêm dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Updated = true;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Thêm dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
                         }
                     }
                     break;
 
                 case EnumThongTinNhanVien.GIADINH:
-                    if (Mode == EnumUpdateMode.INSERT)
+                    // Only update hoancanhkinhte
+                    var lstItem2 = HoanCanhKinhTeRepository.SelectByMaNhanVien(_nhanvien.MaNhanVien);
+                    success = false;
+                    if (lstItem2.Count > 0)
                     {
+                        var item = lstItem2[0];
+                        if (ActionUpdate_HoanCanhKinhTe(item))
+                        {
+                            success = true;
+                            Updated = true;
+                        }
                     }
-                    else if (Mode == EnumUpdateMode.UPDATE)
+                    else// Neu nhanvien chua cap nhat dac diem lich su, thuc hien them moi
                     {
-
+                        if (ActionAdd_HoanCanhKinhTe())
+                        {
+                            success = true;
+                            Updated = true;
+                        }
                     }
                     break;
+            }
+            // Hide waiting form
+            GlobalVars.PosLoading();
+            //------- E ---------
 
-                case EnumThongTinNhanVien.LUONGPHUCAP:
-                    if (Mode == EnumUpdateMode.INSERT)
-                    {
-                    }
-                    else if (Mode == EnumUpdateMode.UPDATE)
-                    {
-
-                    }
-                    break;
+            // Xuat ket qua
+            if (success)
+            {
+                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -726,6 +688,93 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Add new hoancanhkinhte for specified nhanvien
+        /// </summary>
+        /// <returns></returns>
+        public bool ActionAdd_HoanCanhKinhTe()
+        {
+            var item = new HoanCanhKinhTe
+            {
+                MaNhanVien = _nhanvien.MaNhanVien,
+                TaiSanCoGiaTri = frmThongTinNhanVien_GiaDinh.TaiSanCoGiaTri,
+                NhaODuocCap = frmThongTinNhanVien_GiaDinh.NhaODuocCap,
+                NhaOTuMua = frmThongTinNhanVien_GiaDinh.NhaOTuMua
+            };
+
+            UpdateForeignKeys_HoanCanhKinhTe(ref item);
+
+            if (HoanCanhKinhTeRepository.Insert(item))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Update dacdiemlichsu info for specified nhanvien
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+        public bool ActionUpdate_HoanCanhKinhTe(HoanCanhKinhTe item)
+        {
+            item.NhaODuocCap = frmThongTinNhanVien_GiaDinh.NhaODuocCap;
+            item.NhaOTuMua = frmThongTinNhanVien_GiaDinh.NhaOTuMua;
+            item.TaiSanCoGiaTri = frmThongTinNhanVien_GiaDinh.TaiSanCoGiaTri;
+
+            UpdateForeignKeys_HoanCanhKinhTe(ref item);
+
+            if (HoanCanhKinhTeRepository.Save())
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void UpdateForeignKeys_HoanCanhKinhTe(ref HoanCanhKinhTe item)
+        {
+            if (frmThongTinNhanVien_GiaDinh.MaHoatDongKinhTe != -1)
+            {
+                item.MaHoatDongKinhTe = frmThongTinNhanVien_GiaDinh.MaHoatDongKinhTe;
+            }
+            if (frmThongTinNhanVien_GiaDinh.TongThuNhapGiaDinh != "")
+            {
+                item.TongThuNhapGiaDinh = int.Parse(frmThongTinNhanVien_GiaDinh.TongThuNhapGiaDinh);
+            }
+            if (frmThongTinNhanVien_GiaDinh.DatDuocCap != "")
+            {
+                item.DienTichDatDuocCap = int.Parse(frmThongTinNhanVien_GiaDinh.DatDuocCap);
+            }
+            if (frmThongTinNhanVien_GiaDinh.DienTichDatKinhDoanhTrangTrai != "")
+            {
+                item.DienTichDatKinhDoanhTrangTrai = int.Parse(frmThongTinNhanVien_GiaDinh.DienTichDatKinhDoanhTrangTrai);
+            }
+            if (frmThongTinNhanVien_GiaDinh.BinhQuanDauNguoi != "")
+            {
+                item.BinhQuanDauNguoi = long.Parse(frmThongTinNhanVien_GiaDinh.BinhQuanDauNguoi);
+            }
+            if (frmThongTinNhanVien_GiaDinh.DienTichSuDungNhaO != "")
+            {
+                item.DienTichSuDungNhaO = int.Parse(frmThongTinNhanVien_GiaDinh.DienTichSuDungNhaO);
+            }
+            if (frmThongTinNhanVien_GiaDinh.DienTichSuDungDatO != "")
+            {
+                item.DienTichSuDungDatO = int.Parse(frmThongTinNhanVien_GiaDinh.DienTichSuDungDatO);
+            }
+            if (frmThongTinNhanVien_GiaDinh.DatTuMua != "")
+            {
+                item.DienTichDatTuMua = int.Parse(frmThongTinNhanVien_GiaDinh.DatTuMua);
+            }
+            if (frmThongTinNhanVien_GiaDinh.SoLaoDongThue != "")
+            {
+                item.SoLaoDongThue = int.Parse(frmThongTinNhanVien_GiaDinh.SoLaoDongThue);
+            }
+            if (frmThongTinNhanVien_GiaDinh.GiaTriTaiSan != "")
+            {
+                item.GiaTriTaiSan = long.Parse(frmThongTinNhanVien_GiaDinh.GiaTriTaiSan);
+            }
         }
         #endregion       
     }

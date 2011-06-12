@@ -116,7 +116,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         }
 
         /// <summary>
-        /// Load list of congtac progresses of specified nhanvien
+        /// Load list of DaoTao progresses of specified nhanvien
         /// </summary>
         public void LoadData()
         {
@@ -267,9 +267,10 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             {
                 if (MessageBox.Show("Bạn có chắc chắn xóa dữ liệu này không?", "Xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    if (QuaTrinhCongTacRepository.Delete(int.Parse(txtMaQuaTrinhDaoTao.Text)))
+                    if (QuaTrinhDaoTaoRepository.Delete(int.Parse(txtMaQuaTrinhDaoTao.Text)))
                     {
                         MessageBox.Show("Xóa dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Updated = true;
                         EraseTextboxes();
                         txtMaQuaTrinhDaoTao.Text = "";
                         LoadData();
@@ -412,7 +413,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         /// <summary>
         /// Update foreign keys need to insert
         /// </summary>
-        /// <param name="quatrinhcongtac"></param>
+        /// <param name="quatrinhDaoTao"></param>
         public void UpdateForeignKeys(ref QuaTrinhDaoTao quatrinh)
         {
             if (txtMaNuocDaoTao.Text != "")
@@ -494,7 +495,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
                 UpdateForeignKeys(ref quatrinh);
 
-                return QuaTrinhCongTacRepository.Save();
+                return QuaTrinhDaoTaoRepository.Save();
             }
             catch
             {
