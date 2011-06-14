@@ -29,7 +29,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             HUYHIEU,
             LUONGPHUCAP
         }
-        private NhanVien _nhanvien;
+        public NhanVien _nhanvien { get; set; }
         private Color imgCurrentNavImage;
         private EnumCacQuaTrinh TypeOfQuaTrinh = EnumCacQuaTrinh.QUATRINHCONGTAC;
 
@@ -39,7 +39,10 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             _nhanvien = nhanvien;
             InitForm();
             InitListView();
-            LoadQuaTrinhCongTac();
+            if (_nhanvien != null)
+            {
+                LoadQuaTrinhCongTac();
+            }
         }
 
         public void InitForm()

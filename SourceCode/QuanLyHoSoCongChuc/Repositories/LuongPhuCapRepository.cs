@@ -34,13 +34,40 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(int maluongphucap)
+        public static bool Delete(int maluongphucap)
+        {
+            try
+            {
+                var delitem = DataContext.Instance.LuongPhuCaps.FirstOrDefault(item => item.MaLuongPhuCap == maluongphucap);
+                DataContext.Instance.LuongPhuCaps.DeleteObject(delitem);
+                DataContext.Instance.SaveChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+		public static bool DeleteByMaNhanVienBaseOnTime(string manhanvien, DateTime time)
 		{
 			try
 			{
-				var delitem = DataContext.Instance.LuongPhuCaps.FirstOrDefault(item => item.MaLuongPhuCap == maluongphucap );
-				DataContext.Instance.LuongPhuCaps.DeleteObject(delitem);
-				DataContext.Instance.SaveChanges();
+                LuongPhuCap delitem = null;
+                foreach (var item in DataContext.Instance.LuongPhuCaps)
+                {
+                    if (item.MaNhanVien == manhanvien && item.NgayThangNam.Value.Date == time.Date)
+                    {
+                        delitem = item;
+                        break;
+                    }
+                }
+                if (delitem != null)
+                {
+                    DataContext.Instance.LuongPhuCaps.DeleteObject(delitem);
+                    DataContext.Instance.SaveChanges();
+                }
+                
 				return true;
 			}
 			catch
@@ -72,6 +99,32 @@ namespace QuanLyHoSoCongChuc.Repositories
 			var lstItem = (from item in DataContext.Instance.LuongPhuCaps where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;
 		}
+
+        public static List<LuongPhuCap> SelectListOfNhanVienUpdatedOnTime(DateTime pointOfTime)
+        {
+            var lstItem = new List<LuongPhuCap>();
+            foreach (var item in DataContext.Instance.LuongPhuCaps)
+            {
+                if (item.NgayThangNam.Value.Date == pointOfTime.Date)
+                {
+                    lstItem.Add(item);
+                }
+            }
+            return lstItem;
+        }
+
+        public static List<LuongPhuCap> SelectByMaNhanVienBaseOnThoiDiem(string manhanvien, DateTime pointOfTime)
+        {
+            var lstItem = new List<LuongPhuCap>();
+            foreach (var item in DataContext.Instance.LuongPhuCaps)
+            {
+                if (item.MaNhanVien == manhanvien && item.NgayThangNam.Value.Date == pointOfTime.Date)
+                {
+                    lstItem.Add(item);
+                }
+            }
+            return lstItem;
+        }
 
 		public static List<LuongPhuCap> SelectByMaNgachCongChuc(string mangachcongchuc)
 		{

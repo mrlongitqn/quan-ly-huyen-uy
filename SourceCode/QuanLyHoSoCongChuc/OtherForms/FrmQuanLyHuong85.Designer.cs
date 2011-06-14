@@ -43,14 +43,14 @@
             this.dtgvDataList = new DevComponents.DotNetBar.Controls.DataGridViewX();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.btnChon = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.btnReset = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnChon = new System.Windows.Forms.ToolStripButton();
+            this.btnReset = new System.Windows.Forms.ToolStripButton();
             this.btnThemMoi = new System.Windows.Forms.ToolStripButton();
             this.btnXoa = new System.Windows.Forms.ToolStripButton();
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
-            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -284,6 +284,21 @@
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 36);
+            // 
+            // toolStripSeparator6
+            // 
+            this.toolStripSeparator6.Name = "toolStripSeparator6";
+            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 36);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 36);
+            // 
             // btnChon
             // 
             this.btnChon.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Sign_Select_icon;
@@ -294,11 +309,6 @@
             this.btnChon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 36);
-            // 
             // btnReset
             // 
             this.btnReset.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Eraser_icon;
@@ -308,11 +318,6 @@
             this.btnReset.Text = "Nhập mới";
             this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // toolStripSeparator6
-            // 
-            this.toolStripSeparator6.Name = "toolStripSeparator6";
-            this.toolStripSeparator6.Size = new System.Drawing.Size(6, 36);
             // 
             // btnThemMoi
             // 
@@ -339,15 +344,10 @@
             this.btnLuu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(29, 33);
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Size = new System.Drawing.Size(55, 33);
+            this.btnLuu.Text = "Cập nhật";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
-            // 
-            // toolStripSeparator5
-            // 
-            this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 36);
             // 
             // btnThoat
             // 

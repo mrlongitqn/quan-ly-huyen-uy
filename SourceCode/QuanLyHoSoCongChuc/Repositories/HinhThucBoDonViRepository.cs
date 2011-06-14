@@ -12,12 +12,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 	{
 		public static List<HinhThucBoDonVi> SelectAll()
 		{
-			return DataContext.Instance.HinhThucBoDonVis.OrderBy(item => item.TenHinhThuc).ToList();
+			return DataContext.Instance.HinhThucBoDonVis.OrderBy(item => item.TenHinhThucBoDonVi).ToList();
 		}
 
-		public static HinhThucBoDonVi SelectByID(int mahinhthu)
+		public static HinhThucBoDonVi SelectByID(int mahinhthucbodonvi)
 		{
-			return DataContext.Instance.HinhThucBoDonVis.FirstOrDefault(item => item.MaHinhThu == mahinhthu );
+			return DataContext.Instance.HinhThucBoDonVis.FirstOrDefault(item => item.MaHinhThucBoDonVi == mahinhthucbodonvi );
 		}
 
 		public static bool Insert(HinhThucBoDonVi obj)
@@ -34,11 +34,11 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static bool Delete(int mahinhthu)
+		public static bool Delete(int mahinhthucbodonvi)
 		{
 			try
 			{
-				var delitem = DataContext.Instance.HinhThucBoDonVis.FirstOrDefault(item => item.MaHinhThu == mahinhthu );
+				var delitem = DataContext.Instance.HinhThucBoDonVis.FirstOrDefault(item => item.MaHinhThucBoDonVi == mahinhthucbodonvi );
 				DataContext.Instance.HinhThucBoDonVis.DeleteObject(delitem);
 				DataContext.Instance.SaveChanges();
 				return true;
@@ -62,9 +62,9 @@ namespace QuanLyHoSoCongChuc.Repositories
 			}
 		}
 
-		public static List<HinhThucBoDonVi> RetrieveByID(int mahinhthu)
+		public static List<HinhThucBoDonVi> RetrieveByID(int mahinhthucbodonvi)
 		{
-			return (from item in DataContext.Instance.HinhThucBoDonVis where  item.MaHinhThu == mahinhthu  select item).ToList();
+			return (from item in DataContext.Instance.HinhThucBoDonVis where  item.MaHinhThucBoDonVi == mahinhthucbodonvi  select item).ToList();
 		}
 
 	}

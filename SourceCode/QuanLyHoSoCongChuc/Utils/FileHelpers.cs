@@ -6,7 +6,10 @@ using System.IO;
 
 namespace QuanLyHoSoCongChuc.Utils
 {
-    public class FileHelper
+    /// <summary>
+    /// tuansl added: helper about operations on file
+    /// </summary>
+    public class FileHelpers
     {
         //Open file in to a filestream and read data in a byte array.
         public static byte[] ReadFile(string sPath)

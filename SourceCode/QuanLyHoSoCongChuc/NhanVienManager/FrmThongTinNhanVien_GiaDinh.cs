@@ -22,7 +22,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
     public partial class FrmThongTinNhanVien_GiaDinh : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
-        private NhanVien _nhanvien;
+        public NhanVien _nhanvien { get; set; }
         // Hidden files are used to store ids 
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaHoatDongKinhTe;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaHoanCanhKinhTe;

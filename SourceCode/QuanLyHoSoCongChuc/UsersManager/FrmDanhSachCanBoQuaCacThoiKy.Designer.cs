@@ -135,6 +135,7 @@
             this.columnHeader5});
             this.lstvCanBo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lstvCanBo.FullRowSelect = true;
+            this.lstvCanBo.GridLines = true;
             this.lstvCanBo.Location = new System.Drawing.Point(0, 0);
             this.lstvCanBo.MultiSelect = false;
             this.lstvCanBo.Name = "lstvCanBo";
@@ -190,11 +191,11 @@
             this.btThem.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btThem.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_01;
             this.btThem.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btThem.Location = new System.Drawing.Point(535, 13);
+            this.btThem.Location = new System.Drawing.Point(390, 13);
             this.btThem.Name = "btThem";
-            this.btThem.Size = new System.Drawing.Size(64, 23);
+            this.btThem.Size = new System.Drawing.Size(200, 23);
             this.btThem.TabIndex = 24;
-            this.btThem.Text = "Thêm";
+            this.btThem.Text = "Thêm cán bộ nơi khác chuyển đến";
             this.btThem.Click += new System.EventHandler(this.btThem_Click);
             // 
             // btnDong
@@ -204,7 +205,7 @@
             this.btnDong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDong.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
             this.btnDong.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btnDong.Location = new System.Drawing.Point(706, 13);
+            this.btnDong.Location = new System.Drawing.Point(697, 13);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 23);
             this.btnDong.TabIndex = 23;
@@ -217,7 +218,7 @@
             this.btnTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnTim.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnTim.Image = global::QuanLyHoSoCongChuc.Properties.Resources.find;
-            this.btnTim.Location = new System.Drawing.Point(448, 13);
+            this.btnTim.Location = new System.Drawing.Point(303, 13);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(81, 23);
             this.btnTim.TabIndex = 22;
@@ -231,7 +232,7 @@
             this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnXoa.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_29;
             this.btnXoa.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnXoa.Location = new System.Drawing.Point(605, 13);
+            this.btnXoa.Location = new System.Drawing.Point(596, 13);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(72, 23);
             this.btnXoa.TabIndex = 21;
@@ -245,7 +246,7 @@
             this.btnIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnIn.Image = global::QuanLyHoSoCongChuc.Properties.Resources.action_print;
             this.btnIn.ImageFixedSize = new System.Drawing.Size(16, 20);
-            this.btnIn.Location = new System.Drawing.Point(363, 13);
+            this.btnIn.Location = new System.Drawing.Point(54, 13);
             this.btnIn.Name = "btnIn";
             this.btnIn.Size = new System.Drawing.Size(79, 23);
             this.btnIn.TabIndex = 20;
@@ -257,6 +258,8 @@
             this.ClientSize = new System.Drawing.Size(807, 530);
             this.Controls.Add(this.groupPanel1);
             this.Controls.Add(this.panelEx1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmDanhSachCanBoQuaCacThoiKy";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.TabText = "Danh sách cán bộ qua các thời kì";

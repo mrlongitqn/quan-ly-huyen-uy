@@ -87,20 +87,20 @@ namespace QuanLyHoSoCongChuc.DataManager
         /// </summary>
         public void LoadData()
         {
-            //var lstItem = NhanVienRepository.SelectByMaDonVi(_madonvi);
-            //lstvNhanVien.Items.Clear();
-            //for (int i = 0; i < lstItem.Count; i++)
-            //{
-            //    if (!IsExist(lstItem[i]))
-            //    {
-            //        var objLstviewItem = new ListViewItem();
-            //        objLstviewItem.Tag = lstItem[i];
-            //        objLstviewItem.Text = (i + 1).ToString();
-            //        objLstviewItem.SubItems.Add(lstItem[i].MaNhanVien);
-            //        objLstviewItem.SubItems.Add(lstItem[i].HoTenKhaiSinh);
-            //        lstvNhanVien.Items.Add(objLstviewItem);
-            //    }
-            //}
+            var lstItem = NhanVienRepository.SelectByMaDonVi(_madonvi);
+            lstvNhanVien.Items.Clear();
+            for (int i = 0; i < lstItem.Count; i++)
+            {
+                if (!IsExist(lstItem[i]))
+                {
+                    var objLstviewItem = new ListViewItem();
+                    objLstviewItem.Tag = lstItem[i];
+                    objLstviewItem.Text = (i + 1).ToString();
+                    objLstviewItem.SubItems.Add(lstItem[i].MaNhanVien);
+                    objLstviewItem.SubItems.Add(lstItem[i].HoTenKhaiSinh);
+                    lstvNhanVien.Items.Add(objLstviewItem);
+                }
+            }
         }
     }
 }

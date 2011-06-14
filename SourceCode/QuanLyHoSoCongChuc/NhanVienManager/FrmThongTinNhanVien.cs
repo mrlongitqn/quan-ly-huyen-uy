@@ -104,7 +104,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
             txtHoTenKhaiSinh.Text = _nhanvien.HoTenKhaiSinh;
             dtSinhNgay.Value = _nhanvien.NgaySinh.Value;
-            txtGioiTinh.Text = _nhanvien.GioiTinh.TenGioiTinh;
+            txtGioiTinh.Text = _nhanvien.MaGioiTinh == null ? "" : _nhanvien.GioiTinh.TenGioiTinh;
             txtMaGioiTinh.Text = _nhanvien.MaGioiTinh.ToString();
 
             InitForm(_nhanvien);
@@ -152,6 +152,19 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             pnlChangeView.Controls.Clear();
             pnlChangeView.Controls.Add(frmThongTinNhanVien_TomTat);
             frmThongTinNhanVien_TomTat.Show();
+
+            if (_nhanvien == null)
+            {
+                lblCacQuaTrinh.Enabled = false;
+                lblDacDiemLS.Enabled = false;
+                lblGiaDinh.Enabled = false;
+            }
+            else
+            {
+                lblCacQuaTrinh.Enabled = true;
+                lblDacDiemLS.Enabled = true;
+                lblGiaDinh.Enabled = true;
+            }
         }
 
         private void NavigationChildControl_MouseEnter(Object sender, EventArgs e)
@@ -329,16 +342,6 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 errorText = "Vui lòng nhập mã nhân viên";
                 return false;
             }
-            if (txtMaGioiTinh.Text == "")
-            {
-                errorText = "Vui lòng nhập mã giới tính";
-                return false;
-            }
-            if (dtSinhNgay.Value == DateTime.MinValue)
-            {
-                errorText = "Vui lòng nhập ngày sinh";
-                return false;
-            }
             if (frmThongTinNhanVien_TomTat.NgayVaoDang == DateTime.MinValue)
             {
                 errorText = "Vui lòng nhập ngày vào đảng";
@@ -356,7 +359,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         {
             if (frmThongTinNhanVien_TomTat.PathHinhAnh != "")
             {
-                byte[] imageData = FileHelper.ReadFile(frmThongTinNhanVien_TomTat.PathHinhAnh);
+                byte[] imageData = FileHelpers.ReadFile(frmThongTinNhanVien_TomTat.PathHinhAnh);
                 item.HinhAnh = imageData;
             }
             else
@@ -424,6 +427,29 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             {
                 item.MaChucVu = frmThongTinNhanVien_TomTat.MaChucVu;
             }
+            if (frmThongTinNhanVien_TomTat.MaChucVuKiemNhiem != -1)
+            {
+                item.MaChucVuKiemNhiem = frmThongTinNhanVien_TomTat.MaChucVuKiemNhiem;
+            }
+            if (frmThongTinNhanVien_TomTat.MaNgachCongChuc != "")
+            {
+                item.MaNgachCongChuc = frmThongTinNhanVien_TomTat.MaNgachCongChuc;
+            }
+            if (frmThongTinNhanVien_TomTat.MaHuong85 != "")
+            {
+                item.MaHuong85 = frmThongTinNhanVien_TomTat.MaHuong85;
+            }
+        }
+
+        public void UpdateAfterInsertNewNhanVien()
+        {
+            lblCacQuaTrinh.Enabled = true;
+            lblDacDiemLS.Enabled = true;
+            lblGiaDinh.Enabled = true;
+            frmThongTinNhanVien_TomTat._nhanvien = _nhanvien;
+            frmThongTinNhanVien_CacQuaTrinh._nhanvien = _nhanvien;
+            frmThongTinNhanVien_DacDiemLichSu._nhanvien = _nhanvien;
+            frmThongTinNhanVien_GiaDinh._nhanvien = _nhanvien;
         }
 
         private void btnGhi_Click(object sender, EventArgs e)
@@ -450,6 +476,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                         {
                             Updated = true;
                             success = true;
+                            UpdateAfterInsertNewNhanVien();
                         }
                     }
                     else if(Mode == EnumUpdateMode.UPDATE)
@@ -573,6 +600,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
             if (NhanVienRepository.Insert(item))
             {
+                _nhanvien = item;
                 return true;
             }
             return false;

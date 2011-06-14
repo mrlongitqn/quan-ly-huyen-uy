@@ -79,7 +79,7 @@
             this.treeviewDMHC.ImageList = this.imageList1;
             this.treeviewDMHC.Location = new System.Drawing.Point(0, 0);
             this.treeviewDMHC.Name = "treeviewDMHC";
-            this.treeviewDMHC.SelectedImageIndex = 0;
+            this.treeviewDMHC.SelectedImageIndex = 4;
             this.treeviewDMHC.Size = new System.Drawing.Size(447, 457);
             this.treeviewDMHC.TabIndex = 3;
             this.treeviewDMHC.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeviewDMHC_AfterSelect);
@@ -92,6 +92,7 @@
             this.imageList1.Images.SetKeyName(1, "tinhthanh.gif");
             this.imageList1.Images.SetKeyName(2, "quanhuyen.jpg");
             this.imageList1.Images.SetKeyName(3, "houses.ico");
+            this.imageList1.Images.SetKeyName(4, "81.png");
             // 
             // panel3
             // 

@@ -185,7 +185,7 @@ namespace QuanLyHoSoCongChuc.Utils
                 };
                 tbl.Attributes.Add(Attr);
             }
-            tbl.Attributes.Sort((x, y) => string.Compare(x.Name, y.Name));
+            tbl.Attributes.Sort((x, y) => string.Compare(x.Name.ToUpper().Replace("MA", ""), y.Name.ToUpper().Replace("MA", "")));
         }
 
         /// <summary>

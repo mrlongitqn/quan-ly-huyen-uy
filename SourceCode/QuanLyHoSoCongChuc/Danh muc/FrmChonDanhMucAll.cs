@@ -14,12 +14,14 @@ namespace QuanLyHoSoCongChuc.Danh_muc
     public partial class FrmChonDanhMucAll : DevComponents.DotNetBar.Office2007Form
     {
         private string _maDonVi;
+        private string _selectedDonVi;
         // tuansl added: event handler to transfer data to other forms
         public EventHandler Handler { get; set; }
 
-        public FrmChonDanhMucAll()
+        public FrmChonDanhMucAll(string donvi)
         {
             InitializeComponent();
+            _selectedDonVi = donvi;
         }
 
         private void FrmChonDanhMucAll_Load(object sender, EventArgs e)
@@ -58,10 +60,13 @@ namespace QuanLyHoSoCongChuc.Danh_muc
                         var lstDonVi = DonViRepository.SelectByMaQuanHuyen(huyen.MaQuanHuyen);
                         for (int k = 0; k < lstDonVi.Count; k++)
                         {
-                            var donvi = lstDonVi[k];
-                            TreeNode donvinode = new TreeNode(donvi.MaDonVi + " - " + donvi.TenDonVi);
-                            donvinode.ImageIndex = 3;
-                            huyennode.Nodes.Add(donvinode);
+                            if (lstDonVi[k].MaDonVi != _selectedDonVi)
+                            {
+                                var donvi = lstDonVi[k];
+                                TreeNode donvinode = new TreeNode(donvi.MaDonVi + " - " + donvi.TenDonVi);
+                                donvinode.ImageIndex = 3;
+                                huyennode.Nodes.Add(donvinode);
+                            }
                         }
                     }
                 }
@@ -75,14 +80,14 @@ namespace QuanLyHoSoCongChuc.Danh_muc
         private void btChon_Click(object sender, EventArgs e)
         {
             var donvi = DonViRepository.SelectByID(_maDonVi);
-            var tendonvidaydu = donvi.TenDonVi + ", huyện " + donvi.QuanHuyen.TenQuanHuyen + ", tỉnh " + donvi.QuanHuyen.TinhThanh.TenTinh;
+            var tendonvidaydu = donvi.TenDonVi + ", " + donvi.QuanHuyen.TenQuanHuyen + ", " + donvi.QuanHuyen.TinhThanh.TenTinh;
             TransferDataInfo(this, new MyEvent(_maDonVi + "#" + tendonvidaydu));
         }
 
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             int level = GlobalDanhMucs.GetLevelTreeView(treeView1.SelectedNode);
-            if (level == 3)
+            if (level == 4)
                 btChon.Enabled = true;
             else
                 btChon.Enabled = false;
