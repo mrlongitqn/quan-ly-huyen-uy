@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +19,11 @@ namespace QuanLyHoSoCongChuc.Repositories
 		{
 			return DataContext.Instance.LoaiCanBoQuaCacThoiKis.FirstOrDefault(item => item.MaLoaiCanBoQuaCacThoiKiMa == maloaicanboquacacthoikima );
 		}
+
+        public static LoaiCanBoQuaCacThoiKi SelectByName(string name)
+        {
+            return DataContext.Instance.LoaiCanBoQuaCacThoiKis.FirstOrDefault(item => item.TenLoaiCanBoQuaCacThoiKi == name);
+        }
 
 		public static bool Insert(LoaiCanBoQuaCacThoiKi obj)
 		{

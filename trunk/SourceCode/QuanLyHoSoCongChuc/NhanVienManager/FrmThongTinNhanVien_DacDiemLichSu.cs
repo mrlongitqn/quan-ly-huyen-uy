@@ -16,7 +16,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
     /// </summary>
     public partial class FrmThongTinNhanVien_DacDiemLichSu : DevComponents.DotNetBar.Office2007Form
     {
-        private NhanVien _nhanvien;
+        public NhanVien _nhanvien { get; set; }
 
         #region Properties
         public DateTime NgayVaoDangLan2

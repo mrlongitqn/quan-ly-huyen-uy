@@ -31,13 +31,25 @@
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.txtPhuCapUuDaiNghe = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX19 = new DevComponents.DotNetBar.LabelX();
+            this.txtPhuCapDocHai = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX20 = new DevComponents.DotNetBar.LabelX();
+            this.txtPhuCapTrachNhiem = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX17 = new DevComponents.DotNetBar.LabelX();
+            this.txtPhuCapPhanLoaiXa = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX18 = new DevComponents.DotNetBar.LabelX();
+            this.txtPhuCapKhuVuc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX15 = new DevComponents.DotNetBar.LabelX();
+            this.txtPhuCapThamNienNghe = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX16 = new DevComponents.DotNetBar.LabelX();
             this.txtVaoDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtNamSinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtChucVuKiemNhiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtChucVu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtPhuCapKhac = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
-            this.txtPhuCapThamNien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtPhuCapThamNienVuotKhung = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX14 = new DevComponents.DotNetBar.LabelX();
             this.labelX9 = new DevComponents.DotNetBar.LabelX();
             this.txtPhuCapKiemNhiem = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -64,7 +76,7 @@
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lstvNhanVien = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.lstvData = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -95,7 +107,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(785, 587);
+            this.groupPanel1.Size = new System.Drawing.Size(785, 568);
             // 
             // 
             // 
@@ -127,18 +139,30 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 68);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(779, 513);
+            this.panel2.Size = new System.Drawing.Size(779, 494);
             this.panel2.TabIndex = 1;
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.txtPhuCapUuDaiNghe);
+            this.panel5.Controls.Add(this.labelX19);
+            this.panel5.Controls.Add(this.txtPhuCapDocHai);
+            this.panel5.Controls.Add(this.labelX20);
+            this.panel5.Controls.Add(this.txtPhuCapTrachNhiem);
+            this.panel5.Controls.Add(this.labelX17);
+            this.panel5.Controls.Add(this.txtPhuCapPhanLoaiXa);
+            this.panel5.Controls.Add(this.labelX18);
+            this.panel5.Controls.Add(this.txtPhuCapKhuVuc);
+            this.panel5.Controls.Add(this.labelX15);
+            this.panel5.Controls.Add(this.txtPhuCapThamNienNghe);
+            this.panel5.Controls.Add(this.labelX16);
             this.panel5.Controls.Add(this.txtVaoDonVi);
             this.panel5.Controls.Add(this.txtNamSinh);
             this.panel5.Controls.Add(this.txtChucVuKiemNhiem);
             this.panel5.Controls.Add(this.txtChucVu);
             this.panel5.Controls.Add(this.txtPhuCapKhac);
             this.panel5.Controls.Add(this.labelX11);
-            this.panel5.Controls.Add(this.txtPhuCapThamNien);
+            this.panel5.Controls.Add(this.txtPhuCapThamNienVuotKhung);
             this.panel5.Controls.Add(this.labelX14);
             this.panel5.Controls.Add(this.labelX9);
             this.panel5.Controls.Add(this.txtPhuCapKiemNhiem);
@@ -159,18 +183,166 @@
             this.panel5.Controls.Add(this.labelX6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.Location = new System.Drawing.Point(0, 272);
+            this.panel5.Location = new System.Drawing.Point(0, 185);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(779, 205);
+            this.panel5.Size = new System.Drawing.Size(779, 273);
             this.panel5.TabIndex = 2;
+            // 
+            // txtPhuCapUuDaiNghe
+            // 
+            this.txtPhuCapUuDaiNghe.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtPhuCapUuDaiNghe.Border.Class = "TextBoxBorder";
+            this.txtPhuCapUuDaiNghe.Location = new System.Drawing.Point(475, 246);
+            this.txtPhuCapUuDaiNghe.Name = "txtPhuCapUuDaiNghe";
+            this.txtPhuCapUuDaiNghe.ReadOnly = true;
+            this.txtPhuCapUuDaiNghe.Size = new System.Drawing.Size(94, 20);
+            this.txtPhuCapUuDaiNghe.TabIndex = 243;
+            // 
+            // labelX19
+            // 
+            this.labelX19.AutoSize = true;
+            this.labelX19.BackColor = System.Drawing.Color.Transparent;
+            this.labelX19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX19.Location = new System.Drawing.Point(360, 247);
+            this.labelX19.Name = "labelX19";
+            this.labelX19.Size = new System.Drawing.Size(103, 15);
+            this.labelX19.TabIndex = 242;
+            this.labelX19.Text = "Phụ cấp ưu đãi nghề";
+            this.labelX19.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // txtPhuCapDocHai
+            // 
+            this.txtPhuCapDocHai.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtPhuCapDocHai.Border.Class = "TextBoxBorder";
+            this.txtPhuCapDocHai.Location = new System.Drawing.Point(169, 246);
+            this.txtPhuCapDocHai.Name = "txtPhuCapDocHai";
+            this.txtPhuCapDocHai.ReadOnly = true;
+            this.txtPhuCapDocHai.Size = new System.Drawing.Size(95, 20);
+            this.txtPhuCapDocHai.TabIndex = 241;
+            // 
+            // labelX20
+            // 
+            this.labelX20.BackColor = System.Drawing.Color.Transparent;
+            this.labelX20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX20.Location = new System.Drawing.Point(9, 245);
+            this.labelX20.Name = "labelX20";
+            this.labelX20.Size = new System.Drawing.Size(148, 19);
+            this.labelX20.TabIndex = 240;
+            this.labelX20.Text = "Phụ cấp độc hại";
+            this.labelX20.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // txtPhuCapTrachNhiem
+            // 
+            this.txtPhuCapTrachNhiem.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtPhuCapTrachNhiem.Border.Class = "TextBoxBorder";
+            this.txtPhuCapTrachNhiem.Location = new System.Drawing.Point(475, 220);
+            this.txtPhuCapTrachNhiem.Name = "txtPhuCapTrachNhiem";
+            this.txtPhuCapTrachNhiem.ReadOnly = true;
+            this.txtPhuCapTrachNhiem.Size = new System.Drawing.Size(94, 20);
+            this.txtPhuCapTrachNhiem.TabIndex = 239;
+            // 
+            // labelX17
+            // 
+            this.labelX17.AutoSize = true;
+            this.labelX17.BackColor = System.Drawing.Color.Transparent;
+            this.labelX17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX17.Location = new System.Drawing.Point(360, 221);
+            this.labelX17.Name = "labelX17";
+            this.labelX17.Size = new System.Drawing.Size(103, 15);
+            this.labelX17.TabIndex = 238;
+            this.labelX17.Text = "Phụ cấp trách nhiệm";
+            this.labelX17.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // txtPhuCapPhanLoaiXa
+            // 
+            this.txtPhuCapPhanLoaiXa.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtPhuCapPhanLoaiXa.Border.Class = "TextBoxBorder";
+            this.txtPhuCapPhanLoaiXa.Location = new System.Drawing.Point(169, 220);
+            this.txtPhuCapPhanLoaiXa.Name = "txtPhuCapPhanLoaiXa";
+            this.txtPhuCapPhanLoaiXa.ReadOnly = true;
+            this.txtPhuCapPhanLoaiXa.Size = new System.Drawing.Size(95, 20);
+            this.txtPhuCapPhanLoaiXa.TabIndex = 237;
+            // 
+            // labelX18
+            // 
+            this.labelX18.BackColor = System.Drawing.Color.Transparent;
+            this.labelX18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX18.Location = new System.Drawing.Point(9, 219);
+            this.labelX18.Name = "labelX18";
+            this.labelX18.Size = new System.Drawing.Size(148, 19);
+            this.labelX18.TabIndex = 236;
+            this.labelX18.Text = "Phụ cấp phân loại xã";
+            this.labelX18.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // txtPhuCapKhuVuc
+            // 
+            this.txtPhuCapKhuVuc.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtPhuCapKhuVuc.Border.Class = "TextBoxBorder";
+            this.txtPhuCapKhuVuc.Location = new System.Drawing.Point(475, 194);
+            this.txtPhuCapKhuVuc.Name = "txtPhuCapKhuVuc";
+            this.txtPhuCapKhuVuc.ReadOnly = true;
+            this.txtPhuCapKhuVuc.Size = new System.Drawing.Size(94, 20);
+            this.txtPhuCapKhuVuc.TabIndex = 235;
+            // 
+            // labelX15
+            // 
+            this.labelX15.AutoSize = true;
+            this.labelX15.BackColor = System.Drawing.Color.Transparent;
+            this.labelX15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX15.Location = new System.Drawing.Point(380, 195);
+            this.labelX15.Name = "labelX15";
+            this.labelX15.Size = new System.Drawing.Size(83, 15);
+            this.labelX15.TabIndex = 234;
+            this.labelX15.Text = "Phụ cấp khu vực";
+            this.labelX15.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // txtPhuCapThamNienNghe
+            // 
+            this.txtPhuCapThamNienNghe.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtPhuCapThamNienNghe.Border.Class = "TextBoxBorder";
+            this.txtPhuCapThamNienNghe.Location = new System.Drawing.Point(169, 194);
+            this.txtPhuCapThamNienNghe.Name = "txtPhuCapThamNienNghe";
+            this.txtPhuCapThamNienNghe.ReadOnly = true;
+            this.txtPhuCapThamNienNghe.Size = new System.Drawing.Size(95, 20);
+            this.txtPhuCapThamNienNghe.TabIndex = 233;
+            // 
+            // labelX16
+            // 
+            this.labelX16.BackColor = System.Drawing.Color.Transparent;
+            this.labelX16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX16.Location = new System.Drawing.Point(9, 193);
+            this.labelX16.Name = "labelX16";
+            this.labelX16.Size = new System.Drawing.Size(148, 19);
+            this.labelX16.TabIndex = 232;
+            this.labelX16.Text = "Phụ cấp thâm niên nghề";
+            this.labelX16.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // txtVaoDonVi
             // 
+            this.txtVaoDonVi.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtVaoDonVi.Border.Class = "TextBoxBorder";
-            this.txtVaoDonVi.Location = new System.Drawing.Point(169, 93);
+            this.txtVaoDonVi.Location = new System.Drawing.Point(169, 90);
             this.txtVaoDonVi.Name = "txtVaoDonVi";
             this.txtVaoDonVi.ReadOnly = true;
             this.txtVaoDonVi.Size = new System.Drawing.Size(200, 20);
@@ -178,11 +350,12 @@
             // 
             // txtNamSinh
             // 
+            this.txtNamSinh.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtNamSinh.Border.Class = "TextBoxBorder";
-            this.txtNamSinh.Location = new System.Drawing.Point(169, 67);
+            this.txtNamSinh.Location = new System.Drawing.Point(169, 64);
             this.txtNamSinh.Name = "txtNamSinh";
             this.txtNamSinh.ReadOnly = true;
             this.txtNamSinh.Size = new System.Drawing.Size(200, 20);
@@ -190,11 +363,12 @@
             // 
             // txtChucVuKiemNhiem
             // 
+            this.txtChucVuKiemNhiem.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtChucVuKiemNhiem.Border.Class = "TextBoxBorder";
-            this.txtChucVuKiemNhiem.Location = new System.Drawing.Point(471, 145);
+            this.txtChucVuKiemNhiem.Location = new System.Drawing.Point(475, 142);
             this.txtChucVuKiemNhiem.Name = "txtChucVuKiemNhiem";
             this.txtChucVuKiemNhiem.ReadOnly = true;
             this.txtChucVuKiemNhiem.Size = new System.Drawing.Size(189, 20);
@@ -202,11 +376,12 @@
             // 
             // txtChucVu
             // 
+            this.txtChucVu.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtChucVu.Border.Class = "TextBoxBorder";
-            this.txtChucVu.Location = new System.Drawing.Point(471, 119);
+            this.txtChucVu.Location = new System.Drawing.Point(475, 116);
             this.txtChucVu.Name = "txtChucVu";
             this.txtChucVu.ReadOnly = true;
             this.txtChucVu.Size = new System.Drawing.Size(189, 20);
@@ -214,13 +389,15 @@
             // 
             // txtPhuCapKhac
             // 
+            this.txtPhuCapKhac.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtPhuCapKhac.Border.Class = "TextBoxBorder";
-            this.txtPhuCapKhac.Location = new System.Drawing.Point(471, 171);
+            this.txtPhuCapKhac.Location = new System.Drawing.Point(475, 168);
             this.txtPhuCapKhac.Name = "txtPhuCapKhac";
-            this.txtPhuCapKhac.Size = new System.Drawing.Size(138, 20);
+            this.txtPhuCapKhac.ReadOnly = true;
+            this.txtPhuCapKhac.Size = new System.Drawing.Size(94, 20);
             this.txtPhuCapKhac.TabIndex = 227;
             // 
             // labelX11
@@ -228,40 +405,42 @@
             this.labelX11.AutoSize = true;
             this.labelX11.BackColor = System.Drawing.Color.Transparent;
             this.labelX11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX11.Location = new System.Drawing.Point(396, 172);
+            this.labelX11.Location = new System.Drawing.Point(394, 169);
             this.labelX11.Name = "labelX11";
             this.labelX11.Size = new System.Drawing.Size(69, 15);
             this.labelX11.TabIndex = 226;
             this.labelX11.Text = "Phụ cấp khác";
             this.labelX11.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // txtPhuCapThamNien
+            // txtPhuCapThamNienVuotKhung
+            // 
+            this.txtPhuCapThamNienVuotKhung.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
-            // 
-            this.txtPhuCapThamNien.Border.Class = "TextBoxBorder";
-            this.txtPhuCapThamNien.Location = new System.Drawing.Point(169, 171);
-            this.txtPhuCapThamNien.Name = "txtPhuCapThamNien";
-            this.txtPhuCapThamNien.Size = new System.Drawing.Size(138, 20);
-            this.txtPhuCapThamNien.TabIndex = 225;
+            this.txtPhuCapThamNienVuotKhung.Border.Class = "TextBoxBorder";
+            this.txtPhuCapThamNienVuotKhung.Location = new System.Drawing.Point(169, 168);
+            this.txtPhuCapThamNienVuotKhung.Name = "txtPhuCapThamNienVuotKhung";
+            this.txtPhuCapThamNienVuotKhung.ReadOnly = true;
+            this.txtPhuCapThamNienVuotKhung.Size = new System.Drawing.Size(95, 20);
+            this.txtPhuCapThamNienVuotKhung.TabIndex = 225;
             // 
             // labelX14
             // 
             this.labelX14.BackColor = System.Drawing.Color.Transparent;
             this.labelX14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX14.Location = new System.Drawing.Point(45, 174);
+            this.labelX14.Location = new System.Drawing.Point(9, 167);
             this.labelX14.Name = "labelX14";
-            this.labelX14.Size = new System.Drawing.Size(112, 17);
+            this.labelX14.Size = new System.Drawing.Size(148, 19);
             this.labelX14.TabIndex = 224;
-            this.labelX14.Text = "Phụ cấp thâm niên";
+            this.labelX14.Text = "Phụ cấp thâm niên vượt khung";
             this.labelX14.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // labelX9
             // 
             this.labelX9.BackColor = System.Drawing.Color.Transparent;
             this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX9.Location = new System.Drawing.Point(345, 148);
+            this.labelX9.Location = new System.Drawing.Point(345, 142);
             this.labelX9.Name = "labelX9";
             this.labelX9.Size = new System.Drawing.Size(118, 17);
             this.labelX9.TabIndex = 222;
@@ -270,20 +449,22 @@
             // 
             // txtPhuCapKiemNhiem
             // 
+            this.txtPhuCapKiemNhiem.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtPhuCapKiemNhiem.Border.Class = "TextBoxBorder";
-            this.txtPhuCapKiemNhiem.Location = new System.Drawing.Point(169, 145);
+            this.txtPhuCapKiemNhiem.Location = new System.Drawing.Point(169, 142);
             this.txtPhuCapKiemNhiem.Name = "txtPhuCapKiemNhiem";
-            this.txtPhuCapKiemNhiem.Size = new System.Drawing.Size(138, 20);
+            this.txtPhuCapKiemNhiem.ReadOnly = true;
+            this.txtPhuCapKiemNhiem.Size = new System.Drawing.Size(95, 20);
             this.txtPhuCapKiemNhiem.TabIndex = 221;
             // 
             // labelX10
             // 
             this.labelX10.BackColor = System.Drawing.Color.Transparent;
             this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX10.Location = new System.Drawing.Point(35, 148);
+            this.labelX10.Location = new System.Drawing.Point(35, 142);
             this.labelX10.Name = "labelX10";
             this.labelX10.Size = new System.Drawing.Size(122, 17);
             this.labelX10.TabIndex = 220;
@@ -294,7 +475,7 @@
             // 
             this.labelX13.BackColor = System.Drawing.Color.Transparent;
             this.labelX13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX13.Location = new System.Drawing.Point(414, 122);
+            this.labelX13.Location = new System.Drawing.Point(414, 116);
             this.labelX13.Name = "labelX13";
             this.labelX13.Size = new System.Drawing.Size(49, 17);
             this.labelX13.TabIndex = 218;
@@ -303,20 +484,22 @@
             // 
             // txtPhuCapChucVu
             // 
+            this.txtPhuCapChucVu.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtPhuCapChucVu.Border.Class = "TextBoxBorder";
-            this.txtPhuCapChucVu.Location = new System.Drawing.Point(169, 119);
+            this.txtPhuCapChucVu.Location = new System.Drawing.Point(169, 116);
             this.txtPhuCapChucVu.Name = "txtPhuCapChucVu";
-            this.txtPhuCapChucVu.Size = new System.Drawing.Size(138, 20);
+            this.txtPhuCapChucVu.ReadOnly = true;
+            this.txtPhuCapChucVu.Size = new System.Drawing.Size(95, 20);
             this.txtPhuCapChucVu.TabIndex = 217;
             // 
             // labelX12
             // 
             this.labelX12.BackColor = System.Drawing.Color.Transparent;
             this.labelX12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX12.Location = new System.Drawing.Point(54, 119);
+            this.labelX12.Location = new System.Drawing.Point(54, 116);
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(103, 17);
             this.labelX12.TabIndex = 216;
@@ -325,11 +508,12 @@
             // 
             // txtTaiCoQuan
             // 
+            this.txtTaiCoQuan.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtTaiCoQuan.Border.Class = "TextBoxBorder";
-            this.txtTaiCoQuan.Location = new System.Drawing.Point(471, 93);
+            this.txtTaiCoQuan.Location = new System.Drawing.Point(475, 90);
             this.txtTaiCoQuan.Name = "txtTaiCoQuan";
             this.txtTaiCoQuan.ReadOnly = true;
             this.txtTaiCoQuan.Size = new System.Drawing.Size(284, 20);
@@ -339,7 +523,7 @@
             // 
             this.labelX7.BackColor = System.Drawing.Color.Transparent;
             this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX7.Location = new System.Drawing.Point(384, 93);
+            this.labelX7.Location = new System.Drawing.Point(384, 90);
             this.labelX7.Name = "labelX7";
             this.labelX7.Size = new System.Drawing.Size(79, 17);
             this.labelX7.TabIndex = 208;
@@ -348,11 +532,12 @@
             // 
             // txtGioiTinh
             // 
+            this.txtGioiTinh.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
             this.txtGioiTinh.Border.Class = "TextBoxBorder";
-            this.txtGioiTinh.Location = new System.Drawing.Point(471, 39);
+            this.txtGioiTinh.Location = new System.Drawing.Point(475, 39);
             this.txtGioiTinh.Name = "txtGioiTinh";
             this.txtGioiTinh.ReadOnly = true;
             this.txtGioiTinh.Size = new System.Drawing.Size(51, 20);
@@ -385,7 +570,7 @@
             // 
             this.labelX4.BackColor = System.Drawing.Color.Transparent;
             this.labelX4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX4.Location = new System.Drawing.Point(70, 95);
+            this.labelX4.Location = new System.Drawing.Point(70, 90);
             this.labelX4.Name = "labelX4";
             this.labelX4.Size = new System.Drawing.Size(87, 17);
             this.labelX4.TabIndex = 199;
@@ -394,6 +579,7 @@
             // 
             // txtMaNhanVien
             // 
+            this.txtMaNhanVien.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -406,6 +592,7 @@
             // 
             // txtHoTen
             // 
+            this.txtHoTen.BackColor = System.Drawing.Color.White;
             // 
             // 
             // 
@@ -431,7 +618,7 @@
             // 
             this.labelX3.BackColor = System.Drawing.Color.Transparent;
             this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.Location = new System.Drawing.Point(76, 67);
+            this.labelX3.Location = new System.Drawing.Point(76, 64);
             this.labelX3.Name = "labelX3";
             this.labelX3.Size = new System.Drawing.Size(81, 17);
             this.labelX3.TabIndex = 196;
@@ -458,7 +645,7 @@
             this.panel4.Controls.Add(this.btnThem);
             this.panel4.Controls.Add(this.btnXoa);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 477);
+            this.panel4.Location = new System.Drawing.Point(0, 458);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(779, 36);
             this.panel4.TabIndex = 1;
@@ -551,37 +738,37 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lstvNhanVien);
+            this.panel3.Controls.Add(this.lstvData);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(779, 272);
+            this.panel3.Size = new System.Drawing.Size(779, 185);
             this.panel3.TabIndex = 0;
             // 
-            // lstvNhanVien
+            // lstvData
             // 
             // 
             // 
             // 
-            this.lstvNhanVien.Border.Class = "ListViewBorder";
-            this.lstvNhanVien.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lstvData.Border.Class = "ListViewBorder";
+            this.lstvData.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader6,
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5});
-            this.lstvNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lstvNhanVien.FullRowSelect = true;
-            this.lstvNhanVien.GridLines = true;
-            this.lstvNhanVien.Location = new System.Drawing.Point(0, 0);
-            this.lstvNhanVien.MultiSelect = false;
-            this.lstvNhanVien.Name = "lstvNhanVien";
-            this.lstvNhanVien.Size = new System.Drawing.Size(779, 272);
-            this.lstvNhanVien.TabIndex = 6;
-            this.lstvNhanVien.UseCompatibleStateImageBehavior = false;
-            this.lstvNhanVien.View = System.Windows.Forms.View.Details;
-            this.lstvNhanVien.SelectedIndexChanged += new System.EventHandler(this.lstvNhanVien_SelectedIndexChanged);
+            this.lstvData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstvData.FullRowSelect = true;
+            this.lstvData.GridLines = true;
+            this.lstvData.Location = new System.Drawing.Point(0, 0);
+            this.lstvData.MultiSelect = false;
+            this.lstvData.Name = "lstvData";
+            this.lstvData.Size = new System.Drawing.Size(779, 185);
+            this.lstvData.TabIndex = 6;
+            this.lstvData.UseCompatibleStateImageBehavior = false;
+            this.lstvData.View = System.Windows.Forms.View.Details;
+            this.lstvData.SelectedIndexChanged += new System.EventHandler(this.lstvNhanVien_SelectedIndexChanged);
             // 
             // columnHeader6
             // 
@@ -629,6 +816,8 @@
             // 
             // dtNgay
             // 
+            this.dtNgay.CustomFormat = "dd/MM/yyyy";
+            this.dtNgay.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgay.Location = new System.Drawing.Point(93, 40);
             this.dtNgay.Name = "dtNgay";
             this.dtNgay.Size = new System.Drawing.Size(200, 20);
@@ -660,6 +849,7 @@
             // 
             // 
             this.txtMaDonVi.Border.Class = "TextBoxBorder";
+            this.txtMaDonVi.ForeColor = System.Drawing.Color.Crimson;
             this.txtMaDonVi.Location = new System.Drawing.Point(93, 14);
             this.txtMaDonVi.Name = "txtMaDonVi";
             this.txtMaDonVi.Size = new System.Drawing.Size(200, 20);
@@ -667,6 +857,7 @@
             // 
             // txtTenDonViDayDu
             // 
+            this.txtTenDonViDayDu.BackColor = System.Drawing.Color.White;
             this.txtTenDonViDayDu.Location = new System.Drawing.Point(336, 9);
             this.txtTenDonViDayDu.Multiline = true;
             this.txtTenDonViDayDu.Name = "txtTenDonViDayDu";
@@ -685,7 +876,7 @@
             // 
             // FrmPhieuBaoPhuCap
             // 
-            this.ClientSize = new System.Drawing.Size(785, 587);
+            this.ClientSize = new System.Drawing.Size(785, 568);
             this.Controls.Add(this.groupPanel1);
             this.Name = "FrmPhieuBaoPhuCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -726,7 +917,7 @@
         private DevComponents.DotNetBar.ButtonX btnThem;
         private DevComponents.DotNetBar.ButtonX btnXoa;
         private System.Windows.Forms.Panel panel3;
-        private DevComponents.DotNetBar.Controls.ListViewEx lstvNhanVien;
+        private DevComponents.DotNetBar.Controls.ListViewEx lstvData;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
@@ -747,12 +938,24 @@
         private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapKiemNhiem;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX11;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapThamNien;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapThamNienVuotKhung;
         private DevComponents.DotNetBar.LabelX labelX14;
         private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapKhac;
         private DevComponents.DotNetBar.Controls.TextBoxX txtChucVuKiemNhiem;
         private DevComponents.DotNetBar.Controls.TextBoxX txtChucVu;
         private DevComponents.DotNetBar.Controls.TextBoxX txtVaoDonVi;
         private DevComponents.DotNetBar.Controls.TextBoxX txtNamSinh;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapUuDaiNghe;
+        private DevComponents.DotNetBar.LabelX labelX19;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapDocHai;
+        private DevComponents.DotNetBar.LabelX labelX20;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapTrachNhiem;
+        private DevComponents.DotNetBar.LabelX labelX17;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapPhanLoaiXa;
+        private DevComponents.DotNetBar.LabelX labelX18;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapKhuVuc;
+        private DevComponents.DotNetBar.LabelX labelX15;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtPhuCapThamNienNghe;
+        private DevComponents.DotNetBar.LabelX labelX16;
     }
 }

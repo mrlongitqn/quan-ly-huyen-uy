@@ -172,7 +172,7 @@
     {
         public override string ToString()
         {
-            return TenHinhThuc;
+            return TenHinhThucBoDonVi;
         }
     }
     public partial class LoaiDonVi

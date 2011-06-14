@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
+            this.btnTim = new DevComponents.DotNetBar.ButtonX();
+            this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.btnChonDonVi = new System.Windows.Forms.Button();
             this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
@@ -36,10 +40,6 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
-            this.btnTim = new DevComponents.DotNetBar.ButtonX();
-            this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +80,52 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
+            this.btnThoat.ImageFixedSize = new System.Drawing.Size(20, 20);
+            this.btnThoat.Location = new System.Drawing.Point(225, 68);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(75, 23);
+            this.btnThoat.TabIndex = 168;
+            this.btnThoat.Text = "Thoát";
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // btnTim
+            // 
+            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnTim.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
+            this.btnTim.Image = global::QuanLyHoSoCongChuc.Properties.Resources.book_blue_view;
+            this.btnTim.ImageFixedSize = new System.Drawing.Size(24, 24);
+            this.btnTim.Location = new System.Drawing.Point(144, 66);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 25);
+            this.btnTim.TabIndex = 164;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
+            // 
+            // txtHoTen
+            // 
+            // 
+            // 
+            // 
+            this.txtHoTen.Border.Class = "TextBoxBorder";
+            this.txtHoTen.Location = new System.Drawing.Point(66, 36);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.Size = new System.Drawing.Size(234, 20);
+            this.txtHoTen.TabIndex = 163;
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            this.labelX2.Location = new System.Drawing.Point(9, 35);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(63, 19);
+            this.labelX2.TabIndex = 162;
+            this.labelX2.Text = "Họ tên";
             // 
             // btnChonDonVi
             // 
@@ -124,6 +170,7 @@
             this.columnHeader4});
             this.lstvCanBo.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lstvCanBo.FullRowSelect = true;
+            this.lstvCanBo.GridLines = true;
             this.lstvCanBo.Location = new System.Drawing.Point(0, 101);
             this.lstvCanBo.MultiSelect = false;
             this.lstvCanBo.Name = "lstvCanBo";
@@ -147,52 +194,6 @@
             // 
             this.columnHeader4.Text = "Ngày sinh";
             this.columnHeader4.Width = 100;
-            // 
-            // txtHoTen
-            // 
-            // 
-            // 
-            // 
-            this.txtHoTen.Border.Class = "TextBoxBorder";
-            this.txtHoTen.Location = new System.Drawing.Point(66, 36);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.Size = new System.Drawing.Size(234, 20);
-            this.txtHoTen.TabIndex = 163;
-            // 
-            // labelX2
-            // 
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Location = new System.Drawing.Point(9, 35);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(63, 19);
-            this.labelX2.TabIndex = 162;
-            this.labelX2.Text = "Họ tên";
-            // 
-            // btnTim
-            // 
-            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTim.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTim.Image = global::QuanLyHoSoCongChuc.Properties.Resources.book_blue_view;
-            this.btnTim.ImageFixedSize = new System.Drawing.Size(24, 24);
-            this.btnTim.Location = new System.Drawing.Point(144, 66);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 25);
-            this.btnTim.TabIndex = 164;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnThoat.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnThoat.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
-            this.btnThoat.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btnThoat.Location = new System.Drawing.Point(225, 68);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(75, 23);
-            this.btnThoat.TabIndex = 168;
-            this.btnThoat.Text = "Thoát";
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // FrmTimCanBoQuaCacThoiKi
             // 

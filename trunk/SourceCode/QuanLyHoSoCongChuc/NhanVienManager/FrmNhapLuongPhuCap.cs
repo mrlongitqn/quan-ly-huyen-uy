@@ -97,11 +97,11 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 {
                     if (LuongPhuCapRepository.Delete(int.Parse(txtMaQuaTrinh.Text)))
                     {
-                        MessageBox.Show("Xóa dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Updated = true;
                         EraseTextboxes();
                         txtMaQuaTrinh.Text = "";
                         LoadData();
+                        MessageBox.Show("Xóa dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -114,6 +114,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         private void btnGhi_Click(object sender, EventArgs e)
         {
             string errorText = "";
+            var success = false;
+
             if (!ValidateUserInput(ref errorText))
             {
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -124,29 +126,28 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             {
                 if (ActionAdd())
                 {
-                    MessageBox.Show("Lưu dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
-                    SetDefaultMode(true);
-                    Updated = true;
-                }
-                else
-                {
-                    MessageBox.Show("Lưu dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    success = true;
                 }
             }
             else if (UpdateMode == EnumUpdateMode.UPDATE)
             {
                 if (ActionUpdate())
                 {
-                    MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    LoadData();
-                    SetDefaultMode(true);
-                    Updated = true;
+                    success = true;
                 }
-                else
-                {
-                    MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+            }
+
+            // Inform result for nguoidung
+            if (success)
+            {
+                LoadData();
+                SetDefaultMode(true);
+                Updated = true;
+                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật dữ liệu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -573,6 +574,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             txtPhuCapTrachNhiem.KeyPress += NavigationChildControl_KeyPress;
             txtPhuCapDocHai.KeyPress += NavigationChildControl_KeyPress;
             txtPhuCapUuDaiNghe.KeyPress += NavigationChildControl_KeyPress;
+            txtPhuCapThamNienNghe.KeyPress += NavigationChildControl_KeyPress;
         }
 
         private void NavigationChildControl_KeyPress(object sender, KeyPressEventArgs e)

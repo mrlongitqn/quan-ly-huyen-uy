@@ -49,21 +49,25 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>users_family.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="CrystalDecisions.CrystalReports.Engine">
       <HintPath>..\..\libs\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.ReportSource">
       <HintPath>..\..\libs\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.Shared">
       <HintPath>..\..\libs\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CrystalDecisions.Windows.Forms">
       <HintPath>..\..\libs\CrystalDecisions.Windows.Forms.dll</HintPath>
-    </Reference>
-    <Reference Include="DataGridViewExtender">
-      <HintPath>C:\Users\tuandom\Desktop\DataGridViewExtender.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="DevComponents.DotNetBar2">
       <HintPath>..\..\libs\DevComponents.DotNetBar2.dll</HintPath>
@@ -226,11 +230,35 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoTuTran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoTuTran.Designer.cs">
+      <DependentUpon>FrmPhieuBaoTuTran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoBoDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoBoDonVi.Designer.cs">
+      <DependentUpon>FrmPhieuBaoBoDonVi.cs</DependentUpon>
+    </Compile>
     <Compile Include="NhanVienManager\FrmNhapLuongPhuCap.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhanVienManager\FrmNhapLuongPhuCap.Designer.cs">
       <DependentUpon>FrmNhapLuongPhuCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyLyDoTuTran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyLyDoTuTran.Designer.cs">
+      <DependentUpon>FrmQuanLyLyDoTuTran.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHinhThucBoDonVi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OtherForms\FrmQuanLyHinhThucBoDonVi.Designer.cs">
+      <DependentUpon>FrmQuanLyHinhThucBoDonVi.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherForms\FrmQuanLyNgachCongChuc.cs">
       <SubType>Form</SubType>
@@ -673,6 +701,7 @@
     <Compile Include="Repositories\BangGiaoDucPhoThongRepository.cs" />
     <Compile Include="Repositories\BangLyLuanChinhTriRepository.cs" />
     <Compile Include="Repositories\BangNgoaiNguRepository.cs" />
+    <Compile Include="Repositories\BoDonViRepository.cs" />
     <Compile Include="Repositories\CanBoQuaCacThoiKiRepository.cs" />
     <Compile Include="Repositories\CanBoVeHuuChuyenDenRepository.cs" />
     <Compile Include="Repositories\CapUyKiemRepository.cs" />
@@ -705,6 +734,7 @@
     <Compile Include="Repositories\LoaiNguoiDung_ChucNangRepository.cs" />
     <Compile Include="Repositories\LoaiThuongBinhRepository.cs" />
     <Compile Include="Repositories\LuongPhuCapRepository.cs" />
+    <Compile Include="Repositories\LyDoTuTranRepository.cs" />
     <Compile Include="Repositories\NgachCongChucRepository.cs" />
     <Compile Include="Repositories\NgheNghiepRepository.cs" />
     <Compile Include="Repositories\NguoiDungRepository.cs" />
@@ -722,6 +752,7 @@
     <Compile Include="Repositories\TinhThanhRepository.cs" />
     <Compile Include="Repositories\TinhTrangSucKhoeRepository.cs" />
     <Compile Include="Repositories\TonGiaoRepository.cs" />
+    <Compile Include="Repositories\TuTranRepository.cs" />
     <Compile Include="Search\CauHoiNguoiDung.cs" />
     <Compile Include="Search\DanhSachCauHoiNguoiDung.cs" />
     <Compile Include="Search\FrmLuuCauHoi.cs">
@@ -761,8 +792,9 @@
     <Compile Include="UsersManager\FrmTimCanBoQuaCacThoiKi.Designer.cs">
       <DependentUpon>FrmTimCanBoQuaCacThoiKi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utils\AllEvents.cs" />
+    <Compile Include="Utils\EventsHelpers.cs" />
     <Compile Include="Utils\Attribute.cs" />
+    <Compile Include="Utils\ClassHelpers.cs" />
     <Compile Include="Utils\DBProvider.cs" />
     <Compile Include="Utils\EncryptText.cs" />
     <Compile Include="FrmDangNhap.cs">
@@ -844,7 +876,7 @@
       <DependentUpon>FrmTimKiem2.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\Criteria.cs" />
-    <Compile Include="Utils\FileHelper.cs" />
+    <Compile Include="Utils\FileHelpers.cs" />
     <Compile Include="Utils\Keys.cs" />
     <Compile Include="Utils\ListItem.cs" />
     <Compile Include="Models\DataModel.Designer.cs">
@@ -854,7 +886,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Utils\AllEnums.cs" />
+    <Compile Include="Utils\EnumHelpers.cs" />
     <Compile Include="Utils\Table.cs" />
     <Compile Include="Utils\Validations.cs" />
     <EmbeddedResource Include="CrystalReport2.rpt">
@@ -865,8 +897,20 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="DataManager\FrmPhieuBaoTuTran.resx">
+      <DependentUpon>FrmPhieuBaoTuTran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManager\FrmPhieuBaoBoDonVi.resx">
+      <DependentUpon>FrmPhieuBaoBoDonVi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NhanVienManager\FrmNhapLuongPhuCap.resx">
       <DependentUpon>FrmNhapLuongPhuCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyLyDoTuTran.resx">
+      <DependentUpon>FrmQuanLyLyDoTuTran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OtherForms\FrmQuanLyHinhThucBoDonVi.resx">
+      <DependentUpon>FrmQuanLyHinhThucBoDonVi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\FrmQuanLyNgachCongChuc.resx">
       <DependentUpon>FrmQuanLyNgachCongChuc.cs</DependentUpon>
@@ -1351,6 +1395,7 @@
     <Content Include="Configs\NhomChucNang.xml">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="users_family.ico" />
     <None Include="Resources\loading.gif" />
     <None Include="Resources\quanhuyen.jpg" />
     <None Include="Resources\tinhthanh.gif" />

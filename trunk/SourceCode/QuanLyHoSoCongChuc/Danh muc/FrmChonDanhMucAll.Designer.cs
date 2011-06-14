@@ -103,7 +103,7 @@
             this.treeView1.ImageList = this.imageList1;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Name = "treeView1";
-            this.treeView1.SelectedImageIndex = 0;
+            this.treeView1.SelectedImageIndex = 4;
             this.treeView1.Size = new System.Drawing.Size(447, 499);
             this.treeView1.TabIndex = 157;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
@@ -116,6 +116,7 @@
             this.imageList1.Images.SetKeyName(1, "tinhthanh.gif");
             this.imageList1.Images.SetKeyName(2, "quanhuyen.jpg");
             this.imageList1.Images.SetKeyName(3, "houses.ico");
+            this.imageList1.Images.SetKeyName(4, "81.png");
             // 
             // FrmChonDanhMucAll
             // 

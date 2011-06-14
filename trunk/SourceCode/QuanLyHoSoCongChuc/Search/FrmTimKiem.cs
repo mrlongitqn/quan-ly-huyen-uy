@@ -41,6 +41,7 @@ namespace QuanLyHoSoCongChuc.Search
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaGioiTinh;
         #endregion
 
+        #region Constructors
         public FrmTimKiem()
         {
             bnLoading = true;
@@ -77,7 +78,9 @@ namespace QuanLyHoSoCongChuc.Search
             tabControl1.SelectedTabIndex = 1;
             bnLoading = false;
         }
+        #endregion
 
+        #region Methods
         public void InitDomain()
         {
             for (int i = 100; i >= 18; i--)
@@ -316,8 +319,8 @@ namespace QuanLyHoSoCongChuc.Search
                     objListViewItem.Tag = lstItem[i];
                     objListViewItem.Text = lstItem[i].MaNhanVien;
                     objListViewItem.SubItems.Add(lstItem[i].HoTenKhaiSinh);
-                    objListViewItem.SubItems.Add(lstItem[i].GioiTinh.TenGioiTinh);
-                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
+                    objListViewItem.SubItems.Add(lstItem[i].MaGioiTinh == null ? "" : lstItem[i].GioiTinh.TenGioiTinh);
+                    objListViewItem.SubItems.Add(lstItem[i].NgaySinh.Value == DateTime.MinValue ? "" : String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
                     objListViewItem.SubItems.Add(lstItem[i].HoKhau);
                     lstvNhanVien.Items.Add(objListViewItem);
                 }
@@ -550,14 +553,25 @@ namespace QuanLyHoSoCongChuc.Search
                         sqlQuery = BuildSearchByTieuChiChungQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
                         break;
                     case "QuaTrinhCongTac":
+                        sqlQuery = BuildSearchByQuaTrinhCongTacQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
                         break;
                     case "QuaTrinhDaoTao":
+                        sqlQuery = BuildSearchByQuaTrinhDaoTaoQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
                         break;
                     case "TrinhDoNgoaiNgu":
+                        sqlQuery = BuildSearchByNgoaiNguQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
                         break;
                     case "KhenThuong":
+                        sqlQuery = BuildSearchByQuaTrinhKhenThuongQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
                         break;
                     case "KyLuat":
+                        sqlQuery = BuildSearchByQuaTrinhKyLuatQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
+                        break;
+                    case "HuyHieu":
+                        sqlQuery = BuildSearchByHuyHieuQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
+                        break;
+                    case "ThanNhan":
+                        sqlQuery = BuildSearchByThanNhanQuery(lstDieuKienTimKiem, txtMaDonVi_TieuChiKhac.Text.Trim());
                         break;
                 }
                 var ds = GlobalVars.g_CauHoiNguoiDung.SearchByCriterias(sqlQuery);
@@ -570,9 +584,9 @@ namespace QuanLyHoSoCongChuc.Search
                         objListViewItem.Tag = NhanVienRepository.SelectByID(ds.Tables[0].Rows[i]["MaNhanVien"].ToString().Trim());
                         objListViewItem.Text = ds.Tables[0].Rows[i]["MaNhanVien"].ToString();
                         objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["HoTenKhaiSinh"].ToString());
-                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["TenGioiTinh"].ToString());
-                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["NgaySinh"].ToString());
-                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["NoiOHienTai"].ToString());
+                        objListViewItem.SubItems.Add(GioiTinhRepository.SelectByID(int.Parse(ds.Tables[0].Rows[i]["MaGioiTinh"].ToString())).TenGioiTinh);
+                        objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", DateTime.Parse(ds.Tables[0].Rows[i]["NgaySinh"].ToString())));
+                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["HoKhau"].ToString());
                         lstvNhanVien.Items.Add(objListViewItem);
                     }
                 }
@@ -667,17 +681,150 @@ namespace QuanLyHoSoCongChuc.Search
         /// Build query base on specified criterial
         /// </summary>
         /// <returns></returns>
+        public string BuildSearchByThanNhanQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
+        {
+            var result = "";
+            result += "Select NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau  From NhanVien, ThanNhan Where ";
+            GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
+            {
+                Bang = "ThanNhan",
+                DBProvider = new DBProvider()
+            };
+            result += CreateQueryString("ThanNhan", lstDieuKienTimKiem);
+            result += "And MaDonVi = N'" + madonvi + "' And NhanVien.MaNhanVien = ThanNhan.MaNhanVien ";
+            result += "Group By NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau";
+            return result;
+        }
+
+        /// <summary>
+        /// Build query base on specified criterial
+        /// </summary>
+        /// <returns></returns>
+        public string BuildSearchByHuyHieuQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
+        {
+            var result = "";
+            result += "Select NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau From NhanVien, HuyHieu Where ";
+            GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
+            {
+                Bang = "HuyHieu",
+                DBProvider = new DBProvider()
+            };
+            result += CreateQueryString("HuyHieu", lstDieuKienTimKiem);
+            result += "And MaDonVi = N'" + madonvi + "' And NhanVien.MaNhanVien = HuyHieu.MaNhanVien ";
+            result += "Group By NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau";
+            return result;
+        }
+
+        /// <summary>
+        /// Build query base on specified criterial
+        /// </summary>
+        /// <returns></returns>
+        public string BuildSearchByNgoaiNguQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
+        {
+            var result = "";
+            result += "Select NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau From NhanVien, BangNgoaiNgu Where ";
+            GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
+            {
+                Bang = "BangNgoaiNgu",
+                DBProvider = new DBProvider()
+            };
+            result += CreateQueryString("BangNgoaiNgu", lstDieuKienTimKiem);
+            result += "And MaDonVi = N'" + madonvi + "' And NhanVien.MaBangNgoaiNgu = BangNgoaiNgu.MaBangNgoaiNgu ";
+            result += "Group By NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau";
+            return result;
+        }
+
+        /// <summary>
+        /// Build query base on specified criterial
+        /// </summary>
+        /// <returns></returns>
+        public string BuildSearchByQuaTrinhKyLuatQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
+        {
+            var result = "";
+            result += "Select NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau From NhanVien, KyLuat Where ";
+            GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
+            {
+                Bang = "KyLuat",
+                DBProvider = new DBProvider()
+            };
+            result += CreateQueryString("KyLuat", lstDieuKienTimKiem);
+            result += "And MaDonVi = N'" + madonvi + "' And NhanVien.MaNhanVien = KyLuat.MaNhanVien ";
+            result += "Group By NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau";
+            return result;
+        }
+
+        /// <summary>
+        /// Build query base on specified criterial
+        /// </summary>
+        /// <returns></returns>
+        public string BuildSearchByQuaTrinhKhenThuongQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
+        {
+            var result = "";
+            result += "Select NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau  From NhanVien, KhenThuong Where ";
+            GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
+            {
+                Bang = "KhenThuong",
+                DBProvider = new DBProvider()
+            };
+            result += CreateQueryString("KhenThuong", lstDieuKienTimKiem);
+            result += "And MaDonVi = N'" + madonvi + "' And NhanVien.MaNhanVien = KhenThuong.MaNhanVien ";
+            result += "Group By NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau";
+            return result;
+        }
+
+        /// <summary>
+        /// Build query base on specified criterial
+        /// </summary>
+        /// <returns></returns>
+        public string BuildSearchByQuaTrinhDaoTaoQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
+        {
+            var result = "";
+            result += "Select NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau From NhanVien, QuaTrinhDaoTao Where ";
+            GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
+            {
+                Bang = "QuaTrinhDaoTao",
+                DBProvider = new DBProvider()
+            };
+            result += CreateQueryString("QuaTrinhDaoTao", lstDieuKienTimKiem);
+            result += "And MaDonVi = N'" + madonvi + "' And NhanVien.MaNhanVien = QuaTrinhDaoTao.MaNhanVien ";
+            result += "Group By NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau";
+            return result;
+        }
+
+        /// <summary>
+        /// Build query base on specified criterial
+        /// </summary>
+        /// <returns></returns>
+        public string BuildSearchByQuaTrinhCongTacQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
+        {
+            var result = "";
+            result += "Select NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau From NhanVien, QuaTrinhCongTac Where ";
+            GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
+            {
+                Bang = "QuaTrinhCongTac",
+                DBProvider = new DBProvider()
+            };
+            result += CreateQueryString("QuaTrinhCongTac", lstDieuKienTimKiem);
+            result += "And MaDonVi = N'" + madonvi + "' And NhanVien.MaNhanVien = QuaTrinhCongTac.MaNhanVien ";
+            result += "Group By NhanVien.MaNhanVien, HoTenKhaiSinh, MaGioiTinh, NgaySinh, HoKhau";
+            return result;
+        }
+
+        /// <summary>
+        /// Build query base on specified criterial
+        /// </summary>
+        /// <returns></returns>
         public string BuildSearchByTieuChiChungQuery(List<DieuKienTimKiem> lstDieuKienTimKiem, string madonvi)
         {
             var result = "";
-            result += "Select NhanVien.*, TenGioiTinh From NhanVien, GioiTinh Where ";
+            result += "Select NhanVien.* From NhanVien Where ";
             GlobalVars.g_CauHoiNguoiDung = new CauHoiNguoiDung
             {
                 Bang = "NhanVien",
                 DBProvider = new DBProvider()
             };
-            result += CreateQueryString(lstDieuKienTimKiem);
-            result += "And NhanVien.MaGioiTinh = GioiTinh.MaGioiTinh And MaDonVi = N'" + madonvi + "'";
+            result += CreateQueryString("NhanVien", lstDieuKienTimKiem);
+            result += "And MaDonVi = N'" + madonvi + "'";
             return result;
         }
 
@@ -685,18 +832,18 @@ namespace QuanLyHoSoCongChuc.Search
         /// Create query string base on list of item in listview
         /// </summary>
         /// <returns></returns>
-        public string CreateQueryString(List<DieuKienTimKiem> lstDieuKienTimKiem)
+        public string CreateQueryString(string tableName, List<DieuKienTimKiem> lstDieuKienTimKiem)
         {
             var result = "";
             for (int i = 0; i < lstDieuKienTimKiem.Count; i++)
             {
                 var item = (DieuKienTimKiem)lstDieuKienTimKiem[i];
                 if (item.Attr.Type == DataType.DATETIME)
-                    result += (item.AndOr.Trim() + " " + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " '" + item.Value.Trim() + "' ");
+                    result += (item.AndOr.Trim() + " " + tableName + "." + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " '" + item.Value.Trim() + "' ");
                 else if (item.Attr.Type == DataType.STRING)
-                    result += (item.AndOr.Trim() + " " + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " N'" + item.Value.Trim() + "' ");
+                    result += (item.AndOr.Trim() + " " + tableName + "." + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " N'" + item.Value.Trim() + "' ");
                 else
-                    result += (item.AndOr.Trim() + " " + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " " + item.Value.Trim() + " ");
+                    result += (item.AndOr.Trim() + " " + tableName + "." + item.Attr.Name.Trim() + " " + item.Condition.Trim() + " " + item.Value.Trim() + " ");
             }
             return result;
         }
@@ -965,15 +1112,25 @@ namespace QuanLyHoSoCongChuc.Search
             }
             else
             {
-                cbxGiaTriTimKiem.Visible = false;
-                txtGiaTriTimKiem.Visible = true;
                 switch (attr.Type)
                 {
                     case DataType.BOOL:
+                        cbxDieuKien.Items.Add("=");
+                        cbxDieuKien.Items.Add("<>");
+                        cbxGiaTriTimKiem.Visible = true;
+                        txtGiaTriTimKiem.Visible = false;
+
+                        var lstBool = new List<BoolDataItem>();
+                        lstBool.Add(new BoolDataItem { Value = 1, Text = "Có" });
+                        lstBool.Add(new BoolDataItem { Value = 0, Text = "Không" });
+                        cbxGiaTriTimKiem.DataSource = lstBool;
+                        break;
                     case DataType.DATETIME:
                     case DataType.STRING:
                         cbxDieuKien.Items.Add("=");
                         cbxDieuKien.Items.Add("<>");
+                        cbxGiaTriTimKiem.Visible = false;
+                        txtGiaTriTimKiem.Visible = true;
                         break;
                     default:
                         cbxDieuKien.Items.Add("=");
@@ -982,6 +1139,8 @@ namespace QuanLyHoSoCongChuc.Search
                         cbxDieuKien.Items.Add("<");
                         cbxDieuKien.Items.Add("<=");
                         cbxDieuKien.Items.Add("<>");
+                        cbxGiaTriTimKiem.Visible = false;
+                        txtGiaTriTimKiem.Visible = true;
                         break;
                 }
             }
@@ -1077,16 +1236,14 @@ namespace QuanLyHoSoCongChuc.Search
                 value = ((LoaiHuyHieu)item).MaLoaiHuyHieu.ToString();
             else if (item.GetType() == typeof(QuanHe))
                 value = ((QuanHe)item).MaQuanHe.ToString();
+            else if (item.GetType() == typeof(BoolDataItem))
+                value = ((BoolDataItem)item).Value.ToString();
             return value;
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////
         // tuansl added: STATISTIC SEARCHING RESULT 
         ///////////////////////////////////////////////////////////////////////////////////////////////
-        private void tbTongHop_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lstvNhanVien_DoubleClick(object sender, EventArgs e)
         {
@@ -1098,6 +1255,7 @@ namespace QuanLyHoSoCongChuc.Search
 
                 var nhanvien = (NhanVien)lstvNhanVien.SelectedItems[0].Tag;
                 FrmThongTinNhanVien frm = new FrmThongTinNhanVien(nhanvien);
+                frm.Handler += NothingToProcess;
 
                 // Hide waiting form
                 GlobalVars.PosLoading();
@@ -1107,6 +1265,9 @@ namespace QuanLyHoSoCongChuc.Search
             }
         }
 
-        
+        private void NothingToProcess(object sender, EventArgs e)
+        {
+        }
+        #endregion
     }
 }

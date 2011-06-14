@@ -227,6 +227,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.lstvChucNangDuocSuDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstvChucNangDuocSuDung.GridLines = true;
             this.lstvChucNangDuocSuDung.Location = new System.Drawing.Point(0, 0);
             this.lstvChucNangDuocSuDung.Name = "lstvChucNangDuocSuDung";
             this.lstvChucNangDuocSuDung.Size = new System.Drawing.Size(313, 329);

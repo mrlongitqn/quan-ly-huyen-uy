@@ -274,19 +274,19 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             var tendonvidaydu = "";
             if (level == 3)
             {
-                tendonvidaydu = donvi.TenDonVi + ", huyện " + donvi.QuanHuyen.TenQuanHuyen + ", tỉnh " + donvi.QuanHuyen.TinhThanh.TenTinh;
+                tendonvidaydu = donvi.TenDonVi + ", " + donvi.QuanHuyen.TenQuanHuyen + ", " + donvi.QuanHuyen.TinhThanh.TenTinh;
                 TransferDataInfo(this, new MyEvent(madonvi + "#" + tendonvidaydu + "#" + level));
             }
             else if (level == 1)
             {
                 var SelectedId = treeView1.SelectedNode.Text.Split(new char[] { '-' })[0].Trim();
-                tendonvidaydu = "Tỉnh " +TinhThanhRepository.SelectByID(SelectedId).TenTinh;
+                tendonvidaydu = TinhThanhRepository.SelectByID(SelectedId).TenTinh;
                 TransferDataInfo(this, new MyEvent(SelectedId + "#" + tendonvidaydu + "#" + level));
             }
             else if (level == 2)
             {
                 var SelectedId = treeView1.SelectedNode.Text.Split(new char[] { '-' })[0].Trim();
-                tendonvidaydu = "Huyện " + QuanHuyenRepository.SelectByID(SelectedId).TenQuanHuyen;
+                tendonvidaydu = QuanHuyenRepository.SelectByID(SelectedId).TenQuanHuyen;
                 TransferDataInfo(this, new MyEvent(SelectedId + "#" + tendonvidaydu + "#" + level));
             }
             

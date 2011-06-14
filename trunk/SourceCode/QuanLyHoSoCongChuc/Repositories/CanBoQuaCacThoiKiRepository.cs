@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,6 +7,8 @@ namespace QuanLyHoSoCongChuc.Repositories
 {
 	#region using
 	using QuanLyHoSoCongChuc.Models;
+    using QuanLyHoSoCongChuc.Utils;
+    using QuanLyHoSoCongChuc.DataManager;
 	#endregion
 	public class CanBoQuaCacThoiKiRepository
 	{
@@ -78,6 +80,25 @@ namespace QuanLyHoSoCongChuc.Repositories
 			var lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.MaDonVi == madonvi select item).ToList();
 			return lstItem;
 		}
+
+        public static List<CanBoQuaCacThoiKi> SelectCanBoQuaCacThoiKi(string madonvi, EnumLoaiCanBoQuaCacThoiKi loaicanbo)
+        {
+            var lstItem = new List<CanBoQuaCacThoiKi>();
+            switch (loaicanbo)
+            {
+                case EnumLoaiCanBoQuaCacThoiKi.CHUYEN_DONVI:
+                    lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.MaDonVi == madonvi && item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.CHUYEN_DONVI select item).ToList();
+                    break;
+                case EnumLoaiCanBoQuaCacThoiKi.BO_DONVI:
+                    lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.MaDonVi == madonvi && item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.BO_DONVI select item).ToList();
+                    break;
+                case EnumLoaiCanBoQuaCacThoiKi.TUTRAN:
+                    lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.MaDonVi == madonvi && item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.TUTRAN select item).ToList();
+                    break;
+            }
+            
+            return lstItem;
+        }
 
 		public static List<CanBoQuaCacThoiKi> SelectByMaNhanVien(string manhanvien)
 		{

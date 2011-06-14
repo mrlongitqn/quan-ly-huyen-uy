@@ -24,9 +24,10 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
     public partial class FrmThongTinNhanVien_TomTat : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
-        private NhanVien _nhanvien;
+        public NhanVien _nhanvien { get; set; }
         // Hidden files are used to store ids 
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaChucVu;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaChucVuKiemNhiem;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaDanToc;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaTonGiao;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaThanhPhanGiaDinh;
@@ -39,6 +40,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaHocHam;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaTinhTrangSucKhoe;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaLoaiThuongBinh;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNgach;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtMaHuong85;
         public string PathHinhAnh { get; set; }
         #endregion
 
@@ -139,6 +142,27 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             get
             {
                 return txtMaChucVu.Text == "" ? -1 : int.Parse(txtMaChucVu.Text);
+            }
+        }
+        public int MaChucVuKiemNhiem
+        {
+            get
+            {
+                return txtMaChucVuKiemNhiem.Text == "" ? -1 : int.Parse(txtMaChucVuKiemNhiem.Text);
+            }
+        }
+        public string MaNgachCongChuc
+        {
+            get
+            {
+                return txtMaNgach.Text;
+            }
+        }
+        public string MaHuong85
+        {
+            get
+            {
+                return txtMaHuong85.Text;
             }
         }
         public string HinhAnh
@@ -408,7 +432,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             txtSoCMND.Text = _nhanvien.SoCMND;
             dtMienSHD.Value = _nhanvien.NgayMienSHD.Value;
 
-            txtChucVu.Text = _nhanvien.MaChucVu == null ? "" : _nhanvien.ChucVu.TenChucVu;
+            txtChucVu.Text = _nhanvien.MaChucVu == null ? "" : ChucVuRepository.SelectByID(_nhanvien.MaChucVu.Value).TenChucVu;
+            txtChucVuKiemNhiem.Text = _nhanvien.MaChucVuKiemNhiem == null ? "" : ChucVuRepository.SelectByID(_nhanvien.MaChucVuKiemNhiem.Value).TenChucVu;
             txtDanToc.Text = _nhanvien.MaDanToc == null ? "" : _nhanvien.DanToc.TenDanToc;
             txtTonGiao.Text = _nhanvien.MaTonGiao == null ? "" : _nhanvien.TonGiao.TenTonGiao;
             txtThanhPhanGiaDinh.Text = _nhanvien.MaThanhPhanGiaDinh == null ? "" : _nhanvien.ThanhPhanGiaDinh.TenThanhPhanGiaDinh;
@@ -421,7 +446,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             txtHocHam.Text = _nhanvien.MaHocHam == null ? "" : _nhanvien.HocHam.TenHocHam;
             txtTinhTrangSucKhoe.Text = _nhanvien.MaTinhTrangSucKhoe == null ? "" : _nhanvien.TinhTrangSucKhoe.TenTinhTrangSucKhoe;
             txtLoaiThuongBinh.Text = _nhanvien.MaLoaiThuongBinh == null ? "" : _nhanvien.LoaiThuongBinh.TenLoaiThuongBinh;
-
+            txtNgach.Text = _nhanvien.MaNgachCongChuc == null ? "" : _nhanvien.NgachCongChuc.TenNgachCongChuc;
+            txtHuong85.Text = _nhanvien.MaHuong85 == null ? "" : _nhanvien.Huong85.GiaTriHuong;
         }
 
         public void LoadImage(byte[] imageData)
@@ -453,19 +479,22 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         /// </summary>
         public void LoadDataToHiddenFileds()
         {
-            txtMaChucVu.Text = _nhanvien.MaChucVu.ToString();
-            txtMaDanToc.Text = _nhanvien.MaDanToc.ToString();
-            txtMaTonGiao.Text = _nhanvien.MaTonGiao.ToString();
-            txtMaThanhPhanGiaDinh.Text = _nhanvien.MaThanhPhanGiaDinh.ToString();
-            txtMaNgheNghiepTruocKhiDuocTuyenDung.Text = _nhanvien.MaNgheNghiepTruocKhiDuocTuyenDung.ToString();
-            txtMaGiaoDucPhoThong.Text = _nhanvien.MaBangGiaoDucPhoThong.ToString();
-            txtMaChuyenMonNghiepVu.Text = _nhanvien.MaBangChuyenMonNghiepVu.ToString();
-            txtMaLyLuanChinhTri.Text = _nhanvien.MaBangLyLuanChinhTri.ToString();
-            txtMaNgoaiNgu.Text = _nhanvien.MaBangNgoaiNgu.ToString();
-            txtMaHocViCaoNhat.Text = _nhanvien.MaHocVi.ToString();
-            txtMaHocHam.Text = _nhanvien.MaHocHam.ToString();
-            txtMaTinhTrangSucKhoe.Text = _nhanvien.MaTinhTrangSucKhoe.ToString();
-            txtMaLoaiThuongBinh.Text = _nhanvien.MaLoaiThuongBinh.ToString();
+            txtMaChucVu.Text = _nhanvien.MaChucVu == null ? "" : _nhanvien.MaChucVu.ToString();
+            txtMaChucVuKiemNhiem.Text = _nhanvien.MaChucVuKiemNhiem == null ? "" : _nhanvien.MaChucVuKiemNhiem.ToString();
+            txtMaDanToc.Text = _nhanvien.MaDanToc == null ? "" : _nhanvien.MaDanToc.ToString();
+            txtMaTonGiao.Text = _nhanvien.MaTonGiao == null ? "" : _nhanvien.MaTonGiao.ToString();
+            txtMaThanhPhanGiaDinh.Text = _nhanvien.MaThanhPhanGiaDinh == null ? "" : _nhanvien.MaThanhPhanGiaDinh.ToString();
+            txtMaNgheNghiepTruocKhiDuocTuyenDung.Text = _nhanvien.MaNgheNghiepTruocKhiDuocTuyenDung == null ? "" : _nhanvien.MaNgheNghiepTruocKhiDuocTuyenDung.ToString();
+            txtMaGiaoDucPhoThong.Text = _nhanvien.MaBangGiaoDucPhoThong == null ? "" : _nhanvien.MaBangGiaoDucPhoThong.ToString();
+            txtMaChuyenMonNghiepVu.Text = _nhanvien.MaBangChuyenMonNghiepVu == null ? "" : _nhanvien.MaBangChuyenMonNghiepVu.ToString();
+            txtMaLyLuanChinhTri.Text = _nhanvien.MaBangLyLuanChinhTri == null ? "" : _nhanvien.MaBangLyLuanChinhTri.ToString();
+            txtMaNgoaiNgu.Text = _nhanvien.MaBangNgoaiNgu == null ? "" : _nhanvien.MaBangNgoaiNgu.ToString();
+            txtMaHocViCaoNhat.Text = _nhanvien.MaHocVi == null ? "" : _nhanvien.MaHocVi.ToString();
+            txtMaHocHam.Text = _nhanvien.MaHocHam == null ? "" : _nhanvien.MaHocHam.ToString();
+            txtMaTinhTrangSucKhoe.Text = _nhanvien.MaTinhTrangSucKhoe == null ? "" : _nhanvien.MaTinhTrangSucKhoe.ToString();
+            txtMaLoaiThuongBinh.Text = _nhanvien.MaLoaiThuongBinh == null ? "" : _nhanvien.MaLoaiThuongBinh.ToString();
+            txtMaNgach.Text = _nhanvien.MaNgachCongChuc == null ? "" : _nhanvien.MaNgachCongChuc.ToString();
+            txtMaHuong85.Text = _nhanvien.MaHuong85 == null ? "" : _nhanvien.MaHuong85.ToString();
         }
 
         /// <summary>
@@ -480,6 +509,14 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 Text = ""
             };
             txtMaChucVu.Visible = false;
+
+            // Add a new textbox
+            txtMaChucVuKiemNhiem = new DevComponents.DotNetBar.Controls.TextBoxX
+            {
+                Name = "txtMaChucVuKiemNhiem",
+                Text = ""
+            };
+            txtMaChucVuKiemNhiem.Visible = false;
 
             // Add a new textbox
             txtMaDanToc = new DevComponents.DotNetBar.Controls.TextBoxX
@@ -576,6 +613,22 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 Text = ""
             };
             txtMaLoaiThuongBinh.Visible = false;
+
+            // Add a new textbox
+            txtMaNgach = new DevComponents.DotNetBar.Controls.TextBoxX
+            {
+                Name = "txtMaNgach",
+                Text = ""
+            };
+            txtMaNgach.Visible = false;
+
+            // Add a new textbox
+            txtMaHuong85 = new DevComponents.DotNetBar.Controls.TextBoxX
+            {
+                Name = "txtMaHuong85",
+                Text = ""
+            };
+            txtMaHuong85.Visible = false;
         }
         #endregion
 
@@ -818,5 +871,49 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             picNv.Image = null;
         }
 
+        private void btnChonNgach_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyNgachCongChuc frm = new FrmQuanLyNgachCongChuc();
+            frm.Handler += GetNgach;
+            frm.ShowDialog();
+        }
+
+        public void GetNgach(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaLoaiThuongBinh.Text = comp[0];
+            txtLoaiThuongBinh.Text = comp[1];
+        }
+
+        private void btnChonHuong85_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyHuong85 frm = new FrmQuanLyHuong85();
+            frm.Handler += GetHuong85;
+            frm.ShowDialog();
+        }
+
+        public void GetHuong85(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaLoaiThuongBinh.Text = comp[0];
+            txtLoaiThuongBinh.Text = comp[1];
+        }
+
+        private void btnMaChucVuKiemNhiem_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyChucVu frm = new FrmQuanLyChucVu();
+            frm.Handler += GetChucVuKiemNhiem;
+            frm.ShowDialog();
+        }
+
+        public void GetChucVuKiemNhiem(object sender, EventArgs e)
+        {
+            var eventType = (MyEvent)e;
+            string[] comp = eventType.Data.Split(new char[] { '#' });
+            txtMaChucVu.Text = comp[0];
+            txtChucVu.Text = comp[1];
+        }
     }
 }

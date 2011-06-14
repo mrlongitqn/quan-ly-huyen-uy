@@ -306,7 +306,7 @@
             this.btnChon.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Sign_Select_icon;
             this.btnChon.Name = "btnChon";
             this.btnChon.RightToLeftAutoMirrorImage = true;
-            this.btnChon.Size = new System.Drawing.Size(36, 33);
+            this.btnChon.Size = new System.Drawing.Size(37, 33);
             this.btnChon.Text = "Chọn";
             this.btnChon.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
@@ -316,7 +316,7 @@
             this.btnReset.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Eraser_icon;
             this.btnReset.Name = "btnReset";
             this.btnReset.RightToLeftAutoMirrorImage = true;
-            this.btnReset.Size = new System.Drawing.Size(55, 33);
+            this.btnReset.Size = new System.Drawing.Size(57, 33);
             this.btnReset.Text = "Nhập mới";
             this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -326,7 +326,7 @@
             this.btnThemMoi.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_01;
             this.btnThemMoi.Name = "btnThemMoi";
             this.btnThemMoi.RightToLeftAutoMirrorImage = true;
-            this.btnThemMoi.Size = new System.Drawing.Size(37, 33);
+            this.btnThemMoi.Size = new System.Drawing.Size(39, 33);
             this.btnThemMoi.Text = "Thêm";
             this.btnThemMoi.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
@@ -336,7 +336,7 @@
             this.btnXoa.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_29;
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.RightToLeftAutoMirrorImage = true;
-            this.btnXoa.Size = new System.Drawing.Size(29, 33);
+            this.btnXoa.Size = new System.Drawing.Size(30, 33);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -346,8 +346,8 @@
             this.btnLuu.Image = global::QuanLyHoSoCongChuc.Properties.Resources._45;
             this.btnLuu.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.btnLuu.Name = "btnLuu";
-            this.btnLuu.Size = new System.Drawing.Size(29, 33);
-            this.btnLuu.Text = "Lưu";
+            this.btnLuu.Size = new System.Drawing.Size(55, 33);
+            this.btnLuu.Text = "Cập nhật";
             this.btnLuu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 

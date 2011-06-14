@@ -39,6 +39,7 @@
             this.buttonX4 = new DevComponents.DotNetBar.ButtonX();
             this.groupPanel3 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.lstvChucNangDuocSuDung = new DevComponents.DotNetBar.Controls.ListViewEx();
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnLuu = new DevComponents.DotNetBar.ButtonX();
@@ -46,7 +47,6 @@
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupPanel2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -189,12 +189,19 @@
             this.columnHeader3,
             this.columnHeader2});
             this.lstvChucNangDuocSuDung.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstvChucNangDuocSuDung.GridLines = true;
             this.lstvChucNangDuocSuDung.Location = new System.Drawing.Point(0, 0);
             this.lstvChucNangDuocSuDung.Name = "lstvChucNangDuocSuDung";
             this.lstvChucNangDuocSuDung.Size = new System.Drawing.Size(301, 365);
             this.lstvChucNangDuocSuDung.TabIndex = 0;
             this.lstvChucNangDuocSuDung.UseCompatibleStateImageBehavior = false;
             this.lstvChucNangDuocSuDung.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Có quyền?";
+            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader3.Width = 80;
             // 
             // columnHeader2
             // 
@@ -293,12 +300,6 @@
             this.labelX3.TabIndex = 1;
             this.labelX3.Text = "CHỨC NĂNG NGƯỜI DÙNG";
             this.labelX3.TextAlignment = System.Drawing.StringAlignment.Center;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Có quyền?";
-            this.columnHeader3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader3.Width = 80;
             // 
             // frmQuanLyChucNangNguoiDung
             // 
