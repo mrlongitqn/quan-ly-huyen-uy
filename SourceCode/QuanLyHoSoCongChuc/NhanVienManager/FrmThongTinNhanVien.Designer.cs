@@ -50,6 +50,7 @@
             this.lblDacDiemLS = new DevComponents.DotNetBar.LabelX();
             this.lblCacQuaTrinh = new DevComponents.DotNetBar.LabelX();
             this.lblTomTat = new DevComponents.DotNetBar.LabelX();
+            this.lblLoaiCanBo = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -320,6 +321,7 @@
             // pnlChucNang
             // 
             this.pnlChucNang.CanvasColor = System.Drawing.SystemColors.Control;
+            this.pnlChucNang.Controls.Add(this.lblLoaiCanBo);
             this.pnlChucNang.Controls.Add(this.lblGiaDinh);
             this.pnlChucNang.Controls.Add(this.lblDacDiemLS);
             this.pnlChucNang.Controls.Add(this.lblCacQuaTrinh);
@@ -385,6 +387,19 @@
             this.lblTomTat.Text = "1. Tóm tắt";
             this.lblTomTat.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // lblLoaiCanBo
+            // 
+            this.lblLoaiCanBo.AutoSize = true;
+            this.lblLoaiCanBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLoaiCanBo.ForeColor = System.Drawing.Color.Yellow;
+            this.lblLoaiCanBo.Location = new System.Drawing.Point(596, 5);
+            this.lblLoaiCanBo.Name = "lblLoaiCanBo";
+            this.lblLoaiCanBo.Size = new System.Drawing.Size(69, 17);
+            this.lblLoaiCanBo.TabIndex = 4;
+            this.lblLoaiCanBo.Text = "LoaiCanBo";
+            this.lblLoaiCanBo.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.lblLoaiCanBo.Visible = false;
+            // 
             // FrmThongTinNhanVien
             // 
             this.ClientSize = new System.Drawing.Size(865, 502);
@@ -396,6 +411,7 @@
             this.Text = "Thông tin nhân viên";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmThongTinNhanVien_FormClosed);
             this.Load += new System.EventHandler(this.FrmThongTinNhanVien_Load);
+            this.Shown += new System.EventHandler(this.FrmThongTinNhanVien_Shown);
             this.groupPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -430,6 +446,7 @@
         private DevComponents.Editors.DateTimeAdv.DateTimeInput dtSinhNgay;
         private System.Windows.Forms.Button btnChonGioiTinh;
         private DevComponents.DotNetBar.Controls.TextBoxX txtGioiTinh;
+        private DevComponents.DotNetBar.LabelX lblLoaiCanBo;
 
     }
 }

@@ -178,6 +178,7 @@
             this.lstvCanBo.TabIndex = 158;
             this.lstvCanBo.UseCompatibleStateImageBehavior = false;
             this.lstvCanBo.View = System.Windows.Forms.View.Details;
+            this.lstvCanBo.DoubleClick += new System.EventHandler(this.lstvCanBo_DoubleClick);
             // 
             // columnHeader3
             // 

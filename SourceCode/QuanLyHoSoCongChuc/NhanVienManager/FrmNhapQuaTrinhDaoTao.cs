@@ -42,7 +42,6 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             _nhanvien = nhanvien;
             txtHoTen.Text = _nhanvien.HoTenKhaiSinh;
             txtMaNhanVien.Text = _nhanvien.MaNhanVien;
-            LoadData();
         }
 
         /// <summary>
@@ -377,6 +376,10 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         private void FrmNhapQuaTrinhDaoTao_Load(object sender, EventArgs e)
         {
+            // Show waiting form
+            GlobalVars.PreLoading();
+            //------- E ---------
+            LoadData();
             EraseTextboxes();
             SetDefaultMode(true);
         }
@@ -631,6 +634,13 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         public void TransferDataInfo(object sender, MyEvent e)
         {
             this.Handler(this, e);
+        }
+
+        private void FrmNhapQuaTrinhDaoTao_Shown(object sender, EventArgs e)
+        {
+            // Hide waiting form
+            GlobalVars.PosLoading();
+            //------- E ---------
         }
     }
 }

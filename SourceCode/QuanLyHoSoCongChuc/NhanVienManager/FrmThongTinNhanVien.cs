@@ -66,6 +66,22 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             _nhanvien = nhanvien;
             InitHiddenFields();
             Mode = EnumUpdateMode.UPDATE;
+            lblLoaiCanBo.Visible = true;
+            lblLoaiCanBo.Text = "ĐANG SINH HOẠT";
+        }
+
+        /// <summary>
+        /// Using when update info of nhanvien
+        /// </summary>
+        /// <param name="manhanvien"></param>
+        public FrmThongTinNhanVien(NhanVien nhanvien, string loaicanbo)
+        {
+            InitializeComponent();
+            _nhanvien = nhanvien;
+            InitHiddenFields();
+            Mode = EnumUpdateMode.UPDATE;
+            lblLoaiCanBo.Visible = true;
+            lblLoaiCanBo.Text = loaicanbo;
         }
 
         /// <summary>
@@ -83,6 +99,10 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         private void FrmThongTinNhanVien_Load(object sender, EventArgs e)
         {
+            // Show waiting form
+            GlobalVars.PreLoading();
+            //------- E ---------
+
             if (Mode == EnumUpdateMode.INSERT)
             {
                 InitForm(null);
@@ -570,7 +590,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 NoiSinh = frmThongTinNhanVien_TomTat.NoiSinh,
                 QueQuan = frmThongTinNhanVien_TomTat.QueQuan,
                 HoKhau = frmThongTinNhanVien_TomTat.HoKhau,
-                TamTru = frmThongTinNhanVien_TomTat.TamTru,
+                NoiOHienNay = frmThongTinNhanVien_TomTat.TamTru,
                 CongViecChinh = frmThongTinNhanVien_TomTat.CongViecChinh,
                 NgayVaoDang = frmThongTinNhanVien_TomTat.NgayVaoDang,
                 VaoDangTaiChiBo = frmThongTinNhanVien_TomTat.VaoDangTaiChiBo,
@@ -619,7 +639,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             item.NoiSinh = frmThongTinNhanVien_TomTat.NoiSinh;
             item.QueQuan = frmThongTinNhanVien_TomTat.QueQuan;
             item.HoKhau = frmThongTinNhanVien_TomTat.HoKhau;
-            item.TamTru = frmThongTinNhanVien_TomTat.TamTru;
+            item.NoiOHienNay = frmThongTinNhanVien_TomTat.TamTru;
             item.CongViecChinh = frmThongTinNhanVien_TomTat.CongViecChinh;
             item.NgayVaoDang = frmThongTinNhanVien_TomTat.NgayVaoDang;
             item.VaoDangTaiChiBo = frmThongTinNhanVien_TomTat.VaoDangTaiChiBo;
@@ -805,5 +825,12 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             }
         }
         #endregion       
+
+        private void FrmThongTinNhanVien_Shown(object sender, EventArgs e)
+        {
+            // Pos waiting form
+            GlobalVars.PosLoading();
+            //------- E ---------
+        }
     }
 }

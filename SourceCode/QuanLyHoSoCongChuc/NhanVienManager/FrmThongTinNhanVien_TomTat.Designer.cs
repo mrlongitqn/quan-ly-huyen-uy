@@ -30,6 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThongTinNhanVien_TomTat));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.btnMaChucVuKiemNhiem = new System.Windows.Forms.Button();
+            this.txtChucVuKiemNhiem = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX42 = new DevComponents.DotNetBar.LabelX();
+            this.btnChonHuong85 = new System.Windows.Forms.Button();
+            this.txtHuong85 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX41 = new DevComponents.DotNetBar.LabelX();
+            this.btnChonNgach = new System.Windows.Forms.Button();
+            this.txtNgach = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX22 = new DevComponents.DotNetBar.LabelX();
             this.btnChonChucVu = new System.Windows.Forms.Button();
             this.txtChucVu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX40 = new DevComponents.DotNetBar.LabelX();
@@ -118,7 +127,7 @@
             this.labelX12 = new DevComponents.DotNetBar.LabelX();
             this.labelX11 = new DevComponents.DotNetBar.LabelX();
             this.labelX17 = new DevComponents.DotNetBar.LabelX();
-            this.txtNoiOTamTru = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtNoiOHienNay = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoKhau = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX18 = new DevComponents.DotNetBar.LabelX();
             this.txtHoTenDangDung = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -128,15 +137,6 @@
             this.txtMaNhanVien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnChonNgach = new System.Windows.Forms.Button();
-            this.txtNgach = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX22 = new DevComponents.DotNetBar.LabelX();
-            this.btnChonHuong85 = new System.Windows.Forms.Button();
-            this.txtHuong85 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX41 = new DevComponents.DotNetBar.LabelX();
-            this.btnMaChucVuKiemNhiem = new System.Windows.Forms.Button();
-            this.txtChucVuKiemNhiem = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX42 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtMienSHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayXuatNgu)).BeginInit();
@@ -250,7 +250,7 @@
             this.groupPanel1.Controls.Add(this.labelX12);
             this.groupPanel1.Controls.Add(this.labelX11);
             this.groupPanel1.Controls.Add(this.labelX17);
-            this.groupPanel1.Controls.Add(this.txtNoiOTamTru);
+            this.groupPanel1.Controls.Add(this.txtNoiOHienNay);
             this.groupPanel1.Controls.Add(this.txtHoKhau);
             this.groupPanel1.Controls.Add(this.labelX18);
             this.groupPanel1.Controls.Add(this.txtHoTenDangDung);
@@ -284,6 +284,111 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
+            // 
+            // btnMaChucVuKiemNhiem
+            // 
+            this.btnMaChucVuKiemNhiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnMaChucVuKiemNhiem.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnMaChucVuKiemNhiem.Location = new System.Drawing.Point(662, 109);
+            this.btnMaChucVuKiemNhiem.Name = "btnMaChucVuKiemNhiem";
+            this.btnMaChucVuKiemNhiem.Size = new System.Drawing.Size(28, 27);
+            this.btnMaChucVuKiemNhiem.TabIndex = 331;
+            this.btnMaChucVuKiemNhiem.UseVisualStyleBackColor = true;
+            this.btnMaChucVuKiemNhiem.Click += new System.EventHandler(this.btnMaChucVuKiemNhiem_Click);
+            // 
+            // txtChucVuKiemNhiem
+            // 
+            this.txtChucVuKiemNhiem.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtChucVuKiemNhiem.Border.Class = "TextBoxBorder";
+            this.txtChucVuKiemNhiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtChucVuKiemNhiem.Location = new System.Drawing.Point(508, 113);
+            this.txtChucVuKiemNhiem.Name = "txtChucVuKiemNhiem";
+            this.txtChucVuKiemNhiem.ReadOnly = true;
+            this.txtChucVuKiemNhiem.Size = new System.Drawing.Size(148, 20);
+            this.txtChucVuKiemNhiem.TabIndex = 330;
+            // 
+            // labelX42
+            // 
+            this.labelX42.BackColor = System.Drawing.Color.Transparent;
+            this.labelX42.Location = new System.Drawing.Point(388, 110);
+            this.labelX42.Name = "labelX42";
+            this.labelX42.Size = new System.Drawing.Size(114, 23);
+            this.labelX42.TabIndex = 329;
+            this.labelX42.Text = "Chức vụ kiêm nhiệm";
+            this.labelX42.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // btnChonHuong85
+            // 
+            this.btnChonHuong85.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonHuong85.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonHuong85.Location = new System.Drawing.Point(662, 136);
+            this.btnChonHuong85.Name = "btnChonHuong85";
+            this.btnChonHuong85.Size = new System.Drawing.Size(28, 27);
+            this.btnChonHuong85.TabIndex = 328;
+            this.btnChonHuong85.UseVisualStyleBackColor = true;
+            this.btnChonHuong85.Click += new System.EventHandler(this.btnChonHuong85_Click);
+            // 
+            // txtHuong85
+            // 
+            this.txtHuong85.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtHuong85.Border.Class = "TextBoxBorder";
+            this.txtHuong85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHuong85.Location = new System.Drawing.Point(462, 140);
+            this.txtHuong85.Name = "txtHuong85";
+            this.txtHuong85.ReadOnly = true;
+            this.txtHuong85.Size = new System.Drawing.Size(194, 20);
+            this.txtHuong85.TabIndex = 327;
+            // 
+            // labelX41
+            // 
+            this.labelX41.BackColor = System.Drawing.Color.Transparent;
+            this.labelX41.Location = new System.Drawing.Point(388, 137);
+            this.labelX41.Name = "labelX41";
+            this.labelX41.Size = new System.Drawing.Size(59, 23);
+            this.labelX41.TabIndex = 326;
+            this.labelX41.Text = "Hưởng 85";
+            this.labelX41.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // btnChonNgach
+            // 
+            this.btnChonNgach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonNgach.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonNgach.Location = new System.Drawing.Point(354, 137);
+            this.btnChonNgach.Name = "btnChonNgach";
+            this.btnChonNgach.Size = new System.Drawing.Size(28, 27);
+            this.btnChonNgach.TabIndex = 325;
+            this.btnChonNgach.UseVisualStyleBackColor = true;
+            this.btnChonNgach.Click += new System.EventHandler(this.btnChonNgach_Click);
+            // 
+            // txtNgach
+            // 
+            this.txtNgach.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtNgach.Border.Class = "TextBoxBorder";
+            this.txtNgach.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNgach.Location = new System.Drawing.Point(148, 140);
+            this.txtNgach.Name = "txtNgach";
+            this.txtNgach.ReadOnly = true;
+            this.txtNgach.Size = new System.Drawing.Size(200, 20);
+            this.txtNgach.TabIndex = 324;
+            // 
+            // labelX22
+            // 
+            this.labelX22.BackColor = System.Drawing.Color.Transparent;
+            this.labelX22.Location = new System.Drawing.Point(22, 139);
+            this.labelX22.Name = "labelX22";
+            this.labelX22.Size = new System.Drawing.Size(104, 23);
+            this.labelX22.TabIndex = 323;
+            this.labelX22.Text = "Ngạch công chức";
+            this.labelX22.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // btnChonChucVu
             // 
@@ -1393,7 +1498,7 @@
             this.picNv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picNv.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picNv.ErrorImage")));
             this.picNv.InitialImage = null;
-            this.picNv.Location = new System.Drawing.Point(699, 32);
+            this.picNv.Location = new System.Drawing.Point(707, 32);
             this.picNv.Name = "picNv";
             this.picNv.Size = new System.Drawing.Size(115, 131);
             this.picNv.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1502,7 +1607,7 @@
             this.labelX12.Name = "labelX12";
             this.labelX12.Size = new System.Drawing.Size(82, 20);
             this.labelX12.TabIndex = 190;
-            this.labelX12.Text = "Nơi ở tạm trú";
+            this.labelX12.Text = "Nơi ở hiện nay";
             this.labelX12.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // labelX11
@@ -1527,17 +1632,17 @@
             this.labelX17.Text = "Quê quán";
             this.labelX17.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
-            // txtNoiOTamTru
+            // txtNoiOHienNay
             // 
             // 
             // 
             // 
-            this.txtNoiOTamTru.Border.Class = "TextBoxBorder";
-            this.txtNoiOTamTru.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNoiOTamTru.Location = new System.Drawing.Point(148, 195);
-            this.txtNoiOTamTru.Name = "txtNoiOTamTru";
-            this.txtNoiOTamTru.Size = new System.Drawing.Size(542, 20);
-            this.txtNoiOTamTru.TabIndex = 187;
+            this.txtNoiOHienNay.Border.Class = "TextBoxBorder";
+            this.txtNoiOHienNay.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNoiOHienNay.Location = new System.Drawing.Point(148, 195);
+            this.txtNoiOHienNay.Name = "txtNoiOHienNay";
+            this.txtNoiOHienNay.Size = new System.Drawing.Size(542, 20);
+            this.txtNoiOHienNay.TabIndex = 187;
             // 
             // txtHoKhau
             // 
@@ -1635,111 +1740,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btnChonNgach
-            // 
-            this.btnChonNgach.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonNgach.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonNgach.Location = new System.Drawing.Point(354, 137);
-            this.btnChonNgach.Name = "btnChonNgach";
-            this.btnChonNgach.Size = new System.Drawing.Size(28, 27);
-            this.btnChonNgach.TabIndex = 325;
-            this.btnChonNgach.UseVisualStyleBackColor = true;
-            this.btnChonNgach.Click += new System.EventHandler(this.btnChonNgach_Click);
-            // 
-            // txtNgach
-            // 
-            this.txtNgach.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtNgach.Border.Class = "TextBoxBorder";
-            this.txtNgach.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNgach.Location = new System.Drawing.Point(148, 140);
-            this.txtNgach.Name = "txtNgach";
-            this.txtNgach.ReadOnly = true;
-            this.txtNgach.Size = new System.Drawing.Size(200, 20);
-            this.txtNgach.TabIndex = 324;
-            // 
-            // labelX22
-            // 
-            this.labelX22.BackColor = System.Drawing.Color.Transparent;
-            this.labelX22.Location = new System.Drawing.Point(22, 139);
-            this.labelX22.Name = "labelX22";
-            this.labelX22.Size = new System.Drawing.Size(104, 23);
-            this.labelX22.TabIndex = 323;
-            this.labelX22.Text = "Ngạch công chức";
-            this.labelX22.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // btnChonHuong85
-            // 
-            this.btnChonHuong85.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonHuong85.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonHuong85.Location = new System.Drawing.Point(662, 136);
-            this.btnChonHuong85.Name = "btnChonHuong85";
-            this.btnChonHuong85.Size = new System.Drawing.Size(28, 27);
-            this.btnChonHuong85.TabIndex = 328;
-            this.btnChonHuong85.UseVisualStyleBackColor = true;
-            this.btnChonHuong85.Click += new System.EventHandler(this.btnChonHuong85_Click);
-            // 
-            // txtHuong85
-            // 
-            this.txtHuong85.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtHuong85.Border.Class = "TextBoxBorder";
-            this.txtHuong85.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHuong85.Location = new System.Drawing.Point(462, 140);
-            this.txtHuong85.Name = "txtHuong85";
-            this.txtHuong85.ReadOnly = true;
-            this.txtHuong85.Size = new System.Drawing.Size(194, 20);
-            this.txtHuong85.TabIndex = 327;
-            // 
-            // labelX41
-            // 
-            this.labelX41.BackColor = System.Drawing.Color.Transparent;
-            this.labelX41.Location = new System.Drawing.Point(388, 137);
-            this.labelX41.Name = "labelX41";
-            this.labelX41.Size = new System.Drawing.Size(59, 23);
-            this.labelX41.TabIndex = 326;
-            this.labelX41.Text = "Hưởng 85";
-            this.labelX41.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // btnMaChucVuKiemNhiem
-            // 
-            this.btnMaChucVuKiemNhiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnMaChucVuKiemNhiem.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnMaChucVuKiemNhiem.Location = new System.Drawing.Point(662, 109);
-            this.btnMaChucVuKiemNhiem.Name = "btnMaChucVuKiemNhiem";
-            this.btnMaChucVuKiemNhiem.Size = new System.Drawing.Size(28, 27);
-            this.btnMaChucVuKiemNhiem.TabIndex = 331;
-            this.btnMaChucVuKiemNhiem.UseVisualStyleBackColor = true;
-            this.btnMaChucVuKiemNhiem.Click += new System.EventHandler(this.btnMaChucVuKiemNhiem_Click);
-            // 
-            // txtChucVuKiemNhiem
-            // 
-            this.txtChucVuKiemNhiem.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtChucVuKiemNhiem.Border.Class = "TextBoxBorder";
-            this.txtChucVuKiemNhiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtChucVuKiemNhiem.Location = new System.Drawing.Point(508, 113);
-            this.txtChucVuKiemNhiem.Name = "txtChucVuKiemNhiem";
-            this.txtChucVuKiemNhiem.ReadOnly = true;
-            this.txtChucVuKiemNhiem.Size = new System.Drawing.Size(148, 20);
-            this.txtChucVuKiemNhiem.TabIndex = 330;
-            // 
-            // labelX42
-            // 
-            this.labelX42.BackColor = System.Drawing.Color.Transparent;
-            this.labelX42.Location = new System.Drawing.Point(388, 110);
-            this.labelX42.Name = "labelX42";
-            this.labelX42.Size = new System.Drawing.Size(114, 23);
-            this.labelX42.TabIndex = 329;
-            this.labelX42.Text = "Chức vụ kiêm nhiệm";
-            this.labelX42.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
             // FrmThongTinNhanVien_TomTat
             // 
             this.ClientSize = new System.Drawing.Size(859, 746);
@@ -1781,7 +1781,7 @@
         private DevComponents.DotNetBar.LabelX labelX12;
         private DevComponents.DotNetBar.LabelX labelX11;
         private DevComponents.DotNetBar.LabelX labelX17;
-        private DevComponents.DotNetBar.Controls.TextBoxX txtNoiOTamTru;
+        private DevComponents.DotNetBar.Controls.TextBoxX txtNoiOHienNay;
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoKhau;
         private DevComponents.DotNetBar.LabelX labelX18;
         private DevComponents.DotNetBar.Controls.TextBoxX txtHoTenDangDung;

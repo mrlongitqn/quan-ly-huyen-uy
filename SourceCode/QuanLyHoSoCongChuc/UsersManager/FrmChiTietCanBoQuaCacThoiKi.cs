@@ -10,6 +10,7 @@ using QuanLyHoSoCongChuc.Utils;
 using QuanLyHoSoCongChuc.Models;
 using QuanLyHoSoCongChuc.Repositories;
 using QuanLyHoSoCongChuc.Danh_muc;
+using QuanLyHoSoCongChuc.DataManager;
 
 namespace QuanLyHoSoCongChuc.UsersManager
 {
@@ -19,33 +20,38 @@ namespace QuanLyHoSoCongChuc.UsersManager
     public partial class FrmChiTietCanBoQuaCacThoiKi : DevComponents.DotNetBar.Office2007Form
     {
         public EventHandler Handler { get; set; }
-        public string Updated = "false";
+        public bool Updated = false;
+        private CanBoVeHuuChuyenDen _canbo;
+        private string _maDonVi;
 
-        public FrmChiTietCanBoQuaCacThoiKi()
+        public FrmChiTietCanBoQuaCacThoiKi(string madonvi)
         {
             InitializeComponent();
+            _maDonVi = madonvi;
+            txtMaDonVi.Text = madonvi;
         }
 
-        public FrmChiTietCanBoQuaCacThoiKi(int macanbo)
+        public FrmChiTietCanBoQuaCacThoiKi(CanBoQuaCacThoiKi canbo)
         {
             InitializeComponent();
-            //var canbo = CanBoQuaCacThoiKiRepository.SelectByID(macanbo);
-            //txtMaCanBo.Text = canbo.MaCanBo.ToString();
-            //txtMaDonVi.Text = canbo.MaDonVi;
-            //txtHoTen.Text = canbo.HoTen;
-            //dtNamSinh.Value = canbo.NgaySinh.Value;
-            //chkbxConSong.Checked = canbo.TinhTrang.Value;
-            //txtQueQuan.Text = canbo.QueQuan;
-            //txtNoiOHienNay.Text = canbo.NoiOHienNay;
-            //txtChucVuDaGiu.Text = canbo.ChucVuDaGiu;
-            //txtCoQuanDaTungLamViec.Text = canbo.CoQuanDaLamViec;
-            //dtNgayVaoDang.Value = canbo.NgayVaoDang.Value;
-            //dtNgayChinhThuc.Value = canbo.NgayChinhThuc.Value;
-            //txtDiDong.Text = canbo.DiDong;
-            //txtMayBan.Text = canbo.MayBan;
-            //txtDanhHieu.Text = canbo.DanhHieuDaDuocPhong;
-            //txtQuaTrinhCongTac.Text = canbo.QuaTrinhCongTac;
-            //txtThamGiaChinhTri.Text = canbo.ThamGiaChinhTriXaHoi;
+            _canbo = canbo.CanBoVeHuuChuyenDen;
+            txtMaDonVi.Text = canbo.MaDonVi;
+
+            txtMaCanBo.Text = _canbo.MaCanBo.ToString();
+            txtHoTen.Text = _canbo.HoTen;
+            dtNamSinh.Value = _canbo.NgaySinh.Value;
+            chkbxConSong.Checked = _canbo.ConSong.Value;
+            txtQueQuan.Text = _canbo.QueQuan;
+            txtNoiOHienNay.Text = _canbo.NoiOHienNay;
+            txtChucVuDaGiu.Text = _canbo.ChucVuDaGiu;
+            txtCoQuanDaTungLamViec.Text = _canbo.CoQuanDaLamViec;
+            dtNgayVaoDang.Value = _canbo.NgayVaoDang.Value;
+            dtNgayChinhThuc.Value = _canbo.NgayChinhThuc.Value;
+            txtDiDong.Text = _canbo.DiDong;
+            txtMayBan.Text = _canbo.MayBan;
+            txtDanhHieu.Text = _canbo.DanhHieuDaDuocPhong;
+            txtQuaTrinhCongTac.Text = _canbo.QuaTrinhCongTac;
+            txtThamGiaChinhTri.Text = _canbo.ThamGiaChinhTriXaHoi;
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -56,6 +62,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
         private void btnLuu_Click(object sender, EventArgs e)
         {
             var errorText = "";
+
             if (!ValidateInput(ref errorText))
             {
                 MessageBox.Show(errorText, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -66,27 +73,24 @@ namespace QuanLyHoSoCongChuc.UsersManager
             {
                 if (ActionUpdate())
                 {
-                    MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    TransferDataInfo(sender, new MyEvent("true"));
-                }
-                else
-                {
-                    MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    TransferDataInfo(sender, new MyEvent("false"));
+                    Updated = true;
                 }
             }
             else
             {
                 if (ActionAdd())
                 {
-                    MessageBox.Show("Thêm dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    TransferDataInfo(sender, new MyEvent("true"));
+                    Updated = true;
                 }
-                else
-                {
-                    MessageBox.Show("Cập nhật dữ liệu thất bại", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    TransferDataInfo(sender, new MyEvent("false"));
-                }
+            }
+
+            if (Updated)
+            {
+                MessageBox.Show("Cập nhật dữ liệu thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Cập nhật dữ liệu thất bại", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -97,25 +101,6 @@ namespace QuanLyHoSoCongChuc.UsersManager
             FrmDanhMucHanhChinh frm = new FrmDanhMucHanhChinh(true);
             frm.Handler += GetNguyenQuan;
             frm.ShowDialog();
-        }
-
-        private void btnChonDonVi_Click(object sender, EventArgs e)
-        {
-            FrmDanhMuc frm = new FrmDanhMuc(true);
-            frm.Handler += GetDonVi;
-            frm.ShowDialog();
-        }
-
-        /// <summary>
-        /// Get thong tin don vi
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        public void GetDonVi(object sender, EventArgs e)
-        {
-            var eventType = (MyEvent)e;
-            string[] comp = eventType.Data.Split(new char[] { '#' });
-            txtMaDonVi.Text = comp[0];
         }
 
         /// <summary>
@@ -139,29 +124,47 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                var item = new CanBoQuaCacThoiKi
+                // Open connection
+                DataContext.Instance.Connection.Open();
+                // Define a transaction for the operations
+                using (var transaction = DataContext.Instance.Connection.BeginTransaction())
                 {
-                    //HoTen = txtHoTen.Text.Trim(),
-                    //MaDonVi = txtMaDonVi.Text,
-                    //NgaySinh = dtNamSinh.Value,
-                    //TinhTrang = chkbxConSong.Checked ? true : false,
-                    //QueQuan = txtQueQuan.Text,
-                    //NoiOHienNay = txtNoiOHienNay.Text,
-                    //ChucVuDaGiu = txtChucVuDaGiu.Text,
-                    //CoQuanDaLamViec = txtCoQuanDaTungLamViec.Text,
-                    //NgayVaoDang = dtNgayVaoDang.Value,
-                    //NgayChinhThuc = dtNgayChinhThuc.Value,
-                    //DiDong = txtDiDong.Text,
-                    //MayBan = txtMayBan.Text,
-                    //DanhHieuDaDuocPhong = txtDanhHieu.Text,
-                    //QuaTrinhCongTac = txtQuaTrinhCongTac.Text,
-                    //ThamGiaChinhTriXaHoi = txtThamGiaChinhTri.Text
-                };
-                if (!CanBoQuaCacThoiKiRepository.Insert(item))
-                {
-                    return false;
+                    var canbo = new CanBoQuaCacThoiKi
+                    {
+                        MaLoaiCanBo = LoaiCanBoQuaCacThoiKiRepository.SelectByName(GlobalPhieuBaos.NOIKHAC_CHUYENDEN).MaLoaiCanBoQuaCacThoiKiMa,
+                        MaDonVi = txtMaDonVi.Text
+                    };
+                    if (CanBoQuaCacThoiKiRepository.Insert(canbo))
+                    {
+                        var item = new CanBoVeHuuChuyenDen
+                        {
+                            MaCanBo = canbo.MaCanBo,
+                            HoTen = txtHoTen.Text.Trim(),
+                            NgaySinh = dtNamSinh.Value,
+                            ConSong = chkbxConSong.Checked ? true : false,
+                            QueQuan = txtQueQuan.Text,
+                            NoiOHienNay = txtNoiOHienNay.Text,
+                            ChucVuDaGiu = txtChucVuDaGiu.Text,
+                            CoQuanDaLamViec = txtCoQuanDaTungLamViec.Text,
+                            NgayVaoDang = dtNgayVaoDang.Value,
+                            NgayChinhThuc = dtNgayChinhThuc.Value,
+                            DiDong = txtDiDong.Text,
+                            MayBan = txtMayBan.Text,
+                            DanhHieuDaDuocPhong = txtDanhHieu.Text,
+                            QuaTrinhCongTac = txtQuaTrinhCongTac.Text,
+                            ThamGiaChinhTriXaHoi = txtThamGiaChinhTri.Text
+                        };
+                        if (!CanBoVeHuuChuyenDenRepository.Insert(item))
+                        {
+                            return false;
+                        }
+                    }
+
+                    // Mark the transaction as complete
+                    transaction.Commit();
+                    DataContext.Instance.Connection.Close();
+                    return true;
                 }
-                return true;
             }
             catch
             {
@@ -177,22 +180,20 @@ namespace QuanLyHoSoCongChuc.UsersManager
         {
             try
             {
-                //var item = CanBoQuaCacThoiKiRepository.SelectByID(int.Parse(txtMaCanBo.Text));
-                //item.HoTen = txtHoTen.Text.Trim();
-                //item.MaDonVi = txtMaDonVi.Text;
-                //item.NgaySinh = dtNamSinh.Value;
-                //item.TinhTrang = chkbxConSong.Checked ? true : false;
-                //item.QueQuan = txtQueQuan.Text;
-                //item.NoiOHienNay = txtNoiOHienNay.Text;
-                //item.ChucVuDaGiu = txtChucVuDaGiu.Text;
-                //item.CoQuanDaLamViec = txtCoQuanDaTungLamViec.Text;
-                //item.NgayVaoDang = dtNgayVaoDang.Value;
-                //item.NgayChinhThuc = dtNgayChinhThuc.Value;
-                //item.DiDong = txtDiDong.Text;
-                //item.MayBan = txtMayBan.Text;
-                //item.DanhHieuDaDuocPhong = txtDanhHieu.Text;
-                //item.QuaTrinhCongTac = txtQuaTrinhCongTac.Text;
-                //item.ThamGiaChinhTriXaHoi = txtThamGiaChinhTri.Text;
+                _canbo.HoTen = txtHoTen.Text.Trim();
+                _canbo.NgaySinh = dtNamSinh.Value;
+                _canbo.ConSong = chkbxConSong.Checked ? true : false;
+                _canbo.QueQuan = txtQueQuan.Text;
+                _canbo.NoiOHienNay = txtNoiOHienNay.Text;
+                _canbo.ChucVuDaGiu = txtChucVuDaGiu.Text;
+                _canbo.CoQuanDaLamViec = txtCoQuanDaTungLamViec.Text;
+                _canbo.NgayVaoDang = dtNgayVaoDang.Value;
+                _canbo.NgayChinhThuc = dtNgayChinhThuc.Value;
+                _canbo.DiDong = txtDiDong.Text;
+                _canbo.MayBan = txtMayBan.Text;
+                _canbo.DanhHieuDaDuocPhong = txtDanhHieu.Text;
+                _canbo.QuaTrinhCongTac = txtQuaTrinhCongTac.Text;
+                _canbo.ThamGiaChinhTriXaHoi = txtThamGiaChinhTri.Text;
                 return CanBoQuaCacThoiKiRepository.Save();
             }
             catch
@@ -225,13 +226,19 @@ namespace QuanLyHoSoCongChuc.UsersManager
                 errorText = "Vui lòng nhập họ tên";
                 return false;
             }
-
-            if (txtMaDonVi.Text == "")
-            {
-                errorText = "Vui lòng chọn đơn vị";
-                return false;
-            }
             return true;
+        }
+
+        private void FrmChiTietCanBoQuaCacThoiKi_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            TransferDataInfo(sender, new MyEvent(Updated ? "true" : "false"));
+        }
+
+        private void txtHoTen_TextChanged(object sender, EventArgs e)
+        {
+            int start = this.txtHoTen.SelectionStart;
+            this.txtHoTen.Text = this.txtHoTen.Text.ToUpper();
+            this.txtHoTen.SelectionStart = start;
         }
     }
 }

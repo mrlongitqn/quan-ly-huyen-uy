@@ -127,6 +127,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chọn danh mục";
             this.Load += new System.EventHandler(this.FrmChonDanhMucAll_Load);
+            this.Shown += new System.EventHandler(this.FrmChonDanhMucAll_Shown);
             this.groupPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 

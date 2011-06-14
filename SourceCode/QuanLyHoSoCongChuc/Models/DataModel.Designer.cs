@@ -9811,24 +9811,24 @@ namespace QuanLyHoSoCongChuc.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String TamTru
+        public global::System.String NoiOHienNay
         {
             get
             {
-                return _TamTru;
+                return _NoiOHienNay;
             }
             set
             {
-                OnTamTruChanging(value);
-                ReportPropertyChanging("TamTru");
-                _TamTru = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("TamTru");
-                OnTamTruChanged();
+                OnNoiOHienNayChanging(value);
+                ReportPropertyChanging("NoiOHienNay");
+                _NoiOHienNay = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("NoiOHienNay");
+                OnNoiOHienNayChanged();
             }
         }
-        private global::System.String _TamTru;
-        partial void OnTamTruChanging(global::System.String value);
-        partial void OnTamTruChanged();
+        private global::System.String _NoiOHienNay;
+        partial void OnNoiOHienNayChanging(global::System.String value);
+        partial void OnNoiOHienNayChanged();
     
         /// <summary>
         /// No Metadata Documentation available.

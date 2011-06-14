@@ -321,7 +321,7 @@ namespace QuanLyHoSoCongChuc.Search
                     objListViewItem.SubItems.Add(lstItem[i].HoTenKhaiSinh);
                     objListViewItem.SubItems.Add(lstItem[i].MaGioiTinh == null ? "" : lstItem[i].GioiTinh.TenGioiTinh);
                     objListViewItem.SubItems.Add(lstItem[i].NgaySinh.Value == DateTime.MinValue ? "" : String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
-                    objListViewItem.SubItems.Add(lstItem[i].HoKhau);
+                    objListViewItem.SubItems.Add(lstItem[i].NoiOHienNay);
                     lstvNhanVien.Items.Add(objListViewItem);
                 }
                 txtTongSo.Text = "Tìm thấy " + lstItem.Count + " nhân viên";
@@ -529,12 +529,15 @@ namespace QuanLyHoSoCongChuc.Search
         {
             int num = lstvDieuKienTimKiem.Items.Count;
 
-            if (num > 0)
+            if (num <= 0)
             {
-                // Show waiting form
-                GlobalVars.PreLoading();
-                //------- E ---------
+                MessageBox.Show("Không có giá trị tìm kiếm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            // Show waiting form
+            GlobalVars.PreLoading();
+            //------- E ---------
 
             // Init list of searching condition to transfer data 
             List<DieuKienTimKiem> lstDieuKienTimKiem = new List<DieuKienTimKiem>();
@@ -592,17 +595,10 @@ namespace QuanLyHoSoCongChuc.Search
                 }
                 txtTongSo.Text = "Tìm thấy " + ds.Tables[0].Rows.Count + " nhân viên";
             }
-            else
-            {
-                MessageBox.Show("Không có giá trị tìm kiếm", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
-            if (num > 0)
-            {
-                // Pos waiting form
-                GlobalVars.PosLoading();
-                //------- E ---------
-            }
+            // Pos waiting form
+            GlobalVars.PosLoading();
+            //------- E ---------
         }
 
         /// <summary>
@@ -1249,18 +1245,9 @@ namespace QuanLyHoSoCongChuc.Search
         {
             if (lstvNhanVien.SelectedItems.Count > 0)
             {
-                // Show waiting form
-                GlobalVars.PreLoading();
-                //------- E ---------
-
                 var nhanvien = (NhanVien)lstvNhanVien.SelectedItems[0].Tag;
                 FrmThongTinNhanVien frm = new FrmThongTinNhanVien(nhanvien);
                 frm.Handler += NothingToProcess;
-
-                // Hide waiting form
-                GlobalVars.PosLoading();
-                //------- E ---------
-
                 frm.ShowDialog();
             }
         }

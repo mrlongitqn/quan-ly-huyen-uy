@@ -115,19 +115,14 @@ namespace QuanLyHoSoCongChuc.Utils
             //if (waiting != null)
             //{
             //    waiting.Close();
+            //    waiting = null;
             //}
         }   
 
         public static void WaitLoad()
         {
             waiting = new FrmLoading("Đang thực hiện");
-            waiting.Handler += CompleteWaiting;
             waiting.ShowDialog();
-        }
-
-        private static void CompleteWaiting(object sender, EventArgs e)
-        {
-            waiting = null;
         }
     }
 }

@@ -151,56 +151,66 @@ namespace QuanLyHoSoCongChuc.DataManager
                 return;
             }
 
-            // Neu nhan vien chua co ngach cong chuc, thuc hien update ngach cong chuc
-            var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text);
-            if (nhanvien.MaNgachCongChuc == null)
+            // Open connection
+            DataContext.Instance.Connection.Open();
+            // Define a transaction for the operations
+            using (var transaction = DataContext.Instance.Connection.BeginTransaction())
             {
-                if (txtMaNgachCongChuc.Text != "")
+                // Neu nhan vien chua co ngach cong chuc, thuc hien update ngach cong chuc
+                var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text);
+                if (nhanvien.MaNgachCongChuc == null)
                 {
-                    nhanvien.MaNgachCongChuc = txtMaNgachCongChuc.Text;
-                    success = NhanVienRepository.Save();
-                }
-            }
-
-            var luongOfNV = LuongPhuCapRepository.SelectByMaNhanVienBaseOnThoiDiem(txtMaNhanVien.Text, dtNgay.Value);
-            // Da ton tai luong phu cap cua nhan vien tai thoi diem chi dinh -> Update luong, phuc cap
-            if (luongOfNV.Count > 0)
-            {
-                if (txtHeSo.Text != "")
-                {
-                    luongOfNV[0].HeSoLuong = float.Parse(txtHeSo.Text);
-                }
-                if (txtBacLuong.Text != "")
-                {
-                    luongOfNV[0].BacLuong = float.Parse(txtBacLuong.Text);
-                }
-                if (txtMaNgachCongChuc.Text != "")
-                {
-                    luongOfNV[0].MaNgachCongChuc = txtMaNgachCongChuc.Text;
-                }
-                success = LuongPhuCapRepository.Save();
-            }
-            else// chua ton tai, thuc hien the moi
-            {
-                var newItem = new LuongPhuCap
-                {
-                    MaNhanVien = txtMaNhanVien.Text,
-                    NgayThangNam = dtNgay.Value
-                };
-                if (txtHeSo.Text != "")
-                {
-                    newItem.HeSoLuong = float.Parse(txtHeSo.Text);
-                }
-                if (txtBacLuong.Text != "")
-                {
-                    newItem.BacLuong = float.Parse(txtBacLuong.Text);
-                }
-                if (txtMaNgachCongChuc.Text != "")
-                {
-                    newItem.MaNgachCongChuc = txtMaNgachCongChuc.Text;
+                    if (txtMaNgachCongChuc.Text != "")
+                    {
+                        nhanvien.MaNgachCongChuc = txtMaNgachCongChuc.Text;
+                        success = NhanVienRepository.Save();
+                    }
                 }
 
-                success = LuongPhuCapRepository.Insert(newItem);
+                var luongOfNV = LuongPhuCapRepository.SelectByMaNhanVienBaseOnThoiDiem(txtMaNhanVien.Text, dtNgay.Value);
+                // Da ton tai luong phu cap cua nhan vien tai thoi diem chi dinh -> Update luong, phuc cap
+                if (luongOfNV.Count > 0)
+                {
+                    if (txtHeSo.Text != "")
+                    {
+                        luongOfNV[0].HeSoLuong = float.Parse(txtHeSo.Text);
+                    }
+                    if (txtBacLuong.Text != "")
+                    {
+                        luongOfNV[0].BacLuong = float.Parse(txtBacLuong.Text);
+                    }
+                    if (txtMaNgachCongChuc.Text != "")
+                    {
+                        luongOfNV[0].MaNgachCongChuc = txtMaNgachCongChuc.Text;
+                    }
+                    success = LuongPhuCapRepository.Save();
+                }
+                else// chua ton tai, thuc hien the moi
+                {
+                    var newItem = new LuongPhuCap
+                    {
+                        MaNhanVien = txtMaNhanVien.Text,
+                        NgayThangNam = dtNgay.Value
+                    };
+                    if (txtHeSo.Text != "")
+                    {
+                        newItem.HeSoLuong = float.Parse(txtHeSo.Text);
+                    }
+                    if (txtBacLuong.Text != "")
+                    {
+                        newItem.BacLuong = float.Parse(txtBacLuong.Text);
+                    }
+                    if (txtMaNgachCongChuc.Text != "")
+                    {
+                        newItem.MaNgachCongChuc = txtMaNgachCongChuc.Text;
+                    }
+
+                    success = LuongPhuCapRepository.Insert(newItem);
+                }
+
+                // Mark the transaction as complete
+                transaction.Commit();
+                DataContext.Instance.Connection.Close();
             }
 
             if (success)
@@ -263,7 +273,7 @@ namespace QuanLyHoSoCongChuc.DataManager
                 objListViewItem.SubItems.Add(lstItem[i].NhanVien.HoTenKhaiSinh);
                 objListViewItem.SubItems.Add(lstItem[i].NhanVien.MaGioiTinh == null ? "" : lstItem[i].NhanVien.GioiTinh.TenGioiTinh);
                 objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NhanVien.NgaySinh));
-                objListViewItem.SubItems.Add(lstItem[i].NhanVien.HoKhau);
+                objListViewItem.SubItems.Add(lstItem[i].NhanVien.NoiOHienNay);
                 lstvData.Items.Add(objListViewItem);
             }
         }

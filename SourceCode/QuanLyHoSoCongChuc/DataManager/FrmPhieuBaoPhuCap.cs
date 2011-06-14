@@ -283,7 +283,7 @@ namespace QuanLyHoSoCongChuc.DataManager
                 objListViewItem.SubItems.Add(lstItem[i].NhanVien.HoTenKhaiSinh);
                 objListViewItem.SubItems.Add(lstItem[i].NhanVien.MaGioiTinh == null ? "" : lstItem[i].NhanVien.GioiTinh.TenGioiTinh);
                 objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NhanVien.NgaySinh));
-                objListViewItem.SubItems.Add(lstItem[i].NhanVien.HoKhau);
+                objListViewItem.SubItems.Add(lstItem[i].NhanVien.NoiOHienNay);
                 lstvData.Items.Add(objListViewItem);
             }
         }

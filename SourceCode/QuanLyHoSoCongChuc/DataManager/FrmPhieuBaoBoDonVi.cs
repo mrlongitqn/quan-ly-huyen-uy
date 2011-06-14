@@ -234,7 +234,7 @@ namespace QuanLyHoSoCongChuc.DataManager
                     objListViewItem.SubItems.Add(lstItem[i].NhanVien.HoTenKhaiSinh);
                     objListViewItem.SubItems.Add(lstItem[i].NhanVien.MaGioiTinh == null ? "" : lstItem[i].NhanVien.GioiTinh.TenGioiTinh);
                     objListViewItem.SubItems.Add(lstItem[i].NhanVien.NgaySinh.Value == DateTime.MinValue ? "" : String.Format("{0:dd/MM/yyyy}", lstItem[i].NhanVien.NgaySinh));
-                    objListViewItem.SubItems.Add(lstItem[i].NhanVien.HoKhau);
+                    objListViewItem.SubItems.Add(lstItem[i].NhanVien.NoiOHienNay);
                     lstvData.Items.Add(objListViewItem);
                 }
             }
@@ -262,43 +262,52 @@ namespace QuanLyHoSoCongChuc.DataManager
         {
             try
             {
-                // Inser new record to table CanBoQuaCacThoiKi
-                var newItem = new CanBoQuaCacThoiKi
+                // Open connection
+                DataContext.Instance.Connection.Open();
+                // Define a transaction for the operations
+                using (var transaction = DataContext.Instance.Connection.BeginTransaction())
                 {
-                    MaLoaiCanBo = LoaiCanBoQuaCacThoiKiRepository.SelectByName(GlobalPhieuBaos.BO_DONVI).MaLoaiCanBoQuaCacThoiKiMa,
-                    MaDonVi = txtMaDonVi.Text,
-                    MaNhanVien = txtMaNhanVien.Text
-                };
+                    // Inser new record to table CanBoQuaCacThoiKi
+                    var newItem = new CanBoQuaCacThoiKi
+                    {
+                        MaLoaiCanBo = LoaiCanBoQuaCacThoiKiRepository.SelectByName(GlobalPhieuBaos.BO_DONVI).MaLoaiCanBoQuaCacThoiKiMa,
+                        MaDonVi = txtMaDonVi.Text,
+                        MaNhanVien = txtMaNhanVien.Text
+                    };
 
-                if (!CanBoQuaCacThoiKiRepository.Insert(newItem))
-                {
-                    return false;
+                    if (!CanBoQuaCacThoiKiRepository.Insert(newItem))
+                    {
+                        return false;
+                    }
+
+                    // Update donvichuyenden for canbo
+                    var bodonvi = new BoDonVi
+                    {
+                        MaCanBo = newItem.MaCanBo,
+                        NgayRaKhoiDonVi = dtNgayRaKhoiDang.Value,
+                        LyDo = txtLyDo.Text,
+                        SoQuyetDinh = txtSoQuyetDinh.Text
+                    };
+
+                    if (txtMaHinhThuc.Text != "")
+                    {
+                        bodonvi.MaHinhThucBoDonVi = int.Parse(txtMaHinhThuc.Text);
+                    }
+
+                    BoDonViRepository.Insert(bodonvi);
+
+                    // Update status of nhanvien -> khong con sinh hoat
+                    var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text);
+                    nhanvien.ConSinhHoat = false;
+                    NhanVienRepository.Save();
+
+                    RefreshQuaTrinh(newItem.MaCanBo.ToString());
+
+                    // Mark the transaction as complete
+                    transaction.Commit();
+                    DataContext.Instance.Connection.Close();
+                    return true;
                 }
-                
-                // Update donvichuyenden for canbo
-                var bodonvi = new BoDonVi
-                {
-                    MaCanBo = newItem.MaCanBo,
-                    NgayRaKhoiDonVi = dtNgayRaKhoiDang.Value,
-                    LyDo = txtLyDo.Text,
-                    SoQuyetDinh = txtSoQuyetDinh.Text
-                };
-
-                if (txtMaHinhThuc.Text != "")
-                {
-                    bodonvi.MaHinhThucBoDonVi = int.Parse(txtMaHinhThuc.Text);
-                }
-
-                BoDonViRepository.Insert(bodonvi);
-
-                // Update status of nhanvien -> khong con sinh hoat
-                var nhanvien = NhanVienRepository.SelectByID(txtMaNhanVien.Text);
-                nhanvien.ConSinhHoat = false;
-                NhanVienRepository.Save();
-
-                RefreshQuaTrinh(newItem.MaCanBo.ToString());
-
-                return true;
             }
             catch
             {

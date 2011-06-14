@@ -100,11 +100,61 @@ namespace QuanLyHoSoCongChuc.Repositories
             return lstItem;
         }
 
+        public static List<CanBoQuaCacThoiKi> SelectCanBoQuaCacThoiKi(EnumLoaiCanBoQuaCacThoiKi loaicanbo)
+        {
+            var lstItem = new List<CanBoQuaCacThoiKi>();
+            switch (loaicanbo)
+            {
+                case EnumLoaiCanBoQuaCacThoiKi.CHUYEN_DONVI:
+                    lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.CHUYEN_DONVI select item).ToList();
+                    break;
+                case EnumLoaiCanBoQuaCacThoiKi.BO_DONVI:
+                    lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.BO_DONVI select item).ToList();
+                    break;
+                case EnumLoaiCanBoQuaCacThoiKi.TUTRAN:
+                    lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.TUTRAN select item).ToList();
+                    break;
+            }
+
+            return lstItem;
+        }
+
 		public static List<CanBoQuaCacThoiKi> SelectByMaNhanVien(string manhanvien)
 		{
 			var lstItem = (from item in DataContext.Instance.CanBoQuaCacThoiKis where item.MaNhanVien == manhanvien select item).ToList();
 			return lstItem;
 		}
 
+        // <summary>
+        /// Search can bo qua cac thoi ki
+        /// </summary>
+        /// <param name="nhanvien"></param>
+        /// <returns></returns>
+        public static List<CanBoQuaCacThoiKi> SearchCanBoQuaCacThoiKi(string madonvi, string hoten)
+        {
+            var lst = new List<CanBoQuaCacThoiKi>();
+            foreach (var item in DataContext.Instance.CanBoQuaCacThoiKis.ToList())
+            {
+                if (item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.CHUYEN_DONVI ||
+                        item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.BO_DONVI ||
+                        item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.TUTRAN)
+                {
+                    if (item.MaDonVi == (madonvi == "" ? item.MaDonVi : madonvi) &&
+                        item.NhanVien.HoTenKhaiSinh.ToUpper().Contains(hoten == "" ? item.NhanVien.HoTenKhaiSinh.ToUpper() : hoten.ToUpper()))
+                    {
+                        lst.Add(item);
+                    }
+                }
+                else if (item.LoaiCanBoQuaCacThoiKi.TenLoaiCanBoQuaCacThoiKi.ToUpper() == GlobalPhieuBaos.NOIKHAC_CHUYENDEN)
+                {
+                    if (item.MaDonVi == (madonvi == "" ? item.MaDonVi : madonvi) &&
+                        item.CanBoVeHuuChuyenDen.HoTen.ToUpper().Contains(hoten == "" ? item.CanBoVeHuuChuyenDen.HoTen.ToUpper() : hoten.ToUpper()))
+                    {
+                        lst.Add(item);
+                    }
+                }
+            }
+            return lst;
+        }
 	}
 }

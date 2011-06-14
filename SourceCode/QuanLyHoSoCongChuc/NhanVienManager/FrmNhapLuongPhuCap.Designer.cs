@@ -39,6 +39,11 @@
             this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtChenhLech = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtHeSoLuong = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtBacLuong = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtHuong85 = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.txtMaNgach = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtPhuCapUuDaiNghe = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtPhuCapDocHai = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtPhuCapTrachNhiem = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -91,11 +96,6 @@
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.txtMaNgach = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtHuong85 = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtBacLuong = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtHeSoLuong = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.txtChenhLech = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -278,6 +278,65 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(841, 427);
             this.panel1.TabIndex = 2;
+            // 
+            // txtChenhLech
+            // 
+            // 
+            // 
+            // 
+            this.txtChenhLech.Border.Class = "TextBoxBorder";
+            this.txtChenhLech.Location = new System.Drawing.Point(167, 211);
+            this.txtChenhLech.Name = "txtChenhLech";
+            this.txtChenhLech.Size = new System.Drawing.Size(101, 20);
+            this.txtChenhLech.TabIndex = 291;
+            // 
+            // txtHeSoLuong
+            // 
+            // 
+            // 
+            // 
+            this.txtHeSoLuong.Border.Class = "TextBoxBorder";
+            this.txtHeSoLuong.Location = new System.Drawing.Point(168, 159);
+            this.txtHeSoLuong.Name = "txtHeSoLuong";
+            this.txtHeSoLuong.Size = new System.Drawing.Size(101, 20);
+            this.txtHeSoLuong.TabIndex = 290;
+            // 
+            // txtBacLuong
+            // 
+            // 
+            // 
+            // 
+            this.txtBacLuong.Border.Class = "TextBoxBorder";
+            this.txtBacLuong.Location = new System.Drawing.Point(167, 133);
+            this.txtBacLuong.Name = "txtBacLuong";
+            this.txtBacLuong.Size = new System.Drawing.Size(101, 20);
+            this.txtBacLuong.TabIndex = 289;
+            // 
+            // txtHuong85
+            // 
+            this.txtHuong85.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtHuong85.Border.Class = "TextBoxBorder";
+            this.txtHuong85.Location = new System.Drawing.Point(167, 185);
+            this.txtHuong85.Name = "txtHuong85";
+            this.txtHuong85.ReadOnly = true;
+            this.txtHuong85.Size = new System.Drawing.Size(200, 20);
+            this.txtHuong85.TabIndex = 288;
+            // 
+            // txtMaNgach
+            // 
+            this.txtMaNgach.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtMaNgach.Border.Class = "TextBoxBorder";
+            this.txtMaNgach.Location = new System.Drawing.Point(167, 81);
+            this.txtMaNgach.Name = "txtMaNgach";
+            this.txtMaNgach.ReadOnly = true;
+            this.txtMaNgach.Size = new System.Drawing.Size(200, 20);
+            this.txtMaNgach.TabIndex = 287;
             // 
             // txtPhuCapUuDaiNghe
             // 
@@ -1025,65 +1084,6 @@
             this.labelX3.TabIndex = 1;
             this.labelX3.Text = "Lương - Phụ cấp";
             // 
-            // txtMaNgach
-            // 
-            this.txtMaNgach.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtMaNgach.Border.Class = "TextBoxBorder";
-            this.txtMaNgach.Location = new System.Drawing.Point(167, 81);
-            this.txtMaNgach.Name = "txtMaNgach";
-            this.txtMaNgach.ReadOnly = true;
-            this.txtMaNgach.Size = new System.Drawing.Size(200, 20);
-            this.txtMaNgach.TabIndex = 287;
-            // 
-            // txtHuong85
-            // 
-            this.txtHuong85.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtHuong85.Border.Class = "TextBoxBorder";
-            this.txtHuong85.Location = new System.Drawing.Point(167, 185);
-            this.txtHuong85.Name = "txtHuong85";
-            this.txtHuong85.ReadOnly = true;
-            this.txtHuong85.Size = new System.Drawing.Size(200, 20);
-            this.txtHuong85.TabIndex = 288;
-            // 
-            // txtBacLuong
-            // 
-            // 
-            // 
-            // 
-            this.txtBacLuong.Border.Class = "TextBoxBorder";
-            this.txtBacLuong.Location = new System.Drawing.Point(167, 133);
-            this.txtBacLuong.Name = "txtBacLuong";
-            this.txtBacLuong.Size = new System.Drawing.Size(101, 20);
-            this.txtBacLuong.TabIndex = 289;
-            // 
-            // txtHeSoLuong
-            // 
-            // 
-            // 
-            // 
-            this.txtHeSoLuong.Border.Class = "TextBoxBorder";
-            this.txtHeSoLuong.Location = new System.Drawing.Point(168, 159);
-            this.txtHeSoLuong.Name = "txtHeSoLuong";
-            this.txtHeSoLuong.Size = new System.Drawing.Size(101, 20);
-            this.txtHeSoLuong.TabIndex = 290;
-            // 
-            // txtChenhLech
-            // 
-            // 
-            // 
-            // 
-            this.txtChenhLech.Border.Class = "TextBoxBorder";
-            this.txtChenhLech.Location = new System.Drawing.Point(167, 211);
-            this.txtChenhLech.Name = "txtChenhLech";
-            this.txtChenhLech.Size = new System.Drawing.Size(101, 20);
-            this.txtChenhLech.TabIndex = 291;
-            // 
             // FrmNhapLuongPhuCap
             // 
             this.ClientSize = new System.Drawing.Size(1053, 427);
@@ -1096,6 +1096,7 @@
             this.Text = "Nhập quá trình khen thưởng";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNhapLuongPhuCap_FormClosed);
             this.Load += new System.EventHandler(this.FrmNhapLuongPhuCap_Load);
+            this.Shown += new System.EventHandler(this.FrmNhapLuongPhuCap_Shown);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
