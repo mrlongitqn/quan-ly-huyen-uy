@@ -31,11 +31,27 @@ namespace QuanLyHoSoCongChuc.Danh_muc
         // Hidden files are used to store ids 
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaLoaiDonVi;
         private DevComponents.DotNetBar.Controls.TextBoxX txtMaPhanLoai;
-
-        public FrmDanhMuc(bool EnableButtonChon)
+        public bool EnableButtonChon = false;
+        public FrmDanhMuc(bool Enable)
         {
-            DataService.OpenConnection();
             InitializeComponent();
+            EnableButtonChon = Enable;
+        }
+
+        private string m_tagNode = string.Empty;
+        public string TagNode
+        {
+            get { return m_tagNode; }
+            set { m_tagNode = value; }
+        }
+
+        private void FrmReportLuong_Load(object sender, EventArgs e)
+        {
+            // Show waiting form
+            GlobalVars.PreLoading();
+            //------- E ---------
+
+            DataService.OpenConnection();
             btThem.Enabled = false;
             btXoa.Enabled = false;
             btSave.Enabled = false;
@@ -49,17 +65,6 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             }
             else
                 btChon.Visible = false;
-        }
-
-        private string m_tagNode = string.Empty;
-        public string TagNode
-        {
-            get { return m_tagNode; }
-            set { m_tagNode = value; }
-        }
-
-        private void FrmReportLuong_Load(object sender, EventArgs e)
-        {
         }
 
         private void loadTreeView()
@@ -326,6 +331,13 @@ namespace QuanLyHoSoCongChuc.Danh_muc
                 Name = "txtMaPhanLoai"
             };
             txtMaPhanLoai.Visible = false;
+        }
+
+        private void FrmDanhMuc_Shown(object sender, EventArgs e)
+        {
+            // Hide waiting form
+            GlobalVars.PosLoading();
+            //------- E ---------
         }
     } 
 }

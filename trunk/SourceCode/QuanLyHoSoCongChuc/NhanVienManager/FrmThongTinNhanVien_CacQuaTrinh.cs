@@ -362,7 +362,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 objListViewItem.Tag = lstItem[i];
                 objListViewItem.Text = (i + 1).ToString();
                 objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayThangNam.Value));
-                objListViewItem.SubItems.Add(lstItem[i].NgachCongChuc.TenNgachCongChuc);
+                objListViewItem.SubItems.Add(lstItem[i].MaNgachCongChuc == null ? "" : lstItem[i].NgachCongChuc.TenNgachCongChuc);
                 lstvQuaTrinh.Items.Add(objListViewItem);
             }
         }

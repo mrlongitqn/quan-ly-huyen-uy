@@ -204,7 +204,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         {
             get
             {
-                return txtNoiOTamTru.Text;
+                return txtNoiOHienNay.Text;
             }
         }
         public string CongViecChinh
@@ -397,8 +397,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             txtHoTenDangDung.Text = _nhanvien.HoTenDangDung;
             txtNoiSinh.Text = _nhanvien.NoiSinh;
             txtQueQuan.Text = _nhanvien.QueQuan;
-            txtHoKhau.Text = _nhanvien.HoKhau;
-            txtNoiOTamTru.Text = _nhanvien.TamTru;
+            txtHoKhau.Text = _nhanvien.NoiOHienNay;
+            txtNoiOHienNay.Text = _nhanvien.NoiOHienNay;
 
             if (System.IO.File.Exists(GlobalVars.g_strPathImages + "\\" + _nhanvien.HinhAnh))
             {

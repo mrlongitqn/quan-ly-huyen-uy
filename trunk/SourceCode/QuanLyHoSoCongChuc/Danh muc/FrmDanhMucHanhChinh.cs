@@ -44,6 +44,10 @@ namespace QuanLyHoSoCongChuc.Danh_muc
 
         private void FrmDanhMucHanhChinh_Load(object sender, EventArgs e)
         {
+            // Show waiting form
+            GlobalVars.PreLoading();
+            //------- E ---------
+
             if (EnableButtonChon)
                 btnChon.Visible = true;
             else
@@ -285,6 +289,13 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             {
                 throw new Exception(ex.Message, ex.InnerException);
             }
+        }
+
+        private void FrmDanhMucHanhChinh_Shown(object sender, EventArgs e)
+        {
+            // Hide waiting form
+            GlobalVars.PosLoading();
+            //------- E ---------
         }
     }
 }

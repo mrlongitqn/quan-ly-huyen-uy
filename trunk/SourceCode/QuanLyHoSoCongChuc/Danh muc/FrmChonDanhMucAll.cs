@@ -26,6 +26,9 @@ namespace QuanLyHoSoCongChuc.Danh_muc
 
         private void FrmChonDanhMucAll_Load(object sender, EventArgs e)
         {
+            // Show waiting form
+            GlobalVars.PreLoading();
+            //------- E ---------
             LoadDanhMuc();
         }
 
@@ -112,6 +115,13 @@ namespace QuanLyHoSoCongChuc.Danh_muc
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void FrmChonDanhMucAll_Shown(object sender, EventArgs e)
+        {
+            // Hide waiting form
+            GlobalVars.PosLoading();
+            //------- E ---------
         }
     }
 }

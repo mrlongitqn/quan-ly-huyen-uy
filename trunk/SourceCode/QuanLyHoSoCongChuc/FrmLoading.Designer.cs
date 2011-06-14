@@ -60,7 +60,6 @@
             this.Name = "FrmLoading";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmLoading";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmLoading_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.PictureBox1)).EndInit();
             this.ResumeLayout(false);
 

@@ -414,6 +414,7 @@
             this.Text = "Nhập quan hệ gia đình";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNhapQuanHeGiaDinh_FormClosed);
             this.Load += new System.EventHandler(this.FrmNhapQuanHeGiaDinh_Load);
+            this.Shown += new System.EventHandler(this.FrmNhapQuanHeGiaDinh_Shown);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

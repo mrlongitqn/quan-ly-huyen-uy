@@ -40,7 +40,6 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             _nhanvien = nhanvien;
             txtHoTen.Text = _nhanvien.HoTenKhaiSinh;
             txtMaNhanVien.Text = _nhanvien.MaNhanVien;
-            LoadData();
         }
 
         /// <summary>
@@ -201,6 +200,10 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         private void FrmNhapQuaTrinhCongTac_Load(object sender, EventArgs e)
         {
+            // Show waiting form
+            GlobalVars.PreLoading();
+            //------- E ---------
+            LoadData();
             EraseTextboxes();
             SetDefaultMode(true);
         }
@@ -523,6 +526,13 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             btnXoa.Enabled = val;
             btnGhi.Enabled = !val;
             btnHuy.Enabled = !val;
+        }
+
+        private void FrmNhapQuaTrinhCongTac_Shown(object sender, EventArgs e)
+        {
+            // Hide waiting form
+            GlobalVars.PosLoading();
+            //------- E ---------
         }
     }
 }

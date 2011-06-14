@@ -40,7 +40,9 @@
             this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtNoiDungViPham = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnChonNoiDungViPham = new System.Windows.Forms.Button();
             this.txtHinhThuc = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.btnChonHinhThuc = new System.Windows.Forms.Button();
             this.txtNam = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -49,8 +51,6 @@
             this.txtLyDo = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.btnChonNoiDungViPham = new System.Windows.Forms.Button();
-            this.btnChonHinhThuc = new System.Windows.Forms.Button();
             this.btnHuy = new DevComponents.DotNetBar.ButtonX();
             this.btnGhi = new DevComponents.DotNetBar.ButtonX();
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
@@ -210,6 +210,17 @@
             this.txtNoiDungViPham.Size = new System.Drawing.Size(426, 20);
             this.txtNoiDungViPham.TabIndex = 323;
             // 
+            // btnChonNoiDungViPham
+            // 
+            this.btnChonNoiDungViPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonNoiDungViPham.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonNoiDungViPham.Location = new System.Drawing.Point(577, 229);
+            this.btnChonNoiDungViPham.Name = "btnChonNoiDungViPham";
+            this.btnChonNoiDungViPham.Size = new System.Drawing.Size(28, 27);
+            this.btnChonNoiDungViPham.TabIndex = 322;
+            this.btnChonNoiDungViPham.UseVisualStyleBackColor = true;
+            this.btnChonNoiDungViPham.Click += new System.EventHandler(this.btnChonNoiDungViPham_Click);
+            // 
             // txtHinhThuc
             // 
             this.txtHinhThuc.BackColor = System.Drawing.Color.White;
@@ -223,6 +234,17 @@
             this.txtHinhThuc.ReadOnly = true;
             this.txtHinhThuc.Size = new System.Drawing.Size(426, 20);
             this.txtHinhThuc.TabIndex = 321;
+            // 
+            // btnChonHinhThuc
+            // 
+            this.btnChonHinhThuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnChonHinhThuc.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
+            this.btnChonHinhThuc.Location = new System.Drawing.Point(577, 65);
+            this.btnChonHinhThuc.Name = "btnChonHinhThuc";
+            this.btnChonHinhThuc.Size = new System.Drawing.Size(28, 27);
+            this.btnChonHinhThuc.TabIndex = 320;
+            this.btnChonHinhThuc.UseVisualStyleBackColor = true;
+            this.btnChonHinhThuc.Click += new System.EventHandler(this.btnChonHinhThuc_Click);
             // 
             // txtNam
             // 
@@ -315,28 +337,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(619, 47);
             this.panel4.TabIndex = 94;
-            // 
-            // btnChonNoiDungViPham
-            // 
-            this.btnChonNoiDungViPham.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonNoiDungViPham.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonNoiDungViPham.Location = new System.Drawing.Point(577, 229);
-            this.btnChonNoiDungViPham.Name = "btnChonNoiDungViPham";
-            this.btnChonNoiDungViPham.Size = new System.Drawing.Size(28, 27);
-            this.btnChonNoiDungViPham.TabIndex = 322;
-            this.btnChonNoiDungViPham.UseVisualStyleBackColor = true;
-            this.btnChonNoiDungViPham.Click += new System.EventHandler(this.btnChonNoiDungViPham_Click);
-            // 
-            // btnChonHinhThuc
-            // 
-            this.btnChonHinhThuc.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnChonHinhThuc.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_03;
-            this.btnChonHinhThuc.Location = new System.Drawing.Point(577, 65);
-            this.btnChonHinhThuc.Name = "btnChonHinhThuc";
-            this.btnChonHinhThuc.Size = new System.Drawing.Size(28, 27);
-            this.btnChonHinhThuc.TabIndex = 320;
-            this.btnChonHinhThuc.UseVisualStyleBackColor = true;
-            this.btnChonHinhThuc.Click += new System.EventHandler(this.btnChonHinhThuc_Click);
             // 
             // btnHuy
             // 
@@ -436,6 +436,7 @@
             this.Text = "Nhập quá trình kỷ luật";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNhapQuaTrinhKyLuat_FormClosed);
             this.Load += new System.EventHandler(this.FrmNhapQuaTrinhKyLuat_Load);
+            this.Shown += new System.EventHandler(this.FrmNhapQuaTrinhKyLuat_Shown);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

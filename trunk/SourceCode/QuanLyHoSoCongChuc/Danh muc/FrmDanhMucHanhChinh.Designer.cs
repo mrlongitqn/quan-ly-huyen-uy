@@ -266,6 +266,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Mục Hành Chính";
             this.Load += new System.EventHandler(this.FrmDanhMucHanhChinh_Load);
+            this.Shown += new System.EventHandler(this.FrmDanhMucHanhChinh_Shown);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);

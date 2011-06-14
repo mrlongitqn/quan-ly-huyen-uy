@@ -35,6 +35,10 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtMaNhanVien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtDenThangNam = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
             this.txtTuThangNam = new DevComponents.DotNetBar.Controls.MaskedTextBoxAdv();
@@ -64,10 +68,6 @@
             this.btnSua = new DevComponents.DotNetBar.ButtonX();
             this.btnThem = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
-            this.txtMaNhanVien = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.txtHoTen = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -148,6 +148,54 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(212, 113);
             this.panel2.TabIndex = 2;
+            // 
+            // txtMaNhanVien
+            // 
+            this.txtMaNhanVien.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtMaNhanVien.Border.Class = "TextBoxBorder";
+            this.txtMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaNhanVien.Location = new System.Drawing.Point(8, 84);
+            this.txtMaNhanVien.Name = "txtMaNhanVien";
+            this.txtMaNhanVien.ReadOnly = true;
+            this.txtMaNhanVien.Size = new System.Drawing.Size(196, 20);
+            this.txtMaNhanVien.TabIndex = 86;
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(14, 58);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(87, 20);
+            this.labelX1.TabIndex = 85;
+            this.labelX1.Text = "Mã nhân viên";
+            // 
+            // txtHoTen
+            // 
+            this.txtHoTen.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtHoTen.Border.Class = "TextBoxBorder";
+            this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHoTen.Location = new System.Drawing.Point(8, 32);
+            this.txtHoTen.Name = "txtHoTen";
+            this.txtHoTen.ReadOnly = true;
+            this.txtHoTen.Size = new System.Drawing.Size(196, 20);
+            this.txtHoTen.TabIndex = 84;
+            // 
+            // labelX2
+            // 
+            this.labelX2.BackColor = System.Drawing.Color.Transparent;
+            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX2.Location = new System.Drawing.Point(14, 9);
+            this.labelX2.Name = "labelX2";
+            this.labelX2.Size = new System.Drawing.Size(58, 20);
+            this.labelX2.TabIndex = 83;
+            this.labelX2.Text = "Họ và tên";
             // 
             // panel1
             // 
@@ -540,54 +588,6 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // txtMaNhanVien
-            // 
-            this.txtMaNhanVien.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtMaNhanVien.Border.Class = "TextBoxBorder";
-            this.txtMaNhanVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaNhanVien.Location = new System.Drawing.Point(8, 84);
-            this.txtMaNhanVien.Name = "txtMaNhanVien";
-            this.txtMaNhanVien.ReadOnly = true;
-            this.txtMaNhanVien.Size = new System.Drawing.Size(196, 20);
-            this.txtMaNhanVien.TabIndex = 86;
-            // 
-            // labelX1
-            // 
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(14, 58);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(87, 20);
-            this.labelX1.TabIndex = 85;
-            this.labelX1.Text = "Mã nhân viên";
-            // 
-            // txtHoTen
-            // 
-            this.txtHoTen.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtHoTen.Border.Class = "TextBoxBorder";
-            this.txtHoTen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHoTen.Location = new System.Drawing.Point(8, 32);
-            this.txtHoTen.Name = "txtHoTen";
-            this.txtHoTen.ReadOnly = true;
-            this.txtHoTen.Size = new System.Drawing.Size(196, 20);
-            this.txtHoTen.TabIndex = 84;
-            // 
-            // labelX2
-            // 
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.Location = new System.Drawing.Point(14, 9);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(58, 20);
-            this.labelX2.TabIndex = 83;
-            this.labelX2.Text = "Họ và tên";
-            // 
             // FrmNhapQuaTrinhCongTac
             // 
             this.ClientSize = new System.Drawing.Size(831, 436);
@@ -600,6 +600,7 @@
             this.Text = "Nhập quá trình công tác";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNhapQuaTrinhCongTac_FormClosed);
             this.Load += new System.EventHandler(this.FrmNhapQuaTrinhCongTac_Load);
+            this.Shown += new System.EventHandler(this.FrmNhapQuaTrinhCongTac_Shown);
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
