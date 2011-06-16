@@ -1417,7 +1417,6 @@
             this.Controls.Add(this.groupPanel4);
             this.Name = "FrmTimKiem";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.TabText = "Tìm kiếm";
             this.Text = "Tìm kiếm";
             this.Load += new System.EventHandler(this.FrmTimKiem_Load);
             this.groupPanel4.ResumeLayout(false);

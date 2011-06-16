@@ -37,6 +37,7 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhCongTac_CapUy", "CapUy", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.CapUy), "QuaTrinhCongTac", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhCongTac), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhCongTac_CapUyKiem", "CapUyKiem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.CapUyKiem), "QuaTrinhCongTac", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhCongTac), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_LoaiNguoiDung_ChucNang_ChucNang", "ChucNang", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.ChucNang), "LoaiNguoiDung_ChucNang", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.LoaiNguoiDung_ChucNang), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_ChucNangSuDung_NhatKyItem", "NhatKyItem", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NhatKyItem), "ChucNangSuDung", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.ChucNangSuDung), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ChucVu", "ChucVu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.ChucVu), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ChucVu1", "ChucVu", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.ChucVu), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhCongTac_ChucVuChinhQuyen", "ChucVuChinhQuyen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.ChucVuChinhQuyen), "QuaTrinhCongTac", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhCongTac), true)]
@@ -72,12 +73,14 @@ using System.Runtime.Serialization;
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_TuTran_LyDoTuTran", "LyDoTuTran", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.LyDoTuTran), "TuTran", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.TuTran), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_NgachCongChuc", "NgachCongChuc", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NgachCongChuc), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_NgheNghiep", "NgheNghiep", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NgheNghiep), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhatKy_NguoiDung", "NguoiDung", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NguoiDung), "NhatKy", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhatKy), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_ThanhPhanGiaDinh", "ThanhPhanGiaDinh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.ThanhPhanGiaDinh), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_TinhTrangSucKhoe", "TinhTrangSucKhoe", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TinhTrangSucKhoe), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhanVien_TonGiao", "TonGiao", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TonGiao), "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhanVien), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhCongTac_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "QuaTrinhCongTac", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhCongTac), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuaTrinhDaoTao_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "QuaTrinhDaoTao", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuaTrinhDaoTao), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_ThanNhanMoi_NhanVien", "NhanVien", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NhanVien), "ThanNhan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.ThanNhan), true)]
+[assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_NhatKyItem_NhatKy", "NhatKy", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.NhatKy), "NhatKyItem", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.NhatKyItem), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_PhuongXa_QuanHuyen", "QuanHuyen", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.QuanHuyen), "PhuongXa", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.PhuongXa), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_ThanNhanMoi_QuanHe", "QuanHe", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.QuanHe), "ThanNhan", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.ThanNhan), true)]
 [assembly: EdmRelationshipAttribute("QLHSCCModel", "FK_QuanHuyen_TinhThanh", "TinhThanh", System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, typeof(QuanLyHoSoCongChuc.Models.TinhThanh), "QuanHuyen", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(QuanLyHoSoCongChuc.Models.QuanHuyen), true)]
@@ -293,6 +296,22 @@ namespace QuanLyHoSoCongChuc.Models
             }
         }
         private ObjectSet<ChucNang> _ChucNangs;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<ChucNangSuDung> ChucNangSuDungs
+        {
+            get
+            {
+                if ((_ChucNangSuDungs == null))
+                {
+                    _ChucNangSuDungs = base.CreateObjectSet<ChucNangSuDung>("ChucNangSuDungs");
+                }
+                return _ChucNangSuDungs;
+            }
+        }
+        private ObjectSet<ChucNangSuDung> _ChucNangSuDungs;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -809,6 +828,38 @@ namespace QuanLyHoSoCongChuc.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
+        public ObjectSet<NhatKy> NhatKies
+        {
+            get
+            {
+                if ((_NhatKies == null))
+                {
+                    _NhatKies = base.CreateObjectSet<NhatKy>("NhatKies");
+                }
+                return _NhatKies;
+            }
+        }
+        private ObjectSet<NhatKy> _NhatKies;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        public ObjectSet<NhatKyItem> NhatKyItems
+        {
+            get
+            {
+                if ((_NhatKyItems == null))
+                {
+                    _NhatKyItems = base.CreateObjectSet<NhatKyItem>("NhatKyItems");
+                }
+                return _NhatKyItems;
+            }
+        }
+        private ObjectSet<NhatKyItem> _NhatKyItems;
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
         public ObjectSet<NoiDungViPham> NoiDungViPhams
         {
             get
@@ -1114,6 +1165,14 @@ namespace QuanLyHoSoCongChuc.Models
         }
     
         /// <summary>
+        /// Deprecated Method for adding a new object to the ChucNangSuDungs EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToChucNangSuDungs(ChucNangSuDung chucNangSuDung)
+        {
+            base.AddObject("ChucNangSuDungs", chucNangSuDung);
+        }
+    
+        /// <summary>
         /// Deprecated Method for adding a new object to the ChucVus EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
         public void AddToChucVus(ChucVu chucVu)
@@ -1367,6 +1426,22 @@ namespace QuanLyHoSoCongChuc.Models
         public void AddToNhanViens(NhanVien nhanVien)
         {
             base.AddObject("NhanViens", nhanVien);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the NhatKies EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToNhatKies(NhatKy nhatKy)
+        {
+            base.AddObject("NhatKies", nhatKy);
+        }
+    
+        /// <summary>
+        /// Deprecated Method for adding a new object to the NhatKyItems EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// </summary>
+        public void AddToNhatKyItems(NhatKyItem nhatKyItem)
+        {
+            base.AddObject("NhatKyItems", nhatKyItem);
         }
     
         /// <summary>
@@ -3380,6 +3455,174 @@ namespace QuanLyHoSoCongChuc.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<LoaiNguoiDung_ChucNang>("QLHSCCModel.FK_LoaiNguoiDung_ChucNang_ChucNang", "LoaiNguoiDung_ChucNang", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="ChucNangSuDung")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class ChucNangSuDung : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new ChucNangSuDung object.
+        /// </summary>
+        /// <param name="maChucNangSuDung">Initial value of the MaChucNangSuDung property.</param>
+        public static ChucNangSuDung CreateChucNangSuDung(global::System.Int32 maChucNangSuDung)
+        {
+            ChucNangSuDung chucNangSuDung = new ChucNangSuDung();
+            chucNangSuDung.MaChucNangSuDung = maChucNangSuDung;
+            return chucNangSuDung;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MaChucNangSuDung
+        {
+            get
+            {
+                return _MaChucNangSuDung;
+            }
+            set
+            {
+                if (_MaChucNangSuDung != value)
+                {
+                    OnMaChucNangSuDungChanging(value);
+                    ReportPropertyChanging("MaChucNangSuDung");
+                    _MaChucNangSuDung = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MaChucNangSuDung");
+                    OnMaChucNangSuDungChanged();
+                }
+            }
+        }
+        private global::System.Int32 _MaChucNangSuDung;
+        partial void OnMaChucNangSuDungChanging(global::System.Int32 value);
+        partial void OnMaChucNangSuDungChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> MaNhatKyItem
+        {
+            get
+            {
+                return _MaNhatKyItem;
+            }
+            set
+            {
+                OnMaNhatKyItemChanging(value);
+                ReportPropertyChanging("MaNhatKyItem");
+                _MaNhatKyItem = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MaNhatKyItem");
+                OnMaNhatKyItemChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _MaNhatKyItem;
+        partial void OnMaNhatKyItemChanging(Nullable<global::System.Int32> value);
+        partial void OnMaNhatKyItemChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TenChucNang
+        {
+            get
+            {
+                return _TenChucNang;
+            }
+            set
+            {
+                OnTenChucNangChanging(value);
+                ReportPropertyChanging("TenChucNang");
+                _TenChucNang = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TenChucNang");
+                OnTenChucNangChanged();
+            }
+        }
+        private global::System.String _TenChucNang;
+        partial void OnTenChucNangChanging(global::System.String value);
+        partial void OnTenChucNangChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> SoLan
+        {
+            get
+            {
+                return _SoLan;
+            }
+            set
+            {
+                OnSoLanChanging(value);
+                ReportPropertyChanging("SoLan");
+                _SoLan = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("SoLan");
+                OnSoLanChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _SoLan;
+        partial void OnSoLanChanging(Nullable<global::System.Int32> value);
+        partial void OnSoLanChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_ChucNangSuDung_NhatKyItem", "NhatKyItem")]
+        public NhatKyItem NhatKyItem
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NhatKyItem>("QLHSCCModel.FK_ChucNangSuDung_NhatKyItem", "NhatKyItem").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NhatKyItem>("QLHSCCModel.FK_ChucNangSuDung_NhatKyItem", "NhatKyItem").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<NhatKyItem> NhatKyItemReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NhatKyItem>("QLHSCCModel.FK_ChucNangSuDung_NhatKyItem", "NhatKyItem");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<NhatKyItem>("QLHSCCModel.FK_ChucNangSuDung_NhatKyItem", "NhatKyItem", value);
                 }
             }
         }
@@ -9175,6 +9418,28 @@ namespace QuanLyHoSoCongChuc.Models
                 }
             }
         }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhatKy_NguoiDung", "NhatKy")]
+        public EntityCollection<NhatKy> NhatKies
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<NhatKy>("QLHSCCModel.FK_NhatKy_NguoiDung", "NhatKy");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<NhatKy>("QLHSCCModel.FK_NhatKy_NguoiDung", "NhatKy", value);
+                }
+            }
+        }
 
         #endregion
     }
@@ -11286,6 +11551,362 @@ namespace QuanLyHoSoCongChuc.Models
                 if ((value != null))
                 {
                     ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ThanNhan>("QLHSCCModel.FK_ThanNhanMoi_NhanVien", "ThanNhan", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="NhatKy")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class NhatKy : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new NhatKy object.
+        /// </summary>
+        /// <param name="maNhatKy">Initial value of the MaNhatKy property.</param>
+        public static NhatKy CreateNhatKy(global::System.Int32 maNhatKy)
+        {
+            NhatKy nhatKy = new NhatKy();
+            nhatKy.MaNhatKy = maNhatKy;
+            return nhatKy;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MaNhatKy
+        {
+            get
+            {
+                return _MaNhatKy;
+            }
+            set
+            {
+                if (_MaNhatKy != value)
+                {
+                    OnMaNhatKyChanging(value);
+                    ReportPropertyChanging("MaNhatKy");
+                    _MaNhatKy = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MaNhatKy");
+                    OnMaNhatKyChanged();
+                }
+            }
+        }
+        private global::System.Int32 _MaNhatKy;
+        partial void OnMaNhatKyChanging(global::System.Int32 value);
+        partial void OnMaNhatKyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> MaNguoiDung
+        {
+            get
+            {
+                return _MaNguoiDung;
+            }
+            set
+            {
+                OnMaNguoiDungChanging(value);
+                ReportPropertyChanging("MaNguoiDung");
+                _MaNguoiDung = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MaNguoiDung");
+                OnMaNguoiDungChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _MaNguoiDung;
+        partial void OnMaNguoiDungChanging(Nullable<global::System.Int32> value);
+        partial void OnMaNguoiDungChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhatKy_NguoiDung", "NguoiDung")]
+        public NguoiDung NguoiDung
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NguoiDung>("QLHSCCModel.FK_NhatKy_NguoiDung", "NguoiDung").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NguoiDung>("QLHSCCModel.FK_NhatKy_NguoiDung", "NguoiDung").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<NguoiDung> NguoiDungReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NguoiDung>("QLHSCCModel.FK_NhatKy_NguoiDung", "NguoiDung");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<NguoiDung>("QLHSCCModel.FK_NhatKy_NguoiDung", "NguoiDung", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhatKyItem_NhatKy", "NhatKyItem")]
+        public EntityCollection<NhatKyItem> NhatKyItems
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<NhatKyItem>("QLHSCCModel.FK_NhatKyItem_NhatKy", "NhatKyItem");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<NhatKyItem>("QLHSCCModel.FK_NhatKyItem_NhatKy", "NhatKyItem", value);
+                }
+            }
+        }
+
+        #endregion
+    }
+    
+    /// <summary>
+    /// No Metadata Documentation available.
+    /// </summary>
+    [EdmEntityTypeAttribute(NamespaceName="QLHSCCModel", Name="NhatKyItem")]
+    [Serializable()]
+    [DataContractAttribute(IsReference=true)]
+    public partial class NhatKyItem : EntityObject
+    {
+        #region Factory Method
+    
+        /// <summary>
+        /// Create a new NhatKyItem object.
+        /// </summary>
+        /// <param name="maNhatKyItem">Initial value of the MaNhatKyItem property.</param>
+        public static NhatKyItem CreateNhatKyItem(global::System.Int32 maNhatKyItem)
+        {
+            NhatKyItem nhatKyItem = new NhatKyItem();
+            nhatKyItem.MaNhatKyItem = maNhatKyItem;
+            return nhatKyItem;
+        }
+
+        #endregion
+        #region Primitive Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=true, IsNullable=false)]
+        [DataMemberAttribute()]
+        public global::System.Int32 MaNhatKyItem
+        {
+            get
+            {
+                return _MaNhatKyItem;
+            }
+            set
+            {
+                if (_MaNhatKyItem != value)
+                {
+                    OnMaNhatKyItemChanging(value);
+                    ReportPropertyChanging("MaNhatKyItem");
+                    _MaNhatKyItem = StructuralObject.SetValidValue(value);
+                    ReportPropertyChanged("MaNhatKyItem");
+                    OnMaNhatKyItemChanged();
+                }
+            }
+        }
+        private global::System.Int32 _MaNhatKyItem;
+        partial void OnMaNhatKyItemChanging(global::System.Int32 value);
+        partial void OnMaNhatKyItemChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.Int32> MaNhatKy
+        {
+            get
+            {
+                return _MaNhatKy;
+            }
+            set
+            {
+                OnMaNhatKyChanging(value);
+                ReportPropertyChanging("MaNhatKy");
+                _MaNhatKy = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("MaNhatKy");
+                OnMaNhatKyChanged();
+            }
+        }
+        private Nullable<global::System.Int32> _MaNhatKy;
+        partial void OnMaNhatKyChanging(Nullable<global::System.Int32> value);
+        partial void OnMaNhatKyChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ThoiDiemVao
+        {
+            get
+            {
+                return _ThoiDiemVao;
+            }
+            set
+            {
+                OnThoiDiemVaoChanging(value);
+                ReportPropertyChanging("ThoiDiemVao");
+                _ThoiDiemVao = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ThoiDiemVao");
+                OnThoiDiemVaoChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ThoiDiemVao;
+        partial void OnThoiDiemVaoChanging(Nullable<global::System.DateTime> value);
+        partial void OnThoiDiemVaoChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public Nullable<global::System.DateTime> ThoiDiemRa
+        {
+            get
+            {
+                return _ThoiDiemRa;
+            }
+            set
+            {
+                OnThoiDiemRaChanging(value);
+                ReportPropertyChanging("ThoiDiemRa");
+                _ThoiDiemRa = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("ThoiDiemRa");
+                OnThoiDiemRaChanged();
+            }
+        }
+        private Nullable<global::System.DateTime> _ThoiDiemRa;
+        partial void OnThoiDiemRaChanging(Nullable<global::System.DateTime> value);
+        partial void OnThoiDiemRaChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String TenMayTram
+        {
+            get
+            {
+                return _TenMayTram;
+            }
+            set
+            {
+                OnTenMayTramChanging(value);
+                ReportPropertyChanging("TenMayTram");
+                _TenMayTram = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("TenMayTram");
+                OnTenMayTramChanged();
+            }
+        }
+        private global::System.String _TenMayTram;
+        partial void OnTenMayTramChanging(global::System.String value);
+        partial void OnTenMayTramChanged();
+
+        #endregion
+    
+        #region Navigation Properties
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_ChucNangSuDung_NhatKyItem", "ChucNangSuDung")]
+        public EntityCollection<ChucNangSuDung> ChucNangSuDungs
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<ChucNangSuDung>("QLHSCCModel.FK_ChucNangSuDung_NhatKyItem", "ChucNangSuDung");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<ChucNangSuDung>("QLHSCCModel.FK_ChucNangSuDung_NhatKyItem", "ChucNangSuDung", value);
+                }
+            }
+        }
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [XmlIgnoreAttribute()]
+        [SoapIgnoreAttribute()]
+        [DataMemberAttribute()]
+        [EdmRelationshipNavigationPropertyAttribute("QLHSCCModel", "FK_NhatKyItem_NhatKy", "NhatKy")]
+        public NhatKy NhatKy
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NhatKy>("QLHSCCModel.FK_NhatKyItem_NhatKy", "NhatKy").Value;
+            }
+            set
+            {
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NhatKy>("QLHSCCModel.FK_NhatKyItem_NhatKy", "NhatKy").Value = value;
+            }
+        }
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [BrowsableAttribute(false)]
+        [DataMemberAttribute()]
+        public EntityReference<NhatKy> NhatKyReference
+        {
+            get
+            {
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<NhatKy>("QLHSCCModel.FK_NhatKyItem_NhatKy", "NhatKy");
+            }
+            set
+            {
+                if ((value != null))
+                {
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<NhatKy>("QLHSCCModel.FK_NhatKyItem_NhatKy", "NhatKy", value);
                 }
             }
         }

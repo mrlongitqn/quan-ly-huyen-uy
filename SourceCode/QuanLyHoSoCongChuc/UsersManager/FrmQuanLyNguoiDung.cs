@@ -178,7 +178,7 @@ namespace QuanLyHoSoCongChuc.UsersManager
                 for (int i = 0; i < lstItem.Count; i++)
                 {
                     // Only add another nguoi dung, not me ()
-                    if (lstItem[i].TenDangNhap != GlobalVars.g_strTenDangNhap)
+                    if (lstItem[i].TenDangNhap != GlobalVars.g_CurrentUser.TenDangNhap)
                     {
                         lstbxNguoiDung.Items.Add(lstItem[i]);
                     }

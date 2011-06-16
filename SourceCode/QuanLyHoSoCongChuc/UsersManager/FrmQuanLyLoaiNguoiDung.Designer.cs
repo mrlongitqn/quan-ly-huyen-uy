@@ -50,7 +50,6 @@
             this.btnLuu = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.btnThoat = new System.Windows.Forms.ToolStripButton();
-            this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
             this.panelEx1.SuspendLayout();
             this.panelEx2.SuspendLayout();
             this.groupPanel2.SuspendLayout();
@@ -287,7 +286,7 @@
             this.btnReset.Image = global::QuanLyHoSoCongChuc.Properties.Resources.Eraser_icon;
             this.btnReset.Name = "btnReset";
             this.btnReset.RightToLeftAutoMirrorImage = true;
-            this.btnReset.Size = new System.Drawing.Size(55, 33);
+            this.btnReset.Size = new System.Drawing.Size(57, 33);
             this.btnReset.Text = "Nhập mới";
             this.btnReset.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
@@ -302,7 +301,7 @@
             this.btnThem.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_01;
             this.btnThem.Name = "btnThem";
             this.btnThem.RightToLeftAutoMirrorImage = true;
-            this.btnThem.Size = new System.Drawing.Size(37, 33);
+            this.btnThem.Size = new System.Drawing.Size(39, 33);
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -312,7 +311,7 @@
             this.btnXoa.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_29;
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.RightToLeftAutoMirrorImage = true;
-            this.btnXoa.Size = new System.Drawing.Size(29, 33);
+            this.btnXoa.Size = new System.Drawing.Size(30, 33);
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -389,7 +388,6 @@
         private System.Windows.Forms.ToolStripButton btnLuu;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton btnThoat;
-        private CachedCrystalReport2 cachedCrystalReport21;
 
     }
 }

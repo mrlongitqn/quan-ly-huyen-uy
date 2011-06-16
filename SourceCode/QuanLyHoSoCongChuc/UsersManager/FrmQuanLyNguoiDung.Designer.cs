@@ -137,7 +137,7 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 1;
-            this.groupPanel1.Text = "Quản lý chức năng người dùng";
+            this.groupPanel1.Text = "Quản lý người dùng";
             // 
             // txtTenDangNhap
             // 

@@ -35,11 +35,11 @@ namespace QuanLyHoSoCongChuc.UsersManager
 
         private void dtgvChucNang_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (dtgvLoaiNguoiDung.SelectedRows == null || dtgvLoaiNguoiDung.SelectedRows.Count == 0)
-            //    return;
-            //var selectedItem = dtgvLoaiNguoiDung.SelectedRows[0];
-            //txtMaLoaiNguoiDung.Text = ((LoaiNguoiDung)selectedItem.DataBoundItem).MaQuyen.ToString();
-            //txtTenLoaiNguoiDung.Text = ((LoaiNguoiDung)selectedItem.DataBoundItem).TenQuyen.ToString();
+            if (dtgvLoaiNguoiDung.SelectedRows == null || dtgvLoaiNguoiDung.SelectedRows.Count == 0)
+                return;
+            var selectedItem = dtgvLoaiNguoiDung.SelectedRows[0];
+            txtMaLoaiNguoiDung.Text = ((LoaiNguoiDung)selectedItem.DataBoundItem).MaQuyen.ToString();
+            txtTenLoaiNguoiDung.Text = ((LoaiNguoiDung)selectedItem.DataBoundItem).TenQuyen.ToString();
         }
 
         private void btnReset_Click(object sender, EventArgs e)

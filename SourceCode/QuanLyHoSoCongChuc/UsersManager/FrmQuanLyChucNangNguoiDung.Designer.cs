@@ -46,7 +46,6 @@
             this.btnDong = new DevComponents.DotNetBar.ButtonX();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.cachedCrystalReport21 = new QuanLyHoSoCongChuc.CachedCrystalReport2();
             this.groupPanel2.SuspendLayout();
             this.groupPanel3.SuspendLayout();
             this.groupPanel1.SuspendLayout();
@@ -334,7 +333,6 @@
         private DevComponents.DotNetBar.ButtonX btnLuu;
         private DevComponents.DotNetBar.ButtonX btnDong;
         private System.Windows.Forms.ColumnHeader columnHeader2;
-        private CachedCrystalReport2 cachedCrystalReport21;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.ColumnHeader columnHeader3;
 

@@ -30,9 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnDong = new DevComponents.DotNetBar.ButtonX();
-            this.btnTim = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
-            this.btnIn = new DevComponents.DotNetBar.ButtonX();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lstvNhatKySuDung = new DevComponents.DotNetBar.Controls.ListViewEx();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,9 +52,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnDong);
-            this.panel1.Controls.Add(this.btnTim);
             this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.btnIn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 542);
             this.panel1.Name = "panel1";
@@ -70,23 +66,12 @@
             this.btnDong.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnDong.Image = global::QuanLyHoSoCongChuc.Properties.Resources.exit;
             this.btnDong.ImageFixedSize = new System.Drawing.Size(20, 20);
-            this.btnDong.Location = new System.Drawing.Point(613, 14);
+            this.btnDong.Location = new System.Drawing.Point(771, 16);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 23);
             this.btnDong.TabIndex = 19;
             this.btnDong.Text = "Đóng";
-            // 
-            // btnTim
-            // 
-            this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnTim.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTim.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnTim.Image = global::QuanLyHoSoCongChuc.Properties.Resources.find;
-            this.btnTim.Location = new System.Drawing.Point(282, 14);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(81, 23);
-            this.btnTim.TabIndex = 18;
-            this.btnTim.Text = "Tìm";
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnXoa
             // 
@@ -95,24 +80,12 @@
             this.btnXoa.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnXoa.Image = global::QuanLyHoSoCongChuc.Properties.Resources._001_29;
             this.btnXoa.ImageFixedSize = new System.Drawing.Size(16, 16);
-            this.btnXoa.Location = new System.Drawing.Point(504, 14);
+            this.btnXoa.Location = new System.Drawing.Point(677, 16);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(72, 23);
             this.btnXoa.TabIndex = 17;
             this.btnXoa.Text = "Xóa";
-            // 
-            // btnIn
-            // 
-            this.btnIn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnIn.Image = global::QuanLyHoSoCongChuc.Properties.Resources.action_print;
-            this.btnIn.ImageFixedSize = new System.Drawing.Size(16, 20);
-            this.btnIn.Location = new System.Drawing.Point(402, 14);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(79, 23);
-            this.btnIn.TabIndex = 15;
-            this.btnIn.Text = "In";
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // splitContainer1
             // 
@@ -153,7 +126,7 @@
             this.lstvNhatKySuDung.TabIndex = 0;
             this.lstvNhatKySuDung.UseCompatibleStateImageBehavior = false;
             this.lstvNhatKySuDung.View = System.Windows.Forms.View.Details;
-            this.lstvNhatKySuDung.Click += new System.EventHandler(this.lstvNhatKySuDung_Click);
+            this.lstvNhatKySuDung.SelectedIndexChanged += new System.EventHandler(this.lstvNhatKySuDung_SelectedIndexChanged);
             // 
             // columnHeader1
             // 
@@ -247,9 +220,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private DevComponents.DotNetBar.ButtonX btnTim;
         private DevComponents.DotNetBar.ButtonX btnXoa;
-        private DevComponents.DotNetBar.ButtonX btnIn;
         private DevComponents.DotNetBar.ButtonX btnDong;
 
     }

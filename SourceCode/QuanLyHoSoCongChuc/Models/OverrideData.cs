@@ -273,4 +273,11 @@
             return TenLoaiThuongBinh;
         }
     }
+    public partial class NguoiDung
+    {
+        public override string ToString()
+        {
+            return TenDangNhap;
+        }
+    }
 }
