@@ -400,11 +400,6 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             txtHoKhau.Text = _nhanvien.NoiOHienNay;
             txtNoiOHienNay.Text = _nhanvien.NoiOHienNay;
 
-            if (System.IO.File.Exists(GlobalVars.g_strPathImages + "\\" + _nhanvien.HinhAnh))
-            {
-                picNv.Image = new Bitmap(GlobalVars.g_strPathImages + "\\" + _nhanvien.HinhAnh);
-            }
-
             if (_nhanvien.HinhAnh != null)
             {
                 LoadImage(_nhanvien.HinhAnh);

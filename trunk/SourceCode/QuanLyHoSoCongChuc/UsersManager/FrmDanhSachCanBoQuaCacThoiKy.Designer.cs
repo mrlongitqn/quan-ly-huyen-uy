@@ -41,7 +41,6 @@
             this.btThem = new DevComponents.DotNetBar.ButtonX();
             this.btnDong = new DevComponents.DotNetBar.ButtonX();
             this.btnXoa = new DevComponents.DotNetBar.ButtonX();
-            this.btnIn = new DevComponents.DotNetBar.ButtonX();
             this.btnTim = new DevComponents.DotNetBar.ButtonX();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.panelEx1.SuspendLayout();
@@ -172,7 +171,6 @@
             this.panel1.Controls.Add(this.btnDong);
             this.panel1.Controls.Add(this.btnTim);
             this.panel1.Controls.Add(this.btnXoa);
-            this.panel1.Controls.Add(this.btnIn);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Location = new System.Drawing.Point(0, 406);
             this.panel1.Name = "panel1";
@@ -221,20 +219,6 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
-            // btnIn
-            // 
-            this.btnIn.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnIn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIn.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnIn.Image = global::QuanLyHoSoCongChuc.Properties.Resources.action_print;
-            this.btnIn.ImageFixedSize = new System.Drawing.Size(16, 20);
-            this.btnIn.Location = new System.Drawing.Point(57, 13);
-            this.btnIn.Name = "btnIn";
-            this.btnIn.Size = new System.Drawing.Size(79, 23);
-            this.btnIn.TabIndex = 20;
-            this.btnIn.Text = "In";
-            this.btnIn.Click += new System.EventHandler(this.btnIn_Click);
-            // 
             // btnTim
             // 
             this.btnTim.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
@@ -282,7 +266,6 @@
         private System.Windows.Forms.Panel panel1;
         private DevComponents.DotNetBar.ButtonX btnDong;
         private DevComponents.DotNetBar.ButtonX btnXoa;
-        private DevComponents.DotNetBar.ButtonX btnIn;
         private System.Windows.Forms.Panel panel2;
         private DevComponents.DotNetBar.Controls.ListViewEx lstvCanBo;
         private System.Windows.Forms.ColumnHeader columnHeader1;

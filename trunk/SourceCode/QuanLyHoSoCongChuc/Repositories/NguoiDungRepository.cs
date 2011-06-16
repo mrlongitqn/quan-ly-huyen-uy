@@ -20,6 +20,11 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return DataContext.Instance.NguoiDungs.FirstOrDefault(item => item.MaNguoiDung == manguoidung );
 		}
 
+        public static NguoiDung SelectByTenDangNhap(string tendangnhap)
+        {
+            return DataContext.Instance.NguoiDungs.FirstOrDefault(item => item.TenDangNhap == tendangnhap);
+        }
+
 		public static bool Insert(NguoiDung obj)
 		{
 			try

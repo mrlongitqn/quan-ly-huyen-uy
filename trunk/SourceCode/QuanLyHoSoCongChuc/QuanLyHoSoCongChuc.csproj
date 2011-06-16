@@ -218,6 +218,12 @@
     <Compile Include="Controller\TrinhDoNgoaiNguControl.cs" />
     <Compile Include="Controller\TrinhDoQuanLyNhaNuocControl.cs" />
     <Compile Include="Controller\TrinhDoTinHocControl.cs" />
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="CrystalReport2.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,6 +235,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Danh muc\FrmChonDanhMucHanhChinhAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Danh muc\FrmChonDanhMucHanhChinhAll.Designer.cs">
+      <DependentUpon>FrmChonDanhMucHanhChinhAll.cs</DependentUpon>
     </Compile>
     <Compile Include="DataManager\FrmPhieuBaoTuTran.cs">
       <SubType>Form</SubType>
@@ -707,6 +719,7 @@
     <Compile Include="Repositories\CapUyKiemRepository.cs" />
     <Compile Include="Repositories\CapUyRepository.cs" />
     <Compile Include="Repositories\ChucNangRepository.cs" />
+    <Compile Include="Repositories\ChucNangSuDungRepository.cs" />
     <Compile Include="Repositories\ChucVuChinhQuyenRepository.cs" />
     <Compile Include="Repositories\ChucVuRepository.cs" />
     <Compile Include="Repositories\ChuyenDonViRepository.cs" />
@@ -739,6 +752,8 @@
     <Compile Include="Repositories\NgheNghiepRepository.cs" />
     <Compile Include="Repositories\NguoiDungRepository.cs" />
     <Compile Include="Repositories\NhanVienRepository.cs" />
+    <Compile Include="Repositories\NhatKyItemRepository.cs" />
+    <Compile Include="Repositories\NhatKyRepository.cs" />
     <Compile Include="Repositories\NoiDungViPhamRepository.cs" />
     <Compile Include="Repositories\PhanLoaiDonViRepository.cs" />
     <Compile Include="Repositories\PhuongXaRepository.cs" />
@@ -767,7 +782,6 @@
     <Compile Include="Search\FrmMoCauHoi.Designer.cs">
       <DependentUpon>FrmMoCauHoi.cs</DependentUpon>
     </Compile>
-    <Compile Include="UsersDiary\DanhSachNhatKySuDung.cs" />
     <Compile Include="UsersDiary\FrmNhatKySuDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -839,12 +853,6 @@
     <Compile Include="OtherForms\FrmLuong.Designer.cs">
       <DependentUpon>FrmLuong.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmMain.Designer.cs">
-      <DependentUpon>FrmMain.cs</DependentUpon>
-    </Compile>
     <Compile Include="OtherForms\FrmQuanLyNhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -869,12 +877,6 @@
     <Compile Include="Search\FrmTimKiem.Designer.cs">
       <DependentUpon>FrmTimKiem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Search\FrmTimKiem2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Search\FrmTimKiem2.Designer.cs">
-      <DependentUpon>FrmTimKiem2.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utils\Criteria.cs" />
     <Compile Include="Utils\FileHelpers.cs" />
     <Compile Include="Utils\Keys.cs" />
@@ -889,6 +891,10 @@
     <Compile Include="Utils\EnumHelpers.cs" />
     <Compile Include="Utils\Table.cs" />
     <Compile Include="Utils\Validations.cs" />
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="CrystalReport2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
@@ -896,6 +902,9 @@
     <EmbeddedResource Include="CrystalReport1.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Danh muc\FrmChonDanhMucHanhChinhAll.resx">
+      <DependentUpon>FrmChonDanhMucHanhChinhAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DataManager\FrmPhieuBaoTuTran.resx">
       <DependentUpon>FrmPhieuBaoTuTran.cs</DependentUpon>
@@ -1042,10 +1051,6 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmLuong.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmMain.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\FrmQuanLyNhanVien.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmQuanLyNhanVien.cs</DependentUpon>
@@ -1150,10 +1155,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Search\FrmTimKiem.resx">
       <DependentUpon>FrmTimKiem.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Search\FrmTimKiem2.resx">
-      <DependentUpon>FrmTimKiem2.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

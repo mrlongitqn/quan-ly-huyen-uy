@@ -28,7 +28,7 @@ namespace QuanLyHoSoCongChuc.Search
     /// <summary>
     /// tuansl added: tim kiem nhan vien
     /// </summary>
-    public partial class FrmTimKiem : DockContent
+    public partial class FrmTimKiem : DevComponents.DotNetBar.Office2007Form
     {
         #region Variables
         public bool bnLoading;

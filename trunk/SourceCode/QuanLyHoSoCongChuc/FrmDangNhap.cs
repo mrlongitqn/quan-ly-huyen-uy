@@ -16,6 +16,7 @@ namespace QuanLyHoSoCongChuc
 {
     public partial class FrmDangNhap : Office2007Form
     {
+        public EventHandler Handler { get; set; }
 
         public FrmDangNhap()
         {
@@ -25,11 +26,8 @@ namespace QuanLyHoSoCongChuc
         //Click dang nhap
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
-            if (staticClass.reLogin)
-            {
-                staticClass.reLogin = true;
-            }
+            this.Close();
+            this.Handler(this, new MyEvent(txtUsername.Text.Trim() + "#" + txtPassword.Text.Trim()));
         }
 
         //Click thoat
@@ -37,19 +35,5 @@ namespace QuanLyHoSoCongChuc
         {
             Application.Exit();
         }
-        private void DangNhap_Key(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.DialogResult = DialogResult.OK;
-            }
-        }
-
-        private void FrmDangNhap_Load(object sender, EventArgs e)
-        {
-            DataService.OpenConnection();
-        }
-
-
     }
 }
