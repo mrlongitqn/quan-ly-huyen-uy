@@ -328,9 +328,28 @@ namespace QuanLyHoSoCongChuc.Report
             else if (cbDoiTuong.SelectedIndex == 1)
             {
                 initGird2();
-                String sql = " select nv.*, dv.TenDonVi";
-                sql += " from NhanVien nv";
-                sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+                
+                String sql = " select *, cv.TenChucVu, ng.TenNgachCongChuc, temp.MaNgachCongChuc,";
+                sql = sql + " temp.BacLuong, temp.HeSoLuong, temp.HeSoPhuCapThamNienVuotKhung,";
+                sql = sql+ " temp.ChenhLechBaoLuuHeSoLuong, temp.MocTinhNangLuongLanSau, ";
+                sql = sql + " temp.HeSoPhuCapChucVu, temp.HeSoPhuCapThamNienNghe, temp.HeSoPhuCapTrachNhiem, ";
+                sql = sql+ " temp.HeSoPhuCapDocHai, temp.HeSoPhuCapUuDaiNghe, temp.HeSoPhuCapKhac,";
+
+                sql = sql+ " temp.HeSoPhuCapThamNienVuotKhung+ temp.ChenhLechBaoLuuHeSoLuong +";
+                sql = sql+ " temp.HeSoPhuCapChucVu+ temp.HeSoPhuCapThamNienNghe+ temp.HeSoPhuCapTrachNhiem+ ";
+                sql = sql+ " temp.HeSoPhuCapDocHai+ temp.HeSoPhuCapUuDaiNghe+ temp.HeSoPhuCapKhac as  TongHeSoLuongVaPhuCap";
+                sql = sql+ " from NhanVien nv";
+                sql = sql+ " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+                sql = sql+ " left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
+                sql = sql+ " left join NgachCongChuc ng on nv.MaNgachCongChuc = ng.MaNgachCongChuc";
+                sql = sql+ " left join";
+                sql = sql+ " (select * from LuongPhuCap l1";
+                sql = sql+ " where MaLuongPhuCap not in";
+                sql = sql+ " (";
+                sql = sql+ " select distinct l2.MaLuongPhuCap from LuongPhuCap l2 ";
+                sql = sql+ " join LuongPhuCap l3 on (l2.MaNhanVien = l3.MaNhanVien and l2.MaLuongPhuCap < l3.MaLuongPhuCap)";
+                sql = sql + " )) as temp on nv.MaNhanVien = temp.MaNhanVien";
+
                 sql += " where 1=1";
                 sql += LoadSql_MaDonVi();
 
@@ -351,27 +370,36 @@ namespace QuanLyHoSoCongChuc.Report
                     grid1[3 + r, 3] = new SourceGrid.Cells.Cell("3", typeof(String));
                     grid1[3 + r, 4] = new SourceGrid.Cells.Cell("4", typeof(String));
                     grid1[3 + r, 5] = new SourceGrid.Cells.Cell("5", typeof(String)); 
-                    grid1[3 + r, 6] = new SourceGrid.Cells.Cell("6", typeof(String)); 
-                    grid1[3 + r, 7] = new SourceGrid.Cells.Cell("7", typeof(String)); 
-                    grid1[3 + r, 8] = new SourceGrid.Cells.Cell("8", typeof(String)); 
-                    grid1[3 + r, 9] = new SourceGrid.Cells.Cell("9", typeof(String)); 
-                    grid1[3 + r, 10] = new SourceGrid.Cells.Cell("10", typeof(String));
-                    grid1[3 + r, 11] = new SourceGrid.Cells.Cell("11", typeof(String));
-                    grid1[3 + r, 12] = new SourceGrid.Cells.Cell("12", typeof(String));
-                    grid1[3 + r, 13] = new SourceGrid.Cells.Cell("13", typeof(String));
-                    grid1[3 + r, 14] = new SourceGrid.Cells.Cell("14", typeof(String));
-                    grid1[3 + r, 15] = new SourceGrid.Cells.Cell("15", typeof(String));
-                    grid1[3 + r, 16] = new SourceGrid.Cells.Cell("16", typeof(String));
-                    grid1[3 + r, 17] = new SourceGrid.Cells.Cell("17", typeof(String));
-                    grid1[3 + r, 18] = new SourceGrid.Cells.Cell("18", typeof(String));
-                    grid1[3 + r, 19] = new SourceGrid.Cells.Cell("19", typeof(String));
-                    grid1[3 + r, 20] = new SourceGrid.Cells.Cell("20", typeof(String)); grid1[3 + r, 20].View = yellowView;
-                    grid1[3 + r, 21] = new SourceGrid.Cells.Cell("21", typeof(String)); grid1[3 + r, 21].View = yellowView;
+                    grid1[3 + r, 6] = new SourceGrid.Cells.Cell("6", typeof(String));
+                    grid1[3 + r, 7] = new SourceGrid.Cells.Cell(myDt.Rows[r]["MaNgachCongChuc"], typeof(String));
+                    grid1[3 + r, 8] = new SourceGrid.Cells.Cell(myDt.Rows[r]["BacLuong"], typeof(String));
+                    grid1[3 + r, 9] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoLuong"], typeof(String));
+                    grid1[3 + r, 10] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapThamNienVuotKhung"], typeof(String));
+                    grid1[3 + r, 11] = new SourceGrid.Cells.Cell("Empty", typeof(String));
+                    grid1[3 + r, 12] = new SourceGrid.Cells.Cell(myDt.Rows[r]["ChenhLechBaoLuuHeSoLuong"], typeof(String));
+                    
+                    try
+                    {
+                        DateTime dt = (DateTime)myDt.Rows[r]["MocTinhNangLuongLanSau"];
+                        grid1[3 + r, 13] = new SourceGrid.Cells.Cell(dt.ToString("dd/MM/yyyy"), typeof(String));
+                    }
+                    catch (Exception ex) {
+                        grid1[3 + r, 13] = new SourceGrid.Cells.Cell("", typeof(String));
+                    }
+
+                    grid1[3 + r, 14] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapChucVu"], typeof(String));
+                    grid1[3 + r, 15] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapThamNienNghe"], typeof(String));
+                    grid1[3 + r, 16] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapTrachNhiem"], typeof(String));
+                    grid1[3 + r, 17] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapDocHai"], typeof(String));
+                    grid1[3 + r, 18] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapUuDaiNghe"], typeof(String));
+                    grid1[3 + r, 19] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapKhac"], typeof(String));
+                    grid1[3 + r, 20] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TongHeSoLuongVaPhuCap"], typeof(String)); grid1[3 + r, 20].View = yellowView;
+                    grid1[3 + r, 21] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[3 + r, 21].View = yellowView;
                 }
 
                 if (myDt.Rows.Count == 0)
                 {
-                    MessageBox.Show("No data");
+                    MessageBox.Show("Không có dữ liệu");
                 }
             }
             else if (cbDoiTuong.SelectedIndex == 2)
