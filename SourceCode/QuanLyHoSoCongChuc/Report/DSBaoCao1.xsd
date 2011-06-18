@@ -59,13 +59,7 @@
         <xs:element name="NhanVien" msprop:Generator_TableClassName="NhanVienDataTable" msprop:Generator_TableVarName="tableNhanVien" msprop:Generator_TablePropName="NhanVien" msprop:Generator_RowDeletingName="NhanVienRowDeleting" msprop:Generator_UserTableName="NhanVien" msprop:Generator_RowChangingName="NhanVienRowChanging" msprop:Generator_RowEvHandlerName="NhanVienRowChangeEventHandler" msprop:Generator_RowDeletedName="NhanVienRowDeleted" msprop:Generator_RowEvArgName="NhanVienRowChangeEvent" msprop:Generator_RowChangedName="NhanVienRowChanged" msprop:Generator_RowClassName="NhanVienRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="MaNhanVien" msprop:Generator_ColumnVarNameInTable="columnMaNhanVien" msprop:Generator_ColumnPropNameInRow="MaNhanVien" msprop:Generator_ColumnPropNameInTable="MaNhanVienColumn" msprop:Generator_UserColumnName="MaNhanVien">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
+              <xs:element name="MaNhanVien" msprop:Generator_ColumnVarNameInTable="columnMaNhanVien" msprop:Generator_ColumnPropNameInRow="MaNhanVien" msprop:Generator_ColumnPropNameInTable="MaNhanVienColumn" msprop:Generator_UserColumnName="MaNhanVien" type="xs:string" minOccurs="0" />
               <xs:element name="HinhAnh" msprop:Generator_ColumnVarNameInTable="columnHinhAnh" msprop:Generator_ColumnPropNameInRow="HinhAnh" msprop:Generator_ColumnPropNameInTable="HinhAnhColumn" msprop:Generator_UserColumnName="HinhAnh" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -472,6 +466,7 @@
               </xs:element>
               <xs:element name="ChuyenNganh" msprop:Generator_ColumnVarNameInTable="columnChuyenNganh" msprop:Generator_ColumnPropNameInRow="ChuyenNganh" msprop:Generator_ColumnPropNameInTable="ChuyenNganhColumn" msprop:Generator_UserColumnName="ChuyenNganh" type="xs:string" minOccurs="0" />
               <xs:element name="TamTru" msprop:Generator_ColumnVarNameInTable="columnTamTru" msprop:Generator_ColumnPropNameInRow="TamTru" msprop:Generator_ColumnPropNameInTable="TamTruColumn" msprop:Generator_UserColumnName="TamTru" type="xs:string" minOccurs="0" />
+              <xs:element name="DataColumn1" msprop:Generator_ColumnVarNameInTable="columnDataColumn1" msprop:Generator_ColumnPropNameInRow="DataColumn1" msprop:Generator_ColumnPropNameInTable="DataColumn1Column" msprop:Generator_UserColumnName="DataColumn1" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -588,10 +583,6 @@
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DonVi" />
       <xs:field xpath="mstns:MaDonVi" />
-    </xs:unique>
-    <xs:unique name="NhanVien_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:NhanVien" />
-      <xs:field xpath="mstns:MaNhanVien" />
     </xs:unique>
   </xs:element>
 </xs:schema>

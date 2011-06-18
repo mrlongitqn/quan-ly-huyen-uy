@@ -68,7 +68,7 @@ namespace QuanLyHoSoCongChuc.Report
                 DateTime dt = (DateTime)myDt.Rows[i]["NgaySinh"];
                 DGV.Rows[i].Cells["NgaySinh"].Value = dt.ToString("dd/MM/yyyy");
                 DGV.Rows[i].Cells["QueQuan"].Value = myDt.Rows[i]["QueQuan"].ToString();
-                DGV.Rows[i].Cells["NoiOHienTai"].Value = myDt.Rows[i]["TamTru"].ToString();
+                DGV.Rows[i].Cells["NoiOHienTai"].Value = myDt.Rows[i]["NoiOHienNay"].ToString();
                 DGV.Rows[i].Cells["TenChucVu"].Value = myDt.Rows[i]["TenChucVu"].ToString();
                 DGV.Rows[i].Cells["TenBangChuyenMonNghiepVu"].Value = myDt.Rows[i]["TenBangChuyenMonNghiepVu"].ToString();
                 DGV.Rows[i].Cells["ChuyenNganh"].Value = myDt.Rows[i]["ChuyenNganh"].ToString();
@@ -76,7 +76,7 @@ namespace QuanLyHoSoCongChuc.Report
             }
             if (myDt.Rows.Count == 0)
             {
-                MessageBox.Show("No data");
+                MessageBox.Show("Không có dữ liệu");
             }
         }
         public void GetDonVi(object sender, EventArgs e)

@@ -364,7 +364,7 @@ namespace QuanLyHoSoCongChuc.Report
                     myRow["MaGioiTinh"] = myDt.Rows[i]["MaGioiTinh"];
                     myRow["HoTenKhaiSinh"] = myDt.Rows[i]["HoTenKhaiSinh"];
                     myRow["QueQuan"] = myDt.Rows[i]["QueQuan"];
-                    myRow["TamTru"] = myDt.Rows[i]["TamTru"];
+                    myRow["TamTru"] = myDt.Rows[i]["NoiOHienNay"];
                     myRow["TenChucVu"] = myDt.Rows[i]["TenChucVu"];
                     myRow["TenBangChuyenMonNghiepVu"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
                     myRow["ChuyenNganh"] = myDt.Rows[i]["ChuyenNganh"];
@@ -418,7 +418,7 @@ namespace QuanLyHoSoCongChuc.Report
                     myRow["MaGioiTinh"] = myDt.Rows[i]["MaGioiTinh"];
                     myRow["HoTenKhaiSinh"] = myDt.Rows[i]["HoTenKhaiSinh"];
                     myRow["QueQuan"] = myDt.Rows[i]["QueQuan"];
-                    myRow["TamTru"] = myDt.Rows[i]["TamTru"];
+                    myRow["TamTru"] = myDt.Rows[i]["NoiOHienNay"];
                     myRow["TenChucVu"] = myDt.Rows[i]["TenChucVu"];
                     myRow["TenBangChuyenMonNghiepVu"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
                     myRow["ChuyenNganh"] = myDt.Rows[i]["ChuyenNganh"];
@@ -472,7 +472,7 @@ namespace QuanLyHoSoCongChuc.Report
                     myRow["MaGioiTinh"] = myDt.Rows[i]["MaGioiTinh"];
                     myRow["HoTenKhaiSinh"] = myDt.Rows[i]["HoTenKhaiSinh"];
                     myRow["QueQuan"] = myDt.Rows[i]["QueQuan"];
-                    myRow["TamTru"] = myDt.Rows[i]["TamTru"];
+                    myRow["TamTru"] = myDt.Rows[i]["NoiOHienNay"];
                     myRow["TenChucVu"] = myDt.Rows[i]["TenChucVu"];
                     myRow["TenBangChuyenMonNghiepVu"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
                     myRow["ChuyenNganh"] = myDt.Rows[i]["ChuyenNganh"];
