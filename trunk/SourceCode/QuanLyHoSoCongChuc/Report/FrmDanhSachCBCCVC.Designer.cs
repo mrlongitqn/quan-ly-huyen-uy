@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -42,6 +43,7 @@
             this.txtDonVi = new System.Windows.Forms.TextBox();
             this.btnChonDonVi = new System.Windows.Forms.Button();
             this.cbKy = new DevComponents.DotNetBar.Controls.ComboBoxEx();
+            this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.comboItem4 = new DevComponents.Editors.ComboItem();
             this.comboItem5 = new DevComponents.Editors.ComboItem();
             this.comboItem6 = new DevComponents.Editors.ComboItem();
@@ -74,7 +76,6 @@
             this.ChuyenNganh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenBangLyLuanChinhTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GhiChu = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboItem7 = new DevComponents.Editors.ComboItem();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             this.panelEx2.SuspendLayout();
@@ -255,6 +256,10 @@
             this.cbKy.Name = "cbKy";
             this.cbKy.Size = new System.Drawing.Size(103, 20);
             this.cbKy.TabIndex = 148;
+            // 
+            // comboItem7
+            // 
+            this.comboItem7.Text = "----";
             // 
             // comboItem4
             // 
@@ -467,14 +472,14 @@
             this.ChuyenNganh,
             this.TenBangLyLuanChinhTri,
             this.GhiChu});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DGV.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DGV.DefaultCellStyle = dataGridViewCellStyle2;
             this.DGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(215)))), ((int)(((byte)(229)))));
             this.DGV.Location = new System.Drawing.Point(0, 0);
             this.DGV.Name = "DGV";
@@ -484,6 +489,8 @@
             // STT
             // 
             this.STT.DataPropertyName = "STT";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.STT.DefaultCellStyle = dataGridViewCellStyle1;
             this.STT.HeaderText = "STT";
             this.STT.Name = "STT";
             this.STT.Width = 40;
@@ -542,10 +549,6 @@
             this.GhiChu.HeaderText = "Ghi chú";
             this.GhiChu.Name = "GhiChu";
             // 
-            // comboItem7
-            // 
-            this.comboItem7.Text = "----";
-            // 
             // FrmDanhSachCBCCVC
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -592,16 +595,6 @@
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.PanelEx panelEx2;
         private DevComponents.DotNetBar.Controls.DataGridViewX DGV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKhaiSinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QueQuan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NoiOHienTai;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenChucVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenBangChuyenMonNghiepVu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ChuyenNganh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenBangLyLuanChinhTri;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
         public System.Windows.Forms.TextBox txtDonVi;
         private System.Windows.Forms.Button btnChonDonVi;
         public System.Windows.Forms.TextBox txtNK3;
@@ -613,5 +606,15 @@
         public System.Windows.Forms.TextBox txtNLB1;
         private DevComponents.DotNetBar.LabelX labelX6;
         private DevComponents.Editors.ComboItem comboItem7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn HoTenKhaiSinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QueQuan;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoiOHienTai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenChucVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBangChuyenMonNghiepVu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ChuyenNganh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TenBangLyLuanChinhTri;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GhiChu;
     }
 }
