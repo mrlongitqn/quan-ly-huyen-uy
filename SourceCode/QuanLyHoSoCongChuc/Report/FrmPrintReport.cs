@@ -180,12 +180,33 @@ namespace QuanLyHoSoCongChuc.Report
             else if (BaoCao == "1-2") // Bao cáo lương - 2
             {
                 this.Text = "Báo cáo lương";
-                String sql = " select nv.*, t.TenBangChuyenMonNghiepVu,dv.TenDonVi,";
+                String sql = " select *, cv.TenChucVu, ng.TenNgachCongChuc, temp.MaNgachCongChuc,";
+                sql += " temp.BacLuong, temp.HeSoLuong, temp.HeSoPhuCapThamNienVuotKhung,";
+                sql += " temp.ChenhLechBaoLuuHeSoLuong, temp.MocTinhNangLuongLanSau, ";
+                sql += " temp.HeSoPhuCapChucVu, temp.HeSoPhuCapThamNienNghe, temp.HeSoPhuCapTrachNhiem, ";
+                sql += " temp.HeSoPhuCapDocHai, temp.HeSoPhuCapUuDaiNghe, temp.HeSoPhuCapKhac,";
+
+                sql += " temp.HeSoPhuCapThamNienVuotKhung+ temp.ChenhLechBaoLuuHeSoLuong +";
+                sql += " temp.HeSoPhuCapChucVu+ temp.HeSoPhuCapThamNienNghe+ temp.HeSoPhuCapTrachNhiem+ ";
+                sql += " temp.HeSoPhuCapDocHai+ temp.HeSoPhuCapUuDaiNghe+ temp.HeSoPhuCapKhac as  TongHeSoLuongVaPhuCap,";
+                sql += " t.TenBangChuyenMonNghiepVu,dv.TenDonVi,";
                 sql += " NgaySinhNam = case MaGioiTinh when 1 then NgaySinh end,";
                 sql += " NgaySinhNu = case MaGioiTinh when 0 then NgaySinh end";
-                sql += " from NhanVien nv left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+                sql += " from NhanVien nv";
                 sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+                sql += " left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
+                sql += " left join NgachCongChuc ng on nv.MaNgachCongChuc = ng.MaNgachCongChuc";
+                sql += " left join BangChuyenMonNghiepVu t on nv.MaBangChuyenMonNghiepVu = t.MaBangChuyenMonNghiepVu";
+                sql += " left join";
+                sql += " (select * from LuongPhuCap l1";
+                sql += " where MaLuongPhuCap not in";
+                sql += " (";
+                sql += " select distinct l2.MaLuongPhuCap from LuongPhuCap l2 ";
+                sql += " join LuongPhuCap l3 on (l2.MaNhanVien = l3.MaNhanVien and l2.MaLuongPhuCap < l3.MaLuongPhuCap)";
+                sql += " )) as temp on nv.MaNhanVien = temp.MaNhanVien";
+
                 sql += " where 1=1";
+                sql += " and nv.MaLoaiNhanVien in(3, 4)";
                 sql += LoadSql_MaDonVi();
 
                 SqlCommand cmd = new SqlCommand(sql);
@@ -213,25 +234,31 @@ namespace QuanLyHoSoCongChuc.Report
                     }
                     catch (Exception ex) { }
                     myRow["TrinhDoDaoTao"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
-                    myRow["CongViecDangDN"] = "CBVC1";
-                    myRow["MaNgach"] = "HD681";
+                    myRow["CongViecDangDN"] = myDt.Rows[i]["TenChucVu"];
+                    myRow["MaNgach"] = myDt.Rows[i]["MaNgachCongChuc"];
 
-                    myRow["Bac"] = "TongSo2";
-                    myRow["HeSoLuong"] = "HS";
-                    myRow["%"] = "CBCC2";
-                    myRow["HeSo"] = "CBVC2";
-                    myRow["ChenhLechBL"] = "HD682";
+                    myRow["Bac"] = myDt.Rows[i]["BacLuong"];
+                    myRow["HeSoLuong"] = myDt.Rows[i]["HeSoLuong"];
+                    myRow["%"] = "";
+                    myRow["HeSo"] = myDt.Rows[i]["HeSoPhuCapThamNienVuotKhung"];
+                    myRow["ChenhLechBL"] = myDt.Rows[i]["ChenhLechBaoLuuHeSoLuong"];
 
-                    myRow["ThoiGianNLSau"] = 1;
-                    myRow["ChucVu"] = "ChucVu";
+                    try
+                    {
+                        DateTime dt = (DateTime)myDt.Rows[i]["MocTinhNangLuongLanSau"];
+                        myRow["ThoiGianNLSau"] = dt.ToString("dd/MM/yyyy");
+                    }
+                    catch (Exception ex) { }
 
-                    myRow["TrachNhiem"] = "ChucVu";
-                    myRow["DocHai"] = 3;
-                    myRow["UuDaiNghe"] = 3;
+                    myRow["ChucVu"] = myDt.Rows[i]["HeSoPhuCapChucVu"];
 
-                    myRow["PhuCapKhac"] = "ChucVu";
-                    myRow["TongHeSo"] = 3;
-                    myRow["TongTien"] = 3;
+                    myRow["TrachNhiem"] = myDt.Rows[i]["HeSoPhuCapTrachNhiem"];
+                    myRow["DocHai"] = myDt.Rows[i]["HeSoPhuCapDocHai"];
+                    myRow["UuDaiNghe"] = myDt.Rows[i]["HeSoPhuCapUuDaiNghe"];
+
+                    myRow["PhuCapKhac"] = myDt.Rows[i]["HeSoPhuCapKhac"];
+                    myRow["TongHeSo"] = myDt.Rows[i]["TongHeSoLuongVaPhuCap"];
+                    myRow["TongTien"] = "";
 
                     dsBaoCao1.Tables["BCLuong2"].Rows.Add(myRow);
                 }

@@ -475,6 +475,7 @@ namespace QuanLyHoSoCongChuc.Report
                 for (int r = 0; r < myDt.Rows.Count; r++)
                 {
                     grid1.Rows.Insert(r + 4);
+                    grid1[4 + r, 0] = new SourceGrid.Cells.Cell(r+1, typeof(int));
                     grid1[4 + r, 1] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TenDonVi"], typeof(String));
                     grid1[4 + r, 2] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HoTenKhaiSinh"], typeof(String));
 
@@ -519,17 +520,17 @@ namespace QuanLyHoSoCongChuc.Report
                     grid1[4 + r, 16] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapDocHai"], typeof(String));
                     grid1[4 + r, 17] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapUuDaiNghe"], typeof(String));
                     grid1[4 + r, 18] = new SourceGrid.Cells.Cell(myDt.Rows[r]["HeSoPhuCapKhac"], typeof(String));
-                    grid1[4 + r, 19] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TongHeSoLuongVaPhuCap"], typeof(String)); ; grid1[4 + r, 19].View = yellowView;
-                    grid1[4 + r, 20] = new SourceGrid.Cells.Cell("", typeof(String)); 
+                    grid1[4 + r, 19] = new SourceGrid.Cells.Cell(myDt.Rows[r]["TongHeSoLuongVaPhuCap"], typeof(String));  grid1[4 + r, 19].View = yellowView;
+                    grid1[4 + r, 20] = new SourceGrid.Cells.Cell("", typeof(String)); grid1[4 + r, 20].View = yellowView;
+                    grid1[4 + r, 21] = new SourceGrid.Cells.Cell("", typeof(String)); 
                 }
 
                 if (myDt.Rows.Count == 0)
                 {
-                    MessageBox.Show("No data");
+                    MessageBox.Show("Không có dữ liệu");
                 }
             }
 
-            
             
 
             grid1.AutoSizeCells();
