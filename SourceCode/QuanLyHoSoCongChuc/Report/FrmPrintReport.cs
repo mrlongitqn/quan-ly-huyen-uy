@@ -107,6 +107,7 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " )) as temp on nv.MaNhanVien = temp.MaNhanVien";
 
                 sql += " where 1=1";
+                sql += " and nv.MaLoaiNhanVien in(1, 2)";
                 sql += LoadSql_MaDonVi();
 
 
@@ -135,8 +136,8 @@ namespace QuanLyHoSoCongChuc.Report
                     }
                     catch (Exception ex) { }
                     myRow["TrinhDoDaoTao"] = myDt.Rows[i]["TenBangChuyenMonNghiepVu"];
-                    myRow["CongViecDangDN"] = "CBVC1";
-                    myRow["MaNgach"] = "HD681";
+                    myRow["CongViecDangDN"] = myDt.Rows[i]["TenChucVu"];
+                    myRow["MaNgach"] = myDt.Rows[i]["MaNgachCongChuc"];
 
                     myRow["Bac"] = myDt.Rows[i]["BacLuong"];
                     myRow["HeSoLuong"] = myDt.Rows[i]["HeSoLuong"];
