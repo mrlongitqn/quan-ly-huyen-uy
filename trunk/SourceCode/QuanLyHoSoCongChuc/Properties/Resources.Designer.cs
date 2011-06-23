@@ -333,6 +333,13 @@ namespace QuanLyHoSoCongChuc.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap HS_Quanlihotich1 {
+            get {
+                object obj = ResourceManager.GetObject("HS_Quanlihotich1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap index_down {
             get {
                 object obj = ResourceManager.GetObject("index_down", resourceCulture);
