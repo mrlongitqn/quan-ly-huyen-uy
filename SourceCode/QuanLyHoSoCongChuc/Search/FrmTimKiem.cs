@@ -299,6 +299,111 @@ namespace QuanLyHoSoCongChuc.Search
             nv.TuoiDang = dmTuoiDang.Text == "" ? -1 : int.Parse(dmTuoiDang.Text);
         }
 
+        public int GetSoNhanVienNu(List<NhanVien> lstItem)
+        {
+            int count = 0;
+            for (int i = 0; i < lstItem.Count; i++)
+            {
+                if (lstItem[i].MaGioiTinh != null)
+                {
+                    if (lstItem[i].GioiTinh.TenGioiTinh.ToUpper().Contains("NỮ"))
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+
+        public int GetSoNhanVienDTItNguoi(List<NhanVien> lstItem)
+        {
+            int count = 0;
+            for (int i = 0; i < lstItem.Count; i++)
+            {
+                if (lstItem[i].MaDanToc != null)
+                {
+                    if (lstItem[i].DanToc.TenDanToc.ToUpper().Contains("KINH"))
+                    {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+
+        public int GetSoNhanVienCoBangDH(List<NhanVien> lstItem)
+        {
+            int count = 0;
+            for (int i = 0; i < lstItem.Count; i++)
+            {
+                if (lstItem[i].MaHocVi != null)
+                {
+                    if (lstItem[i].HocVi.TenHocVi.ToUpper().Contains("ĐẠI HỌC"))
+                    {
+                        count++;
+                    }
+
+                }
+            }
+            return count;
+        }
+
+        public float CalTuoiBinhQuan(List<NhanVien> lstItem)
+        {
+            int tuoitong = 0;
+            for (int i = 0; i < lstItem.Count; i++)
+            {
+                tuoitong += (DateTime.Now.Year - lstItem[i].NgaySinh.Value.Year);
+            }
+            return tuoitong/lstItem.Count;
+        }
+
+        public void UpdateTongHopKQ(List<NhanVien> lstItem)
+        {
+            lstvTongHopKQ.Items.Clear();
+            ListViewItem objListViewItem;
+            for (int i = 0; i < 6; i++)
+            {
+                objListViewItem = new ListViewItem();
+                if (i == 0)
+                {
+                    objListViewItem.Text = "Số nhân viên tìm thấy";
+                    objListViewItem.SubItems.Add(lstItem.Count.ToString());
+                }
+                else if (i == 1)
+                {
+                    objListViewItem.Text = "Trong đó";
+                }
+                else if (i == 2)
+                {
+                    objListViewItem.Text = "Nhân viên nữ";
+                    var numNV = GetSoNhanVienNu(lstItem);
+                    objListViewItem.SubItems.Add(numNV.ToString());
+                    objListViewItem.SubItems.Add(String.Format("{0:0.##}", (numNV * 100) / lstItem.Count));
+                }
+                else if (i == 3)
+                {
+                    objListViewItem.Text = "Nhân viên dân tộc ít người";
+                    var numNV = GetSoNhanVienDTItNguoi(lstItem);
+                    objListViewItem.SubItems.Add(numNV.ToString());
+                    objListViewItem.SubItems.Add(String.Format("{0:0.##}", (numNV * 100) / lstItem.Count));
+                }
+                else if (i == 4)
+                {
+                    objListViewItem.Text = "Tuổi bình quân";
+                    objListViewItem.SubItems.Add(CalTuoiBinhQuan(lstItem).ToString());
+                }
+                else if (i == 5)
+                {
+                    objListViewItem.Text = "Trình độ đại học trở lên";
+                    var numNV = GetSoNhanVienCoBangDH(lstItem);
+                    objListViewItem.SubItems.Add(numNV.ToString());
+                    objListViewItem.SubItems.Add(String.Format("{0:0.##}", (numNV * 100) / lstItem.Count));
+                }
+                lstvTongHopKQ.Items.Add(objListViewItem);
+            }
+        }
+
         private void btnTim_Click(object sender, EventArgs e)
         {
             // Show waiting form
@@ -324,8 +429,10 @@ namespace QuanLyHoSoCongChuc.Search
                     objListViewItem.SubItems.Add(lstItem[i].NoiOHienNay);
                     lstvNhanVien.Items.Add(objListViewItem);
                 }
-                txtTongSo.Text = "Tìm thấy " + lstItem.Count + " nhân viên";
+
+                UpdateTongHopKQ(lstItem);
             }
+            txtTongSo.Text = "Tìm thấy " + lstItem.Count + " nhân viên";
 
             // Hide waiting form
             GlobalVars.PosLoading();
@@ -578,6 +685,7 @@ namespace QuanLyHoSoCongChuc.Search
                         break;
                 }
                 var ds = GlobalVars.g_CauHoiNguoiDung.SearchByCriterias(sqlQuery);
+                List<NhanVien> lstItem = new List<NhanVien>();
                 lstvNhanVien.Items.Clear();
                 if (ds.Tables[0].Rows.Count > 0)
                 {
@@ -585,13 +693,19 @@ namespace QuanLyHoSoCongChuc.Search
                     {
                         var objListViewItem = new ListViewItem();
                         objListViewItem.Tag = NhanVienRepository.SelectByID(ds.Tables[0].Rows[i]["MaNhanVien"].ToString().Trim());
+                        
+                        lstItem.Add((NhanVien)objListViewItem.Tag);
+
                         objListViewItem.Text = ds.Tables[0].Rows[i]["MaNhanVien"].ToString();
                         objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["HoTenKhaiSinh"].ToString());
-                        objListViewItem.SubItems.Add(GioiTinhRepository.SelectByID(int.Parse(ds.Tables[0].Rows[i]["MaGioiTinh"].ToString())).TenGioiTinh);
-                        objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", DateTime.Parse(ds.Tables[0].Rows[i]["NgaySinh"].ToString())));
+                        var gioitinh = GioiTinhRepository.SelectByID(int.Parse(ds.Tables[0].Rows[i]["MaGioiTinh"].ToString()));
+                        objListViewItem.SubItems.Add(gioitinh == null ? "" : gioitinh.TenGioiTinh);
+                        objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["NgaySinh"] == null ? "" : String.Format("{0:dd/MM/yyyy}", DateTime.Parse(ds.Tables[0].Rows[i]["NgaySinh"].ToString())));
                         objListViewItem.SubItems.Add(ds.Tables[0].Rows[i]["HoKhau"].ToString());
                         lstvNhanVien.Items.Add(objListViewItem);
                     }
+
+                    UpdateTongHopKQ(lstItem);
                 }
                 txtTongSo.Text = "Tìm thấy " + ds.Tables[0].Rows.Count + " nhân viên";
             }

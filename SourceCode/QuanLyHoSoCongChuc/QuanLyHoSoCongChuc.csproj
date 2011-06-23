@@ -1397,6 +1397,7 @@
     <Content Include="Configs\NhomChucNang.xml">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Resources\HS_Quanlihotich1.jpg" />
     <Content Include="users_family.ico" />
     <None Include="Resources\loading.gif" />
     <None Include="Resources\quanhuyen.jpg" />
@@ -1413,10 +1414,6 @@
     <None Include="Resources\down_minus.ico" />
     <None Include="Resources\up_plus.ico" />
     <None Include="Resources\0420180955.JPG" />
-    <None Include="Resources\Sunset2.jpg" />
-    <None Include="Resources\Sunset1.jpg" />
-    <None Include="Resources\Sunset.jpg" />
-    <None Include="Resources\Winter.jpg" />
     <None Include="Resources\Blue hills.jpg" />
     <None Include="Resources\text_tree.ico" />
     <None Include="Resources\text_rich_marked.ico" />
