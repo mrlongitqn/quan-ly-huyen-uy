@@ -277,6 +277,13 @@ namespace QuanLyHoSoCongChuc.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap Fairytale_printer {
+            get {
+                object obj = ResourceManager.GetObject("Fairytale_printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap find {
             get {
                 object obj = ResourceManager.GetObject("find", resourceCulture);

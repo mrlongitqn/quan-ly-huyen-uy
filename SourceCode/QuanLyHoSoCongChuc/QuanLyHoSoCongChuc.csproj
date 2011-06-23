@@ -1384,9 +1384,6 @@
     <None Include="Resources\001_39.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config">
-      <SubType>Designer</SubType>
-    </None>
     <None Include="Resources\45.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1398,6 +1395,7 @@
       <SubType>Designer</SubType>
     </Content>
     <None Include="Resources\HS_Quanlihotich1.jpg" />
+    <None Include="Resources\Fairytale_printer.png" />
     <Content Include="users_family.ico" />
     <None Include="Resources\loading.gif" />
     <None Include="Resources\quanhuyen.jpg" />

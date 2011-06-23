@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using QuanLyHoSoCongChuc.Models;
+using QuanLyHoSoCongChuc.Utils;
 
 namespace QuanLyHoSoCongChuc
 {
@@ -15,8 +16,7 @@ namespace QuanLyHoSoCongChuc
 
         static DataContext()
         {
-           _dataContext = new QLHSCCEntities();
-            //_dataContext = new ABCDEntities();
+           _dataContext = new QLHSCCEntities(GlobalVars.g_strConnectionString);
         }
 
         public static QLHSCCEntities Instance

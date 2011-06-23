@@ -749,6 +749,10 @@ namespace QuanLyHoSoCongChuc.Search
                 result = "KhenThuong";
             else if (rdbtnQuaTrinhKyLuat.Checked)
                 result = "KyLuat";
+            else if (rdbtnDanhHuyHieu.Checked)
+                result = "HuyHieu";
+            else if (rdbtnQuanHeGiaDinh.Checked)
+                result = "ThanNhan";
             return result;
         }
 

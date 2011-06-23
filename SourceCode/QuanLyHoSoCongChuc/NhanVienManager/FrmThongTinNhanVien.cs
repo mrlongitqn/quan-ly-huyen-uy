@@ -832,5 +832,10 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             GlobalVars.PosLoading();
             //------- E ---------
         }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
