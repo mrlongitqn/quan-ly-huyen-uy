@@ -841,11 +841,11 @@
     <Compile Include="FrmDoiMatKhau.Designer.cs">
       <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmKetNoiCSDL.cs">
+    <Compile Include="FrmKetNoiCSDL.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmKetNoiCSDL.Designer.cs">
-      <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
+    <Compile Include="FrmKetNoiCSDL.Designer.cs">
+      <DependentUpon>FrmKetNoiCSDL.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherForms\FrmLuong.cs">
       <SubType>Form</SubType>
@@ -891,6 +891,7 @@
     <Compile Include="Utils\EnumHelpers.cs" />
     <Compile Include="Utils\Table.cs" />
     <Compile Include="Utils\Validations.cs" />
+    <Compile Include="Utils\XMLProvider.cs" />
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -1040,9 +1041,9 @@
       <SubType>Designer</SubType>
       <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmKetNoiCSDL.resx">
+    <EmbeddedResource Include="FrmKetNoiCSDL.resx">
       <SubType>Designer</SubType>
-      <DependentUpon>frmKetNoiCSDL.cs</DependentUpon>
+      <DependentUpon>FrmKetNoiCSDL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
