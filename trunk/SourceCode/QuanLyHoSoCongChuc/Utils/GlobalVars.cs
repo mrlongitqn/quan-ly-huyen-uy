@@ -64,7 +64,7 @@ namespace QuanLyHoSoCongChuc.Utils
             entityBuilder.ProviderConnectionString = providerString;
 
             // Set the Metadata location.
-            entityBuilder.Metadata = @"res://*/Models.DataModels.csdl|res://*/Models.DataModels.ssdl|res://*/Models.DataModels.msl";
+            entityBuilder.Metadata = @"res://*/Models.DataModel.csdl|res://*/Models.DataModel.ssdl|res://*/Models.DataModel.msl";
 
             return entityBuilder.ToString();
         }
@@ -312,17 +312,17 @@ namespace QuanLyHoSoCongChuc.Utils
 
         public static void PosLoading()
         {
-            //if (waiting != null)
-            //{
-            //    waiting.Close();
-            //    waiting = null;
-            //}
+            if (waiting != null)
+            {
+                waiting.Close();
+                waiting = null;
+            }
         }   
 
         public static void WaitLoad()
         {
-            //waiting = new FrmLoading("Đang thực hiện");
-            //waiting.ShowDialog();
+            waiting = new FrmLoading("Đang thực hiện");
+            waiting.ShowDialog();
         }
     }
 }
