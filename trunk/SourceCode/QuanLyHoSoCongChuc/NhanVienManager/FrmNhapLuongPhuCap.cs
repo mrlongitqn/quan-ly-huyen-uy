@@ -196,9 +196,9 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 txtBacLuong.Text = item.BacLuong.ToString();
                 txtHeSoLuong.Text = item.HeSoLuong.ToString();
                 txtChenhLech.Text = item.ChenhLechBaoLuuHeSoLuong.ToString();
-                dtHuongTuNgay.Value = item.HuongTuNgay.Value;
-                dtMocTinhLuongLanSau.Value = item.MocTinhNangLuongLanSau.Value;
-                dtNgayNangLuong.Value = item.NgayNangLuong.Value;
+                dtHuongTuNgay.Value = item.HuongTuNgay == null ? DateTime.MinValue : item.HuongTuNgay.Value;
+                dtMocTinhLuongLanSau.Value = item.MocTinhNangLuongLanSau == null ? DateTime.MinValue : item.MocTinhNangLuongLanSau.Value;
+                dtNgayNangLuong.Value = item.NgayNangLuong == null ? DateTime.MinValue : item.NgayNangLuong.Value;
                 txtATM.Text = item.SoTheATM;
                 txtNganHang.Text = item.NganHang;
 
@@ -213,7 +213,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 txtPhuCapDocHai.Text = item.HeSoPhuCapDocHai.ToString();
                 txtPhuCapUuDaiNghe.Text = item.HeSoPhuCapUuDaiNghe.ToString();
                 txtSoBHXH.Text = item.SoSoBHXH.ToString();
-                dtNgayDongBHXH.Value = item.NgayBatDauDongBHXH.Value;
+                dtNgayDongBHXH.Value = item.NgayBatDauDongBHXH == null ? DateTime.MinValue : item.NgayBatDauDongBHXH.Value;
             }
         }
 
@@ -236,8 +236,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                     var objListViewItem = new ListViewItem();
                     objListViewItem.Tag = lstItem[i];
                     objListViewItem.Text = (i + 1).ToString();
-                    objListViewItem.SubItems.Add(lstItem[i].NgayThangNam.ToString());
-                    objListViewItem.SubItems.Add(lstItem[i].NgachCongChuc.TenNgachCongChuc);
+                    objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayThangNam));
+                    objListViewItem.SubItems.Add(lstItem[i].MaNgachCongChuc == null ? "" : lstItem[i].NgachCongChuc.TenNgachCongChuc);
                     lstvData.Items.Add(objListViewItem);
                 }
             }

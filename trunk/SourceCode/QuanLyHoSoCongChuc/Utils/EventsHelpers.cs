@@ -28,4 +28,16 @@ namespace QuanLyHoSoCongChuc.Utils
             Data = _data;
         }
     }
+
+    /// <summary>
+    ///  Class is used to transfer connection info
+    /// </summary>
+    public class MyConnectionEvent : EventArgs
+    {
+        public string DataSource { get; set; }
+        public string DataBaseName { get; set; }
+        public string UserName { get; set; }
+        public string Password { get; set; }
+        public string ConnStatus { get; set; }
+    }
 }

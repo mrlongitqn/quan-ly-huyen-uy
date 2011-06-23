@@ -10,6 +10,8 @@ namespace QuanLyHoSoCongChuc.Utils
     using QuanLyHoSoCongChuc.Search;
     using System.Threading;
     using QuanLyHoSoCongChuc.Models;
+    using System.Data.SqlClient;
+    using System.Data.EntityClient;
     #endregion
     /// <summary>
     /// tuansl added: global variables
@@ -24,10 +26,48 @@ namespace QuanLyHoSoCongChuc.Utils
         public static string g_strTenMayTram = "";
         public static string g_strPathCauhoiTimKiem;
         public static CauHoiNguoiDung g_CauHoiNguoiDung { get; set; }
-        public static string g_strDataBaseName = "";
 
         public static NguoiDung g_CurrentUser { get; set; }
         public static PerNhatKyItem g_PerNhatKyItem { get; set; }
+        public static string g_strPathConfig = "C:\\huyenuy_config.xml";
+        public static string g_strDataSource;
+        public static string g_strDataBaseName;
+        public static string g_strConnectionString;
+
+        public static string BuildEntityConnectionString()
+        {
+            string providerName = "System.Data.SqlClient";
+            string serverName = g_strDataSource;
+            string databaseName = g_strDataBaseName;
+
+            // Initialize the connection string builder for the
+            // underlying provider.
+            SqlConnectionStringBuilder sqlBuilder =
+                new SqlConnectionStringBuilder();
+
+            // Set the properties for the data source.
+            sqlBuilder.DataSource = serverName;
+            sqlBuilder.InitialCatalog = databaseName;
+            sqlBuilder.IntegratedSecurity = true;
+
+            // Build the SqlConnection connection string.
+            string providerString = sqlBuilder.ToString();
+
+            // Initialize the EntityConnectionStringBuilder.
+            EntityConnectionStringBuilder entityBuilder =
+                new EntityConnectionStringBuilder();
+
+            //Set the provider name.
+            entityBuilder.Provider = providerName;
+
+            // Set the provider-specific connection string.
+            entityBuilder.ProviderConnectionString = providerString;
+
+            // Set the Metadata location.
+            entityBuilder.Metadata = @"res://*/Models.DataModels.csdl|res://*/Models.DataModels.ssdl|res://*/Models.DataModels.msl";
+
+            return entityBuilder.ToString();
+        }
 
         /// <summary>
         /// Retrieve name from enum
@@ -272,17 +312,17 @@ namespace QuanLyHoSoCongChuc.Utils
 
         public static void PosLoading()
         {
-            if (waiting != null)
-            {
-                waiting.Close();
-                waiting = null;
-            }
+            //if (waiting != null)
+            //{
+            //    waiting.Close();
+            //    waiting = null;
+            //}
         }   
 
         public static void WaitLoad()
         {
-            waiting = new FrmLoading("Đang thực hiện");
-            waiting.ShowDialog();
+            //waiting = new FrmLoading("Đang thực hiện");
+            //waiting.ShowDialog();
         }
     }
 }
