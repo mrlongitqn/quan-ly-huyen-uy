@@ -51,7 +51,6 @@ namespace QuanLyHoSoCongChuc.Danh_muc
             GlobalVars.PreLoading();
             //------- E ---------
 
-            DataService.OpenConnection();
             btThem.Enabled = false;
             btXoa.Enabled = false;
             btSave.Enabled = false;

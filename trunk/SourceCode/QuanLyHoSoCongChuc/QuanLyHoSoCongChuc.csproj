@@ -829,12 +829,6 @@
     <Compile Include="Danh muc\FrmDanhMucHanhChinh.Designer.cs">
       <DependentUpon>FrmDanhMucHanhChinh.cs</DependentUpon>
     </Compile>
-    <Compile Include="OtherForms\FrmDanhSachNhanVien.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmDanhSachNhanVien.Designer.cs">
-      <DependentUpon>FrmDanhSachNhanVien.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmDoiMatKhau.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -846,12 +840,6 @@
     </Compile>
     <Compile Include="FrmKetNoiCSDL.Designer.cs">
       <DependentUpon>FrmKetNoiCSDL.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OtherForms\FrmLuong.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OtherForms\FrmLuong.Designer.cs">
-      <DependentUpon>FrmLuong.cs</DependentUpon>
     </Compile>
     <Compile Include="OtherForms\FrmQuanLyNhanVien.cs">
       <SubType>Form</SubType>
@@ -1034,9 +1022,6 @@
     <EmbeddedResource Include="Danh muc\FrmDanhMucHanhChinh.resx">
       <DependentUpon>FrmDanhMucHanhChinh.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmDanhSachNhanVien.resx">
-      <DependentUpon>FrmDanhSachNhanVien.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmDoiMatKhau.resx">
       <SubType>Designer</SubType>
       <DependentUpon>FrmDoiMatKhau.cs</DependentUpon>
@@ -1047,10 +1032,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLoading.resx">
       <DependentUpon>FrmLoading.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OtherForms\FrmLuong.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>FrmLuong.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OtherForms\FrmQuanLyNhanVien.resx">
       <SubType>Designer</SubType>
@@ -1387,13 +1368,6 @@
     <None Include="Resources\45.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Configs\Connection.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Configs\DanhSachChucNang.xml" />
-    <Content Include="Configs\NhomChucNang.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Resources\HS_Quanlihotich1.jpg" />
     <None Include="Resources\Fairytale_printer.png" />
     <Content Include="users_family.ico" />

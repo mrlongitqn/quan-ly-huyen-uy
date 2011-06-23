@@ -17,6 +17,7 @@ namespace QuanLyHoSoCongChuc
     public partial class FrmDangNhap : Office2007Form
     {
         public EventHandler Handler { get; set; }
+        public bool pressOk = false;
 
         public FrmDangNhap()
         {
@@ -26,6 +27,7 @@ namespace QuanLyHoSoCongChuc
         //Click dang nhap
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            pressOk = true;
             this.Close();
             this.Handler(this, new MyEvent(txtUsername.Text.Trim() + "#" + txtPassword.Text.Trim()));
         }
@@ -34,6 +36,14 @@ namespace QuanLyHoSoCongChuc
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FrmDangNhap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!pressOk)
+            {
+                Application.Exit();
+            }
         }
     }
 }

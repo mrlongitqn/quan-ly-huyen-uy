@@ -22,7 +22,7 @@ namespace QuanLyHoSoCongChuc.Utils
         public Table InitCriterias()
         {
             // Create new connect to DB
-            CreateConnection(GlobalVars.g_strTenMayTram, GlobalVars.g_strDataBaseName);
+            CreateConnection(GlobalVars.g_strDataSource, GlobalVars.g_strDataBaseName);
 
             var ds = new DataSet();
             DBProvider.SqlQuery = "Select * From " + DBName + " ";
