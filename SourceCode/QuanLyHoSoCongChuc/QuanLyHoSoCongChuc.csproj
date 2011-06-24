@@ -616,6 +616,12 @@
     <Compile Include="NhanVienManager\FrmThongTinNhanVien_TomTat.Designer.cs">
       <DependentUpon>FrmThongTinNhanVien_TomTat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\CrInThe.cs">
+      <DependentUpon>CrInThe.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Report\CrBaoCaoLuong3.cs">
       <DependentUpon>CrBaoCaoLuong3.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -703,7 +709,9 @@
     <Compile Include="Report\FrmDanhSachPhuCapVuotKhung.Designer.cs">
       <DependentUpon>FrmDanhSachPhuCapVuotKhung.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report\FrmInThe.cs" />
+    <Compile Include="Report\FrmInThe.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Report\FrmInThe.Designer.cs">
       <DependentUpon>FrmInThe.cs</DependentUpon>
     </Compile>
@@ -1081,6 +1089,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NhanVienManager\FrmThongTinNhanVien_TomTat.resx">
       <DependentUpon>FrmThongTinNhanVien_TomTat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\CrInThe.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrInThe.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\CrBaoCaoLuong3.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
