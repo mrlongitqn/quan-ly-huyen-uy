@@ -30,7 +30,6 @@ namespace QuanLyHoSoCongChuc.Report
         {
         }
         
-
         private void btnChonDonVi_Click(object sender, EventArgs e)
         {
             FrmDanhMuc frm = new FrmDanhMuc(true);
@@ -44,7 +43,7 @@ namespace QuanLyHoSoCongChuc.Report
             SelectedId = comp[0];
             txtDonVi.Text = comp[1];
             Level = int.Parse(comp[2]);
-            
+            loadDSNhanVien();
         }
         private void loadDSNhanVien()
         {
@@ -54,12 +53,14 @@ namespace QuanLyHoSoCongChuc.Report
             sql += LoadSql_MaDonVi();
 
             SqlCommand cmd = new SqlCommand(sql);
+            DataService.OpenConnection();
             dataService.Load(cmd);
             DataTable myDt = dataService;
             for (int r = 0; r < myDt.Rows.Count; r++)
             {
                 cbNhanVien.Items.Add(new ListItem(myDt.Rows[r]["MaNhanVien"].ToString(), myDt.Rows[r]["HoTenKhaiSinh"].ToString()));
             }
+            lblSumThe.Text = "Tổng số: " + myDt.Rows.Count + " thẻ";
         }
         private void loadThongTinNhanVien(string MaNV)
         {
@@ -103,7 +104,6 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btInThe_Click(object sender, EventArgs e)
         {
-            loadDSNhanVien();
         }
     }
 }
