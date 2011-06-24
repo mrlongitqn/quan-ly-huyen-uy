@@ -104,6 +104,16 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btInThe_Click(object sender, EventArgs e)
         {
+            String sql = " select * from NhanVien nv ";
+
+            SqlCommand cmd = new SqlCommand(sql);
+            DataService.OpenConnection();
+            dataService.Load(cmd);
+
+            DataTable myDt = dataService;
+            CrInThe rpt = new CrInThe();
+            rpt.SetDataSource(myDt);
+            this.crystalReportViewer1.ReportSource = rpt;
         }
     }
 }

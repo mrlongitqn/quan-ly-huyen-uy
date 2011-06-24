@@ -32,6 +32,9 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.lblSumThe = new DevComponents.DotNetBar.LabelX();
             this.picNv = new System.Windows.Forms.PictureBox();
             this.txtSoHieuCC = new System.Windows.Forms.TextBox();
@@ -53,9 +56,8 @@
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
-            this.labelX9 = new DevComponents.DotNetBar.LabelX();
-            this.labelX10 = new DevComponents.DotNetBar.LabelX();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.panelEx2.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNv)).BeginInit();
@@ -64,6 +66,7 @@
             // panelEx2
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
+            this.panelEx2.Controls.Add(this.crystalReportViewer1);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Location = new System.Drawing.Point(0, 248);
             this.panelEx2.Name = "panelEx2";
@@ -147,6 +150,39 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
+            // 
+            // labelX10
+            // 
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX10.Location = new System.Drawing.Point(718, 44);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(86, 23);
+            this.labelX10.TabIndex = 208;
+            this.labelX10.Text = "Ảnh";
+            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
+            // labelX9
+            // 
+            this.labelX9.BackColor = System.Drawing.Color.Transparent;
+            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX9.Location = new System.Drawing.Point(52, 150);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(86, 25);
+            this.labelX9.TabIndex = 207;
+            this.labelX9.Text = "UBND";
+            this.labelX9.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.Location = new System.Drawing.Point(52, 126);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(86, 25);
+            this.labelX3.TabIndex = 206;
+            this.labelX3.Text = "UBND";
+            this.labelX3.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // lblSumThe
             // 
@@ -355,38 +391,17 @@
             this.labelX1.Text = "IN THẺ NHÂN VIÊN";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // labelX3
+            // crystalReportViewer1
             // 
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX3.Location = new System.Drawing.Point(52, 126);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(86, 25);
-            this.labelX3.TabIndex = 206;
-            this.labelX3.Text = "UBND";
-            this.labelX3.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX9
-            // 
-            this.labelX9.BackColor = System.Drawing.Color.Transparent;
-            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX9.Location = new System.Drawing.Point(52, 150);
-            this.labelX9.Name = "labelX9";
-            this.labelX9.Size = new System.Drawing.Size(86, 25);
-            this.labelX9.TabIndex = 207;
-            this.labelX9.Text = "UBND";
-            this.labelX9.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX10
-            // 
-            this.labelX10.BackColor = System.Drawing.Color.Transparent;
-            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX10.Location = new System.Drawing.Point(718, 44);
-            this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(86, 23);
-            this.labelX10.TabIndex = 208;
-            this.labelX10.Text = "Ảnh";
-            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Center;
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(844, 242);
+            this.crystalReportViewer1.TabIndex = 3;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // FrmInThe
             // 
@@ -398,6 +413,7 @@
             this.Name = "FrmInThe";
             this.Text = "In thẻ nhân viên";
             this.Load += new System.EventHandler(this.FrmBaoCaoLuong_Load);
+            this.panelEx2.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
@@ -436,5 +452,6 @@
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX3;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
     }
 }
