@@ -39,8 +39,8 @@
             this.picNv = new System.Windows.Forms.PictureBox();
             this.txtSoHieuCC = new System.Windows.Forms.TextBox();
             this.txtChucVu = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUBNDH = new System.Windows.Forms.TextBox();
+            this.txtUBNDT = new System.Windows.Forms.TextBox();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
             this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.labelX5 = new DevComponents.DotNetBar.LabelX();
@@ -57,10 +57,12 @@
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.dsBaoCao1 = new QuanLyHoSoCongChuc.Report.DSBaoCao1();
             this.panelEx2.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsBaoCao1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelEx2
@@ -108,8 +110,8 @@
             this.groupPanel1.Controls.Add(this.picNv);
             this.groupPanel1.Controls.Add(this.txtSoHieuCC);
             this.groupPanel1.Controls.Add(this.txtChucVu);
-            this.groupPanel1.Controls.Add(this.textBox1);
-            this.groupPanel1.Controls.Add(this.textBox2);
+            this.groupPanel1.Controls.Add(this.txtUBNDH);
+            this.groupPanel1.Controls.Add(this.txtUBNDT);
             this.groupPanel1.Controls.Add(this.labelX8);
             this.groupPanel1.Controls.Add(this.labelX7);
             this.groupPanel1.Controls.Add(this.labelX5);
@@ -224,21 +226,23 @@
             this.txtChucVu.Size = new System.Drawing.Size(192, 22);
             this.txtChucVu.TabIndex = 172;
             // 
-            // textBox1
+            // txtUBNDH
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(150, 151);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(192, 22);
-            this.textBox1.TabIndex = 171;
+            this.txtUBNDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUBNDH.Location = new System.Drawing.Point(150, 151);
+            this.txtUBNDH.Name = "txtUBNDH";
+            this.txtUBNDH.Size = new System.Drawing.Size(192, 22);
+            this.txtUBNDH.TabIndex = 171;
+            this.txtUBNDH.Text = "ỦY BAN NHÂN DÂN HUYỆN THẠCH HÀ";
             // 
-            // textBox2
+            // txtUBNDT
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(150, 126);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(192, 22);
-            this.textBox2.TabIndex = 170;
+            this.txtUBNDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUBNDT.Location = new System.Drawing.Point(150, 126);
+            this.txtUBNDT.Name = "txtUBNDT";
+            this.txtUBNDT.Size = new System.Drawing.Size(192, 22);
+            this.txtUBNDT.TabIndex = 170;
+            this.txtUBNDT.Text = "ỦY BAN NHÂN DÂN TỈNH HÀ TĨNH";
             // 
             // labelX8
             // 
@@ -403,6 +407,11 @@
             this.crystalReportViewer1.TabIndex = 3;
             this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
+            // dsBaoCao1
+            // 
+            this.dsBaoCao1.DataSetName = "DSBaoCao1";
+            this.dsBaoCao1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FrmInThe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -418,6 +427,7 @@
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dsBaoCao1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -445,13 +455,14 @@
         private DevComponents.DotNetBar.LabelX labelX4;
         public System.Windows.Forms.TextBox txtSoHieuCC;
         public System.Windows.Forms.TextBox txtChucVu;
-        public System.Windows.Forms.TextBox textBox1;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox txtUBNDH;
+        public System.Windows.Forms.TextBox txtUBNDT;
         private System.Windows.Forms.PictureBox picNv;
         private DevComponents.DotNetBar.LabelX lblSumThe;
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX3;
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private DSBaoCao1 dsBaoCao1;
     }
 }
