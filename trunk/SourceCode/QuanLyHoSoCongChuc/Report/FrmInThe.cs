@@ -59,6 +59,8 @@ namespace QuanLyHoSoCongChuc.Report
             DataService.OpenConnection();
             dataService.Load(cmd);
             DataTable myDt = dataService;
+            cbNhanVien.Items.Add("---Tất cả---");
+            cbNhanVien.SelectedIndex = 0;
             for (int r = 0; r < myDt.Rows.Count; r++)
             {
                 cbNhanVien.Items.Add(new ListItem(myDt.Rows[r]["MaNhanVien"].ToString(), myDt.Rows[r]["HoTenKhaiSinh"].ToString()));
@@ -69,7 +71,11 @@ namespace QuanLyHoSoCongChuc.Report
         {
             String sql = " select * from NhanVien nv ";
             sql += " left join ChucVu cv on cv.MaChucVu = nv.MaChucVu";
-            sql += " where MaNhanVien='" + MaNV + "'";
+            sql += " where 1=1 ";
+            if (!String.IsNullOrWhiteSpace(MaNV))
+            {
+                sql += " and MaNhanVien='" + MaNV + "'";
+            }
             SqlCommand cmd = new SqlCommand(sql);
             dataService.Load(cmd);
             DataTable myDt = dataService;
@@ -100,15 +106,20 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void cbNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string maNV = ((ListItem)cbNhanVien.SelectedItem).ID ;
-            if(!String.IsNullOrEmpty(maNV))
-                loadThongTinNhanVien(maNV);
+            if (cbNhanVien.SelectedIndex > 0)
+            {
+                string maNV = ((ListItem)cbNhanVien.SelectedItem).ID;
+                if (!String.IsNullOrEmpty(maNV))
+                    loadThongTinNhanVien(maNV);
+            }
+            else
+            {
+                loadThongTinNhanVien("");
+            }
         }
 
         private void btInThe_Click(object sender, EventArgs e)
         {
-            
-
             DSBaoCao1 myDS = new DSBaoCao1();
             DataTable myDt = dataService;
             myDS.Tables.Add(myDt);
