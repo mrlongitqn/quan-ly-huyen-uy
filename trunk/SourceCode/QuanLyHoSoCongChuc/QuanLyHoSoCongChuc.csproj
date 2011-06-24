@@ -703,6 +703,10 @@
     <Compile Include="Report\FrmDanhSachPhuCapVuotKhung.Designer.cs">
       <DependentUpon>FrmDanhSachPhuCapVuotKhung.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\FrmInThe.cs" />
+    <Compile Include="Report\FrmInThe.Designer.cs">
+      <DependentUpon>FrmInThe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\FrmPrintReport.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1125,6 +1129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmDanhSachPhuCapVuotKhung.resx">
       <DependentUpon>FrmDanhSachPhuCapVuotKhung.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\FrmInThe.resx">
+      <DependentUpon>FrmInThe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmPrintReport.resx">
       <DependentUpon>FrmPrintReport.cs</DependentUpon>

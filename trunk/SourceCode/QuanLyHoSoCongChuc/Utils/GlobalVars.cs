@@ -29,7 +29,7 @@ namespace QuanLyHoSoCongChuc.Utils
 
         public static NguoiDung g_CurrentUser { get; set; }
         public static PerNhatKyItem g_PerNhatKyItem { get; set; }
-        public static string g_strPathConfig = "C:\\huyenuy_config.xml";
+        public static string g_strPathConfig = "D:\\huyenuy_config.xml";
         public static string g_strDataSource;
         public static string g_strDataBaseName;
         public static string g_strConnectionString;
