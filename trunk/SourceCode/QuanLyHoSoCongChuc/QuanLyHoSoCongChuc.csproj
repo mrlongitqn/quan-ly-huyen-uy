@@ -1201,6 +1201,7 @@
     <EmbeddedResource Include="UsersManager\FrmTimCanBoQuaCacThoiKi.resx">
       <DependentUpon>FrmTimCanBoQuaCacThoiKi.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
