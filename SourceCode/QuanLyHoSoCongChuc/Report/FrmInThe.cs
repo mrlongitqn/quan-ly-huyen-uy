@@ -101,14 +101,13 @@ namespace QuanLyHoSoCongChuc.Report
         private void cbNhanVien_SelectedIndexChanged(object sender, EventArgs e)
         {
             string maNV = ((ListItem)cbNhanVien.SelectedItem).ID ;
-            if(maNV!="")
+            if(!String.IsNullOrEmpty(maNV))
                 loadThongTinNhanVien(maNV);
         }
 
         private void btInThe_Click(object sender, EventArgs e)
         {
-            CrInThe rpt = new CrInThe();
-            rpt.SetDataSource(dataService);
+            
 
             DSBaoCao1 myDS = new DSBaoCao1();
             DataTable myDt = dataService;
@@ -125,6 +124,7 @@ namespace QuanLyHoSoCongChuc.Report
 
                 dsBaoCao1.Tables["InThe"].Rows.Add(myRow);
             }
+            CrInThe rpt = new CrInThe();
             rpt.SetDataSource(dsBaoCao1.Tables["InThe"]);
             rpt.DataDefinition.FormulaFields["UBND Tinh"].Text = "'" + txtUBNDT.Text + "'";
             rpt.DataDefinition.FormulaFields["UBND Huyen"].Text = "'" + txtUBNDH.Text + "'";
