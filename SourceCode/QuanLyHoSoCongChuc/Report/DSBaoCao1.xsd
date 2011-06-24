@@ -578,11 +578,34 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="InThe" msprop:Generator_TableClassName="InTheDataTable" msprop:Generator_TableVarName="tableInThe" msprop:Generator_TablePropName="InThe" msprop:Generator_RowDeletingName="InTheRowDeleting" msprop:Generator_UserTableName="InThe" msprop:Generator_RowChangingName="InTheRowChanging" msprop:Generator_RowEvHandlerName="InTheRowChangeEventHandler" msprop:Generator_RowDeletedName="InTheRowDeleted" msprop:Generator_RowEvArgName="InTheRowChangeEvent" msprop:Generator_RowChangedName="InTheRowChanged" msprop:Generator_RowClassName="InTheRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="STT" msprop:Generator_ColumnVarNameInTable="columnSTT" msprop:Generator_ColumnPropNameInRow="STT" msprop:Generator_ColumnPropNameInTable="STTColumn" msprop:Generator_UserColumnName="STT" type="xs:int" minOccurs="0" />
+              <xs:element name="MaNhanVien" msprop:Generator_ColumnVarNameInTable="columnMaNhanVien" msprop:Generator_ColumnPropNameInRow="MaNhanVien" msprop:Generator_ColumnPropNameInTable="MaNhanVienColumn" msprop:Generator_UserColumnName="MaNhanVien">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HoTenNhanVien" msprop:Generator_ColumnVarNameInTable="columnHoTenNhanVien" msprop:Generator_ColumnPropNameInRow="HoTenNhanVien" msprop:Generator_ColumnPropNameInTable="HoTenNhanVienColumn" msprop:Generator_UserColumnName="HoTenNhanVien" type="xs:string" />
+              <xs:element name="PhongBan" msprop:Generator_ColumnVarNameInTable="columnPhongBan" msprop:Generator_ColumnPropNameInRow="PhongBan" msprop:Generator_ColumnPropNameInTable="PhongBanColumn" msprop:Generator_UserColumnName="PhongBan" type="xs:string" minOccurs="0" />
+              <xs:element name="ChucVu" msprop:Generator_ColumnVarNameInTable="columnChucVu" msprop:Generator_ColumnPropNameInRow="ChucVu" msprop:Generator_ColumnPropNameInTable="ChucVuColumn" msprop:Generator_UserColumnName="ChucVu" type="xs:string" minOccurs="0" />
+              <xs:element name="SoHieuCongChuc" msprop:Generator_ColumnVarNameInTable="columnSoHieuCongChuc" msprop:Generator_ColumnPropNameInRow="SoHieuCongChuc" msprop:Generator_ColumnPropNameInTable="SoHieuCongChucColumn" msprop:Generator_UserColumnName="SoHieuCongChuc" type="xs:string" minOccurs="0" />
+              <xs:element name="Image" msprop:Generator_ColumnVarNameInTable="columnImage" msprop:Generator_ColumnPropNameInRow="Image" msprop:Generator_ColumnPropNameInTable="ImageColumn" msprop:Generator_UserColumnName="Image" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DonVi" />
       <xs:field xpath="mstns:MaDonVi" />
+    </xs:unique>
+    <xs:unique name="InThe_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:InThe" />
+      <xs:field xpath="mstns:MaNhanVien" />
     </xs:unique>
   </xs:element>
 </xs:schema>

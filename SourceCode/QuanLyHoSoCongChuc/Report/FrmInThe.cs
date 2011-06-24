@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using QuanLyHoSoCongChuc.Danh_muc;
 using QuanLyHoSoCongChuc.Utils;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace QuanLyHoSoCongChuc.Report
 {
@@ -49,6 +50,7 @@ namespace QuanLyHoSoCongChuc.Report
         {
             String sql = " select * from NhanVien nv ";
             sql += " join DonVi dv on nv.MaDonVi = dv.MaDonVi";
+            sql += " left join ChucVu cv on cv.MaChucVu = nv.MaChucVu";
             sql += " where 1=1";
             sql += LoadSql_MaDonVi();
 
@@ -104,16 +106,49 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btInThe_Click(object sender, EventArgs e)
         {
-            String sql = " select * from NhanVien nv ";
-
-            SqlCommand cmd = new SqlCommand(sql);
-            DataService.OpenConnection();
-            dataService.Load(cmd);
-
-            DataTable myDt = dataService;
             CrInThe rpt = new CrInThe();
-            rpt.SetDataSource(myDt);
+            rpt.SetDataSource(dataService);
+
+            DSBaoCao1 myDS = new DSBaoCao1();
+            DataTable myDt = dataService;
+            myDS.Tables.Add(myDt);
+            for (int i = 0; i < myDt.Rows.Count; i++)
+            {
+                DataRow myRow = dsBaoCao1.Tables["InThe"].NewRow();
+                myRow["STT"] = i + 1;
+                myRow["MaNhanVien"] = myDt.Rows[i]["MaNhanVien"];
+                myRow["HoTenNhanVien"] = myDt.Rows[i]["HoTenKhaiSinh"];
+                myRow["PhongBan"] = "PhongBan";
+                myRow["ChucVu"] = myDt.Rows[i]["TenChucVu"];
+                myRow["SoHieuCongChuc"] = "SoHieuCongChuc";
+
+                dsBaoCao1.Tables["InThe"].Rows.Add(myRow);
+            }
+            rpt.SetDataSource(dsBaoCao1.Tables["InThe"]);
+            rpt.DataDefinition.FormulaFields["UBND Tinh"].Text = "'" + txtUBNDT.Text + "'";
+            rpt.DataDefinition.FormulaFields["UBND Huyen"].Text = "'" + txtUBNDH.Text + "'";
             this.crystalReportViewer1.ReportSource = rpt;
+        }
+        private void BindReport(String imagePath)
+        {
+            imagePath = Application.StartupPath + "\\img\\" + imagePath;
+            //LoadImage(this.myDS1.Tables["InThe"].Rows[0], "LogoImage", imagePath);
+        }
+        private void LoadImage(DataRow objDataRow, string strImageField, string FilePath)
+        {
+            try
+            {
+                FileStream fs = new FileStream(FilePath, System.IO.FileMode.Open,
+                System.IO.FileAccess.Read);
+                byte[] Image = new byte[fs.Length];
+                fs.Read(Image, 0, Convert.ToInt32(fs.Length));
+                fs.Close();
+                objDataRow[strImageField] = Image;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No image valid!");
+            }
         }
     }
 }
