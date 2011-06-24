@@ -32,7 +32,7 @@
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
-            this.labelX2 = new DevComponents.DotNetBar.LabelX();
+            this.lblSumThe = new DevComponents.DotNetBar.LabelX();
             this.picNv = new System.Windows.Forms.PictureBox();
             this.txtSoHieuCC = new System.Windows.Forms.TextBox();
             this.txtChucVu = new System.Windows.Forms.TextBox();
@@ -53,6 +53,9 @@
             this.lblPassword = new DevComponents.DotNetBar.LabelX();
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.labelX3 = new DevComponents.DotNetBar.LabelX();
+            this.labelX9 = new DevComponents.DotNetBar.LabelX();
+            this.labelX10 = new DevComponents.DotNetBar.LabelX();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNv)).BeginInit();
@@ -95,7 +98,10 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.Office2007;
-            this.groupPanel1.Controls.Add(this.labelX2);
+            this.groupPanel1.Controls.Add(this.labelX10);
+            this.groupPanel1.Controls.Add(this.labelX9);
+            this.groupPanel1.Controls.Add(this.labelX3);
+            this.groupPanel1.Controls.Add(this.lblSumThe);
             this.groupPanel1.Controls.Add(this.picNv);
             this.groupPanel1.Controls.Add(this.txtSoHieuCC);
             this.groupPanel1.Controls.Add(this.txtChucVu);
@@ -142,19 +148,20 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
             // 
-            // labelX2
+            // lblSumThe
             // 
-            this.labelX2.BackColor = System.Drawing.Color.Transparent;
-            this.labelX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX2.Location = new System.Drawing.Point(44, 86);
-            this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(94, 22);
-            this.labelX2.TabIndex = 205;
-            this.labelX2.Text = "Tổng số: 0 thẻ";
+            this.lblSumThe.BackColor = System.Drawing.Color.Transparent;
+            this.lblSumThe.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSumThe.Location = new System.Drawing.Point(44, 86);
+            this.lblSumThe.Name = "lblSumThe";
+            this.lblSumThe.Size = new System.Drawing.Size(94, 22);
+            this.lblSumThe.TabIndex = 205;
+            this.lblSumThe.Text = "Tổng số: 0 thẻ";
             // 
             // picNv
             // 
             this.picNv.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.picNv.BackColor = System.Drawing.Color.Silver;
             this.picNv.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picNv.ErrorImage = ((System.Drawing.Image)(resources.GetObject("picNv.ErrorImage")));
             this.picNv.InitialImage = null;
@@ -348,6 +355,39 @@
             this.labelX1.Text = "IN THẺ NHÂN VIÊN";
             this.labelX1.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // labelX3
+            // 
+            this.labelX3.BackColor = System.Drawing.Color.Transparent;
+            this.labelX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX3.Location = new System.Drawing.Point(52, 126);
+            this.labelX3.Name = "labelX3";
+            this.labelX3.Size = new System.Drawing.Size(86, 25);
+            this.labelX3.TabIndex = 206;
+            this.labelX3.Text = "UBND";
+            this.labelX3.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX9
+            // 
+            this.labelX9.BackColor = System.Drawing.Color.Transparent;
+            this.labelX9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX9.Location = new System.Drawing.Point(52, 150);
+            this.labelX9.Name = "labelX9";
+            this.labelX9.Size = new System.Drawing.Size(86, 25);
+            this.labelX9.TabIndex = 207;
+            this.labelX9.Text = "UBND";
+            this.labelX9.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX10
+            // 
+            this.labelX10.BackColor = System.Drawing.Color.Transparent;
+            this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX10.Location = new System.Drawing.Point(718, 44);
+            this.labelX10.Name = "labelX10";
+            this.labelX10.Size = new System.Drawing.Size(86, 23);
+            this.labelX10.TabIndex = 208;
+            this.labelX10.Text = "Ảnh";
+            this.labelX10.TextAlignment = System.Drawing.StringAlignment.Center;
+            // 
             // FrmInThe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -392,6 +432,9 @@
         public System.Windows.Forms.TextBox textBox1;
         public System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.PictureBox picNv;
-        private DevComponents.DotNetBar.LabelX labelX2;
+        private DevComponents.DotNetBar.LabelX lblSumThe;
+        private DevComponents.DotNetBar.LabelX labelX10;
+        private DevComponents.DotNetBar.LabelX labelX9;
+        private DevComponents.DotNetBar.LabelX labelX3;
     }
 }
