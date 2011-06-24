@@ -27,6 +27,7 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void FrmDanhSachNghiHuu_Load(object sender, EventArgs e)
         {
+            DataService.OpenConnection();
             loadNam();
             cboKy.SelectedIndex = 0;
         }

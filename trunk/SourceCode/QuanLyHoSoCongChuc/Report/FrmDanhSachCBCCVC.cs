@@ -27,6 +27,7 @@ namespace QuanLyHoSoCongChuc.Report
         DataService dataService = new DataService();
         private void FrmDanhSachCBCCVC_Load(object sender, EventArgs e)
         {
+            DataService.OpenConnection();
             cbDoiTuong.SelectedIndex = 0;
             cbKy.SelectedIndex = 0;
         }
