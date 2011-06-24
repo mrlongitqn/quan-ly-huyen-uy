@@ -29,6 +29,7 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void FrmBaoCaoLuong_Load(object sender, EventArgs e)
         {
+            DataService.OpenConnection();
         }
         
         private void btnChonDonVi_Click(object sender, EventArgs e)
