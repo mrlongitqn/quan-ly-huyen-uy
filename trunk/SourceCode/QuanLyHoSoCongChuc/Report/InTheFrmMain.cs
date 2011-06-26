@@ -34,8 +34,11 @@
         private Rectangle BorderRect7a = new Rectangle();
         private Rectangle BorderRect8 = new Rectangle();
         private Rectangle BorderRect8a = new Rectangle();
-        
-		private BusinessCard MyCard = new BusinessCard(Application.StartupPath);
+
+        private Rectangle BorderRect9 = new Rectangle();
+        private Rectangle BorderRect10 = new Rectangle();
+
+        public BusinessCard MyCard = new BusinessCard(Application.StartupPath);
 		
 		private const int kLabelRow  = 5;
 		private const int kLabelColumn  = 2;
@@ -61,14 +64,12 @@
             //
             InitializeComponent();
 			
-			this.Size = new Size(600, 500);
+			this.Size = new Size(600*2, 500);
+            //this.ClientSize = new System.Drawing.Size(1844, 1492);
 			this.ClientSize = new Size(printDocument1.PrinterSettings.DefaultPageSettings.PaperSize.Width, printDocument1.PrinterSettings.DefaultPageSettings.PaperSize.Height);
 			this.MdiParent = ParentForm;
-			BusinessCard TempCard = MyCard.OpenCard();
-			if (TempCard != null) // file exists
-			{
-				MyCard.ShallowCopy(TempCard);
-			}
+			//BusinessCard TempCard = MyCard.OpenCard();
+			
 
             //
             // TODO: Add any constructor code after InitializeComponent call
@@ -79,7 +80,7 @@
         ///    Required method for Designer support - do not modify
         ///    the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
+        public void InitializeComponent()
 		{
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InTheFrmMain));
@@ -144,7 +145,7 @@
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(284, 332);
             this.Menu = this.mainMenu1;
             this.Name = "InTheFrmMain";
             this.Text = "In thẻ nhân viên";
@@ -152,20 +153,20 @@
 
 		}
 
-		protected void HelpAbout_Click (object sender, System.EventArgs e)
+        public void HelpAbout_Click(object sender, System.EventArgs e)
 		{
 			//AboutBox  myAboutBox = new AboutBox();
 			//myAboutBox.ShowDialog();
 		}
 
-		protected void FileExit_Click (object sender, System.EventArgs e)
+        public void FileExit_Click(object sender, System.EventArgs e)
 		{
             this.Close();
 		}
 
-		
 
-		protected void PrintFile_Click (object sender, System.EventArgs e)
+
+        public void PrintFile_Click(object sender, System.EventArgs e)
 		{
 			printDialog1.Document = printDocument1;
 			if (printDialog1.ShowDialog() == DialogResult.OK)
@@ -175,13 +176,13 @@
 			 }
 		}
 
-		protected void printDocument1_PrintPage (object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        public void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
 		{
 		Graphics g = e.Graphics;
 		PrintPrinterLabels(g);
 		}
 
-		protected void PrintPreview_Click (object sender, System.EventArgs e)
+		public void PrintPreview_Click (object sender, System.EventArgs e)
 		{
 				 try
 				{
@@ -197,12 +198,12 @@
 
 		}
 
-		protected void Form1_Click (object sender, System.EventArgs e)
+        public void Form1_Click(object sender, System.EventArgs e)
 		{
 
 		}
 
-		protected void CalcBorderRect()
+        public void CalcBorderRect()
 		{
 			XRes = kXResolution; // this.printDocument1.PrinterSettings.DefaultPageSettings.PrinterResolution.X;
 			YRes = kYResolution; // this.printDocument1.PrinterSettings.DefaultPageSettings.PrinterResolution.Y;
@@ -314,10 +315,21 @@
             BorderRect8a.Height = 60;
             BorderRect8a.Inflate(1, 1);
 
+            BorderRect9.X = 50;
+            BorderRect9.Y = 300 + 250 * 3;
+            BorderRect9.Width = w;
+            BorderRect9.Height = h;
+            BorderRect9.Inflate(1, 1);
+
+            BorderRect10.X = 50;
+            BorderRect10.Y = 300 + 250 * 4;
+            BorderRect10.Width = w;
+            BorderRect10.Height = h;
+            BorderRect10.Inflate(1, 1);
 
 		}
 
-		protected void DrawLabelPie(Graphics g, Pen p, int numX, int numY)
+        public void DrawLabelPie(Graphics g, Pen p, int numX, int numY)
 		{
             //int xInc = BorderRect.Width/numX;
             //int yInc = BorderRect.Height/numY;
@@ -335,12 +347,13 @@
 		}
 
 
-		protected void PrintPrinterLabels(Graphics g)
+		public void PrintPrinterLabels(Graphics g)
 		{
 			
 			Pen myPen = new Pen( Color.Red, 3 );
-			Rectangle rect = this.ClientRectangle;
-			g.FillRectangle(Brushes.White, rect);
+			//Rectangle rect = this.ClientRectangle;
+            Rectangle rect = new Rectangle(0, 0, 4000, 2000);
+			g.FillRectangle(Brushes.Yellow, rect);
 			CalcBorderRect();
             g.FillRectangle(Brushes.BlueViolet, BorderRect1); 
 			if (IsPrinting == false)
@@ -354,7 +367,8 @@
                 g.DrawRectangle(myPen, BorderRect6);
                 g.DrawRectangle(myPen, BorderRect7);
                 g.DrawRectangle(myPen, BorderRect8);
-
+                g.DrawRectangle(myPen, BorderRect9);
+                g.DrawRectangle(myPen, BorderRect10);
 			}
 
             //
@@ -371,27 +385,15 @@
                 g.DrawRectangle(myPen2, BorderRect8a);
             }
 
-			int nCardWidth = BorderRect1.Width/kLabelColumn;
-			int nCardHeight = BorderRect1.Height/kLabelRow;
-			for (int i = 0; i < kLabelColumn; i++)
-			{
-				for (int j = 0; j < kLabelRow; j++)
-				{
-					int x = XMargin + i * nCardWidth;
-					int y = YMargin + j * nCardHeight;
-					
-				}
-				
-				
-			}
-            MyCard.PaintCard(g, new Point(50, 50));
+			NhanVienDTO dto = new NhanVienDTO();
+            MyCard.PaintCard(g, new Point(50, 50), dto);
 			myPen.Dispose();
 		}
 
- 
 
 
-		protected override void OnPaint( PaintEventArgs pe )
+
+        protected override void OnPaint(PaintEventArgs pe)
 		{
 		Graphics g = pe.Graphics;
 		IsPrinting = false;
