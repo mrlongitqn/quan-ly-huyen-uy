@@ -230,10 +230,10 @@
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="CrystalReport1.cs">
+    <Compile Include="Report\CrSYLL.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <DependentUpon>CrSYLL.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Danh muc\FrmChonDanhMucHanhChinhAll.cs">
@@ -913,9 +913,9 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport2.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="CrystalReport1.rpt">
+    <EmbeddedResource Include="Report\CrSYLL.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+      <LastGenOutput>CrSYLL.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Danh muc\FrmChonDanhMucHanhChinhAll.resx">
       <DependentUpon>FrmChonDanhMucHanhChinhAll.cs</DependentUpon>

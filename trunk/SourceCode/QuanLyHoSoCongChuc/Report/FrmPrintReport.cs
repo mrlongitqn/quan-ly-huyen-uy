@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using QuanLyHoSoCongChuc.Controller;
 
 namespace QuanLyHoSoCongChuc.Report
 {
@@ -42,7 +43,7 @@ namespace QuanLyHoSoCongChuc.Report
                 DataTable myDt = dataService;
                 DSBaoCao1 myDS = new DSBaoCao1();
 
-                myDS.Tables.Add(myDt);
+                //myDS.Tables.Add(myDt);
                 for (int i = 0; i < myDt.Rows.Count; i++)
                 {
                     DataRow myRow = dsBaoCao1.Tables["BCLuong1"].NewRow();
@@ -640,6 +641,256 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.SetDataSource(dsBaoCao1.Tables["NhanVien"]);
                 this.crystalReportViewer1.ReportSource = rpt;
             }
+            else if (BaoCao == "6") // SYLL
+            {
+                String MaNV = SelectedId;
+
+                this.Text = "Sơ yếu lí lịch";
+                CrSYLL rpt = new CrSYLL();
+                
+                String sql = "select * from NhanVien nv left join ChucVu cv on nv.MaChucVu = cv.MaChucVu";
+                sql+= " left join ";
+                sql+= "                  (select * from LuongPhuCap l1";
+                sql+= "                  where MaLuongPhuCap not in";
+                sql+= "                  (";
+                sql+= "                  select distinct l2.MaLuongPhuCap from LuongPhuCap l2 ";
+                sql+= "                  join LuongPhuCap l3 on (l2.MaNhanVien = l3.MaNhanVien and l2.MaLuongPhuCap < l3.MaLuongPhuCap)";
+                sql+= "                  )) as temp on nv.MaNhanVien = temp.MaNhanVien";
+                sql+= " left join ThanhPhanGiaDinh tpgd on nv.MaThanhPhanGiaDinh = tpgd.MaThanhPhanGiaDinh";
+                sql+= " left join HocVi hv on nv.MaHocVi = hv.MaHocVi";
+                sql+= " left join DanToc dv on nv.MaDanToc = dv.MaDanToc";
+                sql+= " left join TonGiao tg on nv.MaDanToc = tg.MaTonGiao";
+                sql+= " left join BangLyLuanChinhTri llct on nv.MaBangLyLuanChinhTri = llct.MaBangLyLuanChinhTri";
+                sql+= " left join BangNgoaiNgu bnn on nv.MaBangNgoaiNgu = bnn.MaBangNgoaiNgu";
+                sql+= " where nv.MaNhanVien='" + MaNV + "' ";
+
+                DataService.OpenConnection();
+                SqlCommand cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+
+                DataTable NhanVienDt = dataService;
+
+                // Parameter 1
+                rpt.DataDefinition.FormulaFields["HoTen"].Text = "'1) Họ và tên: " + NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString() + ". Giới tính: " + getGioiTinh(NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString()) + "'";
+
+                // Parameter 3b
+                rpt.DataDefinition.FormulaFields["ChucVu"].Text = "'- Chức vụ: " + NhanVienDt.Rows[0]["TenChucVu"].ToString() + "'";
+                rpt.DataDefinition.FormulaFields["HeSoPhuCap"].Text = "'- Hệ số phụ cấp: " + NhanVienDt.Rows[0]["HeSoPhuCapChucVu"].ToString() + "'";
+
+                // Parameter 4
+                DateTime MyDateTime = new DateTime();
+                String MyString = NhanVienDt.Rows[0]["NgaySinh"].ToString();
+                MyDateTime = Convert.ToDateTime(MyString);
+
+
+                rpt.DataDefinition.FormulaFields["NgaySinh"].Text = "'4) Sinh ngày: " + MyDateTime.Day + " tháng " + MyDateTime.Month + " năm " + MyDateTime.Year + "'";
+
+                // Parameter 5
+                rpt.DataDefinition.FormulaFields["NoiSinh"].Text = "'5) Nơi sinh: " + NhanVienDt.Rows[0]["NoiSinh"].ToString() + "'";
+
+                // Parameter 6
+                rpt.DataDefinition.FormulaFields["QueQuan"].Text = "'6) Quê quán: " + NhanVienDt.Rows[0]["QueQuan"].ToString() + "'";
+
+                // Parameter 7
+                rpt.DataDefinition.FormulaFields["NoiOHienNay"].Text = "'7) Nơi ở hiện nay: " + NhanVienDt.Rows[0]["NoiOHienNay"].ToString() + "'";
+
+                // Parameter 7b
+
+                rpt.DataDefinition.FormulaFields["DienThoai"].Text = "'- Điện thoại: " + NhanVienDt.Rows[0]["SoDienThoai"].ToString() + "'";
+
+                // Parameter 8
+                rpt.DataDefinition.FormulaFields["DanToc"].Text = "'8) Dân tộc: " + NhanVienDt.Rows[0]["TenDanToc"] + "'";
+
+                // Parameter 9
+                rpt.DataDefinition.FormulaFields["TonGiao"].Text = "'9) Tôn giáo: " + NhanVienDt.Rows[0]["TenTonGiao"] + "'";
+
+                // Parameter 10
+                rpt.DataDefinition.FormulaFields["XuatThan"].Text = "'10) Thành phần gia đình xuất thân: " + NhanVienDt.Rows[0]["TenThanhPhanGiaDinh"] + "'";
+
+                // Parameter 11
+                rpt.DataDefinition.FormulaFields["NgheNghiep"].Text = "'11) Nghề nghiệp bản thân trước khi được tuyển dụng: .......................'";
+
+                // Parameter 12
+                MyDateTime = new DateTime();
+                MyString = NhanVienDt.Rows[0]["NgayTuyenDung"].ToString();
+                MyDateTime = Convert.ToDateTime(MyString);
+                rpt.DataDefinition.FormulaFields["NgayDuocTuyenDung"].Text = "'12) Ngày được tuyển dụng: " + MyDateTime.Day + "/" + MyDateTime.Month + "/" + MyDateTime.Year + ", vào cơ quan: ..............................'";
+
+                // Parameter 13
+
+                rpt.DataDefinition.FormulaFields["NgayVaoCoQuanHienDangCongTac"].Text = "'13) Ngày vào cơ quan hiện đang công tác: ............, Ngày tham gia cách mạng: .....................'";
+
+                // Parameter 14
+                MyDateTime = new DateTime();
+                MyString = NhanVienDt.Rows[0]["NgayVaoDang"].ToString();
+                MyDateTime = Convert.ToDateTime(MyString);
+
+                MyString = NhanVienDt.Rows[0]["NgayChinhThuc"].ToString();
+                DateTime MyDateTime2 = Convert.ToDateTime(MyString);
+                rpt.DataDefinition.FormulaFields["NgayVaoDang"].Text = "'14) Ngày vào Đảng Cộng Sản Việt Nam: " + MyDateTime.Day + "/" + MyDateTime.Month + "/" + MyDateTime.Year + ", Ngày chính thức: " + MyDateTime2.Day + "/" + MyDateTime2.Month + "/" + MyDateTime2.Year + "'";
+
+                // Parameter 15
+                rpt.DataDefinition.FormulaFields["NgayThamGiaCacToChucChinhTri"].Text = "'15) Tham gia các tổ chức chính trị (Đoàn TNCSHCM, Công đoàn, Hội): " + NhanVienDt.Rows[0]["ThamGiaCTXH"] + "'";
+
+                // Parameter 16
+                rpt.DataDefinition.FormulaFields["NgayNhapNgu"].Text = "'16) Ngày nhập ngũ: ..............., Ngày xuất ngũ: ..............., Quân hàm, chức vụ cao nhất:...............,Năm ......'";
+
+                // Parameter 17
+                rpt.DataDefinition.FormulaFields["TrinhDoHocVan"].Text = "'17) Trình độ học vấn: Giáo dục phổ thông:" + NhanVienDt.Rows[0]["TenHocVi"] + "'";
+
+                // Parameter 17a
+                rpt.DataDefinition.FormulaFields["HocVi"].Text = "'- Học hàm, học vị cao nhất: ....................'";
+
+                // Parameter 17b
+                rpt.DataDefinition.FormulaFields["LyLuanChinhTri"].Text = "'- Lý luận chính trị: " + NhanVienDt.Rows[0]["TenBangLyLuanChinhTri"] + ".   - Ngoại ngữ: " + NhanVienDt.Rows[0]["TenBangNgoaiNgu"] + "'";
+
+                // Parameter 18
+
+                rpt.DataDefinition.FormulaFields["CongTacChinh"].Text = "'18) Công tác chính đang làm: học thêm'";
+
+                // Parameter 19
+
+                rpt.DataDefinition.FormulaFields["NgachCongChuc"].Text = "'19) Ngạch công chức: ............. (Mã số: ...........). Bậc lương: ......, hệ số: ..., từ tháng ...........'";
+
+                // Parameter 20
+
+                rpt.DataDefinition.FormulaFields["DanhHieu"].Text = "'20) Danh hiệu được phong: .......................................'";
+
+                // Parameter 21
+                rpt.DataDefinition.FormulaFields["SoTruong"].Text = "'21) Sở trường công tác: ......................... Công việc đã làm lâu nhất: .....................'";
+
+                // Parameter 22
+
+                rpt.DataDefinition.FormulaFields["KhenThuong"].Text = "'22) Khen thưởng: ................................................'";
+
+                // Parameter 23
+                rpt.DataDefinition.FormulaFields["KyLuat"].Text = "'23) Kỷ luật: ...................................................'";
+
+                // Parameter 24
+                rpt.DataDefinition.FormulaFields["TinhTrangSucKhoe"].Text = "'24) Tình trạng sức khỏe: ............. Cao ........ Cân nặng ...... Nhóm máu ....'";
+
+                rpt.DataDefinition.FormulaFields["CMND"].Text = "'25) Số chứng minh nhân dân: " + NhanVienDt.Rows[0]["SoCMND"].ToString() + ". Thương binh loại: ..............Gia đình liệt sỹ: .............'";
+
+                sql = "";
+                sql+=" select * from QuaTrinhDaoTao qtdt";
+                sql+=" left join HinhThucDaoTao htdt on qtdt.MaHinhThucDaoTao = htdt.MaHinhThucDaoTao";
+                sql+=" left join BangGiaoDucPhoThong gdpt on qtdt.MaBangGiaoDucPhoThong = gdpt.MaBangGiaoDucPhoThong";
+                sql+=" left join BangLyLuanChinhTri llct on qtdt.MaBangLyLuanChinhTri = llct.MaBangLyLuanChinhTri";
+                sql+=" left join BangNgoaiNgu nn on qtdt.MaBangNgoaiNgu = nn.MaBangNgoaiNgu";
+                sql+=" left join BangChuyenMonNghiepVu cmnv on qtdt.MaBangChuyenMonNghiepVu = cmnv.MaBangChuyenMonNghiepVu";
+                //sql+=" where MaNhanVien='" + MaNV + "' ";
+                
+                cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                DSBaoCao1 myDS = new DSBaoCao1();
+                DataTable myDt = dataService;
+
+                for (int i = 0; i < myDt.Rows.Count; i++)
+                {
+                    DataRow myRow = dsBaoCao1.Tables["QuaTrinhDaoTao"].NewRow();
+                    myRow["TenTruong"] = myDt.Rows[i]["TenTruong"];
+                    myRow["NganhHoc"] = myDt.Rows[i]["NganhHoc"];
+                    myRow["HinhThucHoc"] = myDt.Rows[i]["TenHinhThucDaoTao"];
+
+                    String CC = "";
+                    if(!String.IsNullOrEmpty(myDt.Rows[i]["TenBangGiaoDucPhoThong"].ToString())){
+                        CC += myDt.Rows[i]["TenBangGiaoDucPhoThong"].ToString();
+                    }
+                    if (!String.IsNullOrEmpty(myDt.Rows[i]["TenBangLyLuanChinhTri"].ToString()))
+                    {
+                        CC += ", ";
+                        CC += myDt.Rows[i]["TenBangLyLuanChinhTri"].ToString();
+                    }
+                    if (!String.IsNullOrEmpty(myDt.Rows[i]["TenBangNgoaiNgu"].ToString()))
+                    {
+                        CC += ", ";
+                        CC += myDt.Rows[i]["TenBangNgoaiNgu"].ToString();
+                    }
+                    if (!String.IsNullOrEmpty(myDt.Rows[i]["TenBangChuyenMonNghiepVu"].ToString()))
+                    {
+                        CC += ", ";
+                        CC += myDt.Rows[i]["TenBangChuyenMonNghiepVu"].ToString();
+                    }
+                    myRow["ChungChi"] = CC;
+
+                    DateTime dt = new DateTime();
+                    String ThoiGianHoc = "";
+                    try
+                    {
+                        dt = (DateTime)myDt.Rows[i]["ThoiGianBatDau"];
+                        ThoiGianHoc = dt.ToString("dd/MM/yyyy")+"-";
+                    }
+                    catch (Exception ex) { }
+                    try
+                    {
+                        dt = (DateTime)myDt.Rows[i]["ThoiGianKetThuc"];
+                        ThoiGianHoc = dt.ToString("dd/MM/yyyy");
+                    }
+                    catch (Exception ex) { }
+                    myRow["ThoiGianHoc"] = ThoiGianHoc;
+
+                    dsBaoCao1.Tables["QuaTrinhDaoTao"].Rows.Add(myRow);
+                }
+
+                /////////////////////////////////////////////////////////////////
+                sql = "";
+                sql += " SELECT * FROM QuaTrinhCongTac qtct";
+                sql += " left join ChucVuChinhQuyen cvcq on cvcq.MaChucVuChinhQuyen = qtct.MaChucVuChinhQuyen";
+              
+                //sql+=" where MaNhanVien='" + MaNV + "' ";
+
+                cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                myDS = new DSBaoCao1();
+                myDt = dataService;
+
+                for (int i = 0; i < myDt.Rows.Count; i++)
+                {
+                    DataRow myRow = dsBaoCao1.Tables["QuaTrinhCongTac"].NewRow();
+
+                    String TT = "";
+                    if (!String.IsNullOrEmpty(myDt.Rows[i]["ChucDanh"].ToString()))
+                    {
+                        TT += myDt.Rows[i]["ChucDanh"].ToString();
+                    }
+                    if (!String.IsNullOrEmpty(myDt.Rows[i]["TenChucVuChinhQuyen"].ToString()))
+                    {
+                        TT += ", ";
+                        TT += myDt.Rows[i]["TenChucVuChinhQuyen"].ToString();
+                    }
+                    if (!String.IsNullOrEmpty(myDt.Rows[i]["MoTaCongTac"].ToString()))
+                    {
+                        TT += ", ";
+                        TT += myDt.Rows[i]["MoTaCongTac"].ToString();
+                    }
+                   
+                    myRow["TomTat"] = TT;
+
+                    DateTime dt = new DateTime();
+                    String ThoiGianCongTac = "";
+                    try
+                    {
+                        dt = (DateTime)myDt.Rows[i]["ThoiGianBatDau"];
+                        ThoiGianCongTac = dt.ToString("dd/MM/yyyy") + "-";
+                    }
+                    catch (Exception ex) { }
+                    try
+                    {
+                        dt = (DateTime)myDt.Rows[i]["ThoiGianKetThuc"];
+                        ThoiGianCongTac = dt.ToString("dd/MM/yyyy");
+                    }
+                    catch (Exception ex) { }
+                    myRow["ThoiGianCongTac"] = ThoiGianCongTac;
+
+                    dsBaoCao1.Tables["QuaTrinhCongTac"].Rows.Add(myRow);
+                }
+                ////////////////////////////////////////////////////////////////////////////
+                rpt.SetDataSource(dsBaoCao1);
+
+                crystalReportViewer1.ReportSource = rpt;
+                //crystalReportViewer1.Show();
+                crystalReportViewer1.Refresh();
+            }
             else
             {
                 MessageBox.Show("Chua tao report");
@@ -659,6 +910,13 @@ namespace QuanLyHoSoCongChuc.Report
                 sql += " and MaQuanHuyen ='" + SelectedId + "'";
             }
             return sql;
+        }
+        public String getGioiTinh(String Ma)
+        {
+            if (Ma == "0")
+                return "Nữ";
+            else
+                return "Nam";
         }
     }
 }

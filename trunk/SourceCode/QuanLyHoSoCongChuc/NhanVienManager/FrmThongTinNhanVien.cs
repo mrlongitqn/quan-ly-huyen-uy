@@ -11,6 +11,7 @@ using QuanLyHoSoCongChuc.Models;
 using QuanLyHoSoCongChuc.Utils;
 using QuanLyHoSoCongChuc.Danh_muc;
 using QuanLyHoSoCongChuc.OtherForms;
+using QuanLyHoSoCongChuc.Report;
 
 namespace QuanLyHoSoCongChuc.NhanVienManager
 {
@@ -835,7 +836,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-
+            FrmPrintReport frm = new FrmPrintReport("6", _nhanvien.MaNhanVien, "", null, -1);
+            frm.Show();
         }
     }
 }
