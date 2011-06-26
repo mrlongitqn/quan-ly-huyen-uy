@@ -120,26 +120,30 @@ namespace QuanLyHoSoCongChuc.Report
 
         private void btInThe_Click(object sender, EventArgs e)
         {
-            DSBaoCao1 myDS = new DSBaoCao1();
-            DataTable myDt = dataService;
-            myDS.Tables.Add(myDt);
-            for (int i = 0; i < myDt.Rows.Count; i++)
-            {
-                DataRow myRow = dsBaoCao1.Tables["InThe"].NewRow();
-                myRow["STT"] = i + 1;
-                myRow["MaNhanVien"] = myDt.Rows[i]["MaNhanVien"];
-                myRow["HoTenNhanVien"] = myDt.Rows[i]["HoTenKhaiSinh"];
-                myRow["PhongBan"] = "PhongBan";
-                myRow["ChucVu"] = myDt.Rows[i]["TenChucVu"];
-                myRow["SoHieuCongChuc"] = "SoHieuCongChuc";
+            //DSBaoCao1 myDS = new DSBaoCao1();
+            //DataTable myDt = dataService;
+            //myDS.Tables.Add(myDt);
+            //for (int i = 0; i < myDt.Rows.Count; i++)
+            //{
+            //    DataRow myRow = dsBaoCao1.Tables["InThe"].NewRow();
+            //    myRow["STT"] = i + 1;
+            //    myRow["MaNhanVien"] = myDt.Rows[i]["MaNhanVien"];
+            //    myRow["HoTenNhanVien"] = myDt.Rows[i]["HoTenKhaiSinh"];
+            //    myRow["PhongBan"] = "PhongBan";
+            //    myRow["ChucVu"] = myDt.Rows[i]["TenChucVu"];
+            //    myRow["SoHieuCongChuc"] = "SoHieuCongChuc";
 
-                dsBaoCao1.Tables["InThe"].Rows.Add(myRow);
-            }
-            CrInThe rpt = new CrInThe();
-            rpt.SetDataSource(dsBaoCao1.Tables["InThe"]);
-            rpt.DataDefinition.FormulaFields["UBND Tinh"].Text = "'" + txtUBNDT.Text + "'";
-            rpt.DataDefinition.FormulaFields["UBND Huyen"].Text = "'" + txtUBNDH.Text + "'";
-            this.crystalReportViewer1.ReportSource = rpt;
+            //    dsBaoCao1.Tables["InThe"].Rows.Add(myRow);
+            //}
+            //CrInThe rpt = new CrInThe();
+            //rpt.SetDataSource(dsBaoCao1.Tables["InThe"]);
+            //rpt.DataDefinition.FormulaFields["UBND Tinh"].Text = "'" + txtUBNDT.Text + "'";
+            //rpt.DataDefinition.FormulaFields["UBND Huyen"].Text = "'" + txtUBNDH.Text + "'";
+            //this.crystalReportViewer1.ReportSource = rpt;
+
+
+            InTheFrmParent fr = new InTheFrmParent();
+            fr.Show();
         }
         private void BindReport(String imagePath)
         {
