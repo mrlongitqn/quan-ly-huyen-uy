@@ -141,9 +141,10 @@ namespace QuanLyHoSoCongChuc.Report
             //rpt.DataDefinition.FormulaFields["UBND Huyen"].Text = "'" + txtUBNDH.Text + "'";
             //this.crystalReportViewer1.ReportSource = rpt;
 
-
             InTheFrmParent fr = new InTheFrmParent();
             fr.Show();
+            string aPath2 = Application.StartupPath;
+
         }
         private void BindReport(String imagePath)
         {
