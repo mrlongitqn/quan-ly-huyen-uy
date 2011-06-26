@@ -616,6 +616,12 @@
     <Compile Include="NhanVienManager\FrmThongTinNhanVien_TomTat.Designer.cs">
       <DependentUpon>FrmThongTinNhanVien_TomTat.cs</DependentUpon>
     </Compile>
+    <Compile Include="QLHSCCDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Report\BusinessCard.cs" />
     <Compile Include="Report\CrInThe.cs">
       <DependentUpon>CrInThe.rpt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -715,11 +721,17 @@
     <Compile Include="Report\FrmInThe.Designer.cs">
       <DependentUpon>FrmInThe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\InTheFrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Report\FrmPrintReport.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report\FrmPrintReport.Designer.cs">
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\InTheFrmParent.cs">
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="Repositories\BangChuyenMonNghiepVuRepository.cs" />
     <Compile Include="Repositories\BangGiaoDucPhoThongRepository.cs" />
@@ -1145,6 +1157,9 @@
     <EmbeddedResource Include="Report\FrmInThe.resx">
       <DependentUpon>FrmInThe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\InTheFrmMain.resx">
+      <DependentUpon>InTheFrmMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmPrintReport.resx">
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
     </EmbeddedResource>
@@ -1287,6 +1302,17 @@
     <Compile Include="Utils\GlobalVars.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="QLHSCCDataSet.xsc">
+      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLHSCCDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLHSCCDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLHSCCDataSet.xss">
+      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Report\DSBaoCao1.xsc">
       <DependentUpon>DSBaoCao1.xsd</DependentUpon>
     </None>
