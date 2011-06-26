@@ -4,6 +4,7 @@
 	using System.Drawing;
 	using System.IO;
 	using System.Runtime.Serialization.Formatters.Binary;
+    using System.Windows.Forms;
 
 
     /// <summary>
@@ -86,8 +87,9 @@
 
 		public void PaintCard(Graphics g, Point offset)
 		{
-            Image image1 = Image.FromFile("C:\\abc.jpg");
-            Image image2 = Image.FromFile("C:\\Co.jpg");
+            string strPath = Application.StartupPath;
+            Image image1 = Image.FromFile(strPath+"\\abc.jpg");
+            Image image2 = Image.FromFile(strPath+"\\Co.jpg");
            
 			if (Picture != null)
 			{
