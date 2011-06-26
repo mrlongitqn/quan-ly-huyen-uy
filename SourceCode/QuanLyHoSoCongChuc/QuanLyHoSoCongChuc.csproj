@@ -733,6 +733,7 @@
     <Compile Include="Report\InTheFrmParent.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Report\NhanVienDTO.cs" />
     <Compile Include="Repositories\BangChuyenMonNghiepVuRepository.cs" />
     <Compile Include="Repositories\BangGiaoDucPhoThongRepository.cs" />
     <Compile Include="Repositories\BangLyLuanChinhTriRepository.cs" />

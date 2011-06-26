@@ -143,8 +143,6 @@ namespace QuanLyHoSoCongChuc.Report
 
             InTheFrmParent fr = new InTheFrmParent();
             fr.Show();
-            string aPath2 = Application.StartupPath;
-
         }
         private void BindReport(String imagePath)
         {
