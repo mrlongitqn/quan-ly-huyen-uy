@@ -662,6 +662,9 @@ namespace QuanLyHoSoCongChuc.Report
                 sql+= " left join TonGiao tg on nv.MaDanToc = tg.MaTonGiao";
                 sql+= " left join BangLyLuanChinhTri llct on nv.MaBangLyLuanChinhTri = llct.MaBangLyLuanChinhTri";
                 sql+= " left join BangNgoaiNgu bnn on nv.MaBangNgoaiNgu = bnn.MaBangNgoaiNgu";
+                sql+= " left join NgheNghiep nn on nv.MaNgheNghiepTruocKhiDuocTuyenDung = nn.MaNgheNghiep";
+                sql+= " left join DacDiemLichSu ddls on nv.MaNhanVien = ddls.MaNhanVien";
+                sql+= " left join HoanCanhKinhTe hckt on nv.MaNhanVien = hckt.MaNhanVien";
                 sql+= " where nv.MaNhanVien='" + MaNV + "' ";
 
                 DataService.OpenConnection();
@@ -708,7 +711,7 @@ namespace QuanLyHoSoCongChuc.Report
                 rpt.DataDefinition.FormulaFields["XuatThan"].Text = "'10) Thành phần gia đình xuất thân: " + NhanVienDt.Rows[0]["TenThanhPhanGiaDinh"] + "'";
 
                 // Parameter 11
-                rpt.DataDefinition.FormulaFields["NgheNghiep"].Text = "'11) Nghề nghiệp bản thân trước khi được tuyển dụng: .......................'";
+                rpt.DataDefinition.FormulaFields["NgheNghiep"].Text = "'11) Nghề nghiệp bản thân trước khi được tuyển dụng: " + NhanVienDt.Rows[0]["TenNgheNghiep"] + "'";
 
                 // Parameter 12
                 MyDateTime = new DateTime();
@@ -769,7 +772,23 @@ namespace QuanLyHoSoCongChuc.Report
                 // Parameter 24
                 rpt.DataDefinition.FormulaFields["TinhTrangSucKhoe"].Text = "'24) Tình trạng sức khỏe: ............. Cao ........ Cân nặng ...... Nhóm máu ....'";
 
+                // Parameter 25
                 rpt.DataDefinition.FormulaFields["CMND"].Text = "'25) Số chứng minh nhân dân: " + NhanVienDt.Rows[0]["SoCMND"].ToString() + ". Thương binh loại: ..............Gia đình liệt sỹ: .............'";
+
+                // Parameter 28
+                rpt.DataDefinition.FormulaFields["BiBatTu"].Text = "'a) Khai rõ: bị bắt, bị tù (từ ngày tháng năm nào đến ngày tháng năm nào, ở đâu), đã khai báo cho ai, những vấn đề gì: " + NhanVienDt.Rows[0]["BiBatTu"].ToString() + "'";
+                rpt.DataDefinition.FormulaFields["LamViecChoCheDoCu"].Text = "'b) Bản thân có làm việc trong chế độ cũ (cơ quan, đơn vị nào, địa điểm, chức danh, chức vụ, thời gian làm việc....): " + NhanVienDt.Rows[0]["LamViecChoCheDoCu"].ToString() + "'";
+
+                // Parameter 29
+                rpt.DataDefinition.FormulaFields["QuanHeVoiToChucNN"].Text = "'- Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh tế, xã hội nào ở nước ngoài (làm gì, tổ chức nào, đặt trụ ở ở đâu...?): " + NhanVienDt.Rows[0]["QuanHeVoiToChucNN"].ToString() + "'";
+                rpt.DataDefinition.FormulaFields["ThanhNhanONuocNgoai"].Text = "'- Có thân nhân (bố, mẹ, vợ, chồng, con, anh chị em ruột) ở nước ngoài (làm gì, địa chỉ...)?: " + NhanVienDt.Rows[0]["ThanhNhanONuocNgoai"].ToString() + "'";
+
+                // Parameter 31
+                rpt.DataDefinition.FormulaFields["NhaODuocCap"].Text = "'+ Được cấp, được thuê loại nhà: " + NhanVienDt.Rows[0]["NhaODuocCap"].ToString() + "m2, tổng diện tích sử dụng: "+ NhanVienDt.Rows[0]["DienTichSuDungNhaO"].ToString() + "m2 '";
+                rpt.DataDefinition.FormulaFields["NhaOTuMua"].Text = "'+ Nhà tự mua, tự xây loại nhà: " + NhanVienDt.Rows[0]["NhaOTuMua"].ToString() + "m2, tổng diện tích sử dụng: " + NhanVienDt.Rows[0]["DienTichSuDungDatO"].ToString() + "m2 '";
+                rpt.DataDefinition.FormulaFields["DienTichDatDuocCap"].Text = "'+ Nhà tự mua, tự xây loại nhà: " + NhanVienDt.Rows[0]["DienTichDatDuocCap"].ToString() + "m2, tổng diện tích sử dụng: " + NhanVienDt.Rows[0]["DienTichDatTuMua"].ToString() + "m2 '";
+                rpt.DataDefinition.FormulaFields["DienTichDatKinhDoanhTrangTrai"].Text = "'- Đất sản xuất, kinh doanh: (Tổng diện tích đất được cấp, tự mua, tự khai phá...): " + NhanVienDt.Rows[0]["DienTichDatKinhDoanhTrangTrai"].ToString() + " m2'";
+                
 
                 sql = "";
                 sql+=" select * from QuaTrinhDaoTao qtdt";
