@@ -12,6 +12,12 @@ namespace QuanLyHoSoCongChuc.DataLayer
     public class TinhThanhData
     {
         DataService m_TinhThanhData = new DataService();
+
+        public TinhThanhData()
+        {
+            DataService.OpenConnection();
+        }
+
         public DataTable LayDSTinhThanh()
         {
             SqlCommand cmd = new SqlCommand("SELECT MaTinh, TenTinh FROM TinhThanh");
