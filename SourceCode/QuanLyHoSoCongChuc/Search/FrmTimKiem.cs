@@ -152,7 +152,7 @@ namespace QuanLyHoSoCongChuc.Search
 
         private void FrmTimKiem_Load(object sender, EventArgs e)
         {
-            
+            InitLstTruongHienThi();
         }
 
         private void btnChonDonVi_Click(object sender, EventArgs e)
@@ -415,6 +415,9 @@ namespace QuanLyHoSoCongChuc.Search
 
             var lstItem = NhanVienRepository.SearchByTieuChiChung(nhanvien);
             lstvNhanVien.Items.Clear();
+            //Searching
+            UpdateTruongHienThi();
+
             if (lstItem.Count > 0)
             {
                 ListViewItem objListViewItem;
@@ -422,7 +425,180 @@ namespace QuanLyHoSoCongChuc.Search
                 {
                     objListViewItem = new ListViewItem();
                     objListViewItem.Tag = lstItem[i];
-                    objListViewItem.Text = lstItem[i].MaNhanVien;
+
+                    for (int j = 0; j < GlobalSearch.LstTruongHienThi.Count; j++)
+                    {
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaNhanVien") != null)
+                        {
+                            objListViewItem.Text = lstItem[i].MaNhanVien;
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "SoLyLich") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].SoLyLich);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "SoTheDangVien") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].SoTheDangVien);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "HoTenKhaiSinh") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].HoTenKhaiSinh);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "HoTenDangDung") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].HoTenDangDung);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "SoCMND") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].SoCMND);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaGioiTinh") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaGioiTinh != null ? lstItem[i].GioiTinh.TenGioiTinh : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgaySinh") != null)
+                        {
+                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh.ToString()));
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NoiSinh") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].NoiSinh);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "QueQuan") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].QueQuan);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "HoKhau") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].HoKhau);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NoiOHienNay") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].NoiOHienNay);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaDonVi") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaDonVi != null ? lstItem[i].DonVi.TenDonVi : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "CongViecChinh") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].CongViecChinh);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgayVaoDang") != null)
+                        {
+                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayVaoDang.ToString()));
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "VaoDangTaiChiBo") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].VaoDangTaiChiBo);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NguoiGioiThieu1") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].NguoiGioiThieu1);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "ChucVuNguoi1") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].ChucVuNguoi1);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NguoiGioiThieu2") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].NguoiGioiThieu2);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "ChucVuNguoi2") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].ChucVuNguoi2);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgayChinhThuc") != null)
+                        {
+                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayChinhThuc.Value));
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "ChinhThucTaiChiBo") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].ChinhThucTaiChiBo);
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgayTuyenDung") != null)
+                        {
+                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayTuyenDung.Value));
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "CoQuanTuyenDung") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].CoQuanTuyenDung);
+                        }
+
+
+
+
+
+
+
+
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaDanToc") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaDanToc != null ? lstItem[i].DanToc.TenDanToc : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaTonGiao") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaTonGiao != null ? lstItem[i].TonGiao.TenTonGiao : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaThanhPhanGiaDinh") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaThanhPhanGiaDinh != null ? lstItem[i].ThanhPhanGiaDinh.TenThanhPhanGiaDinh : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaNgheNghiepTruocKhiDuocTuyenDung") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaNgheNghiepTruocKhiDuocTuyenDung != null ? lstItem[i].NgheNghiep.TenNgheNghiep : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaBangGiaoDucPhoThong") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaBangGiaoDucPhoThong != null ? lstItem[i].BangGiaoDucPhoThong.TenBangGiaoDucPhoThong : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaBangChuyenMonNghiepVu") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaBangChuyenMonNghiepVu != null ? lstItem[i].BangChuyenMonNghiepVu.TenBangChuyenMonNghiepVu : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaBangLyLuanChinhTri") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaBangLyLuanChinhTri != null ? lstItem[i].BangLyLuanChinhTri.TenBangLyLuanChinhTri : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaBangNgoaiNgu") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaBangNgoaiNgu != null ? lstItem[i].BangNgoaiNgu.TenBangNgoaiNgu : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaHocVi") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaHocVi != null ? lstItem[i].HocVi.TenHocVi : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaHocHam") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaHocHam != null ? lstItem[i].HocHam.TenHocHam : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaTinhTrangSucKhoe") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaTinhTrangSucKhoe != null ? lstItem[i].TinhTrangSucKhoe.TenTinhTrangSucKhoe : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaLoaiThuongBinh") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaLoaiThuongBinh != null ? lstItem[i].LoaiThuongBinh.TenLoaiThuongBinh : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaChucVu") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaChucVu != null ? ChucVuRepository.SelectByID(lstItem[i].MaChucVu.Value).TenChucVu : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaChucVuKiemNhiem") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaChucVuKiemNhiem != null ? ChucVuRepository.SelectByID(lstItem[i].MaChucVuKiemNhiem.Value).TenChucVu : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaNgachCongChuc") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaNgachCongChuc != null ? lstItem[i].NgachCongChuc.TenNgachCongChuc : "");
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaHuong85") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].MaHuong85 != null ? lstItem[i].Huong85.GiaTriHuong : "");
+                        }
+                    }
+
+                    
                     objListViewItem.SubItems.Add(lstItem[i].HoTenKhaiSinh);
                     objListViewItem.SubItems.Add(lstItem[i].MaGioiTinh == null ? "" : lstItem[i].GioiTinh.TenGioiTinh);
                     objListViewItem.SubItems.Add(lstItem[i].NgaySinh.Value == DateTime.MinValue ? "" : String.Format("{0:dd/MM/yyyy}", lstItem[i].NgaySinh));
@@ -687,6 +863,7 @@ namespace QuanLyHoSoCongChuc.Search
                 var ds = GlobalVars.g_CauHoiNguoiDung.SearchByCriterias(sqlQuery);
                 List<NhanVien> lstItem = new List<NhanVien>();
                 lstvNhanVien.Items.Clear();
+
                 if (ds.Tables[0].Rows.Count > 0)
                 {
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
@@ -1373,6 +1550,434 @@ namespace QuanLyHoSoCongChuc.Search
         private void NothingToProcess(object sender, EventArgs e)
         {
         }
+
+        private void btnChonTruong_Click(object sender, EventArgs e)
+        {
+            FrmChonTruong frm = new FrmChonTruong();
+            frm.Handler += NothingToProcess;
+            frm.ShowDialog();
+        }
+
+        /// <summary>
+        /// Fill queries to listview
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        public void UpdateTruongHienThi()
+        {
+            lstvNhanVien.Columns.Clear();
+
+            if (GlobalSearch.LstTruongHienThi.Count > 0)
+            {
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaNhanVien") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Số hiệu CC",
+                        Width = 100
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "SoLyLich") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Số lý lịch",
+                        Width = 100
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "SoTheDangVien") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Số thẻ ĐV",
+                        Width = 100
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "HoTenKhaiSinh") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Họ tên",
+                        Width = 180
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "HoTenDangDung") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Họ tên đang dùng",
+                        Width = ("Họ tên đang dùng").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "SoCMND") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Số CMND",
+                        Width = 100
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaGioiTinh") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Giới tinh",
+                        Width = 60
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgaySinh") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Ngày sinh",
+                        Width = 100
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NoiSinh") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Nơi sinh",
+                        Width = 100
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "QueQuan") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Quê quán",
+                        Width = 200
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "HoKhau") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Hộ khẩu",
+                        Width = 200
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NoiOHienNay") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Địa chỉ",
+                        Width = 200
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaDonVi") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Đơn vị",
+                        Width = ("Đơn vị").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "CongViecChinh") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Công việc chính",
+                        Width = ("Công việc chính").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgayVaoDang") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Ngày vào đảng",
+                        Width = ("Ngày vào đảng").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "VaoDangTaiChiBo") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Vào đảng tại CB",
+                        Width = ("Vào đảng tại CB").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NguoiGioiThieu1") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Người giới thiệu 1",
+                        Width = ("Người giới thiệu 1").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "ChucVuNguoi1") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Chức vụ người 1",
+                        Width = ("Chức vụ người 1").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NguoiGioiThieu2") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Người giới thiệu 2",
+                        Width = ("Người giới thiệu 2").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "ChucVuNguoi2") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Chức vụ người 2",
+                        Width = ("Chức vụ người 2").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgayChinhThuc") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Ngày chính thức",
+                        Width = ("Ngày chính thức").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "ChinhThucTaiChiBo") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Chính thức tại CB",
+                        Width = ("Chính thức tại CB").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgayTuyenDung") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Ngày tuyển dụng",
+                        Width = ("Ngày tuyển dụng").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "CoQuanTuyenDung") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Cơ quan tuyển dụng",
+                        Width = ("Cơ quan tuyển dụng").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+
+
+
+
+
+
+
+
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaDanToc") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Dân tộc",
+                        Width = ("Dân tộc").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaTonGiao") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Tôn giáo",
+                        Width = ("Tôn giáo").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaThanhPhanGiaDinh") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Thành phần gia đình",
+                        Width = ("Thành phần gia đình").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaNgheNghiepTruocKhiDuocTuyenDung") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Nghề nghiệp trước tuyển dụng",
+                        Width = ("Nghề nghiệp trước tuyển dụng").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaBangGiaoDucPhoThong") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Bằng GDPT",
+                        Width = ("Bằng GDPT").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaBangChuyenMonNghiepVu") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Bằng CMNV",
+                        Width = ("Bằng CMNV").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaBangLyLuanChinhTri") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Bằng LLCT",
+                        Width = ("Bằng LLCT").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaBangNgoaiNgu") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Bằng NN",
+                        Width = ("Bằng NN").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaHocVi") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Học vị cao nhất",
+                        Width = ("Học vị cao nhất").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaHocHam") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Học hàm",
+                        Width = ("Học hàm").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaTinhTrangSucKhoe") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Tình trạng sức khỏe",
+                        Width = ("Tình trạng sức khỏe").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaLoaiThuongBinh") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Loại thương binh",
+                        Width = ("Loại thương binh").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaChucVu") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Chức vụ",
+                        Width = ("Chức vụ").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaChucVuKiemNhiem") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Chức vụ kiêm",
+                        Width = ("Chức vụ kiêm").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaNgachCongChuc") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Ngạch CC",
+                        Width = ("Ngạch CC").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+                if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "MaHuong85") != null)
+                {
+                    var col = new ColumnHeader
+                    {
+                        Text = "Hưởng 85",
+                        Width = ("Hưởng 85").Length  * 9
+                    };
+                    lstvNhanVien.Columns.Add(col);
+                }
+            }
+        }
+
+        public void InitLstTruongHienThi()
+        {
+            GlobalSearch.LstTruongHienThi = new Dictionary<string, QuanLyHoSoCongChuc.Utils.Attribute>();
+
+            var criteria = new Criteria()
+            {
+                DBName = "NhanVien",
+                DBProvider = new DBProvider()
+            };
+
+            try
+            {
+                // Init criteria
+                Table tbl = criteria.InitCriterias();
+                GlobalSearch.LstTruongHienThi.Clear();
+                for (int i = 0; i < tbl.Attributes.Count; i++)
+                {
+                    if (tbl.Attributes[i].Name == "MaNhanVien" ||
+                        tbl.Attributes[i].Name == "HoTenKhaiSinh" ||
+                        tbl.Attributes[i].Name == "MaGioiTinh" ||
+                        tbl.Attributes[i].Name == "NgaySinh" ||
+                        tbl.Attributes[i].Name == "NoiOHienNay")
+                    {
+                        GlobalSearch.LstTruongHienThi.Add(tbl.Attributes[i].Name, tbl.Attributes[i]);
+                    }        
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex.InnerException);
+            }
+        }
+
+        private void btnIn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         #endregion
     }
 }

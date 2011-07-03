@@ -1093,7 +1093,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmNhapLuongPhuCap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Nhập quá trình khen thưởng";
+            this.Text = "Lương - phụ cấp";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmNhapLuongPhuCap_FormClosed);
             this.Load += new System.EventHandler(this.FrmNhapLuongPhuCap_Load);
             this.Shown += new System.EventHandler(this.FrmNhapLuongPhuCap_Shown);

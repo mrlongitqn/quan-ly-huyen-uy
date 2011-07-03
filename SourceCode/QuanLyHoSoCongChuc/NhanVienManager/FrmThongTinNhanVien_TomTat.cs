@@ -361,6 +361,20 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 return txtSoDienThoai.Text;
             }
         }
+        public string SoLyLich
+        {
+            get
+            {
+                return txtSoLyLich.Text;
+            }
+        }
+        public string SoTheDangVien
+        {
+            get
+            {
+                return txtSoTheDangVien.Text;
+            }
+        }
         #endregion
 
         #region Methods
@@ -443,6 +457,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             txtLoaiThuongBinh.Text = _nhanvien.MaLoaiThuongBinh == null ? "" : _nhanvien.LoaiThuongBinh.TenLoaiThuongBinh;
             txtNgach.Text = _nhanvien.MaNgachCongChuc == null ? "" : _nhanvien.NgachCongChuc.TenNgachCongChuc;
             txtHuong85.Text = _nhanvien.MaHuong85 == null ? "" : _nhanvien.Huong85.GiaTriHuong;
+            txtSoLyLich.Text = _nhanvien.SoLyLich;
+            txtSoTheDangVien.Text = _nhanvien.SoTheDangVien;
         }
 
         public void LoadImage(byte[] imageData)
@@ -909,6 +925,15 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             string[] comp = eventType.Data.Split(new char[] { '#' });
             txtMaChucVu.Text = comp[0];
             txtChucVu.Text = comp[1];
+        }
+
+        private void txtSoTheDangVien_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Only allow type number
+            if (!char.IsNumber(e.KeyChar) && (Keys)e.KeyChar != Keys.Back)
+            {
+                e.Handled = true;
+            }
         }
     }
 }
