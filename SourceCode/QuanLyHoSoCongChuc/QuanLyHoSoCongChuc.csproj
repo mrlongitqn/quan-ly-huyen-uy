@@ -77,7 +77,7 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Microsoft Visual Studio 9.0\ReportViewer\Microsoft.ReportViewer.Common.dll</HintPath>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -85,7 +85,7 @@
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Microsoft Visual Studio 9.0\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <HintPath>C:\Program Files\Microsoft Visual Studio 10.0\ReportViewer\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -721,6 +721,12 @@
     <Compile Include="Report\FrmInThe.Designer.cs">
       <DependentUpon>FrmInThe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\FrmReport2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrmReport2.Designer.cs">
+      <DependentUpon>FrmReport2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\InTheFrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1158,12 +1164,16 @@
     <EmbeddedResource Include="Report\FrmInThe.resx">
       <DependentUpon>FrmInThe.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\FrmReport2.resx">
+      <DependentUpon>FrmReport2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\InTheFrmMain.resx">
       <DependentUpon>InTheFrmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\FrmPrintReport.resx">
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\RptSYLL.rdlc" />
     <EmbeddedResource Include="Search\FrmLuuCauHoi.resx">
       <DependentUpon>FrmLuuCauHoi.cs</DependentUpon>
     </EmbeddedResource>
