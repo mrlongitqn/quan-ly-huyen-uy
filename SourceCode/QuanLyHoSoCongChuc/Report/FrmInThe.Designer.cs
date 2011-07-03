@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInThe));
             this.panelEx2 = new DevComponents.DotNetBar.PanelEx();
-            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             this.panelEx1 = new DevComponents.DotNetBar.PanelEx();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.labelX10 = new DevComponents.DotNetBar.LabelX();
@@ -58,7 +57,6 @@
             this.lblUsername = new DevComponents.DotNetBar.LabelX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.dsBaoCao1 = new QuanLyHoSoCongChuc.Report.DSBaoCao1();
-            this.panelEx2.SuspendLayout();
             this.panelEx1.SuspendLayout();
             this.groupPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picNv)).BeginInit();
@@ -68,7 +66,6 @@
             // panelEx2
             // 
             this.panelEx2.CanvasColor = System.Drawing.SystemColors.Control;
-            this.panelEx2.Controls.Add(this.crystalReportViewer1);
             this.panelEx2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelEx2.Location = new System.Drawing.Point(0, 248);
             this.panelEx2.Name = "panelEx2";
@@ -81,18 +78,6 @@
             this.panelEx2.Style.ForeColor.ColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.panelEx2.Style.GradientAngle = 90;
             this.panelEx2.TabIndex = 3;
-            // 
-            // crystalReportViewer1
-            // 
-            this.crystalReportViewer1.ActiveViewIndex = -1;
-            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
-            this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(844, 244);
-            this.crystalReportViewer1.TabIndex = 3;
-            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
             // 
             // panelEx1
             // 
@@ -245,7 +230,7 @@
             this.txtUBNDH.Name = "txtUBNDH";
             this.txtUBNDH.Size = new System.Drawing.Size(192, 22);
             this.txtUBNDH.TabIndex = 171;
-            this.txtUBNDH.Text = "ỦY BAN NHÂN DÂN HUYỆN THẠCH HÀ";
+            this.txtUBNDH.Text = "ỦY BAN ND HUYỆN THẠCH HÀ";
             // 
             // txtUBNDT
             // 
@@ -422,7 +407,6 @@
             this.Name = "FrmInThe";
             this.Text = "In thẻ nhân viên";
             this.Load += new System.EventHandler(this.FrmBaoCaoLuong_Load);
-            this.panelEx2.ResumeLayout(false);
             this.panelEx1.ResumeLayout(false);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
@@ -462,7 +446,6 @@
         private DevComponents.DotNetBar.LabelX labelX10;
         private DevComponents.DotNetBar.LabelX labelX9;
         private DevComponents.DotNetBar.LabelX labelX3;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
         private DSBaoCao1 dsBaoCao1;
     }
 }

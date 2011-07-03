@@ -12,7 +12,7 @@
     /// </summary>
     public class InTheFrmParent : System.Windows.Forms.Form
     {
-		private InTheFrmMain ChildForm = new InTheFrmMain();
+        private InTheFrmMain ChildForm;
 		
 
         /// <summary>
@@ -21,8 +21,9 @@
         private System.ComponentModel.Container components;
 		private System.Windows.Forms.MainMenu mainMenu1;
 
-        public InTheFrmParent()
+        public InTheFrmParent(NhanVienDTO _dto)
         {
+            ChildForm = new InTheFrmMain(_dto);
 	            InitializeComponent();
 				ChildForm.MdiParent = this;
 				ChildForm.Show();

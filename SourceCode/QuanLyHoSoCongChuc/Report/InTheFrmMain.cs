@@ -56,13 +56,15 @@
 		private System.Windows.Forms.MainMenu mainMenu1;
 		private System.Drawing.Printing.PrintDocument printDocument1;
 		private bool IsPrinting = false;
+        NhanVienDTO dto;
 
-        public InTheFrmMain()
+        public InTheFrmMain(NhanVienDTO _dto)
         {
             //
             // Required for Windows Form Designer support
             //
             InitializeComponent();
+            dto = _dto;
 			
 			this.Size = new Size(600*2, 500);
             //this.ClientSize = new System.Drawing.Size(1844, 1492);
@@ -353,9 +355,9 @@
 			Pen myPen = new Pen( Color.Red, 3 );
 			//Rectangle rect = this.ClientRectangle;
             Rectangle rect = new Rectangle(0, 0, 4000, 2000);
-			g.FillRectangle(Brushes.Yellow, rect);
+			g.FillRectangle(Brushes.White, rect);
 			CalcBorderRect();
-            g.FillRectangle(Brushes.BlueViolet, BorderRect1); 
+            g.FillRectangle(Brushes.Aquamarine, BorderRect1); 
 			if (IsPrinting == false)
 			{
 				DrawLabelPie(g, myPen, kLabelColumn ,kLabelRow);
@@ -385,7 +387,6 @@
                 g.DrawRectangle(myPen2, BorderRect8a);
             }
 
-			NhanVienDTO dto = new NhanVienDTO();
             MyCard.PaintCard(g, new Point(50, 50), dto);
 			myPen.Dispose();
 		}
