@@ -22,6 +22,7 @@ namespace QuanLyHoSoCongChuc.Report
         String SelectedId;
         int Level;
         DataService dataService = new DataService();
+        NhanVienDTO dto = new NhanVienDTO();
         public FrmInThe()
         {
             InitializeComponent();
@@ -83,6 +84,60 @@ namespace QuanLyHoSoCongChuc.Report
             txtIDCongChuc.Text = myDt.Rows[0]["MaNhanVien"].ToString();
             txtHoTen.Text = myDt.Rows[0]["HoTenKhaiSinh"].ToString();
             txtChucVu.Text = myDt.Rows[0]["TenChucVu"].ToString();
+
+            if (myDt.Rows[0]["HinhAnh"] != System.DBNull.Value)
+            {
+                System.Byte[] HinhAnh = (Byte[])myDt.Rows[0]["HinhAnh"];
+                LoadImage(HinhAnh);
+                dto.Picture = GetImage(HinhAnh);
+            }
+        }
+        public void LoadImage(byte[] imageData)
+        {
+            try
+            {
+                //Initialize image variable
+                Image newImage;
+                //Read image data into a memory stream
+                using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+                {
+                    ms.Write(imageData, 0, imageData.Length);
+
+                    //Set image variable value using memory stream.
+                    newImage = Image.FromStream(ms, true);
+                }
+
+                //set picture
+                picNv.Image = newImage;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+        public Image GetImage(byte[] imageData)
+        {
+            try
+            {
+                //Initialize image variable
+                Image newImage;
+                //Read image data into a memory stream
+                using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+                {
+                    ms.Write(imageData, 0, imageData.Length);
+
+                    //Set image variable value using memory stream.
+                    newImage = Image.FromStream(ms, true);
+                }
+
+                //set picture
+                return newImage;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                return null;
+            }
         }
         private String LoadSql_MaDonVi()
         {
@@ -141,7 +196,7 @@ namespace QuanLyHoSoCongChuc.Report
             //rpt.DataDefinition.FormulaFields["UBND Huyen"].Text = "'" + txtUBNDH.Text + "'";
             //this.crystalReportViewer1.ReportSource = rpt;
 
-            NhanVienDTO dto = new NhanVienDTO();
+            
             dto.IDCC = txtIDCongChuc.Text;
             dto.UBND_Tinh = txtUBNDT.Text;
             dto.UBND_Huyen = txtUBNDH.Text;
