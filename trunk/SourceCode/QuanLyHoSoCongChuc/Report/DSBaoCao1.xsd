@@ -652,6 +652,37 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="ThanNhan" msprop:Generator_TableClassName="ThanNhanDataTable" msprop:Generator_TableVarName="tableThanNhan" msprop:Generator_TablePropName="ThanNhan" msprop:Generator_RowDeletingName="ThanNhanRowDeleting" msprop:Generator_UserTableName="ThanNhan" msprop:Generator_RowChangingName="ThanNhanRowChanging" msprop:Generator_RowEvHandlerName="ThanNhanRowChangeEventHandler" msprop:Generator_RowDeletedName="ThanNhanRowDeleted" msprop:Generator_RowEvArgName="ThanNhanRowChangeEvent" msprop:Generator_RowChangedName="ThanNhanRowChanged" msprop:Generator_RowClassName="ThanNhanRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaThanNhan" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnMaThanNhan" msprop:Generator_ColumnPropNameInRow="MaThanNhan" msprop:Generator_ColumnPropNameInTable="MaThanNhanColumn" msprop:Generator_UserColumnName="MaThanNhan" type="xs:int" minOccurs="0" />
+              <xs:element name="MaQuanHe" msprop:Generator_ColumnVarNameInTable="columnMaQuanHe" msprop:Generator_ColumnPropNameInRow="MaQuanHe" msprop:Generator_ColumnPropNameInTable="MaQuanHeColumn" msprop:Generator_UserColumnName="MaQuanHe" type="xs:int" minOccurs="0" />
+              <xs:element name="MaNhanVien" msprop:Generator_ColumnVarNameInTable="columnMaNhanVien" msprop:Generator_ColumnPropNameInRow="MaNhanVien" msprop:Generator_ColumnPropNameInTable="MaNhanVienColumn" msprop:Generator_UserColumnName="MaNhanVien" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenThanNhan" msprop:Generator_ColumnVarNameInTable="columnTenThanNhan" msprop:Generator_ColumnPropNameInRow="TenThanNhan" msprop:Generator_ColumnPropNameInTable="TenThanNhanColumn" msprop:Generator_UserColumnName="TenThanNhan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="NamSinh" msprop:Generator_ColumnVarNameInTable="columnNamSinh" msprop:Generator_ColumnPropNameInRow="NamSinh" msprop:Generator_ColumnPropNameInTable="NamSinhColumn" msprop:Generator_UserColumnName="NamSinh" type="xs:int" minOccurs="0" />
+              <xs:element name="ThongTinCaNhan" msprop:Generator_ColumnVarNameInTable="columnThongTinCaNhan" msprop:Generator_ColumnPropNameInRow="ThongTinCaNhan" msprop:Generator_ColumnPropNameInTable="ThongTinCaNhanColumn" msprop:Generator_UserColumnName="ThongTinCaNhan" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TenQuanHe" msprop:Generator_ColumnVarNameInTable="columnTenQuanHe" msprop:Generator_ColumnPropNameInRow="TenQuanHe" msprop:Generator_ColumnPropNameInTable="TenQuanHeColumn" msprop:Generator_UserColumnName="TenQuanHe" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
