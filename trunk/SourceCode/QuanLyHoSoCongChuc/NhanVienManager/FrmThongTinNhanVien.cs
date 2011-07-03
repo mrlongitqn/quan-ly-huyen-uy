@@ -68,7 +68,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             InitHiddenFields();
             Mode = EnumUpdateMode.UPDATE;
             lblLoaiCanBo.Visible = true;
-            lblLoaiCanBo.Text = "ĐANG SINH HOẠT";
+            lblLoaiCanBo.Text = "ĐANG CÔNG TÁC";
         }
 
         /// <summary>
@@ -613,7 +613,9 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 SoCMND = frmThongTinNhanVien_TomTat.SoCMND,
                 NgayMienSHD = frmThongTinNhanVien_TomTat.NgayMienSHD,
                 ConSinhHoat = frmThongTinNhanVien_TomTat.ConSinhHoat,
-                SoDienThoai = frmThongTinNhanVien_TomTat.SoDienThoai
+                SoDienThoai = frmThongTinNhanVien_TomTat.SoDienThoai,
+                SoLyLich = frmThongTinNhanVien_TomTat.SoLyLich,
+                SoTheDangVien = frmThongTinNhanVien_TomTat.SoTheDangVien
             };
 
             // Update foreign keys
@@ -663,6 +665,8 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             item.NgayMienSHD = frmThongTinNhanVien_TomTat.NgayMienSHD;
             item.ConSinhHoat = frmThongTinNhanVien_TomTat.ConSinhHoat;
             item.SoDienThoai = frmThongTinNhanVien_TomTat.SoDienThoai;
+            item.SoLyLich = frmThongTinNhanVien_TomTat.SoLyLich;
+            item.SoTheDangVien = frmThongTinNhanVien_TomTat.SoTheDangVien;
 
             // Update foreign keys
             UpdateForeignKeys(ref item);

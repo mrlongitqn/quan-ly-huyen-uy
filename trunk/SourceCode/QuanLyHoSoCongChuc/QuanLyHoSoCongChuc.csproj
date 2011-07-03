@@ -616,11 +616,6 @@
     <Compile Include="NhanVienManager\FrmThongTinNhanVien_TomTat.Designer.cs">
       <DependentUpon>FrmThongTinNhanVien_TomTat.cs</DependentUpon>
     </Compile>
-    <Compile Include="QLHSCCDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Report\BusinessCard.cs" />
     <Compile Include="Report\CrInThe.cs">
       <DependentUpon>CrInThe.rpt</DependentUpon>
@@ -801,6 +796,12 @@
     <Compile Include="Repositories\TuTranRepository.cs" />
     <Compile Include="Search\CauHoiNguoiDung.cs" />
     <Compile Include="Search\DanhSachCauHoiNguoiDung.cs" />
+    <Compile Include="Search\FrmChonTruong.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\FrmChonTruong.Designer.cs">
+      <DependentUpon>FrmChonTruong.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search\FrmLuuCauHoi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -813,6 +814,7 @@
     <Compile Include="Search\FrmMoCauHoi.Designer.cs">
       <DependentUpon>FrmMoCauHoi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Search\GlobalSearch.cs" />
     <Compile Include="UsersDiary\FrmNhatKySuDung.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1174,6 +1176,9 @@
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\RptSYLL.rdlc" />
+    <EmbeddedResource Include="Search\FrmChonTruong.resx">
+      <DependentUpon>FrmChonTruong.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Search\FrmLuuCauHoi.resx">
       <DependentUpon>FrmLuuCauHoi.cs</DependentUpon>
     </EmbeddedResource>
@@ -1313,17 +1318,6 @@
     <Compile Include="Utils\GlobalVars.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="QLHSCCDataSet.xsc">
-      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="QLHSCCDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>QLHSCCDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="QLHSCCDataSet.xss">
-      <DependentUpon>QLHSCCDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Report\DSBaoCao1.xsc">
       <DependentUpon>DSBaoCao1.xsd</DependentUpon>
     </None>
@@ -1427,6 +1421,9 @@
   <ItemGroup>
     <None Include="Resources\HS_Quanlihotich1.jpg" />
     <None Include="Resources\Fairytale_printer.png" />
+    <Content Include="Resources\Co.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="users_family.ico" />
     <None Include="Resources\loading.gif" />
     <None Include="Resources\quanhuyen.jpg" />

@@ -780,6 +780,8 @@
           <Property Name="ConSinhHoat" Type="bit" />
           <Property Name="SoDienThoai" Type="nvarchar" MaxLength="20" />
           <Property Name="HinhAnh" Type="image" />
+          <Property Name="SoLyLich" Type="nvarchar" MaxLength="50" />
+          <Property Name="SoTheDangVien" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="NhatKy">
           <Key>
@@ -2618,6 +2620,8 @@
           <NavigationProperty Name="QuaTrinhCongTacs" Relationship="QLHSCCModel.FK_QuaTrinhCongTac_NhanVien" FromRole="NhanVien" ToRole="QuaTrinhCongTac" />
           <NavigationProperty Name="QuaTrinhDaoTaos" Relationship="QLHSCCModel.FK_QuaTrinhDaoTao_NhanVien" FromRole="NhanVien" ToRole="QuaTrinhDaoTao" />
           <NavigationProperty Name="ThanNhans" Relationship="QLHSCCModel.FK_ThanNhanMoi_NhanVien" FromRole="NhanVien" ToRole="ThanNhan" />
+          <Property Type="String" Name="SoLyLich" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SoTheDangVien" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="NhatKy">
           <Key>
@@ -4051,6 +4055,8 @@
           <EntitySetMapping Name="NhanViens">
             <EntityTypeMapping TypeName="QLHSCCModel.NhanVien">
               <MappingFragment StoreEntitySet="NhanVien">
+                <ScalarProperty Name="SoTheDangVien" ColumnName="SoTheDangVien" />
+                <ScalarProperty Name="SoLyLich" ColumnName="SoLyLich" />
                 <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
                 <ScalarProperty Name="SoDienThoai" ColumnName="SoDienThoai" />
                 <ScalarProperty Name="ConSinhHoat" ColumnName="ConSinhHoat" />

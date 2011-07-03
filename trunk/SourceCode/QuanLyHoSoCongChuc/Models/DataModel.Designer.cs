@@ -10646,6 +10646,54 @@ namespace QuanLyHoSoCongChuc.Models
         private global::System.Byte[] _HinhAnh;
         partial void OnHinhAnhChanging(global::System.Byte[] value);
         partial void OnHinhAnhChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String SoLyLich
+        {
+            get
+            {
+                return _SoLyLich;
+            }
+            set
+            {
+                OnSoLyLichChanging(value);
+                ReportPropertyChanging("SoLyLich");
+                _SoLyLich = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("SoLyLich");
+                OnSoLyLichChanged();
+            }
+        }
+        private global::System.String _SoLyLich;
+        partial void OnSoLyLichChanging(global::System.String value);
+        partial void OnSoLyLichChanged();
+    
+        /// <summary>
+        /// No Metadata Documentation available.
+        /// </summary>
+        [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
+        [DataMemberAttribute()]
+        public global::System.String SoTheDangVien
+        {
+            get
+            {
+                return _SoTheDangVien;
+            }
+            set
+            {
+                OnSoTheDangVienChanging(value);
+                ReportPropertyChanging("SoTheDangVien");
+                _SoTheDangVien = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("SoTheDangVien");
+                OnSoTheDangVienChanged();
+            }
+        }
+        private global::System.String _SoTheDangVien;
+        partial void OnSoTheDangVienChanging(global::System.String value);
+        partial void OnSoTheDangVienChanged();
 
         #endregion
     
