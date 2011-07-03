@@ -141,7 +141,15 @@ namespace QuanLyHoSoCongChuc.Report
             //rpt.DataDefinition.FormulaFields["UBND Huyen"].Text = "'" + txtUBNDH.Text + "'";
             //this.crystalReportViewer1.ReportSource = rpt;
 
-            InTheFrmParent fr = new InTheFrmParent();
+            NhanVienDTO dto = new NhanVienDTO();
+            dto.IDCC = txtIDCongChuc.Text;
+            dto.UBND_Tinh = txtUBNDT.Text;
+            dto.UBND_Huyen = txtUBNDH.Text;
+            dto.PhongBan = txtPhongBan.Text;
+            dto.ChucVu = txtChucVu.Text;
+            dto.SoHieuCC = txtSoHieuCC.Text;
+            dto.HoVaTen = txtHoTen.Text;
+            InTheFrmParent fr = new InTheFrmParent(dto);
             fr.Show();
         }
         private void BindReport(String imagePath)
