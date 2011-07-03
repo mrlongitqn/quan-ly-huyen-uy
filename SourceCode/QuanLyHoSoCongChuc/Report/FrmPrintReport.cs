@@ -904,6 +904,31 @@ namespace QuanLyHoSoCongChuc.Report
                     dsBaoCao1.Tables["QuaTrinhCongTac"].Rows.Add(myRow);
                 }
                 ////////////////////////////////////////////////////////////////////////////
+                /////////////////////////////////////////////////////////////////
+                sql = "";
+                sql += " select * from NhanVien nv";
+                sql += " left join ThanNhan tn on nv.MaNhanVien = tn.MaNhanVien";
+                sql += " left join QuanHe qh on qh.MaQuanHe = tn.MaQuanHe";
+
+                //sql+=" where nv.MaNhanVien='" + MaNV + "' ";
+
+                cmd = new SqlCommand(sql);
+                dataService.Load(cmd);
+                myDS = new DSBaoCao1();
+                myDt = dataService;
+
+                for (int i = 0; i < myDt.Rows.Count; i++)
+                {
+                    DataRow myRow = dsBaoCao1.Tables["ThanNhan"].NewRow();
+
+                    myRow["MaThanNhan"] = myDt.Rows[i]["MaThanNhan"];
+                    myRow["TenThanNhan"] = myDt.Rows[i]["TenThanNhan"];
+                    myRow["TenQuanHe"] = myDt.Rows[i]["TenQuanHe"];
+                    myRow["NamSinh"] = myDt.Rows[i]["NamSinh"];
+                    myRow["ThongTinCaNhan"] = myDt.Rows[i]["ThongTinCaNhan"];
+
+                    dsBaoCao1.Tables["ThanNhan"].Rows.Add(myRow);
+                }
                 rpt.SetDataSource(dsBaoCao1);
 
                 crystalReportViewer1.ReportSource = rpt;
