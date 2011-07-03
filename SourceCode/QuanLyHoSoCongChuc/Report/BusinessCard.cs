@@ -29,12 +29,12 @@
 		public void PaintCard(Graphics g, Point offset, NhanVienDTO dto)
 		{
             string strPath = Application.StartupPath;
-            Image image1 = Image.FromFile(strPath+"\\abc.jpg");
+            //Image image1 = Image.FromFile(strPath+"\\abc.jpg");
             Image image2 = Image.FromFile(strPath+"\\Co.jpg");
 
-            if (image1 != null)
+            if (dto.Picture != null)
 			{
-                g.DrawImage(image1, offset.X + 10, offset.Y + 75, 90, 120);
+                g.DrawImage(dto.Picture, offset.X + 10, offset.Y + 75, 90, 120);
 			}
             if (image2 != null)
             {
