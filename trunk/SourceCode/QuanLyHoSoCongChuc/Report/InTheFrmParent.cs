@@ -13,13 +13,7 @@
     public class InTheFrmParent : System.Windows.Forms.Form
     {
         private InTheFrmMain ChildForm;
-		
-
-        /// <summary>
-        ///    Required designer variable.
-        /// </summary>
-        private System.ComponentModel.Container components;
-		private System.Windows.Forms.MainMenu mainMenu1;
+        private IContainer components;
 
         public InTheFrmParent(NhanVienDTO _dto)
         {
@@ -41,17 +35,18 @@
         /// </summary>
         private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container ();
-			this.mainMenu1 = new System.Windows.Forms.MainMenu ();
-			//@this.TrayHeight = 90;
-			//@this.TrayLargeIcon = false;
-			//@this.TrayAutoArrange = true;
-			//@mainMenu1.SetLocation (new System.Drawing.Point (7, 7));
-			this.Text = "In thẻ nhân viên";
-			this.AutoScaleBaseSize = new System.Drawing.Size (5, 13);
-			this.IsMdiContainer = true;
-			this.Menu = this.mainMenu1;
-			this.Click += new System.EventHandler (this.ParentForm_Click);
+            this.SuspendLayout();
+            // 
+            // InTheFrmParent
+            // 
+            this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
+            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.IsMdiContainer = true;
+            this.Name = "InTheFrmParent";
+            this.Text = "In thẻ nhân viên 2";
+            this.Click += new System.EventHandler(this.ParentForm_Click);
+            this.ResumeLayout(false);
+
 		}
 
 		protected void ParentForm_Click (object sender, System.EventArgs e)

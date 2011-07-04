@@ -30,7 +30,7 @@
 		{
             string strPath = Application.StartupPath;
             //Image image1 = Image.FromFile(strPath+"\\abc.jpg");
-            Image image2 = Image.FromFile(strPath+"\\Co.jpg");
+            Image image2 = Image.FromFile(strPath + "\\Resources\\Co.jpg");
 
             if (dto.Picture != null)
 			{

@@ -1975,7 +1975,8 @@ namespace QuanLyHoSoCongChuc.Search
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-
+            FrmInDSNhanVienParent frm = new FrmInDSNhanVienParent(lstvNhanVien);
+            frm.ShowDialog();
         }
 
         #endregion
