@@ -795,6 +795,18 @@
     <Compile Include="Repositories\TonGiaoRepository.cs" />
     <Compile Include="Repositories\TuTranRepository.cs" />
     <Compile Include="Search\CauHoiNguoiDung.cs" />
+    <Compile Include="Search\FrmInDSNhanVienParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\FrmInDSNhanVienParent.Designer.cs">
+      <DependentUpon>FrmInDSNhanVienParent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Search\FrmInDSNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Search\FrmInDSNhanVien.Designer.cs">
+      <DependentUpon>FrmInDSNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="Search\DanhSachCauHoiNguoiDung.cs" />
     <Compile Include="Search\FrmChonTruong.cs">
       <SubType>Form</SubType>
@@ -1175,7 +1187,16 @@
     <EmbeddedResource Include="Report\FrmPrintReport.resx">
       <DependentUpon>FrmPrintReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\InTheFrmParent.resx">
+      <DependentUpon>InTheFrmParent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\RptSYLL.rdlc" />
+    <EmbeddedResource Include="Search\FrmInDSNhanVienParent.resx">
+      <DependentUpon>FrmInDSNhanVienParent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Search\FrmInDSNhanVien.resx">
+      <DependentUpon>FrmInDSNhanVien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Search\FrmChonTruong.resx">
       <DependentUpon>FrmChonTruong.cs</DependentUpon>
     </EmbeddedResource>
