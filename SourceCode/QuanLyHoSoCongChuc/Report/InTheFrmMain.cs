@@ -6,6 +6,8 @@
     using System.ComponentModel;
     using System.Windows.Forms;
     using System.Data;
+    using QuanLyHoSoCongChuc.Repositories;
+    using System.IO;
 
 
     /// <summary>
@@ -13,30 +15,10 @@
     /// </summary>
     public class InTheFrmMain : System.Windows.Forms.Form
     {
-
-		private int XRes = 0;
-		private int YRes = 0;
-		private int XMargin = 0;
-		private int YMargin = 0;
 		private Rectangle BorderRect1 = new Rectangle();
         private Rectangle BorderRect1a = new Rectangle();
         private Rectangle BorderRect2 = new Rectangle();
         private Rectangle BorderRect2a = new Rectangle();
-        private Rectangle BorderRect3 = new Rectangle();
-        private Rectangle BorderRect3a = new Rectangle();
-        private Rectangle BorderRect4 = new Rectangle();
-        private Rectangle BorderRect4a = new Rectangle();
-        private Rectangle BorderRect5 = new Rectangle();
-        private Rectangle BorderRect5a = new Rectangle();
-        private Rectangle BorderRect6 = new Rectangle();
-        private Rectangle BorderRect6a = new Rectangle();
-        private Rectangle BorderRect7 = new Rectangle();
-        private Rectangle BorderRect7a = new Rectangle();
-        private Rectangle BorderRect8 = new Rectangle();
-        private Rectangle BorderRect8a = new Rectangle();
-
-        private Rectangle BorderRect9 = new Rectangle();
-        private Rectangle BorderRect10 = new Rectangle();
 
         public BusinessCard MyCard = new BusinessCard(Application.StartupPath);
 		
@@ -55,29 +37,22 @@
 		private System.Windows.Forms.MenuItem menuItem1;
 		private System.Windows.Forms.MainMenu mainMenu1;
 		private System.Drawing.Printing.PrintDocument printDocument1;
-		private bool IsPrinting = false;
-        NhanVienDTO dto;
+        private bool IsPrinting = false;
+        private string MaDonVi;
+        private VScrollBar vScrollBar1;
 
-        public InTheFrmMain(NhanVienDTO _dto)
+        public InTheFrmMain(string _madonvi)
         {
-            //
-            // Required for Windows Form Designer support
-            //
             InitializeComponent();
-            dto = _dto;
 			
-			this.Size = new Size(600*2, 500);
-            //this.ClientSize = new System.Drawing.Size(1844, 1492);
+			this.Size = new Size(600*2, 5000);
 			this.ClientSize = new Size(printDocument1.PrinterSettings.DefaultPageSettings.PaperSize.Width, printDocument1.PrinterSettings.DefaultPageSettings.PaperSize.Height);
 			this.MdiParent = ParentForm;
-			//BusinessCard TempCard = MyCard.OpenCard();
-			
-
-            //
-            // TODO: Add any constructor code after InitializeComponent call
-            //
+            
+            MaDonVi = _madonvi;
         }
 
+        #region InitializeComponent
         /// <summary>
         ///    Required method for Designer support - do not modify
         ///    the contents of this method with the code editor.
@@ -94,6 +69,7 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
             // PrintPreview
@@ -143,61 +119,65 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
+            // vScrollBar1
+            // 
+            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.vScrollBar1.Location = new System.Drawing.Point(688, 0);
+            this.vScrollBar1.Name = "vScrollBar1";
+            this.vScrollBar1.Size = new System.Drawing.Size(17, 543);
+            this.vScrollBar1.TabIndex = 0;
+            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
+            // 
             // InTheFrmMain
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(284, 332);
+            this.ClientSize = new System.Drawing.Size(705, 543);
+            this.Controls.Add(this.vScrollBar1);
             this.Menu = this.mainMenu1;
             this.Name = "InTheFrmMain";
             this.Text = "In thẻ nhân viên";
+            this.Load += new System.EventHandler(this.InTheFrmMain_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.InTheFrmMain_Paint);
             this.ResumeLayout(false);
 
 		}
-
-        public void HelpAbout_Click(object sender, System.EventArgs e)
-		{
-			//AboutBox  myAboutBox = new AboutBox();
-			//myAboutBox.ShowDialog();
-		}
+        #endregion
 
         public void FileExit_Click(object sender, System.EventArgs e)
 		{
             this.Close();
 		}
 
-
-
         public void PrintFile_Click(object sender, System.EventArgs e)
 		{
 			printDialog1.Document = printDocument1;
-			if (printDialog1.ShowDialog() == DialogResult.OK)
-			 {
-			  IsPrinting = true; // set to true to prevent painting borders
-			  this.printDocument1.Print();
-			 }
+            if (printDialog1.ShowDialog() == DialogResult.OK)
+            {
+                IsPrinting = true; // set to true to prevent painting borders
+                this.printDocument1.Print();
+            }
 		}
 
         public void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
-		{
-		Graphics g = e.Graphics;
-		PrintPrinterLabels(g);
-		}
+        {
+            Graphics g = e.Graphics;
+            PrintPrinterLabels(g);
+        }
 
 		public void PrintPreview_Click (object sender, System.EventArgs e)
 		{
-				 try
-				{
-				  PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();  // instantiate new print preview dialog
-				  printPreviewDialog1.Document = this.printDocument1 ;
-				  IsPrinting = false; // leave false for borders
-				  printPreviewDialog1.ShowDialog();   // Show the print preview dialog, uses print page event to draw preview screen
-				}
-				catch(Exception exp)
-				{
-				  System.Console.WriteLine(exp.Message.ToString());
-				} 
-
+            try
+            {
+                PrintPreviewDialog printPreviewDialog1 = new PrintPreviewDialog();  // instantiate new print preview dialog
+                printPreviewDialog1.Document = this.printDocument1;
+                IsPrinting = false; // leave false for borders
+                printPreviewDialog1.ShowDialog();   // Show the print preview dialog, uses print page event to draw preview screen
+            }
+            catch (Exception exp)
+            {
+                System.Console.WriteLine(exp.Message.ToString());
+            }
 		}
 
         public void Form1_Click(object sender, System.EventArgs e)
@@ -205,19 +185,14 @@
 
 		}
 
-        public void CalcBorderRect()
+		public void PrintPrinterLabels(Graphics g)
 		{
-			XRes = kXResolution; // this.printDocument1.PrinterSettings.DefaultPageSettings.PrinterResolution.X;
-			YRes = kYResolution; // this.printDocument1.PrinterSettings.DefaultPageSettings.PrinterResolution.Y;
-			XMargin = CalcXPrintPixels(kXMargin);
-			YMargin = CalcYPrintPixels(kYMargin);
-			
-
-            //int w = printDocument1.PrinterSettings.DefaultPageSettings.PaperSize.Width / 2 + XMargin / 2;
-            //int h = printDocument1.PrinterSettings.DefaultPageSettings.PaperSize.Height / 5 + YMargin;
-
-            int w =  325;
-            int h = 204;
+            int w = 350;
+            int h = 184;
+			Pen myPen = new Pen( Color.Red, 3 );
+            Pen myPen2 = new Pen(Color.Blue, 1);
+            Rectangle rect = new Rectangle(0, 0, 4000, 2000);
+			g.FillRectangle(Brushes.White, rect);
 
             BorderRect1.X = 50;
             BorderRect1.Y = 50;
@@ -227,10 +202,9 @@
 
             BorderRect1a.X = 56;
             BorderRect1a.Y = 56;
-            BorderRect1a.Width = w-6*2;
+            BorderRect1a.Width = w - 6 * 2;
             BorderRect1a.Height = 60;
             BorderRect1a.Inflate(1, 1);
-
 
             BorderRect2.X = 450;
             BorderRect2.Y = 50;
@@ -239,185 +213,76 @@
             BorderRect2.Inflate(1, 1);
 
             BorderRect2a.X = 450 + 6;
-            BorderRect2a.Y = 50+6;
+            BorderRect2a.Y = 50 + 6;
             BorderRect2a.Width = w - 6 * 2;
             BorderRect2a.Height = 60;
             BorderRect2a.Inflate(1, 1);
 
-            BorderRect3.X = 50;
-            BorderRect3.Y = 300;
-            BorderRect3.Width = w;
-            BorderRect3.Height = h;
-            BorderRect3.Inflate(1, 1);
+            var lstItem = NhanVienRepository.SelectByMaDonViConSinhHoat(MaDonVi);
 
-            BorderRect3a.X = 50+6;
-            BorderRect3a.Y = 300+6;
-            BorderRect3a.Width = w - 6 * 2;
-            BorderRect3a.Height = 60;
-            BorderRect3a.Inflate(1, 1);
-
-            BorderRect4.X = 450;
-            BorderRect4.Y = 300;
-            BorderRect4.Width = w;
-            BorderRect4.Height = h;
-            BorderRect4.Inflate(1, 1);
-
-            BorderRect4a.X = 450 + 6;
-            BorderRect4a.Y = 300 + 6;
-            BorderRect4a.Width = w - 6 * 2;
-            BorderRect4a.Height = 60;
-            BorderRect4a.Inflate(1, 1);
-
-            BorderRect5.X = 50;
-            BorderRect5.Y = 300+250;
-            BorderRect5.Width = w;
-            BorderRect5.Height = h;
-            BorderRect5.Inflate(1, 1);
-
-            BorderRect5a.X = 50 + 6;
-            BorderRect5a.Y = 300 + 250 + 6;
-            BorderRect5a.Width = w - 6 * 2;
-            BorderRect5a.Height = 60;
-            BorderRect5a.Inflate(1, 1);
-
-
-            BorderRect6.X = 450;
-            BorderRect6.Y = 300 + 250;
-            BorderRect6.Width = w;
-            BorderRect6.Height = h;
-            BorderRect6.Inflate(1, 1);
-
-            BorderRect6a.X = 450 + 6;
-            BorderRect6a.Y = 300 + 250 + 6;
-            BorderRect6a.Width = w - 6 * 2;
-            BorderRect6a.Height = 60;
-            BorderRect6a.Inflate(1, 1);
-
-            BorderRect7.X = 50;
-            BorderRect7.Y = 300 + 250*2;
-            BorderRect7.Width = w;
-            BorderRect7.Height = h;
-            BorderRect7.Inflate(1, 1);
-
-            BorderRect7a.X = 50 + 6;
-            BorderRect7a.Y = 300 + 250 * 2 + 6;
-            BorderRect7a.Width = w - 6 * 2;
-            BorderRect7a.Height = 60;
-            BorderRect7a.Inflate(1, 1);
-
-            BorderRect8.X = 450;
-            BorderRect8.Y = 300 + 250 * 2;
-            BorderRect8.Width = w;
-            BorderRect8.Height = h;
-            BorderRect8.Inflate(1, 1);
-
-            BorderRect8a.X = 450 + 6;
-            BorderRect8a.Y = 300 + 250*2 + 6;
-            BorderRect8a.Width = w - 6 * 2;
-            BorderRect8a.Height = 60;
-            BorderRect8a.Inflate(1, 1);
-
-            BorderRect9.X = 50;
-            BorderRect9.Y = 300 + 250 * 3;
-            BorderRect9.Width = w;
-            BorderRect9.Height = h;
-            BorderRect9.Inflate(1, 1);
-
-            BorderRect10.X = 50;
-            BorderRect10.Y = 300 + 250 * 4;
-            BorderRect10.Width = w;
-            BorderRect10.Height = h;
-            BorderRect10.Inflate(1, 1);
-
-		}
-
-        public void DrawLabelPie(Graphics g, Pen p, int numX, int numY)
-		{
-            //int xInc = BorderRect.Width/numX;
-            //int yInc = BorderRect.Height/numY;
-
-            //for (int y = yInc + BorderRect.Top; y < BorderRect.Height; y += yInc)
-            //{
-            //    g.DrawLine(p, BorderRect.Left, y, BorderRect.Right, y); // ve duong ngang
-            //}
-
-            //for (int x = xInc + BorderRect.Left; x < BorderRect.Width; x += xInc)
-            //{
-            //    g.DrawLine(p, x, BorderRect.Top+50, x,BorderRect.Bottom+50);
-            //}
-
-		}
-
-
-		public void PrintPrinterLabels(Graphics g)
-		{
-			
-			Pen myPen = new Pen( Color.Red, 3 );
-			//Rectangle rect = this.ClientRectangle;
-            Rectangle rect = new Rectangle(0, 0, 4000, 2000);
-			g.FillRectangle(Brushes.White, rect);
-			CalcBorderRect();
-            g.FillRectangle(Brushes.Aquamarine, BorderRect1); 
-			if (IsPrinting == false)
-			{
-				DrawLabelPie(g, myPen, kLabelColumn ,kLabelRow);
-				g.DrawRectangle(myPen, BorderRect1 );               
-                g.DrawRectangle(myPen, BorderRect2);
-                g.DrawRectangle(myPen, BorderRect3);
-                g.DrawRectangle(myPen, BorderRect4);
-                g.DrawRectangle(myPen, BorderRect5);
-                g.DrawRectangle(myPen, BorderRect6);
-                g.DrawRectangle(myPen, BorderRect7);
-                g.DrawRectangle(myPen, BorderRect8);
-                g.DrawRectangle(myPen, BorderRect9);
-                g.DrawRectangle(myPen, BorderRect10);
-			}
-
-            //
-            Pen myPen2 = new Pen(Color.Blue, 1);
-            if (IsPrinting == false)
+            for (int i = 0; i < lstItem.Count; i++)
             {
-                g.DrawRectangle(myPen2, BorderRect1a);
-                g.DrawRectangle(myPen2, BorderRect2a);
-                g.DrawRectangle(myPen2, BorderRect3a);
-                g.DrawRectangle(myPen2, BorderRect4a);
-                g.DrawRectangle(myPen2, BorderRect5a);
-                g.DrawRectangle(myPen2, BorderRect6a);
-                g.DrawRectangle(myPen2, BorderRect7a);
-                g.DrawRectangle(myPen2, BorderRect8a);
+                if (i % 2 == 0)
+                {
+                    g.FillRectangle(Brushes.Aquamarine, BorderRect1);
+
+                    if (IsPrinting == false)
+                    {
+                        g.DrawRectangle(myPen, BorderRect1);
+                    }
+
+                    if (IsPrinting == false)
+                    {
+                        g.DrawRectangle(myPen2, BorderRect1a);
+                    }
+
+                    MyCard.PaintCard(g, new Point(50, BorderRect1.Y), lstItem[i]);
+                    BorderRect1.Y += BorderRect1.Height + 10;
+                    BorderRect1a.Y += BorderRect1.Height + 10;
+                }
+                else if (i % 2 != 0)
+                {
+                    g.FillRectangle(Brushes.Aquamarine, BorderRect2);
+
+                    if (IsPrinting == false)
+                    {
+                        g.DrawRectangle(myPen, BorderRect2);
+                    }
+
+                    if (IsPrinting == false)
+                    {
+                        g.DrawRectangle(myPen2, BorderRect2a);
+                    }
+
+                    MyCard.PaintCard(g, new Point(450, BorderRect2.Y), lstItem[i]);
+                    BorderRect2.Y += BorderRect2.Height + 10;
+                    BorderRect2a.Y += BorderRect2.Height + 10;
+                }
             }
 
-            MyCard.PaintCard(g, new Point(50, 50), dto);
 			myPen.Dispose();
+            myPen2.Dispose();
 		}
 
+        private void InTheFrmMain_Load(object sender, EventArgs e)
+        {
 
+        }
 
+        private void InTheFrmMain_Paint(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+            IsPrinting = false;
+            PrintPrinterLabels(g);
+        }
 
-        protected override void OnPaint(PaintEventArgs pe)
-		{
-		Graphics g = pe.Graphics;
-		IsPrinting = false;
-		PrintPrinterLabels(g);
-		}
-
-		public int CalcXPrintPixels(float fInches)
-		{
-		  int nVal = 0;
-
-		  nVal = (int)(fInches * (float)XRes);
-		  return nVal;
-		}
-
-		public int CalcYPrintPixels(float fInches)
-		{
-		  int nVal = 0;
-
-		  nVal = (int)(fInches * (float)YRes);
-		  return nVal;
-		}
-
-
-       
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+            BorderRect1.Y += 2;
+            BorderRect1a.Y += 2;
+            BorderRect2.Y += 2;
+            BorderRect2a.Y += 2;
+            this.Invalidate();
+        }
     }
 }
