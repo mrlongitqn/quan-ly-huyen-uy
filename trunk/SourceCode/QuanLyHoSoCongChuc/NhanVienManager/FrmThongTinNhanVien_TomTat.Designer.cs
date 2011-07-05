@@ -30,6 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThongTinNhanVien_TomTat));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtSoTheDangVien = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX44 = new DevComponents.DotNetBar.LabelX();
+            this.txtSoLyLich = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX43 = new DevComponents.DotNetBar.LabelX();
             this.txtChucVuKiemNhiem = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX42 = new DevComponents.DotNetBar.LabelX();
             this.txtHuong85 = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -118,10 +122,6 @@
             this.txtMaNhanVien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.txtSoLyLich = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX43 = new DevComponents.DotNetBar.LabelX();
-            this.txtSoTheDangVien = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX44 = new DevComponents.DotNetBar.LabelX();
             this.btnMaChucVuKiemNhiem = new System.Windows.Forms.Button();
             this.btnChonHuong85 = new System.Windows.Forms.Button();
             this.btnChonNgach = new System.Windows.Forms.Button();
@@ -292,6 +292,53 @@
             this.groupPanel1.Style.TextColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelText;
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
+            // 
+            // txtSoTheDangVien
+            // 
+            // 
+            // 
+            // 
+            this.txtSoTheDangVien.Border.Class = "TextBoxBorder";
+            this.txtSoTheDangVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoTheDangVien.Location = new System.Drawing.Point(508, 61);
+            this.txtSoTheDangVien.Name = "txtSoTheDangVien";
+            this.txtSoTheDangVien.Size = new System.Drawing.Size(148, 20);
+            this.txtSoTheDangVien.TabIndex = 5;
+            this.txtSoTheDangVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoTheDangVien_KeyPress);
+            // 
+            // labelX44
+            // 
+            this.labelX44.BackColor = System.Drawing.Color.Transparent;
+            this.labelX44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX44.Location = new System.Drawing.Point(370, 59);
+            this.labelX44.Name = "labelX44";
+            this.labelX44.Size = new System.Drawing.Size(115, 20);
+            this.labelX44.TabIndex = 334;
+            this.labelX44.Text = "Số thẻ đảng viên";
+            this.labelX44.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // txtSoLyLich
+            // 
+            // 
+            // 
+            // 
+            this.txtSoLyLich.Border.Class = "TextBoxBorder";
+            this.txtSoLyLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSoLyLich.Location = new System.Drawing.Point(148, 61);
+            this.txtSoLyLich.Name = "txtSoLyLich";
+            this.txtSoLyLich.Size = new System.Drawing.Size(200, 20);
+            this.txtSoLyLich.TabIndex = 4;
+            // 
+            // labelX43
+            // 
+            this.labelX43.BackColor = System.Drawing.Color.Transparent;
+            this.labelX43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX43.Location = new System.Drawing.Point(8, 60);
+            this.labelX43.Name = "labelX43";
+            this.labelX43.Size = new System.Drawing.Size(115, 20);
+            this.labelX43.TabIndex = 332;
+            this.labelX43.Text = "Số lý lịch";
+            this.labelX43.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // txtChucVuKiemNhiem
             // 
@@ -1358,7 +1405,7 @@
             this.labelX10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelX10.Location = new System.Drawing.Point(384, 273);
             this.labelX10.Name = "labelX10";
-            this.labelX10.Size = new System.Drawing.Size(192, 20);
+            this.labelX10.Size = new System.Drawing.Size(201, 20);
             this.labelX10.TabIndex = 194;
             this.labelX10.Text = "Nghề nghiệp trước khi được tuyển dụng";
             this.labelX10.TextAlignment = System.Drawing.StringAlignment.Far;
@@ -1536,53 +1583,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // txtSoLyLich
-            // 
-            // 
-            // 
-            // 
-            this.txtSoLyLich.Border.Class = "TextBoxBorder";
-            this.txtSoLyLich.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoLyLich.Location = new System.Drawing.Point(148, 61);
-            this.txtSoLyLich.Name = "txtSoLyLich";
-            this.txtSoLyLich.Size = new System.Drawing.Size(200, 20);
-            this.txtSoLyLich.TabIndex = 4;
-            // 
-            // labelX43
-            // 
-            this.labelX43.BackColor = System.Drawing.Color.Transparent;
-            this.labelX43.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX43.Location = new System.Drawing.Point(8, 60);
-            this.labelX43.Name = "labelX43";
-            this.labelX43.Size = new System.Drawing.Size(115, 20);
-            this.labelX43.TabIndex = 332;
-            this.labelX43.Text = "Số lý lịch";
-            this.labelX43.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // txtSoTheDangVien
-            // 
-            // 
-            // 
-            // 
-            this.txtSoTheDangVien.Border.Class = "TextBoxBorder";
-            this.txtSoTheDangVien.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoTheDangVien.Location = new System.Drawing.Point(508, 61);
-            this.txtSoTheDangVien.Name = "txtSoTheDangVien";
-            this.txtSoTheDangVien.Size = new System.Drawing.Size(148, 20);
-            this.txtSoTheDangVien.TabIndex = 5;
-            this.txtSoTheDangVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoTheDangVien_KeyPress);
-            // 
-            // labelX44
-            // 
-            this.labelX44.BackColor = System.Drawing.Color.Transparent;
-            this.labelX44.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX44.Location = new System.Drawing.Point(370, 59);
-            this.labelX44.Name = "labelX44";
-            this.labelX44.Size = new System.Drawing.Size(115, 20);
-            this.labelX44.TabIndex = 334;
-            this.labelX44.Text = "Số thẻ đảng viên";
-            this.labelX44.TextAlignment = System.Drawing.StringAlignment.Far;
             // 
             // btnMaChucVuKiemNhiem
             // 

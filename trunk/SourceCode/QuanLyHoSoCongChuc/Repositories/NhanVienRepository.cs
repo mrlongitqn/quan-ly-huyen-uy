@@ -73,6 +73,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return lstItem;
 		}
 
+        public static List<NhanVien> SelectByMaDonViConSinhHoat(string madonvi)
+        {
+            var lstItem = (from item in DataContext.Instance.NhanViens where item.MaDonVi == madonvi && item.ConSinhHoat.Value == true select item).ToList();
+            return lstItem;
+        }
+
 		public static List<NhanVien> SelectByMaDanToc(int madantoc)
 		{
 			var lstItem = (from item in DataContext.Instance.NhanViens where item.MaDanToc == madantoc select item).ToList();

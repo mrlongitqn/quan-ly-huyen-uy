@@ -5,6 +5,7 @@
 	using System.IO;
 	using System.Runtime.Serialization.Formatters.Binary;
     using System.Windows.Forms;
+    using QuanLyHoSoCongChuc.Models;
 
 
     /// <summary>
@@ -26,15 +27,37 @@
             return bc;
         }
 
-		public void PaintCard(Graphics g, Point offset, NhanVienDTO dto)
+        public Image LoadImage(byte[] imageData)
+        {
+            try
+            {
+                //Initialize image variable
+                Image newImage;
+                //Read image data into a memory stream
+                using (MemoryStream ms = new MemoryStream(imageData, 0, imageData.Length))
+                {
+                    ms.Write(imageData, 0, imageData.Length);
+
+                    //Set image variable value using memory stream.
+                    newImage = Image.FromStream(ms, true);
+                }
+                return newImage;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+
+		public void PaintCard(Graphics g, Point offset, NhanVien dto)
 		{
             string strPath = Application.StartupPath;
-            //Image image1 = Image.FromFile(strPath+"\\abc.jpg");
             Image image2 = Image.FromFile(strPath + "\\Resources\\Co.jpg");
 
-            if (dto.Picture != null)
+            if (dto.HinhAnh != null)
 			{
-                g.DrawImage(dto.Picture, offset.X + 10, offset.Y + 75, 90, 120);
+                g.DrawImage(LoadImage(dto.HinhAnh), offset.X + 12, offset.Y + 75, 75, 90);
 			}
             if (image2 != null)
             {
@@ -42,22 +65,17 @@
             }
 
 
-            g.DrawString(dto.UBND_Tinh, LargeFont, Brushes.Black, (float)offset.X + 100.0f, (float)offset.Y + 15);
+            g.DrawString("Ủy ban nhân dân tỉnh Hà tĩnh", LargeFont, Brushes.Black, (float)offset.X + 100.0f, (float)offset.Y + 15);
 
-            g.DrawString(dto.UBND_Huyen, LargeFont, Brushes.Black, (float)offset.X + 100.0f, (float)offset.Y + 35);
+            g.DrawString("Ủy ban nhân dân huyện Thạch Hà", LargeFont, Brushes.Black, (float)offset.X + 100.0f, (float)offset.Y + 35);
 
-            g.DrawString("ID CÔNG CHỨC: "+dto.IDCC, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 75);
+            g.DrawString("SỐ HIỆU CÔNG CHỨCC: " + dto.MaNhanVien, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 75);
 
-            g.DrawString("HỌ VÀ TÊN: " + dto.HoVaTen, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 100);
+            g.DrawString("HỌ VÀ TÊN: " + dto.HoTenKhaiSinh, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 100);
 
-            g.DrawString("PHÒNG/BAN: " + dto.PhongBan, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 125);
+            g.DrawString("PHÒNG/BAN: " + (dto.MaDonVi != null ? dto.DonVi.TenDonVi : ""), LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 125);
 
-            g.DrawString("CHỨC VỤ: " + dto.ChucVu, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 150);
-
-            g.DrawString("SỐ HIỆU CÔNG CHỨC: " + dto.SoHieuCC, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 175);
-			
+            g.DrawString("CHỨC VỤ: " + (dto.MaChucVu != null ? dto.ChucVu.TenChucVu : ""), LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 150);
 		}
-
-
     }
 }

@@ -13,20 +13,14 @@
     public class InTheFrmParent : System.Windows.Forms.Form
     {
         private InTheFrmMain ChildForm;
-        private IContainer components;
 
-        public InTheFrmParent(NhanVienDTO _dto)
+        public InTheFrmParent(string _madonvi)
         {
-            ChildForm = new InTheFrmMain(_dto);
-	            InitializeComponent();
-				ChildForm.MdiParent = this;
-				ChildForm.Show();
-            //
-            // Required for Windows Form Designer support
-            //
-            //
-            // TODO: Add any constructor code after InitializeComponent call
-            //
+            InitializeComponent();
+
+            ChildForm = new InTheFrmMain(_madonvi);
+            ChildForm.MdiParent = this;
+            ChildForm.Show();
         }
 
         /// <summary>
@@ -40,17 +34,11 @@
             // InTheFrmParent
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.ClientSize = new System.Drawing.Size(292, 266);
+            this.ClientSize = new System.Drawing.Size(837, 589);
             this.IsMdiContainer = true;
             this.Name = "InTheFrmParent";
-            this.Text = "In thẻ nhân viên 2";
-            this.Click += new System.EventHandler(this.ParentForm_Click);
+            this.Text = "In thẻ nhân viên";
             this.ResumeLayout(false);
-
-		}
-
-		protected void ParentForm_Click (object sender, System.EventArgs e)
-		{
 
 		}
     }
