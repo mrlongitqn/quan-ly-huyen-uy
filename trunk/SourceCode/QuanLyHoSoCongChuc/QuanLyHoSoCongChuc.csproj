@@ -218,6 +218,15 @@
     <Compile Include="Controller\TrinhDoNgoaiNguControl.cs" />
     <Compile Include="Controller\TrinhDoQuanLyNhaNuocControl.cs" />
     <Compile Include="Controller\TrinhDoTinHocControl.cs" />
+    <Compile Include="DSBaoCao2.cs">
+      <DependentUpon>DSBaoCao2.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DSBaoCao2.Designer.cs">
+      <DependentUpon>DSBaoCao2.xsd</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1189,7 +1198,9 @@
     <EmbeddedResource Include="Report\InTheFrmParent.resx">
       <DependentUpon>InTheFrmParent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report\RptSYLL.rdlc" />
+    <EmbeddedResource Include="Report\RptSYLL.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <EmbeddedResource Include="Search\FrmInDSNhanVienParent.resx">
       <DependentUpon>FrmInDSNhanVienParent.cs</DependentUpon>
     </EmbeddedResource>
@@ -1279,6 +1290,17 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>DataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="DSBaoCao2.xsc">
+      <DependentUpon>DSBaoCao2.xsd</DependentUpon>
+    </None>
+    <None Include="DSBaoCao2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DSBaoCao2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DSBaoCao2.xss">
+      <DependentUpon>DSBaoCao2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\DataSources\QuanLyHoSoCongChuc.Models.QLHSCCEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

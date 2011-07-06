@@ -840,7 +840,9 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
 
         private void btnIn_Click(object sender, EventArgs e)
         {
-            FrmPrintReport frm = new FrmPrintReport("6", _nhanvien.MaNhanVien, "", null, -1);
+            //FrmPrintReport frm = new FrmPrintReport("6", _nhanvien.MaNhanVien, "", null, -1);
+            //frm.Show();
+            FrmReport2 frm = new FrmReport2();
             frm.Show();
         }
     }
