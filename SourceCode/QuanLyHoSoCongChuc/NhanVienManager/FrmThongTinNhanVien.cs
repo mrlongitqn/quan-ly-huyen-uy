@@ -842,7 +842,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
         {
             //FrmPrintReport frm = new FrmPrintReport("6", _nhanvien.MaNhanVien, "", null, -1);
             //frm.Show();
-            FrmReport2 frm = new FrmReport2();
+            FrmReport2 frm = new FrmReport2(_nhanvien.MaNhanVien);
             frm.Show();
         }
     }
