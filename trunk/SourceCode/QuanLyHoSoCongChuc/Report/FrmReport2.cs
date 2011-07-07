@@ -177,7 +177,7 @@ namespace QuanLyHoSoCongChuc.Report
             sql += " left join BangLyLuanChinhTri llct on qtdt.MaBangLyLuanChinhTri = llct.MaBangLyLuanChinhTri";
             sql += " left join BangNgoaiNgu nn on qtdt.MaBangNgoaiNgu = nn.MaBangNgoaiNgu";
             sql += " left join BangChuyenMonNghiepVu cmnv on qtdt.MaBangChuyenMonNghiepVu = cmnv.MaBangChuyenMonNghiepVu";
-            //sql+=" where MaNhanVien='" + MaNV + "' ";
+            sql+=" where MaNhanVien='" + MaNV + "' ";
 
             
             cmd = new SqlCommand(sql);
@@ -243,10 +243,9 @@ namespace QuanLyHoSoCongChuc.Report
 
             sql = "";
             sql += " select * from NhanVien nv";
-            sql += " left join ThanNhan tn on nv.MaNhanVien = tn.MaNhanVien";
+            sql += " join ThanNhan tn on nv.MaNhanVien = tn.MaNhanVien";
             sql += " left join QuanHe qh on qh.MaQuanHe = tn.MaQuanHe";
-
-            //sql+=" where nv.MaNhanVien='" + MaNV + "' ";
+            sql+=" where nv.MaNhanVien='" + MaNV + "' ";
 
             cmd = new SqlCommand(sql);
             dataService.Load(cmd);
@@ -272,8 +271,7 @@ namespace QuanLyHoSoCongChuc.Report
             sql = "";
             sql += " SELECT * FROM QuaTrinhCongTac qtct";
             sql += " left join ChucVuChinhQuyen cvcq on cvcq.MaChucVuChinhQuyen = qtct.MaChucVuChinhQuyen";
-
-            //sql+=" where MaNhanVien='" + MaNV + "' ";
+            sql+=" where MaNhanVien='" + MaNV + "' ";
 
             cmd = new SqlCommand(sql);
             dataService.Load(cmd);
