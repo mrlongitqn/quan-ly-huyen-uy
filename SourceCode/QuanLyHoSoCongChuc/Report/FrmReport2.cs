@@ -118,7 +118,11 @@ namespace QuanLyHoSoCongChuc.Report
             parames[17] = new ReportParameter("NgayThamGiaCacToChucChinhTri", "15) Tham gia các tổ chức chính trị (Đoàn TNCSHCM, Công đoàn, Hội): " + NhanVienDt.Rows[0]["ThamGiaCTXH"], true);
 
             // Parameter 16
-            parames[18] = new ReportParameter("NgayNhapNgu", "16) Ngày nhập ngũ: ..............., Ngày xuất ngũ: ..............., Quân hàm, chức vụ cao nhất:...............,Năm ......", true);
+            MyString = NhanVienDt.Rows[0]["NgayNhapNgu"].ToString();
+            MyDateTime = Convert.ToDateTime(MyString);
+            MyString = NhanVienDt.Rows[0]["NgayXuatNgu"].ToString();
+            MyDateTime2 = Convert.ToDateTime(MyString);
+            parames[18] = new ReportParameter("NgayNhapNgu", "16) Ngày nhập ngũ: " + MyDateTime.ToString("dd/MM/yyyy") + ", Ngày xuất ngũ: " + MyDateTime2.ToString("dd/MM/yyyy") + ", Quân hàm, chức vụ cao nhất:...............,Năm ......", true);
 
             // Parameter 17
             parames[19] = new ReportParameter("TrinhDoHocVan", "17) Trình độ học vấn: Giáo dục phổ thông:" + NhanVienDt.Rows[0]["TenHocVi"], true);
