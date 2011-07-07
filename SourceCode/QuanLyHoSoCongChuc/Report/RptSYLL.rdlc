@@ -237,7 +237,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>10.61465in</Top>
+        <Top>10.38555in</Top>
         <Left>0.26562in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
@@ -284,7 +284,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Truong</Value>
+                              <Value>Tên Trường</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -314,7 +314,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nganh Hoc</Value>
+                              <Value>Ngành Học</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -344,7 +344,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Thoi Gian Hoc</Value>
+                              <Value>Thời Gian Học</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -374,7 +374,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Hinh Thuc Hoc</Value>
+                              <Value>Hình Thức Học</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -404,7 +404,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Chung Chi</Value>
+                              <Value>Chứng Chỉ</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -604,8 +604,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>QuaTrinhDaoTao</DataSetName>
-        <Top>11.05569in</Top>
-        <Left>0.26562in</Left>
+        <Top>10.705in</Top>
+        <Left>0.26563in</Left>
         <Height>0.5in</Height>
         <Width>7.39771in</Width>
         <ZIndex>2</ZIndex>
@@ -831,8 +831,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>21.25708in</Top>
-        <Left>1.04875in</Left>
+        <Top>18.75708in</Top>
+        <Left>1.04876in</Left>
         <Height>0.78125in</Height>
         <Width>1.92708in</Width>
         <ZIndex>9</ZIndex>
@@ -879,8 +879,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>21.25708in</Top>
-        <Left>5.11125in</Left>
+        <Top>18.75708in</Top>
+        <Left>5.11126in</Left>
         <Height>0.78125in</Height>
         <Width>2.27083in</Width>
         <ZIndex>10</ZIndex>
@@ -909,8 +909,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>18.4723in</Top>
-        <Left>0.26562in</Left>
+        <Top>15.81611in</Top>
+        <Left>0.26561in</Left>
         <Height>0.25in</Height>
         <Width>6.5625in</Width>
         <ZIndex>11</ZIndex>
@@ -939,8 +939,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>17.17021in</Top>
-        <Left>0.26562in</Left>
+        <Top>14.60778in</Top>
+        <Left>0.26563in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
         <ZIndex>12</ZIndex>
@@ -969,7 +969,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>15.06605in</Top>
+        <Top>13.64945in</Top>
         <Left>0.26562in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
@@ -999,8 +999,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>13.67368in</Top>
-        <Left>0.26562in</Left>
+        <Top>12.69111in</Top>
+        <Left>0.26563in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
         <ZIndex>14</ZIndex>
@@ -1029,8 +1029,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>12.39591in</Top>
-        <Left>0.26562in</Left>
+        <Top>11.80222in</Top>
+        <Left>0.26563in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
         <ZIndex>15</ZIndex>
@@ -1067,7 +1067,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Thoi Gian Cong Tac</Value>
+                              <Value>Từ tháng, năm đến tháng, năm</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1097,7 +1097,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tom Tat</Value>
+                              <Value>Chức danh, chức vụ, đơn vị công tác (đảng, chính quyền, đoàn thể)</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1204,7 +1204,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>QuaTrinhCongTac</DataSetName>
-        <Top>12.85778in</Top>
+        <Top>12.12167in</Top>
         <Left>0.26562in</Left>
         <Height>0.5in</Height>
         <Width>7.39771in</Width>
@@ -1230,8 +1230,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>11.62514in</Top>
-        <Left>0.26562in</Left>
+        <Top>11.27445in</Top>
+        <Left>0.26563in</Left>
         <Height>0.45833in</Height>
         <Width>7.39771in</Width>
         <ZIndex>17</ZIndex>
@@ -1260,7 +1260,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>17.48966in</Top>
+        <Top>14.92722in</Top>
         <Left>0.26562in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
@@ -1304,7 +1304,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Quan He</Value>
+                              <Value>Quan Hệ</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1334,7 +1334,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ten Than Nhan</Value>
+                              <Value>Họ và tên</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1364,7 +1364,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Nam Sinh</Value>
+                              <Value>Năm Sinh</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1394,7 +1394,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Thong Tin Ca Nhan</Value>
+                              <Value>Quê quán, nghề nghiệp, chức danh, chức vụ, đơn vị công tác, học tập, nơi ở (trong, ngoài nước); thành viên các tổ chức chính trị, xã hội...</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
@@ -1563,7 +1563,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ThanNhan</DataSetName>
-        <Top>17.87167in</Top>
+        <Top>15.24667in</Top>
         <Left>0.26562in</Left>
         <Height>0.5in</Height>
         <Width>7.39771in</Width>
@@ -2459,8 +2459,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>BiBatTu</rd:DefaultName>
-        <Top>14.10083in</Top>
-        <Left>0.26562in</Left>
+        <Top>13.01056in</Top>
+        <Left>0.26563in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
         <ZIndex>49</ZIndex>
@@ -2489,7 +2489,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>LamViecChoCheDoCu</rd:DefaultName>
-        <Top>14.47236in</Top>
+        <Top>13.33in</Top>
         <Left>0.26562in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
@@ -2519,7 +2519,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>QuanHeVoiToChucNN</rd:DefaultName>
-        <Top>15.49667in</Top>
+        <Top>13.96889in</Top>
         <Left>0.26562in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
@@ -2549,7 +2549,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ThanhNhanONuocNgoai</rd:DefaultName>
-        <Top>15.93417in</Top>
+        <Top>14.28833in</Top>
         <Left>0.26562in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
@@ -2564,8 +2564,282 @@
           <PaddingBottom>2pt</PaddingBottom>
         </Style>
       </Textbox>
+      <Textbox Name="Textbox31">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value> - Quá trình lương của bản thân</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>16.10778in</Top>
+        <Left>0.26561in</Left>
+        <Height>0.25in</Height>
+        <Width>6.5625in</Width>
+        <ZIndex>53</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox32">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value> - Nguồn thu nhập chính của gia đình (hàng năm + lương)</Value>
+                <Style>
+                  <FontWeight>Bold</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>16.40819in</Top>
+        <Left>0.26561in</Left>
+        <Height>0.25in</Height>
+        <Width>6.5625in</Width>
+        <ZIndex>54</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox33">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value> + Các nguồn khác</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>16.77277in</Top>
+        <Left>0.77437in</Left>
+        <Height>0.25in</Height>
+        <Width>6.88896in</Width>
+        <ZIndex>55</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox34">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value> + Nhà ở</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>17.09222in</Top>
+        <Left>0.77436in</Left>
+        <Height>0.25in</Height>
+        <Width>1.26396in</Width>
+        <ZIndex>56</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NhaODuocCap">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!NhaODuocCap.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NhaODuocCap</rd:DefaultName>
+        <Top>17.09222in</Top>
+        <Left>2.10776in</Left>
+        <Height>0.25in</Height>
+        <Width>5.55556in</Width>
+        <ZIndex>57</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NhaOTuMua">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!NhaOTuMua.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NhaOTuMua</rd:DefaultName>
+        <Top>17.41166in</Top>
+        <Left>2.10776in</Left>
+        <Height>0.25in</Height>
+        <Width>5.55556in</Width>
+        <ZIndex>58</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="DienTichDatDuocCap">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!DienTichDatDuocCap.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>DienTichDatDuocCap</rd:DefaultName>
+        <Top>17.73111in</Top>
+        <Left>2.10776in</Left>
+        <Height>0.25in</Height>
+        <Width>5.55556in</Width>
+        <ZIndex>59</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox35">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value> + Đất ở</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox13</rd:DefaultName>
+        <Top>17.73111in</Top>
+        <Left>0.77436in</Left>
+        <Height>0.25in</Height>
+        <Width>1.26396in</Width>
+        <ZIndex>60</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="DienTichDatKinhDoanhTrangTrai">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!DienTichDatKinhDoanhTrangTrai.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>DienTichDatKinhDoanhTrangTrai</rd:DefaultName>
+        <Top>18.05055in</Top>
+        <Left>0.77437in</Left>
+        <Height>0.25in</Height>
+        <Width>6.88896in</Width>
+        <ZIndex>61</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
-    <Height>23.22584in</Height>
+    <Height>21.03834in</Height>
     <Style />
   </Body>
   <ReportParameters>
@@ -2800,6 +3074,8 @@
   </ReportParameters>
   <Width>8.11125in</Width>
   <Page>
+    <PageHeight>11.69in</PageHeight>
+    <PageWidth>8.27in</PageWidth>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>
     <TopMargin>1in</TopMargin>
