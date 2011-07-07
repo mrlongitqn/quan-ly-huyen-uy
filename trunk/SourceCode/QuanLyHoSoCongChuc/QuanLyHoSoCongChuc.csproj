@@ -545,11 +545,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Ds4RP1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ds4RP1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="FrmLoading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1274,17 +1269,6 @@
     </None>
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="Ds4RP1.xsc">
-      <DependentUpon>Ds4RP1.xsd</DependentUpon>
-    </None>
-    <None Include="Ds4RP1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>Ds4RP1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Ds4RP1.xss">
-      <DependentUpon>Ds4RP1.xsd</DependentUpon>
     </None>
     <EntityDeploy Include="Models\DataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

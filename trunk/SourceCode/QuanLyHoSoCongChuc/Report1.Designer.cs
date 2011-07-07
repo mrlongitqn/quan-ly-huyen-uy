@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
-            this.ds4RP1 = new QuanLyHoSoCongChuc.Ds4RP1();
-            ((System.ComponentModel.ISupportInitialize)(this.ds4RP1)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.ds4RP1)).BeginInit();
             this.SuspendLayout();
             // 
             // crystalReportViewer1
@@ -43,11 +42,7 @@
             this.crystalReportViewer1.Name = "crystalReportViewer1";
             this.crystalReportViewer1.Size = new System.Drawing.Size(651, 502);
             this.crystalReportViewer1.TabIndex = 0;
-            // 
-            // ds4RP1
-            // 
-            this.ds4RP1.DataSetName = "Ds4RP1";
-            this.ds4RP1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+
             // 
             // Report1
             // 
@@ -59,7 +54,7 @@
             this.Text = "Report1";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Report1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.ds4RP1)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.ds4RP1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -67,6 +62,5 @@
         #endregion
 
         private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
-        private Ds4RP1 ds4RP1;
     }
 }
