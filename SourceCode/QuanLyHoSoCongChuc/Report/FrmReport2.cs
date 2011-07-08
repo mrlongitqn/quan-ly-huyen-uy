@@ -45,6 +45,7 @@ namespace QuanLyHoSoCongChuc.Report
             sql += " left join NgheNghiep nn on nv.MaNgheNghiepTruocKhiDuocTuyenDung = nn.MaNgheNghiep";
             sql += " left join DacDiemLichSu ddls on nv.MaNhanVien = ddls.MaNhanVien";
             sql += " left join HoanCanhKinhTe hckt on nv.MaNhanVien = hckt.MaNhanVien";
+            sql += " left join TinhTrangSucKhoe ttsk on nv.MaTinhTrangSucKhoe = ttsk.MaTinhTrangSucKhoe";
             sql += " where nv.MaNhanVien='" + MaNV + "' ";
 
             SqlCommand cmd = new SqlCommand(sql);
@@ -152,7 +153,7 @@ namespace QuanLyHoSoCongChuc.Report
             parames[27] = new ReportParameter("KyLuat", "23) Kỷ luật: ", true);
 
             // Parameter 24
-            parames[28] = new ReportParameter("TinhTrangSucKhoe", "24) Tình trạng sức khỏe: ............. Cao ........ Cân nặng ...... Nhóm máu ....", true);
+            parames[28] = new ReportParameter("TinhTrangSucKhoe", "24) Tình trạng sức khỏe: " + NhanVienDt.Rows[0]["TenTinhTrangSucKhoe"] + ", Cao ........ Cân nặng ...... Nhóm máu ....", true);
 
             // Parameter 25
             parames[29] = new ReportParameter("CMND", "25) Số chứng minh nhân dân: " + NhanVienDt.Rows[0]["SoCMND"].ToString() + ". Thương binh loại: ..............Gia đình liệt sỹ: .............", true);
