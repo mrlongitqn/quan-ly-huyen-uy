@@ -46,6 +46,7 @@ namespace QuanLyHoSoCongChuc.Report
             sql += " left join DacDiemLichSu ddls on nv.MaNhanVien = ddls.MaNhanVien";
             sql += " left join HoanCanhKinhTe hckt on nv.MaNhanVien = hckt.MaNhanVien";
             sql += " left join TinhTrangSucKhoe ttsk on nv.MaTinhTrangSucKhoe = ttsk.MaTinhTrangSucKhoe";
+            sql += " left join LoaiThuongBinh ltb on nv.MaLoaiThuongBinh = ltb.MaLoaiThuongBinh";
             sql += " where nv.MaNhanVien='" + MaNV + "' ";
 
             SqlCommand cmd = new SqlCommand(sql);
@@ -135,7 +136,7 @@ namespace QuanLyHoSoCongChuc.Report
             parames[21] = new ReportParameter("LyLuanChinhTri", "- Lý luận chính trị: " + NhanVienDt.Rows[0]["TenBangLyLuanChinhTri"] + ".   - Ngoại ngữ: " + NhanVienDt.Rows[0]["TenBangNgoaiNgu"], true);
 
             // Parameter 18
-            parames[22] = new ReportParameter("CongTacChinh", "18) Công tác chính đang làm: ", true);
+            parames[22] = new ReportParameter("CongTacChinh", "18) Công tác chính đang làm: " + NhanVienDt.Rows[0]["CongViecChinh"], true);
 
             // Parameter 19
             parames[23] = new ReportParameter("NgachCongChuc", "19) Ngạch công chức: ............. (Mã số: ...........). Bậc lương: ......, hệ số: ..., từ tháng ...........", true);
@@ -156,7 +157,7 @@ namespace QuanLyHoSoCongChuc.Report
             parames[28] = new ReportParameter("TinhTrangSucKhoe", "24) Tình trạng sức khỏe: " + NhanVienDt.Rows[0]["TenTinhTrangSucKhoe"] + ", Cao ........ Cân nặng ...... Nhóm máu ....", true);
 
             // Parameter 25
-            parames[29] = new ReportParameter("CMND", "25) Số chứng minh nhân dân: " + NhanVienDt.Rows[0]["SoCMND"].ToString() + ". Thương binh loại: ..............Gia đình liệt sỹ: .............", true);
+            parames[29] = new ReportParameter("CMND", "25) Số chứng minh nhân dân: " + NhanVienDt.Rows[0]["SoCMND"].ToString() + ". Thương binh loại: " + NhanVienDt.Rows[0]["TenLoaiThuongBinh"].ToString() + ". Gia đình liệt sỹ: " + GetGiaDinhLietSy(NhanVienDt.Rows[0]["GiaDinhLietSy"].ToString()), true);
 
             // Parameter 28
             parames[30] = new ReportParameter("BiBatTu", "a) Khai rõ: bị bắt, bị tù (từ ngày tháng năm nào đến ngày tháng năm nào, ở đâu), đã khai báo cho ai, những vấn đề gì: " + NhanVienDt.Rows[0]["BiBatTu"].ToString(), true);
@@ -337,6 +338,11 @@ namespace QuanLyHoSoCongChuc.Report
                 return "Nữ";
             else
                 return "Nam";
+        }
+        public String GetGiaDinhLietSy(String Ma)
+        {
+            if (Ma == "True") return "Có";
+            else return "";
         }
     }
 }
