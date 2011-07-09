@@ -1,4 +1,5 @@
-﻿namespace QuanLyHoSoCongChuc.Report {
+﻿namespace QuanLyHoSoCongChuc
+{
     
     
     public partial class DSBaoCao1 {
