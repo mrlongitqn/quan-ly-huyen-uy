@@ -173,6 +173,7 @@ namespace QuanLyHoSoCongChuc.Report
             parames[36] = new ReportParameter("DienTichDatDuocCap", "+ Nhà tự mua, tự xây loại nhà: " + NhanVienDt.Rows[0]["DienTichDatDuocCap"].ToString() + "m2, tổng diện tích sử dụng: " + NhanVienDt.Rows[0]["DienTichDatTuMua"].ToString() + " m2", true);
             parames[37] = new ReportParameter("DienTichDatKinhDoanhTrangTrai", "- Đất sản xuất, kinh doanh: (Tổng diện tích đất được cấp, tự mua, tự khai phá...): " + NhanVienDt.Rows[0]["DienTichDatKinhDoanhTrangTrai"].ToString() + " m2", true);
 
+            this.reportViewer1.LocalReport.EnableExternalImages = true;
 
             this.reportViewer1.LocalReport.SetParameters(parames);
             ////////////////////////////////////////////////////////////////////////////
@@ -246,7 +247,32 @@ namespace QuanLyHoSoCongChuc.Report
 
             
             /////////////////////////////////////////////////////////////////////////////////////////////////////
+            ////////////////////////////////////////////////////////////////////////////
+            sql = "";
+            sql += " select HinhAnh from NhanVien";
+            sql += " where MaNhanVien='" + MaNV + "' ";
 
+
+            cmd = new SqlCommand(sql);
+            dataService.Load(cmd);
+
+            myDS = new DSBaoCao1();
+            myDt = dataService;
+
+            for (int i = 0; i < myDt.Rows.Count; i++)
+            {
+                DataRow myRow = dsBaoCao1.Tables["HinhAnhNhanVien"].NewRow();
+                myRow["HinhAnh"] = myDt.Rows[i]["HinhAnh"];
+
+                dsBaoCao1.Tables["HinhAnhNhanVien"].Rows.Add(myRow);
+            }
+
+
+            ReportDataSource rptDataSource4 = new ReportDataSource("HinhAnhNhanVien", dsBaoCao1.Tables["HinhAnhNhanVien"]);
+            this.reportViewer1.LocalReport.DataSources.Add(rptDataSource4);
+
+
+            /////////////////////////////////////////////////////////////////////////////////////////////////////
             sql = "";
             sql += " select * from NhanVien nv";
             sql += " join ThanNhan tn on nv.MaNhanVien = tn.MaNhanVien";

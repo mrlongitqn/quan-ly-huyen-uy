@@ -683,6 +683,13 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="HinhAnhNhanVien" msprop:Generator_TableClassName="HinhAnhNhanVienDataTable" msprop:Generator_TableVarName="tableHinhAnhNhanVien" msprop:Generator_TablePropName="HinhAnhNhanVien" msprop:Generator_RowDeletingName="HinhAnhNhanVienRowDeleting" msprop:Generator_UserTableName="HinhAnhNhanVien" msprop:Generator_RowChangingName="HinhAnhNhanVienRowChanging" msprop:Generator_RowEvHandlerName="HinhAnhNhanVienRowChangeEventHandler" msprop:Generator_RowDeletedName="HinhAnhNhanVienRowDeleted" msprop:Generator_RowEvArgName="HinhAnhNhanVienRowChangeEvent" msprop:Generator_RowChangedName="HinhAnhNhanVienRowChanged" msprop:Generator_RowClassName="HinhAnhNhanVienRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HinhAnh" msdata:ReadOnly="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnHinhAnh" msprop:Generator_ColumnPropNameInRow="HinhAnh" msprop:Generator_ColumnPropNameInTable="HinhAnhColumn" msprop:Generator_UserColumnName="HinhAnh" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">

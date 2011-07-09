@@ -69,7 +69,7 @@
 
             g.DrawString("Ủy ban nhân dân huyện Thạch Hà", LargeFont, Brushes.Black, (float)offset.X + 100.0f, (float)offset.Y + 35);
 
-            g.DrawString("SỐ HIỆU CÔNG CHỨCC: " + dto.MaNhanVien, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 75);
+            g.DrawString("SỐ HIỆU CÔNG CHỨC: " + dto.MaNhanVien, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 75);
 
             g.DrawString("HỌ VÀ TÊN: " + dto.HoTenKhaiSinh, LargeFont, Brushes.Black, (float)offset.X + 110.0f, (float)offset.Y + 100);
 
