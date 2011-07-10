@@ -30,6 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmThongTinNhanVien_TomTat));
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.txtCongViecChinh = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX1 = new DevComponents.DotNetBar.LabelX();
+            this.dtNgayTuyenDungChinhThuc = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
+            this.txtTuyenDungChinhThucTaiChiBo = new DevComponents.DotNetBar.Controls.TextBoxX();
+            this.labelX45 = new DevComponents.DotNetBar.LabelX();
+            this.labelX46 = new DevComponents.DotNetBar.LabelX();
             this.txtSoTheDangVien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX44 = new DevComponents.DotNetBar.LabelX();
             this.txtSoLyLich = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -139,13 +145,8 @@
             this.txtMaNhanVien = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX21 = new DevComponents.DotNetBar.LabelX();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.dtNgayTuyenDungChinhThuc = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
-            this.txtTuyenDungChinhThucTaiChiBo = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX45 = new DevComponents.DotNetBar.LabelX();
-            this.labelX46 = new DevComponents.DotNetBar.LabelX();
-            this.txtCongViecChinh = new DevComponents.DotNetBar.Controls.TextBoxX();
-            this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayTuyenDungChinhThuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtMienSHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayXuatNgu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayNhapNgu)).BeginInit();
@@ -154,7 +155,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayChinhThuc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayVaoDang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNv)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtNgayTuyenDungChinhThuc)).BeginInit();
             this.SuspendLayout();
             // 
             // groupPanel1
@@ -302,6 +302,105 @@
             this.groupPanel1.Style.TextLineAlignment = DevComponents.DotNetBar.eStyleTextAlignment.Near;
             this.groupPanel1.TabIndex = 0;
             // 
+            // txtCongViecChinh
+            // 
+            // 
+            // 
+            // 
+            this.txtCongViecChinh.Border.Class = "TextBoxBorder";
+            this.txtCongViecChinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCongViecChinh.Location = new System.Drawing.Point(148, 323);
+            this.txtCongViecChinh.Name = "txtCongViecChinh";
+            this.txtCongViecChinh.Size = new System.Drawing.Size(677, 20);
+            this.txtCongViecChinh.TabIndex = 18;
+            // 
+            // labelX1
+            // 
+            this.labelX1.BackColor = System.Drawing.Color.Transparent;
+            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX1.Location = new System.Drawing.Point(3, 322);
+            this.labelX1.Name = "labelX1";
+            this.labelX1.Size = new System.Drawing.Size(122, 20);
+            this.labelX1.TabIndex = 340;
+            this.labelX1.Text = "13. Công việc chính";
+            this.labelX1.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // dtNgayTuyenDungChinhThuc
+            // 
+            // 
+            // 
+            // 
+            this.dtNgayTuyenDungChinhThuc.BackgroundStyle.Class = "DateTimeInputBackground";
+            this.dtNgayTuyenDungChinhThuc.ButtonDropDown.Visible = true;
+            this.dtNgayTuyenDungChinhThuc.CustomFormat = "dd/MM/yyyy";
+            this.dtNgayTuyenDungChinhThuc.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
+            this.dtNgayTuyenDungChinhThuc.Location = new System.Drawing.Point(148, 271);
+            // 
+            // 
+            // 
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.ClearButtonVisible = true;
+            // 
+            // 
+            // 
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.DisplayMonth = new System.DateTime(2011, 6, 1, 0, 0, 0, 0);
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.MarkedDates = new System.DateTime[0];
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
+            // 
+            // 
+            // 
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
+            this.dtNgayTuyenDungChinhThuc.MonthCalendar.TodayButtonVisible = true;
+            this.dtNgayTuyenDungChinhThuc.Name = "dtNgayTuyenDungChinhThuc";
+            this.dtNgayTuyenDungChinhThuc.Size = new System.Drawing.Size(200, 20);
+            this.dtNgayTuyenDungChinhThuc.TabIndex = 14;
+            // 
+            // txtTuyenDungChinhThucTaiChiBo
+            // 
+            // 
+            // 
+            // 
+            this.txtTuyenDungChinhThucTaiChiBo.Border.Class = "TextBoxBorder";
+            this.txtTuyenDungChinhThucTaiChiBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTuyenDungChinhThucTaiChiBo.Location = new System.Drawing.Point(508, 271);
+            this.txtTuyenDungChinhThucTaiChiBo.Name = "txtTuyenDungChinhThucTaiChiBo";
+            this.txtTuyenDungChinhThucTaiChiBo.Size = new System.Drawing.Size(317, 20);
+            this.txtTuyenDungChinhThucTaiChiBo.TabIndex = 15;
+            // 
+            // labelX45
+            // 
+            this.labelX45.BackColor = System.Drawing.Color.Transparent;
+            this.labelX45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX45.Location = new System.Drawing.Point(380, 271);
+            this.labelX45.Name = "labelX45";
+            this.labelX45.Size = new System.Drawing.Size(105, 20);
+            this.labelX45.TabIndex = 336;
+            this.labelX45.Text = "Cơ quan tuyển dụng";
+            this.labelX45.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX46
+            // 
+            this.labelX46.BackColor = System.Drawing.Color.Transparent;
+            this.labelX46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX46.Location = new System.Drawing.Point(12, 270);
+            this.labelX46.Name = "labelX46";
+            this.labelX46.Size = new System.Drawing.Size(114, 20);
+            this.labelX46.TabIndex = 335;
+            this.labelX46.Text = "11.2 Ngày chính thức";
+            this.labelX46.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
             // txtSoTheDangVien
             // 
             // 
@@ -312,7 +411,7 @@
             this.txtSoTheDangVien.Location = new System.Drawing.Point(508, 9);
             this.txtSoTheDangVien.Name = "txtSoTheDangVien";
             this.txtSoTheDangVien.Size = new System.Drawing.Size(148, 20);
-            this.txtSoTheDangVien.TabIndex = 5;
+            this.txtSoTheDangVien.TabIndex = 1;
             this.txtSoTheDangVien.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoTheDangVien_KeyPress);
             // 
             // labelX44
@@ -336,7 +435,7 @@
             this.txtSoLyLich.Location = new System.Drawing.Point(148, 9);
             this.txtSoLyLich.Name = "txtSoLyLich";
             this.txtSoLyLich.Size = new System.Drawing.Size(200, 20);
-            this.txtSoLyLich.TabIndex = 4;
+            this.txtSoLyLich.TabIndex = 0;
             // 
             // labelX43
             // 
@@ -356,7 +455,7 @@
             this.btnMaChucVuKiemNhiem.Location = new System.Drawing.Point(662, 292);
             this.btnMaChucVuKiemNhiem.Name = "btnMaChucVuKiemNhiem";
             this.btnMaChucVuKiemNhiem.Size = new System.Drawing.Size(28, 27);
-            this.btnMaChucVuKiemNhiem.TabIndex = 9;
+            this.btnMaChucVuKiemNhiem.TabIndex = 17;
             this.btnMaChucVuKiemNhiem.UseVisualStyleBackColor = true;
             this.btnMaChucVuKiemNhiem.Click += new System.EventHandler(this.btnMaChucVuKiemNhiem_Click);
             // 
@@ -391,7 +490,7 @@
             this.btnChonHuong85.Location = new System.Drawing.Point(708, 691);
             this.btnChonHuong85.Name = "btnChonHuong85";
             this.btnChonHuong85.Size = new System.Drawing.Size(28, 27);
-            this.btnChonHuong85.TabIndex = 11;
+            this.btnChonHuong85.TabIndex = 44;
             this.btnChonHuong85.UseVisualStyleBackColor = true;
             this.btnChonHuong85.Click += new System.EventHandler(this.btnChonHuong85_Click);
             // 
@@ -426,7 +525,7 @@
             this.btnChonNgach.Location = new System.Drawing.Point(354, 694);
             this.btnChonNgach.Name = "btnChonNgach";
             this.btnChonNgach.Size = new System.Drawing.Size(28, 27);
-            this.btnChonNgach.TabIndex = 10;
+            this.btnChonNgach.TabIndex = 43;
             this.btnChonNgach.UseVisualStyleBackColor = true;
             this.btnChonNgach.Click += new System.EventHandler(this.btnChonNgach_Click);
             // 
@@ -461,7 +560,7 @@
             this.btnChonChucVu.Location = new System.Drawing.Point(354, 292);
             this.btnChonChucVu.Name = "btnChonChucVu";
             this.btnChonChucVu.Size = new System.Drawing.Size(28, 27);
-            this.btnChonChucVu.TabIndex = 8;
+            this.btnChonChucVu.TabIndex = 16;
             this.btnChonChucVu.UseVisualStyleBackColor = true;
             this.btnChonChucVu.Click += new System.EventHandler(this.btnChonChucVu_Click);
             // 
@@ -697,7 +796,7 @@
             this.dtMienSHD.MonthCalendar.TodayButtonVisible = true;
             this.dtMienSHD.Name = "dtMienSHD";
             this.dtMienSHD.Size = new System.Drawing.Size(200, 20);
-            this.dtMienSHD.TabIndex = 304;
+            this.dtMienSHD.TabIndex = 45;
             // 
             // dtNgayXuatNgu
             // 
@@ -739,7 +838,7 @@
             this.dtNgayXuatNgu.MonthCalendar.TodayButtonVisible = true;
             this.dtNgayXuatNgu.Name = "dtNgayXuatNgu";
             this.dtNgayXuatNgu.Size = new System.Drawing.Size(200, 20);
-            this.dtNgayXuatNgu.TabIndex = 303;
+            this.dtNgayXuatNgu.TabIndex = 35;
             // 
             // dtNgayNhapNgu
             // 
@@ -781,7 +880,7 @@
             this.dtNgayNhapNgu.MonthCalendar.TodayButtonVisible = true;
             this.dtNgayNhapNgu.Name = "dtNgayNhapNgu";
             this.dtNgayNhapNgu.Size = new System.Drawing.Size(200, 20);
-            this.dtNgayNhapNgu.TabIndex = 302;
+            this.dtNgayNhapNgu.TabIndex = 34;
             // 
             // dtNgayVaoDoan
             // 
@@ -823,7 +922,7 @@
             this.dtNgayVaoDoan.MonthCalendar.TodayButtonVisible = true;
             this.dtNgayVaoDoan.Name = "dtNgayVaoDoan";
             this.dtNgayVaoDoan.Size = new System.Drawing.Size(200, 20);
-            this.dtNgayVaoDoan.TabIndex = 301;
+            this.dtNgayVaoDoan.TabIndex = 41;
             // 
             // dtNgayTuyenDung
             // 
@@ -865,7 +964,7 @@
             this.dtNgayTuyenDung.MonthCalendar.TodayButtonVisible = true;
             this.dtNgayTuyenDung.Name = "dtNgayTuyenDung";
             this.dtNgayTuyenDung.Size = new System.Drawing.Size(200, 20);
-            this.dtNgayTuyenDung.TabIndex = 300;
+            this.dtNgayTuyenDung.TabIndex = 12;
             // 
             // dtNgayChinhThuc
             // 
@@ -907,7 +1006,7 @@
             this.dtNgayChinhThuc.MonthCalendar.TodayButtonVisible = true;
             this.dtNgayChinhThuc.Name = "dtNgayChinhThuc";
             this.dtNgayChinhThuc.Size = new System.Drawing.Size(200, 20);
-            this.dtNgayChinhThuc.TabIndex = 299;
+            this.dtNgayChinhThuc.TabIndex = 31;
             // 
             // dtNgayVaoDang
             // 
@@ -949,7 +1048,7 @@
             this.dtNgayVaoDang.MonthCalendar.TodayButtonVisible = true;
             this.dtNgayVaoDang.Name = "dtNgayVaoDang";
             this.dtNgayVaoDang.Size = new System.Drawing.Size(200, 20);
-            this.dtNgayVaoDang.TabIndex = 298;
+            this.dtNgayVaoDang.TabIndex = 25;
             // 
             // btnChonThuongBinh
             // 
@@ -958,7 +1057,7 @@
             this.btnChonThuongBinh.Location = new System.Drawing.Point(354, 613);
             this.btnChonThuongBinh.Name = "btnChonThuongBinh";
             this.btnChonThuongBinh.Size = new System.Drawing.Size(28, 27);
-            this.btnChonThuongBinh.TabIndex = 289;
+            this.btnChonThuongBinh.TabIndex = 37;
             this.btnChonThuongBinh.UseVisualStyleBackColor = true;
             this.btnChonThuongBinh.Click += new System.EventHandler(this.btnChonThuongBinh_Click);
             // 
@@ -969,7 +1068,7 @@
             this.btnChonTinhTrangSucKhoe.Location = new System.Drawing.Point(354, 587);
             this.btnChonTinhTrangSucKhoe.Name = "btnChonTinhTrangSucKhoe";
             this.btnChonTinhTrangSucKhoe.Size = new System.Drawing.Size(28, 27);
-            this.btnChonTinhTrangSucKhoe.TabIndex = 288;
+            this.btnChonTinhTrangSucKhoe.TabIndex = 36;
             this.btnChonTinhTrangSucKhoe.UseVisualStyleBackColor = true;
             this.btnChonTinhTrangSucKhoe.Click += new System.EventHandler(this.btnChonTinhTrangSucKhoe_Click);
             // 
@@ -980,7 +1079,7 @@
             this.btnChonHocHam.Location = new System.Drawing.Point(714, 399);
             this.btnChonHocHam.Name = "btnChonHocHam";
             this.btnChonHocHam.Size = new System.Drawing.Size(28, 27);
-            this.btnChonHocHam.TabIndex = 287;
+            this.btnChonHocHam.TabIndex = 24;
             this.btnChonHocHam.UseVisualStyleBackColor = true;
             this.btnChonHocHam.Click += new System.EventHandler(this.btnChonHocHam_Click);
             // 
@@ -991,7 +1090,7 @@
             this.btnChonHocViCaoNhat.Location = new System.Drawing.Point(354, 399);
             this.btnChonHocViCaoNhat.Name = "btnChonHocViCaoNhat";
             this.btnChonHocViCaoNhat.Size = new System.Drawing.Size(28, 27);
-            this.btnChonHocViCaoNhat.TabIndex = 286;
+            this.btnChonHocViCaoNhat.TabIndex = 23;
             this.btnChonHocViCaoNhat.UseVisualStyleBackColor = true;
             this.btnChonHocViCaoNhat.Click += new System.EventHandler(this.btnChonHocViCaoNhat_Click);
             // 
@@ -1002,7 +1101,7 @@
             this.btnChonNgoaiNgu.Location = new System.Drawing.Point(714, 371);
             this.btnChonNgoaiNgu.Name = "btnChonNgoaiNgu";
             this.btnChonNgoaiNgu.Size = new System.Drawing.Size(28, 27);
-            this.btnChonNgoaiNgu.TabIndex = 285;
+            this.btnChonNgoaiNgu.TabIndex = 22;
             this.btnChonNgoaiNgu.UseVisualStyleBackColor = true;
             this.btnChonNgoaiNgu.Click += new System.EventHandler(this.btnChonNgoaiNgu_Click);
             // 
@@ -1013,7 +1112,7 @@
             this.btnChonLLCT.Location = new System.Drawing.Point(354, 371);
             this.btnChonLLCT.Name = "btnChonLLCT";
             this.btnChonLLCT.Size = new System.Drawing.Size(28, 27);
-            this.btnChonLLCT.TabIndex = 284;
+            this.btnChonLLCT.TabIndex = 21;
             this.btnChonLLCT.UseVisualStyleBackColor = true;
             this.btnChonLLCT.Click += new System.EventHandler(this.btnChonLLCT_Click);
             // 
@@ -1024,7 +1123,7 @@
             this.btnChonCMNV.Location = new System.Drawing.Point(714, 344);
             this.btnChonCMNV.Name = "btnChonCMNV";
             this.btnChonCMNV.Size = new System.Drawing.Size(28, 27);
-            this.btnChonCMNV.TabIndex = 283;
+            this.btnChonCMNV.TabIndex = 20;
             this.btnChonCMNV.UseVisualStyleBackColor = true;
             this.btnChonCMNV.Click += new System.EventHandler(this.btnChonCMNV_Click);
             // 
@@ -1035,7 +1134,7 @@
             this.btnChonGDPT.Location = new System.Drawing.Point(354, 344);
             this.btnChonGDPT.Name = "btnChonGDPT";
             this.btnChonGDPT.Size = new System.Drawing.Size(28, 27);
-            this.btnChonGDPT.TabIndex = 282;
+            this.btnChonGDPT.TabIndex = 19;
             this.btnChonGDPT.UseVisualStyleBackColor = true;
             this.btnChonGDPT.Click += new System.EventHandler(this.btnChonGDPT_Click);
             // 
@@ -1046,7 +1145,7 @@
             this.btnChonNgheNghiepTruocKhiDuocTuyenDung.Location = new System.Drawing.Point(662, 215);
             this.btnChonNgheNghiepTruocKhiDuocTuyenDung.Name = "btnChonNgheNghiepTruocKhiDuocTuyenDung";
             this.btnChonNgheNghiepTruocKhiDuocTuyenDung.Size = new System.Drawing.Size(28, 27);
-            this.btnChonNgheNghiepTruocKhiDuocTuyenDung.TabIndex = 17;
+            this.btnChonNgheNghiepTruocKhiDuocTuyenDung.TabIndex = 11;
             this.btnChonNgheNghiepTruocKhiDuocTuyenDung.UseVisualStyleBackColor = true;
             this.btnChonNgheNghiepTruocKhiDuocTuyenDung.Click += new System.EventHandler(this.btnChonNgheNghiepTruocKhiDuocTuyenDung_Click);
             // 
@@ -1057,7 +1156,7 @@
             this.btnChonTonGiao.Location = new System.Drawing.Point(662, 136);
             this.btnChonTonGiao.Name = "btnChonTonGiao";
             this.btnChonTonGiao.Size = new System.Drawing.Size(28, 27);
-            this.btnChonTonGiao.TabIndex = 15;
+            this.btnChonTonGiao.TabIndex = 8;
             this.btnChonTonGiao.UseVisualStyleBackColor = true;
             this.btnChonTonGiao.Click += new System.EventHandler(this.btnChonTonGiao_Click);
             // 
@@ -1068,7 +1167,7 @@
             this.btnChonThanhPhanXuatThan.Location = new System.Drawing.Point(708, 719);
             this.btnChonThanhPhanXuatThan.Name = "btnChonThanhPhanXuatThan";
             this.btnChonThanhPhanXuatThan.Size = new System.Drawing.Size(28, 27);
-            this.btnChonThanhPhanXuatThan.TabIndex = 16;
+            this.btnChonThanhPhanXuatThan.TabIndex = 46;
             this.btnChonThanhPhanXuatThan.UseVisualStyleBackColor = true;
             this.btnChonThanhPhanXuatThan.Click += new System.EventHandler(this.btnChonThanhPhanXuatThan_Click);
             // 
@@ -1079,7 +1178,7 @@
             this.btnChonDanToc.Location = new System.Drawing.Point(354, 135);
             this.btnChonDanToc.Name = "btnChonDanToc";
             this.btnChonDanToc.Size = new System.Drawing.Size(28, 27);
-            this.btnChonDanToc.TabIndex = 14;
+            this.btnChonDanToc.TabIndex = 7;
             this.btnChonDanToc.UseVisualStyleBackColor = true;
             this.btnChonDanToc.Click += new System.EventHandler(this.btnChonDanToc_Click);
             // 
@@ -1101,7 +1200,7 @@
             this.ckbxGiaDinhCoCongCM.Location = new System.Drawing.Point(636, 615);
             this.ckbxGiaDinhCoCongCM.Name = "ckbxGiaDinhCoCongCM";
             this.ckbxGiaDinhCoCongCM.Size = new System.Drawing.Size(149, 23);
-            this.ckbxGiaDinhCoCongCM.TabIndex = 275;
+            this.ckbxGiaDinhCoCongCM.TabIndex = 39;
             this.ckbxGiaDinhCoCongCM.Text = "Gia đình có công với CM";
             // 
             // ckbxGiaDinhLietSy
@@ -1111,7 +1210,7 @@
             this.ckbxGiaDinhLietSy.Location = new System.Drawing.Point(493, 616);
             this.ckbxGiaDinhLietSy.Name = "ckbxGiaDinhLietSy";
             this.ckbxGiaDinhLietSy.Size = new System.Drawing.Size(106, 23);
-            this.ckbxGiaDinhLietSy.TabIndex = 274;
+            this.ckbxGiaDinhLietSy.TabIndex = 38;
             this.ckbxGiaDinhLietSy.Text = "Gia đình liệt sỹ";
             // 
             // labelX39
@@ -1135,7 +1234,7 @@
             this.txtChiDoan.Location = new System.Drawing.Point(508, 670);
             this.txtChiDoan.Name = "txtChiDoan";
             this.txtChiDoan.Size = new System.Drawing.Size(317, 20);
-            this.txtChiDoan.TabIndex = 262;
+            this.txtChiDoan.TabIndex = 42;
             // 
             // labelX38
             // 
@@ -1158,7 +1257,7 @@
             this.txtCoQuanTuyenDung.Location = new System.Drawing.Point(508, 245);
             this.txtCoQuanTuyenDung.Name = "txtCoQuanTuyenDung";
             this.txtCoQuanTuyenDung.Size = new System.Drawing.Size(317, 20);
-            this.txtCoQuanTuyenDung.TabIndex = 259;
+            this.txtCoQuanTuyenDung.TabIndex = 13;
             // 
             // labelX37
             // 
@@ -1181,7 +1280,7 @@
             this.txtTaiChiBoChinhThuc.Location = new System.Drawing.Point(508, 514);
             this.txtTaiChiBoChinhThuc.Name = "txtTaiChiBoChinhThuc";
             this.txtTaiChiBoChinhThuc.Size = new System.Drawing.Size(317, 20);
-            this.txtTaiChiBoChinhThuc.TabIndex = 256;
+            this.txtTaiChiBoChinhThuc.TabIndex = 32;
             // 
             // labelX36
             // 
@@ -1204,7 +1303,7 @@
             this.txtChucVuNguoi2.Location = new System.Drawing.Point(508, 488);
             this.txtChucVuNguoi2.Name = "txtChucVuNguoi2";
             this.txtChucVuNguoi2.Size = new System.Drawing.Size(317, 20);
-            this.txtChucVuNguoi2.TabIndex = 253;
+            this.txtChucVuNguoi2.TabIndex = 30;
             // 
             // labelX35
             // 
@@ -1227,7 +1326,7 @@
             this.txtChucVuNguoi1.Location = new System.Drawing.Point(508, 462);
             this.txtChucVuNguoi1.Name = "txtChucVuNguoi1";
             this.txtChucVuNguoi1.Size = new System.Drawing.Size(317, 20);
-            this.txtChucVuNguoi1.TabIndex = 251;
+            this.txtChucVuNguoi1.TabIndex = 28;
             // 
             // labelX34
             // 
@@ -1250,7 +1349,7 @@
             this.txtTaiChiBoVaoDang.Location = new System.Drawing.Point(508, 436);
             this.txtTaiChiBoVaoDang.Name = "txtTaiChiBoVaoDang";
             this.txtTaiChiBoVaoDang.Size = new System.Drawing.Size(317, 20);
-            this.txtTaiChiBoVaoDang.TabIndex = 248;
+            this.txtTaiChiBoVaoDang.TabIndex = 26;
             // 
             // labelX33
             // 
@@ -1273,7 +1372,7 @@
             this.txtSoCMND.Location = new System.Drawing.Point(148, 644);
             this.txtSoCMND.Name = "txtSoCMND";
             this.txtSoCMND.Size = new System.Drawing.Size(200, 20);
-            this.txtSoCMND.TabIndex = 246;
+            this.txtSoCMND.TabIndex = 40;
             // 
             // labelX32
             // 
@@ -1395,7 +1494,7 @@
             this.txtThamGiaCTXH.Location = new System.Drawing.Point(148, 540);
             this.txtThamGiaCTXH.Name = "txtThamGiaCTXH";
             this.txtThamGiaCTXH.Size = new System.Drawing.Size(677, 20);
-            this.txtThamGiaCTXH.TabIndex = 222;
+            this.txtThamGiaCTXH.TabIndex = 33;
             // 
             // labelX8
             // 
@@ -1451,7 +1550,7 @@
             this.txtNguoiGioiThieu2.Location = new System.Drawing.Point(148, 488);
             this.txtNguoiGioiThieu2.Name = "txtNguoiGioiThieu2";
             this.txtNguoiGioiThieu2.Size = new System.Drawing.Size(200, 20);
-            this.txtNguoiGioiThieu2.TabIndex = 214;
+            this.txtNguoiGioiThieu2.TabIndex = 29;
             // 
             // labelX4
             // 
@@ -1474,7 +1573,7 @@
             this.txtNguoiGioiThieu1.Location = new System.Drawing.Point(148, 462);
             this.txtNguoiGioiThieu1.Name = "txtNguoiGioiThieu1";
             this.txtNguoiGioiThieu1.Size = new System.Drawing.Size(200, 20);
-            this.txtNguoiGioiThieu1.TabIndex = 212;
+            this.txtNguoiGioiThieu1.TabIndex = 27;
             // 
             // labelX3
             // 
@@ -1581,7 +1680,7 @@
             this.btnChonQueQuan.Location = new System.Drawing.Point(662, 109);
             this.btnChonQueQuan.Name = "btnChonQueQuan";
             this.btnChonQueQuan.Size = new System.Drawing.Size(28, 27);
-            this.btnChonQueQuan.TabIndex = 196;
+            this.btnChonQueQuan.TabIndex = 6;
             this.btnChonQueQuan.UseVisualStyleBackColor = true;
             this.btnChonQueQuan.Click += new System.EventHandler(this.btnChonQueQuan_Click);
             // 
@@ -1592,7 +1691,7 @@
             this.btnChonNoiSinh.Location = new System.Drawing.Point(662, 82);
             this.btnChonNoiSinh.Name = "btnChonNoiSinh";
             this.btnChonNoiSinh.Size = new System.Drawing.Size(28, 27);
-            this.btnChonNoiSinh.TabIndex = 195;
+            this.btnChonNoiSinh.TabIndex = 5;
             this.btnChonNoiSinh.UseVisualStyleBackColor = true;
             this.btnChonNoiSinh.Click += new System.EventHandler(this.btnChonNoiSinh_Click);
             // 
@@ -1683,7 +1782,7 @@
             this.txtNoiOHienNay.Location = new System.Drawing.Point(148, 193);
             this.txtNoiOHienNay.Name = "txtNoiOHienNay";
             this.txtNoiOHienNay.Size = new System.Drawing.Size(542, 20);
-            this.txtNoiOHienNay.TabIndex = 13;
+            this.txtNoiOHienNay.TabIndex = 10;
             // 
             // txtHoKhau
             // 
@@ -1695,7 +1794,7 @@
             this.txtHoKhau.Location = new System.Drawing.Point(148, 167);
             this.txtHoKhau.Name = "txtHoKhau";
             this.txtHoKhau.Size = new System.Drawing.Size(542, 20);
-            this.txtHoKhau.TabIndex = 12;
+            this.txtHoKhau.TabIndex = 9;
             // 
             // labelX18
             // 
@@ -1718,7 +1817,7 @@
             this.txtHoTenDangDung.Location = new System.Drawing.Point(148, 61);
             this.txtHoTenDangDung.Name = "txtHoTenDangDung";
             this.txtHoTenDangDung.Size = new System.Drawing.Size(542, 20);
-            this.txtHoTenDangDung.TabIndex = 2;
+            this.txtHoTenDangDung.TabIndex = 4;
             // 
             // labelX19
             // 
@@ -1764,7 +1863,7 @@
             this.txtMaNhanVien.Location = new System.Drawing.Point(148, 35);
             this.txtMaNhanVien.Name = "txtMaNhanVien";
             this.txtMaNhanVien.Size = new System.Drawing.Size(138, 20);
-            this.txtMaNhanVien.TabIndex = 1;
+            this.txtMaNhanVien.TabIndex = 2;
             // 
             // labelX21
             // 
@@ -1781,105 +1880,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // dtNgayTuyenDungChinhThuc
-            // 
-            // 
-            // 
-            // 
-            this.dtNgayTuyenDungChinhThuc.BackgroundStyle.Class = "DateTimeInputBackground";
-            this.dtNgayTuyenDungChinhThuc.ButtonDropDown.Visible = true;
-            this.dtNgayTuyenDungChinhThuc.CustomFormat = "dd/MM/yyyy";
-            this.dtNgayTuyenDungChinhThuc.Format = DevComponents.Editors.eDateTimePickerFormat.Custom;
-            this.dtNgayTuyenDungChinhThuc.Location = new System.Drawing.Point(148, 271);
-            // 
-            // 
-            // 
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.AnnuallyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.BackgroundStyle.BackColor = System.Drawing.SystemColors.Window;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.ClearButtonVisible = true;
-            // 
-            // 
-            // 
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground2;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarBackground;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BorderTop = DevComponents.DotNetBar.eStyleBorderType.Solid;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BorderTopColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.BarDockedBorder;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.CommandsBackgroundStyle.BorderTopWidth = 1;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.DisplayMonth = new System.DateTime(2011, 6, 1, 0, 0, 0, 0);
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.MarkedDates = new System.DateTime[0];
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.MonthlyMarkedDates = new System.DateTime[0];
-            // 
-            // 
-            // 
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.NavigationBackgroundStyle.BackColor2SchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground2;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.NavigationBackgroundStyle.BackColorGradientAngle = 90;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.NavigationBackgroundStyle.BackColorSchemePart = DevComponents.DotNetBar.eColorSchemePart.PanelBackground;
-            this.dtNgayTuyenDungChinhThuc.MonthCalendar.TodayButtonVisible = true;
-            this.dtNgayTuyenDungChinhThuc.Name = "dtNgayTuyenDungChinhThuc";
-            this.dtNgayTuyenDungChinhThuc.Size = new System.Drawing.Size(200, 20);
-            this.dtNgayTuyenDungChinhThuc.TabIndex = 338;
-            // 
-            // txtTuyenDungChinhThucTaiChiBo
-            // 
-            // 
-            // 
-            // 
-            this.txtTuyenDungChinhThucTaiChiBo.Border.Class = "TextBoxBorder";
-            this.txtTuyenDungChinhThucTaiChiBo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTuyenDungChinhThucTaiChiBo.Location = new System.Drawing.Point(508, 271);
-            this.txtTuyenDungChinhThucTaiChiBo.Name = "txtTuyenDungChinhThucTaiChiBo";
-            this.txtTuyenDungChinhThucTaiChiBo.Size = new System.Drawing.Size(317, 20);
-            this.txtTuyenDungChinhThucTaiChiBo.TabIndex = 337;
-            // 
-            // labelX45
-            // 
-            this.labelX45.BackColor = System.Drawing.Color.Transparent;
-            this.labelX45.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX45.Location = new System.Drawing.Point(380, 271);
-            this.labelX45.Name = "labelX45";
-            this.labelX45.Size = new System.Drawing.Size(105, 20);
-            this.labelX45.TabIndex = 336;
-            this.labelX45.Text = "Cơ quan tuyển dụng";
-            this.labelX45.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // labelX46
-            // 
-            this.labelX46.BackColor = System.Drawing.Color.Transparent;
-            this.labelX46.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX46.Location = new System.Drawing.Point(12, 270);
-            this.labelX46.Name = "labelX46";
-            this.labelX46.Size = new System.Drawing.Size(114, 20);
-            this.labelX46.TabIndex = 335;
-            this.labelX46.Text = "11.2 Ngày chính thức";
-            this.labelX46.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
-            // txtCongViecChinh
-            // 
-            // 
-            // 
-            // 
-            this.txtCongViecChinh.Border.Class = "TextBoxBorder";
-            this.txtCongViecChinh.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCongViecChinh.Location = new System.Drawing.Point(148, 323);
-            this.txtCongViecChinh.Name = "txtCongViecChinh";
-            this.txtCongViecChinh.Size = new System.Drawing.Size(677, 20);
-            this.txtCongViecChinh.TabIndex = 339;
-            // 
-            // labelX1
-            // 
-            this.labelX1.BackColor = System.Drawing.Color.Transparent;
-            this.labelX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX1.Location = new System.Drawing.Point(3, 322);
-            this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(122, 20);
-            this.labelX1.TabIndex = 340;
-            this.labelX1.Text = "13. Công việc chính";
-            this.labelX1.TextAlignment = System.Drawing.StringAlignment.Far;
-            // 
             // FrmThongTinNhanVien_TomTat
             // 
             this.ClientSize = new System.Drawing.Size(859, 770);
@@ -1891,6 +1891,7 @@
             this.Load += new System.EventHandler(this.FrmThongTinNhanVien_TomTat_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtNgayTuyenDungChinhThuc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtMienSHD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayXuatNgu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayNhapNgu)).EndInit();
@@ -1899,7 +1900,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayChinhThuc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtNgayVaoDang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picNv)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtNgayTuyenDungChinhThuc)).EndInit();
             this.ResumeLayout(false);
 
         }
