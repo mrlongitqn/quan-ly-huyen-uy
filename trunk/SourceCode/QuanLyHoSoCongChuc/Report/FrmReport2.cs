@@ -38,9 +38,12 @@ namespace QuanLyHoSoCongChuc.Report
             sql += "                  )) as temp on nv.MaNhanVien = temp.MaNhanVien";
             sql += " left join ThanhPhanGiaDinh tpgd on nv.MaThanhPhanGiaDinh = tpgd.MaThanhPhanGiaDinh";
             sql += " left join HocVi hv on nv.MaHocVi = hv.MaHocVi";
+            sql += " left join HocHam hh on nv.MaHocHam = hh.MaHocHam";
             sql += " left join DanToc dv on nv.MaDanToc = dv.MaDanToc";
             sql += " left join TonGiao tg on nv.MaDanToc = tg.MaTonGiao";
             sql += " left join BangLyLuanChinhTri llct on nv.MaBangLyLuanChinhTri = llct.MaBangLyLuanChinhTri";
+            sql += " left join BangGiaoDucPhoThong gdpt on nv.MaBangGiaoDucPhoThong = gdpt.MaBangGiaoDucPhoThong";
+            sql += " left join BangChuyenMonNghiepVu cmnv on nv.MaBangChuyenMonNghiepVu = cmnv.MaBangChuyenMonNghiepVu";
             sql += " left join BangNgoaiNgu bnn on nv.MaBangNgoaiNgu = bnn.MaBangNgoaiNgu";
             sql += " left join NgheNghiep nn on nv.MaNgheNghiepTruocKhiDuocTuyenDung = nn.MaNgheNghiep";
             sql += " left join DacDiemLichSu ddls on nv.MaNhanVien = ddls.MaNhanVien";
@@ -54,125 +57,142 @@ namespace QuanLyHoSoCongChuc.Report
 
             DataTable NhanVienDt = dataService;
 
-            ReportParameter[] parames = new ReportParameter[38];
+            ReportParameter[] parames = new ReportParameter[48];
+            // Parameter 0
+            
+            parames[0] = new ReportParameter("HoTen", "1) Họ và tên: " + NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString() + ".            Giới tính: " + getGioiTinh(NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString()), true);
+
             // Parameter 1
-            parames[0] = new ReportParameter("HoTen", "1) Họ và tên: " + NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString() + ". Giới tính: " + getGioiTinh(NhanVienDt.Rows[0]["HoTenKhaiSinh"].ToString()), true);
-
-            // Parameter 2
-            parames[5] = new ReportParameter("TenKhac", "2) Các tên gọi khác: ", true);
-
-            // Parameter 3
-            parames[6] = new ReportParameter("CapUy", "3) Cấp hủy hiện tại..........................., Cấp ủy kiêm..............", true);
-            parames[1] = new ReportParameter("ChucVu", "- Chức vụ: " + NhanVienDt.Rows[0]["TenChucVu"].ToString() , true);
-            parames[2] = new ReportParameter("HeSoPhuCap", "- Hệ số phụ cấp: " + NhanVienDt.Rows[0]["HeSoPhuCapChucVu"].ToString(), true);
-
-            // Parameter 4
             DateTime MyDateTime = new DateTime();
             String MyString = NhanVienDt.Rows[0]["NgaySinh"].ToString();
             MyDateTime = Convert.ToDateTime(MyString);
 
-            parames[3] = new ReportParameter("NgaySinh", "4) Sinh ngày: " + MyDateTime.Day + " tháng " + MyDateTime.Month + " năm " + MyDateTime.Year, true);
+            parames[1] = new ReportParameter("NgaySinh", "2) Sinh ngày: " + MyDateTime.Day + " tháng " + MyDateTime.Month + " năm " + MyDateTime.Year, true);
+
+            // Parameter 2
+            parames[2] = new ReportParameter("TenKhac", "3) Các tên gọi khác: " + NhanVienDt.Rows[0]["HoTenDangDung"].ToString(), true);
+
+            // Parameter 3
+            parames[3] = new ReportParameter("NoiSinh", "4) Nơi sinh: " + NhanVienDt.Rows[0]["NoiSinh"].ToString(), true);
+
+            // Parameter 4
+            parames[4] = new ReportParameter("QueQuan", "5) Quê quán: " + NhanVienDt.Rows[0]["QueQuan"].ToString(), true);
 
             // Parameter 5
-            parames[4] = new ReportParameter("NoiSinh", "5) Nơi sinh: " + NhanVienDt.Rows[0]["NoiSinh"].ToString(), true);
+            parames[5] = new ReportParameter("DanToc", "6) Dân tộc: " + NhanVienDt.Rows[0]["TenDanToc"].ToString(), true);
 
             // Parameter 6
-            parames[7] = new ReportParameter("QueQuan", "6) Quê quán: " + NhanVienDt.Rows[0]["QueQuan"].ToString(), true);
+            parames[6] = new ReportParameter("TonGiao", "7) Tôn giáo: " + NhanVienDt.Rows[0]["TenTonGiao"].ToString(), true);
 
             // Parameter 7
-            parames[8] = new ReportParameter("NoiOHienNay", "7) Nơi ở hiện nay: " + NhanVienDt.Rows[0]["NoiOHienNay"].ToString(), true);
-
-            // Parameter 7b
-
-            parames[9] = new ReportParameter("DienThoai", "- Điện thoại: " + NhanVienDt.Rows[0]["SoDienThoai"].ToString(), true);
+            parames[7] = new ReportParameter("HoKhau", "8) Hộ khẩu thường trú: " + NhanVienDt.Rows[0]["HoKhau"].ToString(), true);
 
             // Parameter 8
-            parames[10] = new ReportParameter("DanToc", "8) Dân tộc: " + NhanVienDt.Rows[0]["TenDanToc"], true);
+            parames[8] = new ReportParameter("NoiOHienNay", "9) Nơi ở hiện nay: " + NhanVienDt.Rows[0]["NoiOHienNay"].ToString(), true);
 
             // Parameter 9
-            parames[11] = new ReportParameter("TonGiao", "9) Tôn giáo: " + NhanVienDt.Rows[0]["TenTonGiao"], true);
+            parames[9] = new ReportParameter("NgheNghiep", "10) Nghề nghiệp bản thân trước khi được tuyển dụng: " + NhanVienDt.Rows[0]["TenNgheNghiep"].ToString(), true);
 
             // Parameter 10
-            parames[12] = new ReportParameter("XuatThan", "10) Thành phần gia đình xuất thân: " + NhanVienDt.Rows[0]["TenThanhPhanGiaDinh"], true);
+            parames[10] = new ReportParameter("NgayDuocTuyenDung", "11) Ngày tuyển dụng: " + (NhanVienDt.Rows[0]["NgayTuyenDung"].ToString() == "" ? "" : String.Format("{0:dd/MM/yyyy}", DateTime.Parse(NhanVienDt.Rows[0]["NgayTuyenDung"].ToString()))), true);
 
             // Parameter 11
-            parames[13] = new ReportParameter("NgheNghiep", "11) Nghề nghiệp bản thân trước khi được tuyển dụng: " + NhanVienDt.Rows[0]["TenNgheNghiep"], true);
+            parames[11] = new ReportParameter("CoQuanTuyenDung", "12) Cơ quan tuyển dụng: " + NhanVienDt.Rows[0]["CoQuanTuyenDung"].ToString(), true);
 
             // Parameter 12
-            MyDateTime = new DateTime();
-            MyString = NhanVienDt.Rows[0]["NgayTuyenDung"].ToString();
-            MyDateTime = Convert.ToDateTime(MyString);
-            parames[14] = new ReportParameter("NgayDuocTuyenDung", "12) Ngày được tuyển dụng: " + MyDateTime.Day + "/" + MyDateTime.Month + "/" + MyDateTime.Year + ", vào cơ quan: ..............................", true);
+            parames[12] = new ReportParameter("NgayTuyenDungChinhThuc", "13) Ngày tuyển dụng chính thức: " + (NhanVienDt.Rows[0]["NgayTuyenDungChinhThuc"].ToString() == "" ? "" : String.Format("{0:dd/MM/yyyy}", DateTime.Parse(NhanVienDt.Rows[0]["NgayTuyenDungChinhThuc"].ToString()))), true);
 
             // Parameter 13
-            parames[15] = new ReportParameter("NgayVaoCoQuanHienDangCongTac", "13) Ngày vào cơ quan hiện đang công tác: ............, Ngày tham gia cách mạng: .....................", true);
+            parames[13] = new ReportParameter("CoQuanTuyenDungChinhThuc", "14) Tuyển dụng chính thức tại chi bộ: " + NhanVienDt.Rows[0]["TuyenDungChinhThucTaiChiBo"].ToString(), true);
 
             // Parameter 14
-            MyDateTime = new DateTime();
-            MyString = NhanVienDt.Rows[0]["NgayVaoDang"].ToString();
-            MyDateTime = Convert.ToDateTime(MyString);
-
-            MyString = NhanVienDt.Rows[0]["NgayChinhThuc"].ToString();
-            DateTime MyDateTime2 = Convert.ToDateTime(MyString);
-            parames[16] = new ReportParameter("NgayVaoDang", "14) Ngày vào Đảng Cộng Sản Việt Nam: " + MyDateTime.Day + "/" + MyDateTime.Month + "/" + MyDateTime.Year + ", Ngày chính thức: " + MyDateTime2.Day + "/" + MyDateTime2.Month + "/" + MyDateTime2.Year, true);
+            parames[14] = new ReportParameter("ChucVu", "15) Chức vụ: " + NhanVienDt.Rows[0]["TenChucVu"].ToString(), true);
 
             // Parameter 15
-            parames[17] = new ReportParameter("NgayThamGiaCacToChucChinhTri", "15) Tham gia các tổ chức chính trị (Đoàn TNCSHCM, Công đoàn, Hội): " + NhanVienDt.Rows[0]["ThamGiaCTXH"], true);
+            parames[15] = new ReportParameter("CapUy", "16) Cấp ủy: ......................... ", true);
 
             // Parameter 16
-            MyString = NhanVienDt.Rows[0]["NgayNhapNgu"].ToString();
-            MyDateTime = Convert.ToDateTime(MyString);
-            MyString = NhanVienDt.Rows[0]["NgayXuatNgu"].ToString();
-            MyDateTime2 = Convert.ToDateTime(MyString);
-            parames[18] = new ReportParameter("NgayNhapNgu", "16) Ngày nhập ngũ: " + MyDateTime.ToString("dd/MM/yyyy") + ", Ngày xuất ngũ: " + MyDateTime2.ToString("dd/MM/yyyy") + ", Quân hàm, chức vụ cao nhất:...............,Năm ......", true);
+            parames[16] = new ReportParameter("CongTacChinh", "17) Công tác chính đang làm: " + NhanVienDt.Rows[0]["CongViecChinh"].ToString(), true);
 
             // Parameter 17
-            parames[19] = new ReportParameter("TrinhDoHocVan", "17) Trình độ học vấn: Giáo dục phổ thông:" + NhanVienDt.Rows[0]["TenHocVi"], true);
-
-            // Parameter 17a
-            parames[20] = new ReportParameter("HocVi", "- Học hàm, học vị cao nhất: ....................", true);
-
-            // Parameter 17b
-            parames[21] = new ReportParameter("LyLuanChinhTri", "- Lý luận chính trị: " + NhanVienDt.Rows[0]["TenBangLyLuanChinhTri"] + ".   - Ngoại ngữ: " + NhanVienDt.Rows[0]["TenBangNgoaiNgu"], true);
+            parames[17] = new ReportParameter("TrinhDoGDPT", "18) Trình độ GDPT: " + NhanVienDt.Rows[0]["TenBangGiaoDucPhoThong"].ToString(), true);
 
             // Parameter 18
-            parames[22] = new ReportParameter("CongTacChinh", "18) Công tác chính đang làm: " + NhanVienDt.Rows[0]["CongViecChinh"], true);
+            parames[18] = new ReportParameter("TrinhDoCMNV", "19) Trình độ CMNV: " + NhanVienDt.Rows[0]["TenBangChuyenMonNghiepVu"].ToString(), true);
 
             // Parameter 19
-            parames[23] = new ReportParameter("NgachCongChuc", "19) Ngạch công chức: ............. (Mã số: ...........). Bậc lương: ......, hệ số: ..., từ tháng ...........", true);
+            parames[19] = new ReportParameter("LyLuanChinhTri", "20) Trình độ LLCT: " + NhanVienDt.Rows[0]["TenBangLyLuanChinhTri"].ToString(), true);
 
             // Parameter 20
-            parames[24] = new ReportParameter("DanhHieu", "20) Danh hiệu được phong:", true);
+            parames[20] = new ReportParameter("NgoaiNgu", "21) Ngoại ngữ: " + NhanVienDt.Rows[0]["TenBangNgoaiNgu"].ToString(), true);
 
             // Parameter 21
-            parames[25] = new ReportParameter("SoTruong", "21) Sở trường công tác: ......................... Công việc đã làm lâu nhất: .....................", true);
+            parames[21] = new ReportParameter("HocVi", "22) Học vị: " + NhanVienDt.Rows[0]["TenHocVi"].ToString(), true);
 
             // Parameter 22
-            parames[26] = new ReportParameter("KhenThuong", "22) Khen thưởng:", true);
+            parames[22] = new ReportParameter("HocHam", "23) Học hàm: " + NhanVienDt.Rows[0]["TenHocHam"].ToString(), true);
 
             // Parameter 23
-            parames[27] = new ReportParameter("KyLuat", "23) Kỷ luật: ", true);
+            parames[23] = new ReportParameter("NgayVaoDang", "24) Ngày vào đảng: " + (NhanVienDt.Rows[0]["NgayVaoDang"].ToString() == "" ? "" : String.Format("{0:dd/MM/yyyy}", DateTime.Parse(NhanVienDt.Rows[0]["NgayVaoDang"].ToString()))), true);
 
             // Parameter 24
-            parames[28] = new ReportParameter("TinhTrangSucKhoe", "24) Tình trạng sức khỏe: " + NhanVienDt.Rows[0]["TenTinhTrangSucKhoe"] + ", Cao ........ Cân nặng ...... Nhóm máu ....", true);
+            parames[24] = new ReportParameter("VaoDangTaiChiBo", "25) Tại chi bộ: " + NhanVienDt.Rows[0]["VaoDangTaiChiBo"].ToString(), true);
 
             // Parameter 25
-            parames[29] = new ReportParameter("CMND", "25) Số chứng minh nhân dân: " + NhanVienDt.Rows[0]["SoCMND"].ToString() + ". Thương binh loại: " + NhanVienDt.Rows[0]["TenLoaiThuongBinh"].ToString() + ". Gia đình liệt sỹ: " + GetGiaDinhLietSy(NhanVienDt.Rows[0]["GiaDinhLietSy"].ToString()), true);
+            parames[25] = new ReportParameter("NgayVaoDangChinhThuc", "26) Ngày vào đảng chính thức: " + (NhanVienDt.Rows[0]["NgayVaoDangChinhThuc"].ToString() == "" ? "" : String.Format("{0:dd/MM/yyyy}", DateTime.Parse(NhanVienDt.Rows[0]["NgayVaoDangChinhThuc"].ToString()))), true);
+
+            // Parameter 26
+            parames[26] = new ReportParameter("VaoDangChinhThucTaiChiBo", "27) Tại chi bộ: " + NhanVienDt.Rows[0]["VaoDangChinhThucTaiChiBo"].ToString(), true);
+
+            // Parameter 27
+            parames[27] = new ReportParameter("NgayThamGiaCacToChucChinhTri", "28) Tham gia các tổ chức chính trị (Đoàn TNCSHCM, Công đoàn, Hội): " + NhanVienDt.Rows[0]["ThamGiaCTXH"].ToString(), true);
 
             // Parameter 28
-            parames[30] = new ReportParameter("BiBatTu", "a) Khai rõ: bị bắt, bị tù (từ ngày tháng năm nào đến ngày tháng năm nào, ở đâu), đã khai báo cho ai, những vấn đề gì: " + NhanVienDt.Rows[0]["BiBatTu"].ToString(), true);
-            parames[31] = new ReportParameter("LamViecChoCheDoCu", "b) Bản thân có làm việc trong chế độ cũ (cơ quan, đơn vị nào, địa điểm, chức danh, chức vụ, thời gian làm việc....): " + NhanVienDt.Rows[0]["LamViecChoCheDoCu"].ToString(), true);
+            parames[28] = new ReportParameter("NgayNhapNgu", "29) Ngày nhập ngũ: " + (NhanVienDt.Rows[0]["NgayNhapNgu"].ToString() == "" ? "" : String.Format("{0:dd/MM/yyyy}", DateTime.Parse(NhanVienDt.Rows[0]["NgayNhapNgu"].ToString()))), true);
 
             // Parameter 29
-            parames[32] = new ReportParameter("QuanHeVoiToChucNN", "- Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh tế, xã hội nào ở nước ngoài (làm gì, tổ chức nào, đặt trụ ở ở đâu...?): " + NhanVienDt.Rows[0]["QuanHeVoiToChucNN"].ToString(), true);
-            parames[33] = new ReportParameter("ThanhNhanONuocNgoai", "- Có thân nhân (bố, mẹ, vợ, chồng, con, anh chị em ruột) ở nước ngoài (làm gì, địa chỉ...)?: " + NhanVienDt.Rows[0]["ThanhNhanONuocNgoai"].ToString().ToString(), true);
+            parames[29] = new ReportParameter("NgayXuatNgu", "30) Ngày xuất ngũ: " + (NhanVienDt.Rows[0]["NgayXuatNgu"].ToString() == "" ? "" : String.Format("{0:dd/MM/yyyy}", DateTime.Parse(NhanVienDt.Rows[0]["NgayXuatNgu"].ToString()))), true);
+
+            // Parameter 30
+            parames[30] = new ReportParameter("TinhTrangSucKhoe", "31) Tình trạng sức khỏe: " + NhanVienDt.Rows[0]["TenTinhTrangSucKhoe"].ToString() + ", Cao ........ Cân nặng ...... Nhóm máu ....", true);
 
             // Parameter 31
-            parames[34] = new ReportParameter("NhaODuocCap", "+ Được cấp, được thuê loại nhà: " + NhanVienDt.Rows[0]["NhaODuocCap"].ToString() + "m2, tổng diện tích sử dụng: " + NhanVienDt.Rows[0]["DienTichSuDungNhaO"].ToString() + " m2", true);
-            parames[35] = new ReportParameter("NhaOTuMua", "+ Nhà tự mua, tự xây loại nhà: " + NhanVienDt.Rows[0]["NhaOTuMua"].ToString() + "m2, tổng diện tích sử dụng: " + NhanVienDt.Rows[0]["DienTichSuDungDatO"].ToString() + " m2", true);
-            parames[36] = new ReportParameter("DienTichDatDuocCap", "+ Nhà tự mua, tự xây loại nhà: " + NhanVienDt.Rows[0]["DienTichDatDuocCap"].ToString() + "m2, tổng diện tích sử dụng: " + NhanVienDt.Rows[0]["DienTichDatTuMua"].ToString() + " m2", true);
-            parames[37] = new ReportParameter("DienTichDatKinhDoanhTrangTrai", "- Đất sản xuất, kinh doanh: (Tổng diện tích đất được cấp, tự mua, tự khai phá...): " + NhanVienDt.Rows[0]["DienTichDatKinhDoanhTrangTrai"].ToString() + " m2", true);
+            parames[31] = new ReportParameter("GiaDinhLietSy", "32) Gia đình liệt sỹ: " + (bool.Parse(NhanVienDt.Rows[0]["GiaDinhLietSy"].ToString()) == true ? "Có" : "Không"), true);
+            
+            // Parameter 32
+            parames[32] = new ReportParameter("GiaDinhCoCongCM", "33) Gia đình có công CM: " + (bool.Parse(NhanVienDt.Rows[0]["GiaDinhCoCongVoiCM"].ToString()) == true ? "Có" : "Không"), true);
+            
+            // Parameter 33
+            parames[33] = new ReportParameter("CMND", "34) Số chứng minh nhân dân: " + NhanVienDt.Rows[0]["SoCMND"].ToString(), true);
 
+            // Parameter 34
+            parames[34] = new ReportParameter("XuatThan", "35) Thành phần gia đình xuất thân: " + NhanVienDt.Rows[0]["TenThanhPhanGiaDinh"].ToString(), true);
+
+            // Parameter 35
+            parames[35] = new ReportParameter("BiBatTu", "a) Khai rõ: bị bắt, bị tù (từ ngày tháng năm nào đến ngày tháng năm nào, ở đâu), đã khai báo cho ai, những vấn đề gì: " + NhanVienDt.Rows[0]["BiBatTu"].ToString(), true);
+
+            // Parameter 36
+            parames[36] = new ReportParameter("LamViecChoCheDoCu", "b) Bản thân có làm việc trong chế độ cũ (cơ quan, đơn vị nào, địa điểm, chức danh, chức vụ, thời gian làm việc....): " + NhanVienDt.Rows[0]["LamViecChoCheDoCu"].ToString(), true);
+
+            // Parameter 37
+            parames[37] = new ReportParameter("QuanHeVoiToChucNN", "- Tham gia hoặc có quan hệ với các tổ chức chính trị, kinh tế, xã hội nào ở nước ngoài (làm gì, tổ chức nào, đặt trụ ở ở đâu...?): " + NhanVienDt.Rows[0]["QuanHeVoiToChucNN"].ToString(), true);
+
+            // Parameter 38
+            parames[38] = new ReportParameter("ThanhNhanONuocNgoai", "- Có thân nhân (bố, mẹ, vợ, chồng, con, anh chị em ruột) ở nước ngoài (làm gì, địa chỉ...)?: " + NhanVienDt.Rows[0]["ThanhNhanONuocNgoai"].ToString().ToString(), true);
+
+            // Parameter 39
+            parames[39] = new ReportParameter("NhaODuocCap", "+ Được cấp, được thuê loại nhà: " + NhanVienDt.Rows[0]["NhaODuocCap"].ToString() + "m2, tổng diện tích sử dụng: " + NhanVienDt.Rows[0]["DienTichSuDungNhaO"].ToString() + " m2", true);
+            parames[40] = new ReportParameter("NhaOTuMua", "+ Nhà tự mua, tự xây loại nhà: " + NhanVienDt.Rows[0]["NhaOTuMua"].ToString() + "m2, tổng diện tích sử dụng: " + NhanVienDt.Rows[0]["DienTichSuDungDatO"].ToString() + " m2", true);
+            parames[41] = new ReportParameter("DienTichDatDuocCap", "+ Nhà tự mua, tự xây loại nhà: " + NhanVienDt.Rows[0]["DienTichDatDuocCap"].ToString() + "m2, tổng diện tích sử dụng: " + NhanVienDt.Rows[0]["DienTichDatTuMua"].ToString() + " m2", true);
+            parames[42] = new ReportParameter("DienTichDatKinhDoanhTrangTrai", "- Đất sản xuất, kinh doanh: (Tổng diện tích đất được cấp, tự mua, tự khai phá...): " + NhanVienDt.Rows[0]["DienTichDatKinhDoanhTrangTrai"].ToString() + " m2", true);
+
+            parames[43] = new ReportParameter("NguoiGioiThieu1", "16.1a) Người giới thiệu 1: " + NhanVienDt.Rows[0]["NguoiGioiThieu1"].ToString(), true);
+            parames[44] = new ReportParameter("ChucVuNguoi1", "Chức vũ Đ.vị: " + NhanVienDt.Rows[0]["ChucVuNguoi1"].ToString(), true);
+            parames[45] = new ReportParameter("NguoiGioiThieu2", "16.1b) Người giới thiệu 2: " + NhanVienDt.Rows[0]["NguoiGioiThieu2"].ToString(), true);
+            parames[46] = new ReportParameter("ChucVuNguoi2", "Chức vũ Đ.vị: " + NhanVienDt.Rows[0]["ChucVuNguoi2"].ToString(), true);
+            // Parameter 31
+            parames[47] = new ReportParameter("ThuongBinh", "32) Thương binh: " + NhanVienDt.Rows[0]["TenLoaiThuongBinh"].ToString(), true);
+            
             this.reportViewer1.LocalReport.EnableExternalImages = true;
 
             this.reportViewer1.LocalReport.SetParameters(parames);

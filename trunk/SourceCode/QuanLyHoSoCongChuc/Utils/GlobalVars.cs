@@ -131,6 +131,9 @@ namespace QuanLyHoSoCongChuc.Utils
                 case EnumChucNangHeThong.QUANLY_CHUCNANG_PHIEUBAO_TUTRAN:
                     tenchucnang = "Phiếu báo từ trần";
                     break;
+                case EnumChucNangHeThong.QUANLY_CHUCNANG_PHIEUBAO_CHUYENCHINHTHUC:
+                    tenchucnang = "Phiếu báo chuyển chính thức";
+                    break;
 
                 // HO SO NHAN VIEN
                 case EnumChucNangHeThong.QUANLY_CHUCNANG_HOSONHANVIEN:
@@ -210,6 +213,10 @@ namespace QuanLyHoSoCongChuc.Utils
             else if (tenchucnang == "Phiếu báo chuyển ngạch")
             {
                 func = EnumChucNangHeThong.QUANLY_CHUCNANG_PHIEUBAO_CHUYENNGACH;
+            }
+            else if (tenchucnang == "Phiếu báo chuyển chính thức")
+            {
+                func = EnumChucNangHeThong.QUANLY_CHUCNANG_PHIEUBAO_CHUYENCHINHTHUC;
             }
             else if (tenchucnang == "Phiếu báo phụ cấp")
             {

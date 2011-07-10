@@ -218,6 +218,12 @@
     <Compile Include="Controller\TrinhDoNgoaiNguControl.cs" />
     <Compile Include="Controller\TrinhDoQuanLyNhaNuocControl.cs" />
     <Compile Include="Controller\TrinhDoTinHocControl.cs" />
+    <Compile Include="DataManager\FrmPhieuBaoChuyenChinhThuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManager\FrmPhieuBaoChuyenChinhThuc.Designer.cs">
+      <DependentUpon>FrmPhieuBaoChuyenChinhThuc.cs</DependentUpon>
+    </Compile>
     <Compile Include="DSBaoCao2.cs">
       <DependentUpon>DSBaoCao2.xsd</DependentUpon>
       <SubType>Component</SubType>
@@ -928,6 +934,9 @@
     <Compile Include="Utils\Table.cs" />
     <Compile Include="Utils\Validations.cs" />
     <Compile Include="Utils\XMLProvider.cs" />
+    <EmbeddedResource Include="DataManager\FrmPhieuBaoChuyenChinhThuc.resx">
+      <DependentUpon>FrmPhieuBaoChuyenChinhThuc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
       <SubType>Designer</SubType>

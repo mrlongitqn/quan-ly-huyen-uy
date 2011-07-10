@@ -599,10 +599,14 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 ChucVuNguoi1 = frmThongTinNhanVien_TomTat.ChucVuNguoi1,
                 NguoiGioiThieu2 = frmThongTinNhanVien_TomTat.NguoiGioiThieu2,
                 ChucVuNguoi2 = frmThongTinNhanVien_TomTat.ChucVuNguoi2,
-                NgayChinhThuc = frmThongTinNhanVien_TomTat.NgayChinhThuc,
-                ChinhThucTaiChiBo = frmThongTinNhanVien_TomTat.ChinhThucTaiChiBo,
+                NgayVaoDangChinhThuc = frmThongTinNhanVien_TomTat.NgayVaoDangChinhThuc,
+                VaoDangChinhThucTaiChiBo = frmThongTinNhanVien_TomTat.VaoDangChinhThucTaiChiBo,
+
                 NgayTuyenDung = frmThongTinNhanVien_TomTat.NgayTuyenDung,
                 CoQuanTuyenDung = frmThongTinNhanVien_TomTat.CoQuanTuyenDung,
+                NgayTuyenDungChinhThuc =  frmThongTinNhanVien_TomTat.NgayTuyenDungChinhThuc,
+                TuyenDungChinhThucTaiChiBo =  frmThongTinNhanVien_TomTat.CoQuanTuyenDungChinhThuc,
+
                 NgayVaoDoan = frmThongTinNhanVien_TomTat.NgayVaoDoan,
                 ChiDoan = frmThongTinNhanVien_TomTat.ChiDoan,
                 ThamGiaCTXH = frmThongTinNhanVien_TomTat.ThamGiaCTXH,
@@ -650,10 +654,14 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             item.ChucVuNguoi1 = frmThongTinNhanVien_TomTat.ChucVuNguoi1;
             item.NguoiGioiThieu2 = frmThongTinNhanVien_TomTat.NguoiGioiThieu2;
             item.ChucVuNguoi2 = frmThongTinNhanVien_TomTat.ChucVuNguoi2;
-            item.NgayChinhThuc = frmThongTinNhanVien_TomTat.NgayChinhThuc;
-            item.ChinhThucTaiChiBo = frmThongTinNhanVien_TomTat.ChinhThucTaiChiBo;
+            item.NgayVaoDangChinhThuc = frmThongTinNhanVien_TomTat.NgayVaoDangChinhThuc;
+            item.VaoDangChinhThucTaiChiBo = frmThongTinNhanVien_TomTat.VaoDangChinhThucTaiChiBo;
+
             item.NgayTuyenDung = frmThongTinNhanVien_TomTat.NgayTuyenDung;
             item.CoQuanTuyenDung = frmThongTinNhanVien_TomTat.CoQuanTuyenDung;
+            item.NgayTuyenDungChinhThuc = frmThongTinNhanVien_TomTat.NgayTuyenDungChinhThuc;
+            item.TuyenDungChinhThucTaiChiBo = frmThongTinNhanVien_TomTat.CoQuanTuyenDungChinhThuc;
+
             item.NgayVaoDoan = frmThongTinNhanVien_TomTat.NgayVaoDoan;
             item.ChiDoan = frmThongTinNhanVien_TomTat.ChiDoan;
             item.ThamGiaCTXH = frmThongTinNhanVien_TomTat.ThamGiaCTXH;

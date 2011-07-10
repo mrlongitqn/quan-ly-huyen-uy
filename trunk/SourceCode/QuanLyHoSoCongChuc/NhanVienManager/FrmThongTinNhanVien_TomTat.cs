@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -228,6 +229,22 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 return txtTaiChiBoVaoDang.Text;
             }
         }
+
+        public DateTime NgayVaoDangChinhThuc
+        {
+            get
+            {
+                return dtNgayChinhThuc.Value;
+            }
+        }
+        public string VaoDangChinhThucTaiChiBo
+        {
+            get
+            {
+                return txtTaiChiBoChinhThuc.Text;
+            }
+        }
+
         public string NguoiGioiThieu1
         {
             get
@@ -256,20 +273,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 return txtChucVuNguoi2.Text;
             }
         }
-        public DateTime NgayChinhThuc
-        {
-            get
-            {
-                return dtNgayChinhThuc.Value;
-            }
-        }
-        public string ChinhThucTaiChiBo
-        {
-            get
-            {
-                return txtTaiChiBoChinhThuc.Text;
-            }
-        }
+        
         public DateTime NgayTuyenDung
         {
             get
@@ -284,6 +288,22 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 return txtCoQuanTuyenDung.Text;
             }
         }
+
+        public DateTime NgayTuyenDungChinhThuc
+        {
+            get
+            {
+                return dtNgayTuyenDungChinhThuc.Value;
+            }
+        }
+        public string CoQuanTuyenDungChinhThuc
+        {
+            get
+            {
+                return txtTuyenDungChinhThucTaiChiBo.Text;
+            }
+        }
+
         public DateTime NgayVaoDoan
         {
             get
@@ -426,10 +446,12 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             txtChucVuNguoi1.Text = _nhanvien.ChucVuNguoi1;
             txtChucVuNguoi2.Text = _nhanvien.ChucVuNguoi2;
             txtNguoiGioiThieu2.Text = _nhanvien.NguoiGioiThieu2;
-            dtNgayChinhThuc.Value = _nhanvien.NgayChinhThuc.Value;
-            txtTaiChiBoChinhThuc.Text = _nhanvien.ChinhThucTaiChiBo;
+            dtNgayChinhThuc.Value = _nhanvien.NgayVaoDangChinhThuc.Value;
+            txtTaiChiBoChinhThuc.Text = _nhanvien.VaoDangChinhThucTaiChiBo;
             dtNgayTuyenDung.Value = _nhanvien.NgayTuyenDung.Value;
             txtCoQuanTuyenDung.Text = _nhanvien.CoQuanTuyenDung;
+            dtNgayTuyenDungChinhThuc.Value = _nhanvien.NgayTuyenDungChinhThuc.Value;
+            txtTuyenDungChinhThucTaiChiBo.Text = _nhanvien.TuyenDungChinhThucTaiChiBo;
             dtNgayVaoDoan.Value = _nhanvien.NgayVaoDoan.Value;
             txtChiDoan.Text = _nhanvien.ChiDoan;
             txtThamGiaCTXH.Text = _nhanvien.ThamGiaCTXH;
