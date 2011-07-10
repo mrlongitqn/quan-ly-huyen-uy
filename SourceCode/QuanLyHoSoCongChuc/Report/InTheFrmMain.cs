@@ -8,6 +8,8 @@
     using System.Data;
     using QuanLyHoSoCongChuc.Repositories;
     using System.IO;
+using System.Collections.Generic;
+using QuanLyHoSoCongChuc.Models;
 
 
     /// <summary>
@@ -38,18 +40,21 @@
 		private System.Windows.Forms.MainMenu mainMenu1;
 		private System.Drawing.Printing.PrintDocument printDocument1;
         private bool IsPrinting = false;
+
         private string MaDonVi;
-        private VScrollBar vScrollBar1;
+        private int numPage = 0;
+        private List<NhanVien> lstItem = new List<NhanVien>();
+        private int countPage = 0;
 
         public InTheFrmMain(string _madonvi)
         {
             InitializeComponent();
 			
-			this.Size = new Size(600*2, 5000);
-			this.ClientSize = new Size(printDocument1.PrinterSettings.DefaultPageSettings.PaperSize.Width, printDocument1.PrinterSettings.DefaultPageSettings.PaperSize.Height);
 			this.MdiParent = ParentForm;
             
             MaDonVi = _madonvi;
+            lstItem = NhanVienRepository.SelectByMaDonViConSinhHoat(MaDonVi);
+            numPage = lstItem.Count > 10 ? (lstItem.Count / 10 + 1) : 1;
         }
 
         #region InitializeComponent
@@ -69,7 +74,6 @@
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
-            this.vScrollBar1 = new System.Windows.Forms.VScrollBar();
             this.SuspendLayout();
             // 
             // PrintPreview
@@ -119,21 +123,10 @@
             this.printPreviewDialog1.Name = "printPreviewDialog1";
             this.printPreviewDialog1.Visible = false;
             // 
-            // vScrollBar1
-            // 
-            this.vScrollBar1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.vScrollBar1.Location = new System.Drawing.Point(688, 0);
-            this.vScrollBar1.Name = "vScrollBar1";
-            this.vScrollBar1.Size = new System.Drawing.Size(17, 543);
-            this.vScrollBar1.TabIndex = 0;
-            this.vScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.vScrollBar1_Scroll);
-            // 
             // InTheFrmMain
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-            this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(705, 543);
-            this.Controls.Add(this.vScrollBar1);
             this.Menu = this.mainMenu1;
             this.Name = "InTheFrmMain";
             this.Text = "In thẻ nhân viên";
@@ -161,8 +154,21 @@
 
         public void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            Graphics g = e.Graphics;
-            PrintPrinterLabels(g);
+            if (countPage < numPage)
+            {
+                Graphics g = e.Graphics;
+                PrintPrinterLabels(g);
+                countPage++;
+            }
+            else
+            {
+                countPage = 0;
+            }
+
+            if (numPage > 1)
+            {
+                e.HasMorePages = true;
+            }
         }
 
 		public void PrintPreview_Click (object sender, System.EventArgs e)
@@ -217,8 +223,6 @@
             BorderRect2a.Width = w - 6 * 2;
             BorderRect2a.Height = 60;
             BorderRect2a.Inflate(1, 1);
-
-            var lstItem = NhanVienRepository.SelectByMaDonViConSinhHoat(MaDonVi);
 
             for (int i = 0; i < lstItem.Count; i++)
             {

@@ -510,12 +510,13 @@ namespace QuanLyHoSoCongChuc.Search
                         }
                         if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgayChinhThuc") != null)
                         {
-                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayChinhThuc.Value));
+                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayVaoDangChinhThuc.Value));
                         }
                         if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "ChinhThucTaiChiBo") != null)
                         {
-                            objListViewItem.SubItems.Add(lstItem[i].ChinhThucTaiChiBo);
+                            objListViewItem.SubItems.Add(lstItem[i].VaoDangChinhThucTaiChiBo);
                         }
+
                         if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgayTuyenDung") != null)
                         {
                             objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayTuyenDung.Value));
@@ -524,10 +525,14 @@ namespace QuanLyHoSoCongChuc.Search
                         {
                             objListViewItem.SubItems.Add(lstItem[i].CoQuanTuyenDung);
                         }
-
-
-
-
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "NgayTuyenDungChinhThuc") != null)
+                        {
+                            objListViewItem.SubItems.Add(String.Format("{0:dd/MM/yyyy}", lstItem[i].NgayTuyenDungChinhThuc.Value));
+                        }
+                        if (GlobalSearch.GetAttInDict(GlobalSearch.LstTruongHienThi, "TuyenDungChinhThucTaiChiBo") != null)
+                        {
+                            objListViewItem.SubItems.Add(lstItem[i].TuyenDungChinhThucTaiChiBo);
+                        }
 
 
 

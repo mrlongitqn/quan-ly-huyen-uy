@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Linq;
+using SourceGrid.Extensions.PingGrids;
 using WeifenLuo.WinFormsUI.Docking;
 using System.Windows.Forms;
 using System.Reflection;
@@ -36,6 +37,9 @@ namespace QuanLyHoSoCongChuc.Danh_muc
         {
             InitializeComponent();
             EnableButtonChon = Enable;
+
+            IList<string> names = new List<string> {"aaaa", "bbb", "ccc"};
+
         }
 
         private string m_tagNode = string.Empty;

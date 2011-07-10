@@ -257,8 +257,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>10.38555in</Top>
-        <Left>0.26562in</Left>
+        <Top>10.22763in</Top>
+        <Left>0.26531in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
         <ZIndex>1</ZIndex>
@@ -624,8 +624,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>QuaTrinhDaoTao</DataSetName>
-        <Top>10.705in</Top>
-        <Left>0.26563in</Left>
+        <Top>10.54708in</Top>
+        <Left>0.26532in</Left>
         <Height>0.5in</Height>
         <Width>7.39771in</Width>
         <ZIndex>2</ZIndex>
@@ -851,8 +851,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>18.75708in</Top>
-        <Left>1.04876in</Left>
+        <Top>18.59916in</Top>
+        <Left>1.04845in</Left>
         <Height>0.78125in</Height>
         <Width>1.92708in</Width>
         <ZIndex>9</ZIndex>
@@ -899,8 +899,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox12</rd:DefaultName>
-        <Top>18.75708in</Top>
-        <Left>5.11126in</Left>
+        <Top>18.59916in</Top>
+        <Left>5.11095in</Left>
         <Height>0.78125in</Height>
         <Width>2.27083in</Width>
         <ZIndex>10</ZIndex>
@@ -929,8 +929,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>15.81611in</Top>
-        <Left>0.26561in</Left>
+        <Top>15.65819in</Top>
+        <Left>0.2653in</Left>
         <Height>0.25in</Height>
         <Width>6.5625in</Width>
         <ZIndex>11</ZIndex>
@@ -959,8 +959,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>14.60778in</Top>
-        <Left>0.26563in</Left>
+        <Top>14.44986in</Top>
+        <Left>0.26532in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
         <ZIndex>12</ZIndex>
@@ -989,8 +989,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>13.64945in</Top>
-        <Left>0.26562in</Left>
+        <Top>13.49153in</Top>
+        <Left>0.26531in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
         <ZIndex>13</ZIndex>
@@ -1019,8 +1019,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>12.69111in</Top>
-        <Left>0.26563in</Left>
+        <Top>12.53319in</Top>
+        <Left>0.26532in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
         <ZIndex>14</ZIndex>
@@ -1049,8 +1049,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>11.80222in</Top>
-        <Left>0.26563in</Left>
+        <Top>11.6443in</Top>
+        <Left>0.26532in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
         <ZIndex>15</ZIndex>
@@ -1224,8 +1224,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>QuaTrinhCongTac</DataSetName>
-        <Top>12.12167in</Top>
-        <Left>0.26562in</Left>
+        <Top>11.96375in</Top>
+        <Left>0.26531in</Left>
         <Height>0.5in</Height>
         <Width>7.39771in</Width>
         <ZIndex>16</ZIndex>
@@ -1250,8 +1250,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>11.27445in</Top>
-        <Left>0.26563in</Left>
+        <Top>11.11653in</Top>
+        <Left>0.26532in</Left>
         <Height>0.45833in</Height>
         <Width>7.39771in</Width>
         <ZIndex>17</ZIndex>
@@ -1280,8 +1280,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>14.92722in</Top>
-        <Left>0.26562in</Left>
+        <Top>14.7693in</Top>
+        <Left>0.26531in</Left>
         <Height>0.25in</Height>
         <Width>5.96875in</Width>
         <ZIndex>18</ZIndex>
@@ -1583,8 +1583,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>ThanNhan</DataSetName>
-        <Top>15.24667in</Top>
-        <Left>0.26562in</Left>
+        <Top>15.08875in</Top>
+        <Left>0.26531in</Left>
         <Height>0.5in</Height>
         <Width>7.39771in</Width>
         <ZIndex>19</ZIndex>
@@ -1609,10 +1609,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>HoTen</rd:DefaultName>
-        <Top>1.91333in</Top>
-        <Left>2.68229in</Left>
+        <Top>1.59388in</Top>
+        <Left>2.49483in</Left>
         <Height>0.25in</Height>
-        <Width>4.98104in</Width>
+        <Width>5.1685in</Width>
         <ZIndex>20</ZIndex>
         <Style>
           <Border>
@@ -1639,41 +1639,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>TenKhac</rd:DefaultName>
-        <Top>2.23277in</Top>
-        <Left>2.68229in</Left>
+        <Top>2.21888in</Top>
+        <Left>2.49484in</Left>
         <Height>0.25in</Height>
-        <Width>4.98104in</Width>
+        <Width>5.1685in</Width>
         <ZIndex>21</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="CapUy">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!CapUy.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>CapUy</rd:DefaultName>
-        <Top>2.55222in</Top>
-        <Left>2.68229in</Left>
-        <Height>0.25in</Height>
-        <Width>4.98104in</Width>
-        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1699,41 +1669,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ChucVu</rd:DefaultName>
-        <Top>2.87166in</Top>
-        <Left>2.68229in</Left>
+        <Top>5.2693in</Top>
+        <Left>0.26558in</Left>
         <Height>0.25in</Height>
-        <Width>4.98104in</Width>
-        <ZIndex>23</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="HeSoPhuCap">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!HeSoPhuCap.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>HeSoPhuCap</rd:DefaultName>
-        <Top>3.19111in</Top>
-        <Left>2.68229in</Left>
-        <Height>0.25in</Height>
-        <Width>4.98104in</Width>
-        <ZIndex>24</ZIndex>
+        <Width>3.31441in</Width>
+        <ZIndex>22</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1759,11 +1699,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NgaySinh</rd:DefaultName>
-        <Top>3.51055in</Top>
-        <Left>2.68229in</Left>
+        <Top>1.89944in</Top>
+        <Left>2.49478in</Left>
         <Height>0.25in</Height>
-        <Width>2.0748in</Width>
-        <ZIndex>25</ZIndex>
+        <Width>5.16851in</Width>
+        <ZIndex>23</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1789,11 +1729,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NoiSinh</rd:DefaultName>
-        <Top>3.51055in</Top>
-        <Left>5.25708in</Left>
+        <Top>2.53833in</Top>
+        <Left>2.49482in</Left>
         <Height>0.25in</Height>
-        <Width>2.40625in</Width>
-        <ZIndex>26</ZIndex>
+        <Width>5.16851in</Width>
+        <ZIndex>24</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1819,11 +1759,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>QueQuan</rd:DefaultName>
-        <Top>3.99667in</Top>
-        <Left>0.26562in</Left>
+        <Top>2.85777in</Top>
+        <Left>2.49482in</Left>
         <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>27</ZIndex>
+        <Width>5.16851in</Width>
+        <ZIndex>25</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1849,11 +1789,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NoiOHienNay</rd:DefaultName>
-        <Top>4.31611in</Top>
-        <Left>0.26562in</Left>
+        <Top>4.00541in</Top>
+        <Left>0.26558in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>28</ZIndex>
+        <ZIndex>26</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1879,11 +1819,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DanToc</rd:DefaultName>
-        <Top>4.63556in</Top>
-        <Left>0.26562in</Left>
+        <Top>3.17721in</Top>
+        <Left>2.49482in</Left>
         <Height>0.25in</Height>
-        <Width>3.17708in</Width>
-        <ZIndex>29</ZIndex>
+        <Width>2.42898in</Width>
+        <ZIndex>27</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1909,41 +1849,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>TonGiao</rd:DefaultName>
-        <Top>4.63556in</Top>
-        <Left>3.78833in</Left>
+        <Top>3.17721in</Top>
+        <Left>4.99325in</Left>
         <Height>0.25in</Height>
-        <Width>3.875in</Width>
-        <ZIndex>30</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="XuatThan">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!XuatThan.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>XuatThan</rd:DefaultName>
-        <Top>4.955in</Top>
-        <Left>0.26562in</Left>
-        <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>31</ZIndex>
+        <Width>2.67008in</Width>
+        <ZIndex>28</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1969,11 +1879,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NgheNghiep</rd:DefaultName>
-        <Top>5.27444in</Top>
-        <Left>0.26562in</Left>
+        <Top>4.31097in</Top>
+        <Left>0.26558in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>32</ZIndex>
+        <ZIndex>29</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -1999,41 +1909,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NgayDuocTuyenDung</rd:DefaultName>
-        <Top>5.59389in</Top>
-        <Left>0.26562in</Left>
+        <Top>4.63041in</Top>
+        <Left>0.26563in</Left>
         <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>33</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="NgayVaoCoQuanHienDangCongTac">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!NgayVaoCoQuanHienDangCongTac.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>NgayVaoCoQuanHienDangCongTac</rd:DefaultName>
-        <Top>5.91333in</Top>
-        <Left>0.26562in</Left>
-        <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>34</ZIndex>
+        <Width>3.31436in</Width>
+        <ZIndex>30</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2059,11 +1939,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NgayVaoDang</rd:DefaultName>
-        <Top>6.23278in</Top>
-        <Left>0.26562in</Left>
+        <Top>6.99153in</Top>
+        <Left>0.26563in</Left>
         <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>35</ZIndex>
+        <Width>3.31436in</Width>
+        <ZIndex>31</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2089,11 +1969,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NgayThamGiaCacToChucChinhTri</rd:DefaultName>
-        <Top>6.55222in</Top>
-        <Left>0.26562in</Left>
+        <Top>8.2693in</Top>
+        <Left>0.26532in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>36</ZIndex>
+        <ZIndex>32</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2119,41 +1999,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NgayNhapNgu</rd:DefaultName>
-        <Top>6.87167in</Top>
-        <Left>0.26562in</Left>
+        <Top>8.58875in</Top>
+        <Left>0.26532in</Left>
         <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>37</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="TrinhDoHocVan">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!TrinhDoHocVan.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>TrinhDoHocVan</rd:DefaultName>
-        <Top>7.19111in</Top>
-        <Left>0.26562in</Left>
-        <Height>0.25in</Height>
-        <Width>3.05584in</Width>
-        <ZIndex>38</ZIndex>
+        <Width>3.31467in</Width>
+        <ZIndex>33</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2179,11 +2029,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>HocVi</rd:DefaultName>
-        <Top>7.19111in</Top>
-        <Left>3.75708in</Left>
+        <Top>6.54708in</Top>
+        <Left>0.26553in</Left>
         <Height>0.25in</Height>
-        <Width>3.90625in</Width>
-        <ZIndex>39</ZIndex>
+        <Width>3.31446in</Width>
+        <ZIndex>34</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2209,11 +2059,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>LyLuanChinhTri</rd:DefaultName>
-        <Top>7.51056in</Top>
-        <Left>0.26562in</Left>
+        <Top>6.22763in</Top>
+        <Left>0.26553in</Left>
         <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>40</ZIndex>
+        <Width>3.31446in</Width>
+        <ZIndex>35</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2239,161 +2089,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>CongTacChinh</rd:DefaultName>
-        <Top>7.83in</Top>
-        <Left>0.26562in</Left>
+        <Top>5.58874in</Top>
+        <Left>0.26558in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>41</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="NgachCongChuc">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!NgachCongChuc.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>NgachCongChuc</rd:DefaultName>
-        <Top>8.14944in</Top>
-        <Left>0.26562in</Left>
-        <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>42</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="DanhHieu">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!DanhHieu.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>DanhHieu</rd:DefaultName>
-        <Top>8.46889in</Top>
-        <Left>0.26562in</Left>
-        <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>43</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="SoTruong">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!SoTruong.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>SoTruong</rd:DefaultName>
-        <Top>8.78833in</Top>
-        <Left>0.26562in</Left>
-        <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>44</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="KhenThuong">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!KhenThuong.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>KhenThuong</rd:DefaultName>
-        <Top>9.10778in</Top>
-        <Left>0.26562in</Left>
-        <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>45</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
-      <Textbox Name="KyLuat">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>=Parameters!KyLuat.Value</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>KyLuat</rd:DefaultName>
-        <Top>9.42722in</Top>
-        <Left>0.26562in</Left>
-        <Height>0.25in</Height>
-        <Width>7.39771in</Width>
-        <ZIndex>46</ZIndex>
+        <ZIndex>36</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2419,11 +2119,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>TinhTrangSucKhoe</rd:DefaultName>
-        <Top>9.74667in</Top>
-        <Left>0.26562in</Left>
+        <Top>8.90819in</Top>
+        <Left>0.26532in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>47</ZIndex>
+        <ZIndex>37</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2449,11 +2149,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>CMND</rd:DefaultName>
-        <Top>10.06611in</Top>
-        <Left>0.26562in</Left>
+        <Top>9.54708in</Top>
+        <Left>0.26563in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>48</ZIndex>
+        <ZIndex>38</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2479,11 +2179,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>BiBatTu</rd:DefaultName>
-        <Top>13.01056in</Top>
-        <Left>0.26563in</Left>
+        <Top>12.85264in</Top>
+        <Left>0.26532in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>49</ZIndex>
+        <ZIndex>39</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2509,11 +2209,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>LamViecChoCheDoCu</rd:DefaultName>
-        <Top>13.33in</Top>
-        <Left>0.26562in</Left>
+        <Top>13.17208in</Top>
+        <Left>0.26531in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>50</ZIndex>
+        <ZIndex>40</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2539,11 +2239,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>QuanHeVoiToChucNN</rd:DefaultName>
-        <Top>13.96889in</Top>
-        <Left>0.26562in</Left>
+        <Top>13.81097in</Top>
+        <Left>0.26531in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>51</ZIndex>
+        <ZIndex>41</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2569,11 +2269,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ThanhNhanONuocNgoai</rd:DefaultName>
-        <Top>14.28833in</Top>
-        <Left>0.26562in</Left>
+        <Top>14.13041in</Top>
+        <Left>0.26531in</Left>
         <Height>0.25in</Height>
         <Width>7.39771in</Width>
-        <ZIndex>52</ZIndex>
+        <ZIndex>42</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2601,11 +2301,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>16.10778in</Top>
-        <Left>0.26561in</Left>
+        <Top>15.94986in</Top>
+        <Left>0.2653in</Left>
         <Height>0.25in</Height>
         <Width>6.5625in</Width>
-        <ZIndex>53</ZIndex>
+        <ZIndex>43</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2633,11 +2333,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>16.40819in</Top>
-        <Left>0.26561in</Left>
+        <Top>16.25027in</Top>
+        <Left>0.2653in</Left>
         <Height>0.25in</Height>
         <Width>6.5625in</Width>
-        <ZIndex>54</ZIndex>
+        <ZIndex>44</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2663,11 +2363,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>16.77277in</Top>
-        <Left>0.77437in</Left>
+        <Top>16.61485in</Top>
+        <Left>0.77406in</Left>
         <Height>0.25in</Height>
         <Width>6.88896in</Width>
-        <ZIndex>55</ZIndex>
+        <ZIndex>45</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2693,11 +2393,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>17.09222in</Top>
-        <Left>0.77436in</Left>
+        <Top>16.9343in</Top>
+        <Left>0.77405in</Left>
         <Height>0.25in</Height>
         <Width>1.26396in</Width>
-        <ZIndex>56</ZIndex>
+        <ZIndex>46</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2723,11 +2423,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NhaODuocCap</rd:DefaultName>
-        <Top>17.09222in</Top>
-        <Left>2.10776in</Left>
+        <Top>16.9343in</Top>
+        <Left>2.10745in</Left>
         <Height>0.25in</Height>
         <Width>5.55556in</Width>
-        <ZIndex>57</ZIndex>
+        <ZIndex>47</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2753,11 +2453,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>NhaOTuMua</rd:DefaultName>
-        <Top>17.41166in</Top>
-        <Left>2.10776in</Left>
+        <Top>17.25374in</Top>
+        <Left>2.10745in</Left>
         <Height>0.25in</Height>
         <Width>5.55556in</Width>
-        <ZIndex>58</ZIndex>
+        <ZIndex>48</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2783,11 +2483,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DienTichDatDuocCap</rd:DefaultName>
-        <Top>17.73111in</Top>
-        <Left>2.10776in</Left>
+        <Top>17.57319in</Top>
+        <Left>2.10745in</Left>
         <Height>0.25in</Height>
         <Width>5.55556in</Width>
-        <ZIndex>59</ZIndex>
+        <ZIndex>49</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2813,11 +2513,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox13</rd:DefaultName>
-        <Top>17.73111in</Top>
-        <Left>0.77436in</Left>
+        <Top>17.57319in</Top>
+        <Left>0.77405in</Left>
         <Height>0.25in</Height>
         <Width>1.26396in</Width>
-        <ZIndex>60</ZIndex>
+        <ZIndex>50</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2843,11 +2543,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>DienTichDatKinhDoanhTrangTrai</rd:DefaultName>
-        <Top>18.05055in</Top>
-        <Left>0.77437in</Left>
+        <Top>17.89263in</Top>
+        <Left>0.77406in</Left>
         <Height>0.25in</Height>
         <Width>6.88896in</Width>
-        <ZIndex>61</ZIndex>
+        <ZIndex>51</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -2863,17 +2563,587 @@
         <Value>=First(Fields!HinhAnh.Value, "HinhAnhNhanVien")</Value>
         <MIMEType>image/gif</MIMEType>
         <Sizing>FitProportional</Sizing>
-        <Top>1.91333in</Top>
-        <Left>0.44458in</Left>
+        <Top>1.59388in</Top>
+        <Left>0.44461in</Left>
         <Height>1.84722in</Height>
         <Width>1.59374in</Width>
-        <ZIndex>62</ZIndex>
+        <ZIndex>52</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Image>
+      <Textbox Name="HoKhau">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!HoKhau.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>HoKhau</rd:DefaultName>
+        <Top>3.68597in</Top>
+        <Left>0.26558in</Left>
+        <Height>0.25in</Height>
+        <Width>7.39771in</Width>
+        <ZIndex>53</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CoQuanTuyenDung">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!CoQuanTuyenDung.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CoQuanTuyenDung</rd:DefaultName>
+        <Top>4.63041in</Top>
+        <Left>4.24663in</Left>
+        <Height>0.25in</Height>
+        <Width>3.41666in</Width>
+        <ZIndex>54</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NgayTuyenDungChinhThuc">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!NgayTuyenDungChinhThuc.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NgayTuyenDungChinhThuc</rd:DefaultName>
+        <Top>4.94986in</Top>
+        <Left>0.26558in</Left>
+        <Height>0.25in</Height>
+        <Width>3.31441in</Width>
+        <ZIndex>55</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="CoQuanTuyenDungChinhThuc">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!CoQuanTuyenDungChinhThuc.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>CoQuanTuyenDungChinhThuc</rd:DefaultName>
+        <Top>4.94986in</Top>
+        <Left>4.24663in</Left>
+        <Height>0.25in</Height>
+        <Width>3.4167in</Width>
+        <ZIndex>56</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="TrinhDoGDPT">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!TrinhDoGDPT.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>TrinhDoGDPT</rd:DefaultName>
+        <Top>5.90819in</Top>
+        <Left>0.26558in</Left>
+        <Height>0.25in</Height>
+        <Width>3.31441in</Width>
+        <ZIndex>57</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="TrinhDoCMNV">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!TrinhDoCMNV.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>TrinhDoCMNV</rd:DefaultName>
+        <Top>5.90819in</Top>
+        <Left>4.24662in</Left>
+        <Height>0.25in</Height>
+        <Width>3.41667in</Width>
+        <ZIndex>58</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NgoaiNgu">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!NgoaiNgu.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NgoaiNgu</rd:DefaultName>
+        <Top>6.22763in</Top>
+        <Left>4.24662in</Left>
+        <Height>0.25in</Height>
+        <Width>3.41667in</Width>
+        <ZIndex>59</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="HocHam">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!HocHam.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>HocHam</rd:DefaultName>
+        <Top>6.54708in</Top>
+        <Left>4.24662in</Left>
+        <Height>0.25in</Height>
+        <Width>3.41667in</Width>
+        <ZIndex>60</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="VaoDangTaiChiBo">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!VaoDangTaiChiBo.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>VaoDangTaiChiBo</rd:DefaultName>
+        <Top>6.99153in</Top>
+        <Left>4.24662in</Left>
+        <Height>0.25in</Height>
+        <Width>3.41667in</Width>
+        <ZIndex>61</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NguoiGioiThieu1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!NguoiGioiThieu1.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NguoiGioiThieu1</rd:DefaultName>
+        <Top>7.31097in</Top>
+        <Left>0.26553in</Left>
+        <Height>0.25in</Height>
+        <Width>3.31446in</Width>
+        <ZIndex>62</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ChucVuNguoi1">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!ChucVuNguoi1.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ChucVuNguoi1</rd:DefaultName>
+        <Top>7.31097in</Top>
+        <Left>4.24663in</Left>
+        <Height>0.25in</Height>
+        <Width>3.41661in</Width>
+        <ZIndex>63</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NguoiGioiThieu2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!NguoiGioiThieu2.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NguoiGioiThieu2</rd:DefaultName>
+        <Top>7.63042in</Top>
+        <Left>0.26553in</Left>
+        <Height>0.25in</Height>
+        <Width>3.31446in</Width>
+        <ZIndex>64</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ChucVuNguoi2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!ChucVuNguoi2.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ChucVuNguoi2</rd:DefaultName>
+        <Top>7.63042in</Top>
+        <Left>4.24662in</Left>
+        <Height>0.25in</Height>
+        <Width>3.41662in</Width>
+        <ZIndex>65</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NgayVaoDangChinhThuc">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!NgayVaoDangChinhThuc.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NgayVaoDangChinhThuc</rd:DefaultName>
+        <Top>7.94986in</Top>
+        <Left>0.26543in</Left>
+        <Height>0.25in</Height>
+        <Width>3.31456in</Width>
+        <ZIndex>66</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="VaoDangChinhThucTaiChiBo">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!VaoDangChinhThucTaiChiBo.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>VaoDangChinhThucTaiChiBo</rd:DefaultName>
+        <Top>7.94986in</Top>
+        <Left>4.24662in</Left>
+        <Height>0.25in</Height>
+        <Width>3.41652in</Width>
+        <ZIndex>67</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="NgayXuatNgu">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!NgayXuatNgu.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>NgayXuatNgu</rd:DefaultName>
+        <Top>8.58875in</Top>
+        <Left>4.24663in</Left>
+        <Height>0.25in</Height>
+        <Width>3.41641in</Width>
+        <ZIndex>68</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="ThuongBinh">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!ThuongBinh.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>ThuongBinh</rd:DefaultName>
+        <Top>9.22764in</Top>
+        <Left>0.26563in</Left>
+        <Height>0.25in</Height>
+        <Width>3.31436in</Width>
+        <ZIndex>69</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="GiaDinhLietSy">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!GiaDinhLietSy.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>GiaDinhLietSy</rd:DefaultName>
+        <Top>9.22764in</Top>
+        <Left>3.9133in</Left>
+        <Height>0.25in</Height>
+        <Width>1.59375in</Width>
+        <ZIndex>70</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="GiaDinhCoCongCM">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=Parameters!GiaDinhCoCongCM.Value</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>GiaDinhCoCongCM</rd:DefaultName>
+        <Top>9.22764in</Top>
+        <Left>5.71542in</Left>
+        <Height>0.25in</Height>
+        <Width>1.94762in</Width>
+        <ZIndex>71</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>31.40292in</Height>
     <Style />
@@ -2993,7 +3263,7 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="TrinhDoHocVan">
+    <ReportParameter Name="TrinhDoGDPT">
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
@@ -3105,6 +3375,78 @@
       <DataType>String</DataType>
       <Nullable>true</Nullable>
       <AllowBlank>true</AllowBlank>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HoKhau">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CoQuanTuyenDung">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NgayTuyenDungChinhThuc">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="CoQuanTuyenDungChinhThuc">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="TrinhDoCMNV">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NgoaiNgu">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="HocHam">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VaoDangTaiChiBo">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NguoiGioiThieu1">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ChucVuNguoi1">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NguoiGioiThieu2">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ChucVuNguoi2">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NgayVaoDangChinhThuc">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="VaoDangChinhThucTaiChiBo">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="NgayXuatNgu">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="ThuongBinh">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="GiaDinhLietSy">
+      <DataType>String</DataType>
+      <Prompt>ReportParameter1</Prompt>
+    </ReportParameter>
+    <ReportParameter Name="GiaDinhCoCongCM">
+      <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
   </ReportParameters>

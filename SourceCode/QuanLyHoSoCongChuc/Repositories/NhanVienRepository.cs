@@ -73,6 +73,12 @@ namespace QuanLyHoSoCongChuc.Repositories
 			return lstItem;
 		}
 
+        public static List<NhanVien> SelectNhanVienChinhThuc(string madonvi)
+        {
+            var lstItem = (from item in DataContext.Instance.NhanViens where item.MaDonVi == madonvi && item.SoQuyetDinhChuyenChinhThuc != "" select item).ToList();
+            return lstItem;
+        }
+
         public static List<NhanVien> SelectByMaDonViConSinhHoat(string madonvi)
         {
             var lstItem = (from item in DataContext.Instance.NhanViens where item.MaDonVi == madonvi && item.ConSinhHoat.Value == true select item).ToList();
@@ -166,7 +172,7 @@ namespace QuanLyHoSoCongChuc.Repositories
                         item.MaBangLyLuanChinhTri == (nhanvien.MaBangLyLuanChinhTri == -1 ? item.MaBangLyLuanChinhTri : nhanvien.MaBangLyLuanChinhTri) &&
                         item.MaHocHam == (nhanvien.MaHocHam == -1 ? item.MaHocHam : nhanvien.MaHocHam) &&
                         item.NgayVaoDang == (nhanvien.NgayVaoDang == DateTime.MinValue ? item.NgayVaoDang : nhanvien.NgayVaoDang) &&
-                        item.NgayChinhThuc == (nhanvien.NgayChinhThuc == DateTime.MinValue ? item.NgayChinhThuc : nhanvien.NgayChinhThuc) &&
+                        item.NgayVaoDangChinhThuc == (nhanvien.NgayChinhThuc == DateTime.MinValue ? item.NgayVaoDangChinhThuc : nhanvien.NgayChinhThuc) &&
                         item.NgaySinh.Value.Year == (nhanvien.TuoiDoi == -1 ? item.NgaySinh.Value.Year : (DateTime.Now.Year - nhanvien.NgaySinh.Year)) &&
                         item.NgayVaoDang.Value.Year == (nhanvien.TuoiDang == -1 ? item.NgayVaoDang.Value.Year : (DateTime.Now.Year - nhanvien.NgayVaoDang.Year)))
                 {
