@@ -83,7 +83,7 @@ namespace QuanLyHoSoCongChuc.Danh_muc
                 var lstItem = QuanHuyenRepository.SelectByMaTinh("039"); //039--> Hà Tĩnh
                 for (int i = 0; i < lstItem.Count; i++)
                 {
-                    TreeNode huyen = new TreeNode(lstItem[i].MaQuanHuyen + " - Đảnh bộ Huyện " + lstItem[i].TenQuanHuyen);
+                    TreeNode huyen = new TreeNode(lstItem[i].MaQuanHuyen + " - Đảng bộ Huyện " + lstItem[i].TenQuanHuyen);
                     huyen.ImageIndex = 1;
                     root.Nodes.Add(huyen);
 

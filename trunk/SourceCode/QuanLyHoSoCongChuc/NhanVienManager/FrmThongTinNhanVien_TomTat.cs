@@ -677,7 +677,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             var eventType = (MyEvent)e;
             string[] comp = eventType.Data.Split(new char[] { '#' });
             var item = PhuongXaRepository.SelectByID(comp[0]);
-            txtNoiSinh.Text = item.MaPhuongXa + "." + item.QuanHuyen.MaQuanHuyen + "." + item.QuanHuyen.TinhThanh.MaTinh;
+            txtNoiSinh.Text = item.TenPhuongXa + ", " + item.QuanHuyen.TenQuanHuyen + ", " + item.QuanHuyen.TinhThanh.TenTinh;
         }
 
         private void btnChonQueQuan_Click(object sender, EventArgs e)
@@ -692,7 +692,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             var eventType = (MyEvent)e;
             string[] comp = eventType.Data.Split(new char[] { '#' });
             var item = PhuongXaRepository.SelectByID(comp[0]);
-            txtQueQuan.Text = item.MaPhuongXa + "." + item.QuanHuyen.MaQuanHuyen + "." + item.QuanHuyen.TinhThanh.MaTinh;
+            txtQueQuan.Text = item.TenPhuongXa + ", " + item.QuanHuyen.TenQuanHuyen + ", " + item.QuanHuyen.TinhThanh.TenTinh;
         }
 
         private void btnChonChucVu_Click(object sender, EventArgs e)
