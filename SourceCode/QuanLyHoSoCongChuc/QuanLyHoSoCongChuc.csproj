@@ -1287,6 +1287,9 @@
     <None Include="DSBaoCao2.xss">
       <DependentUpon>DSBaoCao2.xsd</DependentUpon>
     </None>
+    <None Include="Helps.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Properties\DataSources\QuanLyHoSoCongChuc.Models.QLHSCCEntities.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
