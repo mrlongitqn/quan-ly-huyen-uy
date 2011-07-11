@@ -14,7 +14,7 @@ using QuanLyHoSoCongChuc.DataLayer;
 
 namespace QuanLyHoSoCongChuc
 {
-    public partial class FrmThongTinLienHe : DockContent
+    public partial class FrmThongTinLienHe : Office2007Form
     {
         public FrmThongTinLienHe()
         {
