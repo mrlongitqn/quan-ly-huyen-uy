@@ -426,5 +426,14 @@ namespace QuanLyHoSoCongChuc.DataManager
             btnGhi.Enabled = !val;
             btnHuy.Enabled = !val;
         }
+
+        private void txtSoQuyetDinh_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Only allow type number
+            if (!char.IsNumber(e.KeyChar) && (Keys)e.KeyChar != Keys.Back)
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

@@ -360,7 +360,7 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
             }
             if (frmThongTinNhanVien_TomTat.MaNhanVien == "")
             {
-                errorText = "Vui lòng nhập mã nhân viên";
+                errorText = "Vui lòng nhập sô hiệu công chức";
                 return false;
             }
             if (frmThongTinNhanVien_TomTat.NgayTuyenDung == DateTime.MinValue)

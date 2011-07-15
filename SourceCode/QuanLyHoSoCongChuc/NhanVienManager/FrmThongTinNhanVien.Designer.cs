@@ -36,12 +36,12 @@
             this.btnThoat = new DevComponents.DotNetBar.ButtonX();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnChonGioiTinh = new System.Windows.Forms.Button();
-            this.txtGioiTinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.dtSinhNgay = new DevComponents.Editors.DateTimeAdv.DateTimeInput();
             this.labelX6 = new DevComponents.DotNetBar.LabelX();
-            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.txtGioiTinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.txtHoTenKhaiSinh = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.labelX8 = new DevComponents.DotNetBar.LabelX();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
             this.txtTenDonViDayDu = new DevComponents.DotNetBar.Controls.TextBoxX();
             this.btnChonDonVi = new System.Windows.Forms.Button();
             this.txtMaDonVi = new DevComponents.DotNetBar.Controls.TextBoxX();
@@ -185,19 +185,6 @@
             this.btnChonGioiTinh.UseVisualStyleBackColor = true;
             this.btnChonGioiTinh.Click += new System.EventHandler(this.btnChonGioiTinh_Click);
             // 
-            // txtGioiTinh
-            // 
-            this.txtGioiTinh.BackColor = System.Drawing.Color.White;
-            // 
-            // 
-            // 
-            this.txtGioiTinh.Border.Class = "TextBoxBorder";
-            this.txtGioiTinh.Location = new System.Drawing.Point(741, 40);
-            this.txtGioiTinh.Name = "txtGioiTinh";
-            this.txtGioiTinh.ReadOnly = true;
-            this.txtGioiTinh.Size = new System.Drawing.Size(46, 20);
-            this.txtGioiTinh.TabIndex = 171;
-            // 
             // dtSinhNgay
             // 
             // 
@@ -250,15 +237,18 @@
             this.labelX6.TabIndex = 169;
             this.labelX6.Text = "2. Sinh ngày";
             // 
-            // labelX7
+            // txtGioiTinh
             // 
-            this.labelX7.BackColor = System.Drawing.Color.Transparent;
-            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelX7.Location = new System.Drawing.Point(688, 43);
-            this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(58, 18);
-            this.labelX7.TabIndex = 167;
-            this.labelX7.Text = "Giới tính";
+            this.txtGioiTinh.BackColor = System.Drawing.Color.White;
+            // 
+            // 
+            // 
+            this.txtGioiTinh.Border.Class = "TextBoxBorder";
+            this.txtGioiTinh.Location = new System.Drawing.Point(741, 40);
+            this.txtGioiTinh.Name = "txtGioiTinh";
+            this.txtGioiTinh.ReadOnly = true;
+            this.txtGioiTinh.Size = new System.Drawing.Size(46, 20);
+            this.txtGioiTinh.TabIndex = 171;
             // 
             // txtHoTenKhaiSinh
             // 
@@ -283,6 +273,16 @@
             this.labelX8.TabIndex = 165;
             this.labelX8.Text = "1. Họ và tên khai sinh";
             this.labelX8.TextAlignment = System.Drawing.StringAlignment.Far;
+            // 
+            // labelX7
+            // 
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            this.labelX7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelX7.Location = new System.Drawing.Point(688, 43);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(58, 18);
+            this.labelX7.TabIndex = 167;
+            this.labelX7.Text = "Giới tính";
             // 
             // txtTenDonViDayDu
             // 
