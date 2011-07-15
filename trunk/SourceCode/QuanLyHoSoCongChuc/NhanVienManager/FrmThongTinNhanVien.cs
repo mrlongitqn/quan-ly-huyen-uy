@@ -363,9 +363,9 @@ namespace QuanLyHoSoCongChuc.NhanVienManager
                 errorText = "Vui lòng nhập mã nhân viên";
                 return false;
             }
-            if (frmThongTinNhanVien_TomTat.NgayVaoDang == DateTime.MinValue)
+            if (frmThongTinNhanVien_TomTat.NgayTuyenDung == DateTime.MinValue)
             {
-                errorText = "Vui lòng nhập ngày vào đảng";
+                errorText = "Vui lòng nhập ngày tuyển dụng";
                 return false;
             }
             if (frmThongTinNhanVien_TomTat.MaTonGiao == -1)
